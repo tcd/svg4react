@@ -17,6 +17,7 @@
         "tag": "node ./etc/scripts/tag.mjs"
     },
     "dependencies": {
+        "@mui/system": "^5.10.5",
         "csstype": "^3.1.1"
     },
     "devDependencies": {
