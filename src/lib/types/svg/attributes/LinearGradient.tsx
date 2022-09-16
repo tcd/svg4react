@@ -1,5 +1,6 @@
 import type { Length } from "@types"
 
+
 /**
  * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Element/linearGradient
  */
