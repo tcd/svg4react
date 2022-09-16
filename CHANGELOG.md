@@ -6,11 +6,18 @@ The format is based on [Keep a Changelog][keep-a-changelog], and this project ad
 
 
 ## [Unreleased]
+### Added
+- Add vscode settings
+- Add `.npmignore`
+- Add `LICENSE.md`
+### Changed
+- Update `package.json`
+- Update `README.md`
 
 
 ## [0.1.0] - 2022-09-16
 ### Added
-- Initial version; gotta get that package name.
+- Initial version; gotta get that package name
 
 
 [keep-a-changelog]: https://keepachangelog.com/en/1.0.0/

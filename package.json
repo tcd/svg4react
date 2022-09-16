@@ -4,16 +4,18 @@
     "version": "0.1.0",
     "license": "MIT",
     "author": "Clay Dunston <dunstontc@gmail.com>",
-    "scripts": {
-        "start": "npm run serve",
-        "serve": "cross-env NODE_ENV=development webpack-dev-server --config ./etc/config/webpack.config.js --open",
-        "tag": "node ./etc/scripts/tag.mjs"
-    },
+    "repository": "github:tcd/svg4react",
+    "bugs": "https://github.com/tcd/svg4react/issues",
     "keywords": [
         "React",
         "TypeScript",
         "SVG"
     ],
+    "scripts": {
+        "start": "npm run serve",
+        "serve": "cross-env NODE_ENV=development webpack-dev-server --config ./etc/config/webpack.config.js --open",
+        "tag": "node ./etc/scripts/tag.mjs"
+    },
     "devDependencies": {
         "@babel/core": "^7.19.1",
         "@babel/plugin-transform-runtime": "^7.19.1",
