@@ -26,6 +26,9 @@
         "noImplicitAny": true,
         "target": "es5",
         "baseUrl": "./",
+        "paths": {
+            "@src/*": ["./src/*"],
+        },
         "typeRoots": [
             "./node_modules/@types",
         ],
