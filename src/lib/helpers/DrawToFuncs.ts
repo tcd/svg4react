@@ -166,12 +166,15 @@ export const s = (
  *
  * quadratic_bezier_curveto_absolute
  */
-export const Q = (
+export const Q = (...opts: [
     x1: number,
     y1: number,
     x: number,
     y: number,
-) => { return "" }
+][]) => {
+    const points = opts.map((opt) => `Q ${opt[0]},${opt[1]} ${opt[2]},${opt[3]}`)
+    return points.join(" ")
+}
 
 /**
  * `q`
@@ -209,12 +212,22 @@ export const t = (
 
 // =========================================================================
 
+// export type A_options = [
+//     rx: number,
+//     ry: number,
+//     angle: number,
+//     largeArcFlag: 0 | 1,
+//     sweepFlag: 0 | 1,
+//     x: number,
+//     y: number,
+// ]
+
 /**
  * `A`
  *
  * elliptical_arc_absolute
  */
-export const A = (
+export const A = (...opts: [
     rx: number,
     ry: number,
     angle: number,
@@ -222,7 +235,10 @@ export const A = (
     sweepFlag: 0 | 1,
     x: number,
     y: number,
-) => { return "" }
+][]): string => {
+    const points = opts.map((opt) => `A ${opt[0]},${opt[1]} ${opt[2]},${opt[3]},${opt[4]} ${opt[5]},${opt[6]}`)
+    return points.join(" ")
+}
 
 /**
  * `a`

@@ -1,7 +1,11 @@
+import { PathTest } from "./path"
+
+
 export const App = (_props: unknown): JSX.Element => {
     return (
         <div style={styles}>
-            <h1>Welcome!</h1>
+            {/* <h1>Welcome!</h1> */}
+            <PathTest />
         </div>
     )
 }

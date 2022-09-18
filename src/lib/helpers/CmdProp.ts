@@ -47,6 +47,29 @@ export type CmdProp =
     | TCmdProp<"a", a_args>
     | TCmdProp<"Z", Z_args>
 
-export type PathProps = {
-    commands: CmdProp[]
+export const buildDrawing = (commands: CmdProp[]): string => {
+    return commands.map((cmd) => {
+        switch (cmd.cmd) {
+            case "M": return DrawToFuncs.M(...cmd.args)
+            case "m": return DrawToFuncs.m(...cmd.args)
+            case "L": return DrawToFuncs.L(...cmd.args)
+            case "l": return DrawToFuncs.l(...cmd.args)
+            case "H": return DrawToFuncs.H(...cmd.args)
+            case "h": return DrawToFuncs.h(...cmd.args)
+            case "V": return DrawToFuncs.V(...cmd.args)
+            case "v": return DrawToFuncs.v(...cmd.args)
+            case "C": return DrawToFuncs.C(...cmd.args)
+            case "c": return DrawToFuncs.c(...cmd.args)
+            case "S": return DrawToFuncs.S(...cmd.args)
+            case "s": return DrawToFuncs.s(...cmd.args)
+            case "Q": return DrawToFuncs.Q(...cmd.args)
+            case "q": return DrawToFuncs.q(...cmd.args)
+            case "T": return DrawToFuncs.T(...cmd.args)
+            case "t": return DrawToFuncs.t(...cmd.args)
+            case "A": return DrawToFuncs.A(...cmd.args)
+            case "a": return DrawToFuncs.a(...cmd.args)
+            case "Z": return DrawToFuncs.Z(...cmd.args)
+            default: return ""
+        }
+    }).join(" ")
 }
