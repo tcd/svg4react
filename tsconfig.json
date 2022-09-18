@@ -40,6 +40,7 @@
     ],
     "exclude": [
         // "./node_modules",
-        "./ignore/**/*.tsx"
-    ]
+        "./ignore/**/*.ts",
+        "./ignore/**/*.tsx",
+    ],
 }

@@ -29,6 +29,7 @@ module.exports = {
         "./etc/config/**.js",
         "config/**/*.mjs",
         "**/node_modules",
+        "**/ignore",
     ],
     rules: {
         "semi": ["warn", "never"],
