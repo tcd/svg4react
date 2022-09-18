@@ -5,6 +5,7 @@ import {
     Example4,
     Example5,
     Example6,
+    Example7,
 } from "./examples"
 
 export const PathTest = (_props: unknown): JSX.Element => {
@@ -16,6 +17,7 @@ export const PathTest = (_props: unknown): JSX.Element => {
             <Example4 />
             <Example5 />
             <Example6 />
+            <Example7 />
         </div>
     )
 }
