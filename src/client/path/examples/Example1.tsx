@@ -2,7 +2,7 @@ import { Path, PathProps } from "@src/lib/components"
 
 const pathProps: PathProps = {
     id: "test-number-1",
-    fill: "red",
+    fill: "indianred",
     commands: [
         { cmd: "M", args: [[              10,30]] },
         { cmd: "A", args: [[20,20, 0,0,1, 50,30]] },
