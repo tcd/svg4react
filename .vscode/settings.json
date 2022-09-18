@@ -7,7 +7,9 @@
     "cSpell.enabled": true,
     "cSpell.caseSensitive": false,
     "cSpell.words": [
+        "Bézier",
         "currentcolor",
+        "drawto",
         "npmignore",
         "polymarker"
     ],

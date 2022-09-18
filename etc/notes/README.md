@@ -14,6 +14,8 @@
     - [`stroke-dashoffset`](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-dashoffset)
         - An offset on the rendering of the associated dash array.
 - [MDN - SVG Presentation Attributes](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/Presentation)
+- Paths
+    - [W3C - SVG 2 - Paths](https://www.w3.org/TR/SVG/paths.html)
 
 ## Deprecated
 

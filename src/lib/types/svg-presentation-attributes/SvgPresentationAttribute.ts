@@ -58,6 +58,11 @@ export type ColorInterpolation = Property.ColorInterpolation
  */
 export type ColorInterpolationFilters = "auto" | "sRGB" | "linearRGB" | "inherit"
 export type Cursor = Property.Cursor
+/**
+ * Defines the shape of the path.
+ *
+ * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d
+ */
 export type D = string
 /**
  * Specifies the base writing direction of text.
@@ -108,7 +113,9 @@ export type FontStretch = Property.FontStretch
 export type FontStyle = Property.FontStyle
 export type FontVariant = Property.FontVariant
 export type FontWeight = Property.FontWeight
-// FIXME: mdn vs csstype
+/**
+ * FIXME: mdn vs csstype
+ */
 export type ImageRendering = Property.ImageRendering
 /**
  * Controls spacing between text characters.
@@ -122,21 +129,37 @@ export type LetterSpacing = Property.LetterSpacing
 export type LightingColor = Property.LightingColor
 /**
  * Defines the arrowhead or polymarker that will be drawn at the final vertex of the given <path> element or basic shape.
+ *
+ * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/marker-end
  */
 export type MarkerEnd = Property.MarkerEnd
 /**
  * Defines the arrowhead or polymarker that will be drawn at every vertex other than the first and last vertex of the given <path> element or basic shape.
+ *
+ * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/marker-mid
  */
 export type MarkerMid = Property.MarkerMid
 /**
  * Defines the arrowhead or polymarker that will be drawn at the first vertex of the given [`<path>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/path) element or basic shape.
+ *
+ * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/marker-start
  */
 export type MarkerStart = Property.MarkerStart
 /**
  * Alters the visibility of an element by either masking or clipping the image at specific points.
+ *
+ * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/mask
  */
 export type Mask = Property.Mask
+/**
+ * Specifies the transparency of an object or of a group of objects, that is, the degree to which the background behind the element is overlaid.
+ *
+ * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/opacity
+ */
 export type Opacity = Property.Opacity
+/**
+ * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/overflow
+ */
 export type Overflow = Property.Overflow
 export type PointerEvents = Property.PointerEvents
 export type ShapeRendering = Property.ShapeRendering
@@ -159,6 +182,8 @@ export type VectorEffect = Property.VectorEffect
 export type Visibility = Property.Visibility
 export type WordSpacing = Property.WordSpacing
 /**
+ * FIXME: mdn vs csstype
+ *
  * Specifies whether the initial inline-progression-direction for a `<text>` element shall be:
  * - *left-to-right*
  * - *right-to-left*
@@ -166,5 +191,4 @@ export type WordSpacing = Property.WordSpacing
  *
  * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/writing-mode
  */
-// FIXME: mdn vs csstype
 export type WritingMode = Property.WritingMode
