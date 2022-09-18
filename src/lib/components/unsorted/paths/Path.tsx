@@ -4,8 +4,8 @@ import {
 } from "@src/lib/helpers"
 
 export type PathProps = {
-    id: string
     commands: CmdProp[]
+    id?: string
     // FIXME: add proper presentation attributes
     fill?: any
     stroke?: any

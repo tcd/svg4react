@@ -100,7 +100,7 @@ export const V = (...x: number[]) => {
  * vertical_lineto_relative
  */
 export const v = (...x: number[]) => {
-    return ["V", ...x].join(" ")
+    return ["v", ...x].join(" ")
 }
 
 // =========================================================================
@@ -117,7 +117,7 @@ export const C = (
     y2: number,
     x: number,
     y: number,
-) => { return "" }
+) => { return "C" }
 
 /**
  * `c`
@@ -131,7 +131,7 @@ export const c = (
     dy2: number,
     dx: number,
     dy: number,
-) => { return "" }
+) => { return "c" }
 
 // -------------------------------------------------------------------------
 
@@ -145,7 +145,7 @@ export const S = (
     y2: number,
     x: number,
     y: number,
-) => { return "" }
+) => { return "S" }
 
 /**
  * `s`
@@ -157,7 +157,7 @@ export const s = (
     dy2: number,
     dx: number,
     dy: number,
-) => { return "" }
+) => { return "s" }
 
 // =========================================================================
 
@@ -186,7 +186,7 @@ export const q = (
     dy1: number,
     dx: number,
     dy: number,
-) => { return "" }
+) => { return "q" }
 
 // -------------------------------------------------------------------------
 
@@ -198,7 +198,7 @@ export const q = (
 export const T = (
     x: number,
     y: number,
-) => { return "" }
+) => { return "T" }
 
 /**
  * `t`
@@ -208,7 +208,7 @@ export const T = (
 export const t = (
     dx: number,
     dy: number,
-) => { return "" }
+) => { return "t" }
 
 // =========================================================================
 
@@ -253,4 +253,4 @@ export const a = (
     sweepFlag: 0 | 1,
     dx: number,
     dy: number,
-) => { return "" }
+) => { return "a" }
