@@ -20,7 +20,7 @@ const pathProps: PathProps = {
  */
 export const Example2 = (_props: unknown): JSX.Element => {
     return (
-        <ExampleCard title="CSS">
+        <ExampleCard title="CSS" url="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d#using_d_as_a_css_property">
             <svg
                 id="svg_css_ex1"
                 width="100px"

@@ -32,7 +32,7 @@ const pathProps_2: PathProps = {
  */
 export const Example4 = (_props: unknown): JSX.Element => {
     return (
-        <ExampleCard title="LineTo">
+        <ExampleCard title="LineTo" url="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d#lineto_path_commands">
             <svg
                 width="200px"
                 height="100px"
