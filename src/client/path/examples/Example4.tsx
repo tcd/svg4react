@@ -1,4 +1,5 @@
 import { Path, PathProps } from "@src/lib/components"
+import { ExampleCard } from "./ExampleCard"
 
 // LineTo commands with absolute coordinates
 const pathProps_1: PathProps = {
@@ -13,11 +14,11 @@ const pathProps_1: PathProps = {
     ],
 }
 
+// LineTo commands with relative coordinates
 const pathProps_2: PathProps = {
     id: "example-4b",
     fill: "none",
     stroke: "indianred",
-    // LineTo commands with relative coordinates
     commands: [
         { cmd: "M", args: [[110,10]] },
         { cmd: "l", args: [[80,80]] },
@@ -31,14 +32,17 @@ const pathProps_2: PathProps = {
  */
 export const Example4 = (_props: unknown): JSX.Element => {
     return (
-        <svg
-            width="200px"
-            height="100px"
-            viewBox="0 0 200 100"
-            xmlns="http://www.w3.org/2000/svg"
-        >
-            <Path {...pathProps_1} />
-            <Path {...pathProps_2} />
-        </svg>
+        <ExampleCard title="LineTo">
+            <svg
+                width="200px"
+                height="100px"
+                viewBox="0 0 200 100"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <Path {...pathProps_1} />
+                <Path {...pathProps_2} />
+            </svg>
+        </ExampleCard>
     )
+
 }

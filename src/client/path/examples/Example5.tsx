@@ -1,4 +1,5 @@
 import { Path, PathProps } from "@src/lib/components"
+import { ExampleCard } from "./ExampleCard"
 
 const shared: Partial<PathProps> = {
     fill: "none",
@@ -32,17 +33,19 @@ const pathProps_2: PathProps = {
  */
 export const Example5 = (_props: unknown): JSX.Element => {
     return (
-        <svg
-            width="200px"
-            height="100px"
-            viewBox="0 0 200 100"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlnsXlink="http://www.w3.org/1999/xlink"
-        >
-            <Path {...pathProps_1} />
-            <Path {...pathProps_2} />
-            <Extra />
-        </svg>
+        <ExampleCard title="Cubic Bézier Curve">
+            <svg
+                width="200px"
+                height="100px"
+                viewBox="0 0 200 100"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlnsXlink="http://www.w3.org/1999/xlink"
+            >
+                <Path {...pathProps_1} />
+                <Path {...pathProps_2} />
+                <Extra />
+            </svg>
+        </ExampleCard>
     )
 }
 
