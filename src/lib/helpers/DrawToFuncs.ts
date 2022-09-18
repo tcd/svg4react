@@ -193,12 +193,15 @@ export const Q = (...opts: [
  *
  * quadratic_bezier_curveto_relative
  */
-export const q = (
+export const q = (...opts: [
     dx1: number,
     dy1: number,
     dx: number,
     dy: number,
-) => { return "q" }
+][]) => {
+    const points = opts.map((opt) => `q ${opt[0]},${opt[1]} ${opt[2]},${opt[3]}`)
+    return points.join(" ")
+}
 
 // -------------------------------------------------------------------------
 
@@ -207,20 +210,20 @@ export const q = (
  *
  * smooth_quadratic_bezier_curveto_absolute
  */
-export const T = (
-    x: number,
-    y: number,
-) => { return "T" }
+export const T = (...args: [x: number, y: number][]) => {
+    const points = args.map((xy) => xy.join(","))
+    return ["T", ...points].join(" ")
+}
 
 /**
  * `t`
  *
  * smooth_quadratic_bezier_curveto_relative
  */
-export const t = (
-    dx: number,
-    dy: number,
-) => { return "t" }
+export const t = (...args: [dx: number, dy: number][]) => {
+    const points = args.map((dXdY) => dXdY.join(","))
+    return ["t", ...points].join(" ")
+}
 
 // =========================================================================
 
@@ -257,12 +260,15 @@ export const A = (...opts: [
  *
  * elliptical_arc_relative
  */
-export const a = (
+export const a = (...opts: [
     rx: number,
     ry: number,
     angle: number,
     largeArcFlag: 0 | 1,
     sweepFlag: 0 | 1,
-    dx: number,
-    dy: number,
-) => { return "a" }
+    x: number,
+    y: number,
+][]): string => {
+    const points = opts.map((opt) => `a ${opt[0]},${opt[1]} ${opt[2]},${opt[3]},${opt[4]} ${opt[5]},${opt[6]}`)
+    return points.join(" ")
+}

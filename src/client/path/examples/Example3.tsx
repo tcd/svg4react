@@ -2,7 +2,7 @@ import { Path, PathProps } from "@src/lib/components"
 import { ExampleCard } from "./ExampleCard"
 
 const pathProps: PathProps = {
-    id: "test-number-3",
+    id: "example-3",
     fill: "none",
     stroke: "indianred",
     commands: [
