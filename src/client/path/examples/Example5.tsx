@@ -54,11 +54,11 @@ const Extra = () => (
         {/* Highlight the curve vertex and control points */}
         <g id="ControlPoints">
             {/* First cubic command control points */}
-            <line x1="10" y1="90" x2="30" y2="90" stroke="lightgrey" />
-            <circle cx="30" cy="90" r="1.5" />
+            <line x1="10" y1="90" x2="30" y2="90" stroke="rgba(255,255,255,0.2)" />
+            <circle cx="30" cy="90" r="1.5" fill="lightgrey"/>
 
-            <line x1="50" y1="10" x2="25" y2="10" stroke="lightgrey" />
-            <circle cx="25" cy="10" r="1.5" />
+            <line x1="50" y1="10" x2="25" y2="10" stroke="rgba(255,255,255,0.2)" />
+            <circle cx="25" cy="10" r="1.5" fill="lightgrey"/>
 
             {/* Second smooth command control points (the first one is implicit) */}
             <line
@@ -66,17 +66,18 @@ const Extra = () => (
                 y1="10"
                 x2="75"
                 y2="10"
-                stroke="lightgrey"
-                strokeDasharray="2" />
+                stroke="rgba(255,255,255,0.2)"
+                strokeDasharray="2"
+            />
             <circle cx="75" cy="10" r="1.5" fill="lightgrey" />
 
-            <line x1="90" y1="90" x2="70" y2="90" stroke="lightgrey" />
-            <circle cx="70" cy="90" r="1.5" />
+            <line x1="90" y1="90" x2="70" y2="90" stroke="rgba(255,255,255,0.2)" />
+            <circle cx="70" cy="90" r="1.5" fill="lightgrey"/>
 
             {/* curve vertex points */}
-            <circle cx="10" cy="90" r="1.5" />
-            <circle cx="50" cy="10" r="1.5" />
-            <circle cx="90" cy="90" r="1.5" />
+            <circle cx="10" cy="90" r="1.5" fill="lightgrey"/>
+            <circle cx="50" cy="10" r="1.5" fill="lightgrey"/>
+            <circle cx="90" cy="90" r="1.5" fill="lightgrey"/>
         </g>
         <use xlinkHref="#ControlPoints" x="100" />
     </>
