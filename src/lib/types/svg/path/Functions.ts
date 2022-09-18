@@ -112,8 +112,12 @@ export const vertical_lineto_relative = (...x: number[]) => {
 
 // =========================================================================
 
-/** curveto_absolute */
-export const C = (
+/**
+ * `C`
+ *
+ * curveto_absolute
+ */
+export const curveto_absolute = (
     x1: number,
     y1: number,
     x2: number,
@@ -122,8 +126,12 @@ export const C = (
     y: number,
 ) => { return "" }
 
-/** curveto_relative */
-export const c = (
+/**
+ * `c`
+ *
+ * curveto_relative
+ */
+export const curveto_relative = (
     dx1: number,
     dy1: number,
     dx2: number,
@@ -134,15 +142,23 @@ export const c = (
 
 // -------------------------------------------------------------------------
 
-/** smooth_curveto_absolute */
-export const S = (
+/**
+ * `S`
+ *
+ * smooth_curveto_absolute
+ */
+export const smooth_curveto_absolute = (
     x2: number,
     y2: number,
     x: number,
     y: number,
 ) => { return "" }
 
-/** smooth_curveto_relative */
+/**
+ * `s`
+ *
+ * smooth_curveto_relative
+ */
 export const s = (
     dx2: number,
     dy2: number,
@@ -152,16 +168,24 @@ export const s = (
 
 // =========================================================================
 
-/** quadratic_bezier_curveto_absolute */
-export const Q = (
+/**
+ * `Q`
+ *
+ * quadratic_bezier_curveto_absolute
+ */
+export const quadratic_bezier_curveto_absolute = (
     x1: number,
     y1: number,
     x: number,
     y: number,
 ) => { return "" }
 
-/** quadratic_bezier_curveto_relative */
-export const q = (
+/**
+ * `q`
+ *
+ * quadratic_bezier_curveto_relative
+ */
+export const quadratic_bezier_curveto_relative = (
     dx1: number,
     dy1: number,
     dx: number,
