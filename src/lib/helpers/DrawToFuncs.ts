@@ -1,10 +1,3 @@
-export type X = [x: number]
-export type Y = [y: number]
-export type XY = [x: number, y: number]
-export type dXdY = [dx: number, dy: number]
-
-// =========================================================================
-
 // /**
 //  * `Z`
 //  *
@@ -24,7 +17,7 @@ export type dXdY = [dx: number, dy: number]
  *
  * closepath
  */
-export const closepath = () => { return "Z" }
+export const Z = () => { return "Z" }
 
 // =========================================================================
 
@@ -33,7 +26,7 @@ export const closepath = () => { return "Z" }
  *
  * moveto_absolute
  */
-export const moveto_absolute = (...args: XY[]) => {
+export const M = (...args: [x: number, y: number][]) => {
     const points = args.map((xy) => xy.join(","))
     return ["M", ...points].join(" ")
 }
@@ -43,7 +36,7 @@ export const moveto_absolute = (...args: XY[]) => {
  *
  * moveto_relative
  */
-export const moveto_relative = (...args: dXdY[]) => {
+export const m = (...args: [dx: number, dy: number][]) => {
     const points = args.map((dXdY) => dXdY.join(","))
     return ["m", ...points].join(" ")
 }
@@ -55,7 +48,7 @@ export const moveto_relative = (...args: dXdY[]) => {
  *
  * lineto_absolute
  */
-export const lineto_absolute = (...args: XY[]) => {
+export const L = (...args: [x: number, y: number][]) => {
     const points = args.map((xy) => xy.join(","))
     return ["L", ...points].join(" ")
 }
@@ -65,7 +58,7 @@ export const lineto_absolute = (...args: XY[]) => {
  *
  * lineto_relative
  */
-export const lineto_relative = (...args: dXdY[]) => {
+export const l = (...args: [dx: number, dy: number][]) => {
     const points = args.map((dXdY) => dXdY.join(","))
     return ["l", ...points].join(" ")
 }
@@ -77,8 +70,8 @@ export const lineto_relative = (...args: dXdY[]) => {
  *
  * horizontal_lineto_absolute
  */
-export const horizontal_lineto_absolute = (...args: X[]) => {
-    return ["H", ...args].join(" ")
+export const H = (...y: number[]) => {
+    return ["H", ...y].join(" ")
 }
 
 /**
@@ -86,8 +79,8 @@ export const horizontal_lineto_absolute = (...args: X[]) => {
  *
  * horizontal_lineto_relative
  */
-export const horizontal_lineto_relative = (...args: Y[]) => {
-    return ["h", ...args].join(" ")
+export const h = (...y: number[]) => {
+    return ["h", ...y].join(" ")
 }
 
 // -------------------------------------------------------------------------
@@ -97,7 +90,7 @@ export const horizontal_lineto_relative = (...args: Y[]) => {
  *
  * vertical_lineto_absolute
  */
-export const vertical_lineto_absolute = (...x: number[]) => {
+export const V = (...x: number[]) => {
     return ["V", ...x].join(" ")
 }
 
@@ -106,7 +99,7 @@ export const vertical_lineto_absolute = (...x: number[]) => {
  *
  * vertical_lineto_relative
  */
-export const vertical_lineto_relative = (...x: number[]) => {
+export const v = (...x: number[]) => {
     return ["V", ...x].join(" ")
 }
 
@@ -117,7 +110,7 @@ export const vertical_lineto_relative = (...x: number[]) => {
  *
  * curveto_absolute
  */
-export const curveto_absolute = (
+export const C = (
     x1: number,
     y1: number,
     x2: number,
@@ -131,7 +124,7 @@ export const curveto_absolute = (
  *
  * curveto_relative
  */
-export const curveto_relative = (
+export const c = (
     dx1: number,
     dy1: number,
     dx2: number,
@@ -147,7 +140,7 @@ export const curveto_relative = (
  *
  * smooth_curveto_absolute
  */
-export const smooth_curveto_absolute = (
+export const S = (
     x2: number,
     y2: number,
     x: number,
@@ -159,7 +152,7 @@ export const smooth_curveto_absolute = (
  *
  * smooth_curveto_relative
  */
-export const smooth_curveto_relative = (
+export const s = (
     dx2: number,
     dy2: number,
     dx: number,
@@ -173,7 +166,7 @@ export const smooth_curveto_relative = (
  *
  * quadratic_bezier_curveto_absolute
  */
-export const quadratic_bezier_curveto_absolute = (
+export const Q = (
     x1: number,
     y1: number,
     x: number,
@@ -185,7 +178,7 @@ export const quadratic_bezier_curveto_absolute = (
  *
  * quadratic_bezier_curveto_relative
  */
-export const quadratic_bezier_curveto_relative = (
+export const q = (
     dx1: number,
     dy1: number,
     dx: number,
@@ -199,7 +192,7 @@ export const quadratic_bezier_curveto_relative = (
  *
  * smooth_quadratic_bezier_curveto_absolute
  */
-export const smooth_quadratic_bezier_curveto_absolute = (
+export const T = (
     x: number,
     y: number,
 ) => { return "" }
@@ -209,7 +202,7 @@ export const smooth_quadratic_bezier_curveto_absolute = (
  *
  * smooth_quadratic_bezier_curveto_relative
  */
-export const smooth_quadratic_bezier_curveto_relative = (
+export const t = (
     dx: number,
     dy: number,
 ) => { return "" }
@@ -221,7 +214,7 @@ export const smooth_quadratic_bezier_curveto_relative = (
  *
  * elliptical_arc_absolute
  */
-export const elliptical_arc_absolute = (
+export const A = (
     rx: number,
     ry: number,
     angle: number,
@@ -236,7 +229,7 @@ export const elliptical_arc_absolute = (
  *
  * elliptical_arc_relative
  */
-export const elliptical_arc_relative = (
+export const a = (
     rx: number,
     ry: number,
     angle: number,
