@@ -3,6 +3,7 @@ import {
     Example2,
     Example3,
     Example4,
+    Example5,
 } from "./examples"
 
 export const PathTest = (_props: unknown): JSX.Element => {
@@ -26,6 +27,11 @@ export const PathTest = (_props: unknown): JSX.Element => {
             <div className="row text-center">
                 <div className="col">
                     <Example4 />
+                </div>
+            </div>
+            <div className="row text-center">
+                <div className="col">
+                    <Example5 />
                 </div>
             </div>
         </div>

@@ -110,28 +110,34 @@ export const v = (...x: number[]) => {
  *
  * curveto_absolute
  */
-export const C = (
+export const C = (...opts: [
     x1: number,
     y1: number,
     x2: number,
     y2: number,
     x: number,
     y: number,
-) => { return "C" }
+][]): string => {
+    const points = opts.map((opt) => `C ${opt[0]},${opt[1]} ${opt[2]},${opt[3]} ${opt[4]},${opt[5]}`)
+    return points.join(" ")
+}
 
 /**
  * `c`
  *
  * curveto_relative
  */
-export const c = (
+export const c = (...opts: [
     dx1: number,
     dy1: number,
     dx2: number,
     dy2: number,
     dx: number,
     dy: number,
-) => { return "c" }
+][]): string => {
+    const points = opts.map((opt) => `c ${opt[0]},${opt[1]} ${opt[2]},${opt[3]} ${opt[4]},${opt[5]}`)
+    return points.join(" ")
+}
 
 // -------------------------------------------------------------------------
 
@@ -140,24 +146,30 @@ export const c = (
  *
  * smooth_curveto_absolute
  */
-export const S = (
+export const S = (...opts: [
     x2: number,
     y2: number,
     x: number,
     y: number,
-) => { return "S" }
+][]): string => {
+    const points = opts.map((opt) => `S ${opt[0]},${opt[1]} ${opt[2]},${opt[3]}`)
+    return points.join(" ")
+}
 
 /**
  * `s`
  *
  * smooth_curveto_relative
  */
-export const s = (
+export const s = (...opts: [
     dx2: number,
     dy2: number,
     dx: number,
     dy: number,
-) => { return "s" }
+][]): string => {
+    const points = opts.map((opt) => `s ${opt[0]},${opt[1]} ${opt[2]},${opt[3]}`)
+    return points.join(" ")
+}
 
 // =========================================================================
 
