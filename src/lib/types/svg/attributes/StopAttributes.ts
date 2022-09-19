@@ -1,5 +1,5 @@
 import type { Property } from "csstype"
-import type { Color,Length } from "@types"
+import type { Color, Length } from "@types"
 
 /**
  * @see [MDN `<stop>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/stop)
@@ -26,7 +26,7 @@ export type StopAttributes = {
      *
      * @default "inline"
      */
-    display?: React.SVGProps<SVGStopElement>["display"]
+    display?: Property.Display
     /**
      * Defines the color of the gradient stop.
      * It can be used as a CSS property.

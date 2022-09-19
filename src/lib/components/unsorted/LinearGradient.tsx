@@ -1,3 +1,5 @@
+import type { SVGProps } from "react"
+
 import { Stop } from "./Stop"
 import type { StopProps } from "./Stop"
 
@@ -6,7 +8,7 @@ import type { Length } from "@src/lib/types"
 /**
  * All properties aside from `id` and `stops` & `className` are animatable.
  */
-export type LinearGradientProps = React.SVGProps<SVGLinearGradientElement> & {
+export type LinearGradientProps = SVGProps<SVGLinearGradientElement> & {
     id: string
     className?: string
     stops?: StopProps[]

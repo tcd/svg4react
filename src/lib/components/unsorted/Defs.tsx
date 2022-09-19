@@ -1,5 +1,7 @@
+import type { SVGProps } from "react"
+
 export interface DefsProps {
-    defs: React.SVGProps<SVGLinearGradientElement>[]
+    defs: SVGProps<SVGLinearGradientElement>[]
 }
 
 /**
