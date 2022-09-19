@@ -13,6 +13,24 @@ const { PROJECT_ROOT } = require("./helpers")
  * @type {import("webpack").Configuration}
  */
 const webpackConfig = {
+    mode: "development",
+    devtool: "inline-source-map",
+    /** @type {import("webpack").Configuration} */
+    devServer: {
+        // static: [
+        //     {
+        //         directory: path.join(PROJECT_ROOT, "dist"),
+        //     },
+        //     {
+        //         directory: path.join(PROJECT_ROOT, "src", "assets"),
+        //         publicPath: "/public",
+        //     },
+        // ],
+        historyApiFallback: true,
+        port: 7070,
+        allowedHosts: "all",
+        hot: true,
+    },
     entry: path.join(PROJECT_ROOT, "src", "client", "index.tsx"),
     output: {
         path: path.join(PROJECT_ROOT, "dist"),
