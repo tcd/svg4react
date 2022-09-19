@@ -3,3 +3,5 @@ ignore/**
 build
 dist
 docs/typedoc
+# docs/api-extractor
+tmp

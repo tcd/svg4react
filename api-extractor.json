@@ -135,7 +135,7 @@
     /**
      * (REQUIRED) Whether to generate an API report.
      */
-    "enabled": true
+    "enabled": true,
 
     /**
      * The filename for the API report files.  It will be combined with "reportFolder" or "reportTempFolder" to produce
@@ -146,7 +146,7 @@
      * SUPPORTED TOKENS: <packageName>, <unscopedPackageName>
      * DEFAULT VALUE: "<unscopedPackageName>.api.md"
      */
-    // "reportFileName": "<unscopedPackageName>.api.md",
+    "reportFileName": "<unscopedPackageName>.api.md",
 
     /**
      * Specifies the folder where the API report file is written.  The file name portion is determined by
@@ -161,7 +161,7 @@
      * SUPPORTED TOKENS: <projectFolder>, <packageName>, <unscopedPackageName>
      * DEFAULT VALUE: "<projectFolder>/temp/"
      */
-    // "reportFolder": "<projectFolder>/temp/",
+    "reportFolder": "<projectFolder>/docs/api-extractor/",
 
     /**
      * Specifies the folder where the temporary report file is written.  The file name portion is determined by
@@ -176,7 +176,7 @@
      * SUPPORTED TOKENS: <projectFolder>, <packageName>, <unscopedPackageName>
      * DEFAULT VALUE: "<projectFolder>/temp/"
      */
-    // "reportTempFolder": "<projectFolder>/temp/",
+    "reportTempFolder": "<projectFolder>/tmp/",
 
     /**
      * Whether "forgotten exports" should be included in the API report file. Forgotten exports are declarations

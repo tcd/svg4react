@@ -272,3 +272,25 @@ export const a = (...opts: [
     const points = opts.map((opt) => `a ${opt[0]},${opt[1]} ${opt[2]},${opt[3]},${opt[4]} ${opt[5]},${opt[6]}`)
     return points.join(" ")
 }
+
+export const DrawToFuncs = {
+    M,
+    m,
+    L,
+    l,
+    H,
+    h,
+    V,
+    v,
+    C,
+    c,
+    S,
+    s,
+    Q,
+    q,
+    T,
+    t,
+    A,
+    a,
+    Z,
+}

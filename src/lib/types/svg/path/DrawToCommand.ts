@@ -31,40 +31,40 @@ export type drawto_command =
 // Elliptical Arc Curve: A, a
 // ClosePath: Z, z
 
-export type Positioning = "absolute" | "relative"
-export type Direction = "horizontal" | "vertical" | "none"
-
-interface IDrawToCommand {
-    code: string
-    name: string
-    cat_1: DrawToCommandCategory
-    cat_2: drawto_command
-    position: Positioning
-    smooth: boolean
-}
-
-const IDrawToCommands: IDrawToCommand[] = [
-    { "code": "M", "cat_2": "moveto",                          "cat_1": "MoveTo",               "position": "absolute", "smooth": false, "name": "moveto_absolute" },
-    { "code": "m", "cat_2": "moveto",                          "cat_1": "MoveTo",               "position": "relative", "smooth": false, "name": "moveto_relative" },
-    { "code": "L", "cat_2": "lineto",                          "cat_1": "LineTo",               "position": "absolute", "smooth": false, "name": "lineto_absolute" },
-    { "code": "l", "cat_2": "lineto",                          "cat_1": "LineTo",               "position": "relative", "smooth": false, "name": "lineto_relative" },
-    { "code": "H", "cat_2": "horizontal_lineto",               "cat_1": "LineTo",               "position": "absolute", "smooth": false, "name": "horizontal_lineto_absolute" },
-    { "code": "h", "cat_2": "horizontal_lineto",               "cat_1": "LineTo",               "position": "relative", "smooth": false, "name": "horizontal_lineto_relative" },
-    { "code": "V", "cat_2": "vertical_lineto",                 "cat_1": "LineTo",               "position": "absolute", "smooth": false, "name": "vertical_lineto_absolute" },
-    { "code": "v", "cat_2": "vertical_lineto",                 "cat_1": "LineTo",               "position": "relative", "smooth": false, "name": "vertical_lineto_relative" },
-    { "code": "C", "cat_2": "curveto",                         "cat_1": "CurveTo",              "position": "absolute", "smooth": false, "name": "curveto_absolute" },
-    { "code": "c", "cat_2": "curveto",                         "cat_1": "CurveTo",              "position": "relative", "smooth": false, "name": "curveto_relative" },
-    { "code": "S", "cat_2": "smooth_curveto",                  "cat_1": "CubicBezierCurve",     "position": "absolute", "smooth": true,  "name": "smooth_curveto_absolute" },
-    { "code": "s", "cat_2": "smooth_curveto",                  "cat_1": "CubicBezierCurve",     "position": "relative", "smooth": true,  "name": "smooth_curveto_relative" },
-    { "code": "Q", "cat_2": "quadratic_bezier_curveto",        "cat_1": "QuadraticBezierCurve", "position": "absolute", "smooth": false, "name": "quadratic_bezier_curveto_absolute" },
-    { "code": "q", "cat_2": "quadratic_bezier_curveto",        "cat_1": "QuadraticBezierCurve", "position": "relative", "smooth": false, "name": "quadratic_bezier_curveto_relative" },
-    { "code": "T", "cat_2": "smooth_quadratic_bezier_curveto", "cat_1": "QuadraticBezierCurve", "position": "absolute", "smooth": true,  "name": "smooth_quadratic_bezier_curveto_absolute" },
-    { "code": "t", "cat_2": "smooth_quadratic_bezier_curveto", "cat_1": "QuadraticBezierCurve", "position": "relative", "smooth": true,  "name": "smooth_quadratic_bezier_curveto_relative" },
-    { "code": "A", "cat_2": "elliptical_arc",                  "cat_1": "EllipticalArcCurve",   "position": "absolute", "smooth": false, "name": "elliptical_arc_absolute" },
-    { "code": "a", "cat_2": "elliptical_arc",                  "cat_1": "EllipticalArcCurve",   "position": "relative", "smooth": false, "name": "elliptical_arc_relative" },
-    { "code": "Z", "cat_2": "closepath",                       "cat_1": "ClosePath",            "position": "absolute", "smooth": false, "name": "closepath_absolute" },
-    { "code": "z", "cat_2": "closepath",                       "cat_1": "ClosePath",            "position": "absolute", "smooth": false, "name": "closepath_absolute" },
-]
+// export type Positioning = "absolute" | "relative"
+// export type Direction = "horizontal" | "vertical" | "none"
+//
+// interface IDrawToCommand {
+//     code: string
+//     name: string
+//     cat_1: DrawToCommandCategory
+//     cat_2: drawto_command
+//     position: Positioning
+//     smooth: boolean
+// }
+//
+// const IDrawToCommands: IDrawToCommand[] = [
+//     { "code": "M", "cat_2": "moveto",                          "cat_1": "MoveTo",               "position": "absolute", "smooth": false, "name": "moveto_absolute" },
+//     { "code": "m", "cat_2": "moveto",                          "cat_1": "MoveTo",               "position": "relative", "smooth": false, "name": "moveto_relative" },
+//     { "code": "L", "cat_2": "lineto",                          "cat_1": "LineTo",               "position": "absolute", "smooth": false, "name": "lineto_absolute" },
+//     { "code": "l", "cat_2": "lineto",                          "cat_1": "LineTo",               "position": "relative", "smooth": false, "name": "lineto_relative" },
+//     { "code": "H", "cat_2": "horizontal_lineto",               "cat_1": "LineTo",               "position": "absolute", "smooth": false, "name": "horizontal_lineto_absolute" },
+//     { "code": "h", "cat_2": "horizontal_lineto",               "cat_1": "LineTo",               "position": "relative", "smooth": false, "name": "horizontal_lineto_relative" },
+//     { "code": "V", "cat_2": "vertical_lineto",                 "cat_1": "LineTo",               "position": "absolute", "smooth": false, "name": "vertical_lineto_absolute" },
+//     { "code": "v", "cat_2": "vertical_lineto",                 "cat_1": "LineTo",               "position": "relative", "smooth": false, "name": "vertical_lineto_relative" },
+//     { "code": "C", "cat_2": "curveto",                         "cat_1": "CurveTo",              "position": "absolute", "smooth": false, "name": "curveto_absolute" },
+//     { "code": "c", "cat_2": "curveto",                         "cat_1": "CurveTo",              "position": "relative", "smooth": false, "name": "curveto_relative" },
+//     { "code": "S", "cat_2": "smooth_curveto",                  "cat_1": "CubicBezierCurve",     "position": "absolute", "smooth": true,  "name": "smooth_curveto_absolute" },
+//     { "code": "s", "cat_2": "smooth_curveto",                  "cat_1": "CubicBezierCurve",     "position": "relative", "smooth": true,  "name": "smooth_curveto_relative" },
+//     { "code": "Q", "cat_2": "quadratic_bezier_curveto",        "cat_1": "QuadraticBezierCurve", "position": "absolute", "smooth": false, "name": "quadratic_bezier_curveto_absolute" },
+//     { "code": "q", "cat_2": "quadratic_bezier_curveto",        "cat_1": "QuadraticBezierCurve", "position": "relative", "smooth": false, "name": "quadratic_bezier_curveto_relative" },
+//     { "code": "T", "cat_2": "smooth_quadratic_bezier_curveto", "cat_1": "QuadraticBezierCurve", "position": "absolute", "smooth": true,  "name": "smooth_quadratic_bezier_curveto_absolute" },
+//     { "code": "t", "cat_2": "smooth_quadratic_bezier_curveto", "cat_1": "QuadraticBezierCurve", "position": "relative", "smooth": true,  "name": "smooth_quadratic_bezier_curveto_relative" },
+//     { "code": "A", "cat_2": "elliptical_arc",                  "cat_1": "EllipticalArcCurve",   "position": "absolute", "smooth": false, "name": "elliptical_arc_absolute" },
+//     { "code": "a", "cat_2": "elliptical_arc",                  "cat_1": "EllipticalArcCurve",   "position": "relative", "smooth": false, "name": "elliptical_arc_relative" },
+//     { "code": "Z", "cat_2": "closepath",                       "cat_1": "ClosePath",            "position": "absolute", "smooth": false, "name": "closepath_absolute" },
+//     { "code": "z", "cat_2": "closepath",                       "cat_1": "ClosePath",            "position": "absolute", "smooth": false, "name": "closepath_absolute" },
+// ]
 
 export enum DrawToCommandNames {
     "M" = "moveto_absolute",

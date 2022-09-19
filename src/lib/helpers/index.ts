@@ -1,2 +1,2 @@
-export * as DrawToFuncs from "./DrawToFuncs"
+export { DrawToFuncs } from "./DrawToFuncs"
 export * from "./CmdProp"

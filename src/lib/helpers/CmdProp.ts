@@ -1,5 +1,5 @@
 import type { DrawToCommandName } from "@types"
-import * as DrawToFuncs from "./DrawToFuncs"
+import { DrawToFuncs } from "./DrawToFuncs"
 
 export type M_args = Parameters<typeof DrawToFuncs.M>
 export type m_args = Parameters<typeof DrawToFuncs.m>
