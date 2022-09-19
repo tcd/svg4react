@@ -2,6 +2,19 @@
 
 ## Resources
 
+### TypeScript
+
+- Types
+    - [microsoft/typescript/lib/lib.dom.d.ts](https://github.com/microsoft/TypeScript/blob/main/lib/lib.dom.d.ts)
+    - [frenic/csstype - `Property`](https://github.com/frenic/csstype/blob/a74b9eec120395c9b781e045057fada3a19f29ae/index.d.ts#L18031)
+- Animation
+    - [adobe-webplatform/Snap.svg](https://github.com/adobe-webplatform/Snap.svg)
+- Misc (haven't looked at these, they may be relevant)
+    - [d3/d3](https://github.com/d3/d3)
+
+
+### Standards & References
+
 - SVG Elements:
     - [MDN - SVG Element Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element)
     - `<defs>`
@@ -16,7 +29,13 @@
 - [MDN - SVG Presentation Attributes](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/Presentation)
 - Paths
     - [W3C - SVG 2 - Paths](https://www.w3.org/TR/SVG/paths.html)
+- Namespaces
+    - [MDN - Namespaces crash course](https://developer.mozilla.org/en-US/docs/Web/SVG/Namespaces_Crash_Course)
 
-## Deprecated
+### Deprecated
 
 - [`<altGlyph>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/altGlyph)
+
+### Editor Support
+
+- [microsoft/vscode-typescript-next](https://github.com/microsoft/vscode-typescript-next)
