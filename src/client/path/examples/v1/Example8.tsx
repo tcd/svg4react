@@ -1,5 +1,5 @@
 import { Path, PathProps } from "@src/lib/components"
-import { ExampleCard } from "./ExampleCard"
+import { ExampleCard } from "../ExampleCard"
 
 // An open shape with the last point of
 // the path different to the first one

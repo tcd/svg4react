@@ -4,7 +4,7 @@ import {
     Circle,
     G,
 } from "@src/lib/components"
-import { ExampleCard } from "./ExampleCard"
+import { ExampleCard } from "../ExampleCard"
 
 // Quadratic Bézier curve with implicit repetition
 const pathProps: PathProps = {

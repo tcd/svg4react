@@ -1,5 +1,5 @@
 import { Path, PathProps } from "@src/lib/components"
-import { ExampleCard } from "./ExampleCard"
+import { ExampleCard } from "../ExampleCard"
 
 const shared: Partial<PathProps> = {
     fill: "none",

@@ -1,5 +1,5 @@
 import { Path, PathProps } from "@src/lib/components"
-import { ExampleCard } from "./ExampleCard"
+import { ExampleCard } from "../ExampleCard"
 
 const pathProps_a: PathProps = {
     id: "example-7a",

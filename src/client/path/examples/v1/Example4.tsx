@@ -1,5 +1,5 @@
 import { Path, PathProps } from "@src/lib/components"
-import { ExampleCard } from "./ExampleCard"
+import { ExampleCard } from "../ExampleCard"
 
 // LineTo commands with absolute coordinates
 const pathProps_1: PathProps = {
