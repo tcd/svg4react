@@ -6,8 +6,8 @@ const pathProps_a: PathProps = {
     fill: "none",
     stroke: "indianred",
     commands: [
-        { cmd: "M", args: [[6,10]] },
-        { cmd: "A", args: [[6, 4, 10, 1, 0, 14,10]] },
+        ["M", [[6,10]]                  ],
+        ["A", [[6, 4, 10, 1, 0, 14,10]] ],
     ],
 }
 
@@ -16,8 +16,8 @@ const pathProps_b: PathProps = {
     fill: "none",
     stroke: "lime",
     commands: [
-        { cmd: "M", args: [[6,10]] },
-        { cmd: "A", args: [[6, 4, 10, 1, 1, 14,10]] },
+        ["M", [[6,10]] ],
+        ["A", [[6, 4, 10, 1, 1, 14,10]] ],
     ],
 }
 
@@ -26,8 +26,8 @@ const pathProps_c: PathProps = {
     fill: "none",
     stroke: "rebeccapurple",
     commands: [
-        { cmd: "M", args: [[6,10]] },
-        { cmd: "A", args: [[6, 4, 10, 0, 1, 14,10]] },
+        ["M", [[6,10]] ],
+        ["A", [[6, 4, 10, 0, 1, 14,10]] ],
     ],
 }
 
@@ -36,8 +36,8 @@ const pathProps_d: PathProps = {
     fill: "none",
     stroke: "violet",
     commands: [
-        { cmd: "M", args: [[6,10]] },
-        { cmd: "A", args: [[6, 4, 10, 0, 0, 14,10]] },
+        ["M", [[6,10]] ],
+        ["A", [[6, 4, 10, 0, 0, 14,10]] ],
     ],
 }
 
@@ -46,7 +46,7 @@ const pathProps_d: PathProps = {
  */
 export const Example7 = (_props: unknown): JSX.Element => {
     return (
-        <ExampleCard title="Elliptical Arc Curve" url="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d#elliptical_arc_curve">
+        <ExampleCard title="Elliptical Arc Curve (v1.5)" url="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d#elliptical_arc_curve">
             <svg
                 width="100px"
                 height="100px"

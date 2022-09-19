@@ -1,7 +1,4 @@
-import {
-    PathV1_5 as Path,
-    PathV1_5Props as PathProps,
-} from "@src/lib/components"
+import { Path, PathProps } from "@src/lib/components"
 import { ExampleCard } from "../ExampleCard"
 
 const pathProps: PathProps = {

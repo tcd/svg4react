@@ -15,6 +15,8 @@
         "start": "npm run serve",
         "serve": "cross-env NODE_ENV=development webpack-dev-server --config ./etc/config/webpack.config.js --open",
         "tag": "node ./etc/scripts/tag.mjs",
+        "build": "npm run clean && npm run build:api && npm run docs:api",
+        "clean": "cross-env rimraf ./build/**/*",
         "build:api": "cross-env tsc --p ./tsconfig.docs.json",
         "docs:api": "cross-env api-extractor run --local --verbose",
         "docs:tsdoc": "cross-env typedoc --options ./typedoc.json"

@@ -1,6 +1,6 @@
 import {
-    PathV1_5 as Path,
-    PathV1_5Props as PathProps,
+    Path,
+    PathProps,
     Circle,
     G,
 } from "@src/lib/components"

@@ -7,10 +7,10 @@ const pathProps_1: PathProps = {
     fill: "none",
     stroke: "indianred",
     commands: [
-        { cmd: "M", args: [[10,10]] },
-        { cmd: "L", args: [[90,90]] },
-        { cmd: "V", args: [10] },
-        { cmd: "H", args: [50] },
+        [ "M", [[10,10]] ],
+        [ "L", [[90,90]] ],
+        [ "V", [10]      ],
+        [ "H", [50]      ],
     ],
 }
 
@@ -20,10 +20,10 @@ const pathProps_2: PathProps = {
     fill: "none",
     stroke: "indianred",
     commands: [
-        { cmd: "M", args: [[110,10]] },
-        { cmd: "l", args: [[80,80]] },
-        { cmd: "v", args: [-80] },
-        { cmd: "h", args: [-40] },
+        [ "M", [[110,10]] ],
+        [ "l", [[80,80]]  ],
+        [ "v", [-80]      ],
+        [ "h", [-40]      ],
     ],
 }
 
@@ -32,7 +32,7 @@ const pathProps_2: PathProps = {
  */
 export const Example4 = (_props: unknown): JSX.Element => {
     return (
-        <ExampleCard title="LineTo" url="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d#lineto_path_commands">
+        <ExampleCard title="LineTo (v1.5)" url="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d#lineto_path_commands">
             <svg
                 width="200px"
                 height="100px"
