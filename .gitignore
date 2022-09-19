@@ -5,3 +5,4 @@ dist
 docs/typedoc
 # docs/api-extractor
 tmp
+tsdoc-metadata.json
