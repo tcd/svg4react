@@ -1,6 +1,5 @@
-import type { Property } from "csstype"
-
 declare module "svg4react" {
+    import type { Property } from "csstype"
 
     /**
      * @public
