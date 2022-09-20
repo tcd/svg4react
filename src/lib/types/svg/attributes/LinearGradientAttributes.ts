@@ -1,5 +1,3 @@
-import type { Length } from "@types"
-
 /**
  * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Element/linearGradient
  */
@@ -39,7 +37,7 @@ export type LinearGradientAttributes = {
      *
      * @default "0%"
      */
-    x1?: Length
+    x1?: string | number
     /**
      * This attribute defines the x coordinate of the ending point of the vector gradient along which the linear gradient is drawn.
      *
@@ -47,7 +45,7 @@ export type LinearGradientAttributes = {
      *
      * @default "100%"
      */
-    x2?: Length
+    x2?: string | number
     /**
      * This attribute defines the y coordinate of the starting point of the vector gradient along which the linear gradient is drawn.
      *
@@ -55,7 +53,7 @@ export type LinearGradientAttributes = {
      *
      * @default "0%"
      */
-    y1?: Length
+    y1?: string | number
     /**
      * This attribute defines the y coordinate of the ending point of the vector gradient along which the linear gradient is drawn.
      *
@@ -63,5 +61,38 @@ export type LinearGradientAttributes = {
      *
      * @default "0%"
      */
-    y2?: Length
+    y2?: string | number
 }
+
+
+// /**
+//  * @see [MDN - SVG Presentation Attributes](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/Presentation)
+//  */
+// export const LinearGradientAttributes = {
+//     clipPath:           "clip-path",
+//     clipRule:           "clip-rule",
+//     color:              "color",
+//     colorInterpolation: "color-interpolation",
+//     colorRendering:     "color-rendering",
+//     cursor:             "cursor",
+//     display:            "display",
+//     fill:               "fill",
+//     fillOpacity:        "fill-opacity",
+//     fillRule:           "fill-rule",
+//     filter:             "filter",
+//     mask:               "mask",
+//     opacity:            "opacity",
+//     pointerEvents:      "pointer-events",
+//     shapeRendering:     "shape-rendering",
+//     stroke:             "stroke",
+//     strokeDasharray:    "stroke-dasharray",
+//     strokeDashoffset:   "stroke-dashoffset",
+//     strokeLinecap:      "stroke-linecap",
+//     strokeLinejoin:     "stroke-linejoin",
+//     strokeMiterlimit:   "stroke-miterlimit",
+//     strokeOpacity:      "stroke-opacity",
+//     strokeWidth:        "stroke-width",
+//     transform:          "transform",
+//     vectorEffect:       "vector-effect",
+//     visibility:         "visibility",
+// } as const
