@@ -3,6 +3,6 @@ ignore/**
 build
 dist
 docs/typedoc
-# docs/api-extractor
+docs/api-documenter
 tmp
 tsdoc-metadata.json

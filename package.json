@@ -20,10 +20,10 @@
         "serve": "cross-env NODE_ENV=development webpack-dev-server --config ./etc/config/webpack.config.js --open",
         "tag": "node ./etc/scripts/tag.mjs",
         "clean": "node ./etc/scripts/clean.mjs",
-        "build": "npm run clean && npm run build:api && npm run docs:api",
+        "build": "npm run clean && npm run build:api && npm run docs:api && npm run build:docs",
         "debug": "cross-env tsc --p ./tsconfig.docs.json --traceResolution > trace.log",
         "build:api": "cross-env tsc --p ./tsconfig.docs.json --declaration --emitDeclarationOnly",
-        "build:docs": "cross-env api-documenter markdown --input-folder ./build/api-extractor --output-folder ./build/api-documenter",
+        "build:docs": "cross-env api-documenter markdown --input-folder ./build/api-extractor --output-folder ./docs/api-documenter",
         "docs:api": "cross-env api-extractor run --local --verbose",
         "docs:tsdoc": "cross-env typedoc --options ./typedoc.json"
     },
