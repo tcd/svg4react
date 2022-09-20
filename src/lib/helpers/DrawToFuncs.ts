@@ -226,7 +226,7 @@ export const a = (...opts: DrawToArgs.a[]): string => {
 }
 
 /**
- * @public
+ * @internal
  */
 export const DrawToFuncs = {
     M,

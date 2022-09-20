@@ -23,6 +23,7 @@
         "build": "npm run clean && npm run build:api && npm run docs:api",
         "debug": "cross-env tsc --p ./tsconfig.docs.json --traceResolution > trace.log",
         "build:api": "cross-env tsc --p ./tsconfig.docs.json --declaration --emitDeclarationOnly",
+        "build:docs": "cross-env api-documenter markdown --input-folder ./build/api-extractor --output-folder ./build/api-documenter",
         "docs:api": "cross-env api-extractor run --local --verbose",
         "docs:tsdoc": "cross-env typedoc --options ./typedoc.json"
     },
@@ -37,6 +38,7 @@
         "@babel/preset-react": "^7.18.6",
         "@babel/preset-typescript": "^7.18.6",
         "@babel/runtime": "^7.19.0",
+        "@microsoft/api-documenter": "^7.19.13",
         "@microsoft/api-extractor": "^7.31.1",
         "@types/globby": "^9.1.0",
         "@types/node": "^18.7.18",

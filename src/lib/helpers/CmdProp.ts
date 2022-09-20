@@ -34,7 +34,7 @@ export type CmdProp =
     | TCmdProp<"Z", DrawToArgs.Z>
 
 /**
- * @public
+ * @internal
  */
 export const buildDrawing = (commands: CmdProp[]): string => {
     return commands.map((cmd) => {
