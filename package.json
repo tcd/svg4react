@@ -22,7 +22,7 @@
         "clean": "node ./etc/scripts/clean.mjs",
         "build": "npm run clean && npm run build:api && npm run docs:api",
         "debug": "cross-env tsc --p ./tsconfig.docs.json --traceResolution > trace.log",
-        "build:api": "cross-env tsc --p ./tsconfig.docs.json",
+        "build:api": "cross-env tsc --p ./tsconfig.docs.json --declaration --emitDeclarationOnly",
         "docs:api": "cross-env api-extractor run --local --verbose",
         "docs:tsdoc": "cross-env typedoc --options ./typedoc.json"
     },

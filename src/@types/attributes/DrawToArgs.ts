@@ -1,15 +1,15 @@
 declare module "svg4react" {
     // eslint-disable-next-line @typescript-eslint/no-namespace
     export namespace DrawToArgs {
-        export type M = [x: number, y: number]
-        export type m = [dx: number, dy: number]
-        export type L = [x: number, y: number]
-        export type l = [dx: number, dy: number]
-        export type H = number
-        export type h = number
-        export type V = number
-        export type v = number
-        export type C = [
+        type M = [x: number, y: number]
+        type m = [dx: number, dy: number]
+        type L = [x: number, y: number]
+        type l = [dx: number, dy: number]
+        type H = number
+        type h = number
+        type V = number
+        type v = number
+        type C = [
             x1: number, y1: number,
             x2: number, y2: number,
             x: number,  y: number,
