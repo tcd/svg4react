@@ -16,9 +16,6 @@ export type A_args = Parameters<typeof DrawToFuncs.A>;
 export type a_args = Parameters<typeof DrawToFuncs.a>;
 
 // @public (undocumented)
-export type AbsoluteLength = Centimeters | Millimeters | QuarterMillimeters | Inches | Picas | Points | Pixels;
-
-// @public (undocumented)
 export const buildDrawing: (commands: CmdProp[]) => string;
 
 // @public (undocumented)
@@ -27,21 +24,14 @@ export type C_args = Parameters<typeof DrawToFuncs.C>;
 // @public (undocumented)
 export type c_args = Parameters<typeof DrawToFuncs.c>;
 
-// @public
-export type Centimeters = `${number}cm` | `${number}.${number}cm`;
-
-// @public
-export type CH = `${number}ch` | `${number}.${number}ch`;
-
 // @public (undocumented)
 export const Circle: (props: CircleProps) => JSX.Element;
 
 // @public (undocumented)
 export interface CircleAttributes {
-    // Warning: (ae-forgotten-export) The symbol "Length_2" needs to be exported by the entry point index.d.ts
-    cx: Length_2;
-    cy: Length_2;
-    r: Length_2;
+    cx: number | string;
+    cy: number | string;
+    r: number | string;
 }
 
 // Warning: (ae-forgotten-export) The symbol "CircleAttributes_2" needs to be exported by the entry point index.d.ts
@@ -51,9 +41,6 @@ export type CircleProps = Omit<SVGProps<SVGCircleElement>, keyof CircleAttribute
 
 // @public (undocumented)
 export type CmdProp = TCmdProp<"M", M_args> | TCmdProp<"m", m_args> | TCmdProp<"L", L_args> | TCmdProp<"l", l_args> | TCmdProp<"H", H_args> | TCmdProp<"h", h_args> | TCmdProp<"V", V_args> | TCmdProp<"v", v_args> | TCmdProp<"C", C_args> | TCmdProp<"c", c_args> | TCmdProp<"S", S_args> | TCmdProp<"s", s_args> | TCmdProp<"Q", Q_args> | TCmdProp<"q", q_args> | TCmdProp<"T", T_args> | TCmdProp<"t", t_args> | TCmdProp<"A", A_args> | TCmdProp<"a", a_args> | TCmdProp<"Z", Z_args>;
-
-// @public
-export type Color = string & {};
 
 // @public (undocumented)
 export type DrawToCommandDescription = typeof DrawToCommandNames[DrawToCommandName];
@@ -176,18 +163,6 @@ export const DrawToFuncs: {
     Z: () => string;
 };
 
-// @public
-export type DVH = `${number}dvh`;
-
-// @public
-export type DVW = `${number}dvw`;
-
-// @public
-export type EM = `${number}em` | `${number}.${number}em`;
-
-// @public
-export type EX = `${number}ex` | `${number}.${number}ex`;
-
 // @public (undocumented)
 export const G: ForwardRefExoticComponent<Pick<SVGProps<SVGGElement>, "string" | "className" | "color" | "height" | "id" | "lang" | "max" | "media" | "method" | "min" | "name" | "style" | "target" | "type" | "width" | "role" | "tabIndex" | "crossOrigin" | "accentHeight" | "accumulate" | "additive" | "alignmentBaseline" | "allowReorder" | "alphabetic" | "amplitude" | "arabicForm" | "ascent" | "attributeName" | "attributeType" | "autoReverse" | "azimuth" | "baseFrequency" | "baselineShift" | "baseProfile" | "bbox" | "begin" | "bias" | "by" | "calcMode" | "capHeight" | "clip" | "clipPath" | "clipPathUnits" | "clipRule" | "colorInterpolation" | "colorInterpolationFilters" | "colorProfile" | "colorRendering" | "contentScriptType" | "contentStyleType" | "cursor" | "cx" | "cy" | "d" | "decelerate" | "descent" | "diffuseConstant" | "direction" | "display" | "divisor" | "dominantBaseline" | "dur" | "dx" | "dy" | "edgeMode" | "elevation" | "enableBackground" | "end" | "exponent" | "externalResourcesRequired" | "fill" | "fillOpacity" | "fillRule" | "filter" | "filterRes" | "filterUnits" | "floodColor" | "floodOpacity" | "focusable" | "fontFamily" | "fontSize" | "fontSizeAdjust" | "fontStretch" | "fontStyle" | "fontVariant" | "fontWeight" | "format" | "fr" | "from" | "fx" | "fy" | "g1" | "g2" | "glyphName" | "glyphOrientationHorizontal" | "glyphOrientationVertical" | "glyphRef" | "gradientTransform" | "gradientUnits" | "hanging" | "horizAdvX" | "horizOriginX" | "href" | "ideographic" | "imageRendering" | "in2" | "in" | "intercept" | "k1" | "k2" | "k3" | "k4" | "k" | "kernelMatrix" | "kernelUnitLength" | "kerning" | "keyPoints" | "keySplines" | "keyTimes" | "lengthAdjust" | "letterSpacing" | "lightingColor" | "limitingConeAngle" | "local" | "markerEnd" | "markerHeight" | "markerMid" | "markerStart" | "markerUnits" | "markerWidth" | "mask" | "maskContentUnits" | "maskUnits" | "mathematical" | "mode" | "numOctaves" | "offset" | "opacity" | "operator" | "order" | "orient" | "orientation" | "origin" | "overflow" | "overlinePosition" | "overlineThickness" | "paintOrder" | "panose1" | "path" | "pathLength" | "patternContentUnits" | "patternTransform" | "patternUnits" | "pointerEvents" | "points" | "pointsAtX" | "pointsAtY" | "pointsAtZ" | "preserveAlpha" | "preserveAspectRatio" | "primitiveUnits" | "r" | "radius" | "refX" | "refY" | "renderingIntent" | "repeatCount" | "repeatDur" | "requiredExtensions" | "requiredFeatures" | "restart" | "result" | "rotate" | "rx" | "ry" | "scale" | "seed" | "shapeRendering" | "slope" | "spacing" | "specularConstant" | "specularExponent" | "speed" | "spreadMethod" | "startOffset" | "stdDeviation" | "stemh" | "stemv" | "stitchTiles" | "stopColor" | "stopOpacity" | "strikethroughPosition" | "strikethroughThickness" | "stroke" | "strokeDasharray" | "strokeDashoffset" | "strokeLinecap" | "strokeLinejoin" | "strokeMiterlimit" | "strokeOpacity" | "strokeWidth" | "surfaceScale" | "systemLanguage" | "tableValues" | "targetX" | "targetY" | "textAnchor" | "textDecoration" | "textLength" | "textRendering" | "to" | "transform" | "u1" | "u2" | "underlinePosition" | "underlineThickness" | "unicode" | "unicodeBidi" | "unicodeRange" | "unitsPerEm" | "vAlphabetic" | "values" | "vectorEffect" | "version" | "vertAdvY" | "vertOriginX" | "vertOriginY" | "vHanging" | "vIdeographic" | "viewBox" | "viewTarget" | "visibility" | "vMathematical" | "widths" | "wordSpacing" | "writingMode" | "x1" | "x2" | "x" | "xChannelSelector" | "xHeight" | "xlinkActuate" | "xlinkArcrole" | "xlinkHref" | "xlinkRole" | "xlinkShow" | "xlinkTitle" | "xlinkType" | "xmlBase" | "xmlLang" | "xmlns" | "xmlnsXlink" | "xmlSpace" | "y1" | "y2" | "y" | "yChannelSelector" | "z" | "zoomAndPan" | "aria-activedescendant" | "aria-atomic" | "aria-autocomplete" | "aria-busy" | "aria-checked" | "aria-colcount" | "aria-colindex" | "aria-colspan" | "aria-controls" | "aria-current" | "aria-describedby" | "aria-details" | "aria-disabled" | "aria-dropeffect" | "aria-errormessage" | "aria-expanded" | "aria-flowto" | "aria-grabbed" | "aria-haspopup" | "aria-hidden" | "aria-invalid" | "aria-keyshortcuts" | "aria-label" | "aria-labelledby" | "aria-level" | "aria-live" | "aria-modal" | "aria-multiline" | "aria-multiselectable" | "aria-orientation" | "aria-owns" | "aria-placeholder" | "aria-posinset" | "aria-pressed" | "aria-readonly" | "aria-relevant" | "aria-required" | "aria-roledescription" | "aria-rowcount" | "aria-rowindex" | "aria-rowspan" | "aria-selected" | "aria-setsize" | "aria-sort" | "aria-valuemax" | "aria-valuemin" | "aria-valuenow" | "aria-valuetext" | "children" | "dangerouslySetInnerHTML" | "onCopy" | "onCopyCapture" | "onCut" | "onCutCapture" | "onPaste" | "onPasteCapture" | "onCompositionEnd" | "onCompositionEndCapture" | "onCompositionStart" | "onCompositionStartCapture" | "onCompositionUpdate" | "onCompositionUpdateCapture" | "onFocus" | "onFocusCapture" | "onBlur" | "onBlurCapture" | "onChange" | "onChangeCapture" | "onBeforeInput" | "onBeforeInputCapture" | "onInput" | "onInputCapture" | "onReset" | "onResetCapture" | "onSubmit" | "onSubmitCapture" | "onInvalid" | "onInvalidCapture" | "onLoad" | "onLoadCapture" | "onError" | "onErrorCapture" | "onKeyDown" | "onKeyDownCapture" | "onKeyPress" | "onKeyPressCapture" | "onKeyUp" | "onKeyUpCapture" | "onAbort" | "onAbortCapture" | "onCanPlay" | "onCanPlayCapture" | "onCanPlayThrough" | "onCanPlayThroughCapture" | "onDurationChange" | "onDurationChangeCapture" | "onEmptied" | "onEmptiedCapture" | "onEncrypted" | "onEncryptedCapture" | "onEnded" | "onEndedCapture" | "onLoadedData" | "onLoadedDataCapture" | "onLoadedMetadata" | "onLoadedMetadataCapture" | "onLoadStart" | "onLoadStartCapture" | "onPause" | "onPauseCapture" | "onPlay" | "onPlayCapture" | "onPlaying" | "onPlayingCapture" | "onProgress" | "onProgressCapture" | "onRateChange" | "onRateChangeCapture" | "onSeeked" | "onSeekedCapture" | "onSeeking" | "onSeekingCapture" | "onStalled" | "onStalledCapture" | "onSuspend" | "onSuspendCapture" | "onTimeUpdate" | "onTimeUpdateCapture" | "onVolumeChange" | "onVolumeChangeCapture" | "onWaiting" | "onWaitingCapture" | "onAuxClick" | "onAuxClickCapture" | "onClick" | "onClickCapture" | "onContextMenu" | "onContextMenuCapture" | "onDoubleClick" | "onDoubleClickCapture" | "onDrag" | "onDragCapture" | "onDragEnd" | "onDragEndCapture" | "onDragEnter" | "onDragEnterCapture" | "onDragExit" | "onDragExitCapture" | "onDragLeave" | "onDragLeaveCapture" | "onDragOver" | "onDragOverCapture" | "onDragStart" | "onDragStartCapture" | "onDrop" | "onDropCapture" | "onMouseDown" | "onMouseDownCapture" | "onMouseEnter" | "onMouseLeave" | "onMouseMove" | "onMouseMoveCapture" | "onMouseOut" | "onMouseOutCapture" | "onMouseOver" | "onMouseOverCapture" | "onMouseUp" | "onMouseUpCapture" | "onSelect" | "onSelectCapture" | "onTouchCancel" | "onTouchCancelCapture" | "onTouchEnd" | "onTouchEndCapture" | "onTouchMove" | "onTouchMoveCapture" | "onTouchStart" | "onTouchStartCapture" | "onPointerDown" | "onPointerDownCapture" | "onPointerMove" | "onPointerMoveCapture" | "onPointerUp" | "onPointerUpCapture" | "onPointerCancel" | "onPointerCancelCapture" | "onPointerEnter" | "onPointerEnterCapture" | "onPointerLeave" | "onPointerLeaveCapture" | "onPointerOver" | "onPointerOverCapture" | "onPointerOut" | "onPointerOutCapture" | "onGotPointerCapture" | "onGotPointerCaptureCapture" | "onLostPointerCapture" | "onLostPointerCaptureCapture" | "onScroll" | "onScrollCapture" | "onWheel" | "onWheelCapture" | "onAnimationStart" | "onAnimationStartCapture" | "onAnimationEnd" | "onAnimationEndCapture" | "onAnimationIteration" | "onAnimationIterationCapture" | "onTransitionEnd" | "onTransitionEndCapture" | "key"> & RefAttributes<SVGGElement>>;
 
@@ -197,9 +172,6 @@ export type H_args = Parameters<typeof DrawToFuncs.H>;
 // @public (undocumented)
 export type h_args = Parameters<typeof DrawToFuncs.h>;
 
-// @public
-export type Inches = `${number}in` | `${number}.${number}in`;
-
 // @public (undocumented)
 export type L_args = Parameters<typeof DrawToFuncs.L>;
 
@@ -207,37 +179,22 @@ export type L_args = Parameters<typeof DrawToFuncs.L>;
 export type l_args = Parameters<typeof DrawToFuncs.l>;
 
 // @public (undocumented)
-export type Length = number | RelativeLength | AbsoluteLength | Percentage;
-
-// @public
-export type LH = `${number}lh` | `${number}.${number}lh`;
-
-// @public (undocumented)
 export type LinearGradientAttributes = {
     gradientUnits?: "userSpaceOnUse" | "objectBoundingBox";
     gradientTransform?: string;
     href?: string;
     spreadMethod?: "pad" | "reflect" | "repeat";
-    x1?: Length_2;
-    x2?: Length_2;
-    y1?: Length_2;
-    y2?: Length_2;
+    x1?: string | number;
+    x2?: string | number;
+    y1?: string | number;
+    y2?: string | number;
 };
-
-// @public
-export type LVH = `${number}lvh`;
-
-// @public
-export type LVW = `${number}lvw`;
 
 // @public (undocumented)
 export type M_args = Parameters<typeof DrawToFuncs.M>;
 
 // @public (undocumented)
 export type m_args = Parameters<typeof DrawToFuncs.m>;
-
-// @public
-export type Millimeters = `${number}mm` | `${number}.${number}mm`;
 
 // @public (undocumented)
 export const Path: (props: PathProps) => JSX.Element;
@@ -250,37 +207,11 @@ export type PathProps = {
     stroke?: any;
 };
 
-// Warning: (ae-forgotten-export) The symbol "ZeroToOneHundred_2" needs to be exported by the entry point index.d.ts
-//
-// @public (undocumented)
-export type Percentage = `${ZeroToOneHundred_2}%` | `${ZeroToOneHundred_2}.${ZeroToOneHundred_2}%`;
-
-// @public
-export type Picas = `${number}pc` | `${number}.${number}pc`;
-
-// @public
-export type Pixels = `${number}px` | `${number}.${number}px`;
-
-// @public
-export type Points = `${number}pt` | `${number}.${number}pt`;
-
 // @public (undocumented)
 export type Q_args = Parameters<typeof DrawToFuncs.Q>;
 
 // @public (undocumented)
 export type q_args = Parameters<typeof DrawToFuncs.q>;
-
-// @public
-export type QuarterMillimeters = `${number}Q` | `${number}.${number}Q`;
-
-// @public (undocumented)
-export type RelativeLength = EM | EX | CH | REM | LH | RLH | VW | VH | VMIN | VMAX | VB | VI | SVW | LVW | DVW | SVH | LVH | DVH;
-
-// @public
-export type REM = `${number}rem` | `${number}.${number}rem`;
-
-// @public
-export type RLH = `${number}rlh` | `${number}.${number}rlh`;
 
 // @public (undocumented)
 export type S_args = Parameters<typeof DrawToFuncs.S>;
@@ -293,10 +224,10 @@ export const Stop: (props: StopProps) => JSX.Element;
 
 // @public (undocumented)
 export type StopAttributes = {
-    offset?: Length_2;
-    color?: Color_2;
+    offset?: string | number;
+    color?: string;
     display?: Property.Display;
-    stopColor?: Color_2;
+    stopColor?: string;
     stopOpacity?: number;
     visibility?: Property.Visibility;
 };
@@ -367,12 +298,6 @@ export interface SvgPresentationAttributes {
     writingMode?: Property.WritingMode;
 }
 
-// @public
-export type SVH = `${number}svh`;
-
-// @public
-export type SVW = `${number}svw`;
-
 // @public (undocumented)
 export type T_args = Parameters<typeof DrawToFuncs.T>;
 
@@ -396,31 +321,12 @@ export type V_args = Parameters<typeof DrawToFuncs.V>;
 // @public (undocumented)
 export type v_args = Parameters<typeof DrawToFuncs.v>;
 
-// @public
-export type VB = `${number}vb`;
-
-// @public
-export type VH = `${number}vh` | `${number}.${number}vh`;
-
-// @public
-export type VI = `${number}vi`;
-
-// @public
-export type VMAX = `${number}vmax`;
-
-// @public
-export type VMIN = `${number}vmin`;
-
-// @public
-export type VW = `${number}vw` | `${number}.${number}vw`;
-
 // @public (undocumented)
 export type Z_args = Parameters<typeof DrawToFuncs.Z>;
 
 // Warnings were encountered during analysis:
 //
 // src/lib/components/unsorted/paths/Path.tsx:7:5 - (ae-forgotten-export) The symbol "CmdProp_2" needs to be exported by the entry point index.d.ts
-// src/lib/types/svg/attributes/StopAttributes.ts:20:5 - (ae-forgotten-export) The symbol "Color_2" needs to be exported by the entry point index.d.ts
 
 // (No @packageDocumentation comment for this package)
 
