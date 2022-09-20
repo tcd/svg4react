@@ -1,6 +1,5 @@
-import type { DrawToCommandName } from "@types"
 import { DrawToFuncs } from "./DrawToFuncs"
-import { DrawToArgs } from "svg4react"
+import type { DrawToArgs, DrawToCommandName } from "svg4react"
 
 /**
  * @public
