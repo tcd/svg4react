@@ -1,6 +1,6 @@
 import type { SVGProps } from "react"
 
-import type { StopAttributes } from "@src/lib/types"
+import type { StopAttributes } from "svg4react"
 
 /**
  * @public

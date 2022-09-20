@@ -6,6 +6,7 @@
     "author": "Clay Dunston <dunstontc@gmail.com>",
     "repository": "github:tcd/svg4react",
     "bugs": "https://github.com/tcd/svg4react/issues",
+    "types": "./src/@types/svg4react.d.ts",
     "files": [
         "./src/lib"
     ],

@@ -1,3 +1,5 @@
+import type { DrawToArgs } from "svg4react"
+
 // /**
 //  * `Z`
 //  *
@@ -26,7 +28,7 @@ export const Z = () => { return "Z" }
  *
  * moveto_absolute
  */
-export const M = (...args: [x: number, y: number][]) => {
+export const M = (...args: DrawToArgs.m[]) => {
     const points = args.map((xy) => xy.join(","))
     return ["M", ...points].join(" ")
 }
@@ -36,7 +38,7 @@ export const M = (...args: [x: number, y: number][]) => {
  *
  * moveto_relative
  */
-export const m = (...args: [dx: number, dy: number][]) => {
+export const m = (...args: DrawToArgs.m[]) => {
     const points = args.map((dXdY) => dXdY.join(","))
     return ["m", ...points].join(" ")
 }
@@ -48,7 +50,7 @@ export const m = (...args: [dx: number, dy: number][]) => {
  *
  * lineto_absolute
  */
-export const L = (...args: [x: number, y: number][]) => {
+export const L = (...args: DrawToArgs.L[]) => {
     const points = args.map((xy) => xy.join(","))
     return ["L", ...points].join(" ")
 }
@@ -58,7 +60,7 @@ export const L = (...args: [x: number, y: number][]) => {
  *
  * lineto_relative
  */
-export const l = (...args: [dx: number, dy: number][]) => {
+export const l = (...args: DrawToArgs.l[]) => {
     const points = args.map((dXdY) => dXdY.join(","))
     return ["l", ...points].join(" ")
 }
@@ -70,7 +72,7 @@ export const l = (...args: [dx: number, dy: number][]) => {
  *
  * horizontal_lineto_absolute
  */
-export const H = (...y: number[]) => {
+export const H = (...y: DrawToArgs.H[]) => {
     return ["H", ...y].join(" ")
 }
 
@@ -79,7 +81,7 @@ export const H = (...y: number[]) => {
  *
  * horizontal_lineto_relative
  */
-export const h = (...y: number[]) => {
+export const h = (...y: DrawToArgs.h[]) => {
     return ["h", ...y].join(" ")
 }
 
@@ -90,7 +92,7 @@ export const h = (...y: number[]) => {
  *
  * vertical_lineto_absolute
  */
-export const V = (...x: number[]) => {
+export const V = (...x: DrawToArgs.V[]) => {
     return ["V", ...x].join(" ")
 }
 
@@ -99,7 +101,7 @@ export const V = (...x: number[]) => {
  *
  * vertical_lineto_relative
  */
-export const v = (...x: number[]) => {
+export const v = (...x: DrawToArgs.v[]) => {
     return ["v", ...x].join(" ")
 }
 
@@ -110,14 +112,7 @@ export const v = (...x: number[]) => {
  *
  * curveto_absolute
  */
-export const C = (...opts: [
-    x1: number,
-    y1: number,
-    x2: number,
-    y2: number,
-    x: number,
-    y: number,
-][]): string => {
+export const C = (...opts: DrawToArgs.c[]): string => {
     const points = opts.map((opt) => `C ${opt[0]},${opt[1]} ${opt[2]},${opt[3]} ${opt[4]},${opt[5]}`)
     return points.join(" ")
 }
@@ -127,14 +122,7 @@ export const C = (...opts: [
  *
  * curveto_relative
  */
-export const c = (...opts: [
-    dx1: number,
-    dy1: number,
-    dx2: number,
-    dy2: number,
-    dx: number,
-    dy: number,
-][]): string => {
+export const c = (...opts: DrawToArgs.c[]): string => {
     const points = opts.map((opt) => `c ${opt[0]},${opt[1]} ${opt[2]},${opt[3]} ${opt[4]},${opt[5]}`)
     return points.join(" ")
 }
@@ -146,12 +134,7 @@ export const c = (...opts: [
  *
  * smooth_curveto_absolute
  */
-export const S = (...opts: [
-    x2: number,
-    y2: number,
-    x: number,
-    y: number,
-][]): string => {
+export const S = (...opts: DrawToArgs.S[]): string => {
     const points = opts.map((opt) => `S ${opt[0]},${opt[1]} ${opt[2]},${opt[3]}`)
     return points.join(" ")
 }
@@ -161,12 +144,7 @@ export const S = (...opts: [
  *
  * smooth_curveto_relative
  */
-export const s = (...opts: [
-    dx2: number,
-    dy2: number,
-    dx: number,
-    dy: number,
-][]): string => {
+export const s = (...opts: DrawToArgs.s[]): string => {
     const points = opts.map((opt) => `s ${opt[0]},${opt[1]} ${opt[2]},${opt[3]}`)
     return points.join(" ")
 }
@@ -178,12 +156,7 @@ export const s = (...opts: [
  *
  * quadratic_bezier_curveto_absolute
  */
-export const Q = (...opts: [
-    x1: number,
-    y1: number,
-    x: number,
-    y: number,
-][]) => {
+export const Q = (...opts: DrawToArgs.Q[]) => {
     const points = opts.map((opt) => `Q ${opt[0]},${opt[1]} ${opt[2]},${opt[3]}`)
     return points.join(" ")
 }
@@ -193,12 +166,7 @@ export const Q = (...opts: [
  *
  * quadratic_bezier_curveto_relative
  */
-export const q = (...opts: [
-    dx1: number,
-    dy1: number,
-    dx: number,
-    dy: number,
-][]) => {
+export const q = (...opts: DrawToArgs.q[]) => {
     const points = opts.map((opt) => `q ${opt[0]},${opt[1]} ${opt[2]},${opt[3]}`)
     return points.join(" ")
 }
@@ -210,7 +178,7 @@ export const q = (...opts: [
  *
  * smooth_quadratic_bezier_curveto_absolute
  */
-export const T = (...args: [x: number, y: number][]) => {
+export const T = (...args: DrawToArgs.T[]) => {
     const points = args.map((xy) => xy.join(","))
     return ["T", ...points].join(" ")
 }
@@ -220,7 +188,7 @@ export const T = (...args: [x: number, y: number][]) => {
  *
  * smooth_quadratic_bezier_curveto_relative
  */
-export const t = (...args: [dx: number, dy: number][]) => {
+export const t = (...args: DrawToArgs.t[]) => {
     const points = args.map((dXdY) => dXdY.join(","))
     return ["t", ...points].join(" ")
 }
@@ -242,15 +210,7 @@ export const t = (...args: [dx: number, dy: number][]) => {
  *
  * elliptical_arc_absolute
  */
-export const A = (...opts: [
-    rx: number,
-    ry: number,
-    angle: number,
-    largeArcFlag: 0 | 1,
-    sweepFlag: 0 | 1,
-    x: number,
-    y: number,
-][]): string => {
+export const A = (...opts: DrawToArgs.A[]): string => {
     const points = opts.map((opt) => `A ${opt[0]},${opt[1]} ${opt[2]},${opt[3]},${opt[4]} ${opt[5]},${opt[6]}`)
     return points.join(" ")
 }
@@ -260,15 +220,7 @@ export const A = (...opts: [
  *
  * elliptical_arc_relative
  */
-export const a = (...opts: [
-    rx: number,
-    ry: number,
-    angle: number,
-    largeArcFlag: 0 | 1,
-    sweepFlag: 0 | 1,
-    x: number,
-    y: number,
-][]): string => {
+export const a = (...opts: DrawToArgs.a[]): string => {
     const points = opts.map((opt) => `a ${opt[0]},${opt[1]} ${opt[2]},${opt[3]},${opt[4]} ${opt[5]},${opt[6]}`)
     return points.join(" ")
 }

@@ -1,6 +1,6 @@
 import type { SVGProps } from "react"
 
-import type { LinearGradientAttributes } from "@types"
+import type { LinearGradientAttributes } from "svg4react"
 import type { StopProps } from "./Stop"
 import { Stop } from "./Stop"
 

@@ -1,76 +1,38 @@
 import type { DrawToCommandName } from "@types"
 import { DrawToFuncs } from "./DrawToFuncs"
-
-/** @public */
-export type M_args = Parameters<typeof DrawToFuncs.M>
-/** @public */
-export type m_args = Parameters<typeof DrawToFuncs.m>
-/** @public */
-export type L_args = Parameters<typeof DrawToFuncs.L>
-/** @public */
-export type l_args = Parameters<typeof DrawToFuncs.l>
-/** @public */
-export type H_args = Parameters<typeof DrawToFuncs.H>
-/** @public */
-export type h_args = Parameters<typeof DrawToFuncs.h>
-/** @public */
-export type V_args = Parameters<typeof DrawToFuncs.V>
-/** @public */
-export type v_args = Parameters<typeof DrawToFuncs.v>
-/** @public */
-export type C_args = Parameters<typeof DrawToFuncs.C>
-/** @public */
-export type c_args = Parameters<typeof DrawToFuncs.c>
-/** @public */
-export type S_args = Parameters<typeof DrawToFuncs.S>
-/** @public */
-export type s_args = Parameters<typeof DrawToFuncs.s>
-/** @public */
-export type Q_args = Parameters<typeof DrawToFuncs.Q>
-/** @public */
-export type q_args = Parameters<typeof DrawToFuncs.q>
-/** @public */
-export type T_args = Parameters<typeof DrawToFuncs.T>
-/** @public */
-export type t_args = Parameters<typeof DrawToFuncs.t>
-/** @public */
-export type A_args = Parameters<typeof DrawToFuncs.A>
-/** @public */
-export type a_args = Parameters<typeof DrawToFuncs.a>
-/** @public */
-export type Z_args = Parameters<typeof DrawToFuncs.Z>
+import { DrawToArgs } from "svg4react"
 
 /**
  * @public
  */
 export type TCmdProp<TCmd extends DrawToCommandName, TArgs> = [
     cmd: TCmd,
-    args: TArgs,
+    args: TArgs[],
 ]
 
 /**
  * @public
  */
 export type CmdProp =
-    | TCmdProp<"M", M_args>
-    | TCmdProp<"m", m_args>
-    | TCmdProp<"L", L_args>
-    | TCmdProp<"l", l_args>
-    | TCmdProp<"H", H_args>
-    | TCmdProp<"h", h_args>
-    | TCmdProp<"V", V_args>
-    | TCmdProp<"v", v_args>
-    | TCmdProp<"C", C_args>
-    | TCmdProp<"c", c_args>
-    | TCmdProp<"S", S_args>
-    | TCmdProp<"s", s_args>
-    | TCmdProp<"Q", Q_args>
-    | TCmdProp<"q", q_args>
-    | TCmdProp<"T", T_args>
-    | TCmdProp<"t", t_args>
-    | TCmdProp<"A", A_args>
-    | TCmdProp<"a", a_args>
-    | TCmdProp<"Z", Z_args>
+    | TCmdProp<"M", DrawToArgs.M>
+    | TCmdProp<"m", DrawToArgs.m>
+    | TCmdProp<"L", DrawToArgs.L>
+    | TCmdProp<"l", DrawToArgs.l>
+    | TCmdProp<"H", DrawToArgs.H>
+    | TCmdProp<"h", DrawToArgs.h>
+    | TCmdProp<"V", DrawToArgs.V>
+    | TCmdProp<"v", DrawToArgs.v>
+    | TCmdProp<"C", DrawToArgs.C>
+    | TCmdProp<"c", DrawToArgs.c>
+    | TCmdProp<"S", DrawToArgs.S>
+    | TCmdProp<"s", DrawToArgs.s>
+    | TCmdProp<"Q", DrawToArgs.Q>
+    | TCmdProp<"q", DrawToArgs.q>
+    | TCmdProp<"T", DrawToArgs.T>
+    | TCmdProp<"t", DrawToArgs.t>
+    | TCmdProp<"A", DrawToArgs.A>
+    | TCmdProp<"a", DrawToArgs.a>
+    | TCmdProp<"Z", DrawToArgs.Z>
 
 /**
  * @public

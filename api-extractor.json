@@ -42,7 +42,7 @@
      *
      * SUPPORTED TOKENS: <projectFolder>, <packageName>, <unscopedPackageName>
      */
-    "mainEntryPointFilePath": "<projectFolder>/build/tsc/index.d.ts",
+    "mainEntryPointFilePath": "<projectFolder>/build/tsc/lib/index.d.ts",
     /**
      * A list of NPM package names whose exports should be treated as part of this package.
      *
@@ -57,7 +57,8 @@
      * local files for library1.
      */
     "bundledPackages": [
-        "csstype"
+        "csstype",
+        "react",
     ],
     /**
      * Specifies what type of newlines API Extractor should use when writing output files.  By default, the output files
@@ -81,7 +82,7 @@
      *
      * DEFAULT VALUE: "by-name"
      */
-    "enumMemberOrder": "preserve",
+    // "enumMemberOrder": "preserve",
     /**
      * Determines how the TypeScript compiler engine will be invoked by API Extractor.
      */
@@ -234,7 +235,7 @@
          * SUPPORTED TOKENS: <projectFolder>, <packageName>, <unscopedPackageName>
          * DEFAULT VALUE: ""
          */
-        "alphaTrimmedFilePath": "<projectFolder>/build/api-extractor/<unscopedPackageName>-alpha.d.ts",
+        // "alphaTrimmedFilePath": "<projectFolder>/build/api-extractor/<unscopedPackageName>-alpha.d.ts",
         /**
          * Specifies the output path for a .d.ts rollup file to be generated with trimming for a "beta" release.
          * This file will include only declarations that are marked as "@public" or "@beta".
@@ -245,7 +246,7 @@
          * SUPPORTED TOKENS: <projectFolder>, <packageName>, <unscopedPackageName>
          * DEFAULT VALUE: ""
          */
-        "betaTrimmedFilePath": "<projectFolder>/build/api-extractor/<unscopedPackageName>-beta.d.ts",
+        // "betaTrimmedFilePath": "<projectFolder>/build/api-extractor/<unscopedPackageName>-beta.d.ts",
         /**
          * Specifies the output path for a .d.ts rollup file to be generated with trimming for a "public" release.
          * This file will include only declarations that are marked as "@public".
@@ -258,7 +259,7 @@
          * SUPPORTED TOKENS: <projectFolder>, <packageName>, <unscopedPackageName>
          * DEFAULT VALUE: ""
          */
-        "publicTrimmedFilePath": "<projectFolder>/build/api-extractor/<unscopedPackageName>-public.d.ts",
+        // "publicTrimmedFilePath": "<projectFolder>/build/api-extractor/<unscopedPackageName>-public.d.ts",
         /**
          * When a declaration is trimmed, by default it will be replaced by a code comment such as
          * "Excluded from this release type: exampleMember".  Set "omitTrimmingComments" to true to remove the
