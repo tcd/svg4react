@@ -1,6 +1,8 @@
 /* eslint-disable @typescript-eslint/no-namespace */
 
 /**
+ * @public
+ *
  * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d#path_commands
  */
 export type DrawToCommandCategory =
@@ -12,6 +14,9 @@ export type DrawToCommandCategory =
     | "EllipticalArcCurve"
     | "ClosePath"
 
+/**
+ * @public
+ */
 export type drawto_command =
     | "moveto"
     | "closepath"
@@ -66,6 +71,9 @@ export type drawto_command =
 //     { "code": "z", "cat_2": "closepath",                       "cat_1": "ClosePath",            "position": "absolute", "smooth": false, "name": "closepath_absolute" },
 // ]
 
+/**
+ * @public
+ */
 export enum DrawToCommandNames {
     "M" = "moveto_absolute",
     "m" = "moveto_relative",
@@ -89,7 +97,13 @@ export enum DrawToCommandNames {
     // "z" = "closepath",
 }
 
+/**
+ * @public
+ */
 export type DrawToCommandName = keyof typeof DrawToCommandNames
+/**
+ * @public
+ */
 export type DrawToCommandDescription = typeof DrawToCommandNames[DrawToCommandName]
 
 // export const DrawToCommandArgs: Record<DrawToCommandName, string[]> ={

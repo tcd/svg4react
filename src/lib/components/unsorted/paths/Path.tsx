@@ -1,8 +1,9 @@
-import {
-    CmdProp,
-    buildDrawing,
-} from "@src/lib/helpers"
+import type { CmdProp } from "@src/lib/helpers"
+import { buildDrawing } from "@src/lib/helpers"
 
+/**
+ * @public
+ */
 export type PathProps = {
     commands: CmdProp[]
     id?: string
@@ -11,6 +12,9 @@ export type PathProps = {
     stroke?: any
 }
 
+/**
+ * @public
+ */
 export const Path = (props: PathProps): JSX.Element => {
 
     // const {

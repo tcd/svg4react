@@ -1,13 +1,15 @@
 import type { Property } from "csstype"
 
 /**
+ * @public
+ *
  * @see [MDN `<stop>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/stop)
  */
 export type StopAttributes = {
     /**
      * Defines where the gradient stop is placed along the gradient vector.
      *
-     * @default 0
+     * @defaultValue 0
      */
     offset?: string | number
     /**
@@ -23,7 +25,7 @@ export type StopAttributes = {
      * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/display
      * @see https://developer.mozilla.org/en-US/docs/Web/CSS/display
      *
-     * @default "inline"
+     * @defaultValue "inline"
      */
     display?: Property.Display
     /**
@@ -32,7 +34,7 @@ export type StopAttributes = {
      *
      * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stop-color
      *
-     * @default "black"
+     * @defaultValue "black"
      */
     stopColor?: string
     /**
@@ -41,7 +43,7 @@ export type StopAttributes = {
      *
      * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stop-opacity
      *
-     * @default 1
+     * @defaultValue 1
      */
     stopOpacity?: number
     /**

@@ -1,4 +1,6 @@
 /**
+ * @public
+ *
  * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Element/linearGradient
  */
 export type LinearGradientAttributes = {
@@ -7,7 +9,7 @@ export type LinearGradientAttributes = {
      *
      * @see [MDN](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/gradientUnits)
      *
-     * @default "objectBoundingBox"
+     * @defaultValue "objectBoundingBox"
      */
     gradientUnits?: "userSpaceOnUse" | "objectBoundingBox"
     /**
@@ -27,7 +29,7 @@ export type LinearGradientAttributes = {
      *
      * @see [MDN](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/spreadMethod)
      *
-     * @default "pad"
+     * @defaultValue "pad"
      */
     spreadMethod?: "pad" | "reflect" | "repeat"
     /**
@@ -35,7 +37,7 @@ export type LinearGradientAttributes = {
      *
      * @see [MDN](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/x1)
      *
-     * @default "0%"
+     * @defaultValue "0%"
      */
     x1?: string | number
     /**
@@ -43,7 +45,7 @@ export type LinearGradientAttributes = {
      *
      * @see [MDN](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/x2)
      *
-     * @default "100%"
+     * @defaultValue "100%"
      */
     x2?: string | number
     /**
@@ -51,7 +53,7 @@ export type LinearGradientAttributes = {
      *
      * @see [MDN](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/y1)
      *
-     * @default "0%"
+     * @defaultValue "0%"
      */
     y1?: string | number
     /**
@@ -59,7 +61,7 @@ export type LinearGradientAttributes = {
      *
      * @see [MDN](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/y2)
      *
-     * @default "0%"
+     * @defaultValue "0%"
      */
     y2?: string | number
 }

@@ -1,5 +1,8 @@
 import type { Property } from "csstype"
 
+/**
+ * @public
+ */
 export interface SvgPresentationAttributes {
     /**
      * Specifies how an object is aligned along the font baseline with respect to its parent.

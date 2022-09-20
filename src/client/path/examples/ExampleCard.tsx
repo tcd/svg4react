@@ -1,7 +1,9 @@
+import type { ReactNode } from "react"
+
 export interface ExampleCardProps {
     title: string
     url: string
-    children: React.ReactNode
+    children: ReactNode
 }
 
 export const ExampleCard = ({ title, url, children }: ExampleCardProps): JSX.Element => {

@@ -1,10 +1,12 @@
 import type { SVGProps } from "react"
 
 import type { LinearGradientAttributes } from "@types"
-import { Stop } from "./Stop"
 import type { StopProps } from "./Stop"
+import { Stop } from "./Stop"
 
 /**
+ * @public
+ *
  * All properties aside from `id` and `stops` & `className` are animatable.
  */
 export type LinearGradientProps =
@@ -21,6 +23,8 @@ const _exampleProps: LinearGradientProps = {
 }
 
 /**
+ * @public
+ *
  * ## Reference
  *
  * - [MDN `<stop>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/stop)

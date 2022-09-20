@@ -1,9 +1,15 @@
 import type { SVGProps } from "react"
 
 import type { CircleAttributes } from "@types"
+
+/**
+ * @public
+ */
 export type CircleProps = Omit<SVGProps<SVGCircleElement>, keyof CircleAttributes> & CircleAttributes
 
-
+/**
+ * @public
+ */
 export const Circle = (props: CircleProps): JSX.Element => {
     return (
         <circle {...props} />

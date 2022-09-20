@@ -273,6 +273,9 @@ export const a = (...opts: [
     return points.join(" ")
 }
 
+/**
+ * @public
+ */
 export const DrawToFuncs = {
     M,
     m,
