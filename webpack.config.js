@@ -5,8 +5,6 @@ const path = require("path")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin")
 
-const { PROJECT_ROOT } = require("./helpers")
-
 /**
  * See [Webpack Configuration docs](https://webpack.js.org/configuration/) for more information.
  *
@@ -31,15 +29,15 @@ const webpackConfig = {
         allowedHosts: "all",
         hot: true,
     },
-    entry: path.join(PROJECT_ROOT, "src", "client", "index.tsx"),
+    entry: path.join(__dirname, "src", "client", "index.tsx"),
     output: {
-        path: path.join(PROJECT_ROOT, "dist"),
+        path: path.join(__dirname, "dist"),
         publicPath: "/",
         filename: "bundle.js",
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: path.join(PROJECT_ROOT, "src", "client", "index.html"),
+            template: path.join(__dirname, "src", "client", "index.html"),
             hash: true,
             inject: true,
         }),

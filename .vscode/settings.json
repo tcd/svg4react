@@ -15,6 +15,7 @@
         "globby",
         "npmignore",
         "polymarker",
+        "styleguidist",
         "tsdoc"
     ],
 }
