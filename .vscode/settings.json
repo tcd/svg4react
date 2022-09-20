@@ -12,7 +12,9 @@
         "currentcolor",
         "drawto",
         "frenic",
+        "globby",
         "npmignore",
-        "polymarker"
+        "polymarker",
+        "tsdoc"
     ],
 }

@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+
 import { join } from "path"
 import { readFileSync } from "fs"
 // var inquirer = require("inquirer");

@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "outDir": "build",
+        "outDir": "build/tsc",
         "declaration": true,
         "declarationMap": true,
         "sourceMap": true,
