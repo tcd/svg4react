@@ -5,6 +5,7 @@
     "license": "MIT",
     "author": "Clay Dunston <dunstontc@gmail.com>",
     "repository": "github:tcd/svg4react",
+    "homepage": "https://github.com/tcd/svg4react",
     "bugs": "https://github.com/tcd/svg4react/issues",
     "types": "./src/@types/svg4react.d.ts",
     "files": [
@@ -30,6 +31,11 @@
     "dependencies": {
         "@mui/system": "^5.10.5",
         "csstype": "^3.1.1"
+    },
+    "peerDependencies": {
+        "react": "^17.0.0 || ^18.0.0",
+        "react-dom": "^17.0.0 || ^18.0.0",
+        "@mui/material": ">= 5.0.0"
     },
     "devDependencies": {
         "@babel/core": "^7.19.1",
