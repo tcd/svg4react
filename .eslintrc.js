@@ -30,6 +30,7 @@ module.exports = {
         "config/**/*.mjs",
         "**/node_modules",
         "**/ignore",
+        "build",
     ],
     rules: {
         "semi": ["warn", "never"],

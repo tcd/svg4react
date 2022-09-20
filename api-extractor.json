@@ -67,7 +67,7 @@
      *
      * DEFAULT VALUE: "crlf"
      */
-    // "newlineKind": "crlf",
+    "newlineKind": "lf",
     /**
      * Set to true when invoking API Extractor's test harness. When `testMode` is true, the `toolVersion` field in the
      * .api.json file is assigned an empty string to prevent spurious diffs in output files tracked for tests.
@@ -98,7 +98,7 @@
          * SUPPORTED TOKENS: <projectFolder>, <packageName>, <unscopedPackageName>
          * DEFAULT VALUE: "<projectFolder>/tsconfig.json"
          */
-        "tsconfigFilePath": "<projectFolder>/tsconfig.docs.json",
+        "tsconfigFilePath": "<projectFolder>/tsconfig.api.json",
         /**
          * Provides a compiler configuration that will be used instead of reading the tsconfig.json file from disk.
          * The object must conform to the TypeScript tsconfig schema:

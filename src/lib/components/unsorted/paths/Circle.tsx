@@ -1,6 +1,5 @@
 import type { SVGProps } from "react"
 
-// import type { CircleAttributes } from "@types"
 import type { CircleAttributes } from "svg4react"
 
 /**

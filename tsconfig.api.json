@@ -1,0 +1,19 @@
+{
+    "extends": "./tsconfig.base.json",
+    "compilerOptions": {
+        "target": "es5",
+        "module": "esnext",
+        "moduleResolution": "node",
+        // "noEmit": false,
+    },
+    "include": [
+        "./build/tsc/@types/**/*",
+        "./build/tsc/lib/**/*",
+    ],
+    "exclude": [
+        "/src/**/*.ts",
+        "./src/**/*.tsx",
+        "./ignore/**/*.ts",
+        "./ignore/**/*.tsx",
+    ],
+}
