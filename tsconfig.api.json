@@ -8,7 +8,7 @@
     },
     "include": [
         "./build/tsc/@types/**/*",
-        "./build/tsc/lib/**/*",
+        "./build/tsc/**/*",
     ],
     "exclude": [
         "/src/**/*.ts",

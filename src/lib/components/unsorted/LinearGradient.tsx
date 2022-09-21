@@ -18,9 +18,9 @@ export type LinearGradientProps =
         stops?: StopProps[]
     }
 
-const _exampleProps: LinearGradientProps = {
-    id: "example",
-}
+// const _exampleProps: LinearGradientProps = {
+//     id: "example",
+// }
 
 /**
  * @public

@@ -11,9 +11,10 @@ export type CircleProps = Omit<SVGProps<SVGCircleElement>, keyof CircleAttribute
  * @public
  */
 export const Circle = (props: CircleProps): JSX.Element => {
-    return (
-        <circle {...props} />
-    )
+    return null
+    // return (
+    //     <circle {...props} />
+    // )
 }
 
 // let example = () => {
