@@ -7,7 +7,7 @@ import type { AnimateProps } from "./Animate.types"
  */
 const Animate = (props: AnimateProps): JSX.Element => {
     return (
-        <animateMotion
+        <animate
             {...props}
         />
     )
