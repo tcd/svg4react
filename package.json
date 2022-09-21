@@ -10,9 +10,9 @@
     "files": [
         "./dist"
     ],
-    "main": "./dist/esm",
-    "module": "./dist/esm",
-    "types": "./dist/esm/index.d.ts",
+    "main": "./dist/index.js",
+    "module": "./dist",
+    "types": "./dist/index.d.ts",
     "keywords": [
         "React",
         "TypeScript",

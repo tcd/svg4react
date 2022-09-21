@@ -33,8 +33,8 @@
         ],
     },
     "include": [
-        "./src/lib/**/*.ts",
-        "./src/lib/**/*.tsx",
+        "./src/**/*.ts",
+        "./src/**/*.tsx",
     ],
     "exclude": [
         "./node_modules",
