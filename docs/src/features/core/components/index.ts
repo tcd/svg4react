@@ -1,3 +1,2 @@
-export * from "./HomePage"
-export * from "./Layout"
-export * from "./NotFoundPage"
+export * from "./layout"
+export * from "./pages"

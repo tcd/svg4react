@@ -1,3 +1,5 @@
+import { Box } from "@mui/material"
+
 import {
     Example1,
     Example2,
@@ -12,20 +14,16 @@ import {
 
 export const DrawtoExamples = (_props: unknown): JSX.Element => {
     return (
-        <div className="container">
-            <div className="row">
-                <div className="col">
-                    <Example1 />
-                    <Example2 />
-                    <Example3 />
-                    <Example4 />
-                    <Example5 />
-                    <Example6 />
-                    <Example7 />
-                    <Example8 />
-                    <Example101 />
-                </div>
-            </div>
-        </div>
+        <Box sx={{ flexGrow: 1, display: "flex", flexFlow: "column nowrap", justifyContent: "stretch", alignItems: "stretch", backgroundColor: "rebeccapurple" }}>
+            <Example1 />
+            <Example2 />
+            <Example3 />
+            <Example4 />
+            <Example5 />
+            <Example6 />
+            <Example7 />
+            <Example8 />
+            <Example101 />
+        </Box>
     )
 }
