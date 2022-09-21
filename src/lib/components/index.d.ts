@@ -1,5 +1,11 @@
 export * from "./utils"
 
+export { default as AnimateMotion } from "./AnimateMotion"
+export * from "./AnimateMotion"
+
+export { default as AnimateTransform } from "./AnimateTransform"
+export * from "./AnimateTransform"
+
 export { default as Circle } from "./Circle"
 export * from "./Circle"
 
