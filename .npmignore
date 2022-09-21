@@ -8,5 +8,9 @@ tsconfig.json
 tsconfig.*.json
 typedoc.json
 
+.vscode
+build
 etc
-src/client/**
+node_modules
+src
+tmp
