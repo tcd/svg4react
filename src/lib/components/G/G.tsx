@@ -1,5 +1,5 @@
-import type { SVGProps } from "react"
 import { forwardRef } from "react"
+import type { SVGProps } from "react"
 
 /**
  * @public

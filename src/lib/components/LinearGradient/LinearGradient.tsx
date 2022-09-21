@@ -1,5 +1,5 @@
-import type { LinearGradientProps } from "./LinearGradient.types"
 import Stop from "../Stop"
+import type { LinearGradientProps } from "./LinearGradient.types"
 
 /**
  * @public

@@ -1,3 +1,4 @@
+import { forwardRef } from "react"
 import type { PathProps } from "./Path.types"
 import { buildDrawing } from "./build-drawing"
 
@@ -10,7 +11,7 @@ import { buildDrawing } from "./build-drawing"
  *
  * All the basic shapes can be created with a path element.
  */
-const Path = (props: PathProps): JSX.Element => {
+const Path = forwardRef<SVGPathElement>(function Path(props: PathProps, ref) {
 
     // const {
     //     id,
@@ -28,10 +29,11 @@ const Path = (props: PathProps): JSX.Element => {
 
     return (
         <path
+            ref={ref}
             d={d}
             {...otherProps}
         />
     )
-}
+})
 
 export default Path
