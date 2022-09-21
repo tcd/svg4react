@@ -1,5 +1,5 @@
-import type { CmdProp } from "../../../helpers"
-import { buildDrawing } from "../../../helpers"
+import type { CmdProp } from "../helpers"
+import { buildDrawing } from "../helpers"
 
 /**
  * @public
