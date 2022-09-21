@@ -36,7 +36,7 @@ const pathProps: PathProps = {
  */
 export const Example6 = (_props: unknown): JSX.Element => {
     return (
-        <ExampleCard title="Quadratic Bézier Curve (v1.5)" url="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d#quadratic_b%C3%A9zier_curve">
+        <ExampleCard title="Quadratic Bézier Curve" url="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d#quadratic_b%C3%A9zier_curve">
             <svg
                 width="200px"
                 height="100px"

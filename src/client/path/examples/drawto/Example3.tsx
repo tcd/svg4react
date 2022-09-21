@@ -25,7 +25,7 @@ const pathProps: PathProps = {
  */
 export const Example3 = (_props: unknown): JSX.Element => {
     return (
-        <ExampleCard title="MoveTo (v1.5)" url="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d#moveto_path_commands">
+        <ExampleCard title="MoveTo" url="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d#moveto_path_commands">
             <svg
                 width="100px"
                 height="100px"

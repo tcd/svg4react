@@ -33,7 +33,7 @@ const pathProps_2: PathProps = {
  */
 export const Example5 = (_props: unknown): JSX.Element => {
     return (
-        <ExampleCard title="Cubic Bézier Curve (v1.5)" url="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d#cubic_b%C3%A9zier_curve">
+        <ExampleCard title="Cubic Bézier Curve" url="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d#cubic_b%C3%A9zier_curve">
             <svg
                 width="200px"
                 height="100px"

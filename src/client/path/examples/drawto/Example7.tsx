@@ -46,7 +46,7 @@ const pathProps_d: PathProps = {
  */
 export const Example7 = (_props: unknown): JSX.Element => {
     return (
-        <ExampleCard title="Elliptical Arc Curve (v1.5)" url="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d#elliptical_arc_curve">
+        <ExampleCard title="Elliptical Arc Curve" url="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d#elliptical_arc_curve">
             <svg
                 width="100px"
                 height="100px"

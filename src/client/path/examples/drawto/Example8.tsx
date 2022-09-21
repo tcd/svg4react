@@ -38,7 +38,7 @@ const pathProps_c: PathProps = {
  */
 export const Example8 = (_props: unknown): JSX.Element => {
     return (
-        <ExampleCard title="ClosePath (v1.5)" url="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d#closepath">
+        <ExampleCard title="ClosePath" url="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d#closepath">
             <svg
                 width="200px"
                 height="200px"

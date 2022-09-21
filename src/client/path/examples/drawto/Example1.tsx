@@ -2,7 +2,7 @@ import { Path, PathProps } from "@src/lib/components"
 import { ExampleCard } from "../ExampleCard"
 
 const pathProps: PathProps = {
-    id: "example-1.",
+    id: "example-1",
     fill: "indianred",
     commands: [
         ["M", [[              10,30]]],
@@ -19,7 +19,7 @@ const pathProps: PathProps = {
  */
 export const Example1 = (_props: unknown): JSX.Element => {
     return (
-        <ExampleCard title="Example #1 (v1.5)" url="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d#example">
+        <ExampleCard title="Example #1" url="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d#example">
             <svg
                 // style={{ width: "100px", height: "100px" }}
                 width="100px"
