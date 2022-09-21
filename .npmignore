@@ -4,3 +4,6 @@
 CHANGELOG.md
 etc
 src/client/**
+tsconfig.json
+tsconfig.*.json
+webpack.config.js

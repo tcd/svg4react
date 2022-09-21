@@ -18,7 +18,7 @@
     ],
     "scripts": {
         "start": "npm run serve",
-        "serve": "cross-env NODE_ENV=development webpack-dev-server --config ./etc/config/webpack.config.js --open",
+        "serve": "cross-env NODE_ENV=development webpack-dev-server --config ./webpack.config.js --open",
         "tag": "node ./etc/scripts/tag.mjs",
         "dev": "cross-env styleguidist server",
         "clean": "node ./etc/scripts/clean.mjs",
