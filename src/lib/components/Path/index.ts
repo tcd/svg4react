@@ -1,3 +1,2 @@
-export * from "./CmdProp"
-export * from "./DrawToFuncs"
-export * from "./Path"
+export { default } from "./Path"
+export * from "./Path.types"

@@ -1,21 +1,10 @@
-import type { CmdProp } from "./CmdProp"
-import { buildDrawing } from "./CmdProp"
+import type { PathProps } from "./Path.types"
+import { buildDrawing } from "./build-drawing"
 
 /**
  * @public
  */
-export type PathProps = {
-    commands: CmdProp[]
-    id?: string
-    // FIXME: add proper presentation attributes
-    fill?: any
-    stroke?: any
-}
-
-/**
- * @public
- */
-export const Path = (props: PathProps): JSX.Element => {
+const Path = (props: PathProps): JSX.Element => {
 
     // const {
     //     id,
@@ -38,3 +27,5 @@ export const Path = (props: PathProps): JSX.Element => {
         />
     )
 }
+
+export default Path
