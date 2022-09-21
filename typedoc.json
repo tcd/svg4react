@@ -1,7 +1,7 @@
 {
     "$schema": "https://typedoc.org/schema.json",
     "name": "svg4react",
-    "out": "./docs/typedoc",
+    "out": "./etc/docs/typedoc",
     "readme": "./README.md",
     "entryPointStrategy": "expand",
     "excludeExternals": true,
@@ -10,9 +10,7 @@
         "typedoc-plugin-missing-exports",
     ],
     "entryPoints": [
-        "./src/lib/components/index.ts",
-        "./src/lib/types/index.ts",
-        "./src/lib/helpers/index.ts",
+        "./src/index.ts",
     ],
     "tsconfig": "./tsconfig.json"
 }

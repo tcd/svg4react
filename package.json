@@ -22,10 +22,10 @@
         "tag": "node ./etc/scripts/tag.mjs",
         "dev": "cross-env styleguidist server",
         "clean": "node ./etc/scripts/clean.mjs",
-        "debug": "cross-env tsc --p ./tsconfig.docs.json --traceResolution > trace.log",
+        "debug": "cross-env tsc --p ./tsconfig.docs.json --traceResolution > ./tmp/trace.log",
         "build:docs": "npm run clean && npm run compile:api && npm run docs:api && npm run docs:markdown",
         "compile:api": "cross-env tsc --p ./tsconfig.docs.json --declaration --emitDeclarationOnly",
-        "docs:markdown": "cross-env api-documenter markdown --input-folder ./build/api-extractor --output-folder ./docs/api-documenter",
+        "docs:markdown": "cross-env api-documenter markdown --input-folder ./build/api-extractor --output-folder ./etc/docs/api-documenter",
         "docs:api": "cross-env api-extractor run --local --verbose",
         "docs:tsdoc": "cross-env typedoc --options ./typedoc.json"
     },

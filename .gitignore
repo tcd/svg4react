@@ -2,7 +2,7 @@
 ignore/**
 build
 dist
-docs/typedoc
-docs/api-documenter
+etc/docs/typedoc
+etc/docs/api-documenter
 tmp
 tsdoc-metadata.json
