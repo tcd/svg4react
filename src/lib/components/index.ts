@@ -1,5 +1,8 @@
 export * from "./utils"
 
+export { default as Animate } from "./Animate"
+export * from "./Animate"
+
 export { default as AnimateMotion } from "./AnimateMotion"
 export * from "./AnimateMotion"
 
