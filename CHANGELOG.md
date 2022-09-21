@@ -6,13 +6,11 @@ The format is based on [Keep a Changelog][keep-a-changelog], and this project ad
 
 
 ## [Unreleased]
+
+
+## [0.2.0] - 2022-09-21
 ### Added
-- Add vscode settings
-- Add `.npmignore`
-- Add `LICENSE.md`
-### Changed
-- Update `package.json`
-- Update `README.md`
+- Add initial working components
 
 
 ## [0.1.0] - 2022-09-16
@@ -23,5 +21,6 @@ The format is based on [Keep a Changelog][keep-a-changelog], and this project ad
 [keep-a-changelog]: https://keepachangelog.com/en/1.0.0/
 [semver]: https://semver.org/spec/v2.0.0.html
 
-[Unreleased]: https://github.com/tcd/svg4react/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/tcd/svg4react/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/tcd/svg4react/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/tcd/svg4react/releases/tag/v0.1.0

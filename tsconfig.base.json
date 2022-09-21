@@ -27,7 +27,7 @@
         ],
         "baseUrl": "./",
         "paths": {
-            "@src/*": ["./src/*"],
+            "@src/*": ["./src/*"], // TODO: remove path aliases. Maybe.
         },
         "typeRoots": [
             "./node_modules/@types",
