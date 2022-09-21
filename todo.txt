@@ -1,0 +1,2 @@
+2022-09-21 Adress performance impact with useRef
+2022-09-21 CircleProps.fillRule throws a type error
