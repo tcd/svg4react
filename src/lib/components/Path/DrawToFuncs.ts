@@ -1,4 +1,4 @@
-import type { DrawToArgs } from "svg4react"
+import type * as DrawToArgs from "./DrawToArgs"
 
 // /**
 //  * `Z`
