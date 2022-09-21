@@ -7,6 +7,7 @@ import {
     Example6,
     Example7,
     Example8,
+    Example101,
 } from "./examples/drawto"
 
 export const PathTest = (_props: unknown): JSX.Element => {
@@ -22,6 +23,7 @@ export const PathTest = (_props: unknown): JSX.Element => {
                     <Example6 />
                     <Example7 />
                     <Example8 />
+                    <Example101 />
                 </div>
             </div>
         </div>

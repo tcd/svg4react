@@ -1,6 +1,6 @@
 {
     "files.exclude": {
-        "ignore": true,
+        // "ignore": true,
         "tmp": true,
     },
     "files.associations": { "*.json": "jsonc" },
