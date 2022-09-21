@@ -11,7 +11,7 @@ import { buildDrawing } from "./build-drawing"
  *
  * All the basic shapes can be created with a path element.
  */
-const Path = forwardRef<SVGPathElement>(function Path(props: PathProps, ref) {
+const Path = forwardRef<SVGPathElement, PathProps>(function Path(props: PathProps, ref) {
 
     // const {
     //     id,
