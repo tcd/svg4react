@@ -7,10 +7,12 @@
     "repository": "github:tcd/svg4react",
     "homepage": "https://github.com/tcd/svg4react",
     "bugs": "https://github.com/tcd/svg4react/issues",
-    "types": "./src/@types/svg4react.d.ts",
     "files": [
-        "./src/lib"
+        "./dist"
     ],
+    "main": "./dist/esm",
+    "module": "./dist/esm",
+    "types": "./dist/esm/index.d.ts",
     "keywords": [
         "React",
         "TypeScript",
@@ -23,6 +25,10 @@
         "dev": "cross-env styleguidist server",
         "clean": "node ./etc/scripts/clean.mjs",
         "debug": "cross-env tsc --p ./tsconfig.docs.json --traceResolution > ./tmp/trace.log",
+        "build:dist": "npm run build:dist:clean && npm run build:dist:cjs && npm run build:dist:esm",
+        "build:dist:clean": "cross-env rimraf ./dist/**/*",
+        "build:dist:esm": "cross-env tsc --p ./tsconfig.dist.esm.json",
+        "build:dist:cjs": "cross-env tsc --p ./tsconfig.dist.cjs.json",
         "build:docs": "npm run clean && npm run compile:api && npm run docs:api && npm run docs:markdown",
         "compile:api": "cross-env tsc --p ./tsconfig.docs.json --declaration --emitDeclarationOnly",
         "docs:markdown": "cross-env api-documenter markdown --input-folder ./build/api-extractor --output-folder ./etc/docs/api-documenter",

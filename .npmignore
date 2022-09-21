@@ -1,9 +1,12 @@
 .babelrc
 .editorconfig
 .eslintrc.js
+api-extractor.json
+webpack.config.js
 CHANGELOG.md
-etc
-src/client/**
 tsconfig.json
 tsconfig.*.json
-webpack.config.js
+typedoc.json
+
+etc
+src/client/**
