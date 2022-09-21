@@ -28,7 +28,6 @@
         "baseUrl": "./",
         "paths": {
             "@src/*": ["./src/*"],
-            "@types": ["./src/lib/types/index.ts"],
         },
         "typeRoots": [
             "./node_modules/@types",

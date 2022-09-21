@@ -7,7 +7,6 @@
         // "noEmit": false,
     },
     "include": [
-        "./build/tsc/@types/**/*",
         "./build/tsc/**/*",
     ],
     "exclude": [

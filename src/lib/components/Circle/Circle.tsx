@@ -2,6 +2,11 @@ import type { CircleProps } from "./Circle.types"
 
 /**
  * @public
+ *
+ * A wrapper for the [`<circle>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/circle) element.
+ *
+ * The `<circle>` SVG element is an [SVG basic shape](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Basic_Shapes),
+ * used to draw circles based on a center point and a radius.
  */
 const Circle = (props: CircleProps): JSX.Element => {
     return null
