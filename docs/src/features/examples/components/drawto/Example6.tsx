@@ -3,7 +3,7 @@ import {
     PathProps,
     Circle,
     G,
-} from "@src/lib/components"
+} from "svg4react"
 import { ExampleCard } from "../ExampleCard"
 
 // Quadratic Bézier curve with implicit repetition

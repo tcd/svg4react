@@ -8,9 +8,9 @@ import {
     Example7,
     Example8,
     Example101,
-} from "./examples/drawto"
+} from "./drawto"
 
-export const PathTest = (_props: unknown): JSX.Element => {
+export const DrawtoExamples = (_props: unknown): JSX.Element => {
     return (
         <div className="container">
             <div className="row">

@@ -1,4 +1,4 @@
-import { Path, PathProps } from "@src/lib/components"
+import { Path, PathProps } from "svg4react"
 import { ExampleCard } from "../ExampleCard"
 
 const pathProps_a: PathProps = {

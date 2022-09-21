@@ -11,7 +11,8 @@
         "./src/**/*.tsx",
     ],
     "exclude": [
-        // "./node_modules",
+        "./node_modules",
+        "**/node_modules",
         "./ignore/**/*.ts",
         "./ignore/**/*.tsx",
     ],

@@ -5,6 +5,8 @@ const path = require("path")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin")
 
+const PROJECT_ROOT = "."
+
 /**
  * See [Webpack Configuration docs](https://webpack.js.org/configuration/) for more information.
  *
@@ -25,19 +27,19 @@ const webpackConfig = {
         //     },
         // ],
         historyApiFallback: true,
-        port: 7070,
+        port: 8090,
         allowedHosts: "all",
         hot: true,
     },
-    entry: path.join(__dirname, "src", "client", "index.tsx"),
+    entry: path.resolve(PROJECT_ROOT, "src", "index.tsx"),
     output: {
-        path: path.join(__dirname, "dist"),
+        path: path.resolve(PROJECT_ROOT, "dist"),
         publicPath: "/",
         filename: "bundle.js",
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: path.join(__dirname, "src", "client", "index.html"),
+            template: path.resolve(PROJECT_ROOT, "src", "index.html"),
             hash: true,
             inject: true,
         }),

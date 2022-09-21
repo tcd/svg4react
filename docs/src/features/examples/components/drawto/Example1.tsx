@@ -1,10 +1,9 @@
-import { Path, PathProps } from "@src/lib/components"
+import { Path, PathProps } from "svg4react"
 import { ExampleCard } from "../ExampleCard"
 
 const pathProps: PathProps = {
-    id: "example-2",
-    fill: "none",
-    stroke: "indianred",
+    id: "drawto-example-1.",
+    fill: "indianred",
     commands: [
         ["M", [[              10,30]]],
         ["A", [[20,20, 0,0,1, 50,30]]],
@@ -16,13 +15,13 @@ const pathProps: PathProps = {
 }
 
 /**
- * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d#using_d_as_a_css_property
+ * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d#example
  */
-export const Example2 = (_props: unknown): JSX.Element => {
+export const Example1 = (_props: unknown): JSX.Element => {
     return (
-        <ExampleCard title="CSS" url="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d#using_d_as_a_css_property">
+        <ExampleCard title="Example #1" url="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d#example">
             <svg
-                id="svg_css_ex1"
+                // style={{ width: "100px", height: "100px" }}
                 width="100px"
                 height="100px"
                 viewBox="0 0 100 100"
