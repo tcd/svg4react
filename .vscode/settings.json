@@ -1,8 +1,4 @@
 {
-    "files.exclude": {
-        // "ignore": true,
-        "tmp": true,
-    },
     "files.associations": { "*.json": "jsonc" },
     "eslint.format.enable": true,
     "[javascript]":      { "editor.defaultFormatter": "dbaeumer.vscode-eslint" },
