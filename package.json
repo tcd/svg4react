@@ -20,10 +20,9 @@
     ],
     "scripts": {
         "tag": "node ./etc/scripts/tag.mjs",
-        "build:dist": "npm run build:dist:clean && npm run build:dist:cjs && npm run build:dist:esm",
-        "build:dist:clean": "cross-env rimraf ./dist/**/*",
-        "build:dist:esm": "cross-env tsc --p ./tsconfig.dist.esm.json",
-        "build:dist:cjs": "cross-env tsc --p ./tsconfig.dist.cjs.json"
+        "build": "npm run build:clean && npm run build:esm",
+        "build:clean": "cross-env rimraf ./dist/**/*",
+        "build:esm": "cross-env tsc"
     },
     "peerDependencies": {
         "@mui/system": ">=5.0.0",
