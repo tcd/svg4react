@@ -15,11 +15,18 @@ import type * as DrawToArgs from "./DrawToArgs"
 // export const z = () => { return "z" }
 
 /**
- * `Z` or `z`
+ * `Z`
  *
  * closepath
  */
 export const Z = () => { return "Z" }
+
+/**
+ * `z`
+ *
+ * closepath
+ */
+export const z = () => { return "z" }
 
 // =========================================================================
 
@@ -248,4 +255,5 @@ export const DrawToFuncs = {
     A,
     a,
     Z,
+    z,
 }

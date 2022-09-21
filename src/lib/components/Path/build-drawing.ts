@@ -26,6 +26,7 @@ export const buildDrawing = (commands: CmdProp[]): string => {
             case "A": return DrawToFuncs.A(...cmd[1])
             case "a": return DrawToFuncs.a(...cmd[1])
             case "Z": return DrawToFuncs.Z()
+            case "z": return DrawToFuncs.z()
             default: return ""
         }
     }).join(" ")

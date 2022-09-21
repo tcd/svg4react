@@ -23,7 +23,7 @@ export enum DrawToCommandNames {
     A = "elliptical_arc_absolute",
     a = "elliptical_arc_relative",
     Z = "closepath",
-    // "z" = "closepath",
+    z = "closepath", // but lowercase
 }
 
 /**
@@ -66,6 +66,7 @@ export type CmdProp =
     | TCmdProp<"A", DrawToArgs.A>
     | TCmdProp<"a", DrawToArgs.a>
     | TCmdProp<"Z", DrawToArgs.Z>
+    | TCmdProp<"z", DrawToArgs.z>
 
 /**
  * @public
