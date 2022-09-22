@@ -3,12 +3,14 @@ import type {
 } from "@mui/material"
 
 import { componentOverrides } from "./components"
+import { breakpointsOptions } from "./breakpoints"
 
 // =============================================================================
 // Theme
 // =============================================================================
 
 export const docsThemeOptions: ThemeOptions = {
+    breakpoints: breakpointsOptions,
     components: componentOverrides,
     palette: {
         primary: {
