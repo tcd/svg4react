@@ -5,13 +5,11 @@ import { ThemeVars } from "@app/theme/variables"
 const root: PaperProps = {
     elevation: 3,
     sx: {
-        // background: "indianred",
         p: 3,
     },
 }
 
 const title: SxProps = {
-    // background: "orange",
     // mb: 4,
 }
 
@@ -20,7 +18,6 @@ const componentName: SxProps = {
 }
 
 const container: SxProps = {
-    // background: "orange",
     display: "flex",
     flexFlow: "row",
     alignItems: "stretch",
@@ -29,20 +26,23 @@ const container: SxProps = {
 const editor: PaperProps = {
     elevation: 2,
     sx: {
-        // background: "yellow",
         flexGrow: 1,
         borderRadius: "4px",
         overflow: "hidden",
+        maxWidth: "50%",
     },
 }
 
 const preview: PaperProps = {
     elevation: 2,
     sx: {
-        // background: "royalblue",
+        backgroundColor: "#1a2027",
         flexGrow: 1,
         mx: 3,
         // p: 4,
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
     },
 }
 

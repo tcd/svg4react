@@ -12,8 +12,25 @@ import { DocsPrismTheme } from "./DocsPrismTheme"
 export interface LiveDemoProps {
     title: string | React.ReactNode
     componentName?: string
+    /** The code that should be rendered, apart from the user's edits */
     code: string
+    /** Accepts custom globals that the `code` can use */
     scope: Record<string, any>
+    /**
+     * Doesn't evaluate and mount the inline code (Default: false).
+     * Note: when using noInline whatever code you write must be a single expression (function, class component or some jsx) that can be returned immediately.
+     * If you'd like to render multiple components, use noInline={true}
+     *
+     * @default false
+     */
+    noInline?: boolean
+    /**
+     * Trim & remove leading indentation from `code`.
+     *
+     * @default true
+     */
+    trimCode?: boolean
+
 }
 
 export const LiveDemo = (props: LiveDemoProps): JSX.Element => {
@@ -23,16 +40,16 @@ export const LiveDemo = (props: LiveDemoProps): JSX.Element => {
         componentName = null,
         code,
         scope,
+        trimCode = true,
+        noInline = false,
     } = props
 
-    code = code.trim().replaceAll(/^\s{4}/gm, "")
+    if (trimCode) {
+        code = code.trim().replaceAll(/^\s{4}/gm, "")
+    }
 
     if (componentName) {
-        title = <>
-            <Box component="span" sx={DocsSx.LiveDemo.componentName}>&lt;{componentName}&gt;</Box>
-            <Box component="span">&nbsp;</Box>
-            <Box component="span">Demo</Box>
-        </>
+        title = <DemoTitle componentName={componentName} />
     }
 
     return (
@@ -49,7 +66,7 @@ export const LiveDemo = (props: LiveDemoProps): JSX.Element => {
             <LiveProvider
                 code={code}
                 scope={scope}
-                noInline={false}
+                noInline={noInline}
                 theme={DocsPrismTheme}
             >
                 <Box sx={DocsSx.LiveDemo.container}>
@@ -65,5 +82,16 @@ export const LiveDemo = (props: LiveDemoProps): JSX.Element => {
                 </Box>
             </LiveProvider>
         </Paper>
+    )
+}
+
+
+const DemoTitle = ({ componentName }: { componentName: string }): JSX.Element => {
+    return (
+        <>
+            <Box component="span" sx={DocsSx.LiveDemo.componentName}>&lt;{componentName}&gt;</Box>
+            <Box component="span">&nbsp;</Box>
+            <Box component="span">Demo</Box>
+        </>
     )
 }
