@@ -24,6 +24,7 @@
         "html-webpack-plugin": "^5.5.0",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
+        "react-live": "^2.4.1",
         "react-router-dom": "^6.4.1",
         "source-map-loader": "^4.0.0",
         "svg4react": "file:..",
