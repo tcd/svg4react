@@ -10,6 +10,7 @@ typedoc.json
 
 .vscode
 build
+docs
 etc
 node_modules
 src
