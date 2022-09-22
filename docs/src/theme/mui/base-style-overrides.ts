@@ -3,7 +3,7 @@ import type { CSSObject, SxProps } from "@mui/material"
 import {
     // ThemeBreakpoints,
     scrollbar,
-} from "./helpers"
+} from "../helpers"
 
 /**
  * - `<ul></ul>`
