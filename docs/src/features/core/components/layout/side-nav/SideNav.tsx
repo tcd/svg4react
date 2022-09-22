@@ -2,35 +2,27 @@ import { Outlet } from "react-router-dom"
 import {
     Box,
     Drawer,
-    AppBar,
     Toolbar,
     List,
-    Typography,
     Divider,
 } from "@mui/material"
 
+import { DocsSx } from "@app/theme"
 import { SIDE_NAV_LINKS } from "@app/features/routing"
 import { SideNavItem } from "./SideNavItem"
 import { SideNavHeader } from "./SideNavHeader"
+import { AppHeader } from "./AppHeader"
 
-const drawerWidth = 240
 
 export const SideNav = (_props: unknown): JSX.Element => {
 
     const $items = SIDE_NAV_LINKS.map((link, i) => <SideNavItem key={i} data={link} />)
 
     return (
-        <Box sx={{ display: "flex" }}>
-            <Header />
+        <Box sx={DocsSx.Layout.root}>
+            <AppHeader />
             <Drawer
-                sx={{
-                    width: drawerWidth,
-                    flexShrink: 0,
-                    "& .MuiDrawer-paper": {
-                        width: drawerWidth,
-                        boxSizing: "border-box",
-                    },
-                }}
+                sx={DocsSx.Layout.drawer}
                 variant="permanent"
                 anchor="left"
             >
@@ -41,31 +33,10 @@ export const SideNav = (_props: unknown): JSX.Element => {
                     {$items}
                 </List>
             </Drawer>
-            <Box
-                component="main"
-                sx={{ flexGrow: 1, p: 3 }}
-            >
+            <Box component="main" sx={DocsSx.Layout.main}>
                 <Toolbar />
                 <Outlet />
             </Box>
         </Box>
-    )
-}
-
-// =============================================================================
-
-export const Header = (_props: unknown): JSX.Element => {
-    return (
-        <AppBar
-            elevation={0}
-            position="fixed"
-            sx={{ width: `calc(100% - ${drawerWidth}px)`, ml: `${drawerWidth}px` }}
-        >
-            <Toolbar>
-                <Typography variant="h6" noWrap component="div">
-                    svg4react
-                </Typography>
-            </Toolbar>
-        </AppBar>
     )
 }
