@@ -8,7 +8,7 @@ import {
     Typography,
 } from "@mui/material"
 
-import { SIDE_NAV_LINKS } from "./side-nav-links"
+import { SIDE_NAV_LINKS } from "@app/features/routing"
 import { SideNavItem } from "./SideNavItem"
 
 const drawerWidth = 240

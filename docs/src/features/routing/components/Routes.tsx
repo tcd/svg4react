@@ -4,6 +4,7 @@ import { Layout } from "@app/features/core"
 import { NotFoundPage } from "@app/features/core"
 import { HomePage } from "@app/features/core"
 import { DrawtoExamples } from "@app/features/examples"
+import { CircleDemo } from "@app/features/demos"
 
 export const Routes = (_props: unknown): JSX.Element => {
     return useRoutes(routes())
@@ -21,6 +22,7 @@ const routes = (): RouteObject[] => {
                     children: [
                         { index: true, element: <NotFoundPage /> },
                         { path: "path", element: <DrawtoExamples /> },
+                        { path: "circle", element: <CircleDemo /> },
                     ],
                 },
                 { path: "*", element: <NotFoundPage /> },
