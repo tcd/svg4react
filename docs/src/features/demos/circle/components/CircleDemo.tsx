@@ -1,5 +1,5 @@
 import { Box } from "@mui/material"
-import { Circle } from "svg4react"
+import { Circle, Svg } from "svg4react"
 
 export const CircleDemo = (_props: unknown): JSX.Element => {
     return (
@@ -7,11 +7,17 @@ export const CircleDemo = (_props: unknown): JSX.Element => {
             Circle Demo
             <br />
             <br />
-            <Circle
-                cx={2}
-                cy={0}
-                r={0}
-            />
+            <Svg
+                width="100px"
+                height="100px"
+            >
+                <Circle
+                    cx={50}
+                    cy={50}
+                    r={50}
+                    fill="#00deaf"
+                />
+            </Svg>
         </Box>
     )
 }
