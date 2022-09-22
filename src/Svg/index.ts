@@ -1,2 +1,2 @@
 export { default } from "./Svg"
-// export * from "./Svg.types"
+export * from "./Svg.types"

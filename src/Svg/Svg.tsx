@@ -1,7 +1,12 @@
-import type { SVGProps } from "react"
 import { forwardRef } from "react"
-// import { Box } from "@mui/material"
-// import type { BoxProps } from "@mui/material"
+import type { SvgProps } from "./Svg.types"
+
+const defaultProps: Partial<SvgProps> = {
+    xmlns: "http://www.w3.org/2000/svg",
+    // width: "100px",
+    // height: "100px",
+    viewBox: "0 0 100 100",
+}
 
 /**
  * @public
@@ -12,8 +17,12 @@ import { forwardRef } from "react"
  *
  * It is used as the outermost element of SVG documents, but it can also be used to embed an SVG fragment inside an SVG or HTML document.
  */
-const Svg = forwardRef<SVGSVGElement, SVGProps<SVGSVGElement>>(
+const Svg = forwardRef<SVGSVGElement, SvgProps>(
     function Svg(props, ref) {
+        props = {
+            ...defaultProps,
+            ...props,
+        }
         return (
             <svg
                 ref={ref}
