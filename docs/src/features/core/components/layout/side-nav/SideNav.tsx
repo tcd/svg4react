@@ -43,7 +43,7 @@ export const SideNav = (_props: unknown): JSX.Element => {
             </Drawer>
             <Box
                 component="main"
-                sx={{ flexGrow: 1, bgcolor: "background.default", p: 3 }}
+                sx={{ flexGrow: 1, p: 3 }}
             >
                 <Toolbar />
                 <Outlet />

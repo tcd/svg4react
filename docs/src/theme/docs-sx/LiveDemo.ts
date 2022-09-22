@@ -1,7 +1,22 @@
-import { ISxProps as SxProps } from "@app/theme/helpers"
+import type { PaperProps } from "@mui/material"
+import type { ISxProps as SxProps } from "@app/theme"
+import { ThemeVars } from "@app/theme/variables"
 
-const root: SxProps = {
-    // background: "indianred",
+const root: PaperProps = {
+    elevation: 3,
+    sx: {
+        // background: "indianred",
+        p: 3,
+    },
+}
+
+const title: SxProps = {
+    // background: "orange",
+    // mb: 4,
+}
+
+const componentName: SxProps = {
+    fontFamily: ThemeVars.fontFamily.monospace,
 }
 
 const container: SxProps = {
@@ -11,16 +26,24 @@ const container: SxProps = {
     alignItems: "stretch",
 }
 
-const editor: SxProps = {
-    // background: "yellow",
-    flexGrow: 1,
+const editor: PaperProps = {
+    elevation: 2,
+    sx: {
+        // background: "yellow",
+        flexGrow: 1,
+        borderRadius: "4px",
+        overflow: "hidden",
+    },
 }
 
-const preview: SxProps = {
-    // background: "royalblue",
-    flexGrow: 1,
-    mx: 3,
-    p: 2,
+const preview: PaperProps = {
+    elevation: 2,
+    sx: {
+        // background: "royalblue",
+        flexGrow: 1,
+        mx: 3,
+        // p: 4,
+    },
 }
 
 const error: SxProps = {
@@ -29,6 +52,8 @@ const error: SxProps = {
 
 export const LiveDemo = {
     root,
+    title,
+    componentName,
     container,
     editor,
     preview,

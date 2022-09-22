@@ -26,10 +26,9 @@ export const CircleDemo = (_props: unknown): JSX.Element => {
 
     return (
         <Box>
-            Circle Demo
-            <br />
-            <br />
             <LiveDemo
+                title="Circle Demo"
+                componentName="Circle"
                 code={code}
                 scope={scope}
             />

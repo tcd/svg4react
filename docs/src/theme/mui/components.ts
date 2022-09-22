@@ -1,6 +1,5 @@
 import {
     Components,
-    CSSInterpolation,
     LinkProps,
 } from "@mui/material"
 import { experimental_sx as sx } from "@mui/material/styles"
@@ -12,9 +11,16 @@ export const componentOverrides: Components = {
     MuiCssBaseline: {
         styleOverrides: baseStyleOverrides,
     },
-    MuiTextField: {
-        defaultProps: {
-            variant: "outlined",
+    // -------------------------------------------------------------------------
+    // Horizontal Rule
+    // -------------------------------------------------------------------------
+    MuiDivider: {
+        styleOverrides: {
+            root: {
+                borderBottomWidth: "1.25px",
+                borderColor: "rgba(0, 0, 0, 0.5)",
+                // margin: "12px 0px",
+            },
         },
     },
     // -------------------------------------------------------------------------
@@ -59,6 +65,8 @@ export const componentOverrides: Components = {
                 body1: "span",
                 body2: "span",
                 inherit: "span",
+                caption: "span",
+                overline: "span",
             },
         },
     },
