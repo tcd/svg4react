@@ -33,9 +33,8 @@
         ],
         "baseUrl": "src/",
         "paths": {
-            "@app/*":         ["*"],
-            "@app/theme":     ["ts/theme/index.ts"],
-            "@assets/*":      ["assets/*"],
+            "@app/*":    ["*"],
+            "@assets/*": ["assets/*"],
         },
     },
     "include": [

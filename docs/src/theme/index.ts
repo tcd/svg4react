@@ -1,1 +1,2 @@
-export * from "./mui"
+export * from "./DocsTheme"
+export * from "./helpers"

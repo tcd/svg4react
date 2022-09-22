@@ -1,9 +1,9 @@
-import type { ThemeOptions, SxProps } from "@mui/material"
+import type { SxProps } from "@mui/material"
 import { createTheme } from "@mui/material"
 
-const options: ThemeOptions = {}
+import { docsThemeOptions } from "../mui/theme-options"
 
-const theme = createTheme(options)
+const theme = createTheme(docsThemeOptions)
 export type ITheme = typeof theme
 export type ISxProps = SxProps<ITheme>
 

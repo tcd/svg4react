@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom"
+import { useLocation, useNavigate } from "react-router-dom"
 import {
     List,
     Divider,
@@ -6,6 +6,8 @@ import {
     ListItemButton,
     ListItemText,
 } from "@mui/material"
+
+import type { ISxProps as SxProps } from "@app/theme"
 
 export interface SideNavItemProps {
     data: ILinkData | ILinksData
@@ -35,21 +37,27 @@ const isLinks = (arg: any): arg is ILinksData => {
     return (!!arg?.links)
 }
 
-
 // =============================================================================
 
 const SideNavItem_link = (props: ILinkData): JSX.Element => {
 
     const navigate = useNavigate()
+    const location = useLocation()
 
     const handleClick = () => {
         navigate(props.to)
     }
 
+    const active = props.to == location.pathname
+
+    const sx: SxProps = {
+        color: active ? (theme) => theme.palette.secondary.main : undefined
+    }
+
     return (
         <ListItem disablePadding>
             <ListItemButton onClick={handleClick}>
-                <ListItemText primary={props.title} />
+                <ListItemText primary={props.title} primaryTypographyProps={{ sx }} />
             </ListItemButton>
         </ListItem>
     )

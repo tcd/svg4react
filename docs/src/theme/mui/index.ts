@@ -1,1 +1,1 @@
-export * from "./DocsTheme"
+export * from "./theme-options"

@@ -8,9 +8,6 @@ import {
     Typography,
 } from "@mui/material"
 
-import InboxIcon from "@mui/icons-material/MoveToInbox"
-import MailIcon from "@mui/icons-material/Mail"
-
 import { SIDE_NAV_LINKS } from "./side-nav-links"
 import { SideNavItem } from "./SideNavItem"
 
@@ -28,7 +25,7 @@ export const SideNav = (_props: unknown): JSX.Element => {
             >
                 <Toolbar>
                     <Typography variant="h6" noWrap component="div">
-                        Permanent drawer
+                        svg4react
                     </Typography>
                 </Toolbar>
             </AppBar>
