@@ -6,10 +6,12 @@ import {
     Toolbar,
     List,
     Typography,
+    Divider,
 } from "@mui/material"
 
 import { SIDE_NAV_LINKS } from "@app/features/routing"
 import { SideNavItem } from "./SideNavItem"
+import { SideNavHeader } from "./SideNavHeader"
 
 const drawerWidth = 240
 
@@ -19,16 +21,7 @@ export const SideNav = (_props: unknown): JSX.Element => {
 
     return (
         <Box sx={{ display: "flex" }}>
-            <AppBar
-                position="fixed"
-                sx={{ width: `calc(100% - ${drawerWidth}px)`, ml: `${drawerWidth}px` }}
-            >
-                <Toolbar>
-                    <Typography variant="h6" noWrap component="div">
-                        svg4react
-                    </Typography>
-                </Toolbar>
-            </AppBar>
+            <Header />
             <Drawer
                 sx={{
                     width: drawerWidth,
@@ -41,7 +34,9 @@ export const SideNav = (_props: unknown): JSX.Element => {
                 variant="permanent"
                 anchor="left"
             >
-                <Toolbar />
+                {/* <Toolbar /> */}
+                <SideNavHeader />
+                <Divider />
                 <List>
                     {$items}
                 </List>
@@ -54,5 +49,23 @@ export const SideNav = (_props: unknown): JSX.Element => {
                 <Outlet />
             </Box>
         </Box>
+    )
+}
+
+// =============================================================================
+
+export const Header = (_props: unknown): JSX.Element => {
+    return (
+        <AppBar
+            elevation={0}
+            position="fixed"
+            sx={{ width: `calc(100% - ${drawerWidth}px)`, ml: `${drawerWidth}px` }}
+        >
+            <Toolbar>
+                <Typography variant="h6" noWrap component="div">
+                    svg4react
+                </Typography>
+            </Toolbar>
+        </AppBar>
     )
 }

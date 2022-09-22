@@ -9,19 +9,19 @@ export type ScrollbarFuncOptions = {
     active: string;
 }
 
-// track, thumb and active are derived from macOS 10.15.7
-const defaults: ScrollbarFuncOptions = {
-    track: "#141e28",
-    thumb: "#6b6b6b",
-    active: "#959595",
-}
-
 // // track, thumb and active are derived from macOS 10.15.7
 // const defaults: ScrollbarFuncOptions = {
-//     track: "#f1f1f1",
-//     thumb: "#c1c1c1",
-//     active: "#a8a8a8",
+//     track: "#141e28",
+//     thumb: "#6b6b6b",
+//     active: "#959595",
 // }
+
+// track, thumb and active are derived from macOS 10.15.7
+const defaults: ScrollbarFuncOptions = {
+    track: "#f1f1f1",
+    thumb: "#c1c1c1",
+    active: "#a8a8a8",
+}
 
 /**
  *
