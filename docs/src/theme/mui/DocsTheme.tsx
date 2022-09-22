@@ -12,6 +12,11 @@ import { componentOverrides } from "./components"
 
 const themeOptions: ThemeOptions = {
     components: componentOverrides,
+    palette: {
+        primary: {
+            main: "#ffb13b",
+        },
+    },
 }
 
 export const DocsTheme: Theme = createTheme(themeOptions)

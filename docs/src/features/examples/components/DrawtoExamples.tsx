@@ -14,7 +14,7 @@ import {
 
 export const DrawtoExamples = (_props: unknown): JSX.Element => {
     return (
-        <Box sx={{ flexGrow: 1, display: "flex", flexFlow: "column nowrap", justifyContent: "stretch", alignItems: "stretch", backgroundColor: "rebeccapurple" }}>
+        <Box sx={{ flexGrow: 1, display: "flex", flexFlow: "column nowrap", justifyContent: "stretch", alignItems: "stretch" }}>
             <Example1 />
             <Example2 />
             <Example3 />
