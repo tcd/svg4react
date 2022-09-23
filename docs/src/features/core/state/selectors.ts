@@ -1,3 +1,5 @@
+import { isBlank } from "@mlxb/coolkit"
+
 import type { RootState } from "@app/state"
 
 const _selectSlice = (rootState: RootState) => rootState?.Core
@@ -7,11 +9,11 @@ const selectOpenedDrawerSections = (rootState: RootState) => _selectSlice(rootSt
 const selectDarkModeEnabled = (rootState: RootState) => _selectSlice(rootState)?.darkModeEnabled
 
 const selectPageTitle = (rootState: RootState) => {
-    const areaDisplayName = _selectSlice(rootState)?.pageTitle
-    if (areaDisplayName == null) {
+    const pageTitle = _selectSlice(rootState)?.pageTitle
+    if (isBlank(pageTitle)) {
         return "svg4react"
     } else {
-        return `svg4react - ${areaDisplayName}`
+        return `${pageTitle} | svg4react`
     }
 }
 
