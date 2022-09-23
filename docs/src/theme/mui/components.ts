@@ -15,13 +15,20 @@ export const componentOverrides: Components = {
     // Horizontal Rule
     // -------------------------------------------------------------------------
     MuiDivider: {
-        styleOverrides: {
-            root: {
-                borderBottomWidth: "1.25px",
-                borderColor: "rgba(0, 0, 0, 0.5)",
-                // margin: "12px 0px",
+        // styleOverrides: {
+        //     root: {
+        //     },
+        // },
+        variants: [
+            {
+                props: { variant: "thick" },
+                style: {
+                    borderBottomWidth: "1.25px",
+                    borderColor: "rgba(0, 0, 0, 0.5)",
+                    // margin: "12px 0px",
+                },
             },
-        },
+        ],
     },
     // -------------------------------------------------------------------------
     // Links
