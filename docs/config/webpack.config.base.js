@@ -67,6 +67,10 @@ const webpackConfig = {
                 include: MONACO_DIR,
                 use: ["style-loader", "css-loader"],
             },
+            {
+                test: /\.txt$/,
+                type: "asset/source",
+            },
         ],
     },
 }

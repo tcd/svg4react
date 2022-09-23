@@ -1,10 +1,10 @@
 import { isBlank } from "@mlxb/coolkit"
 import type {
     MonacoApi,
-    monacoApi as m,
+    monacoApi as _monacoApi,
 } from "./types"
 
-export const defaultMonacoOptions: m.editor.IStandaloneEditorConstructionOptions = {
+export const defaultMonacoOptions: _monacoApi.editor.IStandaloneEditorConstructionOptions = {
     lineNumbers: "on",
     roundedSelection: false,
     readOnly: false,
@@ -15,10 +15,10 @@ export const defaultMonacoOptions: m.editor.IStandaloneEditorConstructionOptions
 export interface MonacoConfiguration {
     languageName: string
     themeName: string
-    languageDef: m.languages.IMonarchLanguage | m.Thenable<m.languages.IMonarchLanguage>
-    languageConfig?: m.languages.LanguageConfiguration
-    theme: m.editor.IStandaloneThemeData,
-    completion: m.languages.CompletionItemProvider,
+    languageDef: _monacoApi.languages.IMonarchLanguage | _monacoApi.Thenable<_monacoApi.languages.IMonarchLanguage>
+    languageConfig?: _monacoApi.languages.LanguageConfiguration
+    theme: _monacoApi.editor.IStandaloneThemeData,
+    completion: _monacoApi.languages.CompletionItemProvider,
 }
 
 export class MonacoConfigurator {
@@ -46,8 +46,8 @@ export class MonacoConfigurator {
         monacoApi.languages.registerCompletionItemProvider(languageName, completion)
     }
 
-    public options(value = ""): m.editor.IStandaloneEditorConstructionOptions {
-        const options: m.editor.IStandaloneEditorConstructionOptions = { ...defaultMonacoOptions }
+    public options(value = ""): _monacoApi.editor.IStandaloneEditorConstructionOptions {
+        const options: _monacoApi.editor.IStandaloneEditorConstructionOptions = { ...defaultMonacoOptions }
         options.theme    = this.config.themeName
         options.language = this.config.languageName
         options.value    = value
