@@ -1,7 +1,9 @@
+tsdoc-metadata.json
+
 **/node_modules
 **/ignore/**
+build
 dist
 !docs/dist
 etc/docs/typedoc
 etc/docs/api-documenter
-tsdoc-metadata.json
