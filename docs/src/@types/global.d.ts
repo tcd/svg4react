@@ -1,4 +1,16 @@
+import type { Location } from "react-router-dom"
+
 export declare global {
+
+    // =========================================================================
+    // Routing
+    // =========================================================================
+
+    export type LocationChangePayload = {
+        location: Location
+        previousLocation?: Location
+        hash: string
+    }
 
     // =========================================================================
     // Links
