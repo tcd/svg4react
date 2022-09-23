@@ -26,7 +26,7 @@ const webpackConfig = {
     plugins: [
         new HtmlWebpackPlugin({
             template: path.resolve(PROJECT_ROOT, "src", "index.html"),
-            hash: true,
+            hash: false,
             inject: true,
         }),
         new BundleAnalyzerPlugin(),
