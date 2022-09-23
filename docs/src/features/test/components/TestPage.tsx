@@ -1,8 +1,27 @@
-import { Svg, Path } from "svg4react"
-import { LiveDemo } from "@app/features/shared"
 import styled from "@emotion/styled"
 
-const headerProps = { text: "I\'m styled!" };
+import { LiveDemo, Page } from "@app/features/shared"
+
+export const TestPage = (_props: unknown): JSX.Element => {
+
+    const scope = { styled, headerProps }
+
+    return (
+        <Page title="Test">
+            <LiveDemo
+                title="CSS"
+                code={code}
+                scope={scope}
+                trimCode={false}
+                noInline
+            />
+        </Page>
+    )
+}
+
+// =============================================================================
+
+const headerProps = { text: "I\'m styled!" }
 
 const code = `
 const Header = styled.div\`
@@ -12,18 +31,3 @@ const Header = styled.div\`
 
 render(<Header>{headerProps.text}</Header>)
 `
-
-export const TestPage = (_props: unknown): JSX.Element => {
-
-    const scope = { styled, headerProps }
-
-    return (
-        <LiveDemo
-            title="CSS"
-            code={code}
-            scope={scope}
-            trimCode={false}
-            noInline
-        />
-    )
-}

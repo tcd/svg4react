@@ -9,6 +9,7 @@ import { PathPage } from "@app/features/demos"
 import { SvgPage } from "@app/features/demos"
 
 import { TestPage } from "@app/features/test"
+import { LogosPage } from "@app/features/test"
 
 export const Routes = (_props: unknown): JSX.Element => {
     return useRoutes(routes())
@@ -22,7 +23,7 @@ const routes = (): RouteObject[] => {
             children: [
                 { index: true, element: <HomePage /> },
                 {
-                    path: "examples",
+                    path: "demos",
                     children: [
                         { index: true,    element: <NotFoundPage /> },
                         { path: "svg",    element: <SvgPage />      },
@@ -31,9 +32,10 @@ const routes = (): RouteObject[] => {
                     ],
                 },
                 {
-                    path: "test",
+                    path: "examples",
                     children: [
                         { index: true, element: <TestPage /> },
+                        { path: "logos", element: <LogosPage />   },
                     ],
                 },
                 { path: "*", element: <NotFoundPage /> },

@@ -18,24 +18,26 @@ export const Card = (props: CardProps): JSX.Element => {
 
     if (componentName) {
         title = <>
-            <Box component="span" sx={DocsSx.LiveDemo.componentName}>&lt;{componentName}&gt;</Box>
+            <Box component="span" sx={DocsSx.Card.componentName}>&lt;{componentName}&gt;</Box>
             <Box component="span">&nbsp;</Box>
             <Box component="span">Demo</Box>
         </>
     }
 
     return (
-        <Paper {...DocsSx.LiveDemo.root}>
+        <Paper {...DocsSx.Card.root}>
             <Typography
                 gutterBottom
                 variant="h4"
                 component="div"
-                sx={DocsSx.LiveDemo.title}
+                sx={DocsSx.Card.title}
             >
                 {title}
             </Typography>
             <Divider sx={{ width: "100%", mb: 4 }} />
-            {children && children}
+            <Box sx={DocsSx.Card.body}>
+                {children && children}
+            </Box>
         </Paper>
     )
 }
