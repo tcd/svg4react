@@ -8,10 +8,10 @@ export const reducers = {
     // -------------------------------------------------------------------------
     // Page Title
     // -------------------------------------------------------------------------
-    setAppTitle: (state: CoreState, { payload }: PayloadAction<string>) => {
+    setPageTitle: (state: CoreState, { payload }: PayloadAction<string>) => {
         state.pageTitle = payload
     },
-    clearAppTitle: (state: CoreState) => {
+    clearPageTitle: (state: CoreState) => {
         state.pageTitle = null
     },
     // -------------------------------------------------------------------------
