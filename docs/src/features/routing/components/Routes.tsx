@@ -10,6 +10,7 @@ import { SvgPage } from "@app/features/demos"
 
 import { TestPage } from "@app/features/test"
 import { LogosPage } from "@app/features/test"
+import { MonacoPage } from "@app/features/test"
 
 export const Routes = (_props: unknown): JSX.Element => {
     return useRoutes(routes())
@@ -36,6 +37,7 @@ const routes = (): RouteObject[] => {
                     children: [
                         { index: true, element: <TestPage /> },
                         { path: "logos", element: <LogosPage />   },
+                        { path: "monaco", element: <MonacoPage />   },
                     ],
                 },
                 { path: "*", element: <NotFoundPage /> },
