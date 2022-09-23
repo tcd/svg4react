@@ -4,6 +4,7 @@ const path = require("path")
 // const webpack = require("webpack")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin")
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
 const PROJECT_ROOT = "."
 
@@ -28,6 +29,7 @@ const webpackConfig = {
             hash: true,
             inject: true,
         }),
+        new BundleAnalyzerPlugin(),
     ],
     resolve: {
         extensions: ["*", ".js", ".jsx", ".tsx", ".ts"],
