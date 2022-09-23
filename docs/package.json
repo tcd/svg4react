@@ -1,9 +1,11 @@
 {
     "private": true,
+    "homepage": "https://tcd.github.io/svg4react/",
     "scripts": {
         "start": "npm run serve",
         "serve": "cross-env NODE_ENV=development webpack-dev-server --config ./webpack.config.js --open",
-        "build": "cross-env NODE_ENV=production webpack --config ./webpack.prod.js --mode production"
+        "build": "cross-env NODE_ENV=production webpack --config ./webpack.prod.js --mode production",
+        "deploy": "cross-env gh-pages -d './dist'"
     },
     "dependencies": {
         "@babel/core": "^7.19.1",
@@ -22,6 +24,7 @@
         "@types/react-router-dom": "^5.3.3",
         "babel-loader": "^8.2.5",
         "cross-env": "^7.0.3",
+        "gh-pages": "^4.0.0",
         "html-webpack-plugin": "^5.5.0",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
