@@ -3,6 +3,7 @@ export const SIDE_NAV_LINKS: (ILinkData | ILinksData)[] = [
     {
         title: "Components",
         links: [
+            { title: "Svg", to: "/examples/svg" },
             { title: "Path", to: "/examples/path" },
             { title: "Circle", to: "/examples/circle" },
         ],

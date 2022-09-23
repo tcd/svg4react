@@ -1,10 +1,13 @@
 import { RouteObject, useRoutes } from "react-router-dom"
 
 import { Layout } from "@app/features/core"
-import { NotFoundPage } from "@app/features/core"
 import { HomePage } from "@app/features/core"
-import { CircleDemo } from "@app/features/demos"
+import { NotFoundPage } from "@app/features/core"
+
+import { CirclePage } from "@app/features/demos"
 import { PathPage } from "@app/features/demos"
+import { SvgPage } from "@app/features/demos"
+
 import { TestPage } from "@app/features/test"
 
 export const Routes = (_props: unknown): JSX.Element => {
@@ -22,8 +25,9 @@ const routes = (): RouteObject[] => {
                     path: "examples",
                     children: [
                         { index: true,    element: <NotFoundPage /> },
+                        { path: "svg",    element: <SvgPage />      },
                         { path: "path",   element: <PathPage />     },
-                        { path: "circle", element: <CircleDemo />   },
+                        { path: "circle", element: <CirclePage />   },
                     ],
                 },
                 {
