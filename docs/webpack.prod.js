@@ -19,7 +19,7 @@ const webpackConfig = {
     /** @type {import("webpack").Configuration} */
     entry: path.resolve(PROJECT_ROOT, "src", "index.tsx"),
     output: {
-        path: path.resolve(PROJECT_ROOT),
+        path: path.resolve(PROJECT_ROOT, "dist"),
         publicPath: "/",
         filename: "bundle.js",
     },
