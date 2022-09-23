@@ -2,6 +2,7 @@ import { forwardRef } from "react"
 import type { SvgProps } from "./Svg.types"
 
 const defaultProps: Partial<SvgProps> = {
+    xmlnsXlink: "http://www.w3.org/1999/xlink",
     xmlns: "http://www.w3.org/2000/svg",
     // width: "100px",
     // height: "100px",
@@ -19,14 +20,26 @@ const defaultProps: Partial<SvgProps> = {
  */
 const Svg = forwardRef<SVGSVGElement, SvgProps>(
     function Svg(props, ref) {
+
         props = {
             ...defaultProps,
             ...props,
         }
+
+        const {
+            size = null,
+            ...otherProps
+        } = props
+
+        if (size) {
+            otherProps.width = size
+            otherProps.height = size
+        }
+
         return (
             <svg
                 ref={ref}
-                {...props}
+                {...otherProps}
             />
         )
     },
