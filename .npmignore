@@ -12,6 +12,7 @@ typedoc.json
 build
 docs
 etc
+**/ignore
 node_modules
 src
 tmp
