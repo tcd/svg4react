@@ -20,12 +20,17 @@ const Path = forwardRef<SVGPathElement, PathProps>(function Path(props: PathProp
     //     stroke="black",
     // } = props
 
-    const {
-        commands,
+    let {
+        // @ts-ignore: next-line
+        commands = null,
+        // @ts-ignore: next-line
+        d = null,
         ...otherProps
     } = props
 
-    const d = buildDrawing(commands)
+    if (d === null) {
+        d = buildDrawing(commands)
+    }
 
     return (
         <path
