@@ -47,7 +47,13 @@ export const DocsPrismTheme: PrismTheme = {
             },
         },
         {
-            types: ["attr-name", "variable"],
+            types: ["attr-equals"],
+            style: {
+                color: colors.control,
+            },
+        },
+        {
+            types: ["attr-name", "variable", "spread"],
             style: {
                 color: colors.variable,
             },
