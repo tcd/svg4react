@@ -2,7 +2,8 @@
     "private": true,
     "scripts": {
         "start": "npm run serve",
-        "serve": "cross-env NODE_ENV=development webpack-dev-server --config ./webpack.config.js --open"
+        "serve": "cross-env NODE_ENV=development webpack-dev-server --config ./webpack.config.js --open",
+        "build": "cross-env NODE_ENV=production webpack --config ./webpack.prod.js --mode production"
     },
     "dependencies": {
         "@babel/core": "^7.19.1",
