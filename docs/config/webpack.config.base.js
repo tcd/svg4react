@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 
 const path = require("path")
-// const webpack = require("webpack")
+const webpack = require("webpack")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin")
 const MonacoWebpackPlugin = require("monaco-editor-webpack-plugin")
@@ -31,8 +31,9 @@ const webpackConfig = {
         }),
         new MonacoWebpackPlugin({
             // available options are documented at https://github.com/microsoft/monaco-editor/blob/main/webpack-plugin/README.md#options
-            languages: ["javascript"],
+            // languages: ["javascript"],
         }),
+        new webpack.ProvidePlugin({ process: "process/browser", Buffer: ["buffer", "Buffer"] }),
     ],
     resolve: {
         extensions: ["*", ".js", ".jsx", ".tsx", ".ts"],
@@ -56,15 +57,10 @@ const webpackConfig = {
             {
                 test: /\.css$/,
                 include: APP_DIR,
-                use: [{
-                    loader: "style-loader",
-                }, {
-                    loader: "css-loader",
-                    options: {
-                        modules: true,
-                        namedExport: true,
-                    },
-                }],
+                use: [
+                    "style-loader",
+                    "css-loader",
+                ],
             },
             {
                 test: /\.css$/,

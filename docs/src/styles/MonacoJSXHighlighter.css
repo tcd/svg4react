@@ -1,0 +1,73 @@
+:root {
+    --dark-plus-fg: #d4d4d4;
+    --dark-plus-bg: #1E1E1E;
+
+    --dark-plus-comment: #608B4E;
+    --dark-plus-keyword: #569CD6;
+    --dark-plus-variable: #9CDCFE;
+    --dark-plus-function: #DCDCAA;
+    --dark-plus-control: #C586C0;
+    --dark-plus-string: #CE9178;
+    --dark-plus-number: #B5CEA8;
+    --dark-plus-type: #4EC9B0;
+    --dark-plus-punctuation: #808080;
+    --dark-plus-escape: #D7BA7D;
+}
+
+.JSXElement.JSXIdentifier{
+    color: var(--dark-plus-type);
+}
+
+.JSXElement.JSXBracket {
+    color: var(--dark-plus-punctuation);
+}
+
+.JSXElement.JSXText {
+    color: var(--dark-plus-fg);
+}
+
+.JSXElement.JSXGlyph {
+    color: var(--dark-plus-escape);
+}
+
+.JSXOpeningFragment.JSXBracket {
+    color: var(--dark-plus-punctuation);
+}
+
+.JSXClosingFragment.JSXBracket {
+    color: var(--dark-plus-punctuation);
+}
+
+.JSXOpeningElement.JSXBracket {
+    color: var(--dark-plus-punctuation);
+}
+
+.JSXOpeningElement.JSXIdentifier {
+    color: var(--dark-plus-punctuation);
+}
+
+.JSXClosingElement.JSXBracket {
+    color: var(--dark-plus-punctuation);
+}
+
+.JSXClosingElement.JSXIdentifier {
+    color: var(--dark-plus-punctuation);
+}
+
+.JSXAttribute.JSXIdentifier {
+    color: var(--dark-plus-variable);
+}
+
+.JSXExpressionContainer.JSXBracket {
+    color: var(--dark-plus-type);
+}
+
+.JSXSpreadChild.JSXBracket {
+    color: var(--dark-plus-control);
+}
+
+.JSXSpreadAttribute.JSXBracket {
+    /* color: var(--dark-plus-type); */
+    color: var(--dark-plus-keyword);
+}
+
