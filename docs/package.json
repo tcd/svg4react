@@ -1,8 +1,8 @@
 {
     "scripts": {
         "start": "npm run serve",
-        "serve": "cross-env NODE_ENV=development webpack-dev-server --config ./webpack.config.js --open",
-        "build": "cross-env NODE_ENV=production webpack --config ./webpack.prod.js --mode production",
+        "serve": "cross-env NODE_ENV=development webpack-dev-server --config ./config/webpack.config.dev.js --open",
+        "build": "cross-env NODE_ENV=production webpack --config ./config/webpack.config.prod.js --mode production",
         "deploy": "cross-env gh-pages -d './dist'"
     },
     "dependencies": {

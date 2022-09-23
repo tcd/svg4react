@@ -5,7 +5,7 @@ const path = require("path")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin")
 
-const PROJECT_ROOT = "."
+const { PROJECT_ROOT } = require("./helpers")
 
 /**
  * See [Webpack Configuration docs](https://webpack.js.org/configuration/) for more information.
@@ -13,24 +13,6 @@ const PROJECT_ROOT = "."
  * @type {import("webpack").Configuration}
  */
 const webpackConfig = {
-    mode: "development",
-    devtool: "inline-source-map",
-    /** @type {import("webpack").Configuration} */
-    devServer: {
-        // static: [
-        //     {
-        //         directory: path.join(PROJECT_ROOT, "dist"),
-        //     },
-        //     {
-        //         directory: path.join(PROJECT_ROOT, "src", "assets"),
-        //         publicPath: "/public",
-        //     },
-        // ],
-        historyApiFallback: true,
-        port: 6969,
-        allowedHosts: "all",
-        hot: true,
-    },
     entry: path.resolve(PROJECT_ROOT, "src", "index.tsx"),
     output: {
         path: path.resolve(PROJECT_ROOT, "dist"),
