@@ -1,4 +1,3 @@
-import { forwardRef } from "react"
 import { processPoints } from "./process-points"
 import type { PolylineProps } from "./Polyline.types"
 
@@ -13,7 +12,7 @@ import type { PolylineProps } from "./Polyline.types"
  *
  * For closed shapes see the [`<polygon>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/polygon) element.
  */
-const Polyline  = forwardRef<SVGPolylineElement, PolylineProps>(function Polyline(props: PolylineProps, ref) {
+const Polyline = (props: PolylineProps): JSX.Element => {
 
     const {
         points = [],
@@ -25,11 +24,10 @@ const Polyline  = forwardRef<SVGPolylineElement, PolylineProps>(function Polylin
     return (
         // @ts-ignore: next-line
         <polyline
-            ref={ref}
             points={processedPoints}
             {...otherProps}
         />
     )
-})
+}
 
 export default Polyline
