@@ -39,8 +39,6 @@ export const Example3 = (_props: unknown): JSX.Element => {
             title="MoveTo"
             code={code}
             scope={scope}
-            trimCode={false}
-            noInline
         />
     )
 }

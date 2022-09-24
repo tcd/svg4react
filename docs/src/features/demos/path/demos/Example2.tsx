@@ -17,24 +17,24 @@ const sx: SxProps = {
 }
 
 const code = `
-    const pathProps = {
-        fill: "none",
-        stroke: "indianred",
-        commands: [
-            ["M", [[              10,30]]],
-            ["A", [[20,20, 0,0,1, 50,30]]],
-            ["A", [[20,20, 0,0,1, 90,30]]],
-            ["Q", [[90,60,        50,90]]],
-            ["Q", [[10,60,        10,30]]],
-            ["Z", []                     ],
-        ],
-    }
+const pathProps = {
+    fill: "none",
+    stroke: "indianred",
+    commands: [
+        ["M", [[              10,30]]],
+        ["A", [[20,20, 0,0,1, 50,30]]],
+        ["A", [[20,20, 0,0,1, 90,30]]],
+        ["Q", [[90,60,        50,90]]],
+        ["Q", [[10,60,        10,30]]],
+        ["Z", []                     ],
+    ],
+}
 
-   render(
-        <Svg size="100px" viewBox="0 0 100 100" id="css-example">
-            <Path {...pathProps} />
-        </Svg>
-    )
+render(
+    <Svg size="100px" viewBox="0 0 100 100" id="css-example">
+        <Path {...pathProps} />
+    </Svg>
+)
 `
 
 /**
@@ -50,7 +50,6 @@ export const Example2 = (_props: unknown): JSX.Element => {
                 title="CSS"
                 code={code}
                 scope={scope}
-                noInline
             />
         </Box>
     )

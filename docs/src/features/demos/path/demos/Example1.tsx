@@ -3,6 +3,7 @@ import { Svg, Path } from "svg4react"
 import { LiveDemo } from "@app/features/shared"
 
 const code = `
+render(
     <Svg size="100px" viewBox="0 0 100 100">
         <Path
             fill="indianred"
@@ -16,6 +17,7 @@ const code = `
             ]}
         />
     </Svg>
+)
 `
 
 /**

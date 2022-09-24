@@ -1,7 +1,8 @@
 import { Svg, G, Path } from "svg4react"
 import { LiveDemo } from "@app/features/shared"
 
-const code = `const pathProps_a = {
+const code = `
+const pathProps_a = {
     stroke: "indianred",
     commands: [
         ["M", [[6,10]]                  ],
@@ -42,7 +43,8 @@ render (
             <Path {...pathProps_d} />
         </G>
     </Svg>
-)`
+)
+`
 
 /**
  * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d#elliptical_arc_curve
@@ -55,8 +57,6 @@ export const Example7 = (_props: unknown): JSX.Element => {
             title="Elliptical Arc Curve"
             code={code}
             scope={scope}
-            noInline
-            trimCode={false}
         />
     )
 }

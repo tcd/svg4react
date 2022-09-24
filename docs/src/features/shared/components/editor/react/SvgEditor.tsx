@@ -1,11 +1,7 @@
-import noop from "lodash/noop"
-import React, { forwardRef, useCallback, useContext, useEffect, useRef, useState } from "react"
+import { useCallback, useContext, useEffect, useRef, useState } from "react"
 import MonacoEditor from "react-monaco-editor"
 import { LiveContext } from "react-live"
-import { isBlank } from "@mlxb/coolkit"
 
-
-import { Selection } from "monaco-editor"
 import { parse } from "@babel/parser"
 import traverse from "@babel/traverse"
 import MonacoJSXHighlighter from "monaco-jsx-highlighter"
@@ -27,7 +23,6 @@ export const SvgEditor = (props: SvgEditorProps) => {
     const editorRef = useRef<MonacoEditor>()
 
     const [_value, set_value] = useState<string>()
-    const [formatted, setFormatted] = useState<boolean>()
     const [changed, setChanged] = useState<boolean>(false)
 
     const {
@@ -42,13 +37,8 @@ export const SvgEditor = (props: SvgEditorProps) => {
     }, [changed, code, _value])
 
     useEffect(() => {
-        // console.log(live)
         set_value(code)
-        // if (!formatted) {
-        //     editorRef?.current?.editor?.trigger("handleDidMount", "editor.action.formatDocument", {})
-        //     setFormatted(true)
-        // }
-    }, [code, formatted, setFormatted])
+    }, [code])
 
     const handleWillMount = (monaco: MonacoApi): void => {
         monaco.editor.defineTheme("dark-plus", DarkPlusMonacoTheme)
@@ -56,66 +46,39 @@ export const SvgEditor = (props: SvgEditorProps) => {
 
     const handleDidMount = (editor: monacoApi.editor.IStandaloneCodeEditor, monaco: MonacoApi) => {
         _handleDidMount(editor, monaco)
-        // editorRef?.current?.editor?.trigger("handleDidMount", "editor.action.formatDocument", {})
-        // if (dev) {
-        //     editorRef?.current?.editor?.trigger("handleClick", "editor.action.inspectTokens", {})
-        // }
-
-        // const range = editor.getModel().getFullModelRange()
-        // console.log(range)
-        // editor.setSelection(range)
-        // editor.setSelection(new Selection(1, 1, 1, 1));
-        // debugger
-
+        if (dev) {
+            editorRef?.current?.editor?.trigger("handleClick", "editor.action.inspectTokens", {})
+        }
     }
 
     const handleChange = (value: string, _event: monacoApi.editor.IModelContentChangedEvent) => {
         onChange(value)
         setChanged(true)
         set_value(value)
-        // editorRef?.current?.editor?.setSelection(new Selection(1, 1, 1, 1));
     }
-
-    //     const handleClick = (): void => {
-    //
-    //         const editor = editorRef?.current?.editor
-    //         if (!!!editor) {
-    //             return null
-    //         }
-    //
-    //         editor.trigger("handleClick", "editor.action.inspectTokens", {})
-    //         // editor.focus()
-    //
-    //         // const actions = editor.getSupportedActions().map((a) => a.id)
-    //         // const tokenActions = actions.filter(x => x.includes("developer"));
-    //         // console.log(actions)
-    //         // console.log(tokenActions);
-    //     }
 
     const options: monacoApi.editor.IStandaloneEditorConstructionOptions = {
         // language: "jsx",
         // theme: "dark-plus",
-        smartSelect: {
-            selectLeadingAndTrailingWhitespace: false,
-        }
+        // smartSelect: {
+        //     selectLeadingAndTrailingWhitespace: false,
+        // },
+        scrollBeyondLastLine: false,
     }
 
     return (
-        <>
-            {/* <button className="btn btn-primary mb-5" onClick={handleClick}>Inspect</button> */}
-            <MonacoEditor
-                ref={(node) => { editorRef.current = node }}
-                width="800"
-                height="600"
-                // language="typescript"
-                theme="dark-plus"
-                value={theRealValue()}
-                options={options}
-                onChange={handleChange}
-                editorDidMount={handleDidMount}
-                editorWillMount={handleWillMount}
-            />
-        </>
+        <MonacoEditor
+            ref={(node) => { editorRef.current = node }}
+            width="800"
+            height="600"
+            // language="typescript"
+            theme="dark-plus"
+            value={theRealValue()}
+            options={options}
+            onChange={handleChange}
+            editorDidMount={handleDidMount}
+            editorWillMount={handleWillMount}
+        />
     )
 }
 

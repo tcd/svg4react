@@ -1,7 +1,8 @@
 import { Svg, Path } from "svg4react"
 import { LiveDemo } from "@app/features/shared"
 
-const code = `// An open shape with the last point of the path different to the first one
+const code = `
+// An open shape with the last point of the path different to the first one
 const pathProps_a = {
     stroke: "indianred",
     commands: [
@@ -35,7 +36,8 @@ render (
         <Path {...pathProps_b} />
         <Path {...pathProps_c} />
     </Svg>
-)`
+)
+`
 
 /**
  * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d#closepath
@@ -49,8 +51,6 @@ export const Example8 = (_props: unknown): JSX.Element => {
             title="ClosePath"
             code={code}
             scope={scope}
-            noInline
-            trimCode={false}
         />
     )
 }

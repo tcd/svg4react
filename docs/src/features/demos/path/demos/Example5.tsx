@@ -35,7 +35,8 @@ const Extra = () => (
     </>
 )
 
-const code = `// Cubic Bézier curve with absolute coordinates
+const code = `
+// Cubic Bézier curve with absolute coordinates
 const pathProps_1 = {
     fill: "none",
     stroke: "indianred",
@@ -67,7 +68,8 @@ render (
         <Path {...pathProps_2} />
         <Extra />
     </Svg>
-)`
+)
+`
 
 /**
  * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d#cubic_b%C3%A9zier_curve
@@ -81,8 +83,6 @@ export const Example5 = (_props: unknown): JSX.Element => {
             title="Cubic Bézier Curve"
             code={code}
             scope={scope}
-            noInline
-            trimCode={false}
         />
     )
 }

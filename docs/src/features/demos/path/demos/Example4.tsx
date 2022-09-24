@@ -1,7 +1,8 @@
 import { Svg, Path } from "svg4react"
 import { LiveDemo } from "@app/features/shared"
 
-const code = `// LineTo commands with absolute coordinates
+const code = `
+// LineTo commands with absolute coordinates
 const pathProps_1 = {
     fill: "none",
     stroke: "indianred",
@@ -34,7 +35,8 @@ render (
         <Path {...pathProps_1} />
         <Path {...pathProps_2} />
     </Svg>
-)`
+)
+`
 
 /**
  * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d#lineto_path_commands
@@ -48,8 +50,6 @@ export const Example4 = (_props: unknown): JSX.Element => {
             title="LineTo"
             code={code}
             scope={scope}
-            noInline
-            trimCode={false}
         />
     )
 }

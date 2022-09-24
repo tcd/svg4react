@@ -3,6 +3,7 @@ import { Circle, Svg } from "svg4react"
 import { LiveDemo } from "@app/features/shared"
 
 const code = `
+render(
     <Svg size="100px">
         <Circle
             cx={50}
@@ -11,14 +12,12 @@ const code = `
             fill="#00deaf"
         />
     </Svg>
+)
 `
 
 export const SvgDemo = (_props: unknown): JSX.Element => {
 
-    const scope = {
-        Svg,
-        Circle,
-    }
+    const scope = { Svg, Circle }
 
     return (
         <LiveDemo

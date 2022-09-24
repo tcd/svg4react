@@ -1,11 +1,9 @@
-import { useContext } from "react"
 import { Box, Paper } from "@mui/material"
 import {
     LiveProvider,
     LiveError,
     LivePreview,
     withLive,
-    LiveContext,
 } from "react-live"
 
 import { DocsSx } from "@app/theme"
@@ -23,19 +21,11 @@ export type CustomLiveDemoProps = {
     /** Accepts custom globals that the `code` can use */
     scope: Record<string, any>
     /**
-     * Doesn't evaluate and mount the inline code (Default: false).
-     * Note: when using noInline whatever code you write must be a single expression (function, class component or some jsx) that can be returned immediately.
-     * If you'd like to render multiple components, use noInline={true}
+     * Evaluate and mount the inline code.
      *
      * @default false
      */
-    noInline?: boolean
-    /**
-     * Trim & remove leading indentation from `code`.
-     *
-     * @default true
-     */
-    trimCode?: boolean
+    inline?: boolean
 } & WithLiveProps
 
 const _CustomLiveDemo = (props: CustomLiveDemoProps): JSX.Element => {
@@ -44,26 +34,17 @@ const _CustomLiveDemo = (props: CustomLiveDemoProps): JSX.Element => {
         title,
         componentName = null,
         scope,
-        // trimCode = true,
-        noInline = false,
+        inline = false,
     } = props
 
     const passedCode = trimCode(props?.code)
-
-    // useEffect(() => {
-    //     console.log(props)
-    // }, [props])
-
-    // if (trimCode) {
-    //     code = code.trim().replaceAll(/^\s{4}/gm, "")
-    // }
 
     return (
         <Card title={title} componentName={componentName}>
             <LiveProvider
                 code={passedCode}
                 scope={scope}
-                noInline={noInline}
+                noInline={!!!inline}
                 theme={DocsPrismTheme}
             >
                 <Box sx={DocsSx.LiveDemo.container}>

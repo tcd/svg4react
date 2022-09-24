@@ -1,7 +1,8 @@
 import { Svg, Path } from "svg4react"
 import { LiveDemo } from "@app/features/shared"
 
-const code = `const pathProps= {
+const code = `
+const pathProps= {
     fill: "indianred",
     commands: [
         ["M", [
@@ -37,7 +38,8 @@ render (
     <Svg size="110px" viewBox="0 0 72 100.04">
         <Path {...pathProps} />
     </Svg>
-)`
+)
+`
 
 export const Example101 = (_props: unknown): JSX.Element => {
 
@@ -48,8 +50,6 @@ export const Example101 = (_props: unknown): JSX.Element => {
             title="Example #101"
             code={code}
             scope={scope}
-            noInline
-            trimCode={false}
         />
     )
 }
