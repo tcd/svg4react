@@ -34,7 +34,7 @@ export const Layout = (_props: unknown): JSX.Element => {
                 </List>
             </Drawer>
             <Box component="main" sx={DocsSx.Layout.main}>
-                <Toolbar />
+                <Toolbar sx={DocsSx.Layout.header} />
                 <Outlet />
             </Box>
         </Box>
