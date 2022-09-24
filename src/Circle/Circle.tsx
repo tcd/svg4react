@@ -21,11 +21,3 @@ const Circle = forwardRef<SVGCircleElement, CircleProps>(function Circle(props: 
 })
 
 export default Circle
-
-// let example = () => {
-//     return <Circle
-//         cx={2}
-//         cy={0}
-//         r={0}
-//     />
-// }

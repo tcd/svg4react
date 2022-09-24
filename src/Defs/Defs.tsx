@@ -12,7 +12,7 @@ import type { DefsProps } from "./Defs.types"
  *
  * To display them you have to reference them (with a [`<use>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/use) element for example).
  */
-const Defs = forwardRef<SVGDefsElement>(function Def(props: DefsProps, ref) {
+const Defs = forwardRef<SVGDefsElement, DefsProps>(function Def(props: DefsProps, ref) {
     return (
         <defs
             ref={ref}
