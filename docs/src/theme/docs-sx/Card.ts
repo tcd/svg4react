@@ -14,7 +14,19 @@ const title: SxProps = {
 }
 
 const componentName: SxProps = {
+    display: "inline-block",
+    verticalAlign: "center",
+
     fontFamily: ThemeVars.fontFamily.monospace,
+
+    backgroundColor: "rgba(175, 184, 193, 0.2)",
+
+    m: 0,
+    p: "0.1em",
+    // py: "0.2em",
+    // px: "0.2em",
+
+    borderRadius: "6px",
 }
 
 const body: SxProps = {
