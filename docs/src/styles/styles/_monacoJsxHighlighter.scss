@@ -1,17 +1,39 @@
-.JSXElement.JSXIdentifier{
-    color: var(--dark-plus-type);
+.JSXElement {
+    &.JSXIdentifier{
+        color: var(--dark-plus-type);
+    }
+
+    &.JSXBracket {
+        color: var(--dark-plus-punctuation);
+    }
+
+    &.JSXText {
+        color: var(--dark-plus-fg);
+    }
+
+    &.JSXGlyph {
+        color: var(--dark-plus-escape);
+    }
 }
 
-.JSXElement.JSXBracket {
-    color: var(--dark-plus-punctuation);
+.JSXOpeningElement {
+    &.JSXBracket {
+        color: var(--dark-plus-punctuation);
+    }
+
+    &.JSXIdentifier {
+        color: var(--dark-plus-punctuation);
+    }
 }
 
-.JSXElement.JSXText {
-    color: var(--dark-plus-fg);
-}
+.JSXClosingElement {
+    &.JSXBracket {
+        color: var(--dark-plus-punctuation);
+    }
 
-.JSXElement.JSXGlyph {
-    color: var(--dark-plus-escape);
+    &.JSXIdentifier {
+        color: var(--dark-plus-punctuation);
+    }
 }
 
 .JSXOpeningFragment.JSXBracket {
@@ -19,22 +41,6 @@
 }
 
 .JSXClosingFragment.JSXBracket {
-    color: var(--dark-plus-punctuation);
-}
-
-.JSXOpeningElement.JSXBracket {
-    color: var(--dark-plus-punctuation);
-}
-
-.JSXOpeningElement.JSXIdentifier {
-    color: var(--dark-plus-punctuation);
-}
-
-.JSXClosingElement.JSXBracket {
-    color: var(--dark-plus-punctuation);
-}
-
-.JSXClosingElement.JSXIdentifier {
     color: var(--dark-plus-punctuation);
 }
 
@@ -54,4 +60,3 @@
     /* color: var(--dark-plus-type); */
     color: var(--dark-plus-keyword);
 }
-
