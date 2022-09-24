@@ -1,7 +1,8 @@
 import noop from "lodash/noop"
-import React, { forwardRef, useCallback, useEffect, useRef, useState } from "react"
-import { isBlank } from "@mlxb/coolkit"
+import React, { forwardRef, useCallback, useContext, useEffect, useRef, useState } from "react"
 import MonacoEditor from "react-monaco-editor"
+import { LiveContext } from "react-live"
+import { isBlank } from "@mlxb/coolkit"
 
 
 // import monaco from "monaco-editor"
@@ -16,18 +17,27 @@ import { monacoApi, MonacoApi, DarkPlusMonacoTheme } from ".."
 export interface SvgEditorProps {
     code: string
     dev?: boolean
-    onChange?: (value: string, event: monacoApi.editor.IModelContentChangedEvent) => void
 }
 
 export const SvgEditor = (props: SvgEditorProps) => {
 
-    const editorRef = useRef<MonacoEditor>()
-
-    let {
-        code,
+    const {
         dev = false,
-        onChange = noop,
     } = props
+
+    const editorRef = useRef<MonacoEditor>()
+    const [_value, set_value] = useState<string>()
+
+    const {
+        code,
+        // @ts-ignore: next-line
+        onChange,
+    } = useContext(LiveContext)
+
+    useEffect(() => {
+        // console.log(live)
+        set_value(code)
+    }, [code])
 
     const handleWillMount = (monaco: MonacoApi): void => {
         monaco.editor.defineTheme("dark-plus", DarkPlusMonacoTheme)
@@ -35,13 +45,15 @@ export const SvgEditor = (props: SvgEditorProps) => {
 
     const handleDidMount = (editor: monacoApi.editor.IStandaloneCodeEditor, monaco: MonacoApi) => {
         _handleDidMount(editor, monaco)
+        editorRef?.current?.editor?.trigger("handleClick", "", {})
         if (dev) {
             editorRef?.current?.editor?.trigger("handleClick", "editor.action.inspectTokens", {})
         }
     }
 
-    const handleChange = (value: string, event: monacoApi.editor.IModelContentChangedEvent) => {
-        onChange(value, event)
+    const handleChange = (value: string, _event: monacoApi.editor.IModelContentChangedEvent) => {
+        onChange(value)
+        set_value(value)
     }
 
     //     const handleClick = (): void => {
@@ -74,7 +86,7 @@ export const SvgEditor = (props: SvgEditorProps) => {
                 height="600"
                 // language="typescript"
                 theme="dark-plus"
-                value={code}
+                value={_value}
                 options={options}
                 onChange={handleChange}
                 editorDidMount={handleDidMount}
