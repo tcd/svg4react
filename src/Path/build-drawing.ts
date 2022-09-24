@@ -5,6 +5,9 @@ import { DrawToFuncs } from "./DrawToFuncs"
  * @internal
  */
 export const buildDrawing = (commands: CmdProp[]): string => {
+    if (!commands) {
+        return ""
+    }
     return commands.map((cmd) => {
         switch (cmd[0]) {
             case "M": return DrawToFuncs.M(...cmd[1])
