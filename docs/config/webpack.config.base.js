@@ -8,7 +8,7 @@ const MonacoWebpackPlugin = require("monaco-editor-webpack-plugin")
 
 const { PROJECT_ROOT } = require("./helpers")
 
-const APP_DIR = path.resolve(PROJECT_ROOT, "src")
+const APP_DIR    = path.resolve(PROJECT_ROOT, "src")
 const MONACO_DIR = path.resolve(PROJECT_ROOT, "node_modules", "monaco-editor")
 
 /**
@@ -18,10 +18,16 @@ const MONACO_DIR = path.resolve(PROJECT_ROOT, "node_modules", "monaco-editor")
  */
 const webpackConfig = {
     entry: path.resolve(PROJECT_ROOT, "src", "index.tsx"),
+    // output: {
+    //     path: path.resolve(PROJECT_ROOT, "dist"),
+    //     publicPath: "/",
+    //     // filename: "bundle.js",
+    // },
     output: {
         path: path.resolve(PROJECT_ROOT, "dist"),
         publicPath: "/",
-        filename: "bundle.js",
+        // filename: isDev ? "[name].dist.js" : "[name].[chunkhash:8].dist.js",
+        filename: "[name].js",
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -31,6 +37,8 @@ const webpackConfig = {
         }),
         new MonacoWebpackPlugin({
             // available options are documented at https://github.com/microsoft/monaco-editor/blob/main/webpack-plugin/README.md#options
+            // if no languages are specified, all are included
+            // FIXME: figure out what language(s) we need so that we don't bundle them all.
             // languages: ["javascript"],
         }),
         new webpack.ProvidePlugin({ process: "process/browser", Buffer: ["buffer", "Buffer"] }),
@@ -50,11 +58,6 @@ const webpackConfig = {
                 use: ["babel-loader"],
             },
             {
-                enforce: "pre",
-                test: /\.tsx?$/,
-                use: "source-map-loader",
-            },
-            {
                 test: /\.css$/,
                 include: APP_DIR,
                 use: [
@@ -70,6 +73,7 @@ const webpackConfig = {
             {
                 test: /\.txt$/,
                 type: "asset/source",
+
             },
         ],
     },

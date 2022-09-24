@@ -1,8 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 
-// const { PROJECT_ROOT } = require("./helpers")
-
 const baseConfig = require("./webpack.config.base")
+// const { PROJECT_ROOT } = require("./helpers")
 
 /**
  * See [Webpack Configuration docs](https://webpack.js.org/configuration/) for more information.
@@ -28,6 +27,16 @@ const webpackConfig = {
         port: 6969,
         allowedHosts: "all",
         hot: true,
+    },
+    module: {
+        rules: [
+            ...baseConfig.module.rules,
+            {
+                enforce: "pre",
+                test: /\.tsx?$/,
+                use: "source-map-loader",
+            },
+        ],
     },
 }
 

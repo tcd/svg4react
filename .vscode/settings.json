@@ -2,7 +2,10 @@
     "files.exclude": {
         "**/node_modules": true,
     },
-    "files.associations": { "*.json": "jsonc" },
+    "files.associations": {
+        "*.json": "jsonc",
+        "**/docs/dist/*.js": "plaintext",
+    },
     "eslint.format.enable": true,
     "[javascript]":      { "editor.defaultFormatter": "dbaeumer.vscode-eslint" },
     "[typescript]":      { "editor.defaultFormatter": "dbaeumer.vscode-eslint" },
