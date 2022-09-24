@@ -1,4 +1,5 @@
 export * from "./Card"
+export * from "./Changelog"
 export * from "./Layout"
 export * from "./LiveDemo"
 export * from "./NotFoundPage"

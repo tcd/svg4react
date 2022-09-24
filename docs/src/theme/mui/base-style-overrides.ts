@@ -1,5 +1,7 @@
 import type { CSSObject, SxProps } from "@mui/material"
 
+import { DarkPlusColors } from "@app/util"
+import { ThemeVars } from "@app/theme/variables"
 import {
     // ThemeBreakpoints,
     scrollbar,
@@ -11,14 +13,37 @@ import {
  * - `<li></li>`
  */
 const lists: SxProps = {
-    listStyle: "none",
-    listStylePosition: "inside",
-    paddingLeft: "0px",
-    marginLeft: "0px",
-    marginBottom: "default",
-    marginBlockStart: "0px",
-    marginBlockEnd: "0px",
+    // listStyle: "none",
+    // listStylePosition: "inside",
+    // paddingLeft: "0px",
+    // marginLeft: "0px",
+    // marginBottom: "default",
+    // marginBlockStart: "0px",
+    // marginBlockEnd: "0px",
 }
+
+/**
+ * - `<code></code>`
+ */
+const code: SxProps = {
+    fontFamily: ThemeVars.fontFamily.monospace,
+    lineHeight: "unset",
+    fontWeight: 400,
+    fontSize: "14px",
+
+    color: DarkPlusColors.fg,
+    backgroundColor: DarkPlusColors.bg,
+
+    padding: "1px 4px",
+    borderRadius: "3px",
+
+    display: "inline-block",
+    verticalAlign: "center",
+}
+
+// =============================================================================
+// Html / Body
+// =============================================================================
 
 const _htmlAndBody: CSSObject = {
     width: "100%",
@@ -38,7 +63,12 @@ const body: CSSObject = {
     ..._htmlAndBody,
     ...scrollbar(),
     "& ol, & ul, & li": lists,
+    // "& code": code,
 }
+
+// =============================================================================
+// #root
+// =============================================================================
 
 const root: CSSObject = {
     width: "100%",
@@ -53,8 +83,12 @@ const root: CSSObject = {
     // },
 }
 
+// =============================================================================
+// All Together
+// =============================================================================
+
 export const baseStyleOverrides: CSSObject = {
-    html: html,
-    body: body,
+    html,
+    body,
     "#root": root,
 }

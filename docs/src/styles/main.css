@@ -1,0 +1,15 @@
+:root {
+    --dark-plus-fg: #d4d4d4;
+    --dark-plus-bg: #1E1E1E;
+
+    --dark-plus-comment: #608B4E;
+    --dark-plus-keyword: #569CD6;
+    --dark-plus-variable: #9CDCFE;
+    --dark-plus-function: #DCDCAA;
+    --dark-plus-control: #C586C0;
+    --dark-plus-string: #CE9178;
+    --dark-plus-number: #B5CEA8;
+    --dark-plus-type: #4EC9B0;
+    --dark-plus-punctuation: #808080;
+    --dark-plus-escape: #D7BA7D;
+}
