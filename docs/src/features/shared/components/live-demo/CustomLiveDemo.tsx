@@ -40,8 +40,6 @@ export type CustomLiveDemoProps = {
 
 const _CustomLiveDemo = (props: CustomLiveDemoProps): JSX.Element => {
 
-    const { code } = useContext(LiveContext)
-
     const {
         title,
         componentName = null,
@@ -70,10 +68,7 @@ const _CustomLiveDemo = (props: CustomLiveDemoProps): JSX.Element => {
             >
                 <Box sx={DocsSx.LiveDemo.container}>
                     <Paper {...DocsSx.LiveDemo.editor}>
-                        <SvgEditor
-                            code={code}
-                            // onChange={live.onChange}
-                        />
+                        <SvgEditor />
                     </Paper>
                     <Paper {...DocsSx.LiveDemo.preview}>
                         <LivePreview />

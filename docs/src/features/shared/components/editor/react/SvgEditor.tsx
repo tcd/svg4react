@@ -5,7 +5,7 @@ import { LiveContext } from "react-live"
 import { isBlank } from "@mlxb/coolkit"
 
 
-// import monaco from "monaco-editor"
+import { Selection } from "monaco-editor"
 import { parse } from "@babel/parser"
 import traverse from "@babel/traverse"
 import MonacoJSXHighlighter from "monaco-jsx-highlighter"
@@ -15,7 +15,6 @@ import reactDefinitionFile from "@assets/txt/react-types.txt"
 import { monacoApi, MonacoApi, DarkPlusMonacoTheme } from ".."
 
 export interface SvgEditorProps {
-    code: string
     dev?: boolean
 }
 
@@ -26,7 +25,10 @@ export const SvgEditor = (props: SvgEditorProps) => {
     } = props
 
     const editorRef = useRef<MonacoEditor>()
+
     const [_value, set_value] = useState<string>()
+    const [formatted, setFormatted] = useState<boolean>()
+    const [changed, setChanged] = useState<boolean>(false)
 
     const {
         code,
@@ -34,10 +36,19 @@ export const SvgEditor = (props: SvgEditorProps) => {
         onChange,
     } = useContext(LiveContext)
 
+    const theRealValue = useCallback(() => {
+        if (changed) { return _value }
+        return code
+    }, [changed, code, _value])
+
     useEffect(() => {
         // console.log(live)
         set_value(code)
-    }, [code])
+        // if (!formatted) {
+        //     editorRef?.current?.editor?.trigger("handleDidMount", "editor.action.formatDocument", {})
+        //     setFormatted(true)
+        // }
+    }, [code, formatted, setFormatted])
 
     const handleWillMount = (monaco: MonacoApi): void => {
         monaco.editor.defineTheme("dark-plus", DarkPlusMonacoTheme)
@@ -45,15 +56,24 @@ export const SvgEditor = (props: SvgEditorProps) => {
 
     const handleDidMount = (editor: monacoApi.editor.IStandaloneCodeEditor, monaco: MonacoApi) => {
         _handleDidMount(editor, monaco)
-        editorRef?.current?.editor?.trigger("handleClick", "", {})
-        if (dev) {
-            editorRef?.current?.editor?.trigger("handleClick", "editor.action.inspectTokens", {})
-        }
+        // editorRef?.current?.editor?.trigger("handleDidMount", "editor.action.formatDocument", {})
+        // if (dev) {
+        //     editorRef?.current?.editor?.trigger("handleClick", "editor.action.inspectTokens", {})
+        // }
+
+        // const range = editor.getModel().getFullModelRange()
+        // console.log(range)
+        // editor.setSelection(range)
+        // editor.setSelection(new Selection(1, 1, 1, 1));
+        // debugger
+
     }
 
     const handleChange = (value: string, _event: monacoApi.editor.IModelContentChangedEvent) => {
         onChange(value)
+        setChanged(true)
         set_value(value)
+        // editorRef?.current?.editor?.setSelection(new Selection(1, 1, 1, 1));
     }
 
     //     const handleClick = (): void => {
@@ -75,6 +95,9 @@ export const SvgEditor = (props: SvgEditorProps) => {
     const options: monacoApi.editor.IStandaloneEditorConstructionOptions = {
         // language: "jsx",
         // theme: "dark-plus",
+        smartSelect: {
+            selectLeadingAndTrailingWhitespace: false,
+        }
     }
 
     return (
@@ -86,7 +109,7 @@ export const SvgEditor = (props: SvgEditorProps) => {
                 height="600"
                 // language="typescript"
                 theme="dark-plus"
-                value={_value}
+                value={theRealValue()}
                 options={options}
                 onChange={handleChange}
                 editorDidMount={handleDidMount}
@@ -106,9 +129,9 @@ const _handleDidMount = (editor: monacoApi.editor.IStandaloneCodeEditor, monaco:
     // https://github.com/luminaxster/syntax-highlighter
     // -------------------------------------------------------------------------
 
-    // const highlighter = new MonacoJSXHighlighter(monaco, parse, traverse, editor)
-    // highlighter.highlightOnDidChangeModelContent(100)
-    // highlighter.addJSXCommentCommand()
+    const highlighter = new MonacoJSXHighlighter(monaco, parse, traverse, editor)
+    highlighter.highlightOnDidChangeModelContent(100)
+    highlighter.addJSXCommentCommand()
 
     // -------------------------------------------------------------------------
     // https://github.com/microsoft/monaco-editor/issues/264#issuecomment-654578687

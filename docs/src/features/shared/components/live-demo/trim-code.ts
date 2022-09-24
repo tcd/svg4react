@@ -14,5 +14,7 @@ export const trimCode = (code: string): string => {
         code = code.replace(/\n^$/m, "")
     }
 
+    code = code.replaceAll(/^\s{4}/gm, "")
+
     return code
 }
