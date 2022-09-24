@@ -1,13 +1,42 @@
 import { Outlet } from "react-router-dom"
-import { Box } from "@mui/material"
+import {
+    Box,
+    Drawer,
+    Toolbar,
+    List,
+    Divider,
+} from "@mui/material"
 
-import { SideNav } from "./side-nav"
+import { DocsSx } from "@app/theme"
+import { SIDE_NAV_LINKS } from "@app/features/routing"
+import { SideNavItem } from "./SideNavItem"
+import { DrawerHeader } from "./DrawerHeader"
+import { AppHeader } from "./AppHeader"
+
 
 export const Layout = (_props: unknown): JSX.Element => {
-    return <SideNav />
+
+    const $items = SIDE_NAV_LINKS.map((link, i) => <SideNavItem key={i} data={link} />)
+
     return (
-        <Box>
-            <Outlet />
+        <Box sx={DocsSx.Layout.root}>
+            <AppHeader />
+            <Drawer
+                sx={DocsSx.Layout.drawer}
+                variant="permanent"
+                anchor="left"
+            >
+                {/* <Toolbar /> */}
+                <DrawerHeader />
+                <Divider />
+                <List>
+                    {$items}
+                </List>
+            </Drawer>
+            <Box component="main" sx={DocsSx.Layout.main}>
+                <Toolbar />
+                <Outlet />
+            </Box>
         </Box>
     )
 }
