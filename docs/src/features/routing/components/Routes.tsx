@@ -6,6 +6,7 @@ import { HomePage } from "@app/features/core"
 import { NotFoundPage } from "@app/features/core"
 
 import { CirclePage } from "@app/features/demos"
+import { LinePage } from "@app/features/demos"
 import { PathPage } from "@app/features/demos"
 import { SvgPage } from "@app/features/demos"
 
@@ -29,9 +30,10 @@ const routes = (): RouteObject[] => {
                     path: "demos",
                     children: [
                         { index: true,    element: <NotFoundPage /> },
-                        { path: "svg",    element: <SvgPage />      },
-                        { path: "path",   element: <PathPage />     },
                         { path: "circle", element: <CirclePage />   },
+                        { path: "line",   element: <LinePage />     },
+                        { path: "path",   element: <PathPage />     },
+                        { path: "svg",    element: <SvgPage />      },
                     ],
                 },
                 {
