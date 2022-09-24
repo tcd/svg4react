@@ -27,6 +27,9 @@ export * from "./LinearGradient"
 export { default as Path } from "./Path"
 export * from "./Path"
 
+export { default as Polyline } from "./Polyline"
+export * from "./Polyline"
+
 export { default as Rect } from "./Rect"
 export * from "./Rect"
 
