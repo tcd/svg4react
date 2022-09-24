@@ -1,11 +1,11 @@
-import { Svg, Polyline, PolylineProps } from "svg4react"
+import { Svg, Polyline } from "svg4react"
 
 import { LiveDemo } from "@app/features/shared"
-import { Box } from "@mui/material"
 
 const code = `
 // Example of a polyline with the default fill
 const propsWithFill = {
+    fill: "lime",
     points: [
         [  0, 100],
         [ 50,  25],
@@ -15,35 +15,9 @@ const propsWithFill = {
 }
 
 // Example of the same polyline shape with stroke and no fill
-const propsWithoutFill  {
-    points: [
-        [  0, 100],
-        [ 50,  25],
-        [ 50,  75],
-        [100,   0],
-    ],
-}
-
-render(
-    <Svg size="200px" viewBox="0 0 200 100">
-        <Polyline {...propsWithFill} />
-        <Polyline {...propsWithoutFill} />
-    </Svg>
-)
-`
-
-const propsWithFill: PolylineProps = {
-    points: [
-        [  0, 100],
-        [ 50,  25],
-        [ 50,  75],
-        [100,   0],
-    ],
-}
-
-const propsWithoutFill: PolylineProps = {
+const propsWithoutFill = {
     fill: "none",
-    stroke: "black",
+    stroke: "lime",
     points: [
         [100, 100],
         [150,  25],
@@ -52,21 +26,20 @@ const propsWithoutFill: PolylineProps = {
     ],
 }
 
+render(
+    <Svg width="732px" height="100px" viewBox="0 0 200 100">
+        <Polyline {...propsWithFill} />
+        <Polyline {...propsWithoutFill} />
+    </Svg>
+)
+`
+
 export const PolylineDemo = (_props: unknown): JSX.Element => {
 
     const scope = {
         Svg,
         Polyline,
     }
-
-    // return (
-    //     <Box>
-    //         <Svg size="200px" viewBox="0 0 200 100">
-    //             <Polyline {...propsWithFill}/>
-    //             <Polyline {...propsWithoutFill}/>
-    //         </Svg>
-    //     </Box>
-    // )
 
     return (
         <LiveDemo
