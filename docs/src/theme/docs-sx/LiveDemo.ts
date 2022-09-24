@@ -43,12 +43,18 @@ const preview: PaperProps = {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+
+        position: "relative",
     },
 }
 
-const error: SxProps = {
-    flexGrow: 0,
+const errorWrapper: SxProps = {
+    position: "absolute",
+    top: 0,
+    right: 0,
+    p: 4,
 }
+
 
 export const LiveDemo = {
     root,
@@ -57,5 +63,5 @@ export const LiveDemo = {
     container,
     editor,
     preview,
-    error,
+    errorWrapper,
 }

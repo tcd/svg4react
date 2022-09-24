@@ -1,7 +1,6 @@
 import { Box, Paper } from "@mui/material"
 import {
     LiveProvider,
-    LiveError,
     LivePreview,
     withLive,
 } from "react-live"
@@ -10,8 +9,8 @@ import { DocsSx } from "@app/theme"
 import { trimCode } from "@app/util"
 import { Card, SvgEditor } from "@app/features/shared"
 import { DocsPrismTheme } from "./DocsPrismTheme"
-
 import { WithLiveProps } from "./types"
+import { CustomLiveError } from "./CustomLiveError"
 
 export type CustomLiveDemoProps = {
     title: string | React.ReactNode
@@ -53,10 +52,8 @@ const _CustomLiveDemo = (props: CustomLiveDemoProps): JSX.Element => {
                     </Paper>
                     <Paper {...DocsSx.LiveDemo.preview}>
                         <LivePreview />
+                        <CustomLiveError />
                     </Paper>
-                    <Box sx={DocsSx.LiveDemo.error}>
-                        <LiveError />
-                    </Box>
                 </Box>
             </LiveProvider>
         </Card>
