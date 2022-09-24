@@ -36,18 +36,16 @@ export const Highlight = (props: HighlightProps): JSX.Element => {
     const trimmedContent = trimCode(content)
 
     return (
-        <Box sx={sx}>
-            <pre>
-                <code
-                    ref={codeRef}
-                    className={[
-                        "line-numbers",
-                        // "language-jsx",
-                        // "language-tsx",
-                        "language-tsx",
-                    ].join(" ")}
-                >{trimmedContent}</code>
-            </pre>
+        <Box component="pre" sx={sx}>
+            <code
+                ref={codeRef}
+                className={[
+                    "line-numbers",
+                    // "language-jsx",
+                    // "language-tsx",
+                    "language-tsx",
+                ].join(" ")}
+            >{trimmedContent}</code>
         </Box>
     )
 }

@@ -1,4 +1,4 @@
-import { Svg, Path } from "svg4react"
+import { Svg, Path, PathProps } from "svg4react"
 import { LiveDemo } from "@app/features/shared"
 import type { ISxProps as SxProps } from "@app/theme"
 import { Box } from "@mui/material"
@@ -16,8 +16,9 @@ const sx: SxProps = {
     },
 }
 
+// FIXME: get tsx intellisense working or remove this
 const code = `
-const pathProps = {
+const pathProps: PathProps = {
     fill: "none",
     stroke: "indianred",
     commands: [
