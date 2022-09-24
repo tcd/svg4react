@@ -18,6 +18,9 @@ export * from "./Defs"
 export { default as G } from "./G"
 export * from "./G"
 
+export { default as Line } from "./Line"
+export * from "./Line"
+
 export { default as LinearGradient } from "./LinearGradient"
 export * from "./LinearGradient"
 
