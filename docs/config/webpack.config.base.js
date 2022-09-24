@@ -21,13 +21,14 @@ const webpackConfig = {
     // output: {
     //     path: path.resolve(PROJECT_ROOT, "dist"),
     //     publicPath: "/",
-    //     // filename: "bundle.js",
+    //     filename: "bundle.js",
     // },
     output: {
         path: path.resolve(PROJECT_ROOT, "dist"),
         publicPath: "/",
         // filename: isDev ? "[name].dist.js" : "[name].[chunkhash:8].dist.js",
         filename: "[name].js",
+        assetModuleFilename: "assets/[hash][ext][query]",
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -48,7 +49,10 @@ const webpackConfig = {
                 "xml",
             ],
         }),
-        new webpack.ProvidePlugin({ process: "process/browser", Buffer: ["buffer", "Buffer"] }),
+        new webpack.ProvidePlugin({
+            process: "process/browser.js", // https://github.com/orgs/remarkjs/discussions/903#discussioncomment-1646344
+            Buffer: ["buffer", "Buffer"],
+        }),
     ],
     resolve: {
         extensions: ["*", ".js", ".jsx", ".tsx", ".ts"],
@@ -64,6 +68,15 @@ const webpackConfig = {
                 exclude: /node_modules/,
                 use: ["babel-loader"],
             },
+            // {
+            //     // https://github.com/orgs/remarkjs/discussions/903#discussioncomment-3405559
+            //     test: /\.mjs$/,
+            //     include: /node_modules/,
+            //     type: "javascript/auto",
+            //     resolve: {
+            //         fullySpecified: false,
+            //     },
+            // },
             {
                 test: /\.css$/,
                 include: APP_DIR,
@@ -78,9 +91,19 @@ const webpackConfig = {
                 use: ["style-loader", "css-loader"],
             },
             {
-                test: /\.txt$/,
+                test: /\.(txt)$/,
                 type: "asset/source",
-
+            },
+            {
+                test: /\.md$/i,
+                use: [
+                    {
+                        loader: "raw-loader",
+                        options: {
+                            esModule: false,
+                        },
+                    },
+                ],
             },
         ],
     },

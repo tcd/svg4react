@@ -1,6 +1,7 @@
 import { RouteObject, useRoutes } from "react-router-dom"
 
 import { Layout } from "@app/features/core"
+import { ChangelogPage } from "@app/features/core"
 import { HomePage } from "@app/features/core"
 import { NotFoundPage } from "@app/features/core"
 
@@ -22,7 +23,8 @@ const routes = (): RouteObject[] => {
             path: "/",
             element: <Layout />,
             children: [
-                { index: true, element: <HomePage /> },
+                { index: true,       element: <HomePage />      },
+                { path: "changelog", element: <ChangelogPage /> },
                 {
                     path: "demos",
                     children: [
@@ -36,8 +38,8 @@ const routes = (): RouteObject[] => {
                     path: "examples",
                     children: [
                         { index: true, element: <TestPage /> },
-                        { path: "logos", element: <LogosPage />   },
-                        { path: "monaco", element: <MonacoPage />   },
+                        { path: "logos", element: <LogosPage /> },
+                        { path: "monaco", element: <MonacoPage /> },
                     ],
                 },
                 { path: "*", element: <NotFoundPage /> },
