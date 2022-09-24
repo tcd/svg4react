@@ -20,6 +20,7 @@ export const Highlight = (props: HighlightProps): JSX.Element => {
 
     const {
         content,
+        sx = {},
     } = props
 
     const [highlighted, setHighlighted] = useState(false)
@@ -35,7 +36,7 @@ export const Highlight = (props: HighlightProps): JSX.Element => {
     const trimmedContent = trimCode(content)
 
     return (
-        <Box>
+        <Box sx={sx}>
             <pre>
                 <code
                     ref={codeRef}
