@@ -7,11 +7,11 @@ import {
 } from "react-live"
 
 import { DocsSx } from "@app/theme"
+import { trimCode } from "@app/util"
 import { Card, SvgEditor } from "@app/features/shared"
 import { DocsPrismTheme } from "./DocsPrismTheme"
 
 import { WithLiveProps } from "./types"
-import { trimCode } from "./trim-code"
 
 export type CustomLiveDemoProps = {
     title: string | React.ReactNode
