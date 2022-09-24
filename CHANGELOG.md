@@ -6,7 +6,16 @@ The format is based on [Keep a Changelog][keep-a-changelog], and this project ad
 
 
 ## [Unreleased]
+### Added
+- Add the following components:
+    - `Animate`
+    - `AnimateMotion`
+    - `AnimateTransform`
+    - `Line`
+    - `Rect`
+    - `Polyline`
 ### Changed
+- Refactor documentation; move docs site project into a separate folder from library source code
 - Use `forwardRef` for applicable components
 - Add default prop value for `SvgProps.version` ("1.1")
 - Add a raw `d` prop to `Path` as an alternative to `commands`
