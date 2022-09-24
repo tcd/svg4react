@@ -72,7 +72,7 @@ export type LineAttributes = {
      *
      * @default "none"
      */
-    pathLength: number
+    pathLength?: number
 } & Pick<SvgPresentationAttributes,
     | "clipPath"
     | "clipRule"

@@ -1,4 +1,3 @@
-import { forwardRef } from "react"
 import type { LineProps } from "./Line.types"
 
 /**
@@ -8,7 +7,7 @@ import type { LineProps } from "./Line.types"
  *
  * The `<line>` SVG element is a [basic shape](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Basic_Shapes) used to create a line connecting two points.
  */
-const Line = forwardRef<SVGLineElement, LineProps>(function Line(props: LineProps, ref) {
+const Line = (props: LineProps): JSX.Element => {
 
     const {
         coordinates: [
@@ -23,7 +22,6 @@ const Line = forwardRef<SVGLineElement, LineProps>(function Line(props: LineProp
     return (
         // @ts-ignore: next-line
         <line
-            ref={ref}
             x1={x1}
             x2={x2}
             y1={y1}
@@ -31,6 +29,6 @@ const Line = forwardRef<SVGLineElement, LineProps>(function Line(props: LineProp
             {...otherProps}
         />
     )
-})
+}
 
 export default Line
