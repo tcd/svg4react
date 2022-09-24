@@ -23,11 +23,11 @@ const Line = forwardRef<SVGLineElement, LineProps>(function Line(props: LineProp
     return (
         // @ts-ignore: next-line
         <line
+            ref={ref}
             x1={x1}
             x2={x2}
             y1={y1}
             y2={y2}
-            ref={ref}
             {...otherProps}
         />
     )
