@@ -38,8 +38,15 @@ const webpackConfig = {
         new MonacoWebpackPlugin({
             // available options are documented at https://github.com/microsoft/monaco-editor/blob/main/webpack-plugin/README.md#options
             // if no languages are specified, all are included
-            // FIXME: figure out what language(s) we need so that we don't bundle them all.
-            // languages: ["javascript"],
+            languages: [
+                "css",
+                "html",
+                "javascript",
+                "typescript",
+                // "json",
+                // "scss",
+                "xml",
+            ],
         }),
         new webpack.ProvidePlugin({ process: "process/browser", Buffer: ["buffer", "Buffer"] }),
     ],
