@@ -10,7 +10,7 @@ import {
 import { DocsSx } from "@app/theme"
 import { SIDE_NAV_LINKS } from "@app/features/routing"
 import { SideNavItem } from "./SideNavItem"
-import { SideNavHeader } from "./SideNavHeader"
+import { DrawerHeader } from "./DrawerHeader"
 import { AppHeader } from "./AppHeader"
 
 
@@ -27,7 +27,7 @@ export const SideNav = (_props: unknown): JSX.Element => {
                 anchor="left"
             >
                 {/* <Toolbar /> */}
-                <SideNavHeader />
+                <DrawerHeader />
                 <Divider />
                 <List>
                     {$items}

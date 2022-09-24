@@ -2,7 +2,7 @@ import { ThemeVars } from "@app/theme/variables"
 
 import { ISxProps as SxProps } from "@app/theme/helpers"
 
-const { drawerWidth } = ThemeVars
+const { drawerWidth, headerHeight } = ThemeVars
 
 const root: SxProps = {
     display: "flex",
@@ -11,6 +11,7 @@ const root: SxProps = {
 const header: SxProps = {
     width: `calc(100% - ${drawerWidth}px)`,
     ml: `${drawerWidth}px`,
+    height: `${headerHeight}px`,
 }
 
 const drawer: SxProps = {
@@ -20,6 +21,21 @@ const drawer: SxProps = {
         width: drawerWidth,
         boxSizing: "border-box",
     },
+}
+
+const drawerHeader: SxProps = {
+    height: `${headerHeight}px`,
+    pl: "11.6px",
+    pr: "16px",
+
+    display: "flex",
+    // justifyContent: "space-around",
+    justifyContent: "center",
+    alignItems: "center",
+}
+
+const drawerLogo: SxProps = {
+    width: "40px",
 }
 
 const main: SxProps = {
@@ -35,5 +51,7 @@ export const Layout = {
     root,
     header,
     drawer,
+    drawerHeader,
+    drawerLogo,
     main,
 }
