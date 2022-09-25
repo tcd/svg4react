@@ -2,11 +2,12 @@ import { Box } from "@mui/material"
 import { Svg, Line, LineProps } from "svg4react"
 
 import { Card, Highlight } from "@app/features/shared"
-import { componentToString } from "@app/util"
+import { componentToString, randomColor } from "@app/util"
 
+const color = randomColor()
 
 const lineProps: LineProps = {
-    stroke: "black",
+    stroke: color,
     coordinates: [
         0,80,
         100,20,
@@ -15,14 +16,14 @@ const lineProps: LineProps = {
 
 const content = `
 const lineProps: LineProps = {
-    stroke: "black",
+    stroke: "${color}",
     coordinates: [
         0,80,
         100,20,
     ],
 }
 
-// const ExampleLine = (): JSX.Element => {
+const ExampleLine = (): JSX.Element => {
     return (
         <Svg viewBox="0 0 100 100">
             <Line {...lineProps} />

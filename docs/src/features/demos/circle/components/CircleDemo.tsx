@@ -1,5 +1,6 @@
-import { Circle, Svg } from "svg4react"
+import { Svg, Circle } from "svg4react"
 
+import { randomColor } from "@app/util"
 import { LiveDemo } from "@app/features/shared"
 
 const _code1 = `
@@ -8,7 +9,7 @@ const _code1 = `
         cx={50}
         cy={50}
         r={50}
-        fill="#00deaf"
+        fill: "${randomColor()}",
     />
 </Svg>
 `
@@ -18,11 +19,11 @@ const circleProps = {
     cx: 50,
     cy: 50,
     r: 50,
-    fill: "#00deaf",
+    fill: "${randomColor()}",
 }
 
 render(
-    <Svg size="100px">
+    <Svg size="100%" viewBox="0 0 100 100">
         <Circle {...circleProps} />
     </Svg>
 )

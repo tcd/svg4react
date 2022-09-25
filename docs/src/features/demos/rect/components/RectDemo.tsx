@@ -3,24 +3,27 @@ import { Svg, Rect } from "svg4react"
 import { randomColor } from "@app/util"
 import { LiveDemo } from "@app/features/shared"
 
+const color = randomColor()
+
 const code = `
 // Simple rectangle
 const squareProps = {
     width: "100px",
     height: "100px",
-    fill: "${randomColor()}",
+    fill: "${color}",
 }
+
 // Rounded corner rectangle
 const roundedProps = {
     x: "120",
     rx: "15",
     width: "100px",
     height: "100px",
-    fill: "${randomColor()}",
+    fill: "${color}",
 }
 
 render(
-    <Svg size="200px" viewBox="0 0 220 100">
+    <Svg size="100%" viewBox="0 0 220 100">
         <Rect {...squareProps} />
         <Rect {...roundedProps} />
     </Svg>

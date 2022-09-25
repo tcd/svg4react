@@ -1,11 +1,14 @@
 import { Svg, Polyline } from "svg4react"
 
+import { randomColor } from "@app/util"
 import { LiveDemo } from "@app/features/shared"
+
+const color = randomColor()
 
 const code = `
 // Example of a polyline with the default fill
 const propsWithFill = {
-    fill: "lime",
+    fill: "${color}",
     points: [
         [  0, 100],
         [ 50,  25],
@@ -17,7 +20,7 @@ const propsWithFill = {
 // Example of the same polyline shape with stroke and no fill
 const propsWithoutFill = {
     fill: "none",
-    stroke: "lime",
+    stroke: "${color}",
     points: [
         [100, 100],
         [150,  25],
@@ -27,7 +30,7 @@ const propsWithoutFill = {
 }
 
 render(
-    <Svg width="732px" height="100px" viewBox="0 0 200 100">
+    <Svg size="100%" viewBox="0 0 200 100">
         <Polyline {...propsWithFill} />
         <Polyline {...propsWithoutFill} />
     </Svg>
