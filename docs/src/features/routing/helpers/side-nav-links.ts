@@ -7,6 +7,7 @@ export const SIDE_NAV_LINKS: (ILinkData | ILinksData)[] = [
             { title: "Line",     to: "/demos/line" },
             { title: "Path",     to: "/demos/path" },
             { title: "Polyline", to: "/demos/polyline" },
+            { title: "Rect",     to: "/demos/rect" },
             { title: "Svg",      to: "/demos/svg" },
         ],
     },

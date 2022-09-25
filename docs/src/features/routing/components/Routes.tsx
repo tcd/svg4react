@@ -1,5 +1,7 @@
 import { RouteObject, useRoutes } from "react-router-dom"
 
+// NOTE: I know these should be consolidated. Found this easier while still figuring out feature folder structure.
+
 import { Layout } from "@app/features/core"
 import { ChangelogPage } from "@app/features/core"
 import { HomePage } from "@app/features/core"
@@ -9,6 +11,7 @@ import { CirclePage } from "@app/features/demos"
 import { LinePage } from "@app/features/demos"
 import { PathPage } from "@app/features/demos"
 import { PolylinePage } from "@app/features/demos"
+import { RectPage } from "@app/features/demos"
 import { SvgPage } from "@app/features/demos"
 
 import { TestPage } from "@app/features/test"
@@ -35,6 +38,7 @@ const routes = (): RouteObject[] => {
                         { path: "line",     element: <LinePage />     },
                         { path: "path",     element: <PathPage />     },
                         { path: "polyline", element: <PolylinePage /> },
+                        { path: "rect",     element: <RectPage />     },
                         { path: "svg",      element: <SvgPage />      },
                     ],
                 },
