@@ -1,3 +1,5 @@
 export * from "./component-to-string"
 export * from "./random-color"
+export * from "./random-hex-color"
+export * from "./random-named-color"
 export * from "./trim-code"

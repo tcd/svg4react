@@ -1,9 +1,8 @@
+import { randomNamedColor } from "./random-named-color"
+
 /**
- * Generate a random color hex.
- *
- * @see [CSS-Tricks](https://css-tricks.com/snippets/javascript/random-hex-color/)
+ * Generate a random color.
  */
 export const randomColor = () => {
-    const color = Math.floor(Math.random()*16777215).toString(16)
-    return `#${color}`
+    return randomNamedColor()
 }
