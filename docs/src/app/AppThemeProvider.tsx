@@ -13,7 +13,6 @@ export const AppThemeProvider = (props: { children: React.ReactNode }): JSX.Elem
     const darkModeEnabled = useSelector(Selectors.Core.darkModeEnabled)
 
     const theme = darkModeEnabled ? DocsThemeDark : DocsThemeLight
-    console.log(theme)
 
     return (
         <ThemeProvider theme={theme}>

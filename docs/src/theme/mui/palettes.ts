@@ -23,6 +23,10 @@ const basePalette: PaletteOptions = {
 
 const _lightPalette: PaletteOptions = {
     mode: "light",
+    background: {
+        default: "#fafafa", // from mui-treasury
+        // paper: "white",
+    },
 }
 
 const lightPalette: PaletteOptions = merge({}, basePalette, _lightPalette)
@@ -33,6 +37,10 @@ const lightPalette: PaletteOptions = merge({}, basePalette, _lightPalette)
 
 const _darkPalette: PaletteOptions = {
     mode: "dark",
+    background: {
+        default: "black",
+        // paper: "#1e1e1e",
+    },
 }
 
 const darkPalette: PaletteOptions = merge({}, basePalette, _darkPalette)

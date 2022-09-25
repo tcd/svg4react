@@ -52,7 +52,6 @@ const _htmlAndBody: CSSObject = {
     padding: "0px",
     // overflowY: "hidden",
     // overflowX: "hidden",
-    backgroundColor: "#fafafa", // from mui-treasury
 }
 
 const html: CSSObject = {
