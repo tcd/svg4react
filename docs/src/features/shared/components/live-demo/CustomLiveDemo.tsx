@@ -7,7 +7,8 @@ import {
 
 import { DocsSx } from "@app/theme"
 import { trimCode } from "@app/util"
-import { Card, SvgEditor } from "@app/features/shared"
+import { Card } from "@app/features/shared"
+import { SvgEditor } from "@app/features/monaco"
 import { DocsPrismTheme } from "./DocsPrismTheme"
 import { WithLiveProps } from "./types"
 import { CustomLiveError } from "./CustomLiveError"

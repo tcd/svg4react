@@ -2,7 +2,7 @@ import { isBlank } from "@mlxb/coolkit"
 import type {
     MonacoApi,
     monacoApi as _monacoApi,
-} from "./types"
+} from "@app/features/monaco"
 
 export const defaultMonacoOptions: _monacoApi.editor.IStandaloneEditorConstructionOptions = {
     lineNumbers: "on",

@@ -1,7 +1,6 @@
 import { Svg, Path, PathProps } from "svg4react"
 
-import { Page, Card } from "@app/features/shared"
-import { TsxEditor } from "@app/features/monaco"
+import { Page, Card, LiveDemo } from "@app/features/shared"
 
 export const MonacoPage = (_props: unknown): JSX.Element => {
 
@@ -9,8 +8,12 @@ export const MonacoPage = (_props: unknown): JSX.Element => {
 
     return (
         <Page title="Monaco">
-            <Card title="Monaco TSX">
-                <TsxEditor code={code_ts}/>
+            <Card title="Monaco Editor">
+                <LiveDemo
+                    title="CSS"
+                    code={code_ts}
+                    scope={scope}
+                />
             </Card>
         </Page>
     )
@@ -80,8 +83,6 @@ const pathProps = {
 //  * @type {import("webpack").Configuration}
 //  */
 const code_ts = `
-import { PathProps } from "svg4react"
-
 const pathProps: PathProps = {
     fill: "none",
     stroke: "indianred",
@@ -95,5 +96,9 @@ const pathProps: PathProps = {
     ],
 }
 
-console.log(pathProps)
+render(
+    <Svg size="100%" viewBox="0 0 100 100">
+        <Path {...pathProps} />
+    </Svg>
+)
 `

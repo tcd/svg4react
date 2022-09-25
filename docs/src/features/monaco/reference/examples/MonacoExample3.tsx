@@ -1,7 +1,8 @@
 import { Component } from "react"
 import MonacoEditor from "react-monaco-editor"
 
-import { MonacoConfigurator, monacoApi, MonacoApi } from ".."
+import { monacoApi, MonacoApi } from "@app/features/monaco"
+import { MonacoConfigurator, } from "../MonacoConfigurator"
 import { exampleContent, exampleConfig } from "./example"
 
 interface Props {

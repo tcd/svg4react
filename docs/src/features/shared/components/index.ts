@@ -1,5 +1,4 @@
 export * from "./Card"
-export * from "./editor"
 export * from "./Highlight"
 export * from "./live-demo"
 export * from "./Logo"

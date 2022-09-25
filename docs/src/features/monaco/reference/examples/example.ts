@@ -1,4 +1,5 @@
-import { monacoApi, MonacoConfiguration } from ".."
+import { monacoApi } from "@app/features/monaco"
+import type { MonacoConfiguration } from "../MonacoConfigurator"
 
 export const exampleConfig: MonacoConfiguration = {
     languageName: "mySpecialLanguage",

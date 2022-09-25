@@ -1,12 +1,10 @@
 import { Component } from "react"
 import MonacoEditor from "react-monaco-editor"
 
-import { MonacoApi, monacoApi } from ".."
+import { MonacoApi, monacoApi } from "@app/features/monaco"
 import { exampleContent } from "./example"
 
-interface Props {
-
-}
+interface Props {}
 
 interface State {
     code: string

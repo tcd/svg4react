@@ -4,8 +4,10 @@ import MonacoJSXHighlighter from "monaco-jsx-highlighter"
 
 import type { monacoApi, MonacoApi } from ".."
 import { DarkPlusMonacoTheme } from ".."
+import { addShortcut } from "./add-shortcut"
+
 import reactDefs from "@assets/txt/react.d.ts.txt"
-// import svg4reactDefs from "@assets/txt/svg4react.d.ts.txt"
+import svg4reactDefs from "@assets/txt/svg4react.d.ts.txt"
 
 export const configureMonaco = (editor: monacoApi.editor.IStandaloneCodeEditor, monaco: MonacoApi): void => {
 
@@ -42,7 +44,13 @@ export const configureMonaco = (editor: monacoApi.editor.IStandaloneCodeEditor, 
         reactDefs,
         "file:///node_modules/@react/types/index.d.ts",
     )
-    // monaco.languages.typescript.typescriptDefaults.addExtraLib(
-    //     svg4reactDefs,
-    // )
+    monaco.languages.typescript.typescriptDefaults.addExtraLib(
+        svg4reactDefs,
+    )
+
+    // =========================================================================
+    // Keyboard Shortcuts
+    // =========================================================================
+
+    addShortcut(editor, monaco)
 }
