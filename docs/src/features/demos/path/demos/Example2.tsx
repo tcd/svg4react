@@ -1,6 +1,7 @@
-import { Svg, Path, PathProps } from "svg4react"
+import { Svg, Path } from "svg4react"
 import { Box } from "@mui/material"
 
+import { randomColor } from "@app/util"
 import type { ISxProps as SxProps } from "@app/theme"
 import { LiveDemo } from "@app/features/shared"
 
@@ -37,11 +38,10 @@ const sx: SxProps = {
     },
 }
 
-// FIXME: get tsx intellisense working or remove this
 const code = `
-const pathProps: PathProps = {
+const pathProps = {
     fill: "none",
-    stroke: "indianred",
+    stroke: "${randomColor()}",
     commands: [
         ["M", [[              10,30]]],
         ["A", [[20,20, 0,0,1, 50,30]]],
