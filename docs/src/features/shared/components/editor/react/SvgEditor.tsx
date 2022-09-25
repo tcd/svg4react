@@ -42,7 +42,7 @@ export const SvgEditor = (props: SvgEditorProps) => {
     const handleDidMount = (editor: monacoApi.editor.IStandaloneCodeEditor, monaco: MonacoApi) => {
         configureMonaco(editor, monaco)
         if (dev) {
-            editorRef?.current?.editor?.trigger("handleClick", "editor.action.inspectTokens", {})
+            editorRef?.current?.editor?.trigger("handleDidMount", "editor.action.inspectTokens", {})
         }
     }
 
@@ -58,7 +58,13 @@ export const SvgEditor = (props: SvgEditorProps) => {
         // smartSelect: {
         //     selectLeadingAndTrailingWhitespace: false,
         // },
-        scrollBeyondLastLine: false,
+        // scrollBeyondLastLine: false,
+        minimap: {
+            enabled: false,
+        },
+        // for whatever reason, this doesn't work when set as an object
+        // @ts-ignore: next-line
+        "bracketPairColorization.enabled": false,
     }
 
     return (
