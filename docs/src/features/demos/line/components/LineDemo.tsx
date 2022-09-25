@@ -45,7 +45,7 @@ export const LineDemo = (_props: unknown): JSX.Element => {
                     <Highlight content={content} />
                 </Box>
                 <Box sx={{ width: "50%" }}>
-                    <Highlight content={exampleOutput} />
+                    <Highlight content={exampleOutput} language="html" />
                 </Box>
             </Box>
 

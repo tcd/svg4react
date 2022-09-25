@@ -1,5 +1,23 @@
 import { Svg, G, Path } from "svg4react"
+
 import { LiveDemo } from "@app/features/shared"
+
+/**
+ * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d#elliptical_arc_curve
+ */
+export const Example7 = (_props: unknown): JSX.Element => {
+    const scope = { Svg, Path, G }
+
+    return (
+        <LiveDemo
+            title="Elliptical Arc Curve"
+            code={code}
+            scope={scope}
+        />
+    )
+}
+
+// =============================================================================
 
 const code = `
 const pathProps_a = {
@@ -35,7 +53,7 @@ const pathProps_d = {
 }
 
 render (
-    <Svg size="100px" viewBox="0 0 20 20">
+    <Svg size="100%" viewBox="0 0 20 20">
         <G fill="none">
             <Path {...pathProps_a} />
             <Path {...pathProps_b} />
@@ -45,18 +63,3 @@ render (
     </Svg>
 )
 `
-
-/**
- * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d#elliptical_arc_curve
- */
-export const Example7 = (_props: unknown): JSX.Element => {
-    const scope = { Svg, Path, G }
-
-    return (
-        <LiveDemo
-            title="Elliptical Arc Curve"
-            code={code}
-            scope={scope}
-        />
-    )
-}

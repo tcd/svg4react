@@ -15,7 +15,6 @@ export const PathPage = (_props: unknown): JSX.Element => {
                 <Examples.Example6 />
                 <Examples.Example7 />
                 <Examples.Example8 />
-                <Examples.Example101 />
             </Stack>
         </Page>
     )

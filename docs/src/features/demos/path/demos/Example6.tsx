@@ -4,7 +4,56 @@ import {
     Circle,
     G,
 } from "svg4react"
+
+import { randomColor } from "@app/util"
 import { LiveDemo } from "@app/features/shared"
+
+/**
+ * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d#quadratic_b%C3%A9zier_curve
+ */
+export const Example6 = (_props: unknown): JSX.Element => {
+
+    const scope = { Svg, Path, Extra }
+
+    return (
+        <LiveDemo
+            title="Quadratic Bézier Curve"
+            code={code}
+            scope={scope}
+        />
+    )
+}
+
+// =============================================================================
+
+const code = `
+// Quadratic Bézier curve with implicit repetition
+const pathProps = {
+    fill: "none",
+    stroke: "${randomColor()}",
+    commands: [
+        ["M", [[10,50]]],
+        ["Q", [[
+            25,25,
+            40,50,
+        ]]],
+        ["t", [
+            [30,0],
+            [30,0],
+            [30,0],
+            [30,0],
+            [30,0],
+        ]],
+    ],
+}
+
+render (
+    <Svg size="100%" viewBox="0 0 200 100">
+        <Path {...pathProps} />
+        <Extra />
+    </Svg>
+)
+`
 
 const Extra = () => (
     <>
@@ -49,52 +98,3 @@ const Extra = () => (
         </G>
     </>
 )
-
-const code = `
-// Quadratic Bézier curve with implicit repetition
-const pathProps = {
-    fill: "none",
-    stroke: "indianred",
-    commands: [
-        ["M", [[10,50]]],
-        ["Q", [[
-            25,25,
-            40,50,
-        ]]],
-        ["t", [
-            [30,0],
-            [30,0],
-            [30,0],
-            [30,0],
-            [30,0],
-        ]],
-    ],
-}
-
-render (
-    <Svg
-        width="200px"
-        height="100px"
-        viewBox="0 0 200 100"
-    >
-        <Path {...pathProps} />
-        <Extra />
-    </Svg>
-)
-`
-
-/**
- * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d#quadratic_b%C3%A9zier_curve
- */
-export const Example6 = (_props: unknown): JSX.Element => {
-
-    const scope = { Svg, Path, Extra }
-
-    return (
-        <LiveDemo
-            title="Quadratic Bézier Curve"
-            code={code}
-            scope={scope}
-        />
-    )
-}

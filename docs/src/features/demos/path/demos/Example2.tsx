@@ -1,7 +1,28 @@
 import { Svg, Path, PathProps } from "svg4react"
-import { LiveDemo } from "@app/features/shared"
-import type { ISxProps as SxProps } from "@app/theme"
 import { Box } from "@mui/material"
+
+import type { ISxProps as SxProps } from "@app/theme"
+import { LiveDemo } from "@app/features/shared"
+
+/**
+ * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d#using_d_as_a_css_property
+ */
+export const Example2 = (_props: unknown): JSX.Element => {
+
+    const scope = { Svg, Path }
+
+    return (
+        <Box sx={sx}>
+            <LiveDemo
+                title="CSS"
+                code={code}
+                scope={scope}
+            />
+        </Box>
+    )
+}
+
+// =============================================================================
 
 /**
  * This path is displayed on hover
@@ -32,26 +53,8 @@ const pathProps: PathProps = {
 }
 
 render(
-    <Svg size="100px" viewBox="0 0 100 100" id="css-example">
+    <Svg size="100%" viewBox="0 0 100 100" id="css-example">
         <Path {...pathProps} />
     </Svg>
 )
 `
-
-/**
- * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d#using_d_as_a_css_property
- */
-export const Example2 = (_props: unknown): JSX.Element => {
-
-    const scope = { Svg, Path }
-
-    return (
-        <Box sx={sx}>
-            <LiveDemo
-                title="CSS"
-                code={code}
-                scope={scope}
-            />
-        </Box>
-    )
-}
