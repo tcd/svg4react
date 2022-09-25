@@ -1,5 +1,12 @@
 import { BreakpointsOptions } from "@mui/material"
 
+// const BREAKPOINTS = [
+//     600,
+//     900,
+//     1200,
+//     1536,
+// ]
+
 export const breakpointsOptions: BreakpointsOptions = {
     keys: [
         "xs",
@@ -10,9 +17,9 @@ export const breakpointsOptions: BreakpointsOptions = {
     ],
     values: {
         xs: 0,
-        mobile:  600,
-        tablet:  900,
-        laptop:  1200,
-        desktop: 1536,
+        mobile:  0,
+        tablet:  600,
+        laptop:  900,
+        desktop: 1200,
     },
 }

@@ -8,11 +8,38 @@ const root: SxProps = {
     display: "flex",
 }
 
+const main: SxProps = {
+    flexGrow: 1,
+    p: 3,
+}
+
+// =============================================================================
+// Header
+// =============================================================================
+
 const header: SxProps = {
     width: `calc(100% - ${drawerWidth}px)`,
-    ml: `${drawerWidth}px`,
     height: `${headerHeight}px`,
+
+    ml: `${drawerWidth}px`,
+
+    display: "flex",
+    flexFlow: "row nowrap",
 }
+
+const toolbar: SxProps = {
+    width: "100%",
+
+    px: 2,
+
+    display: "flex",
+    flexFlow: "row nowrap",
+    justifyContent: "space-between",
+}
+
+// =============================================================================
+// Drawer
+// =============================================================================
 
 const drawer: SxProps = {
     width: drawerWidth,
@@ -38,11 +65,6 @@ const drawerLogo: SxProps = {
     width: "40px",
 }
 
-const main: SxProps = {
-    flexGrow: 1,
-    p: 3,
-}
-
 // =============================================================================
 // All Together
 // =============================================================================
@@ -50,6 +72,7 @@ const main: SxProps = {
 export const Layout = {
     root,
     header,
+    toolbar,
     drawer,
     drawerHeader,
     drawerLogo,
