@@ -1,11 +1,10 @@
 import { useCallback, useEffect, useRef, useState } from "react"
 import MonacoEditor from "react-monaco-editor"
+import { AutoTypings, LocalStorageCache } from 'monaco-editor-auto-typings';
 
 import {
     monacoApi,
-    MonacoApi,
-    DarkPlusMonacoTheme,
-    configureMonaco2,
+    addShortcut,
 } from "@app/features/monaco"
 
 export interface TsxEditorProps {
@@ -28,12 +27,13 @@ export const TsxEditor = ({ code }: TsxEditorProps) => {
         set_value(code)
     }, [code])
 
-    const handleWillMount = (monaco: MonacoApi): void => {
-        monaco.editor.defineTheme("dark-plus", DarkPlusMonacoTheme)
-    }
+    const handleDidMount = async (editor: monacoApi.editor.IStandaloneCodeEditor) => {
+        addShortcut(editor)
 
-    const handleDidMount = (editor: monacoApi.editor.IStandaloneCodeEditor, monaco: MonacoApi) => {
-        configureMonaco2(editor, monaco)
+        await AutoTypings.create(editor, {
+            sourceCache: new LocalStorageCache(), // Cache loaded sources in localStorage. May be omitted
+            // Other options...
+        })
     }
 
     const handleChange = (value: string, _event: monacoApi.editor.IModelContentChangedEvent) => {
@@ -55,6 +55,7 @@ export const TsxEditor = ({ code }: TsxEditorProps) => {
         // for whatever reason, this doesn't work when set as an object
         // @ts-ignore: next-line
         "bracketPairColorization.enabled": false,
+        // "javascript.validate.enable": false,
     }
 
     return (
@@ -64,9 +65,9 @@ export const TsxEditor = ({ code }: TsxEditorProps) => {
             height="600"
             value={theRealValue()}
             options={options}
+            language="typescript"
             onChange={handleChange}
             editorDidMount={handleDidMount}
-            editorWillMount={handleWillMount}
         />
     )
 }

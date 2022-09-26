@@ -5,12 +5,12 @@ import { TsxEditor } from "@app/features/monaco"
 
 export const MonacoPage = (_props: unknown): JSX.Element => {
 
-    const scope = { Svg, Path }
+    const _scope = { Svg, Path }
 
     return (
         <Page title="Monaco">
             <Card title="Monaco TSX">
-                <TsxEditor code={code_ts}/>
+                <TsxEditor code={css_type}/>
             </Card>
         </Page>
     )
@@ -80,7 +80,7 @@ const pathProps = {
 //  * @type {import("webpack").Configuration}
 //  */
 const code_ts = `
-import { PathProps } from "svg4react"
+import { Svg, PathProps } from "svg4react"
 
 const pathProps: PathProps = {
     fill: "none",
@@ -94,6 +94,10 @@ const pathProps: PathProps = {
         ["Z", []                     ],
     ],
 }
+`
 
-console.log(pathProps)
+const css_type = `
+import { Property } from "csstype"
+
+let viz: Property.Visibility = ""
 `

@@ -41,6 +41,7 @@
         "js-beautify": "^1.14.6",
         "lodash": "^4.17.21",
         "monaco-editor": "^0.34.0",
+        "monaco-editor-auto-typings": "^0.4.3",
         "monaco-editor-webpack-plugin": "^7.0.1",
         "monaco-jsx-highlighter": "^2.0.4",
         "prismjs": "^1.29.0",
