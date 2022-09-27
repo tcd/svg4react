@@ -6,6 +6,9 @@ The format is based on [Keep a Changelog][keep-a-changelog], and this project ad
 
 
 ## [Unreleased]
+
+
+## [0.3.0] - 2022-09-27
 ### Added
 - Add the following components:
     - `Animate`
@@ -20,6 +23,8 @@ The format is based on [Keep a Changelog][keep-a-changelog], and this project ad
 - Add default prop value for `SvgProps.version` ("1.1")
 - Add a raw `d` prop to `Path` as an alternative to `commands`
 - Use `namespace` for `DrawToArgs`
+### Removed
+- CommonJS build
 
 
 ## [0.2.0] - 2022-09-21
@@ -35,6 +40,7 @@ The format is based on [Keep a Changelog][keep-a-changelog], and this project ad
 [keep-a-changelog]: https://keepachangelog.com/en/1.0.0/
 [semver]: https://semver.org/spec/v2.0.0.html
 
-[Unreleased]: https://github.com/tcd/svg4react/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/tcd/svg4react/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/tcd/svg4react/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/tcd/svg4react/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/tcd/svg4react/releases/tag/v0.1.0
