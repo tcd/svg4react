@@ -82,6 +82,9 @@ const webpackConfig = {
             // https:   require.resolve("https-browserify"),
             "path": require.resolve("path-browserify"),
         },
+        alias: {
+            "path": require.resolve("path-browserify"),
+        },
     },
     module: {
         rules: [
@@ -130,17 +133,17 @@ const webpackConfig = {
                 test: /\.(txt)$/,
                 type: "asset/source",
             },
-            // {
-            //     test: /\.md$/i,
-            //     use: [
-            //         {
-            //             loader: "raw-loader",
-            //             options: {
-            //                 esModule: false,
-            //             },
-            //         },
-            //     ],
-            // },
+            {
+                test: /\.md$/i,
+                use: [
+                    {
+                        loader: "raw-loader",
+                        options: {
+                            esModule: false,
+                        },
+                    },
+                ],
+            },
         ],
     },
 }

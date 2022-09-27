@@ -10,8 +10,8 @@ export const MonacoPage = (_props: unknown): JSX.Element => {
     return (
         <Page title="Monaco">
             <Card title="Monaco TSX">
-                {/* <TsxEditor code={css_type}/> */}
-                <CustomEditor />
+                <TsxEditor code={code_ts}/>
+                {/* <CustomEditor /> */}
             </Card>
         </Page>
     )

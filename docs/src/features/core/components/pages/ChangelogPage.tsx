@@ -3,7 +3,7 @@ import { Box, Paper } from "@mui/material"
 
 import { DocsSx } from "@app/theme"
 import { Page } from "@app/features/shared"
-// import changelogMarkdown from "../../../../../../CHANGELOG.md"
+import changelogMarkdown from "../../../../../../CHANGELOG.md"
 
 export const ChangelogPage = (_props: unknown): JSX.Element => {
     return (
@@ -14,9 +14,8 @@ export const ChangelogPage = (_props: unknown): JSX.Element => {
                 sx={DocsSx.Changelog.root}
             >
                 <Box className="markdown-body">
-                    {/* {changelogMarkdown} */}
                     <ReactMarkdown>
-                        # fix in progress
+                        {changelogMarkdown}
                     </ReactMarkdown>
                 </Box>
             </Paper>
