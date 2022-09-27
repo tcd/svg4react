@@ -13,6 +13,9 @@
             "dom",
             "dom.iterable",
             "esnext",
+            "es5",
+            "es2015.collection",
+            "es2015.promise",
         ],
         "types": [
             "node",
@@ -27,7 +30,7 @@
         "strict": false,
         "noImplicitAny": true,
         "target": "es5",
-        "noEmitOnError": false,
+        // "noEmitOnError": false,
         "typeRoots": [
             "./node_modules/@types",
             "./src/@types"
@@ -41,6 +44,8 @@
     "include": [
         "./src/**/*.ts",
         "./src/**/*.tsx",
-        // "node_modules",
+    ],
+    "exclude": [
+        "node_modules",
     ],
 }

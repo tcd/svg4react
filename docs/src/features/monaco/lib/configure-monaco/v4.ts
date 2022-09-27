@@ -1,5 +1,7 @@
 import type { customMonaco, CustomMonaco } from "@app/features/monaco/lib"
-import { DarkPlusMonacoTheme } from "@app/features/monaco/lib"
+import { DarkPlusMonacoTheme, addShortcut } from "@app/features/monaco/lib"
+
+import { AutoTypings, LocalStorageCache } from "monaco-editor-auto-typings"
 
 // import reactDefs from "@assets/txt/react.d.ts.txt"
 // import svg4reactDefs from "@assets/txt/svg4react.d.ts.txt"
@@ -8,10 +10,16 @@ import { DarkPlusMonacoTheme } from "@app/features/monaco/lib"
 
 export const v4 = async (editor: customMonaco.editor.IStandaloneCodeEditor, monaco: CustomMonaco): Promise<void> => {
     // =============================================================================
+    // Add Shortcuts
+    // =============================================================================
+
+    addShortcut(editor, monaco)
+
+    // =============================================================================
     // Add Theme
     // =============================================================================
 
-    monaco.editor.defineTheme("dark-plus", DarkPlusMonacoTheme)
+    // monaco.editor.defineTheme("dark-plus", DarkPlusMonacoTheme)
 
     // =============================================================================
     // Configure TypeScript
@@ -55,6 +63,15 @@ export const v4 = async (editor: customMonaco.editor.IStandaloneCodeEditor, mona
     //     noSyntaxValidation: true,
     //     diagnosticCodesToIgnore: [8010]
     // })
+
+    // =========================================================================
+    // Add Types
+    // =========================================================================
+
+    AutoTypings.create(editor, {
+        sourceCache: new LocalStorageCache(), // Cache loaded sources in localStorage. May be omitted
+        monaco,
+    })
 
     // // =============================================================================
     // // Add Types

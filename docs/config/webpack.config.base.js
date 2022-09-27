@@ -7,7 +7,7 @@ const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin")
 const MonacoWebpackPlugin = require("monaco-editor-webpack-plugin")
 
 const { PROJECT_ROOT } = require("./helpers")
-
+const OUT_DIR    = path.resolve(PROJECT_ROOT, "dist")
 const APP_DIR    = path.resolve(PROJECT_ROOT, "src")
 const MONACO_DIR = path.resolve(PROJECT_ROOT, "node_modules", "monaco-editor")
 
@@ -33,12 +33,12 @@ const babelConfig = {
 const webpackConfig = {
     entry: path.resolve(PROJECT_ROOT, "src", "index.tsx"),
     // output: {
-    //     path: path.resolve(PROJECT_ROOT, "dist"),
+    //     path: OUT_DIR,
     //     publicPath: "/",
     //     filename: "bundle.js",
     // },
     output: {
-        path: path.resolve(PROJECT_ROOT, "dist"),
+        path: OUT_DIR,
         publicPath: "/",
         // filename: isDev ? "[name].dist.js" : "[name].[chunkhash:8].dist.js",
         filename: "[name].js",
@@ -46,9 +46,13 @@ const webpackConfig = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: path.resolve(PROJECT_ROOT, "src", "index.html"),
+            template: path.join(APP_DIR, "index.html"),
             hash: true,
             inject: true,
+        }),
+        new webpack.ProvidePlugin({
+            process: "process/browser.js", // https://github.com/orgs/remarkjs/discussions/903#discussioncomment-1646344
+            Buffer: ["buffer", "Buffer"],
         }),
         new MonacoWebpackPlugin({
             // available options are documented at https://github.com/microsoft/monaco-editor/blob/main/webpack-plugin/README.md#options
@@ -63,10 +67,6 @@ const webpackConfig = {
                 "xml",
             ],
         }),
-        new webpack.ProvidePlugin({
-            process: "process/browser.js", // https://github.com/orgs/remarkjs/discussions/903#discussioncomment-1646344
-            Buffer: ["buffer", "Buffer"],
-        }),
     ],
     resolve: {
         extensions: ["*", ".js", ".jsx", ".tsx", ".ts"],
@@ -75,17 +75,19 @@ const webpackConfig = {
             new TsconfigPathsPlugin.TsconfigPathsPlugin(),
         ],
         fallback: {
-            path: require.resolve("path-browserify"),
+            // console: false,
+            // browser: false,
+            // buffer:  require.resolve("buffer/"),
+            // http:    require.resolve("stream-http"),
+            // https:   require.resolve("https-browserify"),
+            "path": require.resolve("path-browserify"),
         },
     },
     module: {
         rules: [
             {
                 test: /\.(ts|js)x?$/i,
-                exclude: [
-                    /node_modules/,
-                    // linkedDir,
-                ],
+                exclude: /node_modules/,
                 use: [
                     {
                         loader: "babel-loader",
@@ -128,17 +130,17 @@ const webpackConfig = {
                 test: /\.(txt)$/,
                 type: "asset/source",
             },
-            {
-                test: /\.md$/i,
-                use: [
-                    {
-                        loader: "raw-loader",
-                        options: {
-                            esModule: false,
-                        },
-                    },
-                ],
-            },
+            // {
+            //     test: /\.md$/i,
+            //     use: [
+            //         {
+            //             loader: "raw-loader",
+            //             options: {
+            //                 esModule: false,
+            //             },
+            //         },
+            //     ],
+            // },
         ],
     },
 }

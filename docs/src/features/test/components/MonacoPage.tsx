@@ -1,7 +1,7 @@
 import { Svg, Path, PathProps } from "svg4react"
 
 import { Page, Card } from "@app/features/shared"
-import { TsxEditor } from "@app/features/monaco"
+import { TsxEditor, CustomEditor } from "@app/features/monaco"
 
 export const MonacoPage = (_props: unknown): JSX.Element => {
 
@@ -10,7 +10,8 @@ export const MonacoPage = (_props: unknown): JSX.Element => {
     return (
         <Page title="Monaco">
             <Card title="Monaco TSX">
-                <TsxEditor code={css_type}/>
+                {/* <TsxEditor code={css_type}/> */}
+                <CustomEditor />
             </Card>
         </Page>
     )
@@ -99,5 +100,7 @@ const pathProps: PathProps = {
 const css_type = `
 import { Property } from "csstype"
 
-let viz: Property.Visibility = ""
+let viz: Property.Isolation = ""
+
+console.log(viz)
 `
