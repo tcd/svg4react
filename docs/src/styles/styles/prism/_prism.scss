@@ -69,6 +69,13 @@ pre[class*="language-"] {
 /* Tokens (not checked)                                                       */
 /* ========================================================================== */
 
+// span.token.tag.spread.punctuation {
+//     color: #4EC9B0 !important;
+// }
+// span.token.tag.script.language-javascript.script-punctuation.punctuation {
+//     color: #C586C0 !important;
+// }
+
 .token {
     &.doctype {
         .token.doctype-tag {
