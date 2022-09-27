@@ -1,14 +1,28 @@
+import { AutoTypings, LocalStorageCache } from "monaco-editor-auto-typings"
+
+// import { parse } from "@babel/parser"
+// import traverse from "@babel/traverse"
+// import MonacoJSXHighlighter from "monaco-jsx-highlighter"
+
 import type { customMonaco, CustomMonaco } from "@app/features/monaco/lib"
 import { DarkPlusMonacoTheme, addShortcut } from "@app/features/monaco/lib"
 
-import { AutoTypings, LocalStorageCache } from "monaco-editor-auto-typings"
 
 // import reactDefs from "@assets/txt/react.d.ts.txt"
 // import svg4reactDefs from "@assets/txt/svg4react.d.ts.txt"
 // import csstypeDefs from "@assets/txt/csstype.d.ts.txt"
 // import cloudflareImagesDefs from "@assets/txt/cloudflare-images.d.ts.txt"
 
-export const v4 = async (editor: customMonaco.editor.IStandaloneCodeEditor, monaco: CustomMonaco): Promise<void> => {
+export const configureMonaco = async (editor: customMonaco.editor.IStandaloneCodeEditor, monaco: CustomMonaco): Promise<void> => {
+
+//     // -------------------------------------------------------------------------
+//     // https://github.com/luminaxster/syntax-highlighter
+//     // -------------------------------------------------------------------------
+//
+//     const highlighter = new MonacoJSXHighlighter(monaco, parse, traverse, editor)
+//     highlighter.highlightOnDidChangeModelContent(100)
+//     highlighter.addJSXCommentCommand()
+
     // =============================================================================
     // Add Shortcuts
     // =============================================================================
@@ -82,62 +96,4 @@ export const v4 = async (editor: customMonaco.editor.IStandaloneCodeEditor, mona
     // //     reactDefs,
     // //     "file:///node_modules/@react/types/index.d.ts",
     // // )
-
-    // // -----------------------------------------------------------------------------
-    // // Not sure anything below works
-    // // -----------------------------------------------------------------------------
-    //
-    // const filePaths = [
-    //     "file:///node_modules/@types/csstype",
-    //     "file:///node_modules/@types/csstype/index.d.ts",
-    //     "file:///node_modules/csstype/index.d.ts",
-    //     "node_modules/@types/csstype",
-    //     "node_modules/@types",
-    //     "node_modules/@types",
-    // ]
-    //
-    // console.log(csstypeDefs)
-    //
-    // for (const path of filePaths) {
-    //     monaco.languages.typescript.typescriptDefaults.addExtraLib(
-    //         csstypeDefs,
-    //         path,
-    //     )
-    // }
-    //
-    // const svg4reactPaths = [
-    //     "inmemory://model/node_modules/svg4react/dist/esm/index",
-    // ]
-    //
-    // for (const path of svg4reactPaths) {
-    //     monaco.languages.typescript.typescriptDefaults.addExtraLib(
-    //         svg4reactDefs,
-    //         path,
-    //     )
-    // }
-    //
-    // monaco.languages.typescript.typescriptDefaults.addExtraLib(
-    //     svg4reactDefs,
-    //     "file:///node_modules/@types/svg4react/index.d.ts",
-    // )
-    // monaco.languages.typescript.typescriptDefaults.addExtraLib(
-    //     svg4reactDefs,
-    //     "file:///node_modules/svg4react/dist/index.d.ts",
-    // )
-    // monaco.languages.typescript.typescriptDefaults.addExtraLib(
-    //     svg4reactDefs,
-    //     "file:///svg4react/index.d.ts",
-    // )
-    // monaco.languages.typescript.typescriptDefaults.addExtraLib(
-    //     svg4reactDefs,
-    //     "file:///svg4react",
-    // )
-    // monaco.languages.typescript.typescriptDefaults.addExtraLib(
-    //     svg4reactDefs,
-    //     "@types/svg4react/index.d.ts",
-    // )
-    // monaco.languages.typescript.typescriptDefaults.addExtraLib(
-    //     svg4reactDefs,
-    //     "svg4react",
-    // )
 }

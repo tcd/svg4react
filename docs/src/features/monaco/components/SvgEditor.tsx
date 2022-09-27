@@ -44,7 +44,7 @@ export const SvgEditor = (props: SvgEditorProps) => {
     }
 
     const handleDidMount = (editor: customMonaco.editor.IStandaloneCodeEditor, monaco: CustomMonaco) => {
-        configureMonaco.v2(editor, monaco)
+        configureMonaco(editor, monaco)
         if (dev) {
             editorRef?.current?.editor?.trigger("handleDidMount", "editor.action.inspectTokens", {})
         }

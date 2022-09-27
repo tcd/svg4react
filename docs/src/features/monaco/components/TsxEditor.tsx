@@ -1,10 +1,9 @@
 import { useCallback, useEffect, useRef, useState } from "react"
 import MonacoEditor from "react-monaco-editor"
-import { AutoTypings, LocalStorageCache } from "monaco-editor-auto-typings"
 
-import { configureMonaco, customMonaco, CustomMonaco } from "@app/features/monaco/lib"
+import type { customMonaco, CustomMonaco } from "@app/features/monaco/lib"
 import {
-    addShortcut,
+    configureMonaco,
     DarkPlusMonacoTheme,
 } from "@app/features/monaco"
 
@@ -33,7 +32,7 @@ export const TsxEditor = ({ code }: TsxEditorProps) => {
     }
 
     const handleDidMount = async (editor: customMonaco.editor.IStandaloneCodeEditor, monaco: CustomMonaco) => {
-        configureMonaco.v4(editor, monaco)
+        configureMonaco(editor, monaco)
     }
 
     const handleChange = (value: string, _event: customMonaco.editor.IModelContentChangedEvent) => {

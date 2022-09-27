@@ -1,7 +1,6 @@
-import { Svg, Path, PathProps } from "svg4react"
+import { Svg, Path } from "svg4react"
 
-import { Page, Card, LiveDemo } from "@app/features/shared"
-import { TsxEditor, CustomEditor } from "@app/features/monaco"
+import { Page, LiveDemo } from "@app/features/shared"
 
 export const MonacoPage = (_props: unknown): JSX.Element => {
 
@@ -14,23 +13,14 @@ export const MonacoPage = (_props: unknown): JSX.Element => {
                 scope={scope}
                 code={code_original}
             />
-            <Card title="Monaco TSX">
+            {/* <Card title="Monaco TSX">
                 <TsxEditor code={code_original}/>
-                {/* <CustomEditor /> */}
-            </Card>
+            </Card> */}
         </Page>
     )
 }
 
 // =============================================================================
-
-const code_render = `
-render(
-    <Svg size="100%" viewBox="0 0 100 100">
-        <Path {...pathProps} />
-    </Svg>
-)
-`
 
 const code_original = `
 import { Svg, Path, PathProps } from "svg4react"
@@ -53,49 +43,6 @@ render(
         <Path {...pathProps} />
     </Svg>
 )
-`
-
-// -----------------------------------------------------------------------------
-
-// /**
-//  * @type {import("webpack").Configuration}
-//  */
-const code_jsdoc = `
-/**
- * @type {PathProps}
- */
-const pathProps = {
-    fill: "none",
-    stroke: "indianred",
-    commands: [
-        ["M", [[              10,30]]],
-        ["A", [[20,20, 0,0,1, 50,30]]],
-        ["A", [[20,20, 0,0,1, 90,30]]],
-        ["Q", [[90,60,        50,90]]],
-        ["Q", [[10,60,        10,30]]],
-        ["Z", []                     ],
-    ],
-}
-`
-
-// /**
-//  * @type {import("webpack").Configuration}
-//  */
-const code_ts = `
-import { Svg, PathProps } from "svg4react"
-
-const pathProps: PathProps = {
-    fill: "none",
-    stroke: "indianred",
-    commands: [
-        ["M", [[              10,30]]],
-        ["A", [[20,20, 0,0,1, 50,30]]],
-        ["A", [[20,20, 0,0,1, 90,30]]],
-        ["Q", [[90,60,        50,90]]],
-        ["Q", [[10,60,        10,30]]],
-        ["Z", []                     ],
-    ],
-}
 `
 
 const css_type = `
