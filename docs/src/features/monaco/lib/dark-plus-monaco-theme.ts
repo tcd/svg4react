@@ -25,5 +25,9 @@ export const DarkPlusMonacoTheme: customMonaco.editor.IStandaloneThemeData = {
             token: "delimiter.bracket.ts",
             foreground: DarkPlusColors.fg,
         },
+        // {
+        //     token: "delimiter.angle.ts",
+        //     foreground: DarkPlusColors.keyword,
+        // },
     ],
 }

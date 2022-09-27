@@ -1,8 +1,8 @@
 import { AutoTypings, LocalStorageCache } from "monaco-editor-auto-typings"
 
-// import { parse } from "@babel/parser"
-// import traverse from "@babel/traverse"
-// import MonacoJSXHighlighter from "monaco-jsx-highlighter"
+import { parse } from "@babel/parser"
+import traverse from "@babel/traverse"
+import MonacoJSXHighlighter from "monaco-jsx-highlighter"
 
 import type { customMonaco, CustomMonaco } from "@app/features/monaco/lib"
 import { DarkPlusMonacoTheme, addShortcut } from "@app/features/monaco/lib"
@@ -15,13 +15,13 @@ import { DarkPlusMonacoTheme, addShortcut } from "@app/features/monaco/lib"
 
 export const configureMonaco = async (editor: customMonaco.editor.IStandaloneCodeEditor, monaco: CustomMonaco): Promise<void> => {
 
-//     // -------------------------------------------------------------------------
-//     // https://github.com/luminaxster/syntax-highlighter
-//     // -------------------------------------------------------------------------
-//
-//     const highlighter = new MonacoJSXHighlighter(monaco, parse, traverse, editor)
-//     highlighter.highlightOnDidChangeModelContent(100)
-//     highlighter.addJSXCommentCommand()
+    // -------------------------------------------------------------------------
+    // https://github.com/luminaxster/syntax-highlighter
+    // -------------------------------------------------------------------------
+
+    const highlighter = new MonacoJSXHighlighter(monaco, parse, traverse, editor)
+    highlighter.highlightOnDidChangeModelContent(100)
+    highlighter.addJSXCommentCommand()
 
     // =============================================================================
     // Add Shortcuts

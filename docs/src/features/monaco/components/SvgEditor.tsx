@@ -9,15 +9,9 @@ import {
     cleanCode,
 } from "@app/features/monaco"
 
-export interface SvgEditorProps {
-    dev?: boolean
-}
+export interface SvgEditorProps {}
 
-export const SvgEditor = (props: SvgEditorProps) => {
-
-    const {
-        dev = false,
-    } = props
+export const SvgEditor = (_props: SvgEditorProps) => {
 
     const editorRef = useRef<MonacoEditor>()
 
@@ -45,9 +39,6 @@ export const SvgEditor = (props: SvgEditorProps) => {
 
     const handleDidMount = (editor: customMonaco.editor.IStandaloneCodeEditor, monaco: CustomMonaco) => {
         configureMonaco(editor, monaco)
-        if (dev) {
-            editorRef?.current?.editor?.trigger("handleDidMount", "editor.action.inspectTokens", {})
-        }
     }
 
     const handleChange = (value: string, _event: customMonaco.editor.IModelContentChangedEvent) => {
@@ -69,6 +60,7 @@ export const SvgEditor = (props: SvgEditorProps) => {
         // for whatever reason, this doesn't work when set as an object
         // @ts-ignore: next-line
         "bracketPairColorization.enabled": false,
+        fixedOverflowWidgets: true,
     }
 
     return (
