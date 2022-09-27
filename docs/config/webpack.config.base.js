@@ -11,6 +11,20 @@ const { PROJECT_ROOT } = require("./helpers")
 const APP_DIR    = path.resolve(PROJECT_ROOT, "src")
 const MONACO_DIR = path.resolve(PROJECT_ROOT, "node_modules", "monaco-editor")
 
+// const linkedDir = path.resolve(__dirname, "../../src")
+// console.log(linkedDir)
+
+const babelConfig = {
+    "presets": [
+        "@babel/preset-env",
+        "@babel/preset-typescript",
+        ["@babel/preset-react", { "runtime": "automatic" }],
+    ],
+    "plugins": [
+        "@babel/plugin-transform-runtime",
+    ],
+}
+
 /**
  * See [Webpack Configuration docs](https://webpack.js.org/configuration/) for more information.
  *
@@ -60,13 +74,24 @@ const webpackConfig = {
         plugins: [
             new TsconfigPathsPlugin.TsconfigPathsPlugin(),
         ],
+        fallback: {
+            path: require.resolve("path-browserify"),
+        },
     },
     module: {
         rules: [
             {
                 test: /\.(ts|js)x?$/i,
-                exclude: /node_modules/,
-                use: ["babel-loader"],
+                exclude: [
+                    /node_modules/,
+                    // linkedDir,
+                ],
+                use: [
+                    {
+                        loader: "babel-loader",
+                        options: babelConfig,
+                    },
+                ],
             },
             // {
             //     // https://github.com/orgs/remarkjs/discussions/903#discussioncomment-3405559
