@@ -5,7 +5,7 @@
     "license": "MIT",
     "author": "Clay Dunston <dunstontc@gmail.com>",
     "repository": "github:tcd/svg4react",
-    "homepage": "https://github.com/tcd/svg4react",
+    "homepage": "https://tcd.github.io/svg4react",
     "bugs": "https://github.com/tcd/svg4react/issues",
     "files": [
         "./dist"
