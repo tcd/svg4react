@@ -26,19 +26,19 @@ const webpackConfig = {
         ...baseConfig.plugins,
         new CleanWebpackPlugin(),
         new BundleAnalyzerPlugin(),
-        new webpack.ProgressPlugin({
-            // activeModules: false,
-            // entries: true,
-            // handler(percentage, message, ...args) {
-            //     // custom logic
-            // },
-            // modules: true,
-            // modulesCount: 5000,
-            // profile: false,
-            // dependencies: true,
-            // dependenciesCount: 10000,
-            percentBy: "entries",
-        }),
+        // new webpack.ProgressPlugin({
+        //     // activeModules: false,
+        //     // entries: true,
+        //     // handler(percentage, message, ...args) {
+        //     //     // custom logic
+        //     // },
+        //     // modules: true,
+        //     // modulesCount: 5000,
+        //     // profile: false,
+        //     // dependencies: true,
+        //     // dependenciesCount: 10000,
+        //     percentBy: "entries",
+        // }),
         // new CopyPlugin({
         //     patterns: [
         //         {
