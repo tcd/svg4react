@@ -1,4 +1,4 @@
-import type * as DrawToArgs from "./DrawToArgs"
+import type { DrawToArgs } from "./DrawToArgs"
 
 /**
  * @public

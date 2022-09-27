@@ -19,6 +19,7 @@ The format is based on [Keep a Changelog][keep-a-changelog], and this project ad
 - Use `forwardRef` for applicable components
 - Add default prop value for `SvgProps.version` ("1.1")
 - Add a raw `d` prop to `Path` as an alternative to `commands`
+- Use `namespace` for `DrawToArgs`
 
 
 ## [0.2.0] - 2022-09-21
