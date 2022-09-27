@@ -2,11 +2,11 @@ import Stop from "../Stop"
 import type { LinearGradientProps } from "./LinearGradient.types"
 
 /**
- * @public
+ * A wrapper for the [`<linearGradient>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/linearGradient) element.
  *
- * ## Reference
+ * The `<linearGradient>` element lets authors define linear gradients to apply to other SVG elements.
  *
- * - [MDN `<stop>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/stop)
+ * @see [MDN `<stop>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/stop)
  */
 const LinearGradient = (props: LinearGradientProps): JSX.Element => {
     const {
