@@ -7,7 +7,7 @@ import type { SvgPresentationAttributes } from "../utils"
  *
  * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Element/linearGradient
  */
-export type LinearGradientAttributes = {
+type LinearGradientAttributes = {
     /**
      * Defines the coordinate system for attributes `x1`, `x2`, `y1`, `y2`.
      *
