@@ -1,11 +1,13 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 
-const baseConfig = require("./webpack.config.base")
+const path = require("path")
 const webpack = require("webpack")
+const CopyPlugin = require("copy-webpack-plugin")
 const { CleanWebpackPlugin } = require("clean-webpack-plugin")
 const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer")
-// const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
+const baseConfig = require("./webpack.config.base")
+const { PROJECT_ROOT } = require("./helpers")
 
 /**
  * See [Webpack Configuration docs](https://webpack.js.org/configuration/) for more information.
@@ -16,6 +18,10 @@ const webpackConfig = {
     ...baseConfig,
     mode: "production",
     devtool: false,
+    output: {
+        ...baseConfig.output,
+        publicPath: "/svg4react",
+    },
     plugins: [
         ...baseConfig.plugins,
         new CleanWebpackPlugin(),
@@ -33,6 +39,14 @@ const webpackConfig = {
             // dependenciesCount: 10000,
             percentBy: "entries",
         }),
+        // new CopyPlugin({
+        //     patterns: [
+        //         {
+        //             from: path.join(PROJECT_ROOT, "public/*"),
+        //             to:   path.join(PROJECT_ROOT, "dist"),
+        //         },
+        //     ],
+        // }),
     ],
     optimization: {
         splitChunks: {
