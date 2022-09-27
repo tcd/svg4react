@@ -4,7 +4,7 @@ import { CircleDemo } from "./CircleDemo"
 
 export const CirclePage = (_props: unknown): JSX.Element => {
     return (
-        <Page title="Circle">
+        <Page title="<Circle>">
             <CircleDemo />
         </Page>
     )
