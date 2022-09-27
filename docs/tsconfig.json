@@ -27,6 +27,7 @@
         "strict": false,
         "noImplicitAny": true,
         "target": "es5",
+        "noEmitOnError": false,
         "typeRoots": [
             "./node_modules/@types",
             "./src/@types"
@@ -40,6 +41,6 @@
     "include": [
         "./src/**/*.ts",
         "./src/**/*.tsx",
-        "node_modules",
+        // "node_modules",
     ],
 }

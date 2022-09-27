@@ -1,5 +1,5 @@
-export type { MonacoApi } from "./monacoApi"
-export { monacoApi } from "./monacoApi"
+export type { CustomMonaco } from "./custom-monaco"
+export { customMonaco } from "./custom-monaco"
 export { DarkPlusMonacoTheme } from "./dark-plus-monaco-theme"
 export { configureMonaco } from "./configure-monaco"
 export { addShortcut } from "./add-shortcut"

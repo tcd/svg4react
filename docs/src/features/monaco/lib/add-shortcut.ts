@@ -1,11 +1,11 @@
-import * as monaco from "monaco-editor/esm/vs/editor/editor.api"
+import type { customMonaco, CustomMonaco } from "@app/features/monaco/lib"
 
 /**
  * Add a keyboard shortcut to a monaco editor instance.
  *
  * @see https://microsoft.github.io/monaco-editor/playground.html#interacting-with-the-editor-adding-an-action-to-an-editor-instance
  */
-export const addShortcut = (editor: monaco.editor.IStandaloneCodeEditor): void => {
+export const addShortcut = (editor: customMonaco.editor.IStandaloneCodeEditor, monaco: CustomMonaco): void => {
     editor.addAction({
         // An unique identifier of the contributed action.
         id: "custom-inspectTokens",

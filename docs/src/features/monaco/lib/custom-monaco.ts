@@ -1,7 +1,7 @@
 import { monaco } from "react-monaco-editor"
-export { monaco as monacoApi } from "react-monaco-editor"
+export { monaco as customMonaco } from "react-monaco-editor"
 
-export type MonacoApi = typeof monaco;
+export type CustomMonaco = typeof monaco;
 
 export type EditorActionId =
     | "editor.action.toggleTabFocusMode"

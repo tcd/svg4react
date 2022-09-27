@@ -2,9 +2,8 @@ import { useCallback, useContext, useEffect, useRef, useState } from "react"
 import MonacoEditor from "react-monaco-editor"
 import { LiveContext } from "react-live"
 
+import type { customMonaco, CustomMonaco } from "@app/features/monaco/lib"
 import {
-    monacoApi,
-    MonacoApi,
     DarkPlusMonacoTheme,
     configureMonaco,
 } from "@app/features/monaco"
@@ -39,24 +38,24 @@ export const SvgEditor = (props: SvgEditorProps) => {
         set_value(code)
     }, [code])
 
-    const handleWillMount = (monaco: MonacoApi): void => {
+    const handleWillMount = (monaco: CustomMonaco): void => {
         monaco.editor.defineTheme("dark-plus", DarkPlusMonacoTheme)
     }
 
-    const handleDidMount = (editor: monacoApi.editor.IStandaloneCodeEditor, monaco: MonacoApi) => {
+    const handleDidMount = (editor: customMonaco.editor.IStandaloneCodeEditor, monaco: CustomMonaco) => {
         configureMonaco(editor, monaco)
         if (dev) {
             editorRef?.current?.editor?.trigger("handleDidMount", "editor.action.inspectTokens", {})
         }
     }
 
-    const handleChange = (value: string, _event: monacoApi.editor.IModelContentChangedEvent) => {
+    const handleChange = (value: string, _event: customMonaco.editor.IModelContentChangedEvent) => {
         onChange(value)
         setChanged(true)
         set_value(value)
     }
 
-    const options: monacoApi.editor.IStandaloneEditorConstructionOptions = {
+    const options: customMonaco.editor.IStandaloneEditorConstructionOptions = {
         language: "typescript",
         theme: "dark-plus",
         // smartSelect: {

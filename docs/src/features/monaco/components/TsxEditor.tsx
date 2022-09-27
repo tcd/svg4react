@@ -1,10 +1,11 @@
 import { useCallback, useEffect, useRef, useState } from "react"
 import MonacoEditor from "react-monaco-editor"
-import { AutoTypings, LocalStorageCache } from 'monaco-editor-auto-typings';
+import { AutoTypings, LocalStorageCache } from "monaco-editor-auto-typings"
 
+import type { customMonaco, CustomMonaco } from "@app/features/monaco/lib"
 import {
-    monacoApi,
     addShortcut,
+    DarkPlusMonacoTheme,
 } from "@app/features/monaco"
 
 export interface TsxEditorProps {
@@ -27,8 +28,12 @@ export const TsxEditor = ({ code }: TsxEditorProps) => {
         set_value(code)
     }, [code])
 
-    const handleDidMount = async (editor: monacoApi.editor.IStandaloneCodeEditor) => {
-        addShortcut(editor)
+    const handleWillMount = (monaco: CustomMonaco): void => {
+        monaco.editor.defineTheme("dark-plus", DarkPlusMonacoTheme)
+    }
+
+    const handleDidMount = async (editor: customMonaco.editor.IStandaloneCodeEditor, monaco: CustomMonaco) => {
+        addShortcut(editor, monaco)
 
         await AutoTypings.create(editor, {
             sourceCache: new LocalStorageCache(), // Cache loaded sources in localStorage. May be omitted
@@ -36,12 +41,12 @@ export const TsxEditor = ({ code }: TsxEditorProps) => {
         })
     }
 
-    const handleChange = (value: string, _event: monacoApi.editor.IModelContentChangedEvent) => {
+    const handleChange = (value: string, _event: customMonaco.editor.IModelContentChangedEvent) => {
         setChanged(true)
         set_value(value)
     }
 
-    const options: monacoApi.editor.IStandaloneEditorConstructionOptions = {
+    const options: customMonaco.editor.IStandaloneEditorConstructionOptions = {
         language: "typescript",
         // language: "typescriptreact",
         theme: "dark-plus",
@@ -67,6 +72,7 @@ export const TsxEditor = ({ code }: TsxEditorProps) => {
             options={options}
             language="typescript"
             onChange={handleChange}
+            editorWillMount={handleWillMount}
             editorDidMount={handleDidMount}
         />
     )

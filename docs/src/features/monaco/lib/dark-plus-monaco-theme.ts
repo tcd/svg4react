@@ -1,8 +1,8 @@
-import type { monacoApi } from "."
+import type { customMonaco } from "@app/features/monaco/lib"
 
 import { DarkPlusColors } from "@app/util"
 
-export const DarkPlusMonacoTheme: monacoApi.editor.IStandaloneThemeData = {
+export const DarkPlusMonacoTheme: customMonaco.editor.IStandaloneThemeData = {
     base: "vs-dark",
     inherit: true,
     colors: {

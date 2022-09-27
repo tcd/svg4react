@@ -3,8 +3,7 @@ import traverse from "@babel/traverse"
 import MonacoJSXHighlighter from "monaco-jsx-highlighter"
 
 import type { customMonaco, CustomMonaco } from "@app/features/monaco/lib"
-import { DarkPlusMonacoTheme } from ".."
-import { addShortcut } from "./add-shortcut"
+import { DarkPlusMonacoTheme, addShortcut } from "@app/features/monaco/lib"
 
 import reactDefs from "@assets/txt/react.d.ts.txt"
 import svg4reactDefs from "@assets/txt/svg4react.d.ts.txt"
