@@ -5,7 +5,7 @@ import { App } from "./app"
 import "./styles/main.scss"
 import "./styles/markdown/github-markdown-light.css"
 
-import "./configure-monaco"
+// import "./configure-monaco"
 
 const container = document.getElementById("root")
 const root = createRoot(container)

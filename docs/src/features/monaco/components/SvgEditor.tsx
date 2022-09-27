@@ -6,6 +6,7 @@ import type { customMonaco, CustomMonaco } from "@app/features/monaco/lib"
 import {
     DarkPlusMonacoTheme,
     configureMonaco,
+    cleanCode,
 } from "@app/features/monaco"
 
 export interface SvgEditorProps {
@@ -50,7 +51,7 @@ export const SvgEditor = (props: SvgEditorProps) => {
     }
 
     const handleChange = (value: string, _event: customMonaco.editor.IModelContentChangedEvent) => {
-        onChange(value)
+        onChange(cleanCode(value))
         setChanged(true)
         set_value(value)
     }

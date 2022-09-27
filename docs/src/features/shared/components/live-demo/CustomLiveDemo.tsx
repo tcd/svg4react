@@ -8,7 +8,7 @@ import {
 import { DocsSx } from "@app/theme"
 import { trimCode } from "@app/util"
 import { Card } from "@app/features/shared"
-import { SvgEditor } from "@app/features/monaco"
+import { cleanCode, SvgEditor } from "@app/features/monaco"
 import { DocsPrismTheme } from "./DocsPrismTheme"
 import { WithLiveProps } from "./types"
 import { CustomLiveError } from "./CustomLiveError"
@@ -46,6 +46,7 @@ const _CustomLiveDemo = (props: CustomLiveDemoProps): JSX.Element => {
                 scope={scope}
                 noInline={!!!inline}
                 theme={DocsPrismTheme}
+                transformCode={(code) => cleanCode(code)}
             >
                 <Box sx={DocsSx.LiveDemo.container}>
                     <Paper {...DocsSx.LiveDemo.editor}>

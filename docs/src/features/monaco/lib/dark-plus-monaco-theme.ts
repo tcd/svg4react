@@ -10,19 +10,19 @@ export const DarkPlusMonacoTheme: customMonaco.editor.IStandaloneThemeData = {
     },
     rules: [
         {
-            token: "string.js",
+            token: "string.ts",
             foreground: DarkPlusColors.string,
         },
         {
-            token: "identifier.js",
+            token: "identifier.ts",
             foreground: DarkPlusColors.variable,
         },
         // {
-        //     token: "delimiter.js",
+        //     token: "delimiter.ts",
         //     foreground: DarkPlusColors.control,
         // },
         {
-            token: "delimiter.bracket.js",
+            token: "delimiter.bracket.ts",
             foreground: DarkPlusColors.fg,
         },
     ],

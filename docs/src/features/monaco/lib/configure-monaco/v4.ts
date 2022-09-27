@@ -32,9 +32,9 @@ export const v4 = async (editor: customMonaco.editor.IStandaloneCodeEditor, mona
         module: monaco.languages.typescript.ModuleKind.CommonJS,
         noEmit: true,
         // esModuleInterop: true,
-        // jsx: monaco.languages.typescript.JsxEmit.React,
-        // reactNamespace: "React",
-        // allowJs: true,
+        jsx: monaco.languages.typescript.JsxEmit.React,
+        reactNamespace: "React",
+        allowJs: true,
         // baseUrl: "./totally",
         // "paths": {
         //     "csstype": ["csstype"],
@@ -53,16 +53,17 @@ export const v4 = async (editor: customMonaco.editor.IStandaloneCodeEditor, mona
     // Silence Errors
     // =============================================================================
 
-    // monaco.languages.typescript.typescriptDefaults.setDiagnosticsOptions({
-    //     noSemanticValidation: true,
-    //     noSyntaxValidation: true,
-    // })
-    //
-    // monaco.languages.typescript.javascriptDefaults.setDiagnosticsOptions({
-    //     noSemanticValidation: true,
-    //     noSyntaxValidation: true,
-    //     diagnosticCodesToIgnore: [8010]
-    // })
+    monaco.languages.typescript.typescriptDefaults.setDiagnosticsOptions({
+        noSemanticValidation: false,
+        noSyntaxValidation: false,
+        diagnosticCodesToIgnore: [8010],
+    })
+
+    monaco.languages.typescript.javascriptDefaults.setDiagnosticsOptions({
+        noSemanticValidation: false,
+        noSyntaxValidation: false,
+        diagnosticCodesToIgnore: [8010],
+    })
 
     // =========================================================================
     // Add Types

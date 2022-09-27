@@ -1,16 +1,21 @@
 import { Svg, Path, PathProps } from "svg4react"
 
-import { Page, Card } from "@app/features/shared"
+import { Page, Card, LiveDemo } from "@app/features/shared"
 import { TsxEditor, CustomEditor } from "@app/features/monaco"
 
 export const MonacoPage = (_props: unknown): JSX.Element => {
 
-    const _scope = { Svg, Path }
+    const scope = { Svg, Path }
 
     return (
         <Page title="Monaco">
+            <LiveDemo
+                title="Test"
+                scope={scope}
+                code={code_original}
+            />
             <Card title="Monaco TSX">
-                <TsxEditor code={code_ts}/>
+                <TsxEditor code={code_original}/>
                 {/* <CustomEditor /> */}
             </Card>
         </Page>
@@ -27,14 +32,10 @@ render(
 )
 `
 
-// /**
-//  * @type {import("webpack").Configuration}
-//  */
 const code_original = `
-/**
- * @type {PathProps}
- */
-const pathProps = {
+import { Svg, Path, PathProps } from "svg4react"
+
+const pathProps: PathProps = {
     fill: "none",
     stroke: "indianred",
     commands: [
