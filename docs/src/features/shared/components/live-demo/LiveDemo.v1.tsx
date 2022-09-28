@@ -76,7 +76,7 @@ export const LiveDemo = (props: LiveDemoProps): JSX.Element => {
                     <Paper {...DocsSx.LiveDemo.preview}>
                         <LivePreview />
                     </Paper>
-                    <Box sx={DocsSx.LiveDemo.error}>
+                    <Box sx={DocsSx.LiveDemo}>
                         <LiveError />
                     </Box>
                 </Box>
