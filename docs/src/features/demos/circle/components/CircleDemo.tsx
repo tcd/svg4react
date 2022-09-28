@@ -9,6 +9,7 @@ export const CircleDemo = (_props: unknown): JSX.Element => {
 
     return (
         <LiveDemo
+            id="circle-demo-1"
             title="Circle Demo"
             componentName="Circle"
             code={code}

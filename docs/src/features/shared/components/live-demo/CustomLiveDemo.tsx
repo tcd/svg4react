@@ -14,6 +14,7 @@ import { WithLiveProps } from "./types"
 import { CustomLiveError } from "./CustomLiveError"
 
 export type CustomLiveDemoProps = {
+    id: string
     title: string | React.ReactNode
     componentName?: string
     /** The code that should be rendered, apart from the user's edits */
@@ -31,6 +32,7 @@ export type CustomLiveDemoProps = {
 const _CustomLiveDemo = (props: CustomLiveDemoProps): JSX.Element => {
 
     const {
+        id,
         title,
         componentName = null,
         scope,
@@ -40,7 +42,7 @@ const _CustomLiveDemo = (props: CustomLiveDemoProps): JSX.Element => {
     const passedCode = trimCode(props?.code)
 
     return (
-        <Card title={title} componentName={componentName}>
+        <Card id={id} title={title} componentName={componentName}>
             <LiveProvider
                 code={passedCode}
                 scope={scope}

@@ -3,6 +3,7 @@ import { Box, Divider, Paper, Typography } from "@mui/material"
 import { DocsSx } from "@app/theme"
 
 export interface CardProps {
+    id?: string
     title: string | React.ReactNode
     componentName?: string
     children: React.ReactNode
@@ -11,6 +12,7 @@ export interface CardProps {
 export const Card = (props: CardProps): JSX.Element => {
 
     let {
+        id = undefined,
         title,
         componentName = null,
         children = null,
@@ -25,7 +27,7 @@ export const Card = (props: CardProps): JSX.Element => {
     }
 
     return (
-        <Paper {...DocsSx.Card.root}>
+        <Paper id={id} {...DocsSx.Card.root}>
             <Typography
                 gutterBottom
                 variant="h4"

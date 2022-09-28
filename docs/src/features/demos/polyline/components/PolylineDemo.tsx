@@ -9,6 +9,7 @@ export const PolylineDemo = (_props: unknown): JSX.Element => {
 
     return (
         <LiveDemo
+            id="polyline-demo-1"
             title="Polyline Demo"
             componentName="Polyline"
             code={code}
