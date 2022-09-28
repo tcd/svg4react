@@ -10,12 +10,23 @@ import type { CircleProps } from "./Circle.types"
  * used to draw circles based on a center point and a radius.
  */
 const Circle = forwardRef<SVGCircleElement, CircleProps>(function Circle(props: CircleProps, ref) {
+
+    const {
+        coordinates = [],
+        ...otherProps
+    } = props
+
+    if (coordinates.length == 2) {
+        otherProps.cx = coordinates[0]
+        otherProps.cy = coordinates[1]
+    }
+
     return (
         // FIXME: CircleProps.fillRule throws a type error
         // @ts-ignore: next-line
         <circle
             ref={ref}
-            {...props}
+            {...otherProps}
         />
     )
 })
