@@ -12,6 +12,7 @@ export const Example8 = (_props: unknown): JSX.Element => {
 
     return (
         <LiveDemo
+            id="path-example-8"
             title="ClosePath"
             code={code}
             scope={scope}

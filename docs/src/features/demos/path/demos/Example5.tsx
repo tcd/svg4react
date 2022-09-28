@@ -12,6 +12,7 @@ export const Example5 = (_props: unknown): JSX.Element => {
 
     return (
         <LiveDemo
+            id="path-example-5"
             title="Cubic Bézier Curve"
             code={code}
             scope={scope}

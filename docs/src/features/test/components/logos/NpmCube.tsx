@@ -77,6 +77,7 @@ export const NpmCube = (_props: unknown): JSX.Element => {
     }
     return (
         <LiveDemo
+            id="demo--npm-cube"
             title="NPM Cube"
             code={code}
             scope={scope}

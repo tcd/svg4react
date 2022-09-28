@@ -9,11 +9,10 @@ export const TestPage = (_props: unknown): JSX.Element => {
     return (
         <Page title="Test">
             <LiveDemo
+                id="editor-test"
                 title="CSS"
                 code={code}
                 scope={scope}
-                trimCode={false}
-                noInline
             />
         </Page>
     )

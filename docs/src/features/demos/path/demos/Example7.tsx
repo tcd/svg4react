@@ -10,6 +10,7 @@ export const Example7 = (_props: unknown): JSX.Element => {
 
     return (
         <LiveDemo
+            id="path-example-7"
             title="Elliptical Arc Curve"
             code={code}
             scope={scope}

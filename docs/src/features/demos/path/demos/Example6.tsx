@@ -18,6 +18,7 @@ export const Example6 = (_props: unknown): JSX.Element => {
 
     return (
         <LiveDemo
+            id="path-example-6"
             title="Quadratic Bézier Curve"
             code={code}
             scope={scope}

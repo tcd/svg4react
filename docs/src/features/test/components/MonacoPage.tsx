@@ -9,6 +9,7 @@ export const MonacoPage = (_props: unknown): JSX.Element => {
     return (
         <Page title="Monaco">
             <LiveDemo
+                id="editor-test"
                 title="Test"
                 scope={scope}
                 code={code_original}
