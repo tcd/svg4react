@@ -1,5 +1,6 @@
 export * from "./circle"
 export * from "./line"
+export * from "./linear-gradient"
 export * from "./path"
 export * from "./polyline"
 export * from "./rect"

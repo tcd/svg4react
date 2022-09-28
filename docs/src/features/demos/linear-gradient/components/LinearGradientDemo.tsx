@@ -1,14 +1,11 @@
-import { Svg, LinearGradient } from "svg4react"
+import { Svg, LinearGradient, Circle } from "svg4react"
 
 import { randomColor } from "@app/util"
 import { LiveDemo } from "@app/features/shared"
 
 export const LinearGradientDemo = (_props: unknown): JSX.Element => {
 
-    const scope = {
-        Svg,
-        LinearGradient,
-    }
+    const scope = { Svg, LinearGradient, Circle }
 
     return (
         <LiveDemo
@@ -23,16 +20,21 @@ export const LinearGradientDemo = (_props: unknown): JSX.Element => {
 // =============================================================================
 
 const code = `
-const props = {
-    cx: 50,
-    cy: 50,
-    r: 50,
-    fill: "${randomColor()}",
+import { Svg, Circle, LinearGradient, LinearGradientProps } from "svg4react"
+
+const props: LinearGradientProps = {
+    id: "myGradient",
+    stops: [
+        { offset: "5%",  stopColor: "${randomColor()}" },
+        { offset: "95%", stopColor: "${randomColor()}" },
+    ],
 }
 
 render(
-    <Svg size="100%" viewBox="0 0 100 100">
-        <Circle {...props} />
+    <Svg size="100%" viewBox="0 0 10 10">
+        <LinearGradient {...props} />
+        {/* using my linear gradient */}
+        <Circle cx="5" cy="5" r="4" fill="url('#myGradient')" />
     </Svg>
 )
 `
