@@ -24,8 +24,10 @@ export const Example5 = (_props: unknown): JSX.Element => {
 const color = randomColor()
 
 const code = `
+import { Svg, Path, PathProps } from "svg4react"
+
 // Cubic Bézier curve with absolute coordinates
-const absoluteProps = {
+const absoluteProps: PathProps = {
     fill: "none",
     stroke: "${color}",
     commands: [
@@ -36,7 +38,7 @@ const absoluteProps = {
 }
 
 // Cubic Bézier curve with relative coordinates
-const relativeProps = {
+const relativeProps: PathProps = {
     fill: "none",
     stroke: "${color}",
     commands: [
@@ -46,11 +48,11 @@ const relativeProps = {
     ],
 }
 
-render (
+render(
     <Svg size="100%" viewBox="0 0 200 100">
         <Path {...absoluteProps} />
         <Path {...relativeProps} />
-        <Extra />
+        <Extra /> {/* don't worry about this */}
     </Svg>
 )
 `

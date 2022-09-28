@@ -22,12 +22,14 @@ export const Example8 = (_props: unknown): JSX.Element => {
 // =============================================================================
 
 const code = `
-const shared = {
+import { Svg, Path, PathProps } from "svg4react"
+
+const shared: Partial<PathProps> = {
     stroke: "${randomColor()}",
 }
 
 // An open shape with the last point of the path different to the first one
-const openProps1 = {
+const openProps1: PathProps = {
     ...shared,
     commands: [
         ["M", [[5,1]]],
@@ -39,7 +41,7 @@ const openProps1 = {
 }
 
 // An open shape with the last point of the path matching the first one
-const openProps2 = {
+const openProps2: PathProps = {
     ...shared,
     commands: [
         ["M", [[15,1]]],
@@ -52,7 +54,7 @@ const openProps2 = {
 }
 
 // A closed shape with the last point of the path different to the first one
-const closedProps = {
+const closedProps: PathProps = {
     ...shared,
     commands: [
         ["M", [[25,1]]],
@@ -64,7 +66,7 @@ const closedProps = {
     ],
 }
 
-render (
+render(
     <Svg size="100%" viewBox="0 0 50 25">
         <Path {...openProps1}  />
         <Path {...openProps2}  />

@@ -22,6 +22,8 @@ export const Example1 = (_props: unknown): JSX.Element => {
 // =============================================================================
 
 const code = `
+import { Svg, Path } from "svg4react"
+
 render(
     <Svg size="100%" viewBox="0 0 100 100">
         <Path

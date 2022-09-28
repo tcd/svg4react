@@ -22,13 +22,15 @@ export const Example4 = (_props: unknown): JSX.Element => {
 // =============================================================================
 
 const code = `
-const sharedProps = {
+import { Svg, Path, PathProps } from "svg4react"
+
+const sharedProps: Partial<PathProps> = {
     fill: "none",
     stroke: "${randomColor()}",
 }
 
 // LineTo commands with absolute coordinates
-const absoluteProps = {
+const absoluteProps: PathProps = {
     ...sharedProps,
     commands: [
         ["M", [[10,10]]],
@@ -39,7 +41,7 @@ const absoluteProps = {
 }
 
 // LineTo commands with relative coordinates
-const relativeProps = {
+const relativeProps: PathProps = {
     ...sharedProps,
     commands: [
         ["M", [[110,10]]],
@@ -49,7 +51,7 @@ const relativeProps = {
     ],
 }
 
-render (
+render(
     <Svg
         size="100%"
         viewBox="0 0 200 100">

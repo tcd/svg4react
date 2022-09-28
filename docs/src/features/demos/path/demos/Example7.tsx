@@ -20,7 +20,9 @@ export const Example7 = (_props: unknown): JSX.Element => {
 // =============================================================================
 
 const code = `
-const pathProps_a = {
+import { Svg, G, Path, PathProps } from "svg4react"
+
+const pathProps_a: PathProps = {
     stroke: "indianred",
     commands: [
         ["M", [[6,10]]                  ],
@@ -28,7 +30,7 @@ const pathProps_a = {
     ],
 }
 
-const pathProps_b = {
+const pathProps_b: PathProps = {
     stroke: "lime",
     commands: [
         ["M", [[6,10]] ],
@@ -36,7 +38,7 @@ const pathProps_b = {
     ],
 }
 
-const pathProps_c = {
+const pathProps_c: PathProps = {
     stroke: "rebeccapurple",
     commands: [
         ["M", [[6,10]] ],
@@ -44,7 +46,7 @@ const pathProps_c = {
     ],
 }
 
-const pathProps_d = {
+const pathProps_d: PathProps = {
     stroke: "violet",
     commands: [
         ["M", [[6,10]] ],
@@ -52,7 +54,7 @@ const pathProps_d = {
     ],
 }
 
-render (
+render(
     <Svg size="100%" viewBox="0 0 20 20">
         <G fill="none">
             <Path {...pathProps_a} />

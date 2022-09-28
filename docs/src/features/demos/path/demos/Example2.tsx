@@ -39,7 +39,9 @@ const sx: SxProps = {
 }
 
 const code = `
-const pathProps = {
+import { Svg, Path, PathProps } from "svg4react"
+
+const pathProps: PathProps = {
     fill: "none",
     stroke: "${randomColor()}",
     commands: [
