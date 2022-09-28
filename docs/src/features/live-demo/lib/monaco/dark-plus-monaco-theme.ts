@@ -1,4 +1,4 @@
-import type { customMonaco } from "@app/features/monaco/lib"
+import type { customMonaco } from "@app/features/live-demo"
 
 import { DarkPlusColors } from "@app/util"
 

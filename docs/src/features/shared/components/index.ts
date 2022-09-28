@@ -1,6 +1,5 @@
 export * from "./Card"
 export * from "./Highlight"
-export * from "./live-demo"
 export * from "./Logo"
 export * from "./Page"
 export * from "./RenderRaw"

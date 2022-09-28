@@ -1,7 +1,7 @@
 import { Svg, Path } from "svg4react"
 
 import { randomColor } from "@app/util"
-import { LiveDemo } from "@app/features/shared"
+import { LiveDemo } from "@app/features/live-demo"
 
 /**
  * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d#example

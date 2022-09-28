@@ -7,7 +7,7 @@ import {
 } from "react-live"
 
 import { DocsSx } from "@app/theme"
-import { DocsPrismTheme } from "./DocsPrismTheme"
+import { DocsPrismTheme } from "@app/features/live-demo"
 
 export interface LiveDemoProps {
     title: string | React.ReactNode

@@ -1,28 +1,22 @@
-import { useCallback, useContext, useEffect, useRef, useState } from "react"
+import { useCallback, useEffect, useRef, useState } from "react"
 import MonacoEditor from "react-monaco-editor"
-import { LiveContext } from "react-live"
 
-import type { customMonaco, CustomMonaco } from "@app/features/monaco/lib"
+import type { customMonaco, CustomMonaco } from "@app/features/live-demo"
 import {
-    DarkPlusMonacoTheme,
     configureMonaco,
-    cleanCode,
-} from "@app/features/monaco"
+    DarkPlusMonacoTheme,
+} from "@app/features/live-demo"
 
-export interface SvgEditorProps {}
+export interface TsxEditorProps {
+    code: string
+}
 
-export const SvgEditor = (_props: SvgEditorProps) => {
+export const TsxEditor = ({ code }: TsxEditorProps) => {
 
     const editorRef = useRef<MonacoEditor>()
 
     const [_value, set_value] = useState<string>()
     const [changed, setChanged] = useState<boolean>(false)
-
-    const {
-        code,
-        // @ts-ignore: next-line
-        onChange,
-    } = useContext(LiveContext)
 
     const theRealValue = useCallback(() => {
         if (changed) { return _value }
@@ -37,18 +31,18 @@ export const SvgEditor = (_props: SvgEditorProps) => {
         monaco.editor.defineTheme("dark-plus", DarkPlusMonacoTheme)
     }
 
-    const handleDidMount = (editor: customMonaco.editor.IStandaloneCodeEditor, monaco: CustomMonaco) => {
+    const handleDidMount = async (editor: customMonaco.editor.IStandaloneCodeEditor, monaco: CustomMonaco) => {
         configureMonaco(editor, monaco)
     }
 
     const handleChange = (value: string, _event: customMonaco.editor.IModelContentChangedEvent) => {
-        onChange(cleanCode(value))
         setChanged(true)
         set_value(value)
     }
 
     const options: customMonaco.editor.IStandaloneEditorConstructionOptions = {
         language: "typescript",
+        // language: "typescriptreact",
         theme: "dark-plus",
         // smartSelect: {
         //     selectLeadingAndTrailingWhitespace: false,
@@ -60,7 +54,7 @@ export const SvgEditor = (_props: SvgEditorProps) => {
         // for whatever reason, this doesn't work when set as an object
         // @ts-ignore: next-line
         "bracketPairColorization.enabled": false,
-        fixedOverflowWidgets: true,
+        // "javascript.validate.enable": false,
     }
 
     return (
@@ -70,9 +64,10 @@ export const SvgEditor = (_props: SvgEditorProps) => {
             height="600"
             value={theRealValue()}
             options={options}
+            language="typescript"
             onChange={handleChange}
-            editorDidMount={handleDidMount}
             editorWillMount={handleWillMount}
+            editorDidMount={handleDidMount}
         />
     )
 }

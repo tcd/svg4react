@@ -1,6 +1,7 @@
 import styled from "@emotion/styled"
 
-import { LiveDemo, Page } from "@app/features/shared"
+import { Page } from "@app/features/shared"
+import { LiveDemo } from "@app/features/live-demo"
 
 export const TestPage = (_props: unknown): JSX.Element => {
 

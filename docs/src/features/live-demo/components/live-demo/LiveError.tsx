@@ -1,12 +1,10 @@
+import { useContext } from "react"
 import { Alert, AlertTitle, Box } from "@mui/material"
-import {
-    LiveContext,
-} from "react-live"
+import { LiveContext } from "react-live"
 
 import { DocsSx } from "@app/theme"
-import { useContext } from "react"
 
-export const CustomLiveError = (_props: unknown): JSX.Element => {
+export const LiveError = (_props: unknown): JSX.Element => {
 
     const {
         error,

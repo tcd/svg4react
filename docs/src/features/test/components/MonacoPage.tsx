@@ -1,6 +1,7 @@
 import { Svg, Path } from "svg4react"
 
-import { Page, LiveDemo } from "@app/features/shared"
+import { Page } from "@app/features/shared"
+import { LiveDemo } from "@app/features/live-demo"
 
 export const MonacoPage = (_props: unknown): JSX.Element => {
 

@@ -3,7 +3,7 @@ import { Box } from "@mui/material"
 
 import { randomColor } from "@app/util"
 import type { ISxProps as SxProps } from "@app/theme"
-import { LiveDemo } from "@app/features/shared"
+import { LiveDemo } from "@app/features/live-demo"
 
 /**
  * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d#using_d_as_a_css_property

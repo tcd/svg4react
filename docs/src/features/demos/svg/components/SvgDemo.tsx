@@ -1,6 +1,6 @@
 import { Svg, Circle } from "svg4react"
 
-import { LiveDemo } from "@app/features/shared"
+import { LiveDemo } from "@app/features/live-demo"
 import { randomColor } from "@app/util"
 
 export const SvgDemo = (_props: unknown): JSX.Element => {

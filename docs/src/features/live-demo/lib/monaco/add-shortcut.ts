@@ -1,4 +1,4 @@
-import type { customMonaco, CustomMonaco } from "@app/features/monaco/lib"
+import type { customMonaco, CustomMonaco } from "@app/features/live-demo"
 
 /**
  * Add a keyboard shortcut to a monaco editor instance.

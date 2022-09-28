@@ -5,7 +5,8 @@ import {
     Svg,
 } from "svg4react"
 
-import { LiveDemo, Card } from "@app/features/shared"
+import { Card } from "@app/features/shared"
+import { LiveDemo } from "@app/features/live-demo"
 
 // <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 // <svg

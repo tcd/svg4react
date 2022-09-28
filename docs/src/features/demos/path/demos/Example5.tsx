@@ -1,7 +1,7 @@
 import { Svg, Path, G, Line } from "svg4react"
 
 import { randomColor } from "@app/util"
-import { LiveDemo } from "@app/features/shared"
+import { LiveDemo } from "@app/features/live-demo"
 
 /**
  * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d#cubic_b%C3%A9zier_curve

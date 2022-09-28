@@ -1,4 +1,5 @@
-import { Box, Paper } from "@mui/material"
+import { useState } from "react"
+import { Box, Paper, Switch, FormControlLabel } from "@mui/material"
 import {
     LiveProvider,
     LivePreview,
@@ -7,11 +8,10 @@ import {
 
 import { DocsSx } from "@app/theme"
 import { trimCode } from "@app/util"
-import { Card } from "@app/features/shared"
-import { cleanCode, SvgEditor } from "@app/features/monaco"
-import { DocsPrismTheme } from "./DocsPrismTheme"
-import { WithLiveProps } from "./types"
-import { CustomLiveError } from "./CustomLiveError"
+import { Card, RenderRaw } from "@app/features/shared"
+import { cleanCode, SvgEditor } from "@app/features/live-demo"
+import type { WithLiveProps } from "@app/features/live-demo"
+import { LiveError } from "./LiveError"
 
 export type CustomLiveDemoProps = {
     id: string
@@ -29,7 +29,7 @@ export type CustomLiveDemoProps = {
     inline?: boolean
 } & WithLiveProps
 
-const _CustomLiveDemo = (props: CustomLiveDemoProps): JSX.Element => {
+const _LiveDemo = (props: CustomLiveDemoProps): JSX.Element => {
 
     const {
         id,
@@ -41,27 +41,54 @@ const _CustomLiveDemo = (props: CustomLiveDemoProps): JSX.Element => {
 
     const passedCode = trimCode(props?.code)
 
+    const [showRaw, setShowRaw] = useState(false)
+
+    const handleChange = () => {
+        setShowRaw(!showRaw)
+    }
+
     return (
         <Card id={id} title={title} componentName={componentName}>
+
+            <FormControlLabel
+                label="show raw output"
+                control={<Switch />}
+                checked={showRaw}
+                onChange={handleChange}
+            />
+
             <LiveProvider
                 code={passedCode}
                 scope={scope}
                 noInline={!!!inline}
-                theme={DocsPrismTheme}
                 transformCode={(code) => cleanCode(code)}
             >
+
                 <Box sx={DocsSx.LiveDemo.container}>
+
                     <Paper {...DocsSx.LiveDemo.editor}>
                         <SvgEditor />
                     </Paper>
+
                     <Paper {...DocsSx.LiveDemo.preview}>
-                        <LivePreview />
-                        <CustomLiveError />
+                        {showRaw ? (
+                            <RenderRaw>
+                                <LivePreview />
+                            </RenderRaw>
+                        ) : (
+                            <>
+                                <LivePreview />
+                                <LiveError />
+                            </>
+                        )}
                     </Paper>
+
                 </Box>
+
             </LiveProvider>
+
         </Card>
     )
 }
 
-export const LiveDemo = withLive(_CustomLiveDemo)
+export const LiveDemo = withLive(_LiveDemo)

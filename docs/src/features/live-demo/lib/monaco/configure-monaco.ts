@@ -4,8 +4,8 @@ import { parse } from "@babel/parser"
 import traverse from "@babel/traverse"
 import MonacoJSXHighlighter from "monaco-jsx-highlighter"
 
-import type { customMonaco, CustomMonaco } from "@app/features/monaco/lib"
-import { DarkPlusMonacoTheme, addShortcut } from "@app/features/monaco/lib"
+import type { customMonaco, CustomMonaco } from "@app/features/live-demo"
+import { addShortcut } from "@app/features/live-demo"
 
 
 // import reactDefs from "@assets/txt/react.d.ts.txt"

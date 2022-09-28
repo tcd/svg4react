@@ -1,6 +1,6 @@
 import { Svg, G, Path } from "svg4react"
 
-import { LiveDemo } from "@app/features/shared"
+import { LiveDemo } from "@app/features/live-demo"
 
 /**
  * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d#elliptical_arc_curve
