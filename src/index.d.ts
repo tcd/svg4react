@@ -15,6 +15,9 @@ export * from "./Circle"
 export { default as Defs } from "./Defs"
 export * from "./Defs"
 
+export { default as Ellipse } from "./Ellipse"
+export * from "./Ellipse"
+
 export { default as G } from "./G"
 export * from "./G"
 

@@ -6,6 +6,9 @@ The format is based on [Keep a Changelog][keep-a-changelog], and this project ad
 
 
 ## [Unreleased]
+### Added
+- Add the following components:
+    - `Ellipse`
 
 
 ## [0.3.0] - 2022-09-27
