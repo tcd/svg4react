@@ -4,6 +4,7 @@ tsdoc-metadata.json
 **/ignore/**
 build
 dist
+tmp
 !docs/dist
 etc/docs/typedoc
 etc/docs/api-documenter
