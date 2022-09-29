@@ -68,8 +68,8 @@ const _LiveDemo = (props: CustomLiveDemoProps): JSX.Element => {
                     </Paper>
 
                     <Paper {...DocsSx.LiveDemo.preview}>
-                        <LiveDemoError />
                         <LiveDemoPreview showRaw={showRaw} />
+                        <LiveDemoError />
                     </Paper>
 
                 </Box>

@@ -1,18 +1,10 @@
 import { useContext } from "react"
 import { LiveContext } from "react-live"
 
-import { LiveDemoRawPreview } from "./LiveDemoRawPreview"
+import { DocsSx } from "@app/theme"
+import { RenderRaw } from "@app/features/shared"
 
-export type LiveDemoPreviewProps = {
-    showRaw: boolean
-}
-
-export const LiveDemoPreview = (props: LiveDemoPreviewProps): JSX.Element => {
-
-    const {
-        showRaw = false,
-    } = props
-
+export const LiveDemoRawPreview = (_props: unknown): JSX.Element => {
     const {
         // TODO: File issue with https://github.com/FormidableLabs/react-live for better typings
         // @ts-ignore: next-line
@@ -23,9 +15,9 @@ export const LiveDemoPreview = (props: LiveDemoPreviewProps): JSX.Element => {
         return null
     }
 
-    if (showRaw) {
-        return <LiveDemoRawPreview />
-    }
-
-    return <Element />
+    return (
+        <RenderRaw language="html" sx={DocsSx.LiveDemo.rawPreview}>
+            <Element />
+        </RenderRaw>
+    )
 }
