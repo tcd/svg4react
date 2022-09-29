@@ -45,7 +45,13 @@ const preview: PaperProps = {
         alignItems: "center",
 
         position: "relative",
+        maxHeight: "50vh",
     },
+}
+
+const rawPreview: SxProps = {
+    width: "100%",
+    height: "100%",
 }
 
 const errorWrapper: SxProps = {
@@ -63,5 +69,6 @@ export const LiveDemo = {
     container,
     editor,
     preview,
+    rawPreview,
     errorWrapper,
 }

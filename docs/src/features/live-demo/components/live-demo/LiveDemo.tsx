@@ -1,17 +1,14 @@
 import { useState } from "react"
 import { Box, Paper, Switch, FormControlLabel } from "@mui/material"
-import {
-    LiveProvider,
-    LivePreview,
-    withLive,
-} from "react-live"
+import { LiveProvider, withLive } from "react-live"
 
 import { DocsSx } from "@app/theme"
 import { trimCode } from "@app/util"
-import { Card, RenderRaw } from "@app/features/shared"
+import { Card } from "@app/features/shared"
 import { cleanCode, SvgEditor } from "@app/features/live-demo"
 import type { WithLiveProps } from "@app/features/live-demo"
-import { LiveError } from "./LiveError"
+import { LiveDemoError } from "./LiveDemoError"
+import { LiveDemoPreview } from "./LiveDemoPreview"
 
 export type CustomLiveDemoProps = {
     id: string
@@ -71,16 +68,8 @@ const _LiveDemo = (props: CustomLiveDemoProps): JSX.Element => {
                     </Paper>
 
                     <Paper {...DocsSx.LiveDemo.preview}>
-                        {showRaw ? (
-                            <RenderRaw>
-                                <LivePreview />
-                            </RenderRaw>
-                        ) : (
-                            <>
-                                <LivePreview />
-                                <LiveError />
-                            </>
-                        )}
+                        <LiveDemoError />
+                        <LiveDemoPreview showRaw={showRaw} />
                     </Paper>
 
                 </Box>

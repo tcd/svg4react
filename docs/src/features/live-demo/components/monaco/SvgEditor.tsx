@@ -20,6 +20,7 @@ export const SvgEditor = (_props: SvgEditorProps) => {
 
     const {
         code,
+        // TODO: File issue with https://github.com/FormidableLabs/react-live for better typings
         // @ts-ignore: next-line
         onChange,
     } = useContext(LiveContext)

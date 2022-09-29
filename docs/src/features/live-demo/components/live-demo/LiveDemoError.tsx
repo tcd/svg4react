@@ -4,7 +4,7 @@ import { LiveContext } from "react-live"
 
 import { DocsSx } from "@app/theme"
 
-export const LiveError = (_props: unknown): JSX.Element => {
+export const LiveDemoError = (_props: unknown): JSX.Element => {
 
     const {
         error,
