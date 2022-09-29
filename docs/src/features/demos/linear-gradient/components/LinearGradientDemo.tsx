@@ -34,7 +34,7 @@ const props: LinearGradientProps = {
 render(
     <Svg size="100%" viewBox="0 0 10 10">
         <LinearGradient {...props} />
-        {/* using my linear gradient */}
+        {/* apply the gradient */}
         <Circle cx="5" cy="5" r="4" fill="url('#myGradient')" />
     </Svg>
 )
