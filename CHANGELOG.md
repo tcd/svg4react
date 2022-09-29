@@ -9,6 +9,9 @@ The format is based on [Keep a Changelog][keep-a-changelog], and this project ad
 ### Added
 - Add the following components:
     - `Ellipse`
+### Changed
+- Add `vb` prop to `Svg` component
+- Roll TypeScript declarations into a single file for easier consumption
 
 
 ## [0.3.0] - 2022-09-27
