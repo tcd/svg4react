@@ -1,5 +1,14 @@
+// import { Config}
+
 export const SIDE_NAV_LINKS: (ILinkData | ILinksData)[] = [
-    { title: "Home", to: "/" },
+    {
+        title: "root",
+        links: [
+            { title: "Home", to: "/" },
+            { title: "Changelog", to: "/changelog" },
+            { title: "Playground", to: "/playground" },
+        ],
+    },
     {
         title: "Components",
         links: [
@@ -20,5 +29,4 @@ export const SIDE_NAV_LINKS: (ILinkData | ILinksData)[] = [
             { title: "Monaco", to: "/examples/monaco" },
         ],
     },
-    { title: "Changelog", to: "/changelog" },
 ]

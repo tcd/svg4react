@@ -15,6 +15,8 @@ import { PolylinePage } from "@app/features/demos"
 import { RectPage } from "@app/features/demos"
 import { SvgPage } from "@app/features/demos"
 
+import { PlaygroundPage } from "@app/features/playground"
+
 import { TestPage } from "@app/features/test"
 import { LogosPage } from "@app/features/test"
 import { MonacoPage } from "@app/features/test"
@@ -29,8 +31,9 @@ const routes = (): RouteObject[] => {
             path: "/",
             element: <Layout />,
             children: [
-                { index: true,       element: <HomePage />      },
-                { path: "changelog", element: <ChangelogPage /> },
+                { index: true,        element: <HomePage />       },
+                { path: "changelog",  element: <ChangelogPage />  },
+                { path: "playground", element: <PlaygroundPage /> },
                 {
                     path: "demos",
                     children: [
