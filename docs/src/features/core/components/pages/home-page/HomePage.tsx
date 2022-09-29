@@ -27,7 +27,8 @@ export const HomePage = (_props: unknown): JSX.Element => {
 // =============================================================================
 
 const shields: ShieldProps[] = [
-    { title: "NPM",     imgSrc: "https://img.shields.io/npm/v/svg4react",              href: "https://www.npmjs.com/package/svg4react" },
-    { title: "Issues",  imgSrc: "https://img.shields.io/github/issues/tcd/svg4react",  href: "https://github.com/tcd/svg4react/issues" },
-    { title: "License", imgSrc: "https://img.shields.io/github/license/tcd/svg4react", href: "https://github.com/tcd/svg4react/blob/LICENSE.md" },
+    { title: "latest",   imgSrc: "https://img.shields.io/npm/v/svg4react",              href: "https://www.npmjs.com/package/svg4react" },
+    { title: "unstable", imgSrc: "https://img.shields.io/npm/v/svg4react/next",         href: "https://www.npmjs.com/package/svg4react/v/next" },
+    { title: "Issues",   imgSrc: "https://img.shields.io/github/issues/tcd/svg4react",  href: "https://github.com/tcd/svg4react/issues" },
+    { title: "License",  imgSrc: "https://img.shields.io/github/license/tcd/svg4react", href: "https://github.com/tcd/svg4react/blob/LICENSE.md" },
 ]
