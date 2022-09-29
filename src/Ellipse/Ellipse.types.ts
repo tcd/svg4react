@@ -1,11 +1,6 @@
 import type { SVGProps } from "react"
 import type { SvgPresentationAttributes } from "../utils"
 
-type EllipseCoordinates = [
-    cx: number,
-    cy: number,
-]
-
 /**
  * @see [MDN - `<ellipse>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/ellipse)
  */
@@ -15,7 +10,7 @@ type EllipseAttributes = {
      *
      * Will override `cx` and `cy`
      */
-    coordinates?: EllipseCoordinates
+    coordinates?: [cx: number, cy: number]
     /**
      * The x-axis coordinate of the center of the ellipse.
      */

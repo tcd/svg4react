@@ -1,14 +1,7 @@
 import type { SVGProps } from "react"
 import type { SvgPresentationAttributes } from "../utils"
 
-type CircleCoordinates = [
-    cx: number,
-    cy: number,
-]
-
 /**
- * @public
- *
  * @see [MDN - `<circle>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/circle)
  */
 type CircleAttributes = {
@@ -17,7 +10,7 @@ type CircleAttributes = {
      *
      * Will override `cx` and `cy`
      */
-    coordinates?: CircleCoordinates
+    coordinates?: [cx: number, cy: number]
     /**
      * The x-axis coordinate of the center of the circle.
      */
@@ -32,6 +25,10 @@ type CircleAttributes = {
      * A value lower or equal to zero disables rendering of the circle.
      */
     r: number | string
+    /**
+     * The total length for the circle's circumference, in user units.
+     */
+    pathLength?: number | string
 } & Pick<SvgPresentationAttributes,
     | "clipPath"
     | "clipRule"
@@ -61,8 +58,6 @@ type CircleAttributes = {
 >
 
 /**
- * @public
- *
  * @see [MDN - `<circle>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/circle)
  */
 export type CircleProps =
