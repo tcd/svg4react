@@ -5,8 +5,8 @@ import { LiveProvider, withLive } from "react-live"
 import { DocsSx } from "@app/theme"
 import { trimCode } from "@app/util"
 import { Card } from "@app/features/shared"
-import { cleanCode, SvgEditor } from "@app/features/live-demo"
-import type { WithLiveProps } from "@app/features/live-demo"
+import { cleanCode, WithLiveProps } from "@app/features/live-demo"
+import { LiveEditor } from "./LiveEditor"
 import { LiveDemoError } from "./LiveDemoError"
 import { LiveDemoPreview } from "./LiveDemoPreview"
 
@@ -40,7 +40,7 @@ const _LiveDemo = (props: CustomLiveDemoProps): JSX.Element => {
 
     const [showRaw, setShowRaw] = useState(false)
 
-    const handleChange = () => {
+    const handleToggleRaw = () => {
         setShowRaw(!showRaw)
     }
 
@@ -51,7 +51,7 @@ const _LiveDemo = (props: CustomLiveDemoProps): JSX.Element => {
                 label="show raw output"
                 control={<Switch />}
                 checked={showRaw}
-                onChange={handleChange}
+                onChange={handleToggleRaw}
             />
 
             <LiveProvider
@@ -64,7 +64,7 @@ const _LiveDemo = (props: CustomLiveDemoProps): JSX.Element => {
                 <Box sx={DocsSx.LiveDemo.container}>
 
                     <Paper {...DocsSx.LiveDemo.editor}>
-                        <SvgEditor />
+                        <LiveEditor />
                     </Paper>
 
                     <Paper {...DocsSx.LiveDemo.preview}>
