@@ -1,10 +1,15 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 
 const path = require("path")
+const webpack = require("webpack")
 const baseConfig = require("./webpack.config.base")
-
 const { PROJECT_ROOT } = require("./helpers")
-const OUT_DIR    = path.resolve(PROJECT_ROOT, "dist")
+
+const OUT_DIR = path.resolve(PROJECT_ROOT, "dist")
+
+const ENV = {
+    NODE_ENV: "development",
+}
 
 /**
  * See [Webpack Configuration docs](https://webpack.js.org/configuration/) for more information.
@@ -31,6 +36,12 @@ const webpackConfig = {
         allowedHosts: "all",
         hot: true,
     },
+    plugins: [
+        ...baseConfig.plugins,
+        new webpack.DefinePlugin({
+            ENV: JSON.stringify(ENV),
+        }),
+    ],
     module: {
         rules: [
             ...baseConfig.module.rules,
