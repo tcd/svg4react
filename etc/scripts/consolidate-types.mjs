@@ -22,8 +22,8 @@ try {
     console.log("dist/**/*.d.ts files deleted")
     await deleteAsync([posix.join(".", "dist", "**", "*.d.ts.map")], { dryRun: false })
     console.log("dist/**/*.d.ts.map files deleted")
-    await moveFile("./tmp/svg4react.d.ts", "./dist/svg4react.d.ts")
-    console.log("svg4react.d.ts moved to dist/")
+    await moveFile("./tmp/svg4react.d.ts", "./dist/index.d.ts")
+    console.log("svg4react.d.ts moved to dist/index.d.ts")
     process.exit(0)
 } catch (e) {
     console.error(e)
