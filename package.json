@@ -25,7 +25,9 @@
         "build:tidy": "node ./etc/scripts/consolidate-types.mjs",
         "build:esm": "cross-env tsc",
         "build:docs": "cross-env typedoc --options ./typedoc.json",
-        "build:types": "cross-env rollup -c ./rollup.config.js"
+        "build:types": "cross-env rollup -c ./rollup.config.js",
+        "publish:next": "npm publish --tag next",
+        "publish:latest": "npm publish --tag latest"
     },
     "peerDependencies": {
         "@mui/system": ">=5.0.0",
