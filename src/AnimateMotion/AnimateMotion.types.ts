@@ -1,5 +1,3 @@
-import { SVGProps } from "react"
+import type { SVGProps } from "react"
 
-export interface AnimateMotionProps extends SVGProps<SVGAnimateMotionElement> {
-
-}
+export interface AnimateMotionProps extends SVGProps<SVGAnimateMotionElement> {}

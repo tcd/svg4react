@@ -1,7 +1,7 @@
 import type { SVGProps } from "react"
 import type { SvgPresentationAttributes } from "../utils"
 
-export type LineCoordinates = [
+type LineCoordinates = [
     /**
      * Defines the x-axis coordinate of the line starting point.
      *
@@ -33,7 +33,7 @@ export type LineCoordinates = [
  *
  * @see [MDN](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/line)
  */
-export type LineAttributes = {
+type LineAttributes = {
     /**
      * Values, in order, for:
      *

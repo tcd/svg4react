@@ -2,11 +2,9 @@ import type { SVGProps } from "react"
 import type { Property } from "csstype"
 
 /**
- * @public
- *
  * @see [MDN `<stop>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/stop)
  */
-export type StopAttributes = {
+type StopAttributes = {
     /**
      * Defines where the gradient stop is placed along the gradient vector.
      *
