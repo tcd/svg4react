@@ -2,9 +2,8 @@ tsdoc-metadata.json
 
 **/node_modules
 **/ignore/**
+**/dist
+# !docs/dist
 build
-dist
 tmp
-!docs/dist
-etc/docs/typedoc
-etc/docs/api-documenter
+etc/docs

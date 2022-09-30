@@ -19,13 +19,14 @@
         "SVG"
     ],
     "scripts": {
-        "tag": "node ./etc/scripts/tag.mjs",
         "build": "npm run build:clean && npm run build:esm && npm run build:types && npm run build:tidy",
         "build:clean": "cross-env rimraf ./dist/**/*",
-        "build:tidy": "node ./etc/scripts/consolidate-types.mjs",
         "build:esm": "cross-env tsc",
-        "build:docs": "cross-env typedoc --options ./typedoc.json",
         "build:types": "cross-env rollup -c ./rollup.config.js",
+        "build:tidy": "node ../../etc/scripts/consolidate-types.mjs",
+
+        "build:docs": "cross-env typedoc --options ./typedoc.json",
+        "tag": "node ../..//etc/scripts/tag/main.mjs",
         "publish:next": "npm publish --tag next",
         "publish:latest": "npm publish --tag latest"
     },

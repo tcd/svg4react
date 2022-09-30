@@ -64,7 +64,7 @@ const promptPushTags = () => {
                 console.log(`not pushing`)
                 process.exit(0)
             } else {
-                if(pushTag(version)) {
+                if (pushTag(version)) {
                     console.log("git tag pushed")
                     process.exit(0)
                 } else {
