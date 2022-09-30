@@ -20,6 +20,7 @@ const persistList: NestedKeyOf<RootState>[] = [
     "Core.drawerOpened",
     "Core.openedDrawerSections",
     "Core.darkModeEnabled",
+    "Playground.value",
 ]
 
 const persistConfig = getPersistConfig({
