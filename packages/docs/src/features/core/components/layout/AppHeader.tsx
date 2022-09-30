@@ -2,8 +2,11 @@ import { useDispatch, useSelector } from "react-redux"
 import {
     AppBar,
     Toolbar,
+    IconButton,
     Typography,
+    Stack,
 } from "@mui/material"
+import GitHubIcon from "@mui/icons-material/GitHub"
 
 import { Actions, Selectors } from "@app/state"
 import { DocsSx } from "@app/theme"
@@ -32,10 +35,15 @@ export const AppHeader = (_props: unknown): JSX.Element => {
                 {/* <Typography variant="h6" noWrap component="div">
                     svg4react
                 </Typography> */}
-                <DarkModeSwitch
-                    checked={darkModeEnabled}
-                    onChange={handleDarkModeChange}
-                />
+                <Stack direction="row" alignItems="center" spacing={2}>
+                    <IconButton LinkComponent="a" href="https://github.com/tcd/svg4react">
+                        <GitHubIcon />
+                    </IconButton>
+                    <DarkModeSwitch
+                        checked={darkModeEnabled}
+                        onChange={handleDarkModeChange}
+                    />
+                </Stack>
             </Toolbar>
         </AppBar>
     )

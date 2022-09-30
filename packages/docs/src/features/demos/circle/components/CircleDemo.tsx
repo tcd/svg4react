@@ -24,8 +24,7 @@ const code = `
 import { Svg, Circle, CircleProps } from "svg4react"
 
 const circleProps: CircleProps = {
-    cx: 50,
-    cy: 50,
+    coordinates: [50, 50],
     r: 50,
     fill: "${randomColor()}",
 }

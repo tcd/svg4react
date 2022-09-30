@@ -21,8 +21,7 @@ import {
 render(
     <Svg size="75%" vb={[100]}>
         <Circle
-            cx="50"
-            cy="50"
+            coordinates={[50, 50]}
             r="50"
             fill="lightseagreen"
         />
