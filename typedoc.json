@@ -12,5 +12,6 @@
     "entryPoints": [
         "./src/index.ts",
     ],
-    "tsconfig": "./tsconfig.json"
+    "tsconfig": "./tsconfig.json",
+    "json": "./tmp/svg4react.d.json"
 }
