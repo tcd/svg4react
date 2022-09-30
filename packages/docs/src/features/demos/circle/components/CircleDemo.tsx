@@ -31,7 +31,7 @@ const circleProps: CircleProps = {
 }
 
 render(
-    <Svg size="100%" viewBox="0 0 100 100">
+    <Svg size="75%" vb={[100]}>
         <Circle {...circleProps} />
     </Svg>
 )
