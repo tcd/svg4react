@@ -83,9 +83,18 @@ export const configureMonaco = async (editor: customMonaco.editor.IStandaloneCod
     // Add Types
     // =========================================================================
 
+    /**
+     * @see https://github.com/lukasbach/monaco-editor-auto-typings#configuration
+     */
     AutoTypings.create(editor, {
-        sourceCache: new LocalStorageCache(), // Cache loaded sources in localStorage. May be omitted
         monaco,
+        sourceCache: new LocalStorageCache(), // Cache loaded sources in localStorage. May be omitted
+        shareCache: true,
+        preloadPackages: true,
+        onlySpecifiedPackages: true, // FIXME: this one isn't ideal
+        versions: {
+            "svg4react": "0.4.0-rc.1",
+        },
     })
 
     // // =============================================================================
