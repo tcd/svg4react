@@ -1,8 +1,8 @@
 {
     "$schema": "https://typedoc.org/schema.json",
-    "name": "svg4react",
-    "out": "./etc/docs/typedoc",
-    "readme": "./README.md",
+    "name": "@svg4react/core",
+    "out": "../../etc/docs/typedoc",
+    "readme": "../../README.md",
     "entryPointStrategy": "expand",
     "excludeExternals": true,
     "plugin": [
