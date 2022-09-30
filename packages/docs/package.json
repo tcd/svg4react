@@ -1,5 +1,6 @@
 {
-    "homepage": "https://tcd.github.io/svg4react",
+    "private": true,
+    "name": "@svg4react/docs",
     "scripts": {
         "start": "npm run serve",
         "serve": "cross-env NODE_ENV=development webpack-dev-server --config ./config/webpack.config.dev.js --open",

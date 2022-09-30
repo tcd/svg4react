@@ -1,10 +1,11 @@
 {
     "files.exclude": {
         // "**/node_modules": true,
+        "tmp": true,
     },
     "files.associations": {
         "*.json": "jsonc",
-        "**/docs/dist/*.js": "plaintext",
+        "**/packages/docs/dist/*.js": "plaintext",
     },
     "eslint.format.enable": true,
     "[javascript]":      { "editor.defaultFormatter": "dbaeumer.vscode-eslint" },

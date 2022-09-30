@@ -2,17 +2,10 @@
     "private": true,
     "name": "@svg4react/monorepo",
     "version": "0.4.0-rc.1",
-    "scripts": {
-        "tag": "node ./etc/scripts/tag.mjs",
-        "build": "npm run build:clean && npm run build:esm && npm run build:types && npm run build:tidy",
-        "build:clean": "cross-env rimraf ./dist/**/*",
-        "build:tidy": "node ./etc/scripts/consolidate-types.mjs",
-        "build:esm": "cross-env tsc",
-        "build:docs": "cross-env typedoc --options ./typedoc.json",
-        "build:types": "cross-env rollup -c ./rollup.config.js",
-        "publish:next": "npm publish --tag next",
-        "publish:latest": "npm publish --tag latest"
-    },
+    "scripts": {},
+    "workspaces": [
+        "packages/**"
+    ],
     "devDependencies": {
         "@types/globby": "^9.1.0",
         "@types/node": "^18.7.18",

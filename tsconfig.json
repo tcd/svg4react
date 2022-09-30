@@ -1,0 +1,37 @@
+{
+    "compilerOptions": {
+        "strict": false,
+        "noImplicitAny": true,
+        "skipLibCheck": true,
+        "target": "es5",
+        "jsx": "react-jsx",
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "allowSyntheticDefaultImports": true,
+        "noFallthroughCasesInSwitch": true,
+        "allowJs": false,
+        "sourceMap": true,
+        "downlevelIteration": true,
+        "declaration": true,
+        "declarationMap": true,
+        "module": "ESNext",
+
+//         "rootDir": ".",
+//         "baseUrl": ".",
+//
+//         "typeRoots": [
+//             "./node_modules/@types",
+//             "./src/@types"
+//         ],
+//         "paths": {
+//             "@app/*": ["*"],
+//         },
+    },
+    "exclude": [
+        "node_modules",
+        "tmp",
+        "**/ignore/*.ts",
+        "**/ignore/*.tsx",
+    ],
+}
