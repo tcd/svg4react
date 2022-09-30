@@ -6,7 +6,7 @@
         "node": ">=14.16"
     },
     "scripts": {
-        "start": "npm run build && node ./build/index.js",
+        "start": "npm run build && node ./build/parse-tsdoc.js",
         "build": "npm run clean && npm run compile",
         "compile": "tsc",
         "clean": "cross-env rimraf ./build/**/*"
