@@ -12,7 +12,7 @@ import { SIDE_NAV_LINKS } from "@app/features/routing"
 import { SideNavItem } from "./SideNavItem"
 import { DrawerHeader } from "./DrawerHeader"
 import { AppHeader } from "./AppHeader"
-
+import { AppMobileDrawer } from "./AppMobileDrawer"
 
 export const Layout = (_props: unknown): JSX.Element => {
 
@@ -21,22 +21,25 @@ export const Layout = (_props: unknown): JSX.Element => {
     return (
         <Box sx={DocsSx.Layout.root}>
             <AppHeader />
+
+            <AppMobileDrawer />
+
             <Drawer
                 sx={DocsSx.Layout.drawer}
                 variant="permanent"
                 anchor="left"
             >
-                {/* <Toolbar /> */}
                 <DrawerHeader />
-                {/* <Divider /> */}
                 <List>
                     {$items}
                 </List>
             </Drawer>
+
             <Box component="main" sx={DocsSx.Layout.main}>
                 <Toolbar sx={DocsSx.Layout.header} />
                 <Outlet />
             </Box>
+
         </Box>
     )
 }

@@ -1,7 +1,6 @@
 import type { ActionReducerMapBuilder, PayloadAction } from "@reduxjs/toolkit"
 
 import { CoreActions } from "@app/features/core"
-
 import type { RoutingState } from "./state"
 import { INITIAL_ROUTING_STATE as INITIAL_STATE } from "./state"
 

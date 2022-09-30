@@ -1,6 +1,7 @@
-import { ThemeVars } from "@app/theme/variables"
+import type { Theme } from "@mui/material"
 
-import { ISxProps as SxProps } from "@app/theme/helpers"
+import { ThemeVars } from "@app/theme/variables"
+import type { ISxProps as SxProps } from "@app/theme/helpers"
 
 const { drawerWidth, headerHeight } = ThemeVars
 
@@ -17,7 +18,7 @@ const main: SxProps = {
 // Header
 // =============================================================================
 
-const header: SxProps = {
+const header: SxProps = (theme: Theme) => ({
     width: `calc(100% - ${drawerWidth}px)`,
     height: `${headerHeight}px`,
 
@@ -25,7 +26,12 @@ const header: SxProps = {
 
     display: "flex",
     flexFlow: "row nowrap",
-}
+
+    [theme.breakpoints.down("laptop")]: {
+        width: "100%",
+        ml: "0px",
+    },
+})
 
 const toolbar: SxProps = {
     width: "100%",
@@ -41,14 +47,18 @@ const toolbar: SxProps = {
 // Drawer
 // =============================================================================
 
-const drawer: SxProps = {
+const drawer: SxProps = (theme: Theme) => ({
     width: drawerWidth,
     flexShrink: 0,
     "& .MuiDrawer-paper": {
         width: drawerWidth,
         boxSizing: "border-box",
     },
-}
+    [theme.breakpoints.down("laptop")]: {
+        width: "0px",
+        display: "none",
+    },
+})
 
 const drawerHeader: SxProps = {
     height: `${headerHeight}px`,

@@ -3,7 +3,7 @@ import {
     AppBar,
     Toolbar,
     IconButton,
-    Typography,
+    // Typography,
     Stack,
 } from "@mui/material"
 import GitHubIcon from "@mui/icons-material/GitHub"
@@ -11,6 +11,7 @@ import GitHubIcon from "@mui/icons-material/GitHub"
 import { Actions, Selectors } from "@app/state"
 import { DocsSx } from "@app/theme"
 import { DarkModeSwitch } from "./DarkModeSwitch"
+import { AppHamburger } from "./AppHamburger"
 
 // =============================================================================
 
@@ -31,7 +32,7 @@ export const AppHeader = (_props: unknown): JSX.Element => {
             sx={DocsSx.Layout.header}
         >
             <Toolbar sx={DocsSx.Layout.toolbar}>
-                <div />
+                <AppHamburger />
                 {/* <Typography variant="h6" noWrap component="div">
                     svg4react
                 </Typography> */}

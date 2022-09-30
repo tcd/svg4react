@@ -1,3 +1,4 @@
+import { useDispatch } from "react-redux"
 import { useLocation, useNavigate } from "react-router-dom"
 import {
     List,
@@ -8,6 +9,7 @@ import {
 } from "@mui/material"
 
 import type { ISxProps as SxProps } from "@app/theme"
+import { Actions } from "@app/state"
 
 export interface SideNavItemProps {
     data: ILinkData | ILinksData
@@ -26,7 +28,6 @@ export const SideNavItem = ({ data }: SideNavItemProps): JSX.Element => {
     return null
 }
 
-
 // =============================================================================
 
 const isLink = (arg: any): arg is ILinkData => {
@@ -41,17 +42,19 @@ const isLinks = (arg: any): arg is ILinksData => {
 
 const SideNavItem_link = (props: ILinkData): JSX.Element => {
 
+    const dispatch = useDispatch()
     const navigate = useNavigate()
     const location = useLocation()
 
     const handleClick = () => {
+        dispatch(Actions.Core.closeDrawer())
         navigate(props.to)
     }
 
     const active = props.to == location.pathname
 
     const sx: SxProps = {
-        color: active ? (theme) => theme.palette.secondary.main : undefined
+        color: active ? (theme) => theme.palette.secondary.main : undefined,
     }
 
     return (
