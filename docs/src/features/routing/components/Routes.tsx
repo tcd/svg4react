@@ -20,12 +20,26 @@ import { PlaygroundPage } from "@app/features/playground"
 import { TestPage } from "@app/features/test"
 import { LogosPage } from "@app/features/test"
 import { MonacoPage } from "@app/features/test"
+import { CONFIG } from "@app/util"
 
 export const Routes = (_props: unknown): JSX.Element => {
     return useRoutes(routes())
 }
 
 const routes = (): RouteObject[] => {
+
+    const devRoutes: RouteObject[] = []
+    if (CONFIG.env !== "production") {
+        devRoutes.push({
+            path: "examples",
+            children: [
+                { index: true, element: <TestPage /> },
+                { path: "logos", element: <LogosPage /> },
+                { path: "monaco", element: <MonacoPage /> },
+            ],
+        })
+    }
+
     return [
         {
             path: "/",
@@ -47,14 +61,7 @@ const routes = (): RouteObject[] => {
                         { path: "svg",             element: <SvgPage />            },
                     ],
                 },
-                {
-                    path: "examples",
-                    children: [
-                        { index: true, element: <TestPage /> },
-                        { path: "logos", element: <LogosPage /> },
-                        { path: "monaco", element: <MonacoPage /> },
-                    ],
-                },
+                ...devRoutes,
                 { path: "*", element: <NotFoundPage /> },
             ],
         },
