@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit"
 
-import { FeatureKeys } from "@app/util"
+import { FeatureKeys, trimCode } from "@app/util"
 import { reducers } from "./reducers"
 
 // =============================================================================
@@ -11,9 +11,22 @@ export interface PlaygroundState {
 
 // =============================================================================
 
-export const INITIAL_PLAYGROUND_STATE: PlaygroundState = {
-    value: "",
+const defaultValue = trimCode(`
+import * as svg4react from "svg4react"
+import {
+    Svg,
+    Circle,
+} from "svg4react"
 
+render(
+    <Svg size="100%" viewBox="0 0 100 100">
+        <Circle cx="50" cy="50" r="50" fill="lightseagreen" />
+    </Svg>
+)
+`)
+
+export const INITIAL_PLAYGROUND_STATE: PlaygroundState = {
+    value: defaultValue,
 }
 
 // =============================================================================
