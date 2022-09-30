@@ -28,9 +28,10 @@ export const AppHeader = (_props: unknown): JSX.Element => {
             sx={DocsSx.Layout.header}
         >
             <Toolbar sx={DocsSx.Layout.toolbar}>
-                <Typography variant="h6" noWrap component="div">
+                <div />
+                {/* <Typography variant="h6" noWrap component="div">
                     svg4react
-                </Typography>
+                </Typography> */}
                 <DarkModeSwitch
                     checked={darkModeEnabled}
                     onChange={handleDarkModeChange}

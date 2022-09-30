@@ -1,5 +1,6 @@
 import { Box, Divider, Paper, Typography } from "@mui/material"
 
+import type { ISxProps as SxProps } from "@app/theme"
 import { DocsSx } from "@app/theme"
 
 export interface CardProps {
@@ -7,6 +8,7 @@ export interface CardProps {
     title: string | React.ReactNode
     componentName?: string
     children: React.ReactNode
+    sx?: SxProps
 }
 
 export const Card = (props: CardProps): JSX.Element => {
@@ -16,6 +18,7 @@ export const Card = (props: CardProps): JSX.Element => {
         title,
         componentName = null,
         children = null,
+        sx = {},
     } = props
 
     if (componentName) {
@@ -27,7 +30,15 @@ export const Card = (props: CardProps): JSX.Element => {
     }
 
     return (
-        <Paper id={id} {...DocsSx.Card.root}>
+        <Paper
+            id={id}
+            {...DocsSx.Card.root}
+            // @ts-ignore: next-line
+            sx={{
+                ...DocsSx.Card.root.sx,
+                ...sx,
+            }}
+        >
             <Typography
                 gutterBottom
                 variant="h4"

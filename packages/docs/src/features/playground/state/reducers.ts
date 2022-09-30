@@ -4,14 +4,10 @@ import type { PlaygroundState } from "./state"
 import { INITIAL_PLAYGROUND_STATE as INITIAL_STATE } from "./state"
 
 export const reducers = {
-    resetState: () => INITIAL_STATE,
-    // -------------------------------------------------------------------------
-    // Page Title
-    // -------------------------------------------------------------------------
     setValue: (state: PlaygroundState, { payload }: PayloadAction<string>) => {
         state.value = payload
     },
-    clearValue: (state: PlaygroundState) => {
+    resetValue: (state: PlaygroundState) => {
         state.value = INITIAL_STATE.value
     },
 }

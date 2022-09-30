@@ -4,7 +4,7 @@ import {
     Drawer,
     Toolbar,
     List,
-    Divider,
+    // Divider,
 } from "@mui/material"
 
 import { DocsSx } from "@app/theme"
@@ -28,7 +28,7 @@ export const Layout = (_props: unknown): JSX.Element => {
             >
                 {/* <Toolbar /> */}
                 <DrawerHeader />
-                <Divider />
+                {/* <Divider /> */}
                 <List>
                     {$items}
                 </List>

@@ -1,6 +1,6 @@
 import { useState } from "react"
-import { useSelector } from "react-redux"
-import { Box, Paper, Switch, FormControlLabel } from "@mui/material"
+import { useDispatch, useSelector } from "react-redux"
+import { Box, Paper, Switch, FormControlLabel, Button, Stack } from "@mui/material"
 import { LiveProvider, withLive } from "react-live"
 import * as svg4react from "svg4react"
 import {
@@ -20,7 +20,7 @@ import {
     Svg,
 } from "svg4react"
 
-import { Selectors } from "@app/state"
+import { Actions, Selectors } from "@app/state"
 import { DocsSx } from "@app/theme"
 import { Card } from "@app/features/shared"
 
@@ -30,6 +30,8 @@ import { LiveDemoPreview } from "@app/features/live-demo/components/live-demo/Li
 import { PlaygroundEditor } from "./PlaygroundEditor"
 
 const _Playground = (_props: WithLiveProps): JSX.Element => {
+
+    const dispatch = useDispatch()
 
     const code = useSelector(Selectors.Playground.value)
 
@@ -53,19 +55,38 @@ const _Playground = (_props: WithLiveProps): JSX.Element => {
 
     const [showRaw, setShowRaw] = useState(false)
 
-    const handleChange = () => {
+    const handleToggleRaw = () => {
         setShowRaw(!showRaw)
     }
 
-    return (
-        <Card id="playground" title="Playground">
+    const handleResetClick = () => {
+        dispatch(Actions.Playground.resetValue())
+    }
 
-            <FormControlLabel
-                label="show raw output"
-                control={<Switch />}
-                checked={showRaw}
-                onChange={handleChange}
-            />
+    return (
+        // <Card id="playground" title="Playground">
+        <Paper elevation={3} sx={{ p: 3 }}>
+
+            <Stack
+                direction="row"
+                spacing={3}
+                sx={{ pb: 3 }}
+            >
+                <Button
+                    variant="contained"
+                    size="small"
+                    onClick={handleResetClick}
+                >
+                    reset
+                </Button>
+
+                <FormControlLabel
+                    label="show raw output"
+                    control={<Switch />}
+                    checked={showRaw}
+                    onChange={handleToggleRaw}
+                />
+            </Stack>
 
             <LiveProvider
                 code={code}
@@ -88,8 +109,8 @@ const _Playground = (_props: WithLiveProps): JSX.Element => {
                 </Box>
 
             </LiveProvider>
-
-        </Card>
+        </Paper>
+        // </Paper>
     )
 }
 

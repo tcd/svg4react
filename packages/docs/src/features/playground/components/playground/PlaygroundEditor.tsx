@@ -1,21 +1,19 @@
 import { useCallback, useContext, useEffect, useRef, useState } from "react"
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
 import { LiveContext } from "react-live"
 import MonacoEditor from "react-monaco-editor"
 
-import { Actions, Selectors } from "@app/state"
+import { Actions } from "@app/state"
 import {
     customMonaco,
     CustomMonaco,
     DarkPlusMonacoTheme,
     configureMonaco,
-    cleanCode,
 } from "@app/features/live-demo"
 
 export const PlaygroundEditor = (_props: unknown) => {
 
     const dispatch = useDispatch()
-    const cachedValue = useSelector(Selectors.Playground.value)
     const editorRef = useRef<MonacoEditor>()
     const [_value, set_value] = useState<string>()
     const [changed, setChanged] = useState<boolean>(false)
@@ -31,10 +29,6 @@ export const PlaygroundEditor = (_props: unknown) => {
         if (changed) { return _value }
         return code
     }, [changed, code, _value])
-
-    const dispatchChange = useCallback(() => {
-        dispatch(Actions.Playground.setValue(theRealValue()))
-    }, [dispatch, theRealValue])
 
     // =========================================================================
 
@@ -74,8 +68,6 @@ export const PlaygroundEditor = (_props: unknown) => {
 }
 
 // =============================================================================
-
-const DEBOUNCE_DURATION = 500
 
 const options: customMonaco.editor.IStandaloneEditorConstructionOptions = {
     language: "typescript",

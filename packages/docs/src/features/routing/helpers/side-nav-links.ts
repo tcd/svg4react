@@ -5,8 +5,8 @@ export const SIDE_NAV_LINKS: (ILinkData | ILinksData)[] = [
         title: "root",
         links: [
             { title: "Home", to: "/" },
-            { title: "Changelog", to: "/changelog" },
             { title: "Playground", to: "/playground" },
+            { title: "Changelog", to: "/changelog" },
         ],
     },
     {
