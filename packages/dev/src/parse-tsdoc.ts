@@ -2,27 +2,10 @@
 import { join } from "path"
 import { readFile } from "fs/promises"
 import { ProjectParser } from "typedoc-json-parser"
+import { writeJsonFile } from "write-json-file"
 
 
-import { MONOREPO_ROOT } from "./monorepo-root.js"
-
-
-// =============================================================================
-// typedoc
-// =============================================================================
-
-// /**
-//  * @see https://github.com/TypeStrong/typedoc/blob/7ceda7b96651441924c6fd2f1476fec77da7099e/src/lib/converter/comments/lexer.ts
-//  */
-// export const TokenSyntaxKind = {
-//     Text: "text",
-//     NewLine: "new_line",
-//     OpenBrace: "open_brace",
-//     CloseBrace: "close_brace",
-//     Tag: "tag",
-//     Code: "code",
-//     TypeAnnotation: "type",
-// }
+import { PACKAGE_PATHS } from "./helpers/index.js"
 
 const components = [
     "Animate",
@@ -46,7 +29,8 @@ const components = [
 // =============================================================================
 
 const main = async () => {
-    const inputPath = join(MONOREPO_ROOT, "packages", "core", "tmp", "svg4react.d.json")
+    const inputPath = join(PACKAGE_PATHS.core, "tmp", "svg4react.d.json")
+    const outputPath = join(PACKAGE_PATHS.docs, "src", "data", "components.json")
     // console.log(inputPath)
     const inputString = await readFile(inputPath)
     // @ts-ignore: next-line
@@ -66,7 +50,10 @@ const main = async () => {
         })
     }
 
-    console.log(componentDocs)
+    await writeJsonFile(outputPath, componentDocs)
+    console.log(`${outputPath} written`)
+
+    // console.log(componentDocs)
 
     // const svg = input.find((x: any) => x.name ==="Svg" )
 }

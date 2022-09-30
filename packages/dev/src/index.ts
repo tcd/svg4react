@@ -1,3 +1,3 @@
-import { MONOREPO_ROOT } from "./monorepo-root.js"
+import { MONOREPO_ROOT } from "./helpers/index.js"
 
 console.log(MONOREPO_ROOT)
