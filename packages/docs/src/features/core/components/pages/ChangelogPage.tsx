@@ -5,7 +5,7 @@ import ReactMarkdown from "react-markdown"
 import { DocsSx } from "@app/theme"
 import { Selectors } from "@app/state"
 import { Page } from "@app/features/shared"
-import changelogMarkdown from "../../../../../../CHANGELOG.md"
+import changelogMarkdown from "../../../../../../../CHANGELOG.md"
 
 export const ChangelogPage = (_props: unknown): JSX.Element => {
 
