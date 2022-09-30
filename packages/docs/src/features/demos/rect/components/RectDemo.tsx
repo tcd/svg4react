@@ -42,7 +42,7 @@ const roundedProps: RectProps = {
 }
 
 render(
-    <Svg size="100%" viewBox="0 0 220 100">
+    <Svg size="75%" vb={[220, 100]}>
         <Rect {...squareProps} />
         <Rect {...roundedProps} />
     </Svg>

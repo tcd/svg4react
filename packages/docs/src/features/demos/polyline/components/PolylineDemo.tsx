@@ -49,7 +49,7 @@ const propsWithoutFill: PolylineProps = {
 }
 
 render(
-    <Svg size="100%" viewBox="0 0 200 100">
+    <Svg size="75%" vb={[200,100]}>
         <Polyline {...propsWithFill} />
         <Polyline {...propsWithoutFill} />
     </Svg>

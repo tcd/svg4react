@@ -17,10 +17,11 @@ export const RenderRaw = (props: RenderRawProps): JSX.Element => {
         sx = {},
     } = props
 
-    const exampleOutput = componentToString(children)
+    const output = componentToString(children)
+
     return (
         <Highlight
-            content={exampleOutput}
+            content={output}
             language={language}
             sx={sx}
         />
