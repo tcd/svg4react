@@ -15,6 +15,8 @@
         "@types/node": "^18.7.18",
         "cross-env": "^7.0.3",
         "rimraf": "^3.0.2",
+        "typedoc": "^0.23.15",
+        "typedoc-json-parser": "^5.0.0",
         "typescript": "^4.8.3"
     }
 }
