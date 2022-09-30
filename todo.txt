@@ -1,4 +1,4 @@
 2022-09-21 Adress performance impact with useRef @core
 2022-09-21 CircleProps.fillRule throws a type error @core
 2022-09-22 Extract utility code into its own library so it can be used without React. @core
-2022-09-30 Re-highlight raw output on update @docs
+x 2022-09-30 2022-09-30 Re-highlight raw output on update @docs

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef } from "react"
 import { Box } from "@mui/material"
 import { highlightElement } from "prismjs"
 // import "prismjs/components/prism-json"
@@ -29,7 +29,6 @@ export const Highlight = (props: HighlightProps): JSX.Element => {
         language = "tsx",
     } = props
 
-    const [highlighted, setHighlighted] = useState(false)
     const codeRef = useRef()
 
     let highlightLanguage
@@ -41,11 +40,9 @@ export const Highlight = (props: HighlightProps): JSX.Element => {
     }
 
     useEffect(() => {
-        if (!highlighted && codeRef?.current) {
-            highlightElement(codeRef.current)
-            setHighlighted(true)
-        }
-    }, [codeRef, highlighted, setHighlighted])
+        if (!codeRef?.current) { return }
+        highlightElement(codeRef.current)
+    }, [codeRef, content])
 
     const trimmedContent = trimCode(content)
 
