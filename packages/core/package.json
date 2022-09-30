@@ -1,7 +1,23 @@
 {
-    "private": true,
-    "name": "@svg4react/monorepo",
+    "name": "svg4react",
+    "description": "React components & TypeScript types for creating SVG elements.",
     "version": "0.4.0-rc.1",
+    "license": "MIT",
+    "author": "Clay Dunston <dunstontc@gmail.com>",
+    "repository": "github:tcd/svg4react",
+    "homepage": "https://tcd.github.io/svg4react",
+    "bugs": "https://github.com/tcd/svg4react/issues",
+    "files": [
+        "./dist"
+    ],
+    "main": "./dist",
+    "module": "./dist",
+    "types": "./dist/index.d.ts",
+    "keywords": [
+        "React",
+        "TypeScript",
+        "SVG"
+    ],
     "scripts": {
         "tag": "node ./etc/scripts/tag.mjs",
         "build": "npm run build:clean && npm run build:esm && npm run build:types && npm run build:tidy",
@@ -12,6 +28,12 @@
         "build:types": "cross-env rollup -c ./rollup.config.js",
         "publish:next": "npm publish --tag next",
         "publish:latest": "npm publish --tag latest"
+    },
+    "peerDependencies": {
+        "@mui/system": ">=5.0.0",
+        "csstype": "^3.1.1",
+        "react": "^17.0.0 || ^18.0.0",
+        "react-dom": "^17.0.0 || ^18.0.0"
     },
     "devDependencies": {
         "@types/globby": "^9.1.0",

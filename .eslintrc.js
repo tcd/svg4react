@@ -27,10 +27,10 @@ module.exports = {
     ],
     ignorePatterns: [
         "./etc/config/**.js",
-        "config/**/*.mjs",
+        "**/config/**/*.mjs",
         "**/node_modules",
         "**/ignore",
-        "build",
+        "**/build",
     ],
     rules: {
         "semi": ["warn", "never"],
