@@ -13,5 +13,5 @@
         "./src/index.ts",
     ],
     "tsconfig": "./tsconfig.json",
-    "json": "./tmp/svg4react.d.json"
+    "json": "./tmp/svg4react.d.json",
 }
