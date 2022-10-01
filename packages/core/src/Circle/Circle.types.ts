@@ -2,6 +2,8 @@ import type { SVGProps } from "react"
 import type { SvgPresentationAttributes } from "../utils"
 
 /**
+ * @public
+ *
  * @see [MDN Web Docs - `<circle>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/circle)
  */
 type CircleAttributes = {
@@ -58,6 +60,8 @@ type CircleAttributes = {
 >
 
 /**
+ * @public
+ *
  * @see [MDN Web Docs - `<circle>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/circle)
  */
 export type CircleProps =

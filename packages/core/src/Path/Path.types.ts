@@ -70,25 +70,10 @@ export type CmdProp =
     | TCmdProp<"Z", DrawToArgs.Z>
     | TCmdProp<"z", DrawToArgs.z>
 
-
-// export interface BasePathProps {
-//     id?: string
-//     // FIXME: add proper presentation attributes
-//     fill?: any
-//     stroke?: any
-// }
-//
-// export interface PathProps_commands extends BasePathProps {
-//     commands: CmdProp[] | null
-// }
-//
-// export interface PathProps_d extends BasePathProps {
-//     d: string | null
-// }
-//
-// export type PathProps = PathProps_d | PathProps_commands
-
-type PathAttributes = Pick<SvgPresentationAttributes,
+type PathAttributes = {
+    commands?: CmdProp[]
+    d?: string
+} & Pick<SvgPresentationAttributes,
     | "clipPath"
     | "clipRule"
     | "color"
@@ -123,7 +108,4 @@ type PathAttributes = Pick<SvgPresentationAttributes,
  */
 export type PathProps =
     Omit<SVGProps<SVGPathElement>, keyof PathAttributes>
-& (
-    | { commands: CmdProp[] | null }
-    | { d: string | null }
-)
+    & PathAttributes

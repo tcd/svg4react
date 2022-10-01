@@ -33,6 +33,7 @@ const Path = forwardRef<SVGPathElement, PathProps>(function Path(props: PathProp
     }
 
     return (
+        // @ts-ignore: next-line
         <path
             ref={ref}
             d={d}
