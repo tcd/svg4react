@@ -6,7 +6,7 @@ import { writeJsonFile } from "write-json-file"
 
 import { PACKAGE_PATHS } from "../helpers/index.js"
 import type { ComponentData } from "./types.js"
-import { gatherComponentData } from "./helpers.js"
+import { gatherComponentData } from "./gather-component-data.js"
 
 const components = [
     "Animate",
