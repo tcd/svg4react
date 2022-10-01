@@ -7,6 +7,7 @@ export interface CardProps {
     id?: string
     title: string | React.ReactNode
     componentName?: string
+    suffix?: string
     children: React.ReactNode
     sx?: SxProps
 }
@@ -17,6 +18,7 @@ export const Card = (props: CardProps): JSX.Element => {
         id = undefined,
         title,
         componentName = null,
+        suffix = "Demo",
         children = null,
         sx = {},
     } = props
@@ -25,7 +27,7 @@ export const Card = (props: CardProps): JSX.Element => {
         title = <>
             <Box component="span" sx={DocsSx.Card.componentName}>&lt;{componentName}&gt;</Box>
             <Box component="span">&nbsp;</Box>
-            <Box component="span">Demo</Box>
+            <Box component="span">{suffix}</Box>
         </>
     }
 
