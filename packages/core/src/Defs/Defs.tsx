@@ -16,7 +16,8 @@ const Defs = forwardRef<SVGDefsElement, DefsProps>(function Def(props: DefsProps
     return (
         <defs
             ref={ref}
-            {...props} >
+            {...props}
+        >
         </defs>
     )
 })
