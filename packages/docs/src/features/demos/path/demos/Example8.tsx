@@ -68,7 +68,7 @@ const closedProps: PathProps = {
 }
 
 render(
-    <Svg size="100%" viewBox="0 0 50 25">
+    <Svg size="100%" vb={[50,25]}>
         <Path {...openProps1}  />
         <Path {...openProps2}  />
         <Path {...closedProps} />

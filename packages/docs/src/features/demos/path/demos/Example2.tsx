@@ -56,7 +56,7 @@ const pathProps: PathProps = {
 }
 
 render(
-    <Svg size="100%" viewBox="0 0 100 100" id="css-example">
+    <Svg id="css-example" size="100%" vb={[100]}>
         <Path {...pathProps} />
     </Svg>
 )

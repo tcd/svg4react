@@ -56,7 +56,7 @@ const pathProps_d: PathProps = {
 }
 
 render(
-    <Svg size="100%" viewBox="0 0 20 20">
+    <Svg size="100%" vb={[20]}>
         <G fill="none">
             <Path {...pathProps_a} />
             <Path {...pathProps_b} />
