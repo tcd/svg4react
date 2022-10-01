@@ -8,7 +8,7 @@ type CircleAttributes = {
     /**
      * The x and y axis coordinates of the center of the circle.
      *
-     * Will override `cx` and `cy`
+     * Will override `cx` and `cy`.
      */
     coordinates?: [cx: number, cy: number]
     /**
