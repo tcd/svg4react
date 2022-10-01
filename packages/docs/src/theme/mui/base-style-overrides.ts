@@ -1,4 +1,4 @@
-import type { CSSObject, SxProps } from "@mui/material"
+import type { CSSObject, SxProps, Theme } from "@mui/material"
 
 import { DarkPlusColors } from "@app/util"
 import { ThemeVars } from "@app/theme/variables"
@@ -25,7 +25,7 @@ const lists: SxProps = {
 /**
  * - `<code></code>`
  */
-const code: SxProps = {
+const _code: SxProps = {
     fontFamily: ThemeVars.fontFamily.monospace,
     lineHeight: "unset",
     fontWeight: 400,
@@ -58,12 +58,12 @@ const html: CSSObject = {
     ..._htmlAndBody,
 }
 
-const body: CSSObject = {
+const body = (theme: Theme) => ({
     ..._htmlAndBody,
-    ...scrollbar(),
+    ...scrollbar(theme),
     "& ol, & ul, & li": lists,
     // "& code": code,
-}
+})
 
 // =============================================================================
 // #root
@@ -76,18 +76,14 @@ const root: CSSObject = {
     padding: "0px",
     // overflow: "auto !important",
     overflowY: "scroll",
-    // overflowX: "hidden",
-    // [ThemeBreakpoints.up("sm")]: {
-    //     // scrollSnapType: "y mandatory",
-    // },
 }
 
 // =============================================================================
 // All Together
 // =============================================================================
 
-export const baseStyleOverrides: CSSObject = {
+export const baseStyleOverrides = (theme: Theme) => ({
     html,
-    body,
+    "body": body(theme),
     "#root": root,
-}
+})

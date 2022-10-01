@@ -1,4 +1,4 @@
-import { ThemeBreakpoints } from "./ITheme"
+import type { Theme } from "@mui/material";
 
 /**
  * [Scrollbar Anatomy](https://cdn.orangeable.com/img/scrollbar-anatomy.png)
@@ -9,18 +9,18 @@ export type ScrollbarFuncOptions = {
     active: string;
 }
 
-// // track, thumb and active are derived from macOS 10.15.7
-// const defaults: ScrollbarFuncOptions = {
-//     track: "#141e28",
-//     thumb: "#6b6b6b",
-//     active: "#959595",
-// }
-
-// track, thumb and active are derived from macOS 10.15.7
-const defaults: ScrollbarFuncOptions = {
-    track: "#f1f1f1",
-    thumb: "#c1c1c1",
-    active: "#a8a8a8",
+const scrollbarColors: Record<"light" | "dark", ScrollbarFuncOptions> = {
+    // track, thumb and active are derived from macOS 10.15.7
+    light: {
+        track: "#f1f1f1",
+        thumb: "#c1c1c1",
+        active: "#a8a8a8",
+    },
+    dark: {
+        track: "#121212",
+        thumb: "#6b6b6b",
+        active: "#959595",
+    },
 }
 
 /**
@@ -32,19 +32,19 @@ const defaults: ScrollbarFuncOptions = {
  * - [MDN - `::-webkit-scrollbar`](https://developer.mozilla.org/en-US/docs/Web/CSS/::-webkit-scrollbar)
  * - [From 2009](https://webkit.org/blog/363/styling-scrollbars/)
  */
-export const scrollbar = (options = defaults) => {
+export const scrollbar = (theme: Theme) => {
 
     const {
         track,
         thumb,
         active,
-    } = options
+    } = scrollbarColors[theme.palette.mode]
 
     const borderRadius = 0
-    const scrollbarSize = "10px"
+    const scrollbarSize = "14px"
 
     return {
-        [ThemeBreakpoints.up("sm")]: {
+        [theme.breakpoints.up("tablet")]: {
             "&::-webkit-scrollbar, & *::-webkit-scrollbar": {
                 height: scrollbarSize,
                 width: scrollbarSize,
