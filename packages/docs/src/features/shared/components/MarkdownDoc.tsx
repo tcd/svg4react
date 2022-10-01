@@ -23,10 +23,7 @@ export const MarkdownDoc = (props: MarkdownDocProps): JSX.Element => {
         return null
     }
 
-    const cleanContent = content
-        .replace(/^"/, "")
-        .replace(/"$/, "")
-        .replaceAll("\\n", "\n")
+    const cleanContent = cleanMarkdownString(content)
 
     return (
         <ReactMarkdown
@@ -39,8 +36,18 @@ export const MarkdownDoc = (props: MarkdownDocProps): JSX.Element => {
 
 // =============================================================================
 
+const cleanMarkdownString = (input: string): string => {
+    return `${input}`
+        .replace(/^"/, "")
+        .replace(/"$/, "")
+        .replaceAll(/(?<!\n)\n{1}(?!\n)/gm, " ") // only break for two newlines
+        .replaceAll(/(?<!\\n)\\n{1}(?!\\n)/gm, " ") // only break for two newlines
+        .replaceAll("\\n", "\n") // unescape json
+}
+
 const options: Omit<ReactMarkdownOptions, "children"> = {
     skipHtml: false,
+    linkTarget: "_blank",
     remarkPlugins: [
         remarkRemoveComments,
         remarkGfm,

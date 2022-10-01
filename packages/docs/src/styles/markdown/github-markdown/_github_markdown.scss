@@ -2,9 +2,12 @@
 @use "./prettylights" as pl;
 
 $fontFamilies: (
-    "base": ("-apple-system", BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"),
+    // "base": ("-apple-system", BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"),
+    "base": ("Roboto","Helvetica","Arial",sans-serif),
     "monospace": (monospace, monospace),
-    "code": (ui-monospace, "SFMono-Regular", SF Mono, Menlo, Consolas, Liberation Mono, monospace),
+    // "code": (ui-monospace, "SFMono-Regular", SF Mono, Menlo, Consolas, Liberation Mono, monospace),
+    "code": ("Roboto Mono", "Courier New", Courier, monospace),
+    "emoji": ("Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"),
 );
 
 /// @param {String} $name
@@ -202,7 +205,7 @@ $fontFamilies: (
         display: inline-block;
         padding: 3px 5px;
         font-size: 11px;
-        font: 11px ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+        font-family: getFont("code");
         line-height: 10px;
         color: var(--color-fg-default);
         vertical-align: middle;
@@ -219,7 +222,7 @@ $fontFamilies: (
     h4,
     h5,
     h6 {
-        margin-top: 24px;
+        margin-top: 36px;
         margin-bottom: 16px;
         font-weight: 600;
         line-height: 1.25;
@@ -290,14 +293,14 @@ $fontFamilies: (
 
     tt,
     code {
-        font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+        font-family: getFont("code");
         font-size: 12px;
     }
 
     pre {
         margin-top: 0;
         margin-bottom: 0;
-        font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+        font-family: getFont("code");
         font-size: 12px;
         word-wrap: normal;
     }
@@ -326,7 +329,7 @@ $fontFamilies: (
     }
 
     g-emoji {
-        font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        font-family: getFont("emoji");
         font-size: 1em;
         font-style: normal !important;
         font-weight: 400;
@@ -752,7 +755,7 @@ $fontFamilies: (
     }
 
     .footnotes .data-footnote-backref g-emoji {
-        font-family: monospace;
+        font-family: getFont("monospace");
     }
 
     .task-list-item {
