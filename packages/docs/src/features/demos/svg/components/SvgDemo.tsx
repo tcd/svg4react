@@ -10,8 +10,7 @@ export const SvgDemo = (_props: unknown): JSX.Element => {
     return (
         <LiveDemo
             id="svg-demo-1"
-            title="Svg Demo"
-            componentName="Svg"
+            title="Demo"
             code={code}
             scope={scope}
         />

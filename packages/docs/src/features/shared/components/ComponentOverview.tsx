@@ -1,7 +1,7 @@
-import { Box, Divider, Stack, Typography } from "@mui/material"
+import { Stack } from "@mui/material"
 
 import { Card, PropsTable, MarkdownDoc } from "@app/features/shared"
-import { PropData } from "@data/props"
+import { PropData } from "@data/props/props"
 import componentDocs from "@data/components.json"
 
 export interface ComponentOverviewProps {
@@ -15,21 +15,6 @@ export const ComponentOverview = ({ componentName, propData = [] }: ComponentOve
         propData = PropData[componentName]
     }
     const description = componentDocs.find(x => x?.component == componentName).docComment
-
-    // return (
-    //     <Card title={componentName}>
-    //         <Box sx={{ mb: "100px" }}>
-    //             <MarkdownDoc content={description} />
-    //         </Box>
-    //         <Box>
-    //             <Typography variant="h4" gutterBottom>
-    //                 Props
-    //             </Typography>
-    //             <Divider sx={{ width: "100%", mb: 4 }} />
-    //             <PropsTable propData={componentProps} />
-    //         </Box>
-    //     </Card>
-    // )
 
     return (
         <Stack spacing={4}>
