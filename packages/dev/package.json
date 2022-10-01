@@ -8,6 +8,7 @@
     "scripts": {
         "start": "npm run build:docs",
         "build:docs": "npm run compile && node ./build/build-docs/main.js",
+        "build:attrs": "npm run compile && node ./build/build-docs/attrs.js",
         "compile": "cross-env rimraf ./build/**/* && tsc"
     },
     "dependencies": {

@@ -1,8 +1,7 @@
 {
     "$schema": "https://typedoc.org/schema.json",
-    "name": "svg4react",
-    "out": "../../etc/docs/typedoc",
-    "readme": "../../README.md",
+    "name": "csstype",
+    "out": "./tmp/csstype.d.json",
     "entryPointStrategy": "expand",
     "excludeExternals": true,
     "plugin": [

@@ -68,6 +68,24 @@ export type CmdProp =
     | TCmdProp<"Z", DrawToArgs.Z>
     | TCmdProp<"z", DrawToArgs.z>
 
+
+// export interface BasePathProps {
+//     id?: string
+//     // FIXME: add proper presentation attributes
+//     fill?: any
+//     stroke?: any
+// }
+//
+// export interface PathProps_commands extends BasePathProps {
+//     commands: CmdProp[] | null
+// }
+//
+// export interface PathProps_d extends BasePathProps {
+//     d: string | null
+// }
+//
+// export type PathProps = PathProps_d | PathProps_commands
+
 /**
  * @public
  */
