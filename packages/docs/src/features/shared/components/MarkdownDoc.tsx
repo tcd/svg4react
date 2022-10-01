@@ -6,6 +6,8 @@ import ReactMarkdown from "react-markdown"
 import remarkRemoveComments from "remark-remove-comments"
 import remarkGfm from "remark-gfm"
 import remarkBreaks from "remark-breaks"
+import rehypeExternalLinks from "rehype-external-links"
+
 
 export interface MarkdownDocProps {
     content: string
@@ -47,10 +49,13 @@ const cleanMarkdownString = (input: string): string => {
 
 const options: Omit<ReactMarkdownOptions, "children"> = {
     skipHtml: false,
-    linkTarget: "_blank",
+    // linkTarget: "_blank",
     remarkPlugins: [
         remarkRemoveComments,
         remarkGfm,
         remarkBreaks,
+    ],
+    rehypePlugins: [
+        [rehypeExternalLinks, { target: "_blank", rel: ["noopener noreferrer"] }],
     ],
 }

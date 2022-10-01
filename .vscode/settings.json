@@ -23,6 +23,7 @@
         "npmignore",
         "polymarker",
         "prismjs",
+        "rehype",
         "styleguidist",
         "tsdoc"
     ],
