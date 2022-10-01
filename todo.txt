@@ -2,3 +2,4 @@
 2022-09-21 CircleProps.fillRule throws a type error @core
 2022-09-22 Extract utility code into its own library so it can be used without React. @core
 x 2022-09-30 2022-09-30 Re-highlight raw output on update @docs
+2022-10-01 Fix DefsProps @core
