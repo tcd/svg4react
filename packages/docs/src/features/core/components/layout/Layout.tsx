@@ -15,7 +15,7 @@ export const Layout = (_props: unknown): JSX.Element => {
             <AppDrawer />
 
             <Box component="main" sx={DocsSx.Layout.main}>
-                <Toolbar sx={DocsSx.Layout.header} />
+                <Toolbar sx={DocsSx.Layout.headerSpacer} />
                 <Outlet />
             </Box>
 

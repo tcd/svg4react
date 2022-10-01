@@ -6,7 +6,7 @@ import {
     useTheme,
 } from "@mui/material"
 
-import { ThemeVars } from "@app/theme"
+import { DocsSx } from "@app/theme"
 import { SIDE_NAV_LINKS } from "@app/features/routing"
 import { SideNavItem } from "./SideNavItem"
 import { DrawerHeader } from "./DrawerHeader"
@@ -34,10 +34,16 @@ export const AppMobileDrawer = (_props: unknown): JSX.Element => {
             anchor="left"
             open={drawerOpened}
             onClose={handleClose}
-            sx={{ width: "90vw" }}
+            PaperProps={{
+                sx: {
+                    // background: "transparent",
+                    // backgroundColor: "transparent",
+                    backgroundImage: "none",
+                },
+            }}
         >
             <DrawerHeader />
-            <List sx={{ width: ThemeVars.drawerWidth + "px" }}>
+            <List sx={DocsSx.Layout.mobileDrawer}>
                 {$items}
             </List>
         </Drawer>

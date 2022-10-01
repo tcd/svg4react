@@ -5,6 +5,27 @@ import type { ISxProps as SxProps } from "@app/theme/helpers"
 
 const { drawerWidth, headerHeight } = ThemeVars
 
+
+// =============================================================================
+// Shared
+// =============================================================================
+
+// const headerOpacity = 0.702
+
+const _navBg = (theme: Theme, opacity = 0.702) => {
+    const headerBgDark  = `rgba(25, 25, 25, ${opacity})`
+    const headerBgLight = `rgba(255, 255, 255, ${opacity})`
+    return {
+        backgroundColor: "transparent",
+        backdropFilter: "blur(10px)",
+        background: theme.palette.mode === "dark" ? headerBgDark : headerBgLight,
+    }
+}
+
+// =============================================================================
+// Main
+// =============================================================================
+
 const root: SxProps = {
     display: "flex",
 }
@@ -18,19 +39,25 @@ const main: SxProps = {
 // Header
 // =============================================================================
 
-const header: SxProps = (theme: Theme) => ({
+const headerSpacer: SxProps = (theme: Theme) => ({
+
     width: `calc(100% - ${drawerWidth}px)`,
-    height: `${headerHeight}px`,
-
     ml: `${drawerWidth}px`,
-
-    display: "flex",
-    flexFlow: "row nowrap",
 
     [theme.breakpoints.down("laptop")]: {
         width: "100%",
         ml: "0px",
     },
+
+    height: `${headerHeight}px`,
+})
+
+const header: SxProps = (theme: Theme) => ({
+    ...headerSpacer(theme),
+    ..._navBg(theme),
+
+    display: "flex",
+    flexFlow: "row nowrap",
 })
 
 const toolbar: SxProps = {
@@ -41,6 +68,8 @@ const toolbar: SxProps = {
     display: "flex",
     flexFlow: "row nowrap",
     justifyContent: "space-between",
+    backgroundColor: "transparent",
+
 }
 
 // =============================================================================
@@ -73,7 +102,15 @@ const drawerHeader: SxProps = {
 
 const drawerLogo: SxProps = {
     width: "40px",
+    // background: "transparent",
+    // backgroundColor: "transparent",
 }
+
+const mobileDrawer: SxProps = (theme: Theme) => ({
+    // ..._navBg(theme, 0.9),
+    background: "#121212",
+    width: ThemeVars.drawerWidth + "px",
+})
 
 // =============================================================================
 // All Together
@@ -82,9 +119,11 @@ const drawerLogo: SxProps = {
 export const Layout = {
     root,
     header,
+    headerSpacer,
     toolbar,
     drawer,
     drawerHeader,
     drawerLogo,
+    mobileDrawer,
     main,
 }
