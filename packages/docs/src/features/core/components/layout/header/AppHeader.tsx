@@ -37,7 +37,13 @@ export const AppHeader = (_props: unknown): JSX.Element => {
                     svg4react
                 </Typography> */}
                 <Stack direction="row" alignItems="center" spacing={2}>
-                    <IconButton LinkComponent="a" href="https://github.com/tcd/svg4react">
+                    <IconButton
+                        LinkComponent="a"
+                        href="https://github.com/tcd/svg4react"
+                        sx={{
+                            color: (theme) => theme.palette.mode === "dark" ? "#fff" : "#000",
+                        }}
+                    >
                         <GitHubIcon />
                     </IconButton>
                     <DarkModeSwitch
