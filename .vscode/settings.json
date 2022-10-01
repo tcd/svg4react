@@ -1,7 +1,7 @@
 {
     "files.exclude": {
         "**/node_modules": true,
-        // "**/tmp": true,
+        "**/tmp": true,
     },
     "files.associations": {
         "*.json": "jsonc",
