@@ -58,10 +58,12 @@ const _LiveDemo = (props: CustomLiveDemoProps): JSX.Element => {
     return (
         <Card id={id} title={title} componentName={componentName}>
 
-            <Box>
-                <MarkdownDoc content={description}/>
-                <Divider sx={{ my: 2 }} />
-            </Box>
+            {description &&
+                <Box>
+                    <MarkdownDoc content={description}/>
+                    <Divider sx={{ my: 2 }} />
+                </Box>
+            }
 
             <Stack direction="row" sx={{ mb: 2 }}>
                 <FormControlLabel
