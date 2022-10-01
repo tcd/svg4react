@@ -4,8 +4,9 @@ import { readFile } from "fs/promises"
 import { ProjectParser } from "typedoc-json-parser"
 import { writeJsonFile } from "write-json-file"
 
-
-import { PACKAGE_PATHS } from "./helpers/index.js"
+import { PACKAGE_PATHS } from "../helpers/index.js"
+import type { ComponentData } from "./types.js"
+import { gatherComponentData } from "./helpers.js"
 
 const components = [
     "Animate",
@@ -24,38 +25,26 @@ const components = [
     "Svg",
 ]
 
-// =============================================================================
-// Main
-// =============================================================================
-
 const main = async () => {
     const inputPath = join(PACKAGE_PATHS.core, "tmp", "svg4react.d.json")
     const outputPath = join(PACKAGE_PATHS.docs, "src", "data", "components.json")
     // console.log(inputPath)
     const inputString = await readFile(inputPath)
     // @ts-ignore: next-line
-    const data = JSON.parse(inputString)
+    const inputData = JSON.parse(inputString)
     // console.log(input)
 
-    const project = new ProjectParser({ data })
+    const project = new ProjectParser({ data: inputData })
 
-    const componentDocs = []
+    const componentDocs: ComponentData[] = []
 
     for (const component of components) {
-        const componentData = project.functions.find((x) => x.name === component)
-        const docComment = componentData.signatures[0].comment.description ?? ""
-        componentDocs.push({
-            component,
-            docComment,
-        })
+        const componentData = gatherComponentData(project, component)
+        componentDocs.push(componentData)
     }
 
     await writeJsonFile(outputPath, componentDocs)
     console.log(`${outputPath} written`)
-
-    // console.log(componentDocs)
-
-    // const svg = input.find((x: any) => x.name ==="Svg" )
 }
 
 try {
@@ -65,4 +54,3 @@ try {
     console.error(error)
     process.exit(1)
 }
-

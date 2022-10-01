@@ -1,7 +1,7 @@
 {
     "files.exclude": {
         "**/node_modules": true,
-        "**/tmp": true,
+        // "**/tmp": true,
     },
     "files.associations": {
         "*.json": "jsonc",
@@ -21,6 +21,7 @@
         "frenic",
         "globby",
         "npmignore",
+        "Polyline",
         "polymarker",
         "prismjs",
         "rehype",
