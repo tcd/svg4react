@@ -28,6 +28,7 @@ export const SIDE_NAV_LINKS: (ILinkData | ILinksData)[] = [
                 { title: "Test", to: "/examples/" },
                 { title: "Logos", to: "/examples/logos" },
                 { title: "Monaco", to: "/examples/monaco" },
+                { title: "Markdown", to: "/examples/markdown" },
             ],
         },
     ] : []),

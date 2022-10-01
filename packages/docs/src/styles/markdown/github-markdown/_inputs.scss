@@ -1,0 +1,65 @@
+@mixin inputStyles {
+
+    input {
+        font: inherit;
+        margin: 0;
+        overflow: visible;
+        font-family: inherit;
+        font-size: inherit;
+        line-height: inherit;
+    }
+
+    [type=button],
+    [type=reset],
+    [type=submit] {
+        -webkit-appearance: button;
+    }
+
+    [type=button]::-moz-focus-inner,
+    [type=reset]::-moz-focus-inner,
+    [type=submit]::-moz-focus-inner {
+        border-style: none;
+        padding: 0;
+    }
+
+    [type=button]:-moz-focusring,
+    [type=reset]:-moz-focusring,
+    [type=submit]:-moz-focusring {
+        outline: 1px dotted ButtonText;
+    }
+
+    [type=checkbox],
+    [type=radio] {
+        box-sizing: border-box;
+        padding: 0;
+    }
+
+    [type=number]::-webkit-inner-spin-button,
+    [type=number]::-webkit-outer-spin-button {
+        height: auto;
+    }
+
+    [type=search] {
+        -webkit-appearance: textfield;
+        outline-offset: -2px;
+    }
+
+    [type=search]::-webkit-search-cancel-button,
+    [type=search]::-webkit-search-decoration {
+        -webkit-appearance: none;
+    }
+
+    ::-webkit-input-placeholder {
+        color: inherit;
+        opacity: .54;
+    }
+
+    ::-webkit-file-upload-button {
+        -webkit-appearance: button;
+        font: inherit;
+    }
+
+    ::-webkit-calendar-picker-indicator {
+        filter: invert(50%);
+    }
+}

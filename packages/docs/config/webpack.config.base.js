@@ -44,6 +44,9 @@ const webpackConfig = {
         filename: "[name].js",
         assetModuleFilename: "assets/[hash][ext][query]",
     },
+    stats: {
+        loggingDebug: ["sass-loader"],
+    },
     plugins: [
         new HtmlWebpackPlugin({
             template: path.join(APP_DIR, "index.html"),

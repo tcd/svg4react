@@ -24,6 +24,7 @@
         "paths": {
             "@app/*":    ["*"],
             "@assets/*": ["assets/*"],
+            "@data/*":   ["data/*"],
         },
     },
     "include": [
