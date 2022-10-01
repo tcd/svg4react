@@ -1,6 +1,31 @@
+import type { ReactNode } from "react"
 import type { Location } from "react-router-dom"
 
 export declare global {
+
+    export type Svg4ReactComponent =
+        | "Animate"
+        | "AnimateMotion"
+        | "AnimateTransform"
+        | "Circle"
+        | "Defs"
+        | "Ellipse"
+        | "G"
+        | "Line"
+        | "LinearGradient"
+        | "Path"
+        | "Polyline"
+        | "Rect"
+        | "Stop"
+        | "Svg"
+
+    export interface PropData {
+        name?: string
+        type?: string | ReactNode
+        required?: boolean
+        default?: string
+        description?: string
+    }
 
     // =========================================================================
     // Routing

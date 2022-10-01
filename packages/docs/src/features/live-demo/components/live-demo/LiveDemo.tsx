@@ -15,7 +15,7 @@ import componentDocs from "@data/components.json"
 export type CustomLiveDemoProps = {
     id: string
     title: string | React.ReactNode
-    componentName?: string
+    componentName?: Svg4ReactComponent
     /** The code that should be rendered, apart from the user's edits */
     code: string
     /** Accepts custom globals that the `code` can use */

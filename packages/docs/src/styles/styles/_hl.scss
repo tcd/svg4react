@@ -1,0 +1,25 @@
+.hl__root {
+    // flex-grow: 0;
+    // flex-shrink: 1;
+    padding: 0.3em 0.5em;
+    margin: 0;
+    // font-size: 85%;
+    color: #d4d4d4;
+    background-color: #1e1e1e;
+    border-radius: 6px;
+    font-family: "Roboto Mono", "Courier New", Courier, monospace;
+
+    display: inline-block;
+
+    .hl__var {
+        color: var(--dark-plus-variable);
+    }
+
+    .hl__type {
+        color: var(--dark-plus-type);
+    }
+
+    .hl__operator {
+        color: var(--dark-plus-control);
+    }
+}
