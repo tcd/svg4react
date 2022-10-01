@@ -18,7 +18,7 @@ export const Logo = (props: LogoProps): JSX.Element => {
     } = props
 
     return (
-        <Svg width="100%" height="100%" viewBox="0 0 300 300">
+        <Svg size="100%" vb={[300]}>
             <defs>
                 <g
                     id="d"

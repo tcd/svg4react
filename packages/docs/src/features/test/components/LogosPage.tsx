@@ -8,6 +8,7 @@ export const LogosPage = (_props: unknown): JSX.Element => {
         <Page title="Logos">
             <Stack direction="column" spacing={5}>
                 <logos.NpmCube />
+                <logos.Svg4React />
             </Stack>
         </Page>
     )
