@@ -1,4 +1,19 @@
-const numberOrString: React.ReactNode = (
+const $indent: React.ReactNode = (
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+)
+const $number: React.ReactNode = (
+    <div className="hl__root">
+        <span className="hl__type">number</span>
+    </div>
+)
+
+const $string: React.ReactNode = (
+    <div className="hl__root">
+        <span className="hl__type">string</span>
+    </div>
+)
+
+const $numberOrString: React.ReactNode = (
     <div className="hl__root">
         <span className="hl__type">number</span>
         &nbsp;
@@ -8,7 +23,7 @@ const numberOrString: React.ReactNode = (
     </div>
 )
 
-const circleCoordinates: React.ReactNode = (
+const $circleCoordinates: React.ReactNode = (
     <div className="hl__root">
         <span>[</span>
         <span className="hl__var">cx</span>
@@ -20,58 +35,95 @@ const circleCoordinates: React.ReactNode = (
     </div>
 )
 
+const $lineCoordinates: React.ReactNode = (
+    <div className="hl__root">
+        <span>[</span>
+        <br />{$indent}
+        <span className="hl__var">x1</span>
+        <span className="hl__type">: number</span>
+        <span>,&nbsp;</span><br />{$indent}
+        <span className="hl__var">y1</span>
+        <span className="hl__type">: number</span>
+        <span>,&nbsp;</span><br />{$indent}
+        <span className="hl__var">x2</span>
+        <span className="hl__type">: number</span>
+        <span>,&nbsp;</span><br />{$indent}
+        <span className="hl__var">y2</span>
+        <span className="hl__type">: number</span>,
+        <br />
+        <span>]</span>
+    </div>
+)
+
+const $vb: React.ReactNode = (
+    <div className="hl__root">
+        <span>[</span>
+        <span className="hl__var">width</span>
+        <span className="hl__type">: number</span>
+        <span>,&nbsp;</span>
+        <span className="hl__var">height</span>
+        <span className="hl__type">?: number</span>
+        <span>]</span>
+    </div>
+)
+
 export const PropData: Record<Svg4ReactComponent, PropData[]> = {
     Circle: [
         {
             name: "coordinates",
-            type: circleCoordinates,
+            type: $circleCoordinates,
             description: "The x and y axis coordinates of the center of the circle.\n\nWill override `cx` and `cy`.",
         },
         {
             name: "cx",
-            type: numberOrString,
+            type: $numberOrString,
             description: "The x-axis coordinate of the center of the circle.",
         },
         {
             name: "cy",
-            type: numberOrString,
+            type: $numberOrString,
             description: "The y-axis coordinate of the center of the circle.",
         },
         {
             name: "r",
-            type: numberOrString,
+            type: $numberOrString,
             description: "The radius of the circle.\n\nA value lower or equal to zero disables rendering of the circle.",
         },
         {
             name: "pathLength",
-            type: numberOrString,
+            type: $numberOrString,
             description: "The total length for the circle's circumference, in user units.",
         },
     ],
     Line: [
         {
             name: "coordinates",
-            type: "[x1, y1, x2, y2]",
+            type: $lineCoordinates,
             description: `
 Values, in order, as a string or number, for:
 
-- \`x1\` - x-axis start
-- \`y1\` - y-axis start
-- \`x2\` - x-axis end
-- \`y2\` - y-axis end
+- \`x1\` - x-axis start\n
+- \`y1\` - y-axis start\n
+- \`x2\` - x-axis end\n
+- \`y2\` - y-axis end\n
             `.trim(),
         },
         {
             name: "pathLength",
-            type: "number",
+            type: $number,
             description: "Defines the total path length in user units.",
             default: "none",
         },
     ],
     Svg: [
         {
+            name: "size",
+            type: $string,
+            description: "Shorthand for setting both `width` and `height`.",
+        },
+        {
             name: "vb",
-            type: "[width: number, height?: number]",
+            type: $vb,
             description: `
 Shorthand for the setting the last two values of \`viewBox\`
 
@@ -83,13 +135,8 @@ Will **not** override \`viewBox\` if both are passed.
             `.trim(),
         },
         {
-            name: "size",
-            type: "string",
-            description: "Shorthand for setting both `width` and `height`.",
-        },
-        {
             name: "viewBox",
-            type: "string",
+            type: $string,
             description: "The SVG viewport coordinates for the current SVG fragment.\n\nSee [MDN Web Docs - viewBox](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/viewBox).",
         },
         {

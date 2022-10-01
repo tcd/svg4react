@@ -10,8 +10,7 @@ export const LineDemo = (_props: unknown): JSX.Element => {
     return (
         <LiveDemo
             id="line-demo-1"
-            title="Line Demo"
-            componentName="Line"
+            title="Demo"
             code={code}
             scope={scope}
         />
