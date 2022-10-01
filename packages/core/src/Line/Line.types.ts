@@ -31,7 +31,7 @@ type LineCoordinates = [
 /**
  * @public
  *
- * @see [MDN](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/line)
+ * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/line)
  */
 type LineAttributes = {
     /**
@@ -107,4 +107,3 @@ type LineAttributes = {
 export type LineProps =
     Omit<SVGProps<SVGLineElement>, keyof LineAttributes>
     & LineAttributes
-

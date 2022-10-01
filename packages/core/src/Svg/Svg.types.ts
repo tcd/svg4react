@@ -5,7 +5,7 @@ type SvgAttributes = {
     /**
      * Shorthand for the setting the last two values of `viewBox`
      *
-     * If only one value is passed, it will be assigned to both `width` and `height`
+     * If only one value is passed, it will be assigned to both `width` and `height`.
      *
      * `minX` and `minY` are set to 0, resulting in `"0 0 width height"`.
      *
@@ -19,11 +19,13 @@ type SvgAttributes = {
     /**
      * The SVG viewport coordinates for the current SVG fragment.
      *
-     * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/viewBox
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/viewBox)
      */
     viewBox?: string
     /**
      * How the `svg` fragment must be deformed if it is displayed with a different aspect ratio.
+     *
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/preserveAspectRatio)
      *
      * @default "xMidYMid meet"
      */
