@@ -1,5 +1,5 @@
 {
-    "name": "@svg4react/core",
+    "name": "svg4react",
     "description": "React components & TypeScript types for creating SVG elements.",
     "version": "0.4.0-rc.1",
     "license": "MIT",
