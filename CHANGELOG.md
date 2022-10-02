@@ -6,6 +6,16 @@ The format is based on [Keep a Changelog][keep-a-changelog], and this project ad
 
 
 ## [Unreleased]
+### Added
+- Add the following components:
+    - `Polygon`
+    - `Use`
+- Add new type definitions:
+    - `Unit`
+    - `Length`
+### Removed
+- [WIP] Remove ref forwarding for all components
+    - [TODO] Possibly create different versions with that accept refs
 
 
 ## [0.4.1] - 2022-10-01

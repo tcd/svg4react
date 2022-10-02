@@ -25,6 +25,14 @@ module.exports = {
         "@typescript-eslint",
         "jsdoc",
     ],
+    "overrides": [
+        {
+            "files": ["./packages/dev/**"], // Or *.test.js
+            "rules": {
+                "no-console": "off",
+            },
+        },
+    ],
     ignorePatterns: [
         "./etc/config/**.js",
         "**/config/**/*.mjs",
