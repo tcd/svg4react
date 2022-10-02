@@ -8,6 +8,8 @@ import "prismjs/components/prism-jsx"
 import "prismjs/components/prism-tsx"
 
 import "prismjs/plugins/line-numbers/prism-line-numbers"
+// import "prismjs/plugins/toolbar/prism-toolbar"
+// import "prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard.js"
 
 import type { ISxProps as SxProps } from "@app/theme"
 import { trimCode } from "@app/util"

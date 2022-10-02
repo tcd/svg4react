@@ -1,2 +1,2 @@
 export * from "./types"
-export * from "./LiveDemo2.Wrapper"
+export * from "./LiveDemo2"

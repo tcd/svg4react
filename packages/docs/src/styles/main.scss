@@ -2,7 +2,8 @@
 @import "./styles";
 
 .s4r__editor {
-    width: 100% !important;
+    // width: 100% !important;
+    // height: 100% !important;
 }
 
 kbd {
@@ -15,6 +16,13 @@ kbd {
     font-family: "Roboto Mono", "Courier New", Courier, monospace;
 }
 
-// pre:not([class]) {
-//     font-family: "Roboto Mono", "Courier New", Courier, monospace;
-// }
+pre:not([class]) {
+    // font-family: "Roboto Mono", "Courier New", Courier, monospace;
+    margin: 0px 0px;
+}
+
+pre[class*=language-] {
+    margin: 0px 0px;
+    // overflow: auto;
+    // width: 100%;
+}

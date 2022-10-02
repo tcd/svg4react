@@ -1,26 +1,18 @@
 import { useState } from "react"
-import { Box, Paper, Switch, FormControlLabel, Stack } from "@mui/material"
-import { LiveProvider, withLive } from "react-live"
-import { ErrorBoundary } from "react-error-boundary"
+import { Paper, Switch, FormControlLabel, Stack } from "@mui/material"
+
+import Grid from "@mui/material/Unstable_Grid2/Grid2"
 
 import { DocsSx } from "@app/theme"
-import { trimCode } from "@app/util"
-import { Card } from "@app/features/shared"
-import { cleanCode } from "@app/features/live-demo"
 import { LiveEditor2 } from "./LiveEditor2"
 import { LiveDemo2Error } from "./LiveDemo2Error"
 import { Live2DemoPreview } from "./LiveDemo2Preview"
 import { LiveDemo2RawPreview } from "./LiveDemo2RawPreview"
-import { ErrorFallback } from "./ErrorFallback"
 import type { LiveDemo2Props } from "./types"
 
 export const LiveDemo2Wrapped = (props: LiveDemo2Props): JSX.Element => {
 
-    const {
-        id,
-        title,
-        componentName = null,
-    } = props
+    const { id } = props
 
     const [showRaw, setShowRaw] = useState(true)
 
@@ -30,10 +22,6 @@ export const LiveDemo2Wrapped = (props: LiveDemo2Props): JSX.Element => {
 
     const handleReset = (...args: Array<unknown>): void => {
         // reset the state of your app so the error doesn't happen again
-    }
-
-    const handleBoundaryError = (error: Error, info: { componentStack: string }): void => {
-
     }
 
     return (
@@ -48,8 +36,28 @@ export const LiveDemo2Wrapped = (props: LiveDemo2Props): JSX.Element => {
                 />
             </Stack>
 
+            <Grid
+                container
+                spacing={4}
+                direction={{ mobile: "column", laptop: "row" }}
+            >
 
-            <Box sx={DocsSx.LiveDemo2.container}>
+                <Grid mobile={12} laptop={6}>
+                    <Paper {...DocsSx.LiveDemo2.editor}>
+                        <LiveEditor2 />
+                    </Paper>
+                </Grid>
+
+                <Grid mobile={12} laptop={6}>
+                    <Paper {...DocsSx.LiveDemo2.preview}>
+                        {showRaw ? <LiveDemo2RawPreview /> : <Live2DemoPreview /> }
+                    </Paper>
+                </Grid>
+
+            </Grid>
+
+            <LiveDemo2Error />
+            {/* <Box sx={DocsSx.LiveDemo2.container}>
 
                 <Paper {...DocsSx.LiveDemo2.editor}>
                     <LiveEditor2 />
@@ -61,8 +69,7 @@ export const LiveDemo2Wrapped = (props: LiveDemo2Props): JSX.Element => {
                     </ErrorBoundary>
                 </Paper>
 
-                <LiveDemo2Error />
-            </Box>
+            </Box> */}
 
         </Paper>
     )

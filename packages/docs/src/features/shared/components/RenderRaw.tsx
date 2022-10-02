@@ -1,4 +1,5 @@
-import type { SxProps } from "@mui/system"
+import type { SxProps } from "@mui/material"
+import { Box } from "@mui/material"
 
 import { componentToString } from "@app/util"
 import { Highlight, HighlightLanguage } from "./Highlight"
@@ -6,7 +7,8 @@ import { Highlight, HighlightLanguage } from "./Highlight"
 export type RenderRawProps = {
     children: React.ReactElement
     language: HighlightLanguage
-    sx?: SxProps
+    BoxSx?: SxProps
+    HighlightSx?: SxProps
 }
 
 export const RenderRaw = (props: RenderRawProps): JSX.Element => {
@@ -14,16 +16,19 @@ export const RenderRaw = (props: RenderRawProps): JSX.Element => {
     const {
         children = null,
         language = "tsx",
-        sx = {},
+        HighlightSx = {},
+        BoxSx = {},
     } = props
 
     const output = componentToString(children)
 
     return (
-        <Highlight
-            content={output}
-            language={language}
-            sx={sx}
-        />
+        <Box sx={BoxSx}>
+            <Highlight
+                content={output}
+                language={language}
+                sx={HighlightSx}
+            />
+        </Box>
     )
 }
