@@ -85,6 +85,8 @@ export const componentOverrides: Components = {
                 inherit: "span",
                 caption: "span",
                 overline: "span",
+                // custom
+                code: "pre",
             },
         },
     },

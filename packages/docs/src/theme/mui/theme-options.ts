@@ -4,6 +4,7 @@ import type {
 
 import { componentOverrides } from "./components"
 import { breakpointsOptions } from "./breakpoints"
+import { fontFamily } from "@app/theme/variables/typography"
 
 // =============================================================================
 // Theme
@@ -12,6 +13,12 @@ import { breakpointsOptions } from "./breakpoints"
 export const docsThemeOptions: ThemeOptions = {
     breakpoints: breakpointsOptions,
     components: componentOverrides,
+    typography: {
+        code: {
+            fontFamily: fontFamily.monospace,
+            fontWeight: 400,
+        },
+    },
     palette: {
         primary: {
             main: "#ffb13b",
