@@ -7,7 +7,7 @@ export const CirclePage = (_props: unknown): JSX.Element => {
     return (
         <Page title="<Circle>">
             <Stack spacing={4}>
-                <ComponentOverview componentName="Circle" />
+                {/* <ComponentOverview componentName="Circle" /> */}
                 <CircleDemo />
             </Stack>
         </Page>
