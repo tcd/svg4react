@@ -30,6 +30,9 @@ export * from "./LinearGradient"
 export { default as Path } from "./Path"
 export * from "./Path"
 
+export { default as Polygon } from "./Polygon"
+export * from "./Polygon"
+
 export { default as Polyline } from "./Polyline"
 export * from "./Polyline"
 
@@ -41,3 +44,6 @@ export * from "./Stop"
 
 export { default as Svg } from "./Svg"
 export * from "./Svg"
+
+// export { default as Use } from "./Use"
+// export * from "./Use"

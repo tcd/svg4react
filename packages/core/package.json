@@ -1,7 +1,7 @@
 {
     "name": "svg4react",
     "description": "React components & TypeScript types for creating SVG elements.",
-    "version": "0.4.1",
+    "version": "0.5.0-rc.1",
     "license": "MIT",
     "author": "Clay Dunston <dunstontc@gmail.com>",
     "repository": "github:tcd/svg4react",
@@ -26,7 +26,7 @@
         "build:tidy": "node ../../etc/scripts/consolidate-types.mjs",
 
         "build:docs": "cross-env typedoc --options ./typedoc.json",
-        "tag": "node ../..//etc/scripts/tag/main.mjs",
+        "tag": "node ../../etc/scripts/tag/main.mjs",
         "publish:next": "npm publish --tag next",
         "publish:latest": "npm publish --tag latest"
     },
