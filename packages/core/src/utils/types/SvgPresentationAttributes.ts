@@ -7,19 +7,19 @@ export interface SvgPresentationAttributes {
     /**
      * Specifies how an object is aligned along the font baseline with respect to its parent.
      *
-     * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/alignment-baseline
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/alignment-baseline)
      */
     alignmentBaseline?: "auto" | "baseline" | "before-edge" | "text-before-edge" | "middle" | "central" | "after-edge" | "text-after-edge" | "ideographic" | "alphabetic" | "hanging" | "mathematical" | "inherit"
     /**
      * Allows repositioning of the dominant-baseline relative to the dominant-baseline of the parent text content element.
      *
-     * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/baseline-shift
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/baseline-shift)
      */
     baselineShift?: Property.BaselineShift
     /**
      * Defines or associates a clipping path with the element it is related to.
      *
-     * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/clip-path
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/clip-path)
      */
     clipPath?: Property.ClipPath
     /**
@@ -27,23 +27,23 @@ export interface SvgPresentationAttributes {
      *
      * The `clip-rule` attribute basically works as the [`fill-rule`](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/fill-rule) attribute, except that it applies to [`<clipPath>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/clipPath) definitions.
      *
-     * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/clip-rule
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/clip-rule)
      */
     clipRule?: Property.ClipRule
     /**
-     * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/color
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/color)
      */
     color?: Property.Color
     /**
      * Specifies the color space for gradient interpolations, color animations, and alpha compositing.
      *
-     * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/color-interpolation
+     * @see [MDN Web Docs][https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/color-interpolation]
      */
     colorInterpolation?: Property.ColorInterpolation
     /**
      * Specifies the color space for imaging operations performed via filter effects.
      *
-     * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/color-interpolation
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/color-interpolation)
      */
     colorInterpolationFilters?: "auto" | "sRGB" | "linearRGB" | "inherit"
     /**
@@ -53,7 +53,7 @@ export interface SvgPresentationAttributes {
     /**
      * Defines the shape of the path.
      *
-     * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d)
      */
     d?: string
     /**
@@ -63,49 +63,49 @@ export interface SvgPresentationAttributes {
     /**
      * Controls the rendering of graphical or container elements.
      *
-     * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/direction
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/direction)
      */
     display?: Property.Display
     /**
      * Defines the baseline used to align the box's text and inline-level contents.
      *
-     * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/dominant-baseline
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/dominant-baseline)
      */
     dominantBaseline?: Property.DominantBaseline
     /**
      * Defines the color of the inside of the graphical element it applies to.
      *
-     * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/fill
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/fill)
      */
     fill?: Property.Fill
     /**
      * Defines the opacity of the paint server (color, gradient, pattern, etc.) applied to a shape.
      *
-     * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/fill-opacity
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/fill-opacity)
      */
     fillOpacity?: Property.Opacity
     /**
      * Defines the algorithm to use to determine the inside part of a shape.
      *
-     * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/fill-rule
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/fill-rule)
      */
     fillRule?: Property.FillRule
     /**
      * Specifies the filter effects defined by the [`<filter>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/filter) element that shall be applied to its element.
      *
-     * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/filter
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/filter)
      */
     filter?: Property.Filter
     /**
      * Indicates what color to use to flood the current filter primitive subregion.
      *
-     * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/flood-color
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/flood-color)
      */
     floodColor?: Property.FloodColor
     /**
      * Indicates the opacity value to use across the current filter primitive subregion.
      *
-     * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/flood-opacity
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/flood-opacity)
      */
     floodOpacity?: Property.FloodOpacity
     // fontFamily?: Property.FontFamily
@@ -128,112 +128,112 @@ export interface SvgPresentationAttributes {
      * elements [`<feDiffuseLighting>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feDiffuseLighting)
      * and [`<feSpecularLighting>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feSpecularLighting).
      *
-     * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/lighting-color
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/lighting-color)
      */
     lightingColor?: Property.LightingColor
     /**
      * Defines the arrowhead or polymarker that will be drawn at the final vertex of the given <path> element or basic shape.
      *
-     * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/marker-end
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/marker-end)
      */
     markerEnd?: Property.MarkerEnd
     /**
      * Defines the arrowhead or polymarker that will be drawn at every vertex other than the first and last vertex of the given <path> element or basic shape.
      *
-     * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/marker-mid
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/marker-mid)
      */
     markerMid?: Property.MarkerMid
     /**
      * Defines the arrowhead or polymarker that will be drawn at the first vertex of the given [`<path>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/path) element or basic shape.
      *
-     * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/marker-start
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/marker-start)
      */
     markerStart?: Property.MarkerStart
     /**
      * Alters the visibility of an element by either masking or clipping the image at specific points.
      *
-     * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/mask
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/mask)
      */
     mask?: Property.Mask
     /**
      * Specifies the transparency of an object or of a group of objects, that is, the degree to which the background behind the element is overlaid.
      *
-     * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/opacity
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/opacity)
      */
     opacity?: Property.Opacity
     /**
-     * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/overflow
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/overflow)
      */
     overflow?: Property.Overflow
     /**
-     * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/pointer-events
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/pointer-events)
      */
     pointerEvents?: Property.PointerEvents
     /**
      * Provides hints to the renderer about what tradeoffs to make when rendering shapes like paths, circles, or rectangles.
      *
-     * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/shape-rendering
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/shape-rendering)
      */
     shapeRendering?: Property.ShapeRendering
     /**
      * Indicates what color to use at a gradient stop.
      *
-     * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stop-color
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stop-color)
      */
     stopColor?: Property.StopColor
     /**
      * Defines the opacity of a given color gradient stop.
      *
-     * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stop-opacity
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stop-opacity)
      */
     stopOpacity?: Property.StopOpacity
     /**
      * A presentation attribute defining the color (or any SVG paint servers like gradients or patterns) used to paint the outline of the shape.
      *
-     * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke)
      */
     stroke?: Property.Stroke
     /**
      * A presentation attribute defining the pattern of dashes and gaps used to paint the outline of the shape
      *
-     * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-dasharray
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-dasharray)
      */
     strokeDasharray?: Property.StrokeDasharray
     /**
      * A presentation attribute defining an offset on the rendering of the associated dash array.
      *
-     * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-dashoffset
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-dashoffset)
      */
     strokeDashoffset?: Property.StrokeDashoffset
     /**
      * A presentation attribute defining the shape to be used at the end of open subpaths when they are stroked.
      *
-     * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-linecap
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-linecap)
      */
     strokeLinecap?: Property.StrokeLinecap
     /**
      * A presentation attribute defining the shape to be used at the corners of paths when they are stroked.
      *
-     * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-linejoin
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-linejoin)
      */
     strokeLinejoin?: Property.StrokeLinejoin
     /**
      * A presentation attribute defining a limit on the ratio of the miter length to the `stroke-width` used to draw a miter join.
      * When the limit is exceeded, the join is converted from a miter to a bevel.
      *
-     * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-miterlimit
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-miterlimit)
      */
     strokeMiterlimit?: Property.StrokeMiterlimit
     /**
      * A presentation attribute defining the opacity of the paint server (*color*, *gradient*, *pattern*, etc.) applied to the stroke of a shape.
      *
-     * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-opacity
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-opacity)
      */
     strokeOpacity?: Property.StrokeOpacity
     /**
      * A presentation attribute defining the width of the stroke to be applied to the shape.
      *
-     * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-width
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-width)
      */
     strokeWidth?: Property.StrokeWidth
     /**
@@ -245,17 +245,17 @@ export interface SvgPresentationAttributes {
      * For those cases you should use `text-align`.
      * For multi-line text, the alignment takes place for each line.
      *
-     * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/text-anchor
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/text-anchor)
      */
     textAnchor?: Property.TextAnchor
     /**
-     * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/text-decoration
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/text-decoration)
      */
     textDecoration?: Property.TextDecoration
     /**
      * Provides hints to the renderer about what tradeoffs to make when rendering text.
      *
-     * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/text-rendering
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/text-rendering)
      */
     textRendering?: Property.TextRendering
     /**
@@ -266,31 +266,31 @@ export interface SvgPresentationAttributes {
      * See the documentation for the CSS property [transform](https://developer.mozilla.org/en-US/docs/Web/CSS/transform)
      * for the specific syntax to use in that case.
      *
-     * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform)
      */
     transform?: Property.Transform
     /**
      * Specifies how the accumulation of the background image is managed.
      *
-     * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/unicode-bidi
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/unicode-bidi)
      */
     unicodeBidi?: Property.UnicodeBidi
     /**
      * Specifies the vector effect to use when drawing an object.
      * Vector effects are applied before any of the other compositing operations, i.e. filters, masks and clips.
      *
-     * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/vector-effect
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/vector-effect)
      */
     vectorEffect?: Property.VectorEffect
     /**
      * Lets you control the visibility of graphical elements.
      * With a value of `hidden` or `collapse` the current graphics element is invisible.
      *
-     * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/visibility
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/visibility)
      */
     visibility?: Property.Visibility
     /**
-     * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/word-spacing
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/word-spacing)
      */
     wordSpacing?: Property.WordSpacing
     /**
@@ -301,7 +301,7 @@ export interface SvgPresentationAttributes {
      * - *right-to-left*
      * - *top-to-bottom*
      *
-     * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/writing-mode
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/writing-mode)
      */
     writingMode?: Property.WritingMode
 }
