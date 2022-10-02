@@ -13,6 +13,8 @@ The format is based on [Keep a Changelog][keep-a-changelog], and this project ad
 - Add new type definitions:
     - `Unit`
     - `Length`
+### Changed
+- Improve *@see* links for `SvgPresentationAttributes`
 ### Removed
 - [WIP] Remove ref forwarding for all components
     - [TODO] Possibly create different versions with that accept refs
