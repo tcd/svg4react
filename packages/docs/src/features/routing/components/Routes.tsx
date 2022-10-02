@@ -16,6 +16,7 @@ import { RectPage } from "@app/features/demos"
 import { SvgPage } from "@app/features/demos"
 
 import { PlaygroundPage } from "@app/features/playground"
+import { TypesPage } from "@app/features/types"
 
 import {
     LogosPage,
@@ -51,6 +52,7 @@ const routes = (): RouteObject[] => {
                 { index: true,        element: <HomePage />       },
                 { path: "changelog",  element: <ChangelogPage />  },
                 { path: "playground", element: <PlaygroundPage /> },
+                { path: "types",      element: <TypesPage />      },
                 {
                     path: "demos",
                     children: [
