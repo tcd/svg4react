@@ -12,9 +12,15 @@
         "compile": "cross-env rimraf ./build/**/* && tsc"
     },
     "dependencies": {
+        "@types/inquirer": "^9.0.2",
         "@types/node": "^18.7.18",
+        "@types/semver": "^7.3.12",
+        "@types/shelljs": "^0.8.11",
         "cross-env": "^7.0.3",
+        "inquirer": "^9.1.2",
         "rimraf": "^3.0.2",
+        "semver": "^7.3.7",
+        "shelljs": "^0.8.5",
         "typedoc": "^0.23.15",
         "typedoc-json-parser": "^5.0.0",
         "typescript": "^4.8.3",
