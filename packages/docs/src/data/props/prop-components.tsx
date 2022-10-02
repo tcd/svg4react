@@ -1,3 +1,5 @@
+import { Fragment } from "react"
+
 const Or = ({ noSpaces = false }: { noSpaces?: boolean}): JSX.Element => (
     <>
         {!noSpaces && <>&nbsp;</>}
@@ -117,14 +119,12 @@ export const preserveAspectRatio: React.ReactNode = (
         <Str val="`" />
         <Key val="${" />
         {alignments.map((a, i) => (
-            i === alignments.length - 1 ?
-                <>
-                    <Str val={`"${a}"`} />
-                </>
-                :
-                <>
-                    <Str val={`"${a}"`} /><Or noSpaces />
-                </>
+            <Fragment key={i}>
+                <Str val={`"${a}"`} />
+                {(i < alignments.length - 1) &&
+                    <Or noSpaces />
+                }
+            </Fragment>
         ))}
         <Key val="}" />
         <span>&nbsp;</span>

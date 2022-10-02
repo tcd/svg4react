@@ -3,3 +3,17 @@
 	height: 600px;
 	border: 1px solid #ccc;
 }
+
+// .react-monaco-editor-container {
+//     // width: 100%;
+//     // height: 69px;
+//     background-color: blue !important;
+//     background: blue !important;
+//     --codelens-font-features_ee1f61: "liga" off, "calt" off;
+//     --code-editorInlayHintsFontFamily: Consolas, "Courier New", monospace;
+// }
+
+.react-monaco-editor-container[style] {
+    // width: 100%;
+    height: initial !important;
+}

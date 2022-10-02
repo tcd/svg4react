@@ -1,5 +1,9 @@
 import type { PaperProps } from "@mui/material"
-import type { ISxProps as SxProps, ITheme as Theme } from "@app/theme"
+import type { Grid2Props as GridProps } from "@mui/material/Unstable_Grid2"
+import type {
+    ISxProps as SxProps,
+    ITheme as Theme,
+} from "@app/theme"
 import { ThemeVars } from "@app/theme/variables"
 
 const root: PaperProps = {
@@ -25,6 +29,15 @@ const container: SxProps = {
     },
 }
 
+const grid: GridProps = {
+    container: true,
+    spacing: 4,
+    direction: {
+        mobile: "column",
+        laptop: "row" ,
+    },
+}
+
 const editor: PaperProps = {
     elevation: 2,
     sx: {
@@ -35,12 +48,16 @@ const editor: PaperProps = {
         // borderRadius: "4px",
         // overflow: "hidden",
         // width: "50%",
+        display: "flex",
+        justifyContent: "stretch",
+        alignItems: "stretch",
     },
 }
 
 const preview: PaperProps = {
     elevation: 2,
     sx: {
+        height: "100%",
         background: "#1e1e1e",
         // flexGrow: 1,
         // mx: 3,
@@ -54,28 +71,28 @@ const preview: PaperProps = {
     },
 }
 
-const livePreview: PaperProps = {
-    elevation: 2,
-    sx: {
-        background: "#1e1e1e",
-        // flexGrow: 1,
-        // mx: 3,
-        // p: 4,
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
+const livePreview: SxProps = {
+    height: "100%",
+    // width: "100%",
+    // background: "#1e1e1e",
+    // background: "blue",
+    // flexGrow: 1,
+    // mx: 3,
+    // p: 4,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
 
-        position: "relative",
-        maxHeight: "50vh",
-    },
+    position: "relative",
+    maxHeight: "50vh",
 }
 
 const rawPreview_highlight: SxProps = (theme: Theme) => ({
     // width: "100%",
     height: "100%",
     // [theme.breakpoints.up("laptop")]: {
-        // width: "100%",
-        // height: "100%",
+    // width: "100%",
+    // height: "100%",
     // },
 })
 
@@ -93,16 +110,18 @@ const errorWrapper: SxProps = {
     p: 4,
 }
 
-
 export const LiveDemo2 = {
     root,
+    grid,
     container,
     editor,
-    preview,
-    livePreview,
-    rawPreview: {
-        box: rawPreview_box,
-        highlight: rawPreview_highlight,
-    },
     errorWrapper,
+    preview: {
+        root: preview,
+        live: livePreview,
+        raw: {
+            box: rawPreview_box,
+            highlight: rawPreview_highlight,
+        },
+    },
 }

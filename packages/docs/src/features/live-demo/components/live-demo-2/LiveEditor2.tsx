@@ -23,6 +23,7 @@ const options: customMonaco.editor.IStandaloneEditorConstructionOptions = {
     // @ts-ignore: next-line
     "bracketPairColorization.enabled": false,
     fixedOverflowWidgets: true,
+    automaticLayout: true,
 }
 
 export const LiveEditor2 = (_props: unknown) => {
@@ -66,8 +67,6 @@ export const LiveEditor2 = (_props: unknown) => {
         <MonacoEditor
             ref={(node) => { editorRef.current = node }}
             className="s4r__editor"
-            // width="800"
-            height="600"
             value={theRealValue()}
             options={options}
             onChange={handleChange}

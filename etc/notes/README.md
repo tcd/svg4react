@@ -37,6 +37,8 @@
     - [W3C - SVG 2 - Paths](https://www.w3.org/TR/SVG/paths.html)
 - Namespaces
     - [MDN - Namespaces crash course](https://developer.mozilla.org/en-US/docs/Web/SVG/Namespaces_Crash_Course)
+- Other
+    - [Web Platform Docs - SVG](https://webplatform.github.io/docs/svg/)
 
 ### Deprecated
 
