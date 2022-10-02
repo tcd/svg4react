@@ -1,4 +1,5 @@
-import type { GProps } from "./G.types"
+import type { SVGProps } from "react"
+import { forwardRef } from "react"
 
 /**
  * @public
@@ -10,10 +11,15 @@ import type { GProps } from "./G.types"
  * Transformations applied to the `<g>` element are performed on its child elements, and its attributes are inherited by its children.
  * It can also group multiple elements to be referenced later with the [`<use>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/use) element.
  */
-const G = (props: GProps) => {
-    return (
-        <g {...props} />
-    )
-}
+const G = forwardRef<SVGGElement, SVGProps<SVGGElement>>(
+    function G(props, ref) {
+        return (
+            <g
+                ref={ref}
+                {...props}
+            />
+        )
+    },
+)
 
 export default G
