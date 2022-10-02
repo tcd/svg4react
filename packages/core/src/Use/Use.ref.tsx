@@ -1,3 +1,4 @@
+import { forwardRef } from "react"
 import type { UseProps } from "./Use.types"
 
 /**
@@ -11,7 +12,7 @@ import type { UseProps } from "./Use.types"
  *
  * However, any other attributes not set on the referenced element will be applied to the `use` element.
  */
-const Use = (props: UseProps) => {
+const Use = forwardRef<SVGUseElement, UseProps>(function Use(props: UseProps, ref) {
 
     const {
         // useId = "",
@@ -23,9 +24,10 @@ const Use = (props: UseProps) => {
     return (
         // @ts-ignore: next-line
         <use
+            ref={ref}
             {...otherProps}
         />
     )
-}
+})
 
 export default Use

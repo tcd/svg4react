@@ -7,10 +7,10 @@ import type { SvgPresentationAttributes, Length } from "../utils"
  * @see [MDN Web Docs - `<use>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/use)
  */
 type UseAttributes = {
-    /**
-     * `id` of the element to *use*. No preceeding hash required.
-     */
-    useId?: string
+    // /**
+    //  * `id` of the element to *use*. No preceeding hash required.
+    //  */
+    // useId?: string
     /**
      * The URL to an element/fragment that needs to be duplicated.
      */
