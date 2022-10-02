@@ -1,5 +1,11 @@
 # Scalable Vector Graphics
 
+## Related
+
+- id collision
+    - [elderapo/react-svg-unique-id](https://github.com/elderapo/react-svg-unique-id)
+    - [iconfu/svg-inject](https://github.com/iconfu/svg-inject)
+
 ## Resources
 
 ### TypeScript

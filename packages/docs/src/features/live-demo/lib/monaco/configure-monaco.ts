@@ -93,7 +93,7 @@ export const configureMonaco = async (editor: customMonaco.editor.IStandaloneCod
         preloadPackages: true,
         onlySpecifiedPackages: true, // FIXME: this one isn't ideal
         versions: {
-            "svg4react": "0.4.0-rc.1",
+            "svg4react": "0.5.0-rc.1",
         },
     })
 
