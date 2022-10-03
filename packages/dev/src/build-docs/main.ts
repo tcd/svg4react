@@ -1,11 +1,9 @@
-/* eslint-disable no-console */
 import { join } from "path"
 import { readFile } from "fs/promises"
 import { ProjectParser } from "typedoc-json-parser"
 import { writeJsonFile } from "write-json-file"
 
 import { PACKAGE_PATHS } from "../helpers/paths-windows.js"
-import type { ComponentData } from "./types.js"
 import { gatherComponentData } from "./gather-component-data.js"
 
 const components = [

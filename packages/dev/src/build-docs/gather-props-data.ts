@@ -1,7 +1,4 @@
-/* eslint-disable no-console */
 import { ParameterParser, ProjectParser, ReferenceTypeParser, TypeParser } from "typedoc-json-parser"
-
-import type { PropData } from "./types.js"
 
 export const gatherPropsData = (project: ProjectParser, propParam: ParameterParser): PropData[] => {
     const result: PropData[] = []

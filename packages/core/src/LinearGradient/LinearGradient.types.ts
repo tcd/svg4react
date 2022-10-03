@@ -7,11 +7,11 @@ import type { SvgPresentationAttributes } from "../utils"
  *
  * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Element/linearGradient
  */
-type LinearGradientAttributes = {
+export interface _LinearGradientAttributes {
     /**
      * Defines the coordinate system for attributes `x1`, `x2`, `y1`, `y2`.
      *
-     * @see [MDN](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/gradientUnits)
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/gradientUnits)
      *
      * @defaultValue "objectBoundingBox"
      */
@@ -19,9 +19,9 @@ type LinearGradientAttributes = {
     /**
      * This attribute provides additional [transformation](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform) to the gradient coordinate system.
      *
-     * @see [MDN](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/gradientTransform)
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/gradientTransform)
      */
-    gradientTransform?: string
+    gradientTransform: string
     /**
      * This attribute defines a reference to another `<linearGradient>` element that will be used as a template.
      *
@@ -39,7 +39,7 @@ type LinearGradientAttributes = {
     /**
      * This attribute defines the x coordinate of the starting point of the vector gradient along which the linear gradient is drawn.
      *
-     * @see [MDN](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/x1)
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/x1)
      *
      * @defaultValue "0%"
      */
@@ -47,7 +47,7 @@ type LinearGradientAttributes = {
     /**
      * This attribute defines the x coordinate of the ending point of the vector gradient along which the linear gradient is drawn.
      *
-     * @see [MDN](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/x2)
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/x2)
      *
      * @defaultValue "100%"
      */
@@ -55,7 +55,7 @@ type LinearGradientAttributes = {
     /**
      * This attribute defines the y coordinate of the starting point of the vector gradient along which the linear gradient is drawn.
      *
-     * @see [MDN](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/y1)
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/y1)
      *
      * @defaultValue "0%"
      */
@@ -63,12 +63,19 @@ type LinearGradientAttributes = {
     /**
      * This attribute defines the y coordinate of the ending point of the vector gradient along which the linear gradient is drawn.
      *
-     * @see [MDN](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/y2)
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/y2)
      *
      * @defaultValue "0%"
      */
     y2?: string | number
-} & Pick<SvgPresentationAttributes,
+}
+
+/**
+ * @public
+ *
+ * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Element/linearGradient
+ */
+type LinearGradientAttributes = _LinearGradientAttributes & Pick<SvgPresentationAttributes,
     | "clipPath"
     | "clipRule"
     | "color"

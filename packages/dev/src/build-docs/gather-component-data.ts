@@ -1,7 +1,5 @@
-/* eslint-disable no-console */
 import { ProjectParser } from "typedoc-json-parser"
 
-import type { ComponentData } from "./types.js"
 import { gatherPropsData } from "./gather-props-data.js"
 
 export const gatherComponentData = (project: ProjectParser, component: string): ComponentData => {

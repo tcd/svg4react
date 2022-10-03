@@ -4,4 +4,17 @@ export declare global {
         | "core"
         | "dev"
         | "docs"
+
+    export interface PropData {
+        name?: string
+        type?: string
+        default?: string
+        description?: string
+    }
+
+    export interface ComponentData {
+        component?: string
+        docComment?: string
+        props?: PropData[]
+    }
 }
