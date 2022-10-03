@@ -15,11 +15,15 @@
 | [`<clipPath>`][clipPath]                 |          |           |       |       |
 | [`<defs>`][defs]                         |          |           |       |       |
 | [`<ellipse>`][ellipse]                   |    5     |           |       |       |
+| [`<filter>`][filter]                     |          |           |       |       |
+| [`<foreignObject>`][foreignObject]       |          |           |       |       |
 | [`<g>`][g]                               |          |           |       |       |
+| [`<image>`][image]                       |          |           |       |       |
 | [`<line>`][line]                         |    6     |           |       |       |
 | [`<linearGradient>`][linearGradient]     |          |     x     |       |       |
 | [`<marker>`][marker]                     |    2     |           |       |       |
 | [`<mask>`][mask]                         |          |           |       |       |
+| [`<metadata>`][metadata]                 |    1     |           |       |       |
 | [`<mpath>`][mpath]                       |          |           |       |       |
 | [`<path>`][path]                         |    8     |           |       |       |
 | [`<pattern>`][pattern]                   |    1     |           |       |       |
@@ -29,10 +33,14 @@
 | [`<rect>`][rect]                         |    5     |           |       |       |
 | [`<set>`][set]                           |          |           |       |       |
 | [`<svg>`][svg]                           |    10    |           |       |       |
+| [`<switch>`][switch]                     |          |           |       |       |
 | [`<symbol>`][symbol]                     |    9     |           |       |       |
-| [`<text>`][text]                         |          |           |       |       |
+| [`<text>`][text]                         |    6     |           |       |       |
 | [`<textPath>`][textPath]                 |    4     |           |       |       |
+| [`<title>`][title]                       |    6     |           |       |       |
+| [`<tspan>`][tspan]                       |    4     |           |       |       |
 | [`<use>`][use]                           |    8     |           |       |       |
+| [`<view>`][view]                         |    0     |           |       |       |
 
 
 ## Filters
@@ -41,15 +49,17 @@
 - feBlend
 - feColorMatrix
 - feComponentTransfer
+    - feFuncR
+    - feFuncG
+    - feFuncB
+    - feFuncA
 - feComposite
 - feConvolveMatrix
 - feDiffuseLighting
 - feDisplacementMap
+- feDistantLight
+- feDropShadow
 - feFlood
-- feFuncA
-- feFuncB
-- feFuncG
-- feFuncR
 - feGaussianBlur
 - feImage
 - feMerge
@@ -70,11 +80,15 @@
 [clipPath]: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/clipPath
 [defs]: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/defs
 [ellipse]: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/ellipse
+[filter]: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/filter
+[foreignObject]: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/foreignObject 
 [g]: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/g
+[image]: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/image
 [line]: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/line
 [linearGradient]: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/linearGradient
 [marker]: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/marker
 [mask]: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/mask
+[metadata]: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/metadata
 [mpath]: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/mpath
 [path]: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/path
 [pattern]: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/pattern
@@ -84,10 +98,14 @@
 [rect]: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/rect
 [set]: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/set
 [svg]: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/svg
+[switch]: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/switch
 [symbol]: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/symbol
 [text]: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/text
 [textPath]: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/textPath
+[title]: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/title
+[tspan]: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/tspan
 [use]: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/use
+[view]: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/view
 
 
 [feBlend]: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feBlend
@@ -97,6 +115,8 @@
 [feConvolveMatrix]: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feConvolveMatrix
 [feDiffuseLighting]: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feDiffuseLighting
 [feDisplacementMap]: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feDisplacementMap
+[feDistantLight]: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feDistantLight
+[feDropShadow]: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feDropShadow
 [feFlood]: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feFlood
 [feFuncA]: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feFuncA
 [feFuncB]: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feFuncB
