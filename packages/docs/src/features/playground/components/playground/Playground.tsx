@@ -25,7 +25,7 @@ import { DocsSx } from "@app/theme"
 import { Card } from "@app/features/shared"
 
 import { cleanCode, WithLiveProps } from "@app/features/live-demo"
-import { LiveDemoError } from "@app/features/live-demo/components/live-demo/LiveDemoError"
+import { LiveDemo2Error } from "@app/features/live-demo/components/v2/LiveDemo2Error"
 import { LiveDemoPreview } from "@app/features/live-demo/components/live-demo/LiveDemoPreview"
 import { PlaygroundEditor } from "./PlaygroundEditor"
 
@@ -103,7 +103,7 @@ const _Playground = (_props: WithLiveProps): JSX.Element => {
 
                     <Paper {...DocsSx.LiveDemo.preview}>
                         <LiveDemoPreview showRaw={showRaw} />
-                        <LiveDemoError />
+                        <LiveDemo2Error />
                     </Paper>
 
                 </Box>
