@@ -12,17 +12,17 @@ type StopAttributes = {
      */
     offset?: string | number
     /**
-     * The color attribute is used to provide a potential indirect value (currentcolor) for
+     * Used to provide a potential indirect value (currentcolor) for
      * the `fill`, `stroke`, `stop-color`, `flood-color`, and `lighting-color` attributes.
      *
-     * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/color
+     * @see [MDN Web Docs - `color`](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/color)
      */
     color?: string
     /**
-     * lets you control the rendering of graphical or container elements.
+     * Lets you control the rendering of graphical or container elements.
      *
-     * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/display
-     * @see https://developer.mozilla.org/en-US/docs/Web/CSS/display
+     * @see [MDN Web Docs - `display` (SVG)](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/display)
+     * @see [MDN Web Docs - `display` (CSS)](https://developer.mozilla.org/en-US/docs/Web/CSS/display)
      *
      * @defaultValue "inline"
      */
@@ -31,7 +31,7 @@ type StopAttributes = {
      * Defines the color of the gradient stop.
      * It can be used as a CSS property.
      *
-     * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stop-color
+     * @see [MDN Web Docs - `stop-color`](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stop-color)
      *
      * @defaultValue "black"
      */
@@ -40,7 +40,7 @@ type StopAttributes = {
      * Defines the opacity of the gradient stop.
      * It can be used as a CSS property.
      *
-     * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stop-opacity
+     * @see [MDN Web Docs - `stop-opacity`](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stop-opacity)
      *
      * @defaultValue 1
      */
@@ -48,7 +48,7 @@ type StopAttributes = {
     /**
      * Lets you control the visibility of graphical elements.
      *
-     * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/visibility
+     * @see [MDN Web Docs - `visibility`](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/visibility)
      */
     visibility?: Property.Visibility
 }

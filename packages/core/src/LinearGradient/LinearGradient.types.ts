@@ -25,13 +25,13 @@ export interface _LinearGradientAttributes {
     /**
      * This attribute defines a reference to another `<linearGradient>` element that will be used as a template.
      *
-     * @see [MDN](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/href)
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/href)
      */
     href?: string
     /**
      * This attribute indicates how the gradient behaves if it starts or ends inside the bounds of the shape containing the gradient.
      *
-     * @see [MDN](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/spreadMethod)
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/spreadMethod)
      *
      * @defaultValue "pad"
      */
