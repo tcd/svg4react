@@ -1,10 +1,8 @@
-import * as components from "./prop-components"
-
 export const PropData: Record<Svg4ReactComponent, PropData[]> = {
     Circle: [
         {
             name: "coordinates",
-            type: components.circleCoordinates,
+            type: "[cx: number, cy: number]",
             description: "The x and y axis coordinates of the center of the circle.\n\nWill override `cx` and `cy`.",
         },
         {
@@ -31,7 +29,14 @@ export const PropData: Record<Svg4ReactComponent, PropData[]> = {
     Line: [
         {
             name: "coordinates",
-            type: components.lineCoordinates,
+            type: `
+[
+    x1: number | string,
+    y1: number | string,
+    x2: number | string,
+    y2: number | string,
+]
+`.trim(),
             description: `
 Values, in order, as a string or number, for:
 
@@ -99,7 +104,7 @@ Values, in order, as a string or number, for:
     Polyline: [
         {
             name: "points",
-            type: components.polylineCoordinates,
+            type: "[x: number, y: number][]",
             description: "The list of points (pairs of x,y absolute coordinates) required to draw the polyline.",
             default: "[]",
         },
@@ -118,7 +123,7 @@ Values, in order, as a string or number, for:
         },
         {
             name: "vb",
-            type: components.vb,
+            type: "[width: number, height?: number]",
             description: `
 Shorthand for the setting the last two values of \`viewBox\`
 
@@ -136,8 +141,7 @@ Will **not** override \`viewBox\` if both are passed.
         },
         {
             name: "preserveAspectRatio",
-            // type: '"none" | `${"xMidYMin"|"xMinYMin"|"xMaxYMin"|"xMinYMid"|"xMidYMid"|"xMaxYMid"|"xMinYMax"|"xMidYMax"|"xMaxYMax"} ${"meet"|"slice"}`',
-            type: components.preserveAspectRatio,
+            type: '"none" | `${"xMidYMin"|"xMinYMin"|"xMaxYMin"|"xMinYMid"|"xMidYMid"|"xMaxYMid"|"xMinYMax"|"xMidYMax"|"xMaxYMax"} ${"meet"|"slice"}`',
             description: "How the `svg` fragment must be deformed if it is displayed with a different aspect ratio.\n\nSee [MDN Web Docs - preserveAspectRatio](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/preserveAspectRatio).",
             default: '"xMidYMid meet"',
         },

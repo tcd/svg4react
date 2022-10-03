@@ -255,6 +255,11 @@ code[class*="language-html"] {
 	color: #d4d4d4;
 }
 
+pre[class*="language-props"],
+code[class*="language-props"] {
+    font-weight: 400;
+}
+
 .language-regex {
     .token.anchor {
         color: #dcdcaa;

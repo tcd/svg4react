@@ -31,7 +31,8 @@ export const PropTypeCell = (props: PropTypeCellProps): JSX.Element => {
 const sx: SxProps = {
     display: "inline-block",
     fontFamily: ThemeVars.fontFamily.monospace,
-    fontSize: "85%",
+    // fontSize: "85%",
+    fontWeight: 300,
     borderRadius: "6px",
     padding: "0.3em 0.5em !important",
     margin: "0px",

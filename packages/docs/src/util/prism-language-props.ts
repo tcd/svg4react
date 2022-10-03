@@ -6,10 +6,51 @@ import type { Grammar } from "prismjs"
 export const PrismLanguageProps: Grammar = {
     operator: /\|/,
     boolean: /\b(?:false|true)\b/,
-    type: /\b(?:string|number)\b/,
+    keyword: /\$\{|\}/,
     string: {
-        pattern: /(^|[^\\])"(?:\\.|[^\\"\r\n])*"(?!\s*:)/,
-        lookbehind: true,
+        // pattern: /(^|[^\\])"(?:\\.|[^\\"\r\n])*"(?!\s*:)/,
+        pattern: /("[^"]+")|(`)/,
+        // lookbehind: true,
         greedy: true,
     },
+    property: {
+        pattern: /[a-zA-Z_][a-zA-Z_0-9]+\??:/,
+        inside: {
+            type: {
+                pattern: /:|\?/,
+            },
+        },
+    },
+    type: {
+        pattern: /\b(string|number)\b/,
+        // greedy: true,
+    },
+    // "template-string": {
+    //     pattern: /`(?:\\[\s\S]|\$\{(?:[^{}]|\{(?:[^{}]|\{[^}]*\})*\})+\}|(?!\$\{)[^\\`])*`/,
+    //     greedy: true,
+    //     inside: {
+    //         "template-punctuation": {
+    //             pattern: /^`|`$/,
+    //             alias: "string",
+    //         },
+    //         "interpolation": {
+    //             pattern: /((?:^|[^\\])(?:\\{2})*)\$\{(?:[^{}]|\{(?:[^{}]|\{[^}]*\})*\})+\}/,
+    //             lookbehind: true,
+    //             inside: {
+    //                 "interpolation-punctuation": {
+    //                     pattern: /^\$\{|\}$/,
+    //                     alias: "punctuation",
+    //                 },
+    //                 rest: {
+    //                     string: {
+    //                         pattern: /(^|[^\\])"(?:\\.|[^\\"\r\n])*"(?!\s*:)/,
+    //                         lookbehind: true,
+    //                         greedy: true,
+    //                     },
+    //                 },
+    //             },
+    //         },
+    //         "string": /[\s\S]+/,
+    //     },
+    // },
 }
