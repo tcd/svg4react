@@ -42,7 +42,8 @@ export const parseProp = (project: ProjectParser, propParam: parser.InterfacePro
     switch (propParam.type.kind) {
         case "intrinsic":
             // console.log("intrinsic")
-            result.type = propParam.type.kind
+            // @ts-ignore: next-line
+            result.type = propParam.type.type
             break
         case "union":
             // console.log("union")
@@ -73,6 +74,9 @@ export const parseReference = (project: ProjectParser, propType: parser.Referenc
 
 export const parseUnion = (prop: parser.InterfacePropertyParser): string => {
     // @ts-ignore: next-line
+    const types = prop.type.toJSON().types
+    console.log(types)
+    // @ts-ignore: next-line
     if (prop.type.types.every(x => x.kind === "intrinsic")) {
         // @ts-ignore: next-line
         return prop.type.types.map(x => x?.type).join(" | ")
@@ -81,8 +85,9 @@ export const parseUnion = (prop: parser.InterfacePropertyParser): string => {
     // @ts-ignore: next-line
     if (prop.type.types.every(x => x.kind === "literal")) {
         // @ts-ignore: next-line
-        return prop.type.types.map(x => `"${x?.type}"`).join(" | ")
+        return prop.type.types.map(x => `"${x?.value}"`).join(" | ")
     }
 
     return "[parseUnion] Unhandled"
 }
+

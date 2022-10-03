@@ -48,6 +48,54 @@ Values, in order, as a string or number, for:
             default: "none",
         },
     ],
+    LinearGradient: [
+        {
+            "name": "gradientTransform",
+            "description": "This attribute provides additional [transformation](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform) to the gradient coordinate system.\n\n[MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/gradientTransform)",
+            "type": "string",
+        },
+        {
+            "name": "gradientUnits",
+            "default": "\"objectBoundingBox\"",
+            "description": "Defines the coordinate system for attributes `x1`, `x2`, `y1`, `y2`.\n\n[MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/gradientUnits)",
+            "type": "\"userSpaceOnUse\" | \"objectBoundingBox\"",
+        },
+        {
+            "name": "href",
+            "description": "This attribute defines a reference to another `<linearGradient>` element that will be used as a template.\n\n[MDN](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/href)",
+            "type": "string",
+        },
+        {
+            "name": "spreadMethod",
+            "default": "\"pad\"",
+            "description": "This attribute indicates how the gradient behaves if it starts or ends inside the bounds of the shape containing the gradient.\n\n[MDN](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/spreadMethod)",
+            "type": "\"repeat\" | \"pad\" | \"reflect\"",
+        },
+        {
+            "name": "x1",
+            "default": "\"0%\"",
+            "description": "This attribute defines the x coordinate of the starting point of the vector gradient along which the linear gradient is drawn.\n\n[MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/x1)",
+            "type": "string | number",
+        },
+        {
+            "name": "x2",
+            "default": "\"100%\"",
+            "description": "This attribute defines the x coordinate of the ending point of the vector gradient along which the linear gradient is drawn.\n\n[MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/x2)",
+            "type": "string | number",
+        },
+        {
+            "name": "y1",
+            "default": "\"0%\"",
+            "description": "This attribute defines the y coordinate of the starting point of the vector gradient along which the linear gradient is drawn.\n\n[MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/y1)",
+            "type": "string | number",
+        },
+        {
+            "name": "y2",
+            "default": "\"0%\"",
+            "description": "This attribute defines the y coordinate of the ending point of the vector gradient along which the linear gradient is drawn.\n\n[MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/y2)",
+            "type": "string | number",
+        },
+    ],
     Polyline: [
         {
             name: "points",
@@ -100,7 +148,6 @@ Will **not** override \`viewBox\` if both are passed.
     Defs: [],
     Ellipse: [],
     G: [],
-    LinearGradient: [],
     Path: [],
     Rect: [],
     Stop: [],
