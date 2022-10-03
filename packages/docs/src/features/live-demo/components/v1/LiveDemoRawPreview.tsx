@@ -16,7 +16,7 @@ export const LiveDemoRawPreview = (_props: unknown): JSX.Element => {
     }
 
     return (
-        <RenderRaw language="html" sx={DocsSx.LiveDemo.rawPreview}>
+        <RenderRaw language="html" HighlightSx={DocsSx.LiveDemo.rawPreview}>
             <Element />
         </RenderRaw>
     )
