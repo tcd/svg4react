@@ -6,41 +6,41 @@
 ## Components
 
 
-|                 element                  | priority | component | props | demo  |
-| ---------------------------------------- | :------: | :-------: | :---: | :---: |
-| [`<animate>`][animate]                   |          |           |       |       |
-| [`<animateMotion>`][animateMotion]       |          |           |       |       |
-| [`<animateTransform>`][animateTransform] |          |           |       |       |
-| [`<circle>`][circle]                     |    5     |           |       |       |
-| [`<clipPath>`][clipPath]                 |          |           |       |       |
-| [`<defs>`][defs]                         |          |           |       |       |
-| [`<ellipse>`][ellipse]                   |    5     |           |       |       |
-| [`<filter>`][filter]                     |          |           |       |       |
-| [`<foreignObject>`][foreignObject]       |          |           |       |       |
-| [`<g>`][g]                               |          |           |       |       |
-| [`<image>`][image]                       |          |           |       |       |
-| [`<line>`][line]                         |    6     |           |       |       |
-| [`<linearGradient>`][linearGradient]     |          |     x     |       |       |
-| [`<marker>`][marker]                     |    2     |           |       |       |
-| [`<mask>`][mask]                         |          |           |       |       |
-| [`<metadata>`][metadata]                 |    1     |           |       |       |
-| [`<mpath>`][mpath]                       |          |           |       |       |
-| [`<path>`][path]                         |    8     |           |       |       |
-| [`<pattern>`][pattern]                   |    1     |           |       |       |
-| [`<polygon>`][polygon]                   |    6     |           |       |       |
-| [`<polyline>`][polyline]                 |    6     |           |       |       |
-| [`<radialGradient>`][radialGradient]     |          |           |       |       |
-| [`<rect>`][rect]                         |    5     |           |       |       |
-| [`<set>`][set]                           |          |           |       |       |
-| [`<svg>`][svg]                           |    10    |           |       |       |
-| [`<switch>`][switch]                     |          |           |       |       |
-| [`<symbol>`][symbol]                     |    9     |           |       |       |
-| [`<text>`][text]                         |    6     |           |       |       |
-| [`<textPath>`][textPath]                 |    4     |           |       |       |
-| [`<title>`][title]                       |    6     |           |       |       |
-| [`<tspan>`][tspan]                       |    4     |           |       |       |
-| [`<use>`][use]                           |    8     |           |       |       |
-| [`<view>`][view]                         |    0     |           |       |       |
+|                 element                  | priority | component | props | published | demo  |
+| ---------------------------------------- | :------: | :-------: | :---: | :-------: | :---: |
+| [`<animate>`][animate]                   |          |     x     |       |           |       |
+| [`<animateMotion>`][animateMotion]       |          |     x     |       |           |       |
+| [`<animateTransform>`][animateTransform] |          |     x     |       |           |       |
+| [`<circle>`][circle]                     |    5     |     x     |       |           |       |
+| [`<clipPath>`][clipPath]                 |          |           |       |           |       |
+| [`<defs>`][defs]                         |          |     x     |       |           |       |
+| [`<ellipse>`][ellipse]                   |    5     |     x     |       |           |       |
+| [`<filter>`][filter]                     |          |           |       |           |       |
+| [`<foreignObject>`][foreignObject]       |          |           |       |           |       |
+| [`<g>`][g]                               |          |     x     |       |           |       |
+| [`<image>`][image]                       |          |           |       |           |       |
+| [`<line>`][line]                         |    6     |     x     |       |           |       |
+| [`<linearGradient>`][linearGradient]     |          |     x     |       |           |       |
+| [`<marker>`][marker]                     |    2     |           |       |           |       |
+| [`<mask>`][mask]                         |          |           |       |           |       |
+| [`<metadata>`][metadata]                 |    1     |           |       |           |       |
+| [`<mpath>`][mpath]                       |          |           |       |           |       |
+| [`<path>`][path]                         |    8     |     x     |   x   |     x     |   x   |
+| [`<pattern>`][pattern]                   |    1     |           |       |           |       |
+| [`<polygon>`][polygon]                   |    6     |     x     |       |           |       |
+| [`<polyline>`][polyline]                 |    6     |     x     |       |           |       |
+| [`<radialGradient>`][radialGradient]     |          |           |       |           |       |
+| [`<rect>`][rect]                         |    5     |     x     |       |           |       |
+| [`<set>`][set]                           |          |           |       |           |       |
+| [`<svg>`][svg]                           |    10    |     x     |       |           |       |
+| [`<switch>`][switch]                     |          |           |       |           |       |
+| [`<symbol>`][symbol]                     |    9     |           |       |           |       |
+| [`<text>`][text]                         |    6     |           |       |           |       |
+| [`<textPath>`][textPath]                 |    4     |           |       |           |       |
+| [`<title>`][title]                       |    6     |           |       |           |       |
+| [`<tspan>`][tspan]                       |    4     |           |       |           |       |
+| [`<use>`][use]                           |    8     |     x     |       |           |       |
+| [`<view>`][view]                         |    0     |           |       |           |       |
 
 
 ## Filters
