@@ -14,6 +14,14 @@
     "[typescriptreact]": { "editor.defaultFormatter": "dbaeumer.vscode-eslint" },
     "cSpell.enabled": true,
     "cSpell.caseSensitive": false,
+    "cSpell.dictionaryDefinitions": [
+        // To specify a path relative to the workspace folder use ${workspaceFolder} or ${workspaceFolder:Name}
+        { "name": "svg", "path": "${workspaceFolder}/.vscode/dictionaries/svg.dict"},
+    ],
+    // List of dictionaries to use when checking files.
+    "cSpell.dictionaries": [
+        "svg",
+    ],
     "cSpell.words": [
         "Bézier",
         "currentcolor",
