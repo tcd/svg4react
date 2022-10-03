@@ -1,6 +1,7 @@
-import { ParameterParser, ProjectParser, ReferenceTypeParser, TypeParser } from "typedoc-json-parser"
+import { ProjectParser } from "typedoc-json-parser"
+import type * as parser from "typedoc-json-parser"
 
-export const gatherPropsData = (project: ProjectParser, propParam: ParameterParser): PropData[] => {
+export const gatherPropsData = (project: ProjectParser, propParam: parser.ParameterParser): PropData[] => {
     const result: PropData[] = []
 
     switch (propParam.type.kind) {
@@ -23,7 +24,7 @@ export const gatherPropsData = (project: ProjectParser, propParam: ParameterPars
     return result
 }
 
-export const parseReference = (project: ProjectParser, propType: ReferenceTypeParser): any => {
+const parseReference = (project: ProjectParser, propType: parser.ReferenceTypeParser): any => {
     const referenced = project.find(propType.id)
 
     return referenced

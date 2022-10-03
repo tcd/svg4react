@@ -1,17 +1,14 @@
-/* eslint-disable no-console */
 import { readFile } from "fs/promises"
 import { ProjectParser } from "typedoc-json-parser"
 import { writeJsonFile } from "write-json-file"
 
-import { PACKAGE_PATHS, packagePath } from "../helpers/paths-windows.js"
-import { parseProp } from "./parse-prop.js"
-// import type { ComponentData } from "./types.js"
+import { packagePath } from "../../helpers/paths-windows.js"
+import { parseProp } from "./helpers/parse-prop.js"
 // import { gatherComponentData } from "./gather-component-data.js"
 
-const main = async () => {
-    const inputPath = packagePath("core", ["tmp", "svg4react.d.json"])
+const main = async (): Promise<void> => {
+    const inputPath  = packagePath("core", ["tmp", "svg4react.d.json"])
     const outputPath = packagePath("dev", ["tmp", "LinearGradientAttributes.json"])
-    // console.log(inputPath)
     const inputString = await readFile(inputPath)
     // @ts-ignore: next-line
     const inputData = JSON.parse(inputString)

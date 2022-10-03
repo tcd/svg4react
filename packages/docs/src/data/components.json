@@ -44,6 +44,10 @@
 		"docComment": "A wrapper for the [`<polyline>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/polyline) element.\n\nThe `<polyline>` SVG element is a [basic shape](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Basic_Shapes) that creates straight lines connecting several points.\n\nTypically a `polyline` is used to create open shapes as the last point doesn't have to be connected to the first point.\n\nFor closed shapes see the [`<polygon>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/polygon) element."
 	},
 	{
+		"component": "Polygon",
+		"docComment": "A wrapper for the [`<polygon>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/polygon) element.\n\nThe `<polygon>` element defines a closed shape consisting of a set of connected straight line segments.\nThe last point is connected to the first point.\n\nFor open shapes, see the [`<polyline>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/polyline) element."
+	},
+	{
 		"component": "Rect",
 		"docComment": "A wrapper for the [`<rect>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/rect) element.\n\nThe `<rect>` element is a [basic SVG shape](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Basic_Shapes) that draws rectangles,\ndefined by their position, width, and height.\n\nThe rectangles may have their corners rounded."
 	},
@@ -54,5 +58,9 @@
 	{
 		"component": "Svg",
 		"docComment": "A wrapper for the [`<svg>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/svg) element.\n\nThe `<svg>` element is a container that defines a new coordinate system and [viewport](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/viewBox).\n\nIt is used as the outermost element of SVG documents, but it can also be used to embed an SVG fragment inside an SVG or HTML document."
+	},
+	{
+		"component": "Use",
+		"docComment": "A wrapper for the [`<use>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/use) element.\n\nThe `<use>` element takes nodes from within the SVG document, and duplicates them somewhere else.\n\nMost attributes on `use` do not override those already on the element referenced by `use`.\n\nOnly the attributes `x`, `y`, `width`, `height` and `href` on the use element will override those set on the referenced element.\n\nHowever, any other attributes not set on the referenced element will be applied to the `use` element."
 	}
 ]

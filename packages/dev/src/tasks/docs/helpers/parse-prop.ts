@@ -1,7 +1,7 @@
 import { ProjectParser } from "typedoc-json-parser"
 import type * as parser from "typedoc-json-parser"
 
-export const parseProp = (project: ProjectParser, propParam: parser.InterfacePropertyParser) => {
+export const parseProp = (project: ProjectParser, propParam: parser.InterfacePropertyParser): PropData => {
     const result: PropData = {}
 
     // =========================================================================
@@ -52,7 +52,7 @@ export const parseProp = (project: ProjectParser, propParam: parser.InterfacePro
 
         case "reference":
             console.log("reference")
-            // result.push(parseReference(project, propParam as ReferenceTypeParser))
+            // result.type = parseReference(project, propParam as unknown as parser.ReferenceTypeParser)
             break
         case "intersection":
             console.log("intersection")
@@ -66,13 +66,17 @@ export const parseProp = (project: ProjectParser, propParam: parser.InterfacePro
     return result
 }
 
-export const parseReference = (project: ProjectParser, propType: parser.ReferenceTypeParser): any => {
+// =============================================================================
+// Type Parsers
+// =============================================================================
+
+const parseReference = (project: ProjectParser, propType: parser.ReferenceTypeParser): any => {
     const referenced = project.find(propType.id)
 
     return referenced
 }
 
-export const parseUnion = (prop: parser.InterfacePropertyParser): string => {
+const parseUnion = (prop: parser.InterfacePropertyParser): string => {
     // @ts-ignore: next-line
     const types = prop.type.toJSON().types
     console.log(types)
