@@ -2,7 +2,7 @@ import { join } from "path"
 import { readFileSync } from "fs"
 import inquirer from "inquirer"
 
-import { PACKAGE_PATHS } from "../../../helpers/paths.js"
+import { PACKAGE_PATHS } from "../../../helpers/paths-windows.js"
 import { addTag } from "./add-tag.js"
 import { pushTag } from "./push-tag.js"
 import { getLastTag } from "./get-last-tag.js"

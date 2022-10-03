@@ -2,25 +2,16 @@
     "private": true,
     "name": "@svg4react/monorepo",
     "scripts": {
-        "tag": "node ./etc/scripts/tag/main.mjs"
+        "tag": "node ./packages/dev/build/tasks/core/tag/main.js"
     },
     "devDependencies": {
         "@types/node": "^18.7.18",
         "@typescript-eslint/eslint-plugin": "^5.37.0",
         "@typescript-eslint/parser": "^5.37.0",
-        "cross-env": "^7.0.3",
-        "del": "^7.0.0",
         "eslint": "^8.23.1",
         "eslint-plugin-jsdoc": "^39.3.6",
         "eslint-plugin-react": "^7.31.8",
         "eslint-plugin-react-hooks": "^4.6.0",
-        "globby": "^13.1.2",
-        "inquirer": "^9.1.1",
-        "move-file": "^3.0.0",
-        "rimraf": "^3.0.2",
-        "semver": "^7.3.7",
-        "semver-regex": "^4.0.5",
-        "shelljs": "^0.8.5",
         "typescript": "^4.8.3"
     }
 }

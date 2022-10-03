@@ -1,7 +1,7 @@
 import { readFile, writeFile } from "fs/promises"
 import { join } from "path"
 
-import { PACKAGE_PATHS } from "../../helpers/index.js"
+import { PACKAGE_PATHS } from "../../helpers/paths-windows.js"
 
 const header = `
 // =============================================================================

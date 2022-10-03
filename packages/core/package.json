@@ -23,7 +23,7 @@
         "build:clean": "cross-env rimraf ./dist/**/*",
         "build:esm": "cross-env tsc",
         "build:types": "cross-env rollup -c ./rollup.config.js",
-        "build:tidy": "node ../../etc/scripts/consolidate-types.mjs",
+        "build:tidy": "node ../dev/build/tasks/core/consolidate-types.js",
 
         "build:docs": "cross-env typedoc --options ./typedoc.json",
         "tag": "node ../dev/build/tasks/core/tag/main.js",
