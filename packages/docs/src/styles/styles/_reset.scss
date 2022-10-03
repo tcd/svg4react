@@ -1,0 +1,27 @@
+@use "@variables" as vars;
+
+// code,
+code:not([class]) {
+    font-family: vars.getFont("monospace");
+    font-optical-sizing: auto;
+    font-size: 13.6px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: initial;
+}
+
+kbd:not([class]) {
+    padding: 0.2em 0.4em;
+    margin: 0;
+    font-size: 85%;
+    // background-color: rgba(110, 118, 129, 0.4);
+    background-color: rgba(175, 184, 193, 0.2);
+    border-radius: 6px;
+    font-family: vars.getFont("monospace");
+}
+
+// pre:not([class]) {
+//     // font-family: "Roboto Mono", "Courier New", Courier, monospace;
+//     margin: 0px 0px;
+// }

@@ -14,11 +14,10 @@
 //     --dark-plus-escape: #D7BA7D;
 // }
 
-
 pre[class*="language-"],
 code[class*="language-"] {
 	color: #d4d4d4;
-	font-size: 13px;
+	font-size: 13.6px;
 	text-shadow: none;
     font-family: "Roboto Mono", "Courier New", Courier, monospace;
 	direction: ltr;
@@ -53,13 +52,13 @@ code[class*="language-"] *::selection {
 
 pre[class*="language-"] {
 	padding: 1em;
-	margin: .5em 0;
+    margin: 0px 0px;
 	overflow: auto;
 	background: #1e1e1e;
 }
 
 :not(pre) > code[class*="language-"] {
-	padding: .1em .3em;
+	// padding: .1em .3em;
 	border-radius: .3em;
 	color: #db4c69;
 	background: #f9f2f4;

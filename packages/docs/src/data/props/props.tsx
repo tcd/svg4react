@@ -9,22 +9,22 @@ export const PropData: Record<Svg4ReactComponent, PropData[]> = {
         },
         {
             name: "cx",
-            type: components.numberOrString,
+            type: "number | string",
             description: "The x-axis coordinate of the center of the circle.",
         },
         {
             name: "cy",
-            type: components.numberOrString,
+            type: "number | string",
             description: "The y-axis coordinate of the center of the circle.",
         },
         {
             name: "r",
-            type: components.numberOrString,
+            type: "number | string",
             description: "The radius of the circle.\n\nA value lower or equal to zero disables rendering of the circle.",
         },
         {
             name: "pathLength",
-            type: components.numberOrString,
+            type: "number | string",
             description: "The total length for the circle's circumference, in user units.",
         },
     ],
@@ -43,7 +43,7 @@ Values, in order, as a string or number, for:
         },
         {
             name: "pathLength",
-            type: components.number,
+            type: "number",
             description: "Defines the total path length in user units.",
             default: "none",
         },
@@ -105,7 +105,7 @@ Values, in order, as a string or number, for:
         },
         {
             name: "pathLength",
-            type: components.number,
+            type: "number",
             description: "Defines the total path length in user units.",
             default: "none",
         },
@@ -113,7 +113,7 @@ Values, in order, as a string or number, for:
     Svg: [
         {
             name: "size",
-            type: components.string,
+            type: "string",
             description: "Shorthand for setting both `width` and `height`.",
         },
         {
@@ -131,7 +131,7 @@ Will **not** override \`viewBox\` if both are passed.
         },
         {
             name: "viewBox",
-            type: components.string,
+            type: "string",
             description: "The SVG viewport coordinates for the current SVG fragment.\n\nSee [MDN Web Docs - viewBox](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/viewBox).",
         },
         {

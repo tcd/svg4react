@@ -72,7 +72,7 @@ const webpackConfig = {
         }),
     ],
     resolve: {
-        extensions: ["*", ".js", ".jsx", ".tsx", ".ts"],
+        extensions: ["*", ".js", ".jsx", ".tsx", ".ts", ".scss"],
         modules: [__dirname, "src", "node_modules"],
         plugins: [
             new TsconfigPathsPlugin.TsconfigPathsPlugin(),
@@ -87,6 +87,7 @@ const webpackConfig = {
         },
         alias: {
             "path": require.resolve("path-browserify"),
+            "@variables": path.join(APP_DIR, "styles", "_variables.scss"),
         },
     },
     module: {
