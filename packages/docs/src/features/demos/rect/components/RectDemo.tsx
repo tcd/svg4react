@@ -11,7 +11,6 @@ export const RectDemo = (_props: unknown): JSX.Element => {
         <LiveDemo
             id="rect-demo-1"
             title="Rect Demo"
-            componentName="Rect"
             code={code}
             scope={scope}
         />

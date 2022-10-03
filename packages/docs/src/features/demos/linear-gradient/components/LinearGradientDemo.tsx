@@ -11,7 +11,6 @@ export const LinearGradientDemo = (_props: unknown): JSX.Element => {
         <LiveDemo
             id="linear-gradient-demo-1"
             title="Linear Gradient Demo"
-            componentName="LinearGradient"
             code={code}
             scope={scope}
         />

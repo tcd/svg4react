@@ -6,7 +6,7 @@ import { DocsSx } from "@app/theme"
 export interface CardProps {
     id?: string
     title: string | React.ReactNode
-    componentName?: string
+    componentName?: Svg4ReactComponent
     suffix?: string
     children: React.ReactNode
     sx?: SxProps

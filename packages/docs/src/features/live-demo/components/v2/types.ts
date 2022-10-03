@@ -3,7 +3,6 @@ import { WithLiveProps } from "@app/features/live-demo"
 export type LiveDemo2Props = {
     id: string
     title: string | React.ReactNode
-    componentName?: Svg4ReactComponent
     /** The code that should be rendered, apart from the user's edits */
     code: string
     /** Accepts custom globals that the `code` can use */
