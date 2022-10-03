@@ -20,7 +20,7 @@ code[class*="language-"] {
 	color: #d4d4d4;
 	font-size: 13px;
 	text-shadow: none;
-	font-family: Menlo, Monaco, Consolas, "Andale Mono", "Ubuntu Mono", "Courier New", monospace;
+    font-family: "Roboto Mono", "Courier New", Courier, monospace;
 	direction: ltr;
 	text-align: left;
 	white-space: pre;
@@ -164,6 +164,7 @@ pre[class*="language-"] {
         color: #9cdcfe;
     }
 
+    &.type,
     &.namespace,
     &.class-name,
     &.maybe-class-name {
