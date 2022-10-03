@@ -16,6 +16,7 @@ export const SIDE_NAV_LINKS: (ILinkData | ILinksData)[] = [
             { title: "Line",           to: "/demos/line" },
             { title: "LinearGradient", to: "/demos/linear-gradient" },
             { title: "Path",           to: "/demos/path" },
+            { title: "Polygon",        to: "/demos/polygon" },
             { title: "Polyline",       to: "/demos/polyline" },
             { title: "Rect",           to: "/demos/rect" },
             { title: "Svg",            to: "/demos/svg" },

@@ -13,10 +13,12 @@ export declare global {
         | "Line"
         | "LinearGradient"
         | "Path"
+        | "Polygon"
         | "Polyline"
         | "Rect"
         | "Stop"
         | "Svg"
+        | "Use"
 
     export interface PropData {
         name?: string

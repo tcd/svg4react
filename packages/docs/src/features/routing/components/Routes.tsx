@@ -11,6 +11,7 @@ import { CirclePage } from "@app/features/demos"
 import { LinearGradientPage } from "@app/features/demos"
 import { LinePage } from "@app/features/demos"
 import { PathPage } from "@app/features/demos"
+import { PolygonPage } from "@app/features/demos"
 import { PolylinePage } from "@app/features/demos"
 import { RectPage } from "@app/features/demos"
 import { SvgPage } from "@app/features/demos"
@@ -61,6 +62,7 @@ const routes = (): RouteObject[] => {
                         { path: "linear-gradient", element: <LinearGradientPage /> },
                         { path: "line",            element: <LinePage />           },
                         { path: "path",            element: <PathPage />           },
+                        { path: "polygon",         element: <PolygonPage />        },
                         { path: "polyline",        element: <PolylinePage />       },
                         { path: "rect",            element: <RectPage />           },
                         { path: "svg",             element: <SvgPage />            },
