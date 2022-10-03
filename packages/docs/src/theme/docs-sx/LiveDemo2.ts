@@ -63,11 +63,12 @@ const preview: PaperProps = {
         // mx: 3,
         // p: 4,
         display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
+        flexDirection: "column",
+        // justifyContent: "center",
+        // alignItems: "center",
 
-        position: "relative",
-        maxHeight: "50vh",
+        // position: "relative",
+        // maxHeight: "50vh",
     },
 }
 
@@ -99,8 +100,9 @@ const rawPreview_highlight: SxProps = (theme: Theme) => ({
 const rawPreview_box: SxProps = (theme: Theme) => ({
     width: "100%",
     height: "100%",
-    [theme.breakpoints.down("tablet")]: {
-    },
+    flexGrow: 1,
+    // [theme.breakpoints.down("tablet")]: {
+    // },
 })
 
 const errorWrapper: SxProps = {

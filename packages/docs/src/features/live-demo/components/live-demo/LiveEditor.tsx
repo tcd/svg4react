@@ -23,6 +23,7 @@ const options: customMonaco.editor.IStandaloneEditorConstructionOptions = {
     // @ts-ignore: next-line
     "bracketPairColorization.enabled": false,
     fixedOverflowWidgets: true,
+    automaticLayout: true,
 }
 
 export const LiveEditor = (_props: unknown) => {

@@ -1,14 +1,14 @@
 import { Svg, Circle } from "svg4react"
 
 import { randomColor } from "@app/util"
-import { LiveDemo2 } from "@app/features/live-demo"
+import { LiveDemo } from "@app/features/live-demo"
 
 export const CircleDemo = (_props: unknown): JSX.Element => {
 
     const scope = { Svg, Circle }
 
     return (
-        <LiveDemo2
+        <LiveDemo
             id="circle-demo-1"
             title="Demo"
             code={code}

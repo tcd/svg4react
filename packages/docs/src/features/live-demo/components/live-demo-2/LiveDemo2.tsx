@@ -25,4 +25,4 @@ const _LiveDemo2 = (props: LiveDemo2Props): JSX.Element => {
     )
 }
 
-export const LiveDemo2 = withLive(_LiveDemo2)
+export const LiveDemo = withLive(_LiveDemo2)

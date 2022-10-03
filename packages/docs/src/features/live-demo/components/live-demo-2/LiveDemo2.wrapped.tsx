@@ -1,40 +1,26 @@
 import { useState } from "react"
-import { Paper, Switch, FormControlLabel, Stack } from "@mui/material"
+import { Paper } from "@mui/material"
 
 import Grid from "@mui/material/Unstable_Grid2"
 
 import { DocsSx } from "@app/theme"
 import { LiveEditor2 } from "./LiveEditor2"
 import { LiveDemo2Error } from "./LiveDemo2Error"
-import { Live2DemoPreview } from "./LiveDemo2Preview"
-import { LiveDemo2RawPreview } from "./LiveDemo2RawPreview"
+import { Preview } from "./preview"
 import type { LiveDemo2Props } from "./types"
 
 export const LiveDemo2Wrapped = (props: LiveDemo2Props): JSX.Element => {
 
     const { id } = props
 
-    const [showRaw, setShowRaw] = useState(true)
+    const [showRaw, setShowRaw] = useState(false)
 
-    const handleToggleRaw = () => {
-        setShowRaw(!showRaw)
-    }
-
-    const handleReset = (...args: Array<unknown>): void => {
-        // reset the state of your app so the error doesn't happen again
+    const handlePreviewChange = (show: boolean) => {
+        setShowRaw(show)
     }
 
     return (
         <Paper id={id} {...DocsSx.LiveDemo2.root}>
-
-            <Stack direction="row" sx={{ mb: 2 }}>
-                <FormControlLabel
-                    label="show raw output"
-                    control={<Switch />}
-                    checked={showRaw}
-                    onChange={handleToggleRaw}
-                />
-            </Stack>
 
             <Grid {...DocsSx.LiveDemo2.grid}>
 
@@ -45,27 +31,15 @@ export const LiveDemo2Wrapped = (props: LiveDemo2Props): JSX.Element => {
                 </Grid>
 
                 <Grid mobile={12} laptop={6}>
-                    <Paper {...DocsSx.LiveDemo2.preview.root}>
-                        {showRaw ? <LiveDemo2RawPreview /> : <Live2DemoPreview />}
-                    </Paper>
+                    <Preview
+                        showRaw={showRaw}
+                        onChange={handlePreviewChange}
+                    />
                 </Grid>
 
             </Grid>
 
             <LiveDemo2Error />
-            {/* <Box sx={DocsSx.LiveDemo2.container}>
-
-                <Paper {...DocsSx.LiveDemo2.editor}>
-                    <LiveEditor2 />
-                </Paper>
-
-                <Paper {...DocsSx.LiveDemo2.preview}>
-                    <ErrorBoundary onReset={handleReset} FallbackComponent={ErrorFallback} onError={handleBoundaryError}>
-                        {showRaw ? <LiveDemo2RawPreview /> : <Live2DemoPreview /> }
-                    </ErrorBoundary>
-                </Paper>
-
-            </Box> */}
 
         </Paper>
     )

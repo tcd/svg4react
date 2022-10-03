@@ -4,7 +4,7 @@ import { Box } from "@mui/material"
 
 import { DocsSx } from "@app/theme"
 
-export const Live2DemoPreview = (_props: unknown): JSX.Element => {
+export const LivePreview = (_props: unknown): JSX.Element => {
 
     const {
         // TODO: File issue with https://github.com/FormidableLabs/react-live for better typings
