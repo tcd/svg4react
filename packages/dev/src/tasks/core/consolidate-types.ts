@@ -1,6 +1,8 @@
 // import { globby } from "globby"
 import { deleteAsync } from "del"
 import { rename } from "fs/promises"
+import rimraf from "rimraf"
+// import rimraf from "rimraf"
 
 import { packagePath as packagePathPosix } from "../../helpers/paths-posix.js"
 import { packagePath as packagePathWindows } from "../../helpers/paths-windows.js"
@@ -28,9 +30,9 @@ const main = async (): Promise<void> => {
     }
 
     for (const [name, files] of Object.entries(toDelete)) {
-        _deleted = await deleteAsync([files], { dryRun })
-        if (dryRun) { console.log(_deleted) }
-        console.log(`${name} files deleted`)
+        await rimraf(files, {}, (error: Error) => { console.error(error) })
+        // if (dryRun) { console.log(_deleted) }
+        // console.log(`${name} files deleted`)
     }
 
     if (!dryRun) {
