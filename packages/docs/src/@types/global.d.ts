@@ -1,4 +1,3 @@
-import type { ReactNode } from "react"
 import type { Location } from "react-router-dom"
 
 export declare global {
@@ -21,7 +20,7 @@ export declare global {
 
     export interface PropData {
         name?: string
-        type?: string | ReactNode
+        type?: string
         required?: boolean
         default?: string
         description?: string
