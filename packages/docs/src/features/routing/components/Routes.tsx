@@ -15,6 +15,7 @@ import { PathPage } from "@app/features/demos"
 import { PolygonPage } from "@app/features/demos"
 import { PolylinePage } from "@app/features/demos"
 import { RectPage } from "@app/features/demos"
+import { StopPage } from "@app/features/demos"
 import { SvgPage } from "@app/features/demos"
 
 // import { PlaygroundPage } from "@app/features/playground"
@@ -67,6 +68,7 @@ const routes = (): RouteObject[] => {
                         { path: "polygon",         element: <PolygonPage />        },
                         { path: "polyline",        element: <PolylinePage />       },
                         { path: "rect",            element: <RectPage />           },
+                        { path: "stop",            element: <StopPage />           },
                         { path: "svg",             element: <SvgPage />            },
                     ],
                 },
