@@ -36,6 +36,12 @@ export const reducers = {
     closeDrawer: (state: CoreState) => {
         state.drawerOpened = false
     },
+    // -------------------------------------------------------------------------
+    // Drawer Section
+    // -------------------------------------------------------------------------
+    closeAllDrawerSections: (state: CoreState) => {
+        state.openedDrawerSections = []
+    },
     openDrawerSection: (state: CoreState, { payload }: PayloadAction<string>) => {
         state.openedDrawerSections.push(payload)
     },

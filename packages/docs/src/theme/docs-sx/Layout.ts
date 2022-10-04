@@ -41,8 +41,8 @@ const main: SxProps = {
 
 const headerSpacer: SxProps = (theme: Theme) => ({
 
-    width: `calc(100% - ${drawerWidth}px)`,
-    ml: `${drawerWidth}px`,
+    width: `calc(100% - ${drawerWidth})`,
+    ml: drawerWidth,
 
     [theme.breakpoints.down("laptop")]: {
         width: "100%",
@@ -76,6 +76,12 @@ const toolbar: SxProps = {
 // Drawer
 // =============================================================================
 
+const mobileDrawer: SxProps = (theme: Theme) => ({
+    // ..._navBg(theme, 0.9),
+    background: "#121212",
+    width: drawerWidth,
+})
+
 const drawer: SxProps = (theme: Theme) => ({
     width: drawerWidth,
     flexShrink: 0,
@@ -106,11 +112,13 @@ const drawerLogo: SxProps = {
     // backgroundColor: "transparent",
 }
 
-const mobileDrawer: SxProps = (theme: Theme) => ({
-    // ..._navBg(theme, 0.9),
-    background: "#121212",
-    width: ThemeVars.drawerWidth + "px",
-})
+const navItemWithChildren: SxProps = {
+    // minHeight: 48,
+    // justifyContent: open ? "initial" : "center",
+    justifyContent: "center",
+    // px: 2.5,
+}
+
 
 // =============================================================================
 // All Together
@@ -118,6 +126,7 @@ const mobileDrawer: SxProps = (theme: Theme) => ({
 
 export const Layout = {
     root,
+    main,
     header,
     headerSpacer,
     toolbar,
@@ -125,5 +134,5 @@ export const Layout = {
     drawerHeader,
     drawerLogo,
     mobileDrawer,
-    main,
+    navItemWithChildren,
 }
