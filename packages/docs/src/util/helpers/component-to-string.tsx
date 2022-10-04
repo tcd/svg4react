@@ -1,18 +1,19 @@
 import { renderToString } from "react-dom/server"
 import { html_beautify, HTMLBeautifyOptions } from "js-beautify"
+import { decode } from "html-entities"
 
 export const componentToString = (el: React.ReactElement, wrap: boolean = false): string => {
-    const rendered = renderToString(el)
+    let result = renderToString(el)
+    result = decode(result)
     if (wrap) {
-        const formatted = html_beautify(rendered, options_wrap)
-
-        const reFormatted = beautify_wrap(formatted)
-        return reFormatted
+        result = html_beautify(result, options_wrap)
+        result  = beautify_wrap(result)
     } else {
-        const formatted = html_beautify(rendered, options_noWrap)
-        const reFormatted = beautify_nowrap(formatted)
-        return reFormatted
+        result = html_beautify(result, options_noWrap)
+        result = beautify_nowrap(result)
     }
+
+    return result
 }
 
 // =============================================================================

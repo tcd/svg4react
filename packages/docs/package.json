@@ -40,6 +40,7 @@
         "cross-env": "^7.0.3",
         "css-loader": "^6.7.1",
         "gh-pages": "^4.0.0",
+        "html-entities": "^2.3.3",
         "html-webpack-plugin": "^5.5.0",
         "js-beautify": "^1.14.6",
         "lodash": "^4.17.21",
