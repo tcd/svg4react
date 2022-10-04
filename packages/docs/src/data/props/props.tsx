@@ -152,6 +152,38 @@ Values, in order, as a string or number, for:
             default: "none",
         },
     ],
+    Stop: [
+        {
+            "name": "color",
+            "description": "Used to provide a potential indirect value (currentcolor) for\nthe `fill`, `stroke`, `stop-color`, `flood-color`, and `lighting-color` attributes.\n\nSee [MDN Web Docs - `color`](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/color)",
+            "type": "string",
+        },
+        {
+            "name": "display",
+            "description": "Lets you control the rendering of graphical or container elements.\n\n - [MDN Web Docs - `display` (SVG)](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/display)\n\n- [MDN Web Docs - `display` (CSS)](https://developer.mozilla.org/en-US/docs/Web/CSS/display)\n",
+            "type": "csstype.Property.Display",
+        },
+        {
+            "name": "offset",
+            "description": "Defines where the gradient stop is placed along the gradient vector.",
+            "type": "string | number",
+        },
+        {
+            "name": "stopColor",
+            "description": "Defines the color of the gradient stop.\nIt can be used as a CSS property.\n\nSee [MDN Web Docs - `stop-color`](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stop-color)",
+            "type": "string",
+        },
+        {
+            "name": "stopOpacity",
+            "description": "Defines the opacity of the gradient stop.\nIt can be used as a CSS property.\n\nSee [MDN Web Docs - `stop-opacity`](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stop-opacity)",
+            "type": "number",
+        },
+        {
+            "name": "visibility",
+            "description": "Lets you control the visibility of graphical elements.\n\nSee [MDN Web Docs - `visibility`](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/visibility)",
+            "type": "csstype.Property.Visibility",
+        },
+    ],
     Svg: [
         {
             name: "size",
@@ -191,6 +223,5 @@ Will **not** override \`viewBox\` if both are passed.
     Path: [],
     Polygon: [],
     Rect: [],
-    Stop: [],
     Use: [],
 }
