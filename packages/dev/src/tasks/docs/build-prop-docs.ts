@@ -5,7 +5,6 @@ import { writeJsonFile } from "write-json-file"
 
 import { packagePath } from "../../helpers/paths-windows.js"
 import { parseReflectionChild } from "./helpers/parse-parser/parse-reflection-child.js"
-// import { gatherComponentData } from "./gather-component-data.js"
 
 const propTypeMap: Partial<Record<Svg4ReactComponent, string>> = {
     "LinearGradient": "_LinearGradientAttributes",
@@ -16,8 +15,8 @@ const propTypeMap: Partial<Record<Svg4ReactComponent, string>> = {
 const main = async (): Promise<void> => {
     const inputPath  = packagePath("core", ["tmp", "svg4react.d.json"])
     const outputPath = packagePath("dev", ["tmp", "props.json"])
-    const inputString = await readFile(inputPath)
-    // @ts-ignore: next-line
+
+    const inputString = await readFile(inputPath, { encoding: "utf-8" })
     const inputData = JSON.parse(inputString)
     // console.log(input)
 
@@ -41,7 +40,6 @@ const main = async (): Promise<void> => {
 
         allProps[component] = attributes
     }
-
 
     await writeJsonFile(outputPath, allProps)
     console.log(`${outputPath} written`)

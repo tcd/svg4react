@@ -27,8 +27,8 @@ const components = [
 const main = async (): Promise<void> => {
     const inputPath  = packagePath("core", ["tmp", "svg4react.d.json"])
     const outputPath = packagePath("docs", ["src", "data", "components.json"])
-    const inputString = await readFile(inputPath)
-    // @ts-ignore: next-line
+
+    const inputString = await readFile(inputPath, { encoding: "utf-8" })
     const inputData = JSON.parse(inputString)
     // console.log(input)
 

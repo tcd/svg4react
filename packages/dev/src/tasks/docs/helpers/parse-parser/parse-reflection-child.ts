@@ -1,5 +1,5 @@
 import { ProjectParser } from "typedoc-json-parser"
-import type * as parser from "typedoc-json-parser"
+// import type * as parser from "typedoc-json-parser"
 
 export const parseReflectionChild = (project: ProjectParser, reflection: any): PropData => {
     // // console.log(propParam)
