@@ -12,11 +12,12 @@
 //     --dark-plus-type: #4EC9B0;
 //     --dark-plus-punctuation: #808080;
 //     --dark-plus-escape: #D7BA7D;
+//     --dark-plus-regex: #D16969;
 // }
 
 pre[class*="language-"],
 code[class*="language-"] {
-	color: #d4d4d4;
+	color: var(--dark-plus-fg);
 	font-size: 13.6px;
 	text-shadow: none;
     font-family: "Roboto Mono", "Courier New", Courier, monospace;
@@ -69,25 +70,25 @@ pre[class*="language-"] {
 /* ========================================================================== */
 
 // span.token.tag.spread.punctuation {
-//     color: #4EC9B0 !important;
+//     color: var(--dark-plus-type) !important;
 // }
 // span.token.tag.script.language-javascript.script-punctuation.punctuation {
-//     color: #C586C0 !important;
+//     color: var(--dark-plus-control) !important;
 // }
 
 .token {
     &.doctype {
         .token.doctype-tag {
-            color: #569CD6;
+            color: var(--dark-plus-keyword);
         }
         .token.name {
-            color: #9cdcfe;
+            color: var(--dark-plus-variable);
         }
     }
 
     &.comment,
     &.prolog {
-        color: #6a9955;
+        color: var(--dark-plus-comment);
     }
 
     &.property,
@@ -97,7 +98,7 @@ pre[class*="language-"] {
     &.symbol,
     &.deleted,
     &.unit {
-        color: #b5cea8;
+        color: var(--dark-plus-number);
     }
 
     &.selector,
@@ -106,13 +107,13 @@ pre[class*="language-"] {
     &.char,
     &.builtin,
     &.inserted {
-        color: #ce9178;
+        color: var(--dark-plus-string);
     }
 }
 
 .language-html .language-css .token.punctuation,
 .language-html .language-javascript .token.punctuation {
-	color: #d4d4d4;
+	color: var(--dark-plus-fg);
 }
 
 .language-css .token.string.url {
@@ -130,11 +131,11 @@ pre[class*="language-"] {
     }
 
     &.regex {
-        color: #d16969;
+        color: var(--dark-plus-regex);
     }
 
     &.punctuation {
-        color: #d4d4d4;
+        color: var(--dark-plus-fg);
     }
 
     &.entity,
@@ -144,13 +145,13 @@ pre[class*="language-"] {
     &.punctuation.interpolation-punctuation,
     &.keyword,
     &.boolean {
-        color: #569CD6;
+        color: var(--dark-plus-keyword);
     }
 
     &.operator,
     &.keyword.module,
     &.keyword.control-flow {
-        color: #c586c0;
+        color: var(--dark-plus-control);
     }
 
     &.constant,
@@ -160,41 +161,41 @@ pre[class*="language-"] {
     &.parameter,
     &.property,
     &.variable {
-        color: #9cdcfe;
+        color: var(--dark-plus-variable);
     }
 
     &.type,
     &.namespace,
     &.class-name,
     &.maybe-class-name {
-        color: #4ec9b0;
+        color: var(--dark-plus-type);
     }
 
     &.escape {
-        color: #d7ba7d;
+        color: var(--dark-plus-escape);
     }
 
     &.function {
-        color: #dcdcaa;
+        color: var(--dark-plus-function);
         .token.maybe-class-name {
-            color: #dcdcaa;
+            color: var(--dark-plus-function);
         }
     }
 
     &.atrule {
-        color: #ce9178;
+        color: var(--dark-plus-string);
 
         .token.rule {
-            color: #c586c0;
+            color: var(--dark-plus-control);
         }
         .token.url {
-            color: #9cdcfe;
+            color: var(--dark-plus-variable);
 
             .token.function {
-                color: #dcdcaa;
+                color: var(--dark-plus-function);
             }
             .token.punctuation {
-                color: #d4d4d4;
+                color: var(--dark-plus-fg);
             }
         }
     }
@@ -202,11 +203,11 @@ pre[class*="language-"] {
 
 .token.imports .token.maybe-class-name,
 .token.exports .token.maybe-class-name {
-	color: #9cdcfe;
+	color: var(--dark-plus-variable);
 }
 
 .token.selector {
-	color: #d7ba7d;
+	color: var(--dark-plus-escape);
 }
 
 .token.tag .token.punctuation {
@@ -218,12 +219,12 @@ pre[class*="language-"] {
 }
 
 .token.attr-name {
-	color: #9cdcfe;
+	color: var(--dark-plus-variable);
 }
 
 .token.attr-value,
 .token.attr-value .token.punctuation {
-	color: #ce9178;
+	color: var(--dark-plus-string);
 }
 
 .token.attr-value .token.punctuation.attr-equals {
@@ -242,17 +243,17 @@ pre[class*="language-typescript"],
 code[class*="language-typescript"],
 pre[class*="language-tsx"],
 code[class*="language-tsx"] {
-	color: #9cdcfe;
+	color: var(--dark-plus-variable);
 }
 
 pre[class*="language-css"],
 code[class*="language-css"] {
-	color: #ce9178;
+	color: var(--dark-plus-string);
 }
 
 pre[class*="language-html"],
 code[class*="language-html"] {
-	color: #d4d4d4;
+	color: var(--dark-plus-fg);
 }
 
 pre[class*="language-props"],
@@ -262,7 +263,7 @@ code[class*="language-props"] {
 
 .language-regex {
     .token.anchor {
-        color: #dcdcaa;
+        color: var(--dark-plus-keyword);
     }
 }
 
