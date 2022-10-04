@@ -10,6 +10,7 @@ import { parseReflectionChild } from "./helpers/parse-parser/parse-reflection-ch
 const propTypeMap: Partial<Record<Svg4ReactComponent, string>> = {
     "LinearGradient": "_LinearGradientAttributes",
     "Ellipse":        "_EllipseAttributes",
+    "Stop":           "StopAttributes",
 }
 
 const main = async (): Promise<void> => {
@@ -28,7 +29,7 @@ const main = async (): Promise<void> => {
         const attributes = []
 
         const propType = project.typeAliases.find(x => x.name === propTypeName)
-        if (propType.type.kind !== "reflection") {
+        if (propType?.type?.kind !== "reflection") {
             console.error(`not a reflection: ${propType}`)
             process.exit(1)
         }

@@ -23,12 +23,33 @@ export const parseReflectionChild = (project: ProjectParser, reflection: any): P
 
     for (const segment of reflection?.comment?.blockTags ?? []) {
 
-        if (segment.name === "see") {
+        // ---------------------------------------------------------------------
+        // `@see`
+        // ---------------------------------------------------------------------
+
+        if (segment?.tag === "@see") {
+            let content = segment.content.map(x => x.text).join("")
+            if (content.startsWith("[")) {
+                content = "See " + content
+            }
+            commentSegments.push(content)
+        }
+
+        if (segment?.name === "see") {
             if (segment.text.startsWith("[")) {
                 commentSegments.push(segment.text)
             } else {
                 commentSegments.push(`[see ${segment.text}](${segment.text})`)
             }
+        }
+
+        // ---------------------------------------------------------------------
+        // `@defaultValue`
+        // ---------------------------------------------------------------------
+
+        if (segment?.tag === "defaultValue" || segment?.tag === "default") {
+            debugger
+            result.default = segment.content
         }
 
         if (segment.name === "defaultValue" || segment.name === "default") {
@@ -44,22 +65,20 @@ export const parseReflectionChild = (project: ProjectParser, reflection: any): P
 
     switch (reflection.type.type) {
         case "intrinsic":
-            // console.log("intrinsic")
-            // @ts-ignore: next-line
             result.type = reflection.type.name
             break
         case "union":
-            // console.log("union")
             result.type = parseUnion(reflection)
             break
         case "tuple":
             result.type = parseTuple(reflection)
             break
 
+        // FIXME: parse reference type
         case "reference":
-            console.log("reference")
-            // result.type = parseReference(project, propParam as unknown as parser.ReferenceTypeParser)
+            result.type = parseReference(project, reflection)
             break
+
         case "intersection":
             console.log("intersection")
             break
@@ -76,8 +95,11 @@ export const parseReflectionChild = (project: ProjectParser, reflection: any): P
 // Type Parsers
 // =============================================================================
 
-const parseReference = (project: ProjectParser, propType: parser.ReferenceTypeParser): any => {
-    const referenced = project.find(propType.id)
+const parseReference = (project: ProjectParser, prop): any => {
+    debugger
+    return [prop.type.package, prop.type.name].join(".")
+    // return [prop.package, prop.qualifiedName].join(".")
+    const referenced = project.find(prop.id)
 
     return referenced
 }
@@ -94,7 +116,7 @@ const parseUnion = (prop: any): string => {
     }
 
     if (types.every(x => x.type === "intrinsic")) {
-        return types.map(x => `"${x?.value ?? x?.name}"`).join(" | ")
+        return types.map(x => `${x?.value ?? x?.name}`).join(" | ")
     }
 
     debugger
