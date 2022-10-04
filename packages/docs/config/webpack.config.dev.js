@@ -3,12 +3,13 @@
 const path = require("path")
 const webpack = require("webpack")
 const baseConfig = require("./webpack.config.base")
-const { PROJECT_ROOT } = require("./helpers")
+const { PROJECT_ROOT, VERSION } = require("./helpers")
 
 const OUT_DIR = path.resolve(PROJECT_ROOT, "dist")
 
 const ENV = {
     NODE_ENV: "development",
+    S4R_VERSION: VERSION,
 }
 
 /**

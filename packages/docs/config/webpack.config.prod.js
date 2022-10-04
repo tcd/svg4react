@@ -7,10 +7,11 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin")
 // const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer")
 
 const baseConfig = require("./webpack.config.base")
-// const { PROJECT_ROOT } = require("./helpers")
+const { VERSION } = require("./helpers")
 
 const ENV = {
     NODE_ENV: "production",
+    S4R_VERSION: VERSION,
 }
 
 /**

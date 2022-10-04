@@ -1,11 +1,12 @@
 import { AutoTypings, LocalStorageCache } from "monaco-editor-auto-typings"
-
 import { parse } from "@babel/parser"
 import traverse from "@babel/traverse"
 import MonacoJSXHighlighter from "monaco-jsx-highlighter"
 
-import type { customMonaco, CustomMonaco } from "@app/features/live-demo"
+
+import { CONFIG } from "@app/util"
 import { addShortcut } from "@app/features/live-demo"
+import type { customMonaco, CustomMonaco } from "@app/features/live-demo"
 
 
 // import reactDefs from "@assets/txt/react.d.ts.txt"
@@ -93,7 +94,7 @@ export const configureMonaco = async (editor: customMonaco.editor.IStandaloneCod
         preloadPackages: true,
         onlySpecifiedPackages: true, // FIXME: this one isn't ideal
         versions: {
-            "svg4react": "0.5.0-rc.1",
+            "svg4react": CONFIG.latest,
         },
     })
 
