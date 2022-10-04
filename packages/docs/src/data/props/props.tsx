@@ -26,6 +26,43 @@ export const PropData: Record<Svg4ReactComponent, PropData[]> = {
             description: "The total length for the circle's circumference, in user units.",
         },
     ],
+    Ellipse: [
+        {
+            "name": "coordinates",
+            "description": "Shorthand for `cx` and `cy`.\n\nThe x and y axis coordinates of the center of the Ellipse.\n\n**Will** override `cx` and `cy`",
+            "type": "[cx: number, cy: number]",
+        },
+        {
+            "name": "cx",
+            "description": "The x-axis coordinate of the center of the ellipse.",
+            type: "number | string",
+        },
+        {
+            "name": "cy",
+            "description": "The y-axis coordinate of the center of the ellipse.",
+            type: "number | string",
+        },
+        {
+            "name": "pathLength",
+            "description": "This attribute lets specify the total length for the path, in user units.",
+            type: "number | string",
+        },
+        {
+            "name": "radius",
+            "description": "Shorthand for `rx` and `ry`.\n\nThe radius of the ellipse on the x and y axis.\n\n**Will** override `rx` and `ry`",
+            "type": "[cx: number, cy: number]",
+        },
+        {
+            "name": "rx",
+            "description": "The radius of the ellipse on the x axis.",
+            type: "number | string",
+        },
+        {
+            "name": "ry",
+            "description": "The radius of the ellipse on the y axis.",
+            type: "number | string",
+        },
+    ],
     Line: [
         {
             name: "coordinates",
@@ -150,9 +187,10 @@ Will **not** override \`viewBox\` if both are passed.
     AnimateMotion: [],
     AnimateTransform: [],
     Defs: [],
-    Ellipse: [],
     G: [],
     Path: [],
+    Polygon: [],
     Rect: [],
     Stop: [],
+    Use: [],
 }
