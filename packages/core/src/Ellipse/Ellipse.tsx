@@ -10,12 +10,18 @@ const Ellipse = forwardRef<SVGEllipseElement, EllipseProps>(function Ellipse(pro
 
     const {
         coordinates = [],
+        radius = [],
         ...otherProps
     } = props
 
     if (coordinates.length == 2) {
         otherProps.cx = coordinates[0]
         otherProps.cy = coordinates[1]
+    }
+
+    if (radius.length == 2) {
+        otherProps.rx = radius[0]
+        otherProps.ry = radius[1]
     }
 
     return (

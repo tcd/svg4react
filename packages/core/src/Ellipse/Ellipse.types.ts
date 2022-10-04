@@ -4,11 +4,13 @@ import type { SvgPresentationAttributes } from "../utils"
 /**
  * @see [MDN - `<ellipse>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/ellipse)
  */
-type EllipseAttributes = {
+export type _EllipseAttributes = {
     /**
+     * Shorthand for `cx` and `cy`.
+     *
      * The x and y axis coordinates of the center of the Ellipse.
      *
-     * Will override `cx` and `cy`
+     * **Will** override `cx` and `cy`
      */
     coordinates?: [cx: number, cy: number]
     /**
@@ -19,6 +21,14 @@ type EllipseAttributes = {
      * The y-axis coordinate of the center of the ellipse.
      */
     cy?: number | string
+    /**
+     * Shorthand for `rx` and `ry`.
+     *
+     * The radius of the ellipse on the x and y axis.
+     *
+     * **Will** override `rx` and `ry`
+     */
+    radius?: [cx: number, cy: number]
     /**
      * The radius of the ellipse on the x axis.
      */
@@ -31,7 +41,11 @@ type EllipseAttributes = {
      * This attribute lets specify the total length for the path, in user units.
      */
     pathLength: number | string
-} & Pick<SvgPresentationAttributes,
+}
+/**
+ * @see [MDN - `<ellipse>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/ellipse)
+ */
+export type EllipseAttributes = _EllipseAttributes & Pick<SvgPresentationAttributes,
     | "clipPath"
     | "clipRule"
     | "color"
