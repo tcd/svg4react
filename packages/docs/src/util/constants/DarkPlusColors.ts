@@ -1,4 +1,20 @@
-export const DarkPlusColors = <const>{
+export interface ICodePalette {
+    fg: string
+    bg: string
+    comment: string
+    keyword: string
+    variable: string
+    function: string
+    control: string
+    string: string
+    number: string
+    type: string
+    punctuation: string
+    escape: string
+    regex: string
+}
+
+export const DarkPlusColors: ICodePalette = {
     fg: "#D4D4D4",
     bg: "#1E1E1E",
 
@@ -15,12 +31,12 @@ export const DarkPlusColors = <const>{
     regex: "#D16969",
 }
 
-export const LightPlusColors = <const>{
+export const LightPlusColors: ICodePalette = {
     fg: "#24292F",
     bg: "#EFF1F3",
 
     comment: "#008000",
-    keyword: "#569CD6",
+    keyword: "#0000FF",
     variable: "#0070C1",
     function: "#795E26",
     control: "#AF00DB",

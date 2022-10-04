@@ -1,38 +1,56 @@
 import type { customMonaco } from "@app/features/live-demo"
 
-import { DarkPlusColors } from "@app/util"
+import type { ICodePalette } from "@app/util"
+import { DarkPlusColors, LightPlusColors } from "@app/util"
 
-export const DarkPlusMonacoTheme: customMonaco.editor.IStandaloneThemeData = {
-    base: "vs-dark",
-    inherit: true,
+const buildMonacoTheme = (base: customMonaco.editor.BuiltinTheme, palette: ICodePalette): customMonaco.editor.IStandaloneThemeData => ({
+    base: base,
+    inherit: false,
     colors: {
-        "editor.foreground": "#d4d4d4",
+        "editor.foreground": palette.fg,
+        "editor.background": palette.bg,
+        "editorLineNumber.activeForeground": palette.keyword,
     },
     rules: [
         {
+            token: "comment.ts",
+            foreground: palette.comment,
+        },
+        {
+            token: "keyword.ts",
+            foreground: palette.keyword,
+        },
+        {
             token: "string.ts",
-            foreground: DarkPlusColors.string,
+            foreground: palette.string,
+        },
+        {
+            token: "number.ts",
+            foreground: palette.number,
         },
         {
             token: "identifier.ts",
-            foreground: DarkPlusColors.variable,
+            foreground: palette.variable,
         },
         // {
         //     token: "delimiter.ts",
-        //     foreground: DarkPlusColors.control,
+        //     foreground: palette.control,
         // },
         {
             token: "delimiter.bracket.ts",
-            foreground: DarkPlusColors.fg,
+            foreground: palette.fg,
         },
         {
             token: "type.identifier.ts",
-            foreground: DarkPlusColors.type,
+            foreground: palette.type,
         },
         // {
         //     // FIXME: doesn't catch `/>`
         //     token: "delimiter.angle.ts",
-        //     foreground: DarkPlusColors.punctuation,
+        //     foreground: palette.punctuation,
         // },
     ],
-}
+})
+
+export const DarkPlusMonacoTheme  = buildMonacoTheme("vs-dark", DarkPlusColors)
+export const LightPlusMonacoTheme = buildMonacoTheme("vs", LightPlusColors)

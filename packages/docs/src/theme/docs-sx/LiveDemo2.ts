@@ -58,7 +58,8 @@ const preview: PaperProps = {
     elevation: 2,
     sx: {
         height: "100%",
-        background: "#1e1e1e",
+        // background: theme.palette.mode === "dark" ? "#1e1e1e" : "#eff1f3",
+        background: "var(--dark-plus-bg)",
         // flexGrow: 1,
         // mx: 3,
         // p: 4,

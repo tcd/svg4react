@@ -94,13 +94,13 @@ export const componentOverrides: Components<ITheme> = {
     // -------------------------------------------------------------------------
     // Tabs
     // -------------------------------------------------------------------------
-    MuiTabs: {
-        styleOverrides:  {
-            root: ({ theme }) => ({
-                "& .MuiTab-textColorPrimary": {
-                    color: theme.palette.mode === "dark" ? undefined : "#d4d4d4",
-                },
-            }),
-        },
-    },
+    // MuiTabs: {
+    //     styleOverrides:  {
+    //         root: ({ theme }) => ({
+    //             "& .MuiTab-textColorPrimary": {
+    //                 color: theme.palette.mode === "dark" ? undefined : "#d4d4d4",
+    //             },
+    //         }),
+    //     },
+    // },
 }

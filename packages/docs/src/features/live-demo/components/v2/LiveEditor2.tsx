@@ -1,8 +1,9 @@
 import { useCallback, useContext, useEffect, useRef, useState } from "react"
 import MonacoEditor from "react-monaco-editor"
 import { LiveContext } from "react-live"
+import { useTheme } from "@mui/material"
 
-import type { customMonaco, CustomMonaco } from "@app/features/live-demo"
+import { customMonaco, CustomMonaco, LightPlusMonacoTheme } from "@app/features/live-demo"
 import {
     DarkPlusMonacoTheme,
     configureMonaco,
@@ -11,7 +12,7 @@ import {
 
 const options: customMonaco.editor.IStandaloneEditorConstructionOptions = {
     language: "typescript",
-    theme: "dark-plus",
+    // theme: "dark-plus",
     // smartSelect: {
     //     selectLeadingAndTrailingWhitespace: false,
     // },
@@ -27,6 +28,8 @@ const options: customMonaco.editor.IStandaloneEditorConstructionOptions = {
 }
 
 export const LiveEditor2 = (_props: unknown) => {
+
+    const theme = useTheme()
 
     const editorRef = useRef<MonacoEditor>()
 
@@ -51,6 +54,7 @@ export const LiveEditor2 = (_props: unknown) => {
 
     const handleWillMount = (monaco: CustomMonaco): void => {
         monaco.editor.defineTheme("dark-plus", DarkPlusMonacoTheme)
+        monaco.editor.defineTheme("light-plus", LightPlusMonacoTheme)
     }
 
     const handleDidMount = (editor: customMonaco.editor.IStandaloneCodeEditor, monaco: CustomMonaco) => {
@@ -69,6 +73,7 @@ export const LiveEditor2 = (_props: unknown) => {
             className="s4r__editor"
             value={theRealValue()}
             options={options}
+            theme={theme.palette.mode === "dark" ? "dark-plus" : "light-plus"}
             onChange={handleChange}
             editorDidMount={handleDidMount}
             editorWillMount={handleWillMount}

@@ -36,7 +36,7 @@ const editor: PaperProps = {
 const preview: PaperProps = {
     elevation: 2,
     sx: {
-        backgroundColor: "#1a2027",
+        background: "var(--dark-plus-bg)",
         flexGrow: 1,
         mx: 3,
         // p: 4,
