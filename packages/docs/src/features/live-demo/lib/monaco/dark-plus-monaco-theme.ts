@@ -25,9 +25,14 @@ export const DarkPlusMonacoTheme: customMonaco.editor.IStandaloneThemeData = {
             token: "delimiter.bracket.ts",
             foreground: DarkPlusColors.fg,
         },
+        {
+            token: "type.identifier.ts",
+            foreground: DarkPlusColors.type,
+        },
         // {
+        //     // FIXME: doesn't catch `/>`
         //     token: "delimiter.angle.ts",
-        //     foreground: DarkPlusColors.keyword,
+        //     foreground: DarkPlusColors.punctuation,
         // },
     ],
 }

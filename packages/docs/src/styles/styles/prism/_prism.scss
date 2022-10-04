@@ -55,15 +55,15 @@ pre[class*="language-"] {
 	padding: 1em;
     margin: 0px 0px;
 	overflow: auto;
-	background: #1e1e1e;
+    background: var(--dark-plus-bg);
 }
 
-:not(pre) > code[class*="language-"] {
-	// padding: .1em .3em;
-	border-radius: .3em;
-	color: #db4c69;
-	background: #f9f2f4;
-}
+// :not(pre) > code[class*="language-"] {
+// 	// padding: .1em .3em;
+// 	border-radius: .3em;
+// 	color: #db4c69;
+// 	background: #f9f2f4;
+// }
 
 /* ========================================================================== */
 /* Tokens (not checked)                                                       */
@@ -92,7 +92,6 @@ pre[class*="language-"] {
     }
 
     &.property,
-    &.tag,
     &.number,
     &.constant,
     &.symbol,
@@ -102,7 +101,7 @@ pre[class*="language-"] {
     }
 
     &.selector,
-    &.attr-name,
+    // &.attr-name,
     &.string,
     &.char,
     &.builtin,
@@ -211,15 +210,11 @@ pre[class*="language-"] {
 }
 
 .token.tag .token.punctuation {
-	color: #808080;
+	color: var(--dark-plus-punctuation);
 }
 
 .token.cdata {
-	color: #808080;
-}
-
-.token.attr-name {
-	color: var(--dark-plus-variable);
+	color: var(--dark-plus-punctuation);
 }
 
 .token.attr-value,
@@ -269,9 +264,10 @@ code[class*="language-props"] {
 
 .language-html {
     .token.punctuation {
-        color: #808080;
+        color: var(--dark-plus-punctuation);
     }
     .tag {
+        color: var(--dark-plus-keyword);
         .namespace {
             color: var(--dark-plus-variable);
         }

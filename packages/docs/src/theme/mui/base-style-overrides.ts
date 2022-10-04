@@ -91,7 +91,7 @@ export const baseStyleOverrides = (theme: Theme) => ({
         colorScheme: theme.palette.mode,
         "--theme-mode": theme.palette.mode,
         // NOTE: MUI won't let you set an empty variable (which is usually what you want)
-        // "--dark-mode-enabled": theme.palette.mode === "dark" ? " " : undefined,
+        "--dark-mode-enabled-mui": theme.palette.mode === "dark" ? "initial" : undefined,
     },
     html,
     "body": body(theme),

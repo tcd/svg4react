@@ -1,5 +1,5 @@
 export const DarkPlusColors = <const>{
-    fg: "#d4d4d4",
+    fg: "#D4D4D4",
     bg: "#1E1E1E",
 
     comment: "#608B4E",
@@ -12,6 +12,24 @@ export const DarkPlusColors = <const>{
     type: "#4EC9B0",
     punctuation: "#808080",
     escape: "#D7BA7D",
+    regex: "#D16969",
+}
+
+export const LightPlusColors = <const>{
+    fg: "#24292F",
+    bg: "#EFF1F3",
+
+    comment: "#008000",
+    keyword: "#569CD6",
+    variable: "#0070C1",
+    function: "#795E26",
+    control: "#AF00DB",
+    string: "#A31515",
+    number: "#098658",
+    type: "#267f99",
+    punctuation: "#808080",
+    escape: "#D7BA7D",
+    regex: "#811F3F",
 }
 
 // export const DarkPlusPalette: ThemeColorPalette = {
