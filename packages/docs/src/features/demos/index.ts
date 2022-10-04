@@ -1,4 +1,5 @@
 export * from "./circle"
+export * from "./ellipse"
 export * from "./line"
 export * from "./linear-gradient"
 export * from "./path"

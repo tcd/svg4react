@@ -12,14 +12,15 @@ export const SIDE_NAV_LINKS: (ILinkData | ILinksData)[] = [
     {
         title: "Components",
         links: [
-            { title: "Circle",         to: "/demos/circle" },
-            { title: "Line",           to: "/demos/line" },
-            { title: "LinearGradient", to: "/demos/linear-gradient" },
-            { title: "Path",           to: "/demos/path" },
-            { title: "Polygon",        to: "/demos/polygon" },
-            { title: "Polyline",       to: "/demos/polyline" },
-            { title: "Rect",           to: "/demos/rect" },
-            { title: "Svg",            to: "/demos/svg" },
+            { title: "Circle",         to: "/components/circle" },
+            { title: "Ellipse",        to: "/components/ellipse" },
+            { title: "Line",           to: "/components/line" },
+            { title: "LinearGradient", to: "/components/linear-gradient" },
+            { title: "Path",           to: "/components/path" },
+            { title: "Polygon",        to: "/components/polygon" },
+            { title: "Polyline",       to: "/components/polyline" },
+            { title: "Rect",           to: "/components/rect" },
+            { title: "Svg",            to: "/components/svg" },
         ],
     },
     ...(CONFIG.env !== "production" ? [

@@ -8,6 +8,7 @@ import { HomePage } from "@app/features/core"
 import { NotFoundPage } from "@app/features/core"
 
 import { CirclePage } from "@app/features/demos"
+import { EllipsePage } from "@app/features/demos"
 import { LinearGradientPage } from "@app/features/demos"
 import { LinePage } from "@app/features/demos"
 import { PathPage } from "@app/features/demos"
@@ -55,10 +56,11 @@ const routes = (): RouteObject[] => {
                 // { path: "playground", element: <PlaygroundPage /> },
                 { path: "types",      element: <TypesPage />      },
                 {
-                    path: "demos",
+                    path: "components",
                     children: [
                         { index: true,             element: <NotFoundPage />       },
                         { path: "circle",          element: <CirclePage />         },
+                        { path: "ellipse",         element: <EllipsePage />        },
                         { path: "linear-gradient", element: <LinearGradientPage /> },
                         { path: "line",            element: <LinePage />           },
                         { path: "path",            element: <PathPage />           },
