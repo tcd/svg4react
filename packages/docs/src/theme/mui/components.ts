@@ -4,10 +4,11 @@ import {
 } from "@mui/material"
 import { experimental_sx as sx } from "@mui/material/styles"
 
+import { ITheme } from "@app/theme/helpers/ITheme"
 import { baseStyleOverrides } from "./base-style-overrides"
 import { LinkBehavior } from "./LinkBehavior"
 
-export const componentOverrides: Components = {
+export const componentOverrides: Components<ITheme> = {
     MuiCssBaseline: {
         styleOverrides: baseStyleOverrides,
     },
@@ -88,6 +89,18 @@ export const componentOverrides: Components = {
                 // custom
                 code: "pre",
             },
+        },
+    },
+    // -------------------------------------------------------------------------
+    // Tabs
+    // -------------------------------------------------------------------------
+    MuiTabs: {
+        styleOverrides:  {
+            root: ({ theme }) => ({
+                "& .MuiTab-textColorPrimary": {
+                    color: theme.palette.mode === "dark" ? undefined : "#d4d4d4",
+                },
+            }),
         },
     },
 }

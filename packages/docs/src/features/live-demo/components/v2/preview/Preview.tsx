@@ -18,7 +18,7 @@ export const Preview = ({ showRaw, onChange }: PreviewProps): JSX.Element => {
 
     const value = showRaw ? "raw" : "render"
 
-    const handleChange = (event: React.SyntheticEvent, newValue: string) => {
+    const handleChange = (_event: React.SyntheticEvent, newValue: string) => {
         onChange(newValue === "raw")
     }
 
@@ -26,7 +26,7 @@ export const Preview = ({ showRaw, onChange }: PreviewProps): JSX.Element => {
         <Paper {...DocsSx.LiveDemo2.preview.root}>
             <TabContext value={value}>
                 <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-                    <TabList onChange={handleChange} aria-label="lab API tabs example">
+                    <TabList onChange={handleChange}>
                         <Tab label="Rendered" value="render" />
                         <Tab label="Raw"      value="raw" />
                     </TabList>

@@ -5,7 +5,6 @@ import type { ISxProps as SxProps } from "@app/theme/helpers"
 
 const { drawerWidth, headerHeight } = ThemeVars
 
-
 // =============================================================================
 // Shared
 // =============================================================================
@@ -78,7 +77,7 @@ const toolbar: SxProps = {
 
 const mobileDrawer: SxProps = (theme: Theme) => ({
     // ..._navBg(theme, 0.9),
-    background: "#121212",
+    background: theme.palette.mode === "dark" ? "#121212" : undefined,
     width: drawerWidth,
 })
 

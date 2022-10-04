@@ -19,7 +19,9 @@ export const SideNavItem_link = (props: ILinkData): JSX.Element => {
     const active = props.to == location.pathname
 
     const sx: SxProps = {
-        color: active ? (theme) => theme.palette.secondary.main : "#b2bac2",
+        color: active
+            ? (theme) => theme.palette.secondary.main
+            : (theme) => theme.palette.mode === "dark" ? "#b2bac2" : "#3E5060",
     }
 
     return (
