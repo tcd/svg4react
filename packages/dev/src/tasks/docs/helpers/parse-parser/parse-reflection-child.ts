@@ -1,24 +1,27 @@
 import { ProjectParser } from "typedoc-json-parser"
 import type * as parser from "typedoc-json-parser"
 
-export const parseProp = (project: ProjectParser, propParam: parser.InterfacePropertyParser): PropData => {
+export const parseReflectionChild = (project: ProjectParser, reflection: any): PropData => {
+    // // console.log(propParam)
+    // // @ts-ignore: next-line
+    // return propParam
     const result: PropData = {}
 
     // =========================================================================
     // Name
     // =========================================================================
 
-    result.name = propParam.name
+    result.name = reflection.name
 
     // =========================================================================
     // Description (links, defaultValue)
     // =========================================================================
 
     const commentSegments = [
-        propParam.comment.description,
+        reflection.comment.summary.map(x => x.text).join(""),
     ]
 
-    for (const segment of propParam?.comment?.blockTags ?? []) {
+    for (const segment of reflection?.comment?.blockTags ?? []) {
 
         if (segment.name === "see") {
             if (segment.text.startsWith("[")) {
@@ -39,15 +42,18 @@ export const parseProp = (project: ProjectParser, propParam: parser.InterfacePro
     // Type
     // =========================================================================
 
-    switch (propParam.type.kind) {
+    switch (reflection.type.type) {
         case "intrinsic":
             // console.log("intrinsic")
             // @ts-ignore: next-line
-            result.type = propParam.type.type
+            result.type = reflection.type.name
             break
         case "union":
             // console.log("union")
-            result.type = parseUnion(propParam)
+            result.type = parseUnion(reflection)
+            break
+        case "tuple":
+            result.type = parseTuple(reflection)
             break
 
         case "reference":
@@ -58,7 +64,7 @@ export const parseProp = (project: ProjectParser, propParam: parser.InterfacePro
             console.log("intersection")
             break
         default:
-            console.warn(`unable to handle propData of kind ${propParam.type.kind}`)
+            console.warn(`unable to handle propData of kind ${reflection.type.kind}`)
             break
     }
 
@@ -76,22 +82,38 @@ const parseReference = (project: ProjectParser, propType: parser.ReferenceTypePa
     return referenced
 }
 
-const parseUnion = (prop: parser.InterfacePropertyParser): string => {
-    // @ts-ignore: next-line
-    const types = prop.type.toJSON().types
-    console.log(types)
-    // @ts-ignore: next-line
-    if (prop.type.types.every(x => x.kind === "intrinsic")) {
-        // @ts-ignore: next-line
-        return prop.type.types.map(x => x?.type).join(" | ")
+const parseUnion = (prop: any): string => {
+    const types = prop.type.types
+
+    // if (types.every(x => x.kind === "intrinsic")) {
+    //     return types.map(x => x?.type).join(" | ")
+    // }
+
+    if (types.every(x => x.type === "literal")) {
+        return types.map(x => `"${x?.value ?? x?.name}"`).join(" | ")
     }
 
-    // @ts-ignore: next-line
-    if (prop.type.types.every(x => x.kind === "literal")) {
-        // @ts-ignore: next-line
-        return prop.type.types.map(x => `"${x?.value}"`).join(" | ")
+    if (types.every(x => x.type === "intrinsic")) {
+        return types.map(x => `"${x?.value ?? x?.name}"`).join(" | ")
     }
 
-    return "[parseUnion] Unhandled"
+    debugger
+
+    return `[parseUnion] Unhandled: ${prop?.toJSON() ?? prop}`
+}
+
+const parseTuple = (prop: any): string => {
+    const elements = prop.type.elements
+
+    if (elements?.every(x => (x?.kind ?? x?.type) === "named-tuple-member")) {
+        const members = elements.map(x => [
+            x.name,
+            (x.isOptional ? "?: " : ": "),
+            x.element?.name ?? x.element?.value,
+        ].join("")).join(", ")
+        return `[${members}]`
+    }
+
+    return "[parseTuple] Unhandled"
 }
 

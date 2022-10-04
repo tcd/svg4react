@@ -17,4 +17,22 @@ export declare global {
         docComment?: string
         props?: PropData[]
     }
+
+    export type Svg4ReactComponent =
+        | "Animate"
+        | "AnimateMotion"
+        | "AnimateTransform"
+        | "Circle"
+        | "Defs"
+        | "Ellipse"
+        | "G"
+        | "Line"
+        | "LinearGradient"
+        | "Path"
+        | "Polygon"
+        | "Polyline"
+        | "Rect"
+        | "Stop"
+        | "Svg"
+        | "Use"
 }

@@ -3,7 +3,7 @@ import { ProjectParser } from "typedoc-json-parser"
 import { writeJsonFile } from "write-json-file"
 
 import { packagePath } from "../../helpers/paths-windows.js"
-import { parseProp } from "./helpers/index.js"
+import { parseInterfaceProperty } from "./helpers/parse-parser/parse-interface-property.js"
 // import { gatherComponentData } from "./gather-component-data.js"
 
 const main = async (): Promise<void> => {
@@ -21,7 +21,7 @@ const main = async (): Promise<void> => {
     const attrData = project.interfaces.find(x => x.name === "SvgPresentationAttributes")
 
     for (const attr of attrData.properties) {
-        attributes.push(parseProp(project, attr))
+        attributes.push(parseInterfaceProperty(project, attr))
     }
 
     await writeJsonFile(outputPath, attributes)
