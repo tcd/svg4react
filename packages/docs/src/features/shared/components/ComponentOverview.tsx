@@ -6,14 +6,11 @@ import componentDocs from "@data/components.json"
 
 export interface ComponentOverviewProps {
     componentName: Svg4ReactComponent
-    propData?: PropData[]
 }
 
-export const ComponentOverview = ({ componentName, propData = [] }: ComponentOverviewProps): JSX.Element => {
+export const ComponentOverview = ({ componentName}: ComponentOverviewProps): JSX.Element => {
 
-    if (propData.length === 0) {
-        propData = PropData[componentName]
-    }
+    const propData = PropData[componentName]
     const description = componentDocs.find(x => x?.component == componentName).docComment
 
     return (
