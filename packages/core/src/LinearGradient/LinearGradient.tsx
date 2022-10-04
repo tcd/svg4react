@@ -11,11 +11,14 @@ import type { LinearGradientProps } from "./LinearGradient.types"
 const LinearGradient = (props: LinearGradientProps): JSX.Element => {
     const {
         stops,
+        children = undefined,
         ...otherProps
     } = props
     return (
+        // @ts-ignore: next-line
         <linearGradient {...otherProps}>
             {stops.map((stop, index) => <Stop key={index} {...stop} />)}
+            {children && children}
         </linearGradient>
     )
 }

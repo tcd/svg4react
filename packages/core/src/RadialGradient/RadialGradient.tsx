@@ -11,12 +11,14 @@ import type { RadialGradientProps } from "./RadialGradient.types"
 const RadialGradient = (props: RadialGradientProps): JSX.Element => {
     const {
         stops,
+        children = undefined,
         ...otherProps
     } = props
     return (
         // @ts-ignore: next-line
         <radialGradient {...otherProps}>
             {stops.map((stop, index) => <Stop key={index} {...stop} />)}
+            {children && children}
         </radialGradient>
     )
 }
