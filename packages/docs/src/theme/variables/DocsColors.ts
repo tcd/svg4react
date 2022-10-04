@@ -14,7 +14,7 @@ export const DocsColors = <const>{
 // Scratch
 // =============================================================================
 
-const scratchColors: Record<string, string[]> = {
+const _scratchColors: Record<string, string[]> = {
     green: [
         "#b0c69b", // #ffb13b (50%) + #61dbfb (50%)
         "#a8c8a4", // #ffb13b (55%) + #61dbfb (45%)
