@@ -18,6 +18,11 @@ export const INITIAL_CORE_STATE: CoreState = {
     pageTitle: "",
     drawerOpened: false,
     openedDrawerSections: [],
+    // openedDrawerSections: [
+    //     "root",
+    //     "Components",
+    //     "Examples",
+    // ],
     // darkModeEnabled: window.matchMedia("(prefers-color-scheme: dark)").matches ? true : false,
     darkModeEnabled: false,
 }

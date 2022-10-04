@@ -10,6 +10,7 @@ const buildMonacoTheme = (base: customMonaco.editor.BuiltinTheme, palette: ICode
         "editor.foreground": palette.fg,
         "editor.background": palette.bg,
         "editorLineNumber.activeForeground": palette.keyword,
+        "editorOverviewRuler.border": palette.bg,
     },
     rules: [
         {
