@@ -7,6 +7,10 @@ import {
     scrollbar,
 } from "../helpers"
 
+// =============================================================================
+// Resets
+// =============================================================================
+
 /**
  * - `<ul></ul>`
  * - `<ol></ol>`
@@ -83,6 +87,12 @@ const root: CSSObject = {
 // =============================================================================
 
 export const baseStyleOverrides = (theme: Theme) => ({
+    ":root": {
+        colorScheme: theme.palette.mode,
+        "--theme-mode": theme.palette.mode,
+        // NOTE: MUI won't let you set an empty variable (which is usually what you want)
+        // "--dark-mode-enabled": theme.palette.mode === "dark" ? " " : undefined,
+    },
     html,
     "body": body(theme),
     "#root": root,
