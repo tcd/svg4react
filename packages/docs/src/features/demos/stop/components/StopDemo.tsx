@@ -24,7 +24,6 @@ import {
     Svg,
     Circle,
     LinearGradient,
-    LinearGradientProps,
     StopProps,
 } from "svg4react"
 
@@ -40,7 +39,7 @@ render(
         <Circle
             coordinates={[5,5]}
             r="4"
-            fill="url('#myGradient')"
+            fill="url(#myGradient)"
         />
     </Svg>
 )
