@@ -3,11 +3,13 @@ import type { StopProps } from "../Stop"
 import type { SvgPresentationAttributes } from "../utils"
 
 /**
- * @public
- *
  * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Element/linearGradient
  */
 export type _LinearGradientAttributes = {
+    /**
+     * TODO: document
+     */
+    stops?: StopProps[]
     /**
      * Defines the coordinate system for attributes `x1`, `x2`, `y1`, `y2`.
      *
@@ -70,17 +72,11 @@ export type _LinearGradientAttributes = {
     y2?: string | number
 }
 
-/**
- * @public
- *
- * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Element/linearGradient
- */
-type LinearGradientAttributes = _LinearGradientAttributes & Pick<SvgPresentationAttributes,
+export type LinearGradientAttributes = _LinearGradientAttributes & Pick<SvgPresentationAttributes,
     | "clipPath"
     | "clipRule"
     | "color"
     | "colorInterpolation"
-    /* "colorRendering" (deprecated) */
     | "cursor"
     | "display"
     | "fill"
@@ -105,15 +101,8 @@ type LinearGradientAttributes = _LinearGradientAttributes & Pick<SvgPresentation
 >
 
 /**
- * @public
- *
- * All properties aside from `id` and `stops` & `className` are animatable.
+ * @see [MDN Web Docs - `<linearGradient>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/linearGradient)
  */
 export type LinearGradientProps =
-    SVGProps<SVGLinearGradientElement> &
-    LinearGradientAttributes &
-    {
-        id: string
-        className?: string
-        stops?: StopProps[]
-    }
+    Omit<SVGProps<SVGLinearGradientElement>, keyof LinearGradientAttributes>
+    & LinearGradientAttributes
