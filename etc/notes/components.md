@@ -1,9 +1,9 @@
-# Development
+# ~~Components~~
 
-- Tried using JSON objects for path drawto props, was way too verbose.
+> See the google spreadsheet instead
 
 
-## Components
+## General
 
 
 |                 element                  | priority | component | props | published | demo  |
@@ -44,7 +44,6 @@
 
 
 ## Filters
-
 
 - feBlend
 - feColorMatrix

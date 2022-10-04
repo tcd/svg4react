@@ -34,6 +34,7 @@
         "prismjs",
         "rehype",
         "styleguidist",
-        "tsdoc"
+        "tsdoc",
+        "webref"
     ],
 }

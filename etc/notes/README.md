@@ -1,14 +1,32 @@
-# Scalable Vector Graphics
+# Notes
+
+
+## Misc.
+
+
+- Tried using JSON objects for path drawto props, was way too verbose.
+
 
 ## Related
 
+
+- editor support
+    - [microsoft/vscode-typescript-next](https://github.com/microsoft/vscode-typescript-next)
 - id collision
     - [elderapo/react-svg-unique-id](https://github.com/elderapo/react-svg-unique-id)
     - [iconfu/svg-inject](https://github.com/iconfu/svg-inject)
+- specifications as code
+    - [frenic/csstype](https://github.com/frenic/csstype)
+    - [w3c/webref](https://github.com/w3c/webref)
+    - [~~mdn/data~~](https://github.com/mdn/data) *(in the process of being deprecated for w3c/webref)*
+    - [mdn/content](https://github.com/mdn/content)
+
 
 ## Resources
 
+
 ### TypeScript
+
 
 - Types
     - [microsoft/typescript/lib/lib.dom.d.ts](https://github.com/microsoft/TypeScript/blob/main/lib/lib.dom.d.ts)
@@ -20,6 +38,7 @@
 
 
 ### Standards & References
+
 
 - SVG Elements:
     - [MDN - SVG Element Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element)
@@ -39,11 +58,3 @@
     - [MDN - Namespaces crash course](https://developer.mozilla.org/en-US/docs/Web/SVG/Namespaces_Crash_Course)
 - Other
     - [Web Platform Docs - SVG](https://webplatform.github.io/docs/svg/)
-
-### Deprecated
-
-- [`<altGlyph>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/altGlyph)
-
-### Editor Support
-
-- [microsoft/vscode-typescript-next](https://github.com/microsoft/vscode-typescript-next)
