@@ -1,18 +1,20 @@
 import merge from "lodash/merge"
 import type { PaletteOptions } from "@mui/material"
 
+import { ThemeVars } from "@app/theme/variables"
+
 // =============================================================================
 // Base
 // =============================================================================
 
 const basePalette: PaletteOptions = {
     primary: {
-        main: "#ffb13b",
+        main: ThemeVars.DocsColors.puke,
     },
     secondary: {
+        // light: "#42a5f5",
         main: "#1976d2",
-        light: "#42a5f5",
-        dark: "#1565c0",
+        // dark: "#1565c0",
         // contrastText: "#fff",
     },
 }
@@ -25,7 +27,6 @@ const _lightPalette: PaletteOptions = {
     mode: "light",
     background: {
         default: "#fafafa", // from mui-treasury
-        // paper: "white",
     },
 }
 
@@ -38,8 +39,7 @@ const lightPalette: PaletteOptions = merge({}, basePalette, _lightPalette)
 const _darkPalette: PaletteOptions = {
     mode: "dark",
     background: {
-        default: "black",
-        // paper: "#1e1e1e",
+        default: "#000",
     },
 }
 

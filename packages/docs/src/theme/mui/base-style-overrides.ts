@@ -6,6 +6,7 @@ import {
     // ThemeBreakpoints,
     scrollbar,
 } from "../helpers"
+import { buildCssVars } from "./build-css-vars"
 
 // =============================================================================
 // Resets
@@ -87,12 +88,7 @@ const root: CSSObject = {
 // =============================================================================
 
 export const baseStyleOverrides = (theme: Theme) => ({
-    ":root": {
-        colorScheme: theme.palette.mode,
-        "--theme-mode": theme.palette.mode,
-        // NOTE: MUI won't let you set an empty variable (which is usually what you want)
-        "--dark-mode-enabled-mui": theme.palette.mode === "dark" ? "initial" : undefined,
-    },
+    ":root": buildCssVars(theme),
     html,
     "body": body(theme),
     "#root": root,

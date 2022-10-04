@@ -7,7 +7,6 @@ import {
     DocsThemeDark,
     DocsThemeLight,
 } from "@app/theme"
-import { CustomPropertySetter } from "./CustomPropertySetter"
 
 export const AppThemeProvider = (props: { children: React.ReactNode }): JSX.Element => {
 
@@ -18,7 +17,6 @@ export const AppThemeProvider = (props: { children: React.ReactNode }): JSX.Elem
     return (
         <ThemeProvider theme={theme}>
             <CssBaseline />
-            <CustomPropertySetter />
             {props?.children && props.children}
         </ThemeProvider>
     )

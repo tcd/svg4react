@@ -20,7 +20,7 @@ export const SideNavItem_link = (props: ILinkData): JSX.Element => {
 
     const sx: SxProps = {
         color: active
-            ? (theme) => theme.palette.secondary.main
+            ? (theme) => theme.palette.primary.main
             : (theme) => theme.palette.mode === "dark" ? "#b2bac2" : "#3E5060",
     }
 
