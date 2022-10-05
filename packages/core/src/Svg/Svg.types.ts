@@ -10,14 +10,21 @@ type SvgAttributes = {
      * `minX` and `minY` are set to 0, resulting in `"0 0 width height"`.
      *
      * Will **not** override `viewBox` if both are passed.
+     *
+     * @shorthand viewBox
      */
     vb?: [width: number, height?: number]
     /**
      * Shorthand for setting both `width` and `height`.
+     *
+     * @shorthand width
+     * @shorthand height
      */
     size?: string
     /**
      * The SVG viewport coordinates for the current SVG fragment.
+     *
+     * (alternative definition) The position and dimension for the content of the `<svg>` element.
      *
      * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/viewBox)
      */
