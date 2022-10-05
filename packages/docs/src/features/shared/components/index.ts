@@ -1,6 +1,7 @@
 export * from "./Card"
 export * from "./ComponentOverview"
 export * from "./ComponentPage"
+export * from "./DefaultErrorFallback"
 export * from "./Highlight"
 export * from "./Logo"
 export * from "./MarkdownDoc"

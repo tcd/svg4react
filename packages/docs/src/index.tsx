@@ -16,9 +16,21 @@ import { App } from "./app"
 import "./styles/main.scss"
 import { PrismLanguageProps } from "./util"
 
+import { ErrorBoundary } from "react-error-boundary"
+import { DefaultErrorFallback } from "@app/features/shared"
+
 // (typeof global !== "undefined" ? global : window).Prism = Prism
 window.Prism.languages["props"] = PrismLanguageProps
 
 const container = document.getElementById("root")
 const root = createRoot(container)
-root.render(<App />)
+
+const WrappedApp = () => {
+    return (
+        <ErrorBoundary FallbackComponent={DefaultErrorFallback}>
+            <App />
+        </ErrorBoundary>
+    )
+}
+
+root.render(<WrappedApp />)
