@@ -11,9 +11,9 @@ export type PolygonCoordinate = [
  *
  * @see [MDN Web Docs - `<polygon>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/polygon)
  */
-export type PolygonAttributes = {
+export type _PolygonAttributes = {
     /**
-     * The list of points (pairs of x,y absolute coordinates) required to draw the polyline.
+     * The list of points (pairs of x,y absolute coordinates) required to draw the polygon.
      *
      * @default []
      */
@@ -24,7 +24,14 @@ export type PolygonAttributes = {
      * @default "none"
      */
     pathLength?: number
-} & Pick<SvgPresentationAttributes,
+}
+
+/**
+ * @public
+ *
+ * @see [MDN Web Docs - `<polygon>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/polygon)
+ */
+export type PolygonAttributes = _PolygonAttributes & Pick<SvgPresentationAttributes,
     | "clipPath"
     | "clipRule"
     | "color"

@@ -138,6 +138,18 @@ Values, in order, as a string or number, for:
             "type": "string | number",
         },
     ],
+    Polygon: [
+        {
+            "name": "points",
+            "description": "The list of points (pairs of x,y absolute coordinates) required to draw the polygon.",
+            type: "[x: number, y: number][]",
+        },
+        {
+            "name": "pathLength",
+            "description": "Defines the total path length in user units.",
+            "type": "number",
+        },
+    ],
     Polyline: [
         {
             name: "points",
@@ -221,7 +233,6 @@ Will **not** override \`viewBox\` if both are passed.
     Defs: [],
     G: [],
     Path: [],
-    Polygon: [],
     Rect: [],
     Use: [],
 }
