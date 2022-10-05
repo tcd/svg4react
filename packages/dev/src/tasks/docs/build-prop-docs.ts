@@ -10,6 +10,7 @@ const propTypeMap: Partial<Record<Svg4ReactComponent, string>> = {
     "Ellipse":        "_EllipseAttributes",
     "LinearGradient": "_LinearGradientAttributes",
     "Polygon":        "_PolygonAttributes",
+    "Rect":           "__RectAttributes",
     "Stop":           "StopAttributes",
 }
 
