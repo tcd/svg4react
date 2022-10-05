@@ -5,7 +5,7 @@ import { ThemeVars } from "@app/theme/variables"
 const root: PaperProps = {
     elevation: 3,
     sx: {
-        p: 3,
+        p: 2,
         // maxWidth: {
         //     mobile: `calc(100vw - 24px - 24px)`, // 24px for padding
         //     laptop: `calc(100vw - ${ThemeVars.drawerWidth}px - 24px - 24px - 14px)`, // 24px for padding

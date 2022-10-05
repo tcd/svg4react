@@ -1,7 +1,7 @@
 import { Svg } from "svg4react"
 
 export interface LogoProps {
-    /** @default "#61dbfb" */
+    /** @default "var(--mui-palette-primary-main)" */
     color1?: string
     /** @default "#fff" */
     color2?: string
@@ -12,7 +12,7 @@ export interface LogoProps {
 export const Logo = (props: LogoProps): JSX.Element => {
 
     const {
-        color1 = "#61dbfb", // #ffb13b
+        color1 = "var(--mui-palette-primary-main)",
         color2 = "#fff",
         color3 = "#000",
     } = props

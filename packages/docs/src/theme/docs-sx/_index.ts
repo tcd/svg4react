@@ -1,5 +1,6 @@
 export * from "./Card"
 export * from "./Changelog"
+export * from "./HomePage"
 export * from "./Layout"
 export * from "./LiveDemo"
 export * from "./LiveDemo2"
