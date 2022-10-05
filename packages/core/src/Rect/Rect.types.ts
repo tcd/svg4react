@@ -11,7 +11,7 @@ export type __RectAttributes = {
      */
     points?: [x: number, y?: number]
     /**
-     * Shorthand for the x and y axis coordinates of the center of the rect.
+     * Shorthand for the width and height of the rect.
      *
      * @shorthand width
      * @shorthand height
