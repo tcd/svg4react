@@ -8,9 +8,12 @@ import type { SvgPresentationAttributes } from "../utils"
  */
 type CircleAttributes = {
     /**
-     * The x and y axis coordinates of the center of the circle.
+     * Shorthand for the x and y axis coordinates of the center of the circle.
      *
      * Will override `cx` and `cy`.
+     *
+     * @shorthand cx
+     * @shorthand cy
      */
     coordinates?: [cx: number, cy: number]
     /**
