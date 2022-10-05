@@ -1,7 +1,7 @@
 import { Stack } from "@mui/material"
 
 import { Card, PropsTable, MarkdownDoc } from "@app/features/shared"
-import { PropData } from "@data/props/props"
+import { PropData } from "@data/props"
 import componentDocs from "@data/components.json"
 
 export interface ComponentOverviewProps {

@@ -161,7 +161,23 @@ Values, in order, as a string or number, for:
             name: "pathLength",
             type: "number",
             description: "Defines the total path length in user units.",
-            default: "none",
+        },
+    ],
+    Rect: [
+        {
+            "name": "points",
+            "description": "Shorthand for the x and y axis coordinates of the center of the rect.",
+            "type": "[x: number, y?: number]",
+        },
+        {
+            "name": "radius",
+            "description": "Shorthand for the horizontal and vertical corner radii of the rect.",
+            "type": "[rx: number, ry?: number]",
+        },
+        {
+            "name": "size",
+            "description": "Shorthand for the width and height of the rect.",
+            "type": "[width: number, height?: number]",
         },
     ],
     Stop: [
@@ -233,6 +249,5 @@ Will **not** override \`viewBox\` if both are passed.
     Defs: [],
     G: [],
     Path: [],
-    Rect: [],
     Use: [],
 }
