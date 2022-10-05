@@ -1,5 +1,5 @@
 import type { SVGProps } from "react"
-import type { SvgPresentationAttributes } from "../utils"
+import type { CommonSvgPresentationAttributes } from "../utils"
 
 export type PolygonCoordinate = [
     x: number,
@@ -31,33 +31,7 @@ export type _PolygonAttributes = {
  *
  * @see [MDN Web Docs - `<polygon>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/polygon)
  */
-export type PolygonAttributes = _PolygonAttributes & Pick<SvgPresentationAttributes,
-    | "clipPath"
-    | "clipRule"
-    | "color"
-    | "colorInterpolation"
-    | "cursor"
-    | "display"
-    | "fill"
-    | "fillOpacity"
-    | "fillRule"
-    | "filter"
-    | "mask"
-    | "opacity"
-    | "pointerEvents"
-    | "shapeRendering"
-    | "stroke"
-    | "strokeDasharray"
-    | "strokeDashoffset"
-    | "strokeLinecap"
-    | "strokeLinejoin"
-    | "strokeMiterlimit"
-    | "strokeOpacity"
-    | "strokeWidth"
-    | "transform"
-    | "vectorEffect"
-    | "visibility"
->
+export type PolygonAttributes = _PolygonAttributes & CommonSvgPresentationAttributes
 
 /**
  * @public
