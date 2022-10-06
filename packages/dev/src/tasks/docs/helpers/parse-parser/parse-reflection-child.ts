@@ -79,12 +79,15 @@ export const parseReflectionChild = (project: ProjectParser, reflection: any): P
         case "reference":
             result.type = parseReference(project, reflection)
             break
+        case "array":
+            result.type = parseArray(reflection)
+            break
 
         case "intersection":
             console.log("intersection")
             break
         default:
-            console.warn(`unable to handle propData of kind ${reflection.type.kind}`)
+            console.warn(`unable to handle propData of kind ${reflection.type.type}`)
             break
     }
 
@@ -113,6 +116,8 @@ const parseReference = (project: ProjectParser, prop): any => {
     // return referenced
 }
 
+// =============================================================================
+
 const parseUnion = (prop: any): string => {
     const types = prop.type.types
 
@@ -120,18 +125,36 @@ const parseUnion = (prop: any): string => {
     //     return types.map(x => x?.type).join(" | ")
     // }
 
-    if (types.every(x => x.type === "literal")) {
-        return types.map(x => `"${x?.value ?? x?.name}"`).join(" | ")
-    }
+    const formattedTypes = types.map(x => {
+        if (x.type === "literal") {
+            return `"${x?.value ?? x?.name}"`
+        }
+        if (x.type === "intrinsic") {
+            return `${x?.value ?? x?.name}`
+        }
+        return "[parseUnion] unhandled type"
+    })
 
-    if (types.every(x => x.type === "intrinsic")) {
-        return types.map(x => `${x?.value ?? x?.name}`).join(" | ")
-    }
+    return formattedTypes.join(" | ")
 
-    debugger
-
-    return `[parseUnion] Unhandled: ${prop?.toJSON() ?? prop}`
+//     if (types.every(x => x.type === "literal")) {
+//         return types.map(x => `"${x?.value ?? x?.name}"`).join(" | ")
+//     }
+//
+//     if (types.every(x => x.type === "intrinsic")) {
+//         return types.map(x => `${x?.value ?? x?.name}`).join(" | ")
+//     }
+//
+//     debugger
+//
+//     try {
+//         return `[parseUnion] Unhandled: ${prop?.toJSON() ?? prop}`
+//     } catch (error) {
+//         return `[parseUnion] Unhandled: ${prop}`
+//     }
 }
+
+// =============================================================================
 
 const parseTuple = (prop: any): string => {
     const elements = prop.type.elements
@@ -148,3 +171,16 @@ const parseTuple = (prop: any): string => {
     return "[parseTuple] Unhandled"
 }
 
+// =============================================================================
+
+const parseArray = (prop: any): string => {
+    // const x = prop.type.elementType.name
+    // debugger
+    try {
+        return `${prop.type.elementType.name}[]`
+    } catch (e) {
+        console.error("error parsing array type", e)
+        debugger
+        return "[parseArray] Unhandled"
+    }
+}
