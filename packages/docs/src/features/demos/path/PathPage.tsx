@@ -6,7 +6,7 @@ import * as Examples from "./demos"
 
 export const PathPage = (_props: unknown): JSX.Element => {
     return (
-        <Page title="Path">
+        <Page title="<Path>">
             <Stack direction="column" spacing={5}>
                 <PathOverview />
                 <Examples.Example1 />
