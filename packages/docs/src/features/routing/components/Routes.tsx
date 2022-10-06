@@ -25,6 +25,7 @@ import {
     LogosPage,
     MarkdownPage,
     MonacoPage,
+    PreserveAspectRatioPage,
     TestPage,
 } from "@app/features/test"
 
@@ -43,6 +44,7 @@ const routes = (): RouteObject[] => {
                 { path: "logos", element: <LogosPage /> },
                 { path: "monaco", element: <MonacoPage /> },
                 { path: "markdown", element: <MarkdownPage /> },
+                { path: "preserve-aspect-ratio", element: <PreserveAspectRatioPage /> },
             ],
         })
     }
