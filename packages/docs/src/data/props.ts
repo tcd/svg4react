@@ -1,4 +1,101 @@
 export const PropData: Record<Svg4ReactComponent, PropData[]> = {
+    Animate: [
+        {
+            "name": "additive",
+            "description": "Controls whether or not an animation is additive.",
+            "type": "\"replace\" | \"sum\"",
+        },
+        {
+            "name": "attributeName",
+            "description": "The name of the CSS property or attribute of the target element that is going to be changed during an animation.",
+            "type": "string",
+        },
+        {
+            "name": "begin",
+            "description": "When an animation should begin or when an element should be discarded.",
+            "type": "any",
+        },
+        {
+            "name": "by",
+            "description": "A relative offset value for an attribute that will be modified during an animation.",
+            "type": "any",
+        },
+        {
+            "name": "calcMode",
+            "description": "Specifies the [interpolation](https://developer.mozilla.org/en-US/docs/Glossary/Interpolation) mode for the animation.",
+            "type": "\"discrete\" | \"linear\" | \"paced\" | \"spline\"",
+        },
+        {
+            "name": "cumulative",
+            "description": "Controls whether or not an animation is cumulative.",
+            "type": "\"none\" | \"sum\"",
+        },
+        {
+            "name": "dur",
+            "description": "The simple duration of an animation.",
+            "type": "any",
+        },
+        {
+            "name": "end",
+            "description": "An end value for the animation that can constrain the active duration.",
+            "type": "any",
+        },
+        {
+            "name": "fill",
+            "description": "Defines the final state of the animation.\n\nOptions:\n\n|            |                                             |\n|------------|---------------------------------------------|\n| `\"freeze\"` | Keep the state of the last animation frame  |\n| `\"remove\"` | Keep the state of the first animation frame |",
+            "type": "\"freeze\" | \"remove\"",
+        },
+        {
+            "name": "from",
+            "description": "The initial value of the attribute that will be modified during the animation.",
+            "type": "any",
+        },
+        {
+            "name": "keySplines",
+            "description": "A set of Bézier curve control points associated with the `keyTimes` list, defining a cubic Bézier function that controls interval pacing.\n\nThis attribute is ignored unless the `calcMode` attribute is set to `\"spline\"`.",
+            "type": "any[]",
+        },
+        {
+            "name": "keyTimes",
+            "description": "A list of time values used to control the pacing of the animation.",
+            "type": "any[]",
+        },
+        {
+            "name": "max",
+            "description": "The maximum value of the active animation duration.",
+            "type": "any",
+        },
+        {
+            "name": "min",
+            "description": "The minimum value of the active animation duration.",
+            "type": "any",
+        },
+        {
+            "name": "repeatCount",
+            "description": "The number of times an animation will take place.",
+            "type": "number | \"indefinite\"",
+        },
+        {
+            "name": "repeatDur",
+            "description": "The total duration for repeating an animation.",
+            "type": "any",
+        },
+        {
+            "name": "restart",
+            "description": "Specifies whether or not an animation can restart.",
+            "type": "\"always\" | \"whenNotActive\" | \"never\"",
+        },
+        {
+            "name": "to",
+            "description": "The final value of the attribute that will be modified during the animation.",
+            "type": "any",
+        },
+        {
+            "name": "values",
+            "description": "A list of values defining the sequence of values over the course of the animation.\n\nIf this attribute is specified, any `from`, `to`, and `by` attribute values set on the element are ignored.",
+            "type": "any[]",
+        },
+    ],
     Circle: [
         {
             name: "coordinates",
@@ -66,22 +163,8 @@ export const PropData: Record<Svg4ReactComponent, PropData[]> = {
     Line: [
         {
             name: "coordinates",
-            type: `
-[
-    x1: number | string,
-    y1: number | string,
-    x2: number | string,
-    y2: number | string,
-]
-`.trim(),
-            description: `
-Values, in order, as a string or number, for:
-
-- \`x1\` - x-axis start\n
-- \`y1\` - y-axis start\n
-- \`x2\` - x-axis end\n
-- \`y2\` - y-axis end\n
-            `.trim(),
+            type: `[\n\n    x1: number | string,\n\n\n\n    y1: number | string,\n\n\n\n    x2: number | string,\n\n\n\n    y2: number | string,\n\n]`,
+            description: "Values, in order, as a string or number, for:\n\n- `x1` - x-axis start\n\n- `y1` - y-axis start\n\n- `x2` - x-axis end\n\n- `y2` - y-axis end",
         },
         {
             name: "pathLength",
@@ -221,15 +304,7 @@ Values, in order, as a string or number, for:
         {
             name: "vb",
             type: "[width: number, height?: number]",
-            description: `
-Shorthand for the setting the last two values of \`viewBox\`
-
-If only one value is passed, it will be assigned to both \`width\` and \`height\`.
-
-\`minX\` and \`minY\` are set to 0, resulting in \`"0 0 width height"\`.
-
-Will **not** override \`viewBox\` if both are passed.
-            `.trim(),
+            description: `Shorthand for the setting the last two values of \`viewBox\`\n\nIf only one value is passed, it will be assigned to both \`width\` and \`height\`.\n\n\`minX\` and \`minY\` are set to 0, resulting in \`"0 0 width height"\`.\n\nWill **not** override \`viewBox\` if both are passed.`,
         },
         {
             name: "viewBox",
@@ -290,7 +365,6 @@ Will **not** override \`viewBox\` if both are passed.
             "type": "number | string",
         },
     ],
-    Animate: [],
     AnimateMotion: [],
     AnimateTransform: [],
     Defs: [],

@@ -5,58 +5,33 @@ import { LiveDemo } from "@app/features/live-demo"
 
 export const AnimateDemo = (_props: unknown): JSX.Element => {
 
+    const scope = { Svg, Animate, Rect }
+
     return (
-        <>
-            <Svg vb={[10]}>
-                <Rect size={[10]}>
-                    {/* <Animate
-                        attributeName="rx"
-                        values="0;5;0"
-                        dur="10s"
-                        repeatCount="indefinite"
-                    /> */}
-                    <animate
-                        attributeName="rx"
-                        values="0;5;0"
-                        dur="10s"
-                        repeatCount="indefinite"
-                    />
-                </Rect>
-            </Svg>
-        </>
+        <LiveDemo
+            id="animate-demo-1"
+            title="Demo"
+            code={code}
+            scope={scope}
+        />
     )
 }
 
 // =============================================================================
 
-// export const AnimateDemo = (_props: unknown): JSX.Element => {
-//
-//     const scope = { Svg, Animate, Rect }
-//
-//     return (
-//         <LiveDemo
-//             id="animate-demo-1"
-//             title="Demo"
-//             code={code}
-//             scope={scope}
-//         />
-//     )
-// }
-
-// =============================================================================
-
 const code = `
-import { Svg, Circle, CircleProps } from "svg4react"
-
-const circleProps: CircleProps = {
-    coordinates: [50, 50],
-    r: 50,
-    fill: "${randomColor()}",
-}
+import { Svg, Animate } from "svg4react"
 
 render(
-    <Svg size="75%" vb={[100]}>
-        <Circle {...circleProps} />
+    <Svg size="80%" vb={[10]}>
+        <Rect size={[10]} fill="${randomColor()}">
+            <Animate
+                attributeName="rx"
+                values="0;5;0"
+                dur="5s"
+                repeatCount="indefinite"
+            />
+        </Rect>
     </Svg>
 )
 `
