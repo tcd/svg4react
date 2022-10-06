@@ -21,7 +21,7 @@
 	},
 	{
 		"component": "Ellipse",
-		"docComment": "A wrapper for the [`<ellipse>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/ellipse) element.\n\nThe `<ellipse>` element is an SVG basic shape, used to create ellipses based on a center coordinate, and both their x and y radius."
+		"docComment": "A wrapper for the [`<ellipse>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/ellipse) element.\n\nThe `<ellipse>` element is an SVG basic shape, used to create ellipses based on a center coordinate, and both their x and y radius.\n\n**Note**: Ellipses are unable to specify the exact orientation of the ellipse (if, for example, you wanted to draw an ellipse tilted at a 45 degree angle), but they can be rotated by using the `transform` attribute."
 	},
 	{
 		"component": "G",
@@ -34,6 +34,10 @@
 	{
 		"component": "LinearGradient",
 		"docComment": "A wrapper for the [`<linearGradient>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/linearGradient) element.\n\nThe `<linearGradient>` element lets authors define linear gradients to apply to other SVG elements."
+	},
+	{
+		"component": "RadialGradient",
+		"docComment": "A wrapper for the [`<radialGradient>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/radialGradient) element.\n\nThe `<radialGradient>` element lets authors define radial gradients that can be applied to fill or stroke of graphical elements."
 	},
 	{
 		"component": "Path",
@@ -49,7 +53,7 @@
 	},
 	{
 		"component": "Rect",
-		"docComment": "A wrapper for the [`<rect>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/rect) element.\n\nThe `<rect>` element is a [basic SVG shape](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Basic_Shapes) that draws rectangles,\ndefined by their position, width, and height.\n\nThe rectangles may have their corners rounded."
+		"docComment": "A wrapper for the [`<rect>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/rect) element.\n\nThe `<rect>` element is a [basic SVG shape](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Basic_Shapes) that draws rectangles,\ndefined by their position, width, and height."
 	},
 	{
 		"component": "Stop",
@@ -58,6 +62,10 @@
 	{
 		"component": "Svg",
 		"docComment": "A wrapper for the [`<svg>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/svg) element.\n\nThe `<svg>` element is a container that defines a new coordinate system and [viewport](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/viewBox).\n\nIt is used as the outermost element of SVG documents, but it can also be used to embed an SVG fragment inside an SVG or HTML document."
+	},
+	{
+		"component": "Text",
+		"docComment": "A wrapper for the [`<text>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/text) element.\n\nThe SVG `<text>` element draws a graphics element consisting of text.\nIt's possible to apply a gradient, pattern, clipping path, mask, or filter to `<text>`, like any other SVG graphics element.\n\nIf text is included in SVG not inside of a `<text>` element, it is not rendered.\nThis is different than being hidden by default, as setting the `display` property won't show the text."
 	},
 	{
 		"component": "Use",

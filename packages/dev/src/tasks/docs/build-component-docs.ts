@@ -5,7 +5,7 @@ import { writeJsonFile } from "write-json-file"
 import { packagePath } from "../../helpers/paths-windows.js"
 import { gatherComponentData } from "./helpers/index.js"
 
-const components = [
+const components: Svg4ReactComponent[] = [
     "Animate",
     "AnimateMotion",
     "AnimateTransform",
@@ -15,12 +15,14 @@ const components = [
     "G",
     "Line",
     "LinearGradient",
+    "RadialGradient",
     "Path",
     "Polyline",
     "Polygon",
     "Rect",
     "Stop",
     "Svg",
+    "Text",
     "Use",
 ]
 

@@ -243,11 +243,59 @@ Will **not** override \`viewBox\` if both are passed.
             default: '"xMidYMid meet"',
         },
     ],
+    Text: [
+        {
+            "name": "coordinates",
+            "description": "Shorthand for the x and y coordinates of the starting point of the text baseline.\n\n**Will** override `x` and `y`.",
+            "type": "[x: number, y?: number]",
+        },
+        {
+            "name": "dx",
+            "description": "Shifts the text position horizontally from a previous text element.",
+            "type": "number | string",
+        },
+        {
+            "name": "dy",
+            "description": "Shifts the text position vertically from a previous text element.",
+            "type": "number | string",
+        },
+        {
+            "name": "lengthAdjust",
+            "description": "How the text is stretched or compressed to fit the width defined by the textLength attribute.",
+            "type": "\"spacing\" | \"spacingAndGlyphs\"",
+        },
+        {
+            "name": "rotate",
+            "description": "Rotates orientation of each individual glyph. Can rotate glyphs individually.",
+            "type": "string",
+        },
+        {
+            "name": "shift",
+            "description": "Shorthand for `dx` and `dy`.\n\n**Will** override `dx` and `dy`.",
+            "type": "[dx: number, dy: number]",
+        },
+        {
+            "name": "textLength",
+            "description": "A width that the text should be scaled to fit.",
+            "type": "number | string",
+        },
+        {
+            "name": "x",
+            "description": "The x coordinate of the starting point of the text baseline.",
+            "type": "number | string",
+        },
+        {
+            "name": "y",
+            "description": "The y coordinate of the starting point of the text baseline.",
+            "type": "number | string",
+        },
+    ],
     Animate: [],
     AnimateMotion: [],
     AnimateTransform: [],
     Defs: [],
     G: [],
     Path: [],
+    RadialGradient: [],
     Use: [],
 }
