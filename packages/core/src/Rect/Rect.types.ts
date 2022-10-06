@@ -58,25 +58,25 @@ export type _RectAttributes = {
      *
      * @default 0
      */
-    x: number | string
+    x?: number | string
     /**
      * The y coordinate of the rect.
      *
      * @default 0
      */
-    y: number | string
+    y?: number | string
     /**
      * The width of the rect.
      *
      * @default "auto"
      */
-    width: "auto" | number | string
+    width?: "auto" | number | string
     /**
      * The height of the rect.
      *
      * @default "auto"
      */
-    height: "auto" | number | string
+    height?: "auto" | number | string
     /**
      * The horizontal corner radius of the rect.
      *
@@ -84,7 +84,7 @@ export type _RectAttributes = {
      *
      * @default "auto"
      */
-    rx: "auto" | number | string
+    rx?: "auto" | number | string
     /**
      * The vertical corner radius of the rect.
      *
@@ -92,7 +92,7 @@ export type _RectAttributes = {
      *
      * @default "auto"
      */
-    ry: "auto" | number | string
+    ry?: "auto" | number | string
     /**
      * The total length of the rectangle's perimeter, in user units.
      *
