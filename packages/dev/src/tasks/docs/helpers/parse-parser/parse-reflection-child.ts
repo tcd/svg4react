@@ -1,4 +1,5 @@
 import { ProjectParser } from "typedoc-json-parser"
+import { parseReferenceType } from "./parse-reference-type.js"
 // import type * as parser from "typedoc-json-parser"
 
 export const parseReflectionChild = (project: ProjectParser, reflection: any): PropData => {
@@ -96,12 +97,20 @@ export const parseReflectionChild = (project: ProjectParser, reflection: any): P
 // =============================================================================
 
 const parseReference = (project: ProjectParser, prop): any => {
-    debugger
+    if (prop?.type?.id) {
+        const referenced = project.find(prop.type.id)
+        if (referenced) {
+            debugger
+            return parseReferenceType(project, referenced).type
+        }
+    } else {
+        console.error("unhandled reference")
+        debugger
+    }
     return [prop.type.package, prop.type.name].join(".")
     // return [prop.package, prop.qualifiedName].join(".")
-    const referenced = project.find(prop.id)
 
-    return referenced
+    // return referenced
 }
 
 const parseUnion = (prop: any): string => {

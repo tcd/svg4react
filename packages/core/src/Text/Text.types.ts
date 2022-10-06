@@ -57,7 +57,7 @@ export type _TextAttributes = {
      * A width that the text should be scaled to fit.
      */
     textLength?: number | string
-} & CommonSvgPresentationAttributes
+}
 
 /**
  * @see [MDN Web Docs - `<text>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/text)

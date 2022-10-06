@@ -8,11 +8,16 @@ import { parseReflectionChild } from "./helpers/parse-parser/parse-reflection-ch
 
 const propTypeMap: Partial<Record<Svg4ReactComponent, string>> = {
     "Ellipse":        "_EllipseAttributes",
-    "LinearGradient": "_LinearGradientAttributes",
-    "Polygon":        "_PolygonAttributes",
-    "Rect":           "__RectAttributes",
-    "Stop":           "StopAttributes",
     "Text":           "_TextAttributes",
+
+    // "Line":           "_LineAttributes",
+    // "LinearGradient": "_LinearGradientAttributes",
+    // "Polygon":        "_PolygonAttributes",
+    // "Polyline":       "_PolylineAttributes",
+    // "RadialGradient": "_RadialGradientAttributes",
+    // "Rect":           "__RectAttributes",
+    // "Stop":           "StopAttributes",
+    // "Svg":            "_SvgAttributes",
 }
 
 const main = async (): Promise<void> => {
