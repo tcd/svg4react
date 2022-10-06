@@ -7,7 +7,7 @@ export const processTextProps = (rawProps: TextProps): TextProps => {
         ...props
     } = rawProps
 
-    if (Array.isArray(coordinates)) {
+    if (Array.isArray(coordinates) && coordinates.length > 0) {
         const [x, y = x] = coordinates
         props.x = x
         props.y = y

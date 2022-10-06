@@ -8,6 +8,8 @@ export type _TextAttributes = {
     /**
      * Shorthand for the x and y coordinates of the starting point of the text baseline.
      *
+     * If only one value is provided, it will be used for `x` and `y`.
+     *
      * **Will** override `x` and `y`.
      *
      * @shorthand x
@@ -16,6 +18,8 @@ export type _TextAttributes = {
     coordinates?: [x: number, y?: number]
     /**
      * Shorthand for `dx` and `dy`.
+     *
+     * If only one value is provided, it will be used for `dx` and `dy`.
      *
      * **Will** override `dx` and `dy`.
      *
