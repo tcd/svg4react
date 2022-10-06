@@ -21,7 +21,7 @@ import {
     StopPage,
     SvgPage,
     TextPage,
-} from "@app/features/demos"
+} from "@app/features/components"
 // import { PlaygroundPage } from "@app/features/playground"
 import { TypesPage } from "@app/features/types"
 import {
