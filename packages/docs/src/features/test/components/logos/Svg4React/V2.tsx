@@ -1,6 +1,6 @@
 import { Svg, Path, Defs, G, PathProps } from "svg4react"
 
-const color1 = "#61dbfb" // #ffb13b
+const color1 = "#b0b043"
 const color2 = "#fff"
 const color3 = "#000"
 
