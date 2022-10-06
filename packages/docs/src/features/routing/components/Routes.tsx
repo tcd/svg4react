@@ -5,7 +5,7 @@ import {
     Layout,
     ChangelogPage,
     HomePage,
-    NotFoundPage
+    NotFoundPage,
 } from "@app/features/core"
 import {
     CirclePage,
@@ -15,6 +15,7 @@ import {
     PathPage,
     PolygonPage,
     PolylinePage,
+    RadialGradientPage,
     RectPage,
     StopPage,
     SvgPage,
@@ -70,6 +71,7 @@ const routes = (): RouteObject[] => {
                         { path: "path",            element: <PathPage />           },
                         { path: "polygon",         element: <PolygonPage />        },
                         { path: "polyline",        element: <PolylinePage />       },
+                        { path: "radial-gradient", element: <RadialGradientPage /> },
                         { path: "rect",            element: <RectPage />           },
                         { path: "stop",            element: <StopPage />           },
                         { path: "svg",             element: <SvgPage />            },
