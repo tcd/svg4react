@@ -19,6 +19,7 @@ export declare global {
         | "Rect"
         | "Stop"
         | "Svg"
+        | "Text"
         | "Use"
 
     export interface PropData {

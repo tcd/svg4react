@@ -12,6 +12,7 @@ const propTypeMap: Partial<Record<Svg4ReactComponent, string>> = {
     "Polygon":        "_PolygonAttributes",
     "Rect":           "__RectAttributes",
     "Stop":           "StopAttributes",
+    "Text":           "_TextAttributes",
 }
 
 const main = async (): Promise<void> => {

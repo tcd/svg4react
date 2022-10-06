@@ -49,5 +49,8 @@ export * from "./Stop"
 export { default as Svg } from "./Svg"
 export * from "./Svg"
 
+export { default as Text } from "./Text"
+export * from "./Text"
+
 export { default as Use } from "./Use"
 export * from "./Use"

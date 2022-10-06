@@ -20,7 +20,6 @@ const Circle = forwardRef<SVGCircleElement, CircleProps>(function Circle(props: 
     }
 
     return (
-        // FIXME: CircleProps.fillRule throws a type error
         // @ts-ignore: next-line
         <circle
             ref={ref}
