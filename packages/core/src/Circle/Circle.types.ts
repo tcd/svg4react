@@ -6,11 +6,13 @@ import type { CommonSvgPresentationAttributes } from "../utils"
  *
  * @see [MDN Web Docs - `<circle>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/circle)
  */
-type CircleAttributes = {
+export type _CircleAttributes = {
     /**
      * Shorthand for the x and y axis coordinates of the center of the circle.
      *
-     * Will override `cx` and `cy`.
+     * If only one value is provided, it will be passed to both `cx` and `cy`.
+     *
+     * **Will** override `cx` and `cy`.
      *
      * @shorthand cx
      * @shorthand cy
@@ -34,7 +36,14 @@ type CircleAttributes = {
      * The total length for the circle's circumference, in user units.
      */
     pathLength?: number | string
-} & CommonSvgPresentationAttributes
+}
+
+/**
+ * @public
+ *
+ * @see [MDN Web Docs - `<circle>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/circle)
+ */
+export type CircleAttributes = _CircleAttributes & CommonSvgPresentationAttributes
 
 /**
  * @public
