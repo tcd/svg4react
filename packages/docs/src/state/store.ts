@@ -12,7 +12,7 @@ import {
 import storage from "redux-persist/lib/storage" // defaults to localStorage for web
 import { getPersistConfig } from "redux-deep-persist"
 
-import { reduxDevToolsOptions } from "@app/util"
+import { reduxDevToolsOptions, CONFIG } from "@app/util"
 import { rootReducer } from "./root-reducer"
 import type { RootState } from "./types"
 
@@ -34,9 +34,11 @@ const persistConfig = getPersistConfig({
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)
 
+const devTools = CONFIG.env === "production" ? false : reduxDevToolsOptions
+
 export const store = configureStore({
     reducer: persistedReducer,
-    devTools: reduxDevToolsOptions,
+    devTools: devTools,
     // @ts-ignore: next-line
     middleware: (getDefaultMiddleware) => getDefaultMiddleware({
         serializableCheck: {
