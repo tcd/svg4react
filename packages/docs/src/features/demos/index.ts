@@ -1,3 +1,4 @@
+export * from "./animate"
 export * from "./circle"
 export * from "./ellipse"
 export * from "./line"
