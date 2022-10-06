@@ -1,5 +1,33 @@
 import type { Property } from "csstype"
 
+export type CommonSvgPresentationAttributes = Pick<SvgPresentationAttributes,
+    | "clipPath"
+    | "clipRule"
+    | "color"
+    | "colorInterpolation"
+    | "cursor"
+    | "display"
+    | "fill"
+    | "fillOpacity"
+    | "fillRule"
+    | "filter"
+    | "mask"
+    | "opacity"
+    | "pointerEvents"
+    | "shapeRendering"
+    | "stroke"
+    | "strokeDasharray"
+    | "strokeDashoffset"
+    | "strokeLinecap"
+    | "strokeLinejoin"
+    | "strokeMiterlimit"
+    | "strokeOpacity"
+    | "strokeWidth"
+    | "transform"
+    | "vectorEffect"
+    | "visibility"
+>
+
 /**
  * @public
  */

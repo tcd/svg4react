@@ -1,6 +1,6 @@
 import type { SVGProps } from "react"
 import type { StopProps } from "../Stop"
-import type { SvgPresentationAttributes } from "../utils"
+import type { CommonSvgPresentationAttributes } from "../utils"
 
 /**
  * @see [MDN Web Docs - `<radialGradient>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/radialGradient)
@@ -74,33 +74,10 @@ export type _RadialGradientAttributes = {
     href?: string
 }
 
-export type RadialGradientAttributes = _RadialGradientAttributes & Pick<SvgPresentationAttributes,
-    | "clipPath"
-    | "clipRule"
-    | "color"
-    | "colorInterpolation"
-    | "cursor"
-    | "display"
-    | "fill"
-    | "fillOpacity"
-    | "fillRule"
-    | "filter"
-    | "mask"
-    | "opacity"
-    | "pointerEvents"
-    | "shapeRendering"
-    | "stroke"
-    | "strokeDasharray"
-    | "strokeDashoffset"
-    | "strokeLinecap"
-    | "strokeLinejoin"
-    | "strokeMiterlimit"
-    | "strokeOpacity"
-    | "strokeWidth"
-    | "transform"
-    | "vectorEffect"
-    | "visibility"
->
+/**
+ * @see [MDN Web Docs - `<radialGradient>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/radialGradient)
+ */
+export type RadialGradientAttributes = _RadialGradientAttributes & CommonSvgPresentationAttributes
 
 /**
  * @see [MDN Web Docs - `<radialGradient>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/radialGradient)

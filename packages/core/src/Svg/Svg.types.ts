@@ -1,7 +1,10 @@
 import type { SVGProps } from "react"
-import type { SvgPresentationAttributes } from "../utils"
+import type { CommonSvgPresentationAttributes } from "../utils"
 
-type SvgAttributes = {
+/**
+ * @see [MDN - `<svg>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/svg)
+ */
+export type _SvgAttributes = {
     /**
      * Shorthand for the setting the last two values of `viewBox`
      *
@@ -36,34 +39,13 @@ type SvgAttributes = {
      *
      * @default "xMidYMid meet"
      */
-    preserveAspectRatio?: "none" | `${"xMidYMin"|"xMinYMin"|"xMaxYMin"|"xMinYMid"|"xMidYMid"|"xMaxYMid"|"xMinYMax"|"xMidYMax"|"xMaxYMax"} ${"meet"|"slice"}`
-} & Pick<SvgPresentationAttributes,
-    | "clipPath"
-    | "clipRule"
-    | "color"
-    | "colorInterpolation"
-    | "cursor"
-    | "display"
-    | "fill"
-    | "fillOpacity"
-    | "fillRule"
-    | "filter"
-    | "mask"
-    | "opacity"
-    | "pointerEvents"
-    | "shapeRendering"
-    | "stroke"
-    | "strokeDasharray"
-    | "strokeDashoffset"
-    | "strokeLinecap"
-    | "strokeLinejoin"
-    | "strokeMiterlimit"
-    | "strokeOpacity"
-    | "strokeWidth"
-    | "transform"
-    | "vectorEffect"
-    | "visibility"
->
+    preserveAspectRatio?: `${"xMidYMin"|"xMinYMin"|"xMaxYMin"|"xMinYMid"|"xMidYMid"|"xMaxYMid"|"xMinYMax"|"xMidYMax"|"xMaxYMax"} ${"meet"|"slice"}`
+}
+
+/**
+ * @see [MDN - `<svg>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/svg)
+ */
+export type SvgAttributes = _SvgAttributes & CommonSvgPresentationAttributes
 
 type Deprecated =
     | "baseProfile"

@@ -1,5 +1,5 @@
 import type { SVGProps } from "react"
-import type { SvgPresentationAttributes } from "../utils"
+import type { CommonSvgPresentationAttributes } from "../utils"
 import type { DrawToArgs } from "./DrawToArgs"
 
 /**
@@ -70,36 +70,22 @@ export type CmdProp =
     | TCmdProp<"Z", DrawToArgs.Z>
     | TCmdProp<"z", DrawToArgs.z>
 
-type PathAttributes = {
+/**
+ * @public
+ *
+ * @see [MDN Web Docs - `<path>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/path)
+ */
+export type _PathAttributes = {
     commands?: CmdProp[]
     d?: string
-} & Pick<SvgPresentationAttributes,
-    | "clipPath"
-    | "clipRule"
-    | "color"
-    | "colorInterpolation"
-    | "cursor"
-    | "display"
-    | "fill"
-    | "fillOpacity"
-    | "fillRule"
-    | "filter"
-    | "mask"
-    | "opacity"
-    | "pointerEvents"
-    | "shapeRendering"
-    | "stroke"
-    | "strokeDasharray"
-    | "strokeDashoffset"
-    | "strokeLinecap"
-    | "strokeLinejoin"
-    | "strokeMiterlimit"
-    | "strokeOpacity"
-    | "strokeWidth"
-    | "transform"
-    | "vectorEffect"
-    | "visibility"
->
+} & CommonSvgPresentationAttributes
+
+/**
+ * @public
+ *
+ * @see [MDN Web Docs - `<path>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/path)
+ */
+export type PathAttributes = _PathAttributes & CommonSvgPresentationAttributes
 
 /**
  * @public

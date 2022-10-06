@@ -1,7 +1,7 @@
 import type { SVGProps } from "react"
-import type { SvgPresentationAttributes } from "../utils"
+import type { CommonSvgPresentationAttributes } from "../utils"
 
-type LineCoordinates = [
+export type LineCoordinates = [
     /**
      * Defines the x-axis coordinate of the line starting point.
      *
@@ -31,9 +31,9 @@ type LineCoordinates = [
 /**
  * @public
  *
- * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/line)
+ * @see [MDN Web Docs - `<line>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/line)
  */
-type LineAttributes = {
+export type _LineAttributes = {
     /**
      * Values, in order, for:
      *
@@ -73,36 +73,19 @@ type LineAttributes = {
      * @default "none"
      */
     pathLength?: number
-} & Pick<SvgPresentationAttributes,
-    | "clipPath"
-    | "clipRule"
-    | "color"
-    | "colorInterpolation"
-    | "cursor"
-    | "display"
-    | "fill"
-    | "fillOpacity"
-    | "fillRule"
-    | "filter"
-    | "mask"
-    | "opacity"
-    | "pointerEvents"
-    | "shapeRendering"
-    | "stroke"
-    | "strokeDasharray"
-    | "strokeDashoffset"
-    | "strokeLinecap"
-    | "strokeLinejoin"
-    | "strokeMiterlimit"
-    | "strokeOpacity"
-    | "strokeWidth"
-    | "transform"
-    | "vectorEffect"
-    | "visibility"
->
+}
 
 /**
  * @public
+ *
+ * @see [MDN Web Docs - `<line>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/line)
+ */
+export type LineAttributes = _LineAttributes & CommonSvgPresentationAttributes
+
+/**
+ * @public
+ *
+ * @see [MDN Web Docs - `<line>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/line)
  */
 export type LineProps =
     Omit<SVGProps<SVGLineElement>, keyof LineAttributes>

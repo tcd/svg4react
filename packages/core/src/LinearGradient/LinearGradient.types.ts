@@ -1,6 +1,6 @@
 import type { SVGProps } from "react"
 import type { StopProps } from "../Stop"
-import type { SvgPresentationAttributes } from "../utils"
+import type { CommonSvgPresentationAttributes } from "../utils"
 
 /**
  * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Element/linearGradient
@@ -72,33 +72,7 @@ export type _LinearGradientAttributes = {
     y2?: string | number
 }
 
-export type LinearGradientAttributes = _LinearGradientAttributes & Pick<SvgPresentationAttributes,
-    | "clipPath"
-    | "clipRule"
-    | "color"
-    | "colorInterpolation"
-    | "cursor"
-    | "display"
-    | "fill"
-    | "fillOpacity"
-    | "fillRule"
-    | "filter"
-    | "mask"
-    | "opacity"
-    | "pointerEvents"
-    | "shapeRendering"
-    | "stroke"
-    | "strokeDasharray"
-    | "strokeDashoffset"
-    | "strokeLinecap"
-    | "strokeLinejoin"
-    | "strokeMiterlimit"
-    | "strokeOpacity"
-    | "strokeWidth"
-    | "transform"
-    | "vectorEffect"
-    | "visibility"
->
+export type LinearGradientAttributes = _LinearGradientAttributes & CommonSvgPresentationAttributes
 
 /**
  * @see [MDN Web Docs - `<linearGradient>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/linearGradient)

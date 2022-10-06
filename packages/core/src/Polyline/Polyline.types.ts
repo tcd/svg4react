@@ -1,5 +1,5 @@
 import type { SVGProps } from "react"
-import type { SvgPresentationAttributes } from "../utils"
+import type { CommonSvgPresentationAttributes } from "../utils"
 
 export type PolylineCoordinate = [
     x: number,
@@ -9,51 +9,32 @@ export type PolylineCoordinate = [
 /**
  * @public
  *
- * @see [MDN](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/polyline)
+ * @see [MDN Web Docs - `<polyline>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/polyline)
  */
-export type PolylineAttributes = {
+export type _PolylineAttributes = {
     /**
      * The list of points (pairs of x,y absolute coordinates) required to draw the polyline.
      *
-     * @default []
+     * @shorthand `React.SVGProps<SVGPolylineElement>["points"]`
      */
     points: PolylineCoordinate[]
     /**
      * Defines the total path length in user units.
-     *
-     * @default "none"
      */
     pathLength?: number
-} & Pick<SvgPresentationAttributes,
-    | "clipPath"
-    | "clipRule"
-    | "color"
-    | "colorInterpolation"
-    | "cursor"
-    | "display"
-    | "fill"
-    | "fillOpacity"
-    | "fillRule"
-    | "filter"
-    | "mask"
-    | "opacity"
-    | "pointerEvents"
-    | "shapeRendering"
-    | "stroke"
-    | "strokeDasharray"
-    | "strokeDashoffset"
-    | "strokeLinecap"
-    | "strokeLinejoin"
-    | "strokeMiterlimit"
-    | "strokeOpacity"
-    | "strokeWidth"
-    | "transform"
-    | "vectorEffect"
-    | "visibility"
->
+}
 
 /**
  * @public
+ *
+ * @see [MDN Web Docs - `<polyline>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/polyline)
+ */
+export type PolylineAttributes = _PolylineAttributes & CommonSvgPresentationAttributes
+
+/**
+ * @public
+ *
+ * @see [MDN Web Docs - `<polyline>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/polyline)
  */
 export type PolylineProps =
     Omit<SVGProps<SVGPolylineElement>, keyof PolylineAttributes>

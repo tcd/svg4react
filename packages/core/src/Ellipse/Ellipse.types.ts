@@ -1,5 +1,5 @@
 import type { SVGProps } from "react"
-import type { SvgPresentationAttributes } from "../utils"
+import type { CommonSvgPresentationAttributes } from "../utils"
 
 /**
  * @see [MDN - `<ellipse>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/ellipse)
@@ -11,6 +11,9 @@ export type _EllipseAttributes = {
      * The x and y axis coordinates of the center of the Ellipse.
      *
      * **Will** override `cx` and `cy`
+     *
+     * @shorthand cx
+     * @shorthand cy
      */
     coordinates?: [cx: number, cy: number]
     /**
@@ -27,6 +30,9 @@ export type _EllipseAttributes = {
      * The radius of the ellipse on the x and y axis.
      *
      * **Will** override `rx` and `ry`
+     *
+     * @shorthand rx
+     * @shorthand ry
      */
     radius?: [cx: number, cy: number]
     /**
@@ -42,36 +48,11 @@ export type _EllipseAttributes = {
      */
     pathLength: number | string
 }
+
 /**
  * @see [MDN - `<ellipse>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/ellipse)
  */
-export type EllipseAttributes = _EllipseAttributes & Pick<SvgPresentationAttributes,
-    | "clipPath"
-    | "clipRule"
-    | "color"
-    | "colorInterpolation"
-    | "cursor"
-    | "display"
-    | "fill"
-    | "fillOpacity"
-    | "fillRule"
-    | "filter"
-    | "mask"
-    | "opacity"
-    | "pointerEvents"
-    | "shapeRendering"
-    | "stroke"
-    | "strokeDasharray"
-    | "strokeDashoffset"
-    | "strokeLinecap"
-    | "strokeLinejoin"
-    | "strokeMiterlimit"
-    | "strokeOpacity"
-    | "strokeWidth"
-    | "transform"
-    | "vectorEffect"
-    | "visibility"
->
+export type EllipseAttributes = _EllipseAttributes & CommonSvgPresentationAttributes
 
 /**
  * @see [MDN - `<ellipse>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/ellipse)
