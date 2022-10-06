@@ -39,7 +39,7 @@ export type _SvgAttributes = {
      *
      * @default "xMidYMid meet"
      */
-    preserveAspectRatio?: `${"xMidYMin"|"xMinYMin"|"xMaxYMin"|"xMinYMid"|"xMidYMid"|"xMaxYMid"|"xMinYMax"|"xMidYMax"|"xMaxYMax"} ${"meet"|"slice"}`
+    preserveAspectRatio?: "none" | `x${"Min"|"Mid"|"Max"}Y${"Min"|"Mid"|"Max"} ${"meet"|"slice"}`
 }
 
 /**
