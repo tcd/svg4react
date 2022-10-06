@@ -3,7 +3,7 @@
  *
  * Indicates a value that is some fraction of another reference value.
  *
- * @see [the `<percentage>` type](https://www.w3.org/TR/css3-values/#percentages)
+ * @see [CSS3 - `percentage`](https://www.w3.org/TR/css3-values/#percentages)
  *
  * @denotedBy `<percentage>`
  * @denotedBy \<percentage>

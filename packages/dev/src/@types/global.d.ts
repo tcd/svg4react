@@ -31,6 +31,7 @@ export declare global {
         | "Path"
         | "Polygon"
         | "Polyline"
+        | "RadialGradient"
         | "Rect"
         | "Stop"
         | "Svg"

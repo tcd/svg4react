@@ -1,12 +1,12 @@
 import type { SVGProps } from "react"
-import type { SvgPresentationAttributes, Length } from "../utils"
+import type { CommonSvgPresentationAttributes, Length } from "../utils"
 
 /**
  * @public
  *
  * @see [MDN Web Docs - `<use>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/use)
  */
-type UseAttributes = {
+export type _UseAttributes = {
     // /**
     //  * `id` of the element to *use*. No preceeding hash required.
     //  */
@@ -39,33 +39,14 @@ type UseAttributes = {
      * @default 0
      */
     height?: Length
-} & Pick<SvgPresentationAttributes,
-    | "clipPath"
-    | "clipRule"
-    | "color"
-    | "colorInterpolation"
-    | "cursor"
-    | "display"
-    | "fill"
-    | "fillOpacity"
-    | "fillRule"
-    | "filter"
-    | "mask"
-    | "opacity"
-    | "pointerEvents"
-    | "shapeRendering"
-    | "stroke"
-    | "strokeDasharray"
-    | "strokeDashoffset"
-    | "strokeLinecap"
-    | "strokeLinejoin"
-    | "strokeMiterlimit"
-    | "strokeOpacity"
-    | "strokeWidth"
-    | "transform"
-    | "vectorEffect"
-    | "visibility"
->
+}
+
+/**
+ * @public
+ *
+ * @see [MDN Web Docs - `<use>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/use)
+ */
+export type UseAttributes = _UseAttributes & CommonSvgPresentationAttributes
 
 type Deprecated =
     | "xlinkHref"
