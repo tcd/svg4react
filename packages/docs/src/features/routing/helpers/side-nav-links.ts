@@ -22,6 +22,7 @@ export const SIDE_NAV_LINKS: (ILinkData | ILinksData)[] = [
             { title: "Rect",           to: "/components/rect" },
             { title: "Stop",           to: "/components/stop" },
             { title: "Svg",            to: "/components/svg" },
+            { title: "Text",           to: "/components/text" },
         ],
     },
     ...(CONFIG.env !== "production" ? [

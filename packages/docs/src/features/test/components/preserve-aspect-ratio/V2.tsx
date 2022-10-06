@@ -1,4 +1,12 @@
-export const V1 = (_props: unknown): JSX.Element => {
+import { Svg, Path, Rect, Circle } from "svg4react"
+
+const TextTitle = ({ title }: { title: string }): JSX.Element => {
+    return (
+        <text x="0" y="-30">--------------- {title} ---------------</text>
+    )
+}
+
+export const V2 = (_props: unknown): JSX.Element => {
     const styles = /*CSS*/`
         text { font-size: 9; }
         rect { fill: none; stroke: blue; }
@@ -14,15 +22,26 @@ export const V1 = (_props: unknown): JSX.Element => {
 
             <defs>
                 <g id="smile">
-                    <rect x='.5' y='.5' width='29' height='39' style={{ fill: "black", stroke: "red" }} />
-                    <circle cx='15' cy='20' r='10'  fill='yellow'/>
-                    <circle cx='12' cy='17' r='1.5' fill='black'/>
-                    <circle cx='17' cy='17' r='1.5' fill='black'/>
-                    <path d='M 10 24 A 8 8 0 0 0 20 24' stroke='black' strokeWidth='2'/>
+                    <Rect points={[0.5,0.5]} size={[29,39]} style={{ fill: "black", stroke: "red" }} />
+                    <Circle coordinates={[15,20]} r="10"  fill="yellow" />
+                    <Circle coordinates={[12,17]} r="1.5" fill="black" />
+                    <Circle coordinates={[17,17]} r="1.5" fill="black" />
+                    <Path
+                        commands={[
+                            ["M", [[10,24]]],
+                            ["A", [[8,8,0,0,0,20,24]]],
+                        ]}
+                        stroke="black"
+                        strokeWidth="2"
+                    />
                 </g>
+                <symbol id="29-59">
+                    {/* <rect x='.5' y='.5' width='49' height='29'/> */}
+                    <Rect points={[0.5,0.5]} size={[29,59]} />
+                </symbol>
             </defs>
 
-            <rect x="1" y="1" width="448" height="298"/>
+            <Rect points={[1]} size={[448,298]} />
 
             <text x="10" y="30">SVG to fit</text>
             <g transform="translate(20,40)"><use href="#smile" /></g>
@@ -34,7 +53,7 @@ export const V1 = (_props: unknown): JSX.Element => {
             <g transform="translate(20,190)"><rect x='.5' y='.5' width='29' height='59'/></g>
 
             <g id="meet-group-1" transform="translate(100, 60)">
-                <text x="0" y="-30">--------------- meet ---------------</text>
+                <TextTitle title="meet" />
                 <g>
                     <text y="-10">xMin*</text>
                     <rect x='.5' y='.5' width='49' height='29'/>
@@ -59,7 +78,7 @@ export const V1 = (_props: unknown): JSX.Element => {
             </g>
 
             <g id="meet-group-2" transform="translate(250, 60)">
-                <text x="0" y="-30">---------- meet ----------</text>
+                <TextTitle title="meet" />
                 <g>
                     <text y="-10">*YMin</text>
                     <rect  x='.5' y='.5' width='29' height='59'/>
@@ -84,7 +103,7 @@ export const V1 = (_props: unknown): JSX.Element => {
             </g>
 
             <g id="slice-group-1" transform="translate(100, 220)">
-                <text x="0" y="-30">---------- slice ----------</text>
+                <TextTitle title="slice" />
                 <g>
                     <text y="-10">xMin*</text>
                     <rect x='.5' y='.5' width='29' height='59'/>
@@ -109,12 +128,11 @@ export const V1 = (_props: unknown): JSX.Element => {
             </g>
 
             <g id="slice-group-2" transform="translate(250, 220)">
-                <text x="0" y="-30">--------------- slice ---------------</text>
+                <TextTitle title="slice" />
                 <g>
                     <text y="-10">*YMin</text>
                     <rect x='.5' y='.5' width='49' height='29'/>
-                    <svg preserveAspectRatio="xMinYMin slice" viewBox="0 0 30 40"
-                        width="50" height="30">
+                    <svg preserveAspectRatio="xMinYMin slice" viewBox="0 0 30 40" width="50" height="30">
                         <use href="#smile" />
                     </svg>
                 </g>

@@ -246,8 +246,28 @@ Will **not** override \`viewBox\` if both are passed.
     Text: [
         {
             "name": "coordinates",
-            "description": "Shorthand for the x and y coordinates of the starting point of the text baseline.\n\n**Will** override `x` and `y`.",
+            "description": "Shorthand for the x and y coordinates of the starting point of the text baseline.\n\nIf only one value is provided, it will be used for `x` and `y`.\n\n**Will** override `x` and `y`.",
             "type": "[x: number, y?: number]",
+        },
+        {
+            "name": "shift",
+            "description": "Shorthand for `dx` and `dy`.\n\nIf only one value is provided, it will be used for `dx` and `dy`.\n\n**Will** override `dx` and `dy`.",
+            "type": "[dx: number, dy: number]",
+        },
+        {
+            "name": "rotate",
+            "description": "Rotates orientation of each individual glyph. Can rotate glyphs individually.",
+            "type": "string",
+        },
+        {
+            "name": "lengthAdjust",
+            "description": "How the text is stretched or compressed to fit the width defined by the textLength attribute.",
+            "type": "\"spacing\" | \"spacingAndGlyphs\"",
+        },
+        {
+            "name": "textLength",
+            "description": "A width that the text should be scaled to fit.",
+            "type": "number | string",
         },
         {
             "name": "dx",
@@ -257,26 +277,6 @@ Will **not** override \`viewBox\` if both are passed.
         {
             "name": "dy",
             "description": "Shifts the text position vertically from a previous text element.",
-            "type": "number | string",
-        },
-        {
-            "name": "lengthAdjust",
-            "description": "How the text is stretched or compressed to fit the width defined by the textLength attribute.",
-            "type": "\"spacing\" | \"spacingAndGlyphs\"",
-        },
-        {
-            "name": "rotate",
-            "description": "Rotates orientation of each individual glyph. Can rotate glyphs individually.",
-            "type": "string",
-        },
-        {
-            "name": "shift",
-            "description": "Shorthand for `dx` and `dy`.\n\n**Will** override `dx` and `dy`.",
-            "type": "[dx: number, dy: number]",
-        },
-        {
-            "name": "textLength",
-            "description": "A width that the text should be scaled to fit.",
             "type": "number | string",
         },
         {

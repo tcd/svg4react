@@ -1,26 +1,27 @@
 import { RouteObject, useRoutes } from "react-router-dom"
 
 import { CONFIG } from "@app/util"
-// NOTE: I know these should be consolidated. Found this easier while still figuring out feature folder structure.
-import { Layout } from "@app/features/core"
-import { ChangelogPage } from "@app/features/core"
-import { HomePage } from "@app/features/core"
-import { NotFoundPage } from "@app/features/core"
-
-import { CirclePage } from "@app/features/demos"
-import { EllipsePage } from "@app/features/demos"
-import { LinearGradientPage } from "@app/features/demos"
-import { LinePage } from "@app/features/demos"
-import { PathPage } from "@app/features/demos"
-import { PolygonPage } from "@app/features/demos"
-import { PolylinePage } from "@app/features/demos"
-import { RectPage } from "@app/features/demos"
-import { StopPage } from "@app/features/demos"
-import { SvgPage } from "@app/features/demos"
-
+import {
+    Layout,
+    ChangelogPage,
+    HomePage,
+    NotFoundPage
+} from "@app/features/core"
+import {
+    CirclePage,
+    EllipsePage,
+    LinearGradientPage,
+    LinePage,
+    PathPage,
+    PolygonPage,
+    PolylinePage,
+    RectPage,
+    StopPage,
+    SvgPage,
+    TextPage,
+} from "@app/features/demos"
 // import { PlaygroundPage } from "@app/features/playground"
 import { TypesPage } from "@app/features/types"
-
 import {
     LogosPage,
     MarkdownPage,
@@ -72,6 +73,7 @@ const routes = (): RouteObject[] => {
                         { path: "rect",            element: <RectPage />           },
                         { path: "stop",            element: <StopPage />           },
                         { path: "svg",             element: <SvgPage />            },
+                        { path: "text",            element: <TextPage />           },
                     ],
                 },
                 ...devRoutes,
