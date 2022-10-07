@@ -1,16 +1,13 @@
 import type { SVGProps } from "react"
 import type { CommonSvgPresentationAttributes } from "../utils"
 
-/**
- * @see [MDN - `<ellipse>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/ellipse)
- */
 export type _EllipseAttributes = {
     /**
-     * Shorthand for `cx` and `cy`.
+     * The x and y axis coordinates of the center of the Ellipse (`cx` and `cy`).
      *
-     * The x and y axis coordinates of the center of the Ellipse.
+     * If only one value is provided, it will be passed to both `cx` and `cy`.
      *
-     * **Will** override `cx` and `cy`
+     * **Will** override `cx` and `cy`.
      *
      * @shorthand cx
      * @shorthand cy
@@ -25,11 +22,11 @@ export type _EllipseAttributes = {
      */
     cy?: number | string
     /**
-     * Shorthand for `rx` and `ry`.
+     * The radius of the ellipse on the x and y axis (`rx` and `ry).
      *
-     * The radius of the ellipse on the x and y axis.
+     * If only one value is provided, it will be passed to both `rx` and `ry`.
      *
-     * **Will** override `rx` and `ry`
+     * **Will** override `rx` and `ry`.
      *
      * @shorthand rx
      * @shorthand ry
@@ -49,13 +46,10 @@ export type _EllipseAttributes = {
     pathLength: number | string
 }
 
-/**
- * @see [MDN - `<ellipse>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/ellipse)
- */
 export type EllipseAttributes = _EllipseAttributes & CommonSvgPresentationAttributes
 
 /**
- * @see [MDN - `<ellipse>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/ellipse)
+ * @see [MDN - `<ellipse>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/ellipse#attributes)
  */
 export type EllipseProps =
     Omit<SVGProps<SVGEllipseElement>, keyof EllipseAttributes>

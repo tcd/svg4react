@@ -1,5 +1,6 @@
 import { forwardRef } from "react"
 import type { EllipseProps } from "./Ellipse.types"
+import { processEllipseProps } from "./process-ellipse-props"
 
 /**
  * A wrapper for the [`<ellipse>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/ellipse) element.
@@ -10,27 +11,13 @@ import type { EllipseProps } from "./Ellipse.types"
  */
 const Ellipse = forwardRef<SVGEllipseElement, EllipseProps>(function Ellipse(props: EllipseProps, ref) {
 
-    const {
-        coordinates = [],
-        radius = [],
-        ...otherProps
-    } = props
-
-    if (coordinates.length == 2) {
-        otherProps.cx = coordinates[0]
-        otherProps.cy = coordinates[1]
-    }
-
-    if (radius.length == 2) {
-        otherProps.rx = radius[0]
-        otherProps.ry = radius[1]
-    }
+    const processedProps = processEllipseProps(props)
 
     return (
         // @ts-ignore: next-line
         <ellipse
             ref={ref}
-            {...otherProps}
+            {...processedProps}
         />
     )
 })
