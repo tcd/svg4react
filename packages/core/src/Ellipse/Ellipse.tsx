@@ -1,4 +1,3 @@
-import { forwardRef } from "react"
 import type { EllipseProps } from "./Ellipse.types"
 import { processEllipseProps } from "./process-ellipse-props"
 
@@ -9,17 +8,16 @@ import { processEllipseProps } from "./process-ellipse-props"
  *
  * **Note**: Ellipses are unable to specify the exact orientation of the ellipse (if, for example, you wanted to draw an ellipse tilted at a 45 degree angle), but they can be rotated by using the `transform` attribute.
  */
-const Ellipse = forwardRef<SVGEllipseElement, EllipseProps>(function Ellipse(props: EllipseProps, ref) {
+const Ellipse = (props: EllipseProps) => {
 
     const processedProps = processEllipseProps(props)
 
     return (
         // @ts-ignore: next-line
         <ellipse
-            ref={ref}
             {...processedProps}
         />
     )
-})
+}
 
 export default Ellipse

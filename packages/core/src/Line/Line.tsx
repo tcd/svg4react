@@ -1,4 +1,5 @@
 import type { LineProps } from "./Line.types"
+import { processLineProps } from "./process-line-props"
 
 /**
  * @public
@@ -9,24 +10,12 @@ import type { LineProps } from "./Line.types"
  */
 const Line = (props: LineProps): JSX.Element => {
 
-    const {
-        coordinates: [
-            x1 = 0,
-            y1 = 0,
-            x2 = 0,
-            y2 = 0,
-        ],
-        ...otherProps
-    } = props
+    const processedProps = processLineProps(props)
 
     return (
         // @ts-ignore: next-line
         <line
-            x1={x1}
-            x2={x2}
-            y1={y1}
-            y2={y2}
-            {...otherProps}
+            {...processedProps}
         />
     )
 }
