@@ -36,20 +36,24 @@
 		"docComment": "A wrapper for the [`<linearGradient>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/linearGradient) element.\n\nThe `<linearGradient>` element lets authors define linear gradients to apply to other SVG elements."
 	},
 	{
-		"component": "RadialGradient",
-		"docComment": "A wrapper for the [`<radialGradient>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/radialGradient) element.\n\nThe `<radialGradient>` element lets authors define radial gradients that can be applied to fill or stroke of graphical elements."
+		"component": "Marker",
+		"docComment": "A wrapper for the [`<marker>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/marker) element.\n\nThe `<marker>` element defines the graphic that is to be used for drawing arrowheads or polymarkers on any of the following:\n\n- `<path>`\n- `<line>`\n- `<polyline>`\n- `<polygon>`\n\nMarkers are attached to shapes using the `marker-start`, `marker-mid`, and `marker-end` properties."
 	},
 	{
 		"component": "Path",
 		"docComment": "A wrapper for the [`<path>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/path) element.\n\nThe `<path>` SVG element is the generic element to define a shape.\n\nAll the basic shapes can be created with a path element."
 	},
 	{
+		"component": "Polygon",
+		"docComment": "A wrapper for the [`<polygon>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/polygon) element.\n\nThe `<polygon>` element defines a closed shape consisting of a set of connected straight line segments.\nThe last point is connected to the first point.\n\nFor open shapes, see the [`<polyline>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/polyline) element."
+	},
+	{
 		"component": "Polyline",
 		"docComment": "A wrapper for the [`<polyline>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/polyline) element.\n\nThe `<polyline>` SVG element is a [basic shape](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Basic_Shapes) that creates straight lines connecting several points.\n\nTypically a `polyline` is used to create open shapes as the last point doesn't have to be connected to the first point.\n\nFor closed shapes see the [`<polygon>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/polygon) element."
 	},
 	{
-		"component": "Polygon",
-		"docComment": "A wrapper for the [`<polygon>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/polygon) element.\n\nThe `<polygon>` element defines a closed shape consisting of a set of connected straight line segments.\nThe last point is connected to the first point.\n\nFor open shapes, see the [`<polyline>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/polyline) element."
+		"component": "RadialGradient",
+		"docComment": "A wrapper for the [`<radialGradient>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/radialGradient) element.\n\nThe `<radialGradient>` element lets authors define radial gradients that can be applied to fill or stroke of graphical elements."
 	},
 	{
 		"component": "Rect",
