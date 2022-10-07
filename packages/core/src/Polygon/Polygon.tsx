@@ -1,4 +1,4 @@
-import { processPolygonPoints } from "./process-polygon-points"
+import { processPolygonProps } from "./process-polygon-props"
 import type { PolygonProps } from "./Polygon.types"
 
 /**
@@ -13,18 +13,12 @@ import type { PolygonProps } from "./Polygon.types"
  */
 const Polygon = (props: PolygonProps): JSX.Element => {
 
-    const {
-        points = [],
-        ...otherProps
-    } = props
-
-    const processedPoints = processPolygonPoints(points)
+    const processedProps = processPolygonProps(props)
 
     return (
         // @ts-ignore: next-line
         <polygon
-            points={processedPoints}
-            {...otherProps}
+            {...processedProps}
         />
     )
 }
