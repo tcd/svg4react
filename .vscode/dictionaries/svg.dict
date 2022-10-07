@@ -1,3 +1,4 @@
+arcrole
 fecolormatrix
 fecomponenttransfer
 fecomposite
@@ -21,4 +22,6 @@ fespotlight
 fetile
 feturbulence
 gradians
+hkern
+vkern
 xlink

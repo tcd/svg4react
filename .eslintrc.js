@@ -32,6 +32,12 @@ module.exports = {
                 "no-console": "off",
             },
         },
+        {
+            "files": ["./packages/core/**"], // Or *.test.js
+            "rules": {
+                "@typescript-eslint/no-namespace": "off",
+            },
+        },
     ],
     ignorePatterns: [
         "./etc/config/**.js",
