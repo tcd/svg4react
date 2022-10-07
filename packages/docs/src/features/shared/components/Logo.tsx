@@ -1,21 +1,24 @@
+import { useSelector } from "react-redux"
 import { Svg } from "svg4react"
 
+import { Selectors } from "@app/state"
+
 export interface LogoProps {
-    /** @default "var(--mui-palette-primary-main)" */
-    color1?: string
-    /** @default "#fff" */
-    color2?: string
-    /** @default "#000" */
-    color3?: string
+    // /** @default "var(--mui-palette-primary-main)" */
+    // color1?: string
+    // /** @default "#fff" */
+    // color2?: string
+    // /** @default "#000" */
+    // color3?: string
 }
 
 export const Logo = (props: LogoProps): JSX.Element => {
 
-    const {
-        color1 = "var(--mui-palette-primary-main)",
-        color2 = "#fff",
-        color3 = "#000",
-    } = props
+    const darkModeEnabled = useSelector(Selectors.Core.darkModeEnabled)
+
+    const color1 = "var(--mui-palette-primary-main)"
+    const color2 = darkModeEnabled ? "#000" : "#fff"
+    const color3 = darkModeEnabled ? "#fff" : "#000"
 
     return (
         <Svg size="100%" vb={[300]}>
