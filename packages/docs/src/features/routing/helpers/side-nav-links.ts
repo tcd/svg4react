@@ -38,6 +38,7 @@ export const SIDE_NAV_LINKS: (ILinkData | ILinksData)[] = [
             { title: "Stop",             to: "/components/Stop" },
             { title: "Svg",              to: "/components/Svg" },
             { title: "Text",             to: "/components/Text" },
+            { title: "TextPath",         to: "/components/TextPath" },
             // { title: "Use",              to: "/components/Use" },
         ],
     },

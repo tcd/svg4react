@@ -116,8 +116,19 @@ const navItemWithChildren: SxProps = {
     // justifyContent: open ? "initial" : "center",
     justifyContent: "center",
     // px: 2.5,
+    "& > svg.docs-nav-chevron": {
+        color: theme => theme.palette.primary.main,
+    },
+    "&:hover > svg.docs-nav-chevron": {
+        color: theme => theme.palette.mode == "dark" ? "white" : "#696969",
+    },
 }
 
+const drawerIcon: SxProps = {
+    minWidth: "1rem",
+    mr: 1.5,
+    color: (theme) => theme.palette.primary.main,
+}
 
 // =============================================================================
 // All Together
@@ -132,6 +143,7 @@ export const Layout = {
     drawer,
     drawerHeader,
     drawerLogo,
+    drawerIcon,
     mobileDrawer,
     navItemWithChildren,
 }

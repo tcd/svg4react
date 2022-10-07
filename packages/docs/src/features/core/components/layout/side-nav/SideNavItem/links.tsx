@@ -12,7 +12,7 @@ import { DocsSx } from "@app/theme"
 import { Actions, Selectors } from "@app/state"
 
 import { SideNavItem_link } from "./link"
-import { VerticalChevron } from "./VerticalChevron"
+import { Chevron } from "./Chevron"
 
 export const SideNavItem_links = (props: ILinksData): JSX.Element => {
 
@@ -39,11 +39,11 @@ export const SideNavItem_links = (props: ILinksData): JSX.Element => {
             <Divider />
 
             <ListItemButton dense onClick={handleClick} sx={DocsSx.Layout.navItemWithChildren}>
-                <ListItemIcon sx={{ minWidth: "1rem", mr: 1.5, color: theme => theme.palette.primary.main }}>
+                <ListItemIcon sx={DocsSx.Layout.drawerIcon}>
                     <Icon sx={{ fontSize: "1rem" }}/>
                 </ListItemIcon>
                 <ListItemText primary={title} />
-                <VerticalChevron expanded={sectionOpen} />
+                <Chevron expanded={sectionOpen} />
             </ListItemButton>
 
             <Collapse in={sectionOpen} timeout="auto">

@@ -23,6 +23,7 @@ import {
     StopPage,
     SvgPage,
     TextPage,
+    TextPathPage,
 } from "@app/features/components"
 // import { PlaygroundPage } from "@app/features/playground"
 import { TypesPage } from "@app/features/types"
@@ -82,6 +83,7 @@ const routes = (): RouteObject[] => {
                         { path: "Stop",             element: <StopPage />             },
                         { path: "Svg",              element: <SvgPage />              },
                         { path: "Text",             element: <TextPage />             },
+                        { path: "TextPath",         element: <TextPathPage />         },
                     ],
                 },
                 ...devRoutes,

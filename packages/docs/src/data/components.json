@@ -72,6 +72,10 @@
 		"docComment": "A wrapper for the [`<text>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/text) element.\n\nThe SVG `<text>` element draws a graphics element consisting of text.\nIt's possible to apply a gradient, pattern, clipping path, mask, or filter to `<text>`, like any other SVG graphics element.\n\nIf text is included in SVG not inside of a `<text>` element, it is not rendered.\nThis is different than being hidden by default, as setting the `display` property won't show the text."
 	},
 	{
+		"component": "TextPath",
+		"docComment": "A wrapper for the [`<textPath>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/textPath) element.\n\nTo render text along the shape of a `<path>`, enclose the text in a `<textPath>` element that has an href attribute with a reference to the `<path>` element."
+	},
+	{
 		"component": "Use",
 		"docComment": "A wrapper for the [`<use>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/use) element.\n\nThe `<use>` element takes nodes from within the SVG document, and duplicates them somewhere else.\n\nMost attributes on `use` do not override those already on the element referenced by `use`.\n\nOnly the attributes `x`, `y`, `width`, `height` and `href` on the use element will override those set on the referenced element.\n\nHowever, any other attributes not set on the referenced element will be applied to the `use` element."
 	}
