@@ -49,6 +49,7 @@ export declare global {
     export interface ILinkData {
         title: string
         to: string
+        Icon?: typeof DataObjectIcon
     }
 
     export interface ILinksData {

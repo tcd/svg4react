@@ -1,20 +1,24 @@
+// import CastleIcon from "@mui/icons-material/Castle"
 import CodeIcon from "@mui/icons-material/Code"
 // import DataObjectIcon from "@mui/icons-material/DataObject"
+import DescriptionIcon from "@mui/icons-material/Description"
 // import HomeIcon from "@mui/icons-material/Home"
 import ScienceIcon from "@mui/icons-material/Science"
+// import TerminalIcon from "@mui/icons-material/Terminal"
 
 import { CONFIG } from "@app/util"
 
 export const SIDE_NAV_LINKS: (ILinkData | ILinksData)[] = [
-    // {
-    //     title: "root",
-    //     Icon: HomeIcon,
-    //     links: [
-    //         { title: "Home", to: "/" },
-    //         // { title: "Playground", to: "/playground" },
-    //         { title: "Changelog", to: "/changelog" },
-    //     ],
-    // },
+    {
+        title: "root",
+        Icon: null,
+        links: [
+            // { title: "Home", to: "/", Icon: HomeIcon },
+            // { title: "Playground", to: "/playground", Icon: CastleIcon },
+            // { title: "Playground", to: "/playground", Icon: TerminalIcon },
+            { title: "Changelog", to: "/changelog", Icon: DescriptionIcon },
+        ],
+    },
     {
         title: "Components",
         Icon: CodeIcon,
