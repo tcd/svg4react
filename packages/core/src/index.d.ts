@@ -31,6 +31,9 @@ export * from "./Line"
 export { default as LinearGradient } from "./LinearGradient"
 export * from "./LinearGradient"
 
+export { default as Marker } from "./Marker"
+export * from "./Marker"
+
 export { default as Path } from "./Path"
 export * from "./Path"
 
