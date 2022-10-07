@@ -194,13 +194,6 @@ export interface SvgPresentationAttributes {
      */
     overflow?: Property.Overflow
     /**
-     * Specifies the order that the fill, stroke, and markers of a given shape or text element are painted.
-     *
-     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/paint-order)
-     * @see [SVG2](https://svgwg.org/svg2-draft/painting.html#PaintOrder)
-     */
-    paintOrder?: Property.PaintOrder
-    /**
      * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/pointer-events)
      */
     pointerEvents?: Property.PointerEvents

@@ -54,5 +54,8 @@ export * from "./Svg"
 export { default as Text } from "./Text"
 export * from "./Text"
 
+export { default as TextPath } from "./TextPath"
+export * from "./TextPath"
+
 export { default as Use } from "./Use"
 export * from "./Use"

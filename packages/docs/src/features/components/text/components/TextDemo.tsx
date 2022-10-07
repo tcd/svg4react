@@ -22,17 +22,13 @@ export const TextDemo = (_props: unknown): JSX.Element => {
 const code = `
 import { Svg, Text } from "svg4react"
 
-const styles = \`
-    .small {
-        font: italic 13px sans-serif;
-    }
-    .heavy {
-        font: bold 30px sans-serif;
-    }
+const styles = /*CSS*/\`
+    .small { font: italic 13px sans-serif; }
+    .heavy { font: bold 30px sans-serif; }
     /* Note that the color of the text is set with the fill property, the color property is for HTML only */
     .Rrrrr {
         font: italic 40px serif;
-        fill: red;
+        fill: ${randomColor()};
     }
 \`
 

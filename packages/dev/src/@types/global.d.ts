@@ -37,5 +37,6 @@ export declare global {
         | "Stop"
         | "Svg"
         | "Text"
+        | "TextPath"
         | "Use"
 }
