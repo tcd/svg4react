@@ -20,6 +20,9 @@
     - [w3c/webref](https://github.com/w3c/webref)
     - [~~mdn/data~~](https://github.com/mdn/data) *(in the process of being deprecated for w3c/webref)*
     - [mdn/content](https://github.com/mdn/content)
+- Browser Support
+    - [Fyrd/caniuse](https://github.com/Fyrd/caniuse) - Raw browser/feature support data from caniuse.com
+    - [browserslist/caniuse-lite](https://github.com/browserslist/caniuse-lite) - A smaller version of caniuse-db, with only the essentials!
 
 
 ## Resources
