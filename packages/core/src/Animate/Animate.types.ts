@@ -1,5 +1,4 @@
 import type { SVGProps } from "react"
-import type { CommonSvgPresentationAttributes } from "../utils"
 
 /**
  * @public
@@ -7,7 +6,7 @@ import type { CommonSvgPresentationAttributes } from "../utils"
  * @see [MDN Web Docs - `<animate>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/animate)
  * @see [SVG2 - `<animate>`](https://svgwg.org/specs/animations/#AnimateElement)
  */
-export type _AnimateAttributes = {
+export type AnimateAttributes = {
     /**
      * The name of the CSS property or attribute of the target element that is going to be changed during an animation.
      */
@@ -112,11 +111,6 @@ export type _AnimateAttributes = {
      */
     by?: any
 }
-
-/**
- * @see [MDN Web Docs - `<animate>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/animate)
- */
-export type AnimateAttributes = _AnimateAttributes & CommonSvgPresentationAttributes
 
 /**
  * @see [MDN Web Docs - `<animate>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/animate)
