@@ -1,4 +1,5 @@
 export * from "./animate"
+export * from "./animate-motion"
 export * from "./animate-transform"
 export * from "./circle"
 export * from "./ellipse"

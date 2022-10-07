@@ -8,6 +8,7 @@ import {
     NotFoundPage,
 } from "@app/features/core"
 import {
+    AnimateMotionPage,
     AnimatePage,
     AnimateTransformPage,
     CirclePage,
@@ -67,6 +68,7 @@ const routes = (): RouteObject[] => {
                     children: [
                         { index: true,              element: <NotFoundPage />         },
                         { path: "Animate",          element: <AnimatePage />          },
+                        { path: "AnimateMotion",    element: <AnimateMotionPage />    },
                         { path: "AnimateTransform", element: <AnimateTransformPage /> },
                         { path: "Circle",           element: <CirclePage />           },
                         { path: "Ellipse",          element: <EllipsePage />          },

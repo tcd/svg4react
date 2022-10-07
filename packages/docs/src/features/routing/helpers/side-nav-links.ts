@@ -13,7 +13,7 @@ export const SIDE_NAV_LINKS: (ILinkData | ILinksData)[] = [
         title: "Components",
         links: [
             { title: "Animate",          to: "/components/Animate" },
-            // { title: "AnimateMotion",    to: "/components/AnimateMotion" },
+            { title: "AnimateMotion",    to: "/components/AnimateMotion" },
             { title: "AnimateTransform", to: "/components/AnimateTransform" },
             { title: "Circle",           to: "/components/Circle" },
             { title: "Ellipse",          to: "/components/Ellipse" },
