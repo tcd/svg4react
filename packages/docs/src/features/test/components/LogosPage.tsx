@@ -9,6 +9,7 @@ export const LogosPage = (_props: unknown): JSX.Element => {
             <Stack direction="column" spacing={5}>
                 <logos.NpmCube />
                 <logos.Svg4React />
+                <logos.Atom />
             </Stack>
         </Page>
     )
