@@ -1,41 +1,20 @@
-import type { DrawToArgs } from "./DrawToArgs"
-
-// /**
-//  * `Z`
-//  *
-//  * closepath
-//  */
-// export const Z = () => { return "Z" }
-//
-// /**
-//  * `z`
-//  *
-//  * closepath
-//  */
-// export const z = () => { return "z" }
+import type { DrawToArgs } from "./DrawArgs.long"
 
 /**
- * `Z`
+ * `Z` / `z`
  *
- * closepath
+ * Close the current subpath by drawing a straight line from the current point to current subpath's initial point.
  */
-export const Z = () => { return "Z" }
-
-/**
- * `z`
- *
- * closepath
- */
-export const z = () => { return "z" }
+export const closepath = (z: "z" | "Z"): "z" | "Z" => z
 
 // =========================================================================
 
 /**
  * `M`
  *
- * moveto_absolute
+ * Start a new sub-path at the given (x,y) coordinate.
  */
-export const M = (...args: DrawToArgs.m[]) => {
+export const moveto_absolute = (...args: DrawToArgs.moveto_absolute[]) => {
     const points = args.map((xy) => xy.join(","))
     return ["M", ...points].join(" ")
 }
@@ -43,9 +22,9 @@ export const M = (...args: DrawToArgs.m[]) => {
 /**
  * `m`
  *
- * moveto_relative
+ * Start a new sub-path at the given (x,y) coordinate.
  */
-export const m = (...args: DrawToArgs.m[]) => {
+export const moveto_relative = (...args: DrawToArgs.moveto_relative[]) => {
     const points = args.map((dXdY) => dXdY.join(","))
     return ["m", ...points].join(" ")
 }
@@ -54,10 +33,8 @@ export const m = (...args: DrawToArgs.m[]) => {
 
 /**
  * `L`
- *
- * lineto_absolute
  */
-export const L = (...args: DrawToArgs.L[]) => {
+export const lineto_absolute = (...args: DrawToArgs.lineto_absolute[]) => {
     const points = args.map((xy) => xy.join(","))
     return ["L", ...points].join(" ")
 }
@@ -67,7 +44,7 @@ export const L = (...args: DrawToArgs.L[]) => {
  *
  * lineto_relative
  */
-export const l = (...args: DrawToArgs.l[]) => {
+export const lineto_relative = (...args: DrawToArgs.lineto_relative[]) => {
     const points = args.map((dXdY) => dXdY.join(","))
     return ["l", ...points].join(" ")
 }
@@ -79,7 +56,7 @@ export const l = (...args: DrawToArgs.l[]) => {
  *
  * horizontal_lineto_absolute
  */
-export const H = (...y: DrawToArgs.H[]) => {
+export const horizontal_lineto_absolute = (...y: DrawToArgs.horizontal_lineto_absolute[]) => {
     return ["H", ...y].join(" ")
 }
 
@@ -88,7 +65,7 @@ export const H = (...y: DrawToArgs.H[]) => {
  *
  * horizontal_lineto_relative
  */
-export const h = (...y: DrawToArgs.h[]) => {
+export const horizontal_lineto_relative = (...y: DrawToArgs.horizontal_lineto_relative[]) => {
     return ["h", ...y].join(" ")
 }
 
@@ -99,7 +76,7 @@ export const h = (...y: DrawToArgs.h[]) => {
  *
  * vertical_lineto_absolute
  */
-export const V = (...x: DrawToArgs.V[]) => {
+export const vertical_lineto_absolute = (...x: DrawToArgs.vertical_lineto_absolute[]) => {
     return ["V", ...x].join(" ")
 }
 
@@ -108,7 +85,7 @@ export const V = (...x: DrawToArgs.V[]) => {
  *
  * vertical_lineto_relative
  */
-export const v = (...x: DrawToArgs.v[]) => {
+export const vertical_lineto_relative = (...x: DrawToArgs.vertical_lineto_relative[]) => {
     return ["v", ...x].join(" ")
 }
 
@@ -118,8 +95,10 @@ export const v = (...x: DrawToArgs.v[]) => {
  * `C`
  *
  * curveto_absolute
+ *
+ * Draws a cubic Bézier curve from the current point to (x,y) using (x1,y1) as the control point at the beginning of the curve and (x2,y2) as the control point at the end of the curve.
  */
-export const C = (...opts: DrawToArgs.c[]): string => {
+export const curveto_absolute = (...opts: DrawToArgs.curveto_absolute[]): string => {
     const points = opts.map((opt) => `C ${opt[0]},${opt[1]} ${opt[2]},${opt[3]} ${opt[4]},${opt[5]}`)
     return points.join(" ")
 }
@@ -129,7 +108,7 @@ export const C = (...opts: DrawToArgs.c[]): string => {
  *
  * curveto_relative
  */
-export const c = (...opts: DrawToArgs.c[]): string => {
+export const curveto_relative = (...opts: DrawToArgs.curveto_relative[]): string => {
     const points = opts.map((opt) => `c ${opt[0]},${opt[1]} ${opt[2]},${opt[3]} ${opt[4]},${opt[5]}`)
     return points.join(" ")
 }
@@ -141,7 +120,7 @@ export const c = (...opts: DrawToArgs.c[]): string => {
  *
  * smooth_curveto_absolute
  */
-export const S = (...opts: DrawToArgs.S[]): string => {
+export const smooth_curveto_absolute = (...opts: DrawToArgs.smooth_curveto_absolute[]): string => {
     const points = opts.map((opt) => `S ${opt[0]},${opt[1]} ${opt[2]},${opt[3]}`)
     return points.join(" ")
 }
@@ -151,7 +130,7 @@ export const S = (...opts: DrawToArgs.S[]): string => {
  *
  * smooth_curveto_relative
  */
-export const s = (...opts: DrawToArgs.s[]): string => {
+export const smooth_curveto_relative = (...opts: DrawToArgs.smooth_curveto_relative[]): string => {
     const points = opts.map((opt) => `s ${opt[0]},${opt[1]} ${opt[2]},${opt[3]}`)
     return points.join(" ")
 }
@@ -163,7 +142,7 @@ export const s = (...opts: DrawToArgs.s[]): string => {
  *
  * quadratic_bezier_curveto_absolute
  */
-export const Q = (...opts: DrawToArgs.Q[]) => {
+export const quadratic_bezier_curveto_absolute = (...opts: DrawToArgs.quadratic_bezier_curveto_absolute[]) => {
     const points = opts.map((opt) => `Q ${opt[0]},${opt[1]} ${opt[2]},${opt[3]}`)
     return points.join(" ")
 }
@@ -173,7 +152,7 @@ export const Q = (...opts: DrawToArgs.Q[]) => {
  *
  * quadratic_bezier_curveto_relative
  */
-export const q = (...opts: DrawToArgs.q[]) => {
+export const quadratic_bezier_curveto_relative = (...opts: DrawToArgs.quadratic_bezier_curveto_relative[]) => {
     const points = opts.map((opt) => `q ${opt[0]},${opt[1]} ${opt[2]},${opt[3]}`)
     return points.join(" ")
 }
@@ -185,7 +164,7 @@ export const q = (...opts: DrawToArgs.q[]) => {
  *
  * smooth_quadratic_bezier_curveto_absolute
  */
-export const T = (...args: DrawToArgs.T[]) => {
+export const smooth_quadratic_bezier_curveto_absolute = (...args: DrawToArgs.smooth_quadratic_bezier_curveto_absolute[]) => {
     const points = args.map((xy) => xy.join(","))
     return ["T", ...points].join(" ")
 }
@@ -195,29 +174,19 @@ export const T = (...args: DrawToArgs.T[]) => {
  *
  * smooth_quadratic_bezier_curveto_relative
  */
-export const t = (...args: DrawToArgs.t[]) => {
+export const smooth_quadratic_bezier_curveto_relative = (...args: DrawToArgs.smooth_quadratic_bezier_curveto_relative[]) => {
     const points = args.map((dXdY) => dXdY.join(","))
     return ["t", ...points].join(" ")
 }
 
 // =========================================================================
 
-// export type A_options = [
-//     rx: number,
-//     ry: number,
-//     angle: number,
-//     largeArcFlag: 0 | 1,
-//     sweepFlag: 0 | 1,
-//     x: number,
-//     y: number,
-// ]
-
 /**
  * `A`
  *
  * elliptical_arc_absolute
  */
-export const A = (...opts: DrawToArgs.A[]): string => {
+export const elliptical_arc_absolute = (...opts: DrawToArgs.elliptical_arc_absolute[]): string => {
     const points = opts.map((opt) => `A ${opt[0]},${opt[1]} ${opt[2]},${opt[3]},${opt[4]} ${opt[5]},${opt[6]}`)
     return points.join(" ")
 }
@@ -227,33 +196,7 @@ export const A = (...opts: DrawToArgs.A[]): string => {
  *
  * elliptical_arc_relative
  */
-export const a = (...opts: DrawToArgs.a[]): string => {
+export const elliptical_arc_relative = (...opts: DrawToArgs.elliptical_arc_relative[]): string => {
     const points = opts.map((opt) => `a ${opt[0]},${opt[1]} ${opt[2]},${opt[3]},${opt[4]} ${opt[5]},${opt[6]}`)
     return points.join(" ")
-}
-
-/**
- * @internal
- */
-export const DrawToFuncs = {
-    M,
-    m,
-    L,
-    l,
-    H,
-    h,
-    V,
-    v,
-    C,
-    c,
-    S,
-    s,
-    Q,
-    q,
-    T,
-    t,
-    A,
-    a,
-    Z,
-    z,
 }

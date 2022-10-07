@@ -1,5 +1,5 @@
 import type { PathProps } from "./Path.types"
-import { buildDrawing } from "./build-drawing"
+import processPathProps from "./process-path-props"
 
 /**
  * @public
@@ -12,30 +12,12 @@ import { buildDrawing } from "./build-drawing"
  */
 const Path = (props: PathProps) => {
 
-    // const {
-    //     id,
-    //     commands,
-    //     fill="none",
-    //     stroke="black",
-    // } = props
-
-    let {
-        // @ts-ignore: next-line
-        commands = null,
-        // @ts-ignore: next-line
-        d = null,
-        ...otherProps
-    } = props
-
-    if (d === null) {
-        d = buildDrawing(commands)
-    }
+    const processedProps = processPathProps(props)
 
     return (
         // @ts-ignore: next-line
         <path
-            d={d}
-            {...otherProps}
+            {...processedProps}
         />
     )
 }
