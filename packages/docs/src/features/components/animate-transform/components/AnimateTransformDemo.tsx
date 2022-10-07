@@ -1,13 +1,15 @@
-import { Svg, Animate, Rect } from "svg4react"
+import {
+    Svg,
+    Polygon,
+    AnimateTransform,
+} from "svg4react"
 
 import { randomColor } from "@app/util"
 import { LiveDemo } from "@app/features/live-demo"
 
 export const AnimateTransformDemo = (_props: unknown): JSX.Element => {
 
-    return <span>TODO: AnimateTransformDemo</span>
-
-    const scope = { Svg, Animate, Rect }
+    const scope = { Svg, AnimateTransform, Polygon }
 
     return (
         <LiveDemo
@@ -22,18 +24,20 @@ export const AnimateTransformDemo = (_props: unknown): JSX.Element => {
 // =============================================================================
 
 const code = `
-import { Svg, Animate } from "svg4react"
+import { Svg, Polygon, AnimateTransform } from "svg4react"
 
 render(
-    <Svg size="80%" vb={[10]}>
-        <Rect size={[10]} fill="${randomColor()}">
-            <Animate
-                attributeName="rx"
-                values="0;5;0"
+    <Svg size="120px" vb={[120]}>
+        <Polygon fill="${randomColor()}" points={[[60,30], [90,90], [30,90]]}>
+            <AnimateTransform
+                attributeName="transform"
+                type="rotate"
+                from="0 60 70"
+                to="360 60 70"
                 dur="5s"
                 repeatCount="indefinite"
             />
-        </Rect>
+        </Polygon>
     </Svg>
 )
 `
