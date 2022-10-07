@@ -22,11 +22,15 @@ export const SideNavItem_link = (props: ILinkData): JSX.Element => {
         color: active
             ? (theme) => theme.palette.primary.main
             : (theme) => theme.palette.mode === "dark" ? "#b2bac2" : "#3E5060",
+        marginLeft: theme => `calc(1rem + ${theme.spacing(1.5)})`,
     }
 
     return (
         <ListItemButton dense onClick={handleClick}>
-            <ListItemText primary={props.title} primaryTypographyProps={{ sx }} />
+            <ListItemText
+                primary={props.title}
+                primaryTypographyProps={{ sx }}
+            />
         </ListItemButton>
     )
 }

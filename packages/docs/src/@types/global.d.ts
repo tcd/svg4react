@@ -1,4 +1,5 @@
 import type { Location } from "react-router-dom"
+import DataObjectIcon from "@mui/icons-material/DataObject"
 
 export declare global {
 
@@ -53,6 +54,7 @@ export declare global {
     export interface ILinksData {
         title: string
         links: ILinkData[]
+        Icon: typeof DataObjectIcon
     }
 
     // =========================================================================

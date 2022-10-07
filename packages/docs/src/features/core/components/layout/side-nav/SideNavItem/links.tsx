@@ -3,7 +3,6 @@ import {
     Collapse,
     Divider,
     List,
-    ListItem,
     ListItemButton,
     ListItemIcon,
     ListItemText,
@@ -20,6 +19,7 @@ export const SideNavItem_links = (props: ILinksData): JSX.Element => {
     const {
         title,
         links = [],
+        Icon,
     } = props
 
     const dispatch = useDispatch()
@@ -39,6 +39,9 @@ export const SideNavItem_links = (props: ILinksData): JSX.Element => {
             <Divider />
 
             <ListItemButton dense onClick={handleClick} sx={DocsSx.Layout.navItemWithChildren}>
+                <ListItemIcon sx={{ minWidth: "1rem", mr: 1.5, color: theme => theme.palette.primary.main }}>
+                    <Icon sx={{ fontSize: "1rem" }}/>
+                </ListItemIcon>
                 <ListItemText primary={title} />
                 <VerticalChevron expanded={sectionOpen} />
             </ListItemButton>

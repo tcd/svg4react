@@ -1,8 +1,14 @@
+import CodeIcon from "@mui/icons-material/Code"
+// import DataObjectIcon from "@mui/icons-material/DataObject"
+// import HomeIcon from "@mui/icons-material/Home"
+import ScienceIcon from "@mui/icons-material/Science"
+
 import { CONFIG } from "@app/util"
 
 export const SIDE_NAV_LINKS: (ILinkData | ILinksData)[] = [
     // {
     //     title: "root",
+    //     Icon: HomeIcon,
     //     links: [
     //         { title: "Home", to: "/" },
     //         // { title: "Playground", to: "/playground" },
@@ -11,6 +17,7 @@ export const SIDE_NAV_LINKS: (ILinkData | ILinksData)[] = [
     // },
     {
         title: "Components",
+        Icon: CodeIcon,
         links: [
             { title: "Animate",          to: "/components/Animate" },
             { title: "AnimateMotion",    to: "/components/AnimateMotion" },
@@ -33,6 +40,7 @@ export const SIDE_NAV_LINKS: (ILinkData | ILinksData)[] = [
     ...(CONFIG.env !== "production" ? [
         {
             title: "Examples",
+            Icon: ScienceIcon,
             links: [
                 { title: "Test", to: "/examples/" },
                 { title: "Logos", to: "/examples/logos" },
