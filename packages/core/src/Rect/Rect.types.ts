@@ -31,28 +31,7 @@ export type __RectAttributes = {
  *
  * @see [MDN Web Docs - `<rect>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/rect)
  */
-export type _RectAttributes = {
-    /**
-     * Shorthand for the x and y axis coordinates of the center of the rect.
-     *
-     * @shorthand x
-     * @shorthand y
-     */
-    points?: [x: number, y?: number]
-    /**
-     * Shorthand for the x and y axis coordinates of the center of the rect.
-     *
-     * @shorthand width
-     * @shorthand height
-     */
-    size?: [width: number, height?: number]
-    /**
-     * Shorthand for the horizontal and vertical corner radii of the rect.
-     *
-     * @shorthand rx
-     * @shorthand ry
-     */
-    radius?: [rx: number, ry?: number]
+export type _RectAttributes = __RectAttributes & {
     /**
      * The x coordinate of the rect.
      *

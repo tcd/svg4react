@@ -3,28 +3,28 @@ import type { RectProps } from "./Rect.types"
 export const processRectProps = (rawProps: RectProps): RectProps => {
     const {
         points = [],
-        size = [],
+        size   = [],
         radius = [],
-        ...props
+        ...processedProps
     } = rawProps
 
-    if (Array.isArray(points)) {
+    if (Array.isArray(points) && points.length > 0) {
         const [x, y = x] = points
-        props.x = x
-        props.y = y
+        processedProps.x = x
+        processedProps.y = y
     }
 
-    if (Array.isArray(size)) {
+    if (Array.isArray(size) && size.length > 0) {
         const [width, height = width] = size
-        props.width  = width
-        props.height = height
+        processedProps.width  = width
+        processedProps.height = height
     }
 
-    if (Array.isArray(radius)) {
+    if (Array.isArray(radius) && radius.length > 0) {
         const [rx, ry = rx] = radius
-        props.rx = rx
-        props.ry = ry
+        processedProps.rx = rx
+        processedProps.ry = ry
     }
 
-    return props
+    return processedProps
 }

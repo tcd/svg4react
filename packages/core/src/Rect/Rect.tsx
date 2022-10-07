@@ -9,10 +9,10 @@ import { processRectProps } from "./process-rect-props"
  */
 const Rect = (props: RectProps): JSX.Element => {
 
-    props = processRectProps(props)
+    const processedProps = processRectProps(props)
 
     // @ts-ignore: next-line
-    return <rect {...props} />
+    return <rect {...processedProps} />
 }
 
 export default Rect
