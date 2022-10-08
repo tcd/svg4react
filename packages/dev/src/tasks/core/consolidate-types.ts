@@ -10,13 +10,10 @@ const main = async (): Promise<void> => {
     let _deleted = []
     const dryRun = false
     const coreRoot = PACKAGE_PATHS.core
-    console.log({ cwd: process.cwd() })
 
     if (process.cwd() != coreRoot) {
         process.chdir(coreRoot)
     }
-
-    console.log({ cwd: process.cwd() })
 
     const toDelete = {
         "dist/**/*.d.ts":     join("dist", "**", "*.d.ts"),
