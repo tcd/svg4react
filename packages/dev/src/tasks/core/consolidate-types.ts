@@ -1,43 +1,37 @@
-// import { globby } from "globby"
-import { deleteAsync } from "del"
+import { join } from "path/posix"
 import { rename } from "fs/promises"
-import rimraf from "rimraf"
-// import rimraf from "rimraf"
 
-import { packagePath as packagePathPosix } from "../../helpers/paths-posix.js"
-import { packagePath as packagePathWindows } from "../../helpers/paths-windows.js"
+import { deleteAsync } from "del"
 
-// const cwd = process.cwd().replaceAll("\\\\", "/")
-
-// const globs = [
-//     posix.join(".", "dist", "**", "*.d.ts") ,
-//     // "*",
-//     // "!cake",
-// ]
-// console.log(globs)
-
-// const paths = await globby(globs)
-// console.log(paths)
+import { PACKAGE_PATHS } from "../../helpers/index.js"
 
 const main = async (): Promise<void> => {
 
     let _deleted = []
     const dryRun = false
+    const coreRoot = PACKAGE_PATHS.core
+    console.log({ cwd: process.cwd() })
+
+    if (process.cwd() != coreRoot) {
+        process.chdir(coreRoot)
+    }
+
+    console.log({ cwd: process.cwd() })
 
     const toDelete = {
-        "dist/**/*.d.ts": packagePathWindows("core", ["dist", "**", "*.d.ts"]),
-        "dist/**/*.d.ts.map": packagePathWindows("core", ["dist", "**", "*.d.ts.map"]),
+        "dist/**/*.d.ts":     join("dist", "**", "*.d.ts"),
+        "dist/**/*.d.ts.map": join("dist", "**", "*.d.ts.map"),
     }
 
     for (const [name, files] of Object.entries(toDelete)) {
-        await rimraf(files, {}, (error: Error) => { console.error(error) })
-        // if (dryRun) { console.log(_deleted) }
-        // console.log(`${name} files deleted`)
+        _deleted = await deleteAsync(files, { dryRun, expandDirectories: true })
+        if (dryRun) { console.log(_deleted) }
+        console.log(`${name} files deleted`)
     }
 
     if (!dryRun) {
-        const from = packagePathWindows("core", ["tmp",  "svg4react.d.ts"])
-        const to   = packagePathWindows("core", ["dist", "index.d.ts"])
+        const from = join("tmp",  "svg4react.d.ts")
+        const to   = join("dist", "index.d.ts")
         await rename(from, to)
         console.log(`${from} moved to ${to}`)
     }

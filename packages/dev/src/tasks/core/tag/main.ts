@@ -1,13 +1,12 @@
-import { join } from "path"
 import { readFileSync } from "fs"
 import inquirer from "inquirer"
 
-import { PACKAGE_PATHS } from "../../../helpers/paths-windows.js"
+import { packagePathWindows } from "../../../helpers/paths-windows.js"
 import { addTag } from "./add-tag.js"
 import { pushTag } from "./push-tag.js"
 import { getLastTag } from "./get-last-tag.js"
 
-const packageJsonPath = join(PACKAGE_PATHS.core, "package.json")
+const packageJsonPath = packagePathWindows("core", ["package.json"])
 const packageJson     = JSON.parse(readFileSync(packageJsonPath).toString())
 const version         = `v${packageJson.version}`
 

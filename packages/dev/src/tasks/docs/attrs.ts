@@ -2,13 +2,13 @@ import { readFile } from "fs/promises"
 import { ProjectParser } from "typedoc-json-parser"
 import { writeJsonFile } from "write-json-file"
 
-import { packagePath } from "../../helpers/paths-windows.js"
+import { packagePathWindows } from "../../helpers/paths-windows.js"
 import { parseInterfaceProperty } from "./helpers/parse-parser/parse-interface-property.js"
 // import { gatherComponentData } from "./gather-component-data.js"
 
 const main = async (): Promise<void> => {
-    const inputPath  = packagePath("core", ["tmp", "svg4react.big.d.json"])
-    const outputPath = packagePath("dev", ["tmp", "attrs.big.json"])
+    const inputPath  = packagePathWindows("core", ["tmp", "svg4react.big.d.json"])
+    const outputPath = packagePathWindows("dev", ["tmp", "attrs.big.json"])
     const inputString = await readFile(inputPath)
     // @ts-ignore: next-line
     const inputData = JSON.parse(inputString)

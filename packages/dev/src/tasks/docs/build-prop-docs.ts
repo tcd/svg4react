@@ -3,7 +3,7 @@ import { ProjectParser } from "typedoc-json-parser"
 import { writeJsonFile } from "write-json-file"
 // import type * as parser from "typedoc-json-parser"
 
-import { packagePath } from "../../helpers/paths-windows.js"
+import { packagePathWindows } from "../../helpers/paths-windows.js"
 import { parseReflectionChild } from "./helpers/parse-parser/parse-reflection-child.js"
 
 const propTypeMap: Partial<Record<Svg4ReactComponent, string>> = {
@@ -22,8 +22,8 @@ const propTypeMap: Partial<Record<Svg4ReactComponent, string>> = {
 }
 
 const main = async (): Promise<void> => {
-    const inputPath  = packagePath("core", ["tmp", "svg4react.d.json"])
-    const outputPath = packagePath("dev", ["tmp", "props.json"])
+    const inputPath  = packagePathWindows("core", ["tmp", "svg4react.d.json"])
+    const outputPath = packagePathWindows("dev", ["tmp", "props.json"])
 
     const inputString = await readFile(inputPath, { encoding: "utf-8" })
     const inputData = JSON.parse(inputString)

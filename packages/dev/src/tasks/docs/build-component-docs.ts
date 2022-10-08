@@ -2,7 +2,7 @@ import { readFile } from "fs/promises"
 import { ProjectParser } from "typedoc-json-parser"
 import { writeJsonFile } from "write-json-file"
 
-import { packagePath } from "../../helpers/paths-windows.js"
+import { packagePathWindows } from "../../helpers/paths-windows.js"
 import { gatherComponentData } from "./helpers/index.js"
 
 const components: Svg4ReactComponent[] = [
@@ -29,8 +29,8 @@ const components: Svg4ReactComponent[] = [
 ]
 
 const main = async (): Promise<void> => {
-    const inputPath  = packagePath("core", ["tmp", "svg4react.d.json"])
-    const outputPath = packagePath("docs", ["src", "data", "components.json"])
+    const inputPath  = packagePathWindows("core", ["tmp", "svg4react.d.json"])
+    const outputPath = packagePathWindows("docs", ["src", "data", "components.json"])
 
     const inputString = await readFile(inputPath, { encoding: "utf-8" })
     const inputData = JSON.parse(inputString)

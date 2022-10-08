@@ -3,14 +3,14 @@ import { dirname, resolve, join } from "path/win32"
 
 const _dirname = dirname(fileURLToPath(import.meta.url))
 
-export const MONOREPO_ROOT = resolve(_dirname, "..", "..", "..", "..")
+export const WINDOWS_MONOREPO_ROOT = resolve(_dirname, "..", "..", "..", "..")
 
-export const PACKAGE_PATHS: Record<PackageName, string> = {
-    core: join(MONOREPO_ROOT, "packages", "core"),
-    dev:  join(MONOREPO_ROOT, "packages", "dev"),
-    docs: join(MONOREPO_ROOT, "packages", "docs"),
+export const WINDOWS_PACKAGE_PATHS: Record<PackageName, string> = {
+    core: join(WINDOWS_MONOREPO_ROOT, "packages", "core"),
+    dev:  join(WINDOWS_MONOREPO_ROOT, "packages", "dev"),
+    docs: join(WINDOWS_MONOREPO_ROOT, "packages", "docs"),
 }
 
-export const packagePath = (packageName: PackageName, paths: string[]): string => {
-    return join(PACKAGE_PATHS[packageName], ...paths)
+export const packagePathWindows = (packageName: PackageName, paths: string[]): string => {
+    return join(WINDOWS_PACKAGE_PATHS[packageName], ...paths)
 }

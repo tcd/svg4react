@@ -1,7 +1,7 @@
 import { readFile, writeFile } from "fs/promises"
 import { join } from "path"
 
-import { PACKAGE_PATHS } from "../../helpers/paths-windows.js"
+import { WINDOWS_PACKAGE_PATHS } from "../../helpers/paths-windows.js"
 
 const header = `
 // =============================================================================
@@ -10,8 +10,8 @@ const header = `
 `.trim()
 
 const main = async () => {
-    const inputPath = join(PACKAGE_PATHS.core, "src", "index.ts")
-    const outputPath = join(PACKAGE_PATHS.core, "src", "index.d.ts")
+    const inputPath = join(WINDOWS_PACKAGE_PATHS.core, "src", "index.ts")
+    const outputPath = join(WINDOWS_PACKAGE_PATHS.core, "src", "index.d.ts")
     const inputContent = (await readFile(inputPath, { encoding: "utf8" })).toString()
     const outputContent = [header, inputContent].join("\n\n")
     await writeFile(outputPath, outputContent)

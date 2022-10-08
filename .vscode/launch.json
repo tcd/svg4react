@@ -2,7 +2,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "dev",
+            "name": "dev - build:docs:props",
             "type": "node",
             "request": "launch",
             "runtimeExecutable": "node",
@@ -11,6 +11,24 @@
             ],
             "args": [
                 "./build/tasks/docs/build-prop-docs.js",
+            ],
+            "cwd": "${workspaceRoot}/packages/dev",
+            "internalConsoleOptions": "openOnSessionStart",
+            "skipFiles": [
+                "<node_internals>/**",
+                "node_modules/**"
+            ]
+        },
+        {
+            "name": "dev - build:tidy",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "node",
+            "runtimeArgs": [
+                "--nolazy",
+            ],
+            "args": [
+                "./build/tasks/core/consolidate-types.js",
             ],
             "cwd": "${workspaceRoot}/packages/dev",
             "internalConsoleOptions": "openOnSessionStart",

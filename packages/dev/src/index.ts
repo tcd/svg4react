@@ -1,3 +1,14 @@
-import { MONOREPO_ROOT } from "./helpers/paths-windows.js"
+import {
+    WINDOWS_MONOREPO_ROOT,
+    POSIX_MONOREPO_ROOT,
+    MONOREPO_ROOT,
+    packagePathRelative,
+} from "./helpers/index.js"
 
-console.log(MONOREPO_ROOT)
+console.log({
+    WINDOWS_MONOREPO_ROOT,
+    POSIX_MONOREPO_ROOT,
+    MONOREPO_ROOT,
+})
+
+console.log(packagePathRelative("core", ["dist", "**", "*.d.ts"]))
