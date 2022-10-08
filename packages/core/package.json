@@ -1,7 +1,7 @@
 {
     "name": "svg4react",
     "description": "React components & TypeScript types for creating SVG elements.",
-    "version": "0.8.0-rc.3",
+    "version": "0.8.0-rc.4",
     "license": "MIT",
     "author": "Clay Dunston <dunstontc@gmail.com>",
     "repository": "github:tcd/svg4react",
