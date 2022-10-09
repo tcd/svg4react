@@ -1,5 +1,5 @@
 import type { SVGProps } from "react"
-import type { CommonSvgPresentationAttributes } from "../utils"
+import type { CommonSVGPresentationAttributes } from "../utils"
 
 /**
  * @public
@@ -8,7 +8,7 @@ import type { CommonSvgPresentationAttributes } from "../utils"
  */
 type DefsAttributes = {
     // defs?: SVGProps<SVGLinearGradientElement>[]
-} & CommonSvgPresentationAttributes
+} & CommonSVGPresentationAttributes
 
 /**
  * @public

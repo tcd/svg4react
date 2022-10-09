@@ -1,5 +1,5 @@
 import type { SVGProps } from "react"
-import type { CommonSvgPresentationAttributes } from "../utils"
+import type { CommonSVGPresentationAttributes } from "../utils"
 
 export type PolylineCoordinate = [
     x: number,
@@ -29,7 +29,7 @@ export type _PolylineAttributes = {
  *
  * @see [MDN Web Docs - `<polyline>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/polyline)
  */
-export type PolylineAttributes = _PolylineAttributes & CommonSvgPresentationAttributes
+export type PolylineAttributes = _PolylineAttributes & CommonSVGPresentationAttributes
 
 /**
  * @public

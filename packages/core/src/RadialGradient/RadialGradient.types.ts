@@ -1,6 +1,6 @@
 import type { SVGProps } from "react"
 import type { StopProps } from "../Stop"
-import type { CommonSvgPresentationAttributes } from "../utils"
+import type { CommonSVGPresentationAttributes } from "../utils"
 
 /**
  * @see [MDN Web Docs - `<radialGradient>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/radialGradient)
@@ -77,7 +77,7 @@ export type _RadialGradientAttributes = {
 /**
  * @see [MDN Web Docs - `<radialGradient>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/radialGradient)
  */
-export type RadialGradientAttributes = _RadialGradientAttributes & CommonSvgPresentationAttributes
+export type RadialGradientAttributes = _RadialGradientAttributes & CommonSVGPresentationAttributes
 
 /**
  * @see [MDN Web Docs - `<radialGradient>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/radialGradient)

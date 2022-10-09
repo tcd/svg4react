@@ -1,5 +1,5 @@
 import type { SVGProps } from "react"
-import type { CommonSvgPresentationAttributes, DrawCommand } from "../utils"
+import type { CommonSVGPresentationAttributes, DrawCommand } from "../utils"
 
 export type _TextPathAttributes = {
     /**
@@ -8,6 +8,8 @@ export type _TextPathAttributes = {
      * **Will** overwrite the `path` prop.
      *
      * @shorthand d
+     *
+     * @experimental
      */
     commands?: DrawCommand[]
     // /**
@@ -21,18 +23,25 @@ export type _TextPathAttributes = {
      */
     href?: string
     /**
+     * Where length adjustment should be applied to the text: the space between glyphs, or both the space and the glyphs themselves.
+     *
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/lengthAdjust)
      *
      * @default "spacing"
      */
     lengthAdjust?: "spacing" | "spacingAndGlyphs"
     /**
+     * Which method to render individual glyphs along the path.
      *
+     * @experimental
      *
      * @default "align"
      */
     method?: "align" | "stretch"
     /**
      * Which side of the path the text should be rendered.
+     *
+     * @experimental
      *
      * @default "left"
      */
@@ -58,7 +67,7 @@ export type _TextPathAttributes = {
 }
 
 
-export type TextPathAttributes = _TextPathAttributes & CommonSvgPresentationAttributes
+export type TextPathAttributes = _TextPathAttributes & CommonSVGPresentationAttributes
 
 /**
  * @see [MDN Web Docs - `<textPath>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/textPath)

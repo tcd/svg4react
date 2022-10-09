@@ -1,6 +1,6 @@
 import type { Property } from "csstype"
 
-export type CommonSvgPresentationAttributes = Pick<SvgPresentationAttributes,
+export type CommonSVGPresentationAttributes = Pick<SVGPresentationAttributes,
     | "clipPath"
     | "clipRule"
     | "color"
@@ -31,7 +31,7 @@ export type CommonSvgPresentationAttributes = Pick<SvgPresentationAttributes,
 /**
  * @public
  */
-export interface SvgPresentationAttributes {
+export interface SVGPresentationAttributes {
     /**
      * Specifies how an object is aligned along the font baseline with respect to its parent.
      *

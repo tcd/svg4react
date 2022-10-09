@@ -43,12 +43,42 @@ export namespace Deprecated {
          * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/filterRes
          */
         filterRes: never
-        xmlSpace: never
+        /**
+         * used by:
+         *
+         * - `font-face-name`
+         *
+         * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/name
+         */
+        name: never
+        /**
+         * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/xlink:arcrole
+         */
         xlinkArcrole: never
+        /**
+         * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/xlink:href
+         */
+        xlinkHref: never
+        /**
+         * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/xlink:show
+         */
         xlinkShow: never
+        /**
+         * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/xlink:title
+         */
         xlinkTitle: never
+        /**
+         * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/xlink:type
+         */
         xlinkType: never
+        /**
+         * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/xml:base
+         */
         xmlBase: never
+        /**
+         * @deprecated - Prefer [lang](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/lang) over `xmlLang`.
+         */
         xmlLang: never
+        xmlSpace: never
     }
 }

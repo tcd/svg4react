@@ -1,5 +1,15 @@
 export type SVGMarkerRef = `url(#${string})`
 
+/**
+ * Props used to attach `<Marker>` shapes to the following elements:
+ *
+ * - `<Path>`
+ * - `<Line>`
+ * - `<Polyline>`
+ * - `<Polygon>`
+ *
+ * @see [MDN Web Docs - `<marker>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/marker)
+ */
 export type MarkerAttachAttributes = {
     /**
      * Defines the arrowhead or polymarker that will be drawn at the first vertex of the given shape.

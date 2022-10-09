@@ -1,5 +1,5 @@
 import type { SVGProps } from "react"
-import type { CommonSvgPresentationAttributes } from "../utils"
+import type { CommonSVGPresentationAttributes } from "../utils"
 
 export type _EllipseAttributes = {
     /**
@@ -46,7 +46,7 @@ export type _EllipseAttributes = {
     pathLength: number | string
 }
 
-export type EllipseAttributes = _EllipseAttributes & CommonSvgPresentationAttributes
+export type EllipseAttributes = _EllipseAttributes & CommonSVGPresentationAttributes
 
 /**
  * @see [MDN - `<ellipse>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/ellipse#attributes)

@@ -1,6 +1,6 @@
 import type { SVGProps } from "react"
 import type { StopProps } from "../Stop"
-import type { CommonSvgPresentationAttributes } from "../utils"
+import type { CommonSVGPresentationAttributes } from "../utils"
 
 /**
  * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Element/linearGradient
@@ -72,7 +72,7 @@ export type _LinearGradientAttributes = {
     y2?: string | number
 }
 
-export type LinearGradientAttributes = _LinearGradientAttributes & CommonSvgPresentationAttributes
+export type LinearGradientAttributes = _LinearGradientAttributes & CommonSVGPresentationAttributes
 
 /**
  * @see [MDN Web Docs - `<linearGradient>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/linearGradient)

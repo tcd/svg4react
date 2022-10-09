@@ -1,5 +1,5 @@
 import type { SVGProps } from "react"
-import type { CommonSvgPresentationAttributes } from "../utils"
+import type { CommonSVGPresentationAttributes } from "../utils"
 
 /**
  * @public
@@ -43,7 +43,7 @@ export type _CircleAttributes = {
  *
  * @see [MDN Web Docs - `<circle>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/circle)
  */
-export type CircleAttributes = _CircleAttributes & CommonSvgPresentationAttributes
+export type CircleAttributes = _CircleAttributes & CommonSVGPresentationAttributes
 
 /**
  * @public

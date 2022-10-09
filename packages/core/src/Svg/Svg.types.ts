@@ -1,5 +1,5 @@
 import type { SVGProps } from "react"
-import type { CommonSvgPresentationAttributes } from "../utils"
+import type { CommonSVGPresentationAttributes } from "../utils"
 
 /**
  * @see [MDN - `<svg>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/svg)
@@ -45,7 +45,7 @@ export type _SvgAttributes = {
 /**
  * @see [MDN - `<svg>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/svg)
  */
-export type SvgAttributes = _SvgAttributes & CommonSvgPresentationAttributes
+export type SvgAttributes = _SvgAttributes & CommonSVGPresentationAttributes
 
 type Deprecated =
     | "baseProfile"

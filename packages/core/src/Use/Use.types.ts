@@ -1,5 +1,5 @@
 import type { SVGProps } from "react"
-import type { CommonSvgPresentationAttributes, Length } from "../utils"
+import type { CommonSVGPresentationAttributes, Length } from "../utils"
 
 /**
  * @public
@@ -46,7 +46,7 @@ export type _UseAttributes = {
  *
  * @see [MDN Web Docs - `<use>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/use)
  */
-export type UseAttributes = _UseAttributes & CommonSvgPresentationAttributes
+export type UseAttributes = _UseAttributes & CommonSVGPresentationAttributes
 
 type Deprecated =
     | "xlinkHref"

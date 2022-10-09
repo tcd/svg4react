@@ -1,5 +1,5 @@
 import type { SVGProps } from "react"
-import type { CommonSvgPresentationAttributes } from "../utils"
+import type { CommonSVGPresentationAttributes } from "../utils"
 
 /**
  * @see [MDN Web Docs - `<text>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/text)
@@ -66,7 +66,7 @@ export type _TextAttributes = {
 /**
  * @see [MDN Web Docs - `<text>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/text)
  */
-export type TextAttributes = _TextAttributes & CommonSvgPresentationAttributes
+export type TextAttributes = _TextAttributes & CommonSVGPresentationAttributes
 
 /**
  * @see [MDN Web Docs - `<text>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/text)

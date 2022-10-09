@@ -1,6 +1,6 @@
 import type { SVGProps } from "react"
 
-import type { CommonSvgPresentationAttributes } from "../utils"
+import type { CommonSVGPresentationAttributes } from "../utils"
 
 export type __RectAttributes = {
     /**
@@ -85,7 +85,7 @@ export type _RectAttributes = __RectAttributes & {
  *
  * @see [MDN Web Docs - `<rect>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/rect)
  */
-export type RectAttributes = _RectAttributes & CommonSvgPresentationAttributes
+export type RectAttributes = _RectAttributes & CommonSVGPresentationAttributes
 
 /**
  * @public

@@ -1,5 +1,5 @@
 import type { SVGProps } from "react"
-import type { CommonSvgPresentationAttributes } from "../utils"
+import type { CommonSVGPresentationAttributes } from "../utils"
 
 export type MarkerRef = "left" | "center" | "right" | number | string // | SVGLength
 
@@ -70,7 +70,7 @@ export type _MarkerAttributes = {
     refY?: "left" | "center" | "right" | number | string
 }
 
-export type MarkerAttributes = _MarkerAttributes & CommonSvgPresentationAttributes
+export type MarkerAttributes = _MarkerAttributes & CommonSVGPresentationAttributes
 
 /**
  * @public

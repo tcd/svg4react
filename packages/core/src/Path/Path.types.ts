@@ -1,5 +1,5 @@
 import type { SVGProps } from "react"
-import type { CommonSvgPresentationAttributes, DrawCommand } from "../utils"
+import type { CommonSVGPresentationAttributes, DrawCommand } from "../utils"
 
 /**
  * @public
@@ -26,7 +26,7 @@ export type _PathAttributes = {
  *
  * @see [MDN Web Docs - `<path>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/path)
  */
-export type PathAttributes = _PathAttributes & CommonSvgPresentationAttributes
+export type PathAttributes = _PathAttributes & CommonSVGPresentationAttributes
 
 /**
  * @public

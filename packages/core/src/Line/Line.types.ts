@@ -1,5 +1,5 @@
 import type { SVGProps } from "react"
-import type { CommonSvgPresentationAttributes } from "../utils"
+import type { CommonSVGPresentationAttributes } from "../utils"
 
 export type LineCoordinates = [
     /**
@@ -80,7 +80,7 @@ export type _LineAttributes = {
  *
  * @see [MDN Web Docs - `<line>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/line)
  */
-export type LineAttributes = _LineAttributes & CommonSvgPresentationAttributes
+export type LineAttributes = _LineAttributes & CommonSVGPresentationAttributes
 
 /**
  * @public

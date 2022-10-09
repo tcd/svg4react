@@ -1,5 +1,5 @@
 import type { SVGProps } from "react"
-import type { CommonSvgPresentationAttributes } from "../../utils"
+import type { CommonSVGPresentationAttributes } from "../../utils"
 
 export type _FilterAttributes = {
     /**
@@ -16,7 +16,7 @@ export type _FilterAttributes = {
     primitiveUnits?: "userSpaceOnUse" | "objectBoundingBox"
 }
 
-export type FilterAttributes = _FilterAttributes & CommonSvgPresentationAttributes
+export type FilterAttributes = _FilterAttributes & CommonSVGPresentationAttributes
 
 /**
  * @see [MDN - `<filter>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/filter)
