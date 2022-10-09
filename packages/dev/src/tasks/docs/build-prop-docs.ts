@@ -7,11 +7,11 @@ import { packagePathWindows } from "../../helpers/paths-windows.js"
 import { parseReflectionChild } from "./helpers/parse-parser/parse-reflection-child.js"
 
 const propTypeMap: Partial<Record<Svg4ReactComponent, string>> = {
-    "Animate":        "_AnimateAttributes",
-    "Ellipse":        "_EllipseAttributes",
-    "Text":           "_TextAttributes",
+    "Animate":        "AnimateAttributes",
+    "Ellipse":        "EllipseAttributes",
+    "Text":           "TextAttributes",
 
-    // "Line":           "_LineAttributes",
+    // "Line":           "LineAttributes",
     // "LinearGradient": "_LinearGradientAttributes",
     // "Polygon":        "_PolygonAttributes",
     // "Polyline":       "_PolylineAttributes",

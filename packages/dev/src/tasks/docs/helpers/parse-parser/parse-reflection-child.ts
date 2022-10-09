@@ -60,11 +60,19 @@ export const parseReflectionChild = (project: ProjectParser, reflection: any): P
 
     result.description = commentSegments.join("\n\n")
 
+    // debugger
     // =========================================================================
     // Type
     // =========================================================================
+    let t: any
 
-    switch (reflection.type.type) {
+    if (reflection?.type?.type) {
+        t = reflection.type.type
+    } else {
+        debugger
+    }
+
+    switch (t) {
         case "intrinsic":
             result.type = reflection.type.name
             break
@@ -103,11 +111,16 @@ const parseReference = (project: ProjectParser, prop): any => {
     if (prop?.type?.id) {
         const referenced = project.find(prop.type.id)
         if (referenced) {
-            debugger
-            return parseReferenceType(project, referenced).type
+            if (referenced?.project?.name === "svg4react") {
+                console.log(`internal reference: '${referenced.type.toString()}'`)
+                // debugger
+            }
+            return parseReferenceType(project, referenced)
         }
+    } else if (prop?.type?.package && prop?.type?.name) {
+        return [prop.type.package, prop.type.name].join(".")
     } else {
-        console.error("unhandled reference")
+        console.error(`unhandled reference: '${prop.name}'`)
         debugger
     }
     return [prop.type.package, prop.type.name].join(".")
