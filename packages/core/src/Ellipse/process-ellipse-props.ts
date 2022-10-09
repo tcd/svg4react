@@ -1,6 +1,6 @@
 import type { EllipseProps } from "./Ellipse.types"
 
-export const processEllipseProps = (rawProps: EllipseProps): EllipseProps => {
+const processEllipseProps = (rawProps: EllipseProps): EllipseProps => {
     const {
         coordinates = [],
         radius = [],
@@ -21,3 +21,5 @@ export const processEllipseProps = (rawProps: EllipseProps): EllipseProps => {
 
     return processedProps
 }
+
+export default processEllipseProps

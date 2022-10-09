@@ -1,6 +1,6 @@
 import type { MarkerProps } from "./Marker.types"
 
-export const processMarkerProps = (rawProps: MarkerProps): MarkerProps => {
+const processMarkerProps = (rawProps: MarkerProps): MarkerProps => {
     const {
         refXY = [],
         markerSize = [],
@@ -21,3 +21,5 @@ export const processMarkerProps = (rawProps: MarkerProps): MarkerProps => {
 
     return processedProps
 }
+
+export default processMarkerProps

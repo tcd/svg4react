@@ -1,5 +1,5 @@
 import type { CircleProps } from "./Circle.types"
-import { processCircleProps } from "./process-circle-props"
+import processCircleProps from "./process-circle-props"
 
 /**
  * A wrapper for the [`<circle>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/circle) element.

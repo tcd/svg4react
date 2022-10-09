@@ -1,5 +1,5 @@
 import type { AnimateProps } from "./Animate.types"
-import { processAnimateProps } from "./process-animate-attributes"
+import processAnimateProps from "./process-animate-attributes"
 
 /**
  * A wrapper for the [`<animate>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/animate) element.

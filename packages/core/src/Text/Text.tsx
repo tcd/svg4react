@@ -1,6 +1,6 @@
 import { forwardRef } from "react"
 import type { TextProps } from "./Text.types"
-import { processTextProps } from "./process-text-props"
+import processTextProps from "./process-text-props"
 
 /**
  * A wrapper for the [`<text>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/text) element.

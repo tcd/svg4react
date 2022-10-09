@@ -1,6 +1,6 @@
 import type { TextProps } from "./Text.types"
 
-export const processTextProps = (rawProps: TextProps): TextProps => {
+const processTextProps = (rawProps: TextProps): TextProps => {
     const {
         coordinates = [],
         shift = [],
@@ -21,3 +21,5 @@ export const processTextProps = (rawProps: TextProps): TextProps => {
 
     return props
 }
+
+export default processTextProps

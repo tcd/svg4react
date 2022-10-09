@@ -1,5 +1,4 @@
 import type { Property } from "csstype"
-import type { SVGProps } from "react"
 import type { ISVGProps, CommonSVGPresentationAttributes } from "../utils"
 
 /**

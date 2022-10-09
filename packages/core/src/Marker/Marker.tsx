@@ -1,5 +1,5 @@
 import type { MarkerProps } from "./Marker.types"
-import { processMarkerProps } from "./process-marker-props"
+import processMarkerProps from "./process-marker-props"
 
 /**
  * A wrapper for the [`<marker>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/marker) element.

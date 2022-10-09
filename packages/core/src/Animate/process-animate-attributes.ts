@@ -1,6 +1,6 @@
 import { AnimateProps } from "./Animate.types"
 
-export const processAnimateProps = (rawProps: AnimateProps): AnimateProps => {
+const processAnimateProps = (rawProps: AnimateProps): AnimateProps => {
     const {
         repeatCount = undefined,
         ...processedProps
@@ -13,3 +13,5 @@ export const processAnimateProps = (rawProps: AnimateProps): AnimateProps => {
 
     return processedProps
 }
+
+export default processAnimateProps

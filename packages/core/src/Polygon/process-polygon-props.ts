@@ -4,7 +4,7 @@ const processPolygonPoints = (points: PolygonCoordinate[] = []): string => {
     return points.map(([x, y]) => `${x},${y}`).join(" ")
 }
 
-export const processPolygonProps = (rawProps: PolygonProps): PolygonProps => {
+const processPolygonProps = (rawProps: PolygonProps): PolygonProps => {
     const {
         points = [],
         ...processedProps
@@ -15,3 +15,5 @@ export const processPolygonProps = (rawProps: PolygonProps): PolygonProps => {
 
     return processedProps as PolygonProps
 }
+
+export default processPolygonProps

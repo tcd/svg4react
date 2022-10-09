@@ -1,5 +1,5 @@
 import type { LineProps } from "./Line.types"
-import { processLineProps } from "./process-line-props"
+import processLineProps from "./process-line-props"
 
 /**
  * A wrapper for the [`<line>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/line) element.

@@ -1,6 +1,6 @@
 import type { RectProps } from "./Rect.types"
 
-export const processRectProps = (rawProps: RectProps): RectProps => {
+const processRectProps = (rawProps: RectProps): RectProps => {
     const {
         points = [],
         size   = [],
@@ -28,3 +28,5 @@ export const processRectProps = (rawProps: RectProps): RectProps => {
 
     return processedProps
 }
+
+export default processRectProps

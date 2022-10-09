@@ -1,6 +1,6 @@
 import type { CircleProps } from "./Circle.types"
 
-export const processCircleProps = (rawProps: CircleProps): CircleProps => {
+const processCircleProps = (rawProps: CircleProps): CircleProps => {
     const {
         coordinates = [],
         ...processedProps
@@ -14,3 +14,5 @@ export const processCircleProps = (rawProps: CircleProps): CircleProps => {
 
     return processedProps
 }
+
+export default processCircleProps

@@ -1,5 +1,5 @@
-import { processPoints } from "./process-points"
 import type { PolylineProps } from "./Polyline.types"
+import processPolylineProps from "./process-points"
 
 /**
  * @public
@@ -14,19 +14,12 @@ import type { PolylineProps } from "./Polyline.types"
  */
 const Polyline = (props: PolylineProps): JSX.Element => {
 
-    const {
-        points = [],
-        ...otherProps
-    } = props
-
-    // FIXME: add function `processPolylineProps`
-    const processedPoints = processPoints(points)
+    const processedProps = processPolylineProps(props)
 
     return (
         // @ts-ignore: next-line
         <polyline
-            points={processedPoints}
-            {...otherProps}
+            {...processedProps}
         />
     )
 }

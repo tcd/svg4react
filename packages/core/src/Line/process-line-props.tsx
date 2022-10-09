@@ -1,6 +1,6 @@
 import type { LineProps } from "./Line.types"
 
-export const processLineProps = (rawProps: LineProps): LineProps => {
+const processLineProps = (rawProps: LineProps): LineProps => {
 
     const {
         coordinates: [
@@ -23,3 +23,5 @@ export const processLineProps = (rawProps: LineProps): LineProps => {
 
     return processedProps as LineProps
 }
+
+export default processLineProps

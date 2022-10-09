@@ -1,5 +1,5 @@
 import type { EllipseProps } from "./Ellipse.types"
-import { processEllipseProps } from "./process-ellipse-props"
+import processEllipseProps from "./process-ellipse-props"
 
 /**
  * A wrapper for the [`<ellipse>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/ellipse) element.
