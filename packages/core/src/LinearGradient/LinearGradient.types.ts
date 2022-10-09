@@ -23,7 +23,7 @@ export type _LinearGradientAttributes = {
      *
      * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/gradientTransform)
      */
-    gradientTransform: string
+    gradientTransform?: string
     /**
      * This attribute defines a reference to another `<linearGradient>` element that will be used as a template.
      *
