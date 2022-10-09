@@ -59,9 +59,19 @@ export interface SVGPresentationAttributes {
      */
     clipRule?: Property.ClipRule
     /**
+     * The `color` attribute is used to provide a potential indirect value, `currentcolor`, for the following attributes:
+     *
+     * - `fill`
+     * - `stroke`
+     * - `stop-color`
+     * - `flood-color`
+     * - `lighting-color`
+     *
+     * As a presentation attribute, it can be applied to any element, but as noted above, it has no direct effect on SVG elements.
+     *
      * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/color)
      */
-    color?: Property.Color
+    color?: Property.Color // TODO: remove; its part of `SVGCoreAttributes`
     /**
      * Specifies the color space for gradient interpolations, color animations, and alpha compositing.
      *
@@ -79,7 +89,7 @@ export interface SVGPresentationAttributes {
      */
     cursor?: Property.Cursor
     /**
-     * Defines the shape of the path.
+     * Defines the shape of a path.
      *
      * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d)
      */
@@ -193,6 +203,13 @@ export interface SVGPresentationAttributes {
      * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/overflow)
      */
     overflow?: Property.Overflow
+    /**
+     * Specifies the order that the fill, stroke, and markers of a given shape or text element are painted.
+     *
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/paint-order)
+     * @see [SVG2](https://svgwg.org/svg2-draft/painting.html#PaintOrder)
+     */
+    paintOrder?: Property.PaintOrder
     /**
      * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/pointer-events)
      */

@@ -2,7 +2,7 @@
  * @see [MDN Web Docs - `<animate>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/animate)
  * @see [SVG2 - `<animate>`](https://svgwg.org/specs/animations/#AnimateElement)
  */
-export type AnimationAttributes = {
+export type SVGAnimationAttributes = {
     /**
      * The name of the CSS property or attribute of the target element that is going to be changed during an animation.
      */
