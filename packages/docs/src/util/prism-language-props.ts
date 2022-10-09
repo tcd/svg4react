@@ -26,7 +26,12 @@ import type { Grammar } from "prismjs"
  * @see [Extending Prism - Language definitions](https://prismjs.com/extending.html)
  */
 export const PrismLanguageProps: Grammar = {
-    operator: /\||\./,
+    operator: {
+        pattern: /(\|)|(\.([a-zA-Z_]+)?)/,
+        inside: {
+            type: /[a-zA-Z_]+/,
+        },
+    },
     boolean: /\b(?:false|true)\b/,
     keyword: /\$\{|\}/,
     string: /("[^"]+")|(`)/,
@@ -38,7 +43,7 @@ export const PrismLanguageProps: Grammar = {
     },
     type: {
         // pattern: /(\b(string|number)\b)|(\.[a-zA-Z_]+)|([a-zA-Z_]+\.)/,
-        pattern: /(\b(string|number|any)\b)|((?<=\.)[a-zA-Z_]+)|([a-zA-Z_]+(?=\.))/,
+        pattern: /(\b(string|number|any)\b)|(\.[a-zA-Z_]+)|([a-zA-Z_]+(?=\.))/,
         greedy: true,
         inside: {
             operator: /\./,
