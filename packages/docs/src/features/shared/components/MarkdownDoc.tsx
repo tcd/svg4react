@@ -42,8 +42,8 @@ const cleanMarkdownString = (input: string): string => {
     return `${input}`
         .replace(/^"/, "")
         .replace(/"$/, "")
-        .replaceAll(/(?<!\n|\|)\n{1}(?!\n)/gm, " ") // only break for two newlines
-        .replaceAll(/(?<!\\n)\\n{1}(?!\\n)/gm, " ") // only break for two newlines
+        // .replaceAll(/(?<!\n|\|)\n{1}(?!\n)/gm, " ") // only break for two newlines
+        // .replaceAll(/(?<!\\n)\\n{1}(?!\\n)/gm, " ") // only break for two newlines
         .replaceAll("\\n", "\n") // unescape json
 }
 
