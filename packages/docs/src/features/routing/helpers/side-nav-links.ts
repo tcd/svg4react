@@ -1,6 +1,6 @@
 // import CastleIcon from "@mui/icons-material/Castle"
 import CodeIcon from "@mui/icons-material/Code"
-// import DataObjectIcon from "@mui/icons-material/DataObject"
+import DataObjectIcon from "@mui/icons-material/DataObject"
 import DescriptionIcon from "@mui/icons-material/Description"
 // import HomeIcon from "@mui/icons-material/Home"
 import ScienceIcon from "@mui/icons-material/Science"
@@ -30,6 +30,7 @@ export const SIDE_NAV_LINKS: (ILinkData | ILinksData)[] = [
             { title: "Ellipse",          to: "/components/Ellipse" },
             { title: "Line",             to: "/components/Line" },
             { title: "LinearGradient",   to: "/components/LinearGradient" },
+            { title: "Marker",           to: "/components/Marker" },
             { title: "Path",             to: "/components/Path" },
             { title: "Polygon",          to: "/components/Polygon" },
             { title: "Polyline",         to: "/components/Polyline" },
@@ -40,6 +41,13 @@ export const SIDE_NAV_LINKS: (ILinkData | ILinksData)[] = [
             { title: "Text",             to: "/components/Text" },
             { title: "TextPath",         to: "/components/TextPath" },
             // { title: "Use",              to: "/components/Use" },
+        ],
+    },
+    {
+        title: "Component API",
+        Icon: DataObjectIcon,
+        links: [
+            { title: "Playground", to: "/playground" },
         ],
     },
     ...(CONFIG.env !== "production" ? [
