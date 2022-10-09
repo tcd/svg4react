@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog][keep-a-changelog], and this project ad
 
 
 ## [Unreleased]
+### Changed
+- Migrate all build/dev scripts from `/etc/scripts` to `/packages/dev/...`
 
 
 ## [0.5.0] - 2022-10-04
