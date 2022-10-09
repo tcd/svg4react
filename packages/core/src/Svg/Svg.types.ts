@@ -1,10 +1,9 @@
-import type { SVGProps } from "react"
-import type { CommonSVGPresentationAttributes } from "../utils"
+import type { ISVGProps, CommonSVGPresentationAttributes } from "../utils"
 
 /**
  * @see [MDN - `<svg>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/svg)
  */
-export type _SvgAttributes = {
+export type SvgAttributes = {
     /**
      * Shorthand for the setting the last two values of `viewBox`
      *
@@ -40,22 +39,14 @@ export type _SvgAttributes = {
      * @default "xMidYMid meet"
      */
     preserveAspectRatio?: "none" | `x${"Min"|"Mid"|"Max"}Y${"Min"|"Mid"|"Max"} ${"meet"|"slice"}`
+    height?: number | string
+    width?: number | string
 }
 
 /**
  * @see [MDN - `<svg>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/svg)
  */
-export type SvgAttributes = _SvgAttributes & CommonSVGPresentationAttributes
-
-type Deprecated =
-    | "baseProfile"
-    | "contentScriptType"
-    | "contentStyleType"
-    | "version"
-
-/**
- * @see [MDN - `<svg>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/svg)
- */
 export type SvgProps =
-    Omit<SVGProps<SVGSVGElement>, keyof SvgAttributes | Deprecated | "xmlns" | "xmlnsXlink">
+    ISVGProps<SVGSVGElement>
     & SvgAttributes
+    & CommonSVGPresentationAttributes // TODO: confirm svg attributes

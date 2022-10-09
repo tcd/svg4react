@@ -1,9 +1,8 @@
-import type { SVGProps } from "react"
-import type { CommonSVGPresentationAttributes } from "../utils"
+import type { ISVGProps, CommonSVGPresentationAttributes } from "../utils"
 
 export type MarkerRef = "left" | "center" | "right" | number | string // | SVGLength
 
-export type _MarkerAttributes = {
+export type MarkerAttributes = {
     /**
      * Shorthand for `refX` and `refY`.
      *
@@ -70,13 +69,10 @@ export type _MarkerAttributes = {
     refY?: "left" | "center" | "right" | number | string
 }
 
-export type MarkerAttributes = _MarkerAttributes & CommonSVGPresentationAttributes
-
 /**
- * @public
- *
  * @see [MDN Web Docs - `<marker>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/marker)
  */
 export type MarkerProps =
-    Omit<SVGProps<SVGMarkerElement>, keyof MarkerAttributes>
+    ISVGProps<SVGMarkerElement>
     & MarkerAttributes
+    & CommonSVGPresentationAttributes

@@ -1,7 +1,6 @@
-import type { SVGProps } from "react"
-import type { CommonSVGPresentationAttributes } from "../utils"
+import type { ISVGProps, CommonSVGPresentationAttributes } from "../utils"
 
-export type _EllipseAttributes = {
+export type EllipseAttributes = {
     /**
      * The x and y axis coordinates of the center of the Ellipse (`cx` and `cy`).
      *
@@ -12,7 +11,7 @@ export type _EllipseAttributes = {
      * @shorthand cx
      * @shorthand cy
      */
-    coordinates?: [cx: number, cy: number]
+    coordinates?: [cx: number, cy?: number]
     /**
      * The x-axis coordinate of the center of the ellipse.
      */
@@ -31,7 +30,7 @@ export type _EllipseAttributes = {
      * @shorthand rx
      * @shorthand ry
      */
-    radius?: [cx: number, cy: number]
+    radius?: [rx: number, ry?: number]
     /**
      * The radius of the ellipse on the x axis.
      */
@@ -41,16 +40,17 @@ export type _EllipseAttributes = {
      */
     ry: number | string
     /**
-     * This attribute lets specify the total length for the path, in user units.
+     * Specifies the total length for the path, in user units.
+     *
+     * @see [MDN Web Docs - `pathLength`](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/pathLength)
      */
-    pathLength: number | string
+    pathLength: number | string // FIXME: use `SVGPresentationAttributes.pathLength`
 }
-
-export type EllipseAttributes = _EllipseAttributes & CommonSVGPresentationAttributes
 
 /**
  * @see [MDN - `<ellipse>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/ellipse#attributes)
  */
 export type EllipseProps =
-    Omit<SVGProps<SVGEllipseElement>, keyof EllipseAttributes>
+    ISVGProps<SVGEllipseElement>
     & EllipseAttributes
+    & CommonSVGPresentationAttributes

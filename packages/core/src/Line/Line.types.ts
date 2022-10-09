@@ -1,5 +1,4 @@
-import type { SVGProps } from "react"
-import type { CommonSVGPresentationAttributes } from "../utils"
+import type { ISVGProps, CommonSVGPresentationAttributes } from "../utils"
 
 export type LineCoordinates = [
     /**
@@ -29,11 +28,9 @@ export type LineCoordinates = [
 ]
 
 /**
- * @public
- *
  * @see [MDN Web Docs - `<line>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/line)
  */
-export type _LineAttributes = {
+export type LineAttributes = {
     /**
      * Values, in order, for:
      *
@@ -69,24 +66,14 @@ export type _LineAttributes = {
     // y2: number | string
     /**
      * Defines the total path length in user units.
-     *
-     * @default "none"
      */
     pathLength?: number
 }
 
 /**
- * @public
- *
- * @see [MDN Web Docs - `<line>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/line)
- */
-export type LineAttributes = _LineAttributes & CommonSVGPresentationAttributes
-
-/**
- * @public
- *
  * @see [MDN Web Docs - `<line>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/line)
  */
 export type LineProps =
-    Omit<SVGProps<SVGLineElement>, keyof LineAttributes>
+    ISVGProps<SVGLineElement>
     & LineAttributes
+    & CommonSVGPresentationAttributes

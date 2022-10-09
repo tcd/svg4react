@@ -30,6 +30,8 @@ export type CommonSVGPresentationAttributes = Pick<SVGPresentationAttributes,
 
 /**
  * @public
+ *
+ * TODO: may need to rename this. It's gotten broader than just presentation attributes.
  */
 export interface SVGPresentationAttributes {
     /**
@@ -37,8 +39,10 @@ export interface SVGPresentationAttributes {
      *
      * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/alignment-baseline)
      */
-    alignmentBaseline?: "auto" | "baseline" | "before-edge" | "text-before-edge" | "middle" | "central" | "after-edge" | "text-after-edge" | "ideographic" | "alphabetic" | "hanging" | "mathematical" | "inherit"
+    alignmentBaseline?: "auto" | "baseline" | "before-edge" | "text-before-edge" | "middle" | "central" | "after-edge" | "text-after-edge" | "ideographic" | "alphabetic" | "hanging" | "mathematical" | "top" | "center" | "bottom"
     /**
+     * NOTE: [going to be deprecated](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/baseline-shift)
+     *
      * Allows repositioning of the dominant-baseline relative to the dominant-baseline of the parent text content element.
      *
      * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/baseline-shift)
@@ -57,7 +61,7 @@ export interface SVGPresentationAttributes {
      *
      * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/clip-rule)
      */
-    clipRule?: Property.ClipRule
+    clipRule?: "inherit" | "evenodd" | "nonzero"
     /**
      * The `color` attribute is used to provide a potential indirect value, `currentcolor`, for the following attributes:
      *
@@ -77,15 +81,17 @@ export interface SVGPresentationAttributes {
      *
      * @see [MDN Web Docs][https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/color-interpolation]
      */
-    colorInterpolation?: Property.ColorInterpolation
+    colorInterpolation?: "auto" | "linearRGB" | "sRGB"
     /**
      * Specifies the color space for imaging operations performed via filter effects.
      *
      * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/color-interpolation)
      */
-    colorInterpolationFilters?: "auto" | "sRGB" | "linearRGB" | "inherit"
+    colorInterpolationFilters?: "auto" | "inherit" | "linearRGB" | "sRGB"
     /**
+     * Specifies the mouse cursor displayed when the mouse pointer is over an element.
      *
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/cursor)
      */
     cursor?: Property.Cursor
     /**
@@ -145,7 +151,7 @@ export interface SVGPresentationAttributes {
      *
      * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/flood-opacity)
      */
-    floodOpacity?: Property.FloodOpacity
+    floodOpacity?: number
     // fontFamily?: Property.FontFamily
     // fontSize?: Property.FontSize
     // fontSizeAdjust?: Property.FontSizeAdjust
@@ -154,9 +160,11 @@ export interface SVGPresentationAttributes {
     // fontVariant?: Property.FontVariant
     // fontWeight?: Property.FontWeight
     /**
-     * FIXME: mdn vs csstype
+     * Provides a hint to the browser about how to make speed vs. quality tradeoffs as it performs image processing.
+     *
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/image-rendering)
      */
-    imageRendering?: Property.ImageRendering
+    imageRendering?: "auto" | "optimizeSpeed" | "optimizeQuality"
     /**
      * Controls spacing between text characters.
      */
@@ -169,24 +177,6 @@ export interface SVGPresentationAttributes {
      * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/lighting-color)
      */
     lightingColor?: Property.LightingColor
-    /**
-     * Defines the arrowhead or polymarker that will be drawn at the final vertex of the given <path> element or basic shape.
-     *
-     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/marker-end)
-     */
-    markerEnd?: Property.MarkerEnd
-    /**
-     * Defines the arrowhead or polymarker that will be drawn at every vertex other than the first and last vertex of the given <path> element or basic shape.
-     *
-     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/marker-mid)
-     */
-    markerMid?: Property.MarkerMid
-    /**
-     * Defines the arrowhead or polymarker that will be drawn at the first vertex of the given [`<path>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/path) element or basic shape.
-     *
-     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/marker-start)
-     */
-    markerStart?: Property.MarkerStart
     /**
      * Alters the visibility of an element by either masking or clipping the image at specific points.
      *
@@ -211,6 +201,12 @@ export interface SVGPresentationAttributes {
      */
     paintOrder?: Property.PaintOrder
     /**
+     * Specifies the total length for the path, in user units.
+     *
+     * @see [MDN Web Docs - `pathLength`](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/pathLength)
+     */
+    pathLength?: number
+    /**
      * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/pointer-events)
      */
     pointerEvents?: Property.PointerEvents
@@ -220,18 +216,6 @@ export interface SVGPresentationAttributes {
      * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/shape-rendering)
      */
     shapeRendering?: Property.ShapeRendering
-    /**
-     * Indicates what color to use at a gradient stop.
-     *
-     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stop-color)
-     */
-    stopColor?: Property.StopColor
-    /**
-     * Defines the opacity of a given color gradient stop.
-     *
-     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stop-opacity)
-     */
-    stopOpacity?: Property.StopOpacity
     /**
      * A presentation attribute defining the color (or any SVG paint servers like gradients or patterns) used to paint the outline of the shape.
      *
@@ -297,12 +281,6 @@ export interface SVGPresentationAttributes {
      * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/text-decoration)
      */
     textDecoration?: Property.TextDecoration
-    /**
-     * Provides hints to the renderer about what tradeoffs to make when rendering text.
-     *
-     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/text-rendering)
-     */
-    textRendering?: Property.TextRendering
     /**
      * Defines a list of transform definitions that are applied to an element and the element's children.
      *

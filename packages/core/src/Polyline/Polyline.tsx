@@ -19,6 +19,7 @@ const Polyline = (props: PolylineProps): JSX.Element => {
         ...otherProps
     } = props
 
+    // FIXME: add function `processPolylineProps`
     const processedPoints = processPoints(points)
 
     return (

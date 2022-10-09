@@ -1,8 +1,6 @@
 import type { GProps } from "./G.types"
 
 /**
- * @public
- *
  * A wrapper for the [`<g>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/g) element.
  *
  * The `<g>` SVG element is a container used to group other SVG elements.
@@ -12,7 +10,10 @@ import type { GProps } from "./G.types"
  */
 const G = (props: GProps) => {
     return (
-        <g {...props} />
+        // @ts-ignore: next-line
+        <g
+            {...props}
+        />
     )
 }
 

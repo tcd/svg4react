@@ -13,7 +13,9 @@ const processTextPathProps = (rawProps: TextPathProps): TextPathProps => {
         processedProps.href = href
     } else {
         if (Array.isArray(commands) && commands.length > 0) {
-            processedProps.d = buildDrawing(commands)
+            // TODO: make this better
+            // @ts-ignore: next-line
+            processedProps.path = buildDrawing(commands)
         }
     }
 

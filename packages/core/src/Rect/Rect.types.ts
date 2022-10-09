@@ -1,8 +1,6 @@
-import type { SVGProps } from "react"
+import type { ISVGProps, CommonSVGPresentationAttributes } from "../utils"
 
-import type { CommonSVGPresentationAttributes } from "../utils"
-
-export type __RectAttributes = {
+export type _RectAttributes = {
     /**
      * Shorthand for the x and y axis coordinates of the center of the rect.
      *
@@ -27,11 +25,9 @@ export type __RectAttributes = {
 }
 
 /**
- * @public
- *
  * @see [MDN Web Docs - `<rect>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/rect)
  */
-export type _RectAttributes = __RectAttributes & {
+export type RectAttributes = _RectAttributes & {
     /**
      * The x coordinate of the rect.
      *
@@ -81,17 +77,9 @@ export type _RectAttributes = __RectAttributes & {
 }
 
 /**
- * @public
- *
- * @see [MDN Web Docs - `<rect>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/rect)
- */
-export type RectAttributes = _RectAttributes & CommonSVGPresentationAttributes
-
-/**
- * @public
- *
  * @see [MDN Web Docs - `<rect>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/rect)
  */
 export type RectProps =
-    Omit<SVGProps<SVGRectElement>, keyof RectAttributes>
+    ISVGProps<SVGRectElement>
     & RectAttributes
+    & CommonSVGPresentationAttributes

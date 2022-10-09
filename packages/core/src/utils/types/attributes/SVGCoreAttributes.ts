@@ -1,10 +1,5 @@
 import type { Properties } from "csstype"
-import type {
-    AriaRole,
-    AriaAttributes,
-    DOMAttributes,
-    ClassAttributes,
-} from "react"
+import type { AriaRole } from "react"
 
 /**
  * React's TypeScript definitions for SVG element props dump everything into one bit bucket.
@@ -15,7 +10,7 @@ import type {
  * @see [@types/react](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/40d2b61ff58052ff939fe662353bb3c1baf769ec/types/react/index.d.ts#L2503)
  * @see [SVGDOMPropertyConfig.js](https://unpkg.com/browse/react-dom@15.6.2/lib/SVGDOMPropertyConfig.js)
  */
-export interface SVGCoreAttributes<T> extends ClassAttributes<T>, AriaAttributes, DOMAttributes<T> {
+export interface SVGCoreAttributes {
     /**
      * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/class)
      */
@@ -30,8 +25,10 @@ export interface SVGCoreAttributes<T> extends ClassAttributes<T>, AriaAttributes
      * - `lighting-color`
      *
      * As a presentation attribute, it can be applied to any element, but as noted above, it has no direct effect on SVG elements.
+     *
+     * @see [SVG2 - 13.3 - The effect of the 'color' property](https://www.w3.org/TR/SVG/painting.html#ColorProperty)
      */
-    color?: string | undefined
+    color?: string
     /**
      * Defines a unique identifier (ID) which must be unique in the whole document.
      *
@@ -44,7 +41,7 @@ export interface SVGCoreAttributes<T> extends ClassAttributes<T>, AriaAttributes
      * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/lang)
      * @see [rfc5646 - Tags for Identifying Languages](https://datatracker.ietf.org/doc/html/rfc5646)
      */
-    lang?: string | undefined
+    lang?: string
     /**
      * Aria Role
      */

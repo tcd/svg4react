@@ -1,5 +1,4 @@
-import type { SVGProps } from "react"
-import type { CommonSVGPresentationAttributes } from "../utils"
+import type { ISVGProps, CommonSVGPresentationAttributes } from "../utils"
 
 export type PolygonCoordinate = [
     x: number,
@@ -7,11 +6,9 @@ export type PolygonCoordinate = [
 ]
 
 /**
- * @public
- *
  * @see [MDN Web Docs - `<polygon>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/polygon)
  */
-export type _PolygonAttributes = {
+export type PolygonAttributes = {
     /**
      * The list of points (pairs of x,y absolute coordinates) required to draw the polygon.
      *
@@ -27,17 +24,9 @@ export type _PolygonAttributes = {
 }
 
 /**
- * @public
- *
- * @see [MDN Web Docs - `<polygon>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/polygon)
- */
-export type PolygonAttributes = _PolygonAttributes & CommonSVGPresentationAttributes
-
-/**
- * @public
- *
  * @see [MDN Web Docs - `<polygon>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/polygon)
  */
 export type PolygonProps =
-    Omit<SVGProps<SVGPolygonElement>, keyof PolygonAttributes>
+    ISVGProps<SVGPolygonElement>
     & PolygonAttributes
+    & CommonSVGPresentationAttributes

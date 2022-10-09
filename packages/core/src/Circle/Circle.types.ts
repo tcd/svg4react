@@ -1,12 +1,9 @@
-import type { SVGProps } from "react"
-import type { CommonSVGPresentationAttributes } from "../utils"
+import type { ISVGProps, CommonSVGPresentationAttributes } from "../utils"
 
 /**
- * @public
- *
  * @see [MDN Web Docs - `<circle>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/circle)
  */
-export type _CircleAttributes = {
+export type CircleAttributes = {
     /**
      * Shorthand for the x and y axis coordinates of the center of the circle.
      *
@@ -39,17 +36,9 @@ export type _CircleAttributes = {
 }
 
 /**
- * @public
- *
- * @see [MDN Web Docs - `<circle>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/circle)
- */
-export type CircleAttributes = _CircleAttributes & CommonSVGPresentationAttributes
-
-/**
- * @public
- *
  * @see [MDN Web Docs - `<circle>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/circle)
  */
 export type CircleProps =
-    Omit<SVGProps<SVGCircleElement>, keyof CircleAttributes>
+    ISVGProps<SVGCircleElement>
     & CircleAttributes
+    & CommonSVGPresentationAttributes

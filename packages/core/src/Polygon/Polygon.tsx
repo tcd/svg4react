@@ -2,8 +2,6 @@ import { processPolygonProps } from "./process-polygon-props"
 import type { PolygonProps } from "./Polygon.types"
 
 /**
- * @public
- *
  * A wrapper for the [`<polygon>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/polygon) element.
  *
  * The `<polygon>` element defines a closed shape consisting of a set of connected straight line segments.

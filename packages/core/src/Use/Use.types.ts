@@ -1,14 +1,11 @@
-import type { SVGProps } from "react"
-import type { CommonSVGPresentationAttributes, Length } from "../utils"
+import type { CommonSVGPresentationAttributes, ISVGProps, Length } from "../utils"
 
 /**
- * @public
- *
  * @see [MDN Web Docs - `<use>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/use)
  */
-export type _UseAttributes = {
+export type UseAttributes = {
     // /**
-    //  * `id` of the element to *use*. No preceeding hash required.
+    //  * `id` of the element to *use*. No preceding hash required.
     //  */
     // useId?: string
     /**
@@ -42,20 +39,9 @@ export type _UseAttributes = {
 }
 
 /**
- * @public
- *
- * @see [MDN Web Docs - `<use>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/use)
- */
-export type UseAttributes = _UseAttributes & CommonSVGPresentationAttributes
-
-type Deprecated =
-    | "xlinkHref"
-
-/**
- * @public
- *
  * @see [MDN Web Docs - `<use>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/use)
  */
 export type UseProps =
-    Omit<SVGProps<SVGUseElement>, keyof UseAttributes | Deprecated>
+    ISVGProps<SVGUseElement>
     & UseAttributes
+    & CommonSVGPresentationAttributes

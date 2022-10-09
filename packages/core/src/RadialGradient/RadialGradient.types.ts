@@ -1,11 +1,10 @@
-import type { SVGProps } from "react"
 import type { StopProps } from "../Stop"
-import type { CommonSVGPresentationAttributes } from "../utils"
+import type { ISVGProps, CommonSVGPresentationAttributes } from "../utils"
 
 /**
  * @see [MDN Web Docs - `<radialGradient>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/radialGradient)
  */
-export type _RadialGradientAttributes = {
+export type RadialGradientAttributes = {
     /**
      * TODO: document
      */
@@ -14,26 +13,26 @@ export type _RadialGradientAttributes = {
      * Defines the radius of the end circle of the radial gradient.
      * The gradient will be drawn such that the 100% `<stop>` is mapped to the perimeter of the end circle.
      *
-     * @defaultValue "50%"
+     * @default "50%"
      */
     r?: string
     /**
      * Defines the x coordinate of the end circle of the radial gradient.
      *
-     * @defaultValue "50%"
+     * @default "50%"
      */
     cx?: string
     /**
      * Defines the y coordinate of the end circle of the radial gradient.
      *
-     * @defaultValue "50%"
+     * @default "50%"
      */
     cy?: string
     /**
      * This attribute defines the radius of the start circle of the radial gradient.
      * The gradient will be drawn such that the 0% `<stop>` is mapped to the perimeter of the start circle.
      *
-     * @defaultValue "0%"
+     * @default "0%"
      */
     ft?: string
     /**
@@ -49,7 +48,7 @@ export type _RadialGradientAttributes = {
      *
      * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/gradientUnits)
      *
-     * @defaultValue "objectBoundingBox"
+     * @default "objectBoundingBox"
      */
     gradientUnits?: "userSpaceOnUse" | "objectBoundingBox"
     /**
@@ -63,7 +62,7 @@ export type _RadialGradientAttributes = {
      *
      * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/spreadMethod)
      *
-     * @defaultValue "pad"
+     * @default "pad"
      */
     spreadMethod?: "pad" | "reflect" | "repeat"
     /**
@@ -77,11 +76,7 @@ export type _RadialGradientAttributes = {
 /**
  * @see [MDN Web Docs - `<radialGradient>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/radialGradient)
  */
-export type RadialGradientAttributes = _RadialGradientAttributes & CommonSVGPresentationAttributes
-
-/**
- * @see [MDN Web Docs - `<radialGradient>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/radialGradient)
- */
 export type RadialGradientProps =
-    Omit<SVGProps<SVGRadialGradientElement>, keyof RadialGradientAttributes>
+    ISVGProps<SVGRadialGradientElement>
     & RadialGradientAttributes
+    & CommonSVGPresentationAttributes

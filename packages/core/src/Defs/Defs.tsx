@@ -2,8 +2,6 @@ import { forwardRef } from "react"
 import type { DefsProps } from "./Defs.types"
 
 /**
- * @public
- *
  * A wrapper for the [`<defs>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/defs) element.
  *
  * The `<defs>` element is used to store graphical objects that will be used at a later time.

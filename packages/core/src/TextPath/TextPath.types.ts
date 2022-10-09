@@ -1,7 +1,6 @@
-import type { SVGProps } from "react"
-import type { CommonSVGPresentationAttributes, DrawCommand } from "../utils"
+import type { CommonSVGPresentationAttributes, DrawCommand, ISVGProps } from "../utils"
 
-export type _TextPathAttributes = {
+export type TextPathAttributes = {
     /**
      * Alternative syntax for building the value of the `path` prop.
      *
@@ -66,12 +65,10 @@ export type _TextPathAttributes = {
     textLength?: "auto" | any
 }
 
-
-export type TextPathAttributes = _TextPathAttributes & CommonSVGPresentationAttributes
-
 /**
  * @see [MDN Web Docs - `<textPath>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/textPath)
  */
 export type TextPathProps =
-    Omit<SVGProps<SVGTextPathElement>, keyof TextPathAttributes>
+    ISVGProps<SVGTextPathElement>
     & TextPathAttributes
+    & CommonSVGPresentationAttributes

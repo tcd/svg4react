@@ -1,5 +1,4 @@
-import type { SVGProps } from "react"
-import type { CommonSVGPresentationAttributes } from "../utils"
+import type { ISVGProps, CommonSVGPresentationAttributes } from "../utils"
 
 export type PolylineCoordinate = [
     x: number,
@@ -7,11 +6,9 @@ export type PolylineCoordinate = [
 ]
 
 /**
- * @public
- *
  * @see [MDN Web Docs - `<polyline>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/polyline)
  */
-export type _PolylineAttributes = {
+export type PolylineAttributes = {
     /**
      * The list of points (pairs of x,y absolute coordinates) required to draw the polyline.
      *
@@ -25,17 +22,9 @@ export type _PolylineAttributes = {
 }
 
 /**
- * @public
- *
- * @see [MDN Web Docs - `<polyline>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/polyline)
- */
-export type PolylineAttributes = _PolylineAttributes & CommonSVGPresentationAttributes
-
-/**
- * @public
- *
  * @see [MDN Web Docs - `<polyline>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/polyline)
  */
 export type PolylineProps =
-    Omit<SVGProps<SVGPolylineElement>, keyof PolylineAttributes>
+    ISVGProps<SVGPolylineElement>
     & PolylineAttributes
+    & CommonSVGPresentationAttributes

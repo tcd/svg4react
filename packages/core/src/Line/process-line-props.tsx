@@ -12,9 +12,13 @@ export const processLineProps = (rawProps: LineProps): LineProps => {
         ...processedProps
     } = rawProps
 
+    // @ts-ignore: next-line
     processedProps.x1 = x1
+    // @ts-ignore: next-line
     processedProps.y1 = y1
+    // @ts-ignore: next-line
     processedProps.x2 = x2
+    // @ts-ignore: next-line
     processedProps.y2 = y2
 
     return processedProps as LineProps

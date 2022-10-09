@@ -7,28 +7,30 @@ const defaultProps: Partial<SvgProps> = {
     xmlns: "http://www.w3.org/2000/svg",
 }
 
-const processSvgProps = (props: SvgProps): SvgProps => {
+const processSvgProps = (rawProps: SvgProps): SvgProps => {
 
     const {
         size = null,
         vb = [],
-        ...otherProps
+        ...processedProps
     } = {
         ...defaultProps,
-        ...props,
+        ...rawProps,
     }
 
-    if (!otherProps.viewBox) {
-        if (vb.length === 1) { otherProps.viewBox = `0 0 ${vb[0]} ${vb[0]}` }
-        if (vb.length === 2) { otherProps.viewBox = `0 0 ${vb[0]} ${vb[1]}` }
+    if (!processedProps.viewBox) {
+        if (vb.length === 1) { processedProps.viewBox = `0 0 ${vb[0]} ${vb[0]}` }
+        if (vb.length === 2) { processedProps.viewBox = `0 0 ${vb[0]} ${vb[1]}` }
     }
 
     if (size) {
-        otherProps.width  = otherProps?.width ?? size
-        otherProps.height = otherProps.height ?? size
+        // @ts-ignore: next-line
+        processedProps.width  = processedProps.width ?? size
+        // @ts-ignore: next-line
+        processedProps.height = processedProps.height ?? size
     }
 
-    return otherProps
+    return processedProps
 }
 
 export default processSvgProps

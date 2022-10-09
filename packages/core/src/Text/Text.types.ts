@@ -1,10 +1,11 @@
+import type { Property } from "csstype"
 import type { SVGProps } from "react"
-import type { CommonSVGPresentationAttributes } from "../utils"
+import type { ISVGProps, CommonSVGPresentationAttributes } from "../utils"
 
 /**
  * @see [MDN Web Docs - `<text>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/text)
  */
-export type _TextAttributes = {
+export type TextAttributes = {
     /**
      * Shorthand for the x and y coordinates of the starting point of the text baseline.
      *
@@ -61,16 +62,18 @@ export type _TextAttributes = {
      * A width that the text should be scaled to fit.
      */
     textLength?: number | string
+    /**
+     * Provides hints to the renderer about what tradeoffs to make when rendering text.
+     *
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/text-rendering)
+     */
+    textRendering?: Property.TextRendering
 }
 
 /**
  * @see [MDN Web Docs - `<text>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/text)
  */
-export type TextAttributes = _TextAttributes & CommonSVGPresentationAttributes
-
-/**
- * @see [MDN Web Docs - `<text>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/text)
- */
 export type TextProps =
-    Omit<SVGProps<SVGTextElement>, keyof TextAttributes>
+    ISVGProps<SVGTextElement>
     & TextAttributes
+    & CommonSVGPresentationAttributes

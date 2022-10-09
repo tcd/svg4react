@@ -8,25 +8,23 @@ export type StopAttributes = {
     /**
      * Defines where the gradient stop is placed along the gradient vector.
      *
-     * @defaultValue 0
+     * @default 0
      */
     offset?: string | number
     /**
      * Defines the color of the gradient stop.
-     * It can be used as a CSS property.
      *
      * @see [MDN Web Docs - `stop-color`](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stop-color)
      *
-     * @defaultValue "black"
+     * @default "black"
      */
     stopColor?: string
     /**
      * Defines the opacity of the gradient stop.
-     * It can be used as a CSS property.
      *
      * @see [MDN Web Docs - `stop-opacity`](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stop-opacity)
      *
-     * @defaultValue 1
+     * @default 1
      */
     stopOpacity?: number
     /**
@@ -35,14 +33,14 @@ export type StopAttributes = {
      *
      * @see [MDN Web Docs - `color`](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/color)
      */
-    color?: string
+    color?: string // FIXME: use shared definition for color
     /**
      * Lets you control the rendering of graphical or container elements.
      *
      * @see [MDN Web Docs - `display` (SVG)](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/display)
      * @see [MDN Web Docs - `display` (CSS)](https://developer.mozilla.org/en-US/docs/Web/CSS/display)
      *
-     * @defaultValue "inline"
+     * @default "inline"
      */
     display?: Property.Display
     /**

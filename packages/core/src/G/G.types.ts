@@ -1,3 +1,8 @@
-import type { SVGProps } from "react"
+import type { ISVGProps, SVGPresentationAttributes } from "../utils"
 
-export interface GProps extends SVGProps<SVGGElement> {}
+/**
+ * @see [MDN Web Docs - `<g>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/g)
+ */
+export type GProps =
+    ISVGProps<SVGGElement>
+    & SVGPresentationAttributes
