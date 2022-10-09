@@ -23,7 +23,7 @@ export const AppDrawer = (_props: unknown): JSX.Element => {
     return (
         <>
             <Drawer
-                sx={DocsSx.Layout.drawer}
+                sx={DocsSx.Layout.Drawer.drawer}
                 variant="permanent"
                 anchor="left"
             >
@@ -47,7 +47,7 @@ export const AppDrawer = (_props: unknown): JSX.Element => {
                     }}
                 >
                     <DrawerHeader />
-                    <List dense disablePadding sx={DocsSx.Layout.mobileDrawer}>
+                    <List dense disablePadding sx={DocsSx.Layout.Drawer.mobileDrawer}>
                         {$items}
                     </List>
                 </Drawer>

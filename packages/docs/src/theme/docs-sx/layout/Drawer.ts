@@ -22,56 +22,6 @@ const _navBg = (theme: Theme, opacity = 0.702) => {
 }
 
 // =============================================================================
-// Main
-// =============================================================================
-
-const root: SxProps = {
-    display: "flex",
-}
-
-const main: SxProps = {
-    flexGrow: 1,
-    p: 3,
-}
-
-// =============================================================================
-// Header
-// =============================================================================
-
-const headerSpacer: SxProps = (theme: Theme) => ({
-
-    width: `calc(100% - ${drawerWidth})`,
-    ml: drawerWidth,
-
-    [theme.breakpoints.down("laptop")]: {
-        width: "100%",
-        ml: "0px",
-    },
-
-    height: `${headerHeight}px`,
-})
-
-const header: SxProps = (theme: Theme) => ({
-    ...headerSpacer(theme),
-    ..._navBg(theme),
-
-    display: "flex",
-    flexFlow: "row nowrap",
-})
-
-const toolbar: SxProps = {
-    width: "100%",
-
-    px: 2,
-
-    display: "flex",
-    flexFlow: "row nowrap",
-    justifyContent: "space-between",
-    backgroundColor: "transparent",
-
-}
-
-// =============================================================================
 // Drawer
 // =============================================================================
 
@@ -81,7 +31,7 @@ const mobileDrawer: SxProps = (theme: Theme) => ({
     width: drawerWidth,
 })
 
-const drawer: SxProps = (theme: Theme) => ({
+const desktopDrawer: SxProps = (theme: Theme) => ({
     width: drawerWidth,
     flexShrink: 0,
     "& .MuiDrawer-paper": {
@@ -134,16 +84,11 @@ const drawerIcon: SxProps = {
 // All Together
 // =============================================================================
 
-export const Layout = {
-    root,
-    main,
-    header,
-    headerSpacer,
-    toolbar,
-    drawer,
+export const Drawer = {
+    drawer: desktopDrawer,
+    mobileDrawer,
     drawerHeader,
     drawerLogo,
     drawerIcon,
-    mobileDrawer,
     navItemWithChildren,
 }

@@ -1,7 +1,7 @@
 export * from "./Card"
 export * from "./Changelog"
 export * from "./HomePage"
-export * from "./Layout"
+export * as Layout from "./layout/index"
 export * from "./LiveDemo"
 export * from "./LiveDemo2"
 export * from "./NotFoundPage"

@@ -38,8 +38,8 @@ export const SideNavItem_links = (props: ILinksData): JSX.Element => {
         <>
             <Divider />
 
-            <ListItemButton dense onClick={handleClick} sx={DocsSx.Layout.navItemWithChildren}>
-                <ListItemIcon sx={DocsSx.Layout.drawerIcon}>
+            <ListItemButton dense onClick={handleClick} sx={DocsSx.Layout.Drawer.navItemWithChildren}>
+                <ListItemIcon sx={DocsSx.Layout.Drawer.drawerIcon}>
                     <Icon sx={{ fontSize: "1rem" }}/>
                 </ListItemIcon>
                 <ListItemText primary={title} />

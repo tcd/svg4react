@@ -17,8 +17,8 @@ export const DrawerHeader = (_props: unknown): JSX.Element => {
     }
 
     return (
-        <ButtonBase sx={DocsSx.Layout.drawerHeader} onClick={handleClick}>
-            <Box sx={DocsSx.Layout.drawerLogo}>
+        <ButtonBase sx={DocsSx.Layout.Drawer.drawerHeader} onClick={handleClick}>
+            <Box sx={DocsSx.Layout.Drawer.drawerLogo}>
                 <Logo />
             </Box>
             {/* <Typography>

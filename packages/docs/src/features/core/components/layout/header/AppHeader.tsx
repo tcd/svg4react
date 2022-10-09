@@ -29,9 +29,9 @@ export const AppHeader = (_props: unknown): JSX.Element => {
         <AppBar
             elevation={0}
             position="fixed"
-            sx={DocsSx.Layout.header}
+            sx={DocsSx.Layout.Header.root}
         >
-            <Toolbar sx={DocsSx.Layout.toolbar}>
+            <Toolbar sx={DocsSx.Layout.Header.toolbar}>
                 <AppHamburger />
                 {/* <Typography variant="h6" noWrap component="div">
                     svg4react

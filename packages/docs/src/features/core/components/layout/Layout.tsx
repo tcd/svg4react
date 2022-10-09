@@ -8,14 +8,14 @@ import { AppDrawer } from "./side-nav"
 export const Layout = (_props: unknown): JSX.Element => {
 
     return (
-        <Box sx={DocsSx.Layout.root}>
+        <Box sx={DocsSx.Layout.Layout.root}>
 
             <AppHeader />
 
             <AppDrawer />
 
-            <Box component="main" sx={DocsSx.Layout.main}>
-                <Toolbar sx={DocsSx.Layout.headerSpacer} />
+            <Box component="main" sx={DocsSx.Layout.Layout.main}>
+                <Toolbar sx={DocsSx.Layout.Header.headerSpacer} />
                 <Outlet />
             </Box>
 
