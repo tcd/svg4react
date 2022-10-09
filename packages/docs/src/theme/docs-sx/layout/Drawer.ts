@@ -26,7 +26,7 @@ const _navBg = (theme: Theme, opacity = 0.702) => {
 // =============================================================================
 
 const mobileDrawer: SxProps = (theme: Theme) => ({
-    // ..._navBg(theme, 0.9),
+    ..._navBg(theme, 0.9),
     background: theme.palette.mode === "dark" ? "#121212" : undefined,
     width: drawerWidth,
 })
@@ -37,6 +37,7 @@ const desktopDrawer: SxProps = (theme: Theme) => ({
     "& .MuiDrawer-paper": {
         width: drawerWidth,
         boxSizing: "border-box",
+        // background: theme.palette.mode === "dark" ? "#121212" : undefined,
     },
     [theme.breakpoints.down("laptop")]: {
         width: "0px",
@@ -57,6 +58,7 @@ const drawerHeader: SxProps = {
 
 const drawerLogo: SxProps = {
     width: "40px",
+    height: "64px",
     // background: "transparent",
     // backgroundColor: "transparent",
 }

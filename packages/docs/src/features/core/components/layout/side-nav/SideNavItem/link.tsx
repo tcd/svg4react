@@ -26,7 +26,7 @@ export const SideNavItem_link = (props: ILinkData): JSX.Element => {
     }
 
     return (
-        <ListItemButton dense onClick={handleClick}>
+        <ListItemButton selected={active} dense onClick={handleClick}>
             <ListItemText
                 primary={props.title}
                 primaryTypographyProps={{ sx }}

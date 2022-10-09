@@ -26,6 +26,7 @@ export const AppDrawer = (_props: unknown): JSX.Element => {
                 sx={DocsSx.Layout.Drawer.drawer}
                 variant="permanent"
                 anchor="left"
+                // PaperProps={{ sx: { background: "none" } }}
             >
                 <DrawerHeader />
                 <List dense disablePadding>

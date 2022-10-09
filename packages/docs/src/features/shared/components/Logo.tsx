@@ -12,7 +12,7 @@ export interface LogoProps {
     // color3?: string
 }
 
-export const Logo = (props: LogoProps): JSX.Element => {
+export const Logo = (_props: LogoProps): JSX.Element => {
 
     const darkModeEnabled = useSelector(Selectors.Core.darkModeEnabled)
 
