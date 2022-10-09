@@ -12,6 +12,7 @@
 
 - editor support
     - [microsoft/vscode-typescript-next](https://github.com/microsoft/vscode-typescript-next)
+    - [@types/react](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/react)
 - id collision
     - [elderapo/react-svg-unique-id](https://github.com/elderapo/react-svg-unique-id)
     - [iconfu/svg-inject](https://github.com/iconfu/svg-inject)
