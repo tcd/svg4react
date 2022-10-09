@@ -74,6 +74,13 @@ const navItemWithChildren: SxProps = {
     },
 }
 
+/**
+ * Title for dropdown list, not individual links.
+ */
+const drawerTitle: SxProps = {
+    fontWeight: 500,
+}
+
 const drawerIcon: SxProps = {
     minWidth: "1rem",
     mr: 1.5,
@@ -91,4 +98,5 @@ export const Drawer = {
     drawerLogo,
     drawerIcon,
     navItemWithChildren,
+    drawerTitle,
 }

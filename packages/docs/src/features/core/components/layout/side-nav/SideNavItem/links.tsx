@@ -42,7 +42,7 @@ export const SideNavItem_links = (props: ILinksData): JSX.Element => {
                 <ListItemIcon sx={DocsSx.Layout.Drawer.drawerIcon}>
                     <Icon sx={{ fontSize: "1rem" }}/>
                 </ListItemIcon>
-                <ListItemText primary={title} />
+                <ListItemText primary={title} primaryTypographyProps={{ sx: DocsSx.Layout.Drawer.drawerTitle }} />
                 <Chevron expanded={sectionOpen} />
             </ListItemButton>
 

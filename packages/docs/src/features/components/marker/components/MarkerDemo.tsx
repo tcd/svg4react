@@ -1,6 +1,5 @@
 import { Svg, Defs, Marker, Path, Circle, Polyline } from "svg4react"
 
-import { randomColor } from "@app/util"
 import { LiveDemo } from "@app/features/live-demo"
 
 export const MarkerDemo = (_props: unknown): JSX.Element => {
@@ -22,7 +21,7 @@ const code = `
 import { Svg, Defs, Marker, Path, Circle, Polyline } from "svg4react"
 
 render(
-    <Svg vb={[100]}>
+    <Svg size="75%" vb={[100]}>
         <Defs>
             {/* arrowhead marker definition */}
             <Marker
