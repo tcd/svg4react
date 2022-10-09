@@ -9,6 +9,10 @@ const header = `
 // =============================================================================
 `.trim()
 
+/**
+ * This task copies content from `index.ts` files to `index.d.ts` files
+ * in the same folder to keep them in sync.
+ */
 const main = async () => {
     const inputPath = join(WINDOWS_PACKAGE_PATHS.core, "src", "index.ts")
     const outputPath = join(WINDOWS_PACKAGE_PATHS.core, "src", "index.d.ts")
