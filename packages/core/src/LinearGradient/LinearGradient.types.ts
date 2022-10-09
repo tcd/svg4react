@@ -2,6 +2,13 @@ import type { SVGProps } from "react"
 import type { StopProps } from "../Stop"
 import type { CommonSVGPresentationAttributes } from "../utils"
 
+export type LinearGradientCoords = [
+    x1: number | string,
+    x2: number | string,
+    y1: number | string,
+    y2: number | string,
+]
+
 /**
  * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Element/linearGradient
  */
@@ -10,6 +17,13 @@ export type _LinearGradientAttributes = {
      * TODO: document
      */
     stops?: StopProps[]
+    /**
+     * @shorthand x1
+     * @shorthand x2
+     * @shorthand y1
+     * @shorthand y2
+     */
+    coordinates?: LinearGradientCoords
     /**
      * Defines the coordinate system for attributes `x1`, `x2`, `y1`, `y2`.
      *
