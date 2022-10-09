@@ -9,5 +9,5 @@
 
 React components & TypeScript types for creating SVG elements.
 
-As much as possible, this project adheres to the current draft of[SVG2](https://svgwg.org/svg2-draft/Overview.html), 
+As much as possible, this project adheres to the current draft of [SVG2](https://svgwg.org/svg2-draft/Overview.html), 
 which is not yet fully standardized or implemented by all browsers.
