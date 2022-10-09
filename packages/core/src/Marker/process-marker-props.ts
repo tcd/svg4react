@@ -14,9 +14,9 @@ export const processMarkerProps = (rawProps: MarkerProps): MarkerProps => {
     }
 
     if (Array.isArray(markerSize) && markerSize.length > 0) {
-        const [markerWidth, markerHeight = markerWidth] = markerSize
-        processedProps.markerWidth = markerWidth
-        processedProps.markerHeight = markerHeight
+        const [width, height = width] = markerSize
+        processedProps.markerWidth  = width
+        processedProps.markerHeight = height
     }
 
     return processedProps

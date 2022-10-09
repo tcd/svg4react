@@ -17,7 +17,7 @@ export type _CircleAttributes = {
      * @shorthand cx
      * @shorthand cy
      */
-    coordinates?: [cx: number, cy: number]
+    coordinates?: [cx: number, cy?: number]
     /**
      * The x-axis coordinate of the center of the circle.
      */

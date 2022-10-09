@@ -14,7 +14,7 @@ export type _MarkerAttributes = {
      * @shorthand refX
      * @shorthand refY
      */
-    refXY?: [refX: number, refY: number]
+    refXY?: [refX: number, refY?: number]
     /**
      * Shorthand for `markerWidth` and `markerHeight`.
      *
@@ -25,7 +25,7 @@ export type _MarkerAttributes = {
      * @shorthand markerWidth
      * @shorthand markerHeight
      */
-    markerSize?: [markerWidth: number, markerHeight: number]
+    markerSize?: [markerWidth: number, markerHeight?: number]
     /**
      * The orientation of the marker relative to the shape it is attached to.
      *
