@@ -29,6 +29,7 @@ import {
 // import { PlaygroundPage } from "@app/features/playground"
 import { TypesPage } from "@app/features/types"
 import {
+    GradientTextPage,
     LogosPage,
     MarkdownPage,
     MonacoPage,
@@ -52,6 +53,7 @@ const routes = (): RouteObject[] => {
                 { path: "monaco", element: <MonacoPage /> },
                 { path: "markdown", element: <MarkdownPage /> },
                 { path: "preserve-aspect-ratio", element: <PreserveAspectRatioPage /> },
+                { path: "gradient-text", element: <GradientTextPage /> },
             ],
         })
     }

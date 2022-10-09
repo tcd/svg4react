@@ -1,5 +1,6 @@
 import type { SVGProps } from "react"
 import type { Property } from "csstype"
+import { SVGPresentationAttributes } from "../utils"
 
 /**
  * @see [MDN Web Docs - `<stop>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/stop)
@@ -35,15 +36,6 @@ export type StopAttributes = {
      */
     color?: string // FIXME: use shared definition for color
     /**
-     * Lets you control the rendering of graphical or container elements.
-     *
-     * @see [MDN Web Docs - `display` (SVG)](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/display)
-     * @see [MDN Web Docs - `display` (CSS)](https://developer.mozilla.org/en-US/docs/Web/CSS/display)
-     *
-     * @default "inline"
-     */
-    display?: Property.Display
-    /**
      * Lets you control the visibility of graphical elements.
      *
      * @see [MDN Web Docs - `visibility`](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/visibility)
@@ -52,8 +44,9 @@ export type StopAttributes = {
 }
 
 /**
- * @public
+ * @see [MDN Web Docs - `<stop>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/stop)
  */
 export type StopProps =
     Omit<SVGProps<SVGStopElement>, keyof StopAttributes>
     & StopAttributes
+    & Pick<SVGPresentationAttributes, "display">

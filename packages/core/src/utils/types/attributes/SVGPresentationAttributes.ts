@@ -107,9 +107,14 @@ export interface SVGPresentationAttributes {
     /**
      * Controls the rendering of graphical or container elements.
      *
+     * The only way this property has any effect is if it is set to `"none"`.
+     *
      * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/direction)
+     * @see [SVG2 - 3.2.3 - Controlling Visibility](https://www.w3.org/TR/SVG/render.html#VisibilityControl)
+     *
+     * @default undefined
      */
-    display?: Property.Display
+    display?: "none" | undefined
     /**
      * Defines the baseline used to align the box's text and inline-level contents.
      *
