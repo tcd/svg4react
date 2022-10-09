@@ -11,7 +11,7 @@ import { processMarkerProps } from "./process-marker-props"
  * - `<polyline>`
  * - `<polygon>`
  *
- * Markers are attached to shapes using the `marker-start`, `marker-mid`, and `marker-end` properties.
+ * Markers are attached to shapes using the `markerStart`, `markerMid`, and `markerEnd` properties.
  */
 const Marker = (props: MarkerProps) => {
 
@@ -19,7 +19,7 @@ const Marker = (props: MarkerProps) => {
 
     return (
         // @ts-ignore: next-line
-        <circle
+        <marker
             {...processedProps}
         />
     )
