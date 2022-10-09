@@ -1,5 +1,5 @@
-import { processPolygonProps } from "./process-polygon-props"
 import type { PolygonProps } from "./Polygon.types"
+import processPolygonProps from "./process-polygon-props"
 
 /**
  * A wrapper for the [`<polygon>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/polygon) element.
