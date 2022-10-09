@@ -45,7 +45,7 @@ export const parseReflectionChild = (project: ProjectParser, reflection: any): P
         }
 
         // ---------------------------------------------------------------------
-        // `@defaultValue`
+        // `@default` / `@defaultValue`
         // ---------------------------------------------------------------------
 
         if (segment?.tag === "defaultValue" || segment?.tag === "default") {
