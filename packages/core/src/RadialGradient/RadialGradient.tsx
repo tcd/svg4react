@@ -14,10 +14,13 @@ const RadialGradient = (props: RadialGradientProps): JSX.Element => {
         children = undefined,
         ...otherProps
     } = props
+
+    const $stops = stops.map((stop, index) => <Stop key={index} {...stop} />)
+
     return (
         // @ts-ignore: next-line
         <radialGradient {...otherProps}>
-            {stops.map((stop, index) => <Stop key={index} {...stop} />)}
+            <>{$stops}</>
             {children && children}
         </radialGradient>
     )
