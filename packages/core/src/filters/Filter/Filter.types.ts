@@ -1,7 +1,6 @@
-import type { SVGProps } from "react"
-import type { CommonSVGPresentationAttributes } from "../../utils"
+import type { ISVGProps, CommonSVGPresentationAttributes } from "../../utils"
 
-export type _FilterAttributes = {
+export type FilterAttributes = {
     /**
      * Defines the coordinate system for the attributes `x`, `y`, `width`, and `height`.
      *
@@ -16,11 +15,10 @@ export type _FilterAttributes = {
     primitiveUnits?: "userSpaceOnUse" | "objectBoundingBox"
 }
 
-export type FilterAttributes = _FilterAttributes & CommonSVGPresentationAttributes
-
 /**
  * @see [MDN - `<filter>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/filter)
  */
 export type FilterProps =
-    Omit<SVGProps<SVGFilterElement>, keyof FilterAttributes>
+    ISVGProps<SVGFilterElement>
     & FilterAttributes
+    & CommonSVGPresentationAttributes

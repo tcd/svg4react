@@ -1,4 +1,4 @@
-import type { SVGProps } from "react"
+import { ISVGProps } from "../../utils"
 
 export type FeDistantLightAttributes = {
     /**
@@ -24,5 +24,5 @@ export type FeDistantLightAttributes = {
  * @see [MDN - `<feDistantLight>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feDistantLight)
  */
 export type FeDistantLightProps =
-    Omit<SVGProps<SVGFEDistantLightElement>, keyof FeDistantLightAttributes>
+    ISVGProps<SVGFEDistantLightElement>
     & FeDistantLightAttributes
