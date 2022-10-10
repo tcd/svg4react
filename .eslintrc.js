@@ -1,3 +1,11 @@
+const JSDOC_TAGS = [
+    "shorthand",
+    "default",
+    "experimental",
+    "animatable",
+    "see",
+]
+
 /**
  * @type {import("eslint").Linter.Config}
  */
@@ -24,6 +32,7 @@ module.exports = {
         "react",
         "@typescript-eslint",
         "jsdoc",
+        "no-smart-quotes",
     ],
     "overrides": [
         {
@@ -80,10 +89,19 @@ module.exports = {
         // JsDoc
         // https://github.com/gajus/eslint-plugin-jsdoc
         // ---------------------------------------------------------------------
-        "jsdoc/check-alignment":         ["warn"], // https://github.com/gajus/eslint-plugin-jsdoc#eslint-plugin-jsdoc-rules-check-alignment
-        "jsdoc/require-asterisk-prefix": ["warn", "always"], // https://github.com/gajus/eslint-plugin-jsdoc#eslint-plugin-jsdoc-rules-require-asterisk-prefix
-        "jsdoc/multiline-blocks":        ["warn", { "noZeroLineText": true, "noSingleLineBlocks": false }], // https://github.com/gajus/eslint-plugin-jsdoc#eslint-plugin-jsdoc-rules-multiline-blocks
-        "jsdoc/check-line-alignment":    ["off"], // ["warn", "always"],
-        "jsdoc/check-indentation":       ["off"], // https://github.com/gajus/eslint-plugin-jsdoc#eslint-plugin-jsdoc-rules-check-indentation
+        "jsdoc/check-alignment":           ["warn"], // https://github.com/gajus/eslint-plugin-jsdoc#eslint-plugin-jsdoc-rules-check-alignment
+        "jsdoc/require-asterisk-prefix":   ["warn", "always"], // https://github.com/gajus/eslint-plugin-jsdoc#eslint-plugin-jsdoc-rules-require-asterisk-prefix
+        "jsdoc/multiline-blocks":          ["warn", { "noZeroLineText": true, "noSingleLineBlocks": false }], // https://github.com/gajus/eslint-plugin-jsdoc#eslint-plugin-jsdoc-rules-multiline-blocks
+        "jsdoc/check-line-alignment":      ["off"], // ["warn", "always"],
+        "jsdoc/check-indentation":         ["off"], // https://github.com/gajus/eslint-plugin-jsdoc#eslint-plugin-jsdoc-rules-check-indentation
+        "jsdoc/newline-after-description": ["warn", "always"], // https://github.com/gajus/eslint-plugin-jsdoc#user-content-eslint-plugin-jsdoc-rules-newline-after-description
+        "jsdoc/tag-lines":                 ["warn", "never"], // https://github.com/gajus/eslint-plugin-jsdoc#user-content-eslint-plugin-jsdoc-rules-newline-after-description
+        "jsdoc/sort-tags":                 ["warn", { "tagSequence": JSDOC_TAGS }], // https://github.com/gajus/eslint-plugin-jsdoc#user-content-eslint-plugin-jsdoc-rules-sort-tags
+        "jsdoc/check-tag-names":           ["warn", { "definedTags": JSDOC_TAGS }], // https://github.com/gajus/eslint-plugin-jsdoc#user-content-eslint-plugin-jsdoc-rules-sort-tags
+        // ---------------------------------------------------------------------
+        // No Smart Quotes
+        // https://github.com/seleb/eslint-plugin-no-smart-quotes
+        // ---------------------------------------------------------------------
+        "no-smart-quotes/no-smart-quotes": "error",
     },
 }
