@@ -1,4 +1,4 @@
-import type { SVGProps } from "react"
+import type { ISVGProps } from "../utils"
 
 export type AnimateTransformAttributes = {
     /**
@@ -10,8 +10,8 @@ export type AnimateTransformAttributes = {
 }
 
 /**
- * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Element/animateTransform
+ * @see [MDN Web Docs - `<animateTransform>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/animateTransform)
  */
 export type AnimateTransformProps =
-    Omit<SVGProps<SVGAnimateTransformElement>, keyof AnimateTransformAttributes>
+    ISVGProps<SVGAnimateTransformElement>
     & AnimateTransformAttributes

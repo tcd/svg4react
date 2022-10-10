@@ -1,6 +1,5 @@
-import type { SVGProps } from "react"
 import type { StopProps } from "../Stop"
-import type { CommonSVGPresentationAttributes } from "../utils"
+import type { ISVGProps, CommonSVGPresentationAttributes } from "../utils"
 
 export type LinearGradientCoords = [
     x1: number | string,
@@ -92,5 +91,6 @@ export type LinearGradientAttributes = _LinearGradientAttributes & CommonSVGPres
  * @see [MDN Web Docs - `<linearGradient>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/linearGradient)
  */
 export type LinearGradientProps =
-    Omit<SVGProps<SVGLinearGradientElement>, keyof LinearGradientAttributes>
+    ISVGProps<SVGLinearGradientElement>
     & LinearGradientAttributes
+    & CommonSVGPresentationAttributes

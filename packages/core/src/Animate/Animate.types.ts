@@ -1,4 +1,4 @@
-import type { SVGProps } from "react"
+import { ISVGProps } from "../utils"
 
 /**
  * @public
@@ -116,5 +116,5 @@ export type AnimateAttributes = {
  * @see [MDN Web Docs - `<animate>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/animate)
  */
 export type AnimateProps =
-    Omit<SVGProps<SVGAnimateElement>, keyof AnimateAttributes>
+    ISVGProps<SVGAnimateElement>
     & AnimateAttributes
