@@ -1,5 +1,5 @@
 // =============================================================================
-// This is a programmatically generated file; do not edit manually.
+// This is a programmatically generated file; do not edit it manually
 // =============================================================================
 
 export * from "./utils"
@@ -43,6 +43,9 @@ export * from "./Polygon"
 export { default as Polyline } from "./Polyline"
 export * from "./Polyline"
 
+export { default as RadialGradient } from "./RadialGradient"
+export * from "./RadialGradient"
+
 export { default as Rect } from "./Rect"
 export * from "./Rect"
 
@@ -57,6 +60,9 @@ export * from "./Text"
 
 export { default as TextPath } from "./TextPath"
 export * from "./TextPath"
+
+export { default as TSpan } from "./TSpan"
+export * from "./TSpan"
 
 export { default as Use } from "./Use"
 export * from "./Use"

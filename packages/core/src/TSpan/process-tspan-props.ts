@@ -1,6 +1,6 @@
-import type { TextProps } from "./Text.types"
+import type { TSpanProps } from "./TSpan.types"
 
-const processTextProps = (rawProps: TextProps): TextProps => {
+const processTSpanProps = (rawProps: TSpanProps): TSpanProps => {
     const {
         coordinates = [],
         shift = [],
@@ -22,4 +22,4 @@ const processTextProps = (rawProps: TextProps): TextProps => {
     return props
 }
 
-export default processTextProps
+export default processTSpanProps

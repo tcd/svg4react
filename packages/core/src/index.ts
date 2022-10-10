@@ -57,5 +57,8 @@ export * from "./Text"
 export { default as TextPath } from "./TextPath"
 export * from "./TextPath"
 
+export { default as TSpan } from "./TSpan"
+export * from "./TSpan"
+
 export { default as Use } from "./Use"
 export * from "./Use"

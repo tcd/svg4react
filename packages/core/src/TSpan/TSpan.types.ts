@@ -1,10 +1,9 @@
-import type { Property } from "csstype"
-import type { ISVGProps, SVGTextAttributes, CommonSVGPresentationAttributes } from "../utils"
+import type { ISVGProps, CommonSVGPresentationAttributes, SVGTextAttributes } from "../utils"
 
 /**
- * @see [MDN Web Docs - `<text>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/text)
+ * @see [MDN Web Docs - `<tspan>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/tspan)
  */
-export type TextAttributes = {
+export type TSpanAttributes = {
     /**
      * Shorthand for the x and y coordinates of the starting point of the text baseline.
      *
@@ -15,6 +14,7 @@ export type TextAttributes = {
      * @shorthand x
      * @shorthand y
      */
+    // FIXME: Length. Allow percentage.
     coordinates?: [x: number | string, y?: number | string]
     /**
      * Shorthand for `dx` and `dy`.
@@ -49,24 +49,15 @@ export type TextAttributes = {
     dy?: number | string
     /**
      * Rotates orientation of each individual glyph. Can rotate glyphs individually.
-     *
-     * @animatable true
-     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/text#attributes)
      */
     rotate?: string
-    /**
-     * Provides hints to the renderer about what tradeoffs to make when rendering text.
-     *
-     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/text-rendering)
-     */
-    textRendering?: Property.TextRendering
 }
 
 /**
- * @see [MDN Web Docs - `<text>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/text)
+ * @see [MDN Web Docs - `<tspan>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/tspan)
  */
-export type TextProps =
-    ISVGProps<SVGTextElement>
-    & TextAttributes
+export type TSpanProps =
+    ISVGProps<SVGTSpanElement>
+    & TSpanAttributes
     & SVGTextAttributes
     & CommonSVGPresentationAttributes
