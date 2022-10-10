@@ -38,5 +38,6 @@ export declare global {
         | "Svg"
         | "Text"
         | "TextPath"
+        | "TSpan"
         | "Use"
 }
