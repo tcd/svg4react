@@ -112,6 +112,7 @@ const parseReference = (project: ProjectParser, prop): any => {
         const referenced = project.find(prop.type.id)
         if (referenced) {
             if (referenced?.project?.name === "svg4react") {
+                // @ts-ignore: next-line
                 console.log(`internal reference: '${referenced.type.toString()}'`)
                 // debugger
             }

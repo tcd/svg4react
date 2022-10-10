@@ -37,7 +37,7 @@
 	},
 	{
 		"component": "Marker",
-		"docComment": "A wrapper for the [`<marker>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/marker) element.\n\nThe `<marker>` element defines the graphic that is to be used for drawing arrowheads or polymarkers on any of the following:\n\n- `<path>`\n- `<line>`\n- `<polyline>`\n- `<polygon>`\n\nMarkers are attached to shapes using the `marker-start`, `marker-mid`, and `marker-end` properties."
+		"docComment": "A wrapper for the [`<marker>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/marker) element.\n\nThe `<marker>` element defines the graphic that is to be used for drawing arrowheads or polymarkers on any of the following:\n\n- `<path>`\n- `<line>`\n- `<polyline>`\n- `<polygon>`\n\nMarkers are attached to shapes using the `markerStart`, `markerMid`, and `markerEnd` properties."
 	},
 	{
 		"component": "Path",
@@ -74,6 +74,10 @@
 	{
 		"component": "TextPath",
 		"docComment": "A wrapper for the [`<textPath>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/textPath) element.\n\nTo render text along the shape of a `<path>`, enclose the text in a `<textPath>` element that has an href attribute with a reference to the `<path>` element."
+	},
+	{
+		"component": "TSpan",
+		"docComment": "A wrapper for the [`<tspan>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/tspan) element.\n\nThe SVG `<tspan>` element defines a subtext within a `<text>` element or another `<tspan>` element.\n\nIt allows for adjustment of the style and/or position of that subtext as needed."
 	},
 	{
 		"component": "Use",

@@ -25,6 +25,7 @@ const components: Svg4ReactComponent[] = [
     "Svg",
     "Text",
     "TextPath",
+    "TSpan",
     "Use",
 ]
 

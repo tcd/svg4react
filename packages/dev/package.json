@@ -12,6 +12,7 @@
         "build:docs:components": "npm run compile && node ./build/tasks/docs/build-component-docs.js",
         "build:docs:props": "npm run compile && node ./build/tasks/docs/build-prop-docs.js",
         "build:tidy": "npm run compile && node ./build/tasks/core/consolidate-types.js",
+        "compile": "cross-env rimraf ./build/**/* && tsc",
         "watch": "cross-env rimraf ./build/**/* && tsc --watch"
     },
     "dependencies": {
