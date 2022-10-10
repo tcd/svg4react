@@ -34,6 +34,7 @@
         "polymarker",
         "prismjs",
         "rehype",
+        "SIML",
         "styleguidist",
         "svgwg",
         "tsdoc",

@@ -1,4 +1,4 @@
-import type { ISVGProps } from "../utils"
+import type { ISVGProps, SVGAnimationAttributes } from "../utils"
 
 export type AnimateTransformAttributes = {
     /**
@@ -15,3 +15,4 @@ export type AnimateTransformAttributes = {
 export type AnimateTransformProps =
     ISVGProps<SVGAnimateTransformElement>
     & AnimateTransformAttributes
+    & SVGAnimationAttributes
