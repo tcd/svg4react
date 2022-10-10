@@ -5,6 +5,14 @@ import type { ISVGProps, CommonSVGPresentationAttributes, SVGTextAttributes } fr
  */
 export type TSpanAttributes = {
     /**
+     * Add a hidden space character to the end of the component.
+     *
+     * This is useful for fixing spacing errors when copying text.
+     *
+     * @default false
+     */
+    addSpace?: boolean
+    /**
      * Pass a string value instead of children.
      *
      * @shorthand children
