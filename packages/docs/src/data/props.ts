@@ -163,7 +163,7 @@ export const PropData: Record<Svg4ReactComponent, PropData[]> = {
     Line: [
         {
             name: "coordinates",
-            type: `[\n\n    x1: number | string,\n\n\n\n    y1: number | string,\n\n\n\n    x2: number | string,\n\n\n\n    y2: number | string,\n\n]`,
+            type: `[\n    x1: number | string,\n    y1: number | string,\n    x2: number | string,\n    y2: number | string,\n]`,
             description: "Values, in order, as a string or number, for:\n\n- `x1` - x-axis start\n\n- `y1` - y-axis start\n\n- `x2` - x-axis end\n\n- `y2` - y-axis end",
         },
         {
@@ -369,8 +369,10 @@ export const PropData: Record<Svg4ReactComponent, PropData[]> = {
     AnimateTransform: [],
     Defs: [],
     G: [],
-    Path: [],
     Marker: [],
+    Path: [],
     RadialGradient: [],
+    TextPath: [],
+    TSpan: [],
     Use: [],
 }

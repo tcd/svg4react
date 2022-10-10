@@ -23,6 +23,7 @@ export declare global {
         | "Svg"
         | "Text"
         | "TextPath"
+        | "TSpan"
         | "Use"
 
     export interface PropData {
