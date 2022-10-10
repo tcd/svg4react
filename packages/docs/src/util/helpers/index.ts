@@ -1,5 +1,6 @@
 export * from "./clean-markdown-string"
 export * from "./component-to-string"
+export * from "./merge"
 export * from "./random-color"
 export * from "./random-hex-color"
 export * from "./random-named-color"
