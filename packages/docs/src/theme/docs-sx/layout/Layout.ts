@@ -10,7 +10,6 @@ const root: SxProps = {
 
 const main: SxProps = (theme: Theme) => {
     const padding = theme.spacing(3)
-    // console.log(theme.spacing(3))
     return {
         flexGrow: 1,
         p: 3,
