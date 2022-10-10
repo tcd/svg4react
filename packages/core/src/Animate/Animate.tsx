@@ -1,5 +1,5 @@
 import type { AnimateProps } from "./Animate.types"
-import processAnimateProps from "./process-animate-attributes"
+import { processAnimationProps } from "../utils"
 
 /**
  * A wrapper for the [`<animate>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/animate) element.
@@ -8,7 +8,7 @@ import processAnimateProps from "./process-animate-attributes"
  */
 const Animate = (props: AnimateProps): JSX.Element => {
 
-    const processedProps = processAnimateProps(props)
+    const processedProps = processAnimationProps(props)
 
     return (
         // @ts-ignore: next-line

@@ -129,7 +129,7 @@ export type SVGAnimationAttributes<TAttributeType = any> = {
      *
      * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/keyTimes)
      */
-    keyTimes?: any[]
+    keyTimes?: ClockValue[]
     /**
      * A set of Bézier curve control points associated with the `keyTimes` list, defining a cubic Bézier function that controls interval pacing.
      *
