@@ -1,4 +1,3 @@
-import { forwardRef } from "react"
 import type { TextProps } from "./Text.types"
 import processTextProps from "./process-text-props"
 
@@ -11,17 +10,16 @@ import processTextProps from "./process-text-props"
  * If text is included in SVG not inside of a `<text>` element, it is not rendered.
  * This is different than being hidden by default, as setting the `display` property won't show the text.
  */
-const Text = forwardRef<SVGTextElement, TextProps>(function Text(props: TextProps, ref) {
+const Text = (props: TextProps) => {
 
-    props = processTextProps(props)
+    const processedProps = processTextProps(props)
 
     return (
         // @ts-ignore: next-line
         <text
-            ref={ref}
-            {...props}
+            {...processedProps}
         />
     )
-})
+}
 
 export default Text

@@ -1,4 +1,9 @@
-import type { CommonSVGPresentationAttributes, DrawCommand, ISVGProps } from "../utils"
+import type {
+    ISVGProps,
+    DrawCommand,
+    SVGTextAttributes,
+    CommonSVGPresentationAttributes,
+} from "../utils"
 
 export type TextPathAttributes = {
     /**
@@ -7,7 +12,6 @@ export type TextPathAttributes = {
      * **Will** overwrite the `path` prop.
      *
      * @shorthand d
-     *
      * @experimental
      */
     commands?: DrawCommand[]
@@ -22,27 +26,17 @@ export type TextPathAttributes = {
      */
     href?: string
     /**
-     * Where length adjustment should be applied to the text: the space between glyphs, or both the space and the glyphs themselves.
-     *
-     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/lengthAdjust)
-     *
-     * @default "spacing"
-     */
-    lengthAdjust?: "spacing" | "spacingAndGlyphs"
-    /**
      * Which method to render individual glyphs along the path.
      *
-     * @experimental
-     *
      * @default "align"
+     * @experimental
      */
     method?: "align" | "stretch"
     /**
      * Which side of the path the text should be rendered.
      *
-     * @experimental
-     *
      * @default "left"
+     * @experimental
      */
     side?: "left" | "right"
     /**
@@ -71,4 +65,5 @@ export type TextPathAttributes = {
 export type TextPathProps =
     ISVGProps<SVGTextPathElement>
     & TextPathAttributes
+    & Omit<SVGTextAttributes, "textLength">
     & CommonSVGPresentationAttributes

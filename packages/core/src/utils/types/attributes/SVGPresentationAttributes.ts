@@ -3,7 +3,6 @@ import type { Property } from "csstype"
 export type CommonSVGPresentationAttributes = Pick<SVGPresentationAttributes,
     | "clipPath"
     | "clipRule"
-    | "color"
     | "colorInterpolation"
     | "cursor"
     | "display"
@@ -35,20 +34,6 @@ export type CommonSVGPresentationAttributes = Pick<SVGPresentationAttributes,
  */
 export interface SVGPresentationAttributes {
     /**
-     * Specifies how an object is aligned along the font baseline with respect to its parent.
-     *
-     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/alignment-baseline)
-     */
-    alignmentBaseline?: "auto" | "baseline" | "before-edge" | "text-before-edge" | "middle" | "central" | "after-edge" | "text-after-edge" | "ideographic" | "alphabetic" | "hanging" | "mathematical" | "top" | "center" | "bottom"
-    /**
-     * NOTE: [going to be deprecated](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/baseline-shift)
-     *
-     * Allows repositioning of the dominant-baseline relative to the dominant-baseline of the parent text content element.
-     *
-     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/baseline-shift)
-     */
-    baselineShift?: Property.BaselineShift
-    /**
      * Defines or associates a clipping path with the element it is related to.
      *
      * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/clip-path)
@@ -62,20 +47,6 @@ export interface SVGPresentationAttributes {
      * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/clip-rule)
      */
     clipRule?: "inherit" | "evenodd" | "nonzero"
-    /**
-     * The `color` attribute is used to provide a potential indirect value, `currentcolor`, for the following attributes:
-     *
-     * - `fill`
-     * - `stroke`
-     * - `stop-color`
-     * - `flood-color`
-     * - `lighting-color`
-     *
-     * As a presentation attribute, it can be applied to any element, but as noted above, it has no direct effect on SVG elements.
-     *
-     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/color)
-     */
-    color?: Property.Color // TODO: remove; its part of `SVGCoreAttributes`
     /**
      * Specifies the color space for gradient interpolations, color animations, and alpha compositing.
      *
@@ -101,26 +72,15 @@ export interface SVGPresentationAttributes {
      */
     d?: string
     /**
-     * Specifies the base writing direction of text.
-     */
-    direction?: Property.Direction
-    /**
      * Controls the rendering of graphical or container elements.
      *
      * The only way this property has any effect is if it is set to `"none"`.
      *
-     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/direction)
+     * @default undefined // technically it's "inline"
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/display)
      * @see [SVG2 - 3.2.3 - Controlling Visibility](https://www.w3.org/TR/SVG/render.html#VisibilityControl)
-     *
-     * @default undefined
      */
     display?: "none" | undefined
-    /**
-     * Defines the baseline used to align the box's text and inline-level contents.
-     *
-     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/dominant-baseline)
-     */
-    dominantBaseline?: Property.DominantBaseline
     /**
      * Defines the color of the inside of the graphical element it applies to.
      *
@@ -157,23 +117,12 @@ export interface SVGPresentationAttributes {
      * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/flood-opacity)
      */
     floodOpacity?: number
-    // fontFamily?: Property.FontFamily
-    // fontSize?: Property.FontSize
-    // fontSizeAdjust?: Property.FontSizeAdjust
-    // fontStretch?: Property.FontStretch
-    // fontStyle?: Property.FontStyle
-    // fontVariant?: Property.FontVariant
-    // fontWeight?: Property.FontWeight
     /**
      * Provides a hint to the browser about how to make speed vs. quality tradeoffs as it performs image processing.
      *
      * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/image-rendering)
      */
     imageRendering?: "auto" | "optimizeSpeed" | "optimizeQuality"
-    /**
-     * Controls spacing between text characters.
-     */
-    letterSpacing?: Property.LetterSpacing
     /**
      * Defines the color of the light source for filter primitives
      * elements [`<feDiffuseLighting>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feDiffuseLighting)
@@ -212,6 +161,11 @@ export interface SVGPresentationAttributes {
      */
     pathLength?: number
     /**
+     * Allows defining whether or when an element may be the target of a mouse event.
+     *
+     * @default "visiblePainted"
+     * @animatable true
+     * @cssProperty true
      * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/pointer-events)
      */
     pointerEvents?: Property.PointerEvents
@@ -271,22 +225,6 @@ export interface SVGPresentationAttributes {
      */
     strokeWidth?: Property.StrokeWidth
     /**
-     * Used to align (start-, middle- or end-alignment) a string of pre-formatted text or auto-wrapped text where
-     * the wrapping area is determined from the [inline-size](https://developer.mozilla.org/en-US/docs/Web/CSS/inline-size)
-     * property relative to a given point.
-     *
-     * This attribute is not applicable to other types of auto-wrapped text.
-     * For those cases you should use `text-align`.
-     * For multi-line text, the alignment takes place for each line.
-     *
-     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/text-anchor)
-     */
-    textAnchor?: Property.TextAnchor
-    /**
-     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/text-decoration)
-     */
-    textDecoration?: Property.TextDecoration
-    /**
      * Defines a list of transform definitions that are applied to an element and the element's children.
      *
      * As of SVG2, transform is a presentation attribute, meaning it can be used as a CSS property.
@@ -298,12 +236,6 @@ export interface SVGPresentationAttributes {
      */
     transform?: Property.Transform
     /**
-     * Specifies how the accumulation of the background image is managed.
-     *
-     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/unicode-bidi)
-     */
-    unicodeBidi?: Property.UnicodeBidi
-    /**
      * Specifies the vector effect to use when drawing an object.
      * Vector effects are applied before any of the other compositing operations, i.e. filters, masks and clips.
      *
@@ -312,24 +244,10 @@ export interface SVGPresentationAttributes {
     vectorEffect?: Property.VectorEffect
     /**
      * Lets you control the visibility of graphical elements.
+     *
      * With a value of `hidden` or `collapse` the current graphics element is invisible.
      *
      * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/visibility)
      */
     visibility?: Property.Visibility
-    /**
-     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/word-spacing)
-     */
-    wordSpacing?: Property.WordSpacing
-    /**
-     * FIXME: mdn vs csstype
-     *
-     * Specifies whether the initial inline-progression-direction for a `<text>` element shall be:
-     * - *left-to-right*
-     * - *right-to-left*
-     * - *top-to-bottom*
-     *
-     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/writing-mode)
-     */
-    writingMode?: Property.WritingMode
 }

@@ -8,7 +8,6 @@ import type { AriaRole } from "react"
  *
  * @see [MDN Web Docs - SVG Core Attributes](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/Core)
  * @see [@types/react](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/40d2b61ff58052ff939fe662353bb3c1baf769ec/types/react/index.d.ts#L2503)
- * @see [SVGDOMPropertyConfig.js](https://unpkg.com/browse/react-dom@15.6.2/lib/SVGDOMPropertyConfig.js)
  */
 export interface SVGCoreAttributes {
     /**
@@ -27,6 +26,7 @@ export interface SVGCoreAttributes {
      * As a presentation attribute, it can be applied to any element, but as noted above, it has no direct effect on SVG elements.
      *
      * @see [SVG2 - 13.3 - The effect of the 'color' property](https://www.w3.org/TR/SVG/painting.html#ColorProperty)
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/color)
      */
     color?: string
     /**

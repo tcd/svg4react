@@ -1,5 +1,5 @@
 import type { Property } from "csstype"
-import type { ISVGProps, CommonSVGPresentationAttributes } from "../utils"
+import type { ISVGProps, SVGTextAttributes, CommonSVGPresentationAttributes } from "../utils"
 
 /**
  * @see [MDN Web Docs - `<text>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/text)
@@ -15,7 +15,7 @@ export type TextAttributes = {
      * @shorthand x
      * @shorthand y
      */
-    coordinates?: [x: number, y?: number]
+    coordinates?: [x: number | string, y?: number | string]
     /**
      * Shorthand for `dx` and `dy`.
      *
@@ -49,18 +49,11 @@ export type TextAttributes = {
     dy?: number | string
     /**
      * Rotates orientation of each individual glyph. Can rotate glyphs individually.
+     *
+     * @animatable true
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/text#attributes)
      */
     rotate?: string
-    /**
-     * How the text is stretched or compressed to fit the width defined by the textLength attribute.
-     *
-     * @default "spacing"
-     */
-    lengthAdjust?: "spacing" | "spacingAndGlyphs"
-    /**
-     * A width that the text should be scaled to fit.
-     */
-    textLength?: number | string
     /**
      * Provides hints to the renderer about what tradeoffs to make when rendering text.
      *
@@ -75,4 +68,5 @@ export type TextAttributes = {
 export type TextProps =
     ISVGProps<SVGTextElement>
     & TextAttributes
+    & SVGTextAttributes
     & CommonSVGPresentationAttributes

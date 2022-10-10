@@ -13,17 +13,15 @@ export type StopAttributes = {
     /**
      * Defines the color of the gradient stop.
      *
-     * @see [MDN Web Docs - `stop-color`](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stop-color)
-     *
      * @default "black"
+     * @see [MDN Web Docs - `stop-color`](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stop-color)
      */
     stopColor?: string
     /**
      * Defines the opacity of the gradient stop.
      *
-     * @see [MDN Web Docs - `stop-opacity`](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stop-opacity)
-     *
      * @default 1
+     * @see [MDN Web Docs - `stop-opacity`](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stop-opacity)
      */
     stopOpacity?: number
 }
