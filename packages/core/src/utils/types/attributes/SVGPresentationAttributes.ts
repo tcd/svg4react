@@ -1,4 +1,5 @@
 import type { Property } from "csstype"
+import type { IRI } from "../values"
 
 export type CommonSVGPresentationAttributes = Pick<SVGPresentationAttributes,
     | "clipPath"
@@ -132,11 +133,11 @@ export interface SVGPresentationAttributes {
      */
     lightingColor?: Property.LightingColor
     /**
-     * Alters the visibility of an element by either masking or clipping the image at specific points.
+     * A presentation attribute mainly used to bind a given `<mask>` element with the element the attribute belongs to.
      *
      * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/mask)
      */
-    mask?: Property.Mask
+    mask?: IRI
     /**
      * Specifies the transparency of an object or of a group of objects, that is, the degree to which the background behind the element is overlaid.
      *

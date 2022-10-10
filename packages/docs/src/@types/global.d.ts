@@ -14,6 +14,7 @@ export declare global {
         | "Line"
         | "LinearGradient"
         | "Marker"
+        | "Mask"
         | "Path"
         | "Polygon"
         | "Polyline"
