@@ -6,6 +6,7 @@ export type Svg4ReactComponentName =
     | "ClipPath"
     | "Defs"
     | "Ellipse"
+    | "ForeignObject"
     | "G"
     | "Line"
     | "LinearGradient"
