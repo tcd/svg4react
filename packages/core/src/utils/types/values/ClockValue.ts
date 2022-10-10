@@ -6,4 +6,4 @@ export namespace ClockValues {
  * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Content_type#clock-value)
  * @see [SVG Animations Level 2 - ClockValueSyntax](https://svgwg.org/specs/animations/#ClockValueSyntax)
  */
-export type ClockValue = string
+export type ClockValue = number | string
