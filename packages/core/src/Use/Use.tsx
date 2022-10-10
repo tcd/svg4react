@@ -1,4 +1,5 @@
 import type { UseProps } from "./Use.types"
+import processProps from "./process-use-props"
 
 /**
  * A wrapper for the [`<use>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/use) element.
@@ -13,17 +14,12 @@ import type { UseProps } from "./Use.types"
  */
 const Use = (props: UseProps) => {
 
-    const {
-        // useId = "",
-        ...otherProps
-    } = props
-
-    // const href = `url(#${useId})`
+    const processedProps = processProps(props)
 
     return (
         // @ts-ignore: next-line
         <use
-            {...otherProps}
+            {...processedProps}
         />
     )
 }
