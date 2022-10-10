@@ -6,7 +6,7 @@
     "entryPointStrategy": "expand",
     "excludeExternals": true,
     "plugin": [
-        "typedoc-plugin-extras",
+        // "typedoc-plugin-extras",
         "typedoc-plugin-missing-exports",
     ],
     "entryPoints": [
