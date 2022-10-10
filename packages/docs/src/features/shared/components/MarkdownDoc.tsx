@@ -8,6 +8,7 @@ import remarkGfm from "remark-gfm"
 import remarkBreaks from "remark-breaks"
 import rehypeExternalLinks from "rehype-external-links"
 
+import { cleanMarkdownString } from "@app/util"
 
 export interface MarkdownDocProps {
     content: string
@@ -37,15 +38,6 @@ export const MarkdownDoc = (props: MarkdownDocProps): JSX.Element => {
 }
 
 // =============================================================================
-
-const cleanMarkdownString = (input: string): string => {
-    return `${input}`
-        .replace(/^"/, "")
-        .replace(/"$/, "")
-        // .replaceAll(/(?<!\n|\|)\n{1}(?!\n)/gm, " ") // only break for two newlines
-        // .replaceAll(/(?<!\\n)\\n{1}(?!\\n)/gm, " ") // only break for two newlines
-        .replaceAll("\\n", "\n") // unescape json
-}
 
 const options: Omit<ReactMarkdownOptions, "children"> = {
     skipHtml: false,
