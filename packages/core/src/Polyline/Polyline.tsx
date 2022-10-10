@@ -2,8 +2,6 @@ import type { PolylineProps } from "./Polyline.types"
 import processPolylineProps from "./process-points"
 
 /**
- * @public
- *
  * A wrapper for the [`<polyline>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/polyline) element.
  *
  * The `<polyline>` SVG element is a [basic shape](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Basic_Shapes) that creates straight lines connecting several points.

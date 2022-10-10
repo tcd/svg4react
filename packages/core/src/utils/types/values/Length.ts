@@ -1,6 +1,4 @@
 /**
- * @public
- *
  * @see [MDN Web Docs - `length`](https://developer.mozilla.org/en-US/docs/Web/SVG/Content_type#length)
  * @see [MDN Web Docs - `SVGLength`](https://developer.mozilla.org/en-US/docs/Web/API/SVGLength)
  * @see [MDN Web Docs - `SVGAnimatedLength`](https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimatedLength)
@@ -18,8 +16,6 @@ export type Unit =
     | "%"
 
 /**
- * @public
- *
  * A `length` is a distance measurement, given as a number along with a unit.
  *
  * @see [MDN Web Docs - `length`](https://developer.mozilla.org/en-US/docs/Web/SVG/Content_type#length)

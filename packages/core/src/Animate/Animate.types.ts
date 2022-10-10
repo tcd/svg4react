@@ -1,8 +1,6 @@
 import { ISVGProps } from "../utils"
 
 /**
- * @public
- *
  * @see [MDN Web Docs - `<animate>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/animate)
  * @see [SVG2 - `<animate>`](https://svgwg.org/specs/animations/#AnimateElement)
  */

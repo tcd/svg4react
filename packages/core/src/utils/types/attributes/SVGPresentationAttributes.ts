@@ -29,8 +29,6 @@ export type CommonSVGPresentationAttributes = Pick<SVGPresentationAttributes,
 >
 
 /**
- * @public
- *
  * TODO: may need to rename this. It's gotten broader than just presentation attributes.
  */
 export interface SVGPresentationAttributes {

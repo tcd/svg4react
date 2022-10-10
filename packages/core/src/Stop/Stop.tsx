@@ -1,8 +1,6 @@
 import type { StopProps } from "./Stop.types"
 
 /**
- * @public
- *
  * A wrapper for the [`<stop>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/stop) element.
  *
  * The SVG `<stop>` element defines a color and its position to use on a gradient.
