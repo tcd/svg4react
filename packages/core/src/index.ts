@@ -12,6 +12,9 @@ export * from "./AnimateTransform"
 export { default as Circle } from "./Circle"
 export * from "./Circle"
 
+export { default as ClipPath } from "./ClipPath"
+export * from "./ClipPath"
+
 export { default as Defs } from "./Defs"
 export * from "./Defs"
 
