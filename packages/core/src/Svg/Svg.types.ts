@@ -1,4 +1,4 @@
-import type { ISVGProps, CommonSVGPresentationAttributes } from "../utils"
+import type { ISVGProps, CommonSVGPresentationAttributes, PreserveAspectRatio } from "../utils"
 
 /**
  * @see [MDN - `<svg>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/svg)
@@ -9,7 +9,7 @@ export type SvgAttributes = {
      *
      * If only one value is passed, it will be assigned to both `width` and `height`.
      *
-     * `minX` and `minY` are set to 0, resulting in `"0 0 width height"`.
+     * `minX` and `minY` are set to 0, resulting in `"0 0 {width} {height}"`.
      *
      * Will **not** override `viewBox` if both are passed.
      *
@@ -34,11 +34,10 @@ export type SvgAttributes = {
     /**
      * How the `svg` fragment must be deformed if it is displayed with a different aspect ratio.
      *
-     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/preserveAspectRatio)
-     *
      * @default "xMidYMid meet"
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/preserveAspectRatio)
      */
-    preserveAspectRatio?: "none" | `x${"Min"|"Mid"|"Max"}Y${"Min"|"Mid"|"Max"} ${"meet"|"slice"}`
+    preserveAspectRatio?: PreserveAspectRatio
     height?: number | string
     width?: number | string
 }

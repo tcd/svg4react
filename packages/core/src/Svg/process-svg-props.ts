@@ -19,8 +19,10 @@ const processSvgProps = (rawProps: SvgProps): SvgProps => {
     }
 
     if (!processedProps.viewBox) {
-        if (vb.length === 1) { processedProps.viewBox = `0 0 ${vb[0]} ${vb[0]}` }
-        if (vb.length === 2) { processedProps.viewBox = `0 0 ${vb[0]} ${vb[1]}` }
+        if (Array.isArray(vb) && vb.length > 0) {
+            const [width, height = width] = vb
+            processedProps.viewBox = `0 0 ${width} ${height}`
+        }
     }
 
     if (size) {

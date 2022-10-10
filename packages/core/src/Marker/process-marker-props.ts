@@ -3,7 +3,7 @@ import type { MarkerProps } from "./Marker.types"
 const processMarkerProps = (rawProps: MarkerProps): MarkerProps => {
     const {
         refXY = [],
-        markerSize = [],
+        size = [],
         ...processedProps
     } = rawProps
 
@@ -13,8 +13,8 @@ const processMarkerProps = (rawProps: MarkerProps): MarkerProps => {
         processedProps.refY = refY
     }
 
-    if (Array.isArray(markerSize) && markerSize.length > 0) {
-        const [width, height = width] = markerSize
+    if (Array.isArray(size) && size.length > 0) {
+        const [width, height = width] = size
         processedProps.markerWidth  = width
         processedProps.markerHeight = height
     }

@@ -24,7 +24,7 @@ export type MarkerAttributes = {
      * @shorthand markerWidth
      * @shorthand markerHeight
      */
-    markerSize?: [markerWidth: number, markerHeight?: number]
+    size?: [markerWidth: number, markerHeight?: number]
     /**
      * The orientation of the marker relative to the shape it is attached to.
      *
