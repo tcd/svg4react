@@ -3,6 +3,7 @@ const JSDOC_TAGS = [
     "default",
     "experimental",
     "animatable",
+    "cssProperty",
     "see",
 ]
 

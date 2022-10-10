@@ -3,14 +3,16 @@ import type { Property } from "csstype"
 /**
  * Used by:
  *
- * - `text`
- * - `textPath`
- * - `tspan`
+ * - `Text`
+ * - `TextPath`
+ * - `TSpan`
  */
 export interface SVGTextAttributes {
     /**
      * Specifies how an object is aligned along the font baseline with respect to its parent.
      *
+     * @animatable true
+     * @cssProperty true
      * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/alignment-baseline)
      */
     alignmentBaseline?: "auto" | "baseline" | "before-edge" | "text-before-edge" | "middle" | "central" | "after-edge" | "text-after-edge" | "ideographic" | "alphabetic" | "hanging" | "mathematical" | "top" | "center" | "bottom"
@@ -27,32 +29,79 @@ export interface SVGTextAttributes {
      *
      * @default "ltr"
      * @animatable true
+     * @cssProperty true
      * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/direction)
      */
     direction?: Property.Direction
     /**
      * Defines the baseline used to align the box's text and inline-level contents.
      *
+     * @animatable discrete
+     * @cssProperty true
      * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/dominant-baseline)
      */
     dominantBaseline?: Property.DominantBaseline
-    // fontFamily?: Property.FontFamily
-    // fontSize?: Property.FontSize
+    /**
+     * Indicates which font family will be used to render the text, specified as a prioritized list of font family names and/or generic family names.
+     *
+     * @animatable true
+     * @cssProperty true
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/font-family)
+     */
+    fontFamily?: Property.FontFamily
+    /**
+     * Refers to the size of the font from [baseline](https://developer.mozilla.org/en-US/docs/Glossary/baseline) to baseline when multiple lines of text are set solid in a multiline layout environment.
+     *
+     * @default "medium"
+     * @animatable true
+     * @cssProperty true
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/font-size)
+     */
+    fontSize?: Property.FontSize
     // fontSizeAdjust?: Property.FontSizeAdjust
     // fontStretch?: Property.FontStretch
-    // fontStyle?: Property.FontStyle
-    // fontVariant?: Property.FontVariant
-    // fontWeight?: Property.FontWeight
+    /**
+     * Specifies whether the text is to be rendered using a normal, italic, or oblique face.
+     *
+     * @default "normal"
+     * @animatable true
+     * @cssProperty true
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/font-style)
+     */
+    fontStyle?: Property.FontStyle
+    /**
+     * Indicates whether the text is to be rendered using variations of the font's glyphs.
+     *
+     * @default "normal"
+     * @animatable true
+     * @cssProperty true
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/font-variant)
+     */
+    fontVariant?: Property.FontVariant
+    /**
+     * Refers to the boldness or lightness of the glyphs used to render the text, relative to other fonts in the same font family.
+     *
+     * @default "normal"
+     * @animatable true
+     * @cssProperty true
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/font-weight)
+     */
+    fontWeight?: Property.FontWeight
     /**
      * How the text is stretched or compressed to fit the width defined by the `textLength` attribute.
      *
      * @default "spacing"
+     * @animatable true
+     * @cssProperty false
      * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/lengthAdjust)
      */
     lengthAdjust?: "spacing" | "spacingAndGlyphs"
     /**
      * Controls spacing between text characters.
      *
+     * @default "normal"
+     * @animatable true
+     * @cssProperty true
      * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/letter-spacing)
      */
     letterSpacing?: Property.LetterSpacing
@@ -66,6 +115,8 @@ export interface SVGTextAttributes {
      * For multi-line text, the alignment takes place for each line.
      *
      * @default "start"
+     * @animatable discrete
+     * @cssProperty true
      * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/text-anchor)
      */
     textAnchor?: Property.TextAnchor
@@ -73,6 +124,7 @@ export interface SVGTextAttributes {
      * Defines whether text is decorated with an underline, overline, and/or strike-through.
      *
      * @animatable true
+     * @cssProperty true
      * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/text-decoration)
      */
     textDecoration?: Property.TextDecoration
@@ -96,6 +148,7 @@ export interface SVGTextAttributes {
      *
      * @default "normal"
      * @animatable true
+     * @cssProperty true
      * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/word-spacing)
      */
     wordSpacing?: Property.WordSpacing
@@ -107,6 +160,8 @@ export interface SVGTextAttributes {
      * - *right-to-left*
      * - *top-to-bottom*
      *
+     * @default "horizontal-tb"
+     * @cssProperty true
      * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/writing-mode)
      * @see [SVG2 - 11.10.2.3. The 'writing-mode' property](https://svgwg.org/svg2-draft/text.html#WritingModeProperty)
      */
