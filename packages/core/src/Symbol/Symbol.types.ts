@@ -1,7 +1,7 @@
 import type { ISVGProps, CommonSVGPresentationAttributes, PreserveAspectRatio } from "../utils"
 
 /**
- * @see [MDN Web Docs - `<symbol>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/)
+ * @see [MDN Web Docs - `<symbol>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/symbol)
  */
 export type SymbolAttributes = {
     /**
@@ -47,7 +47,7 @@ export type SymbolAttributes = {
 }
 
 /**
- * @see [MDN Web Docs - `<symbol>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/)
+ * @see [MDN Web Docs - `<symbol>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/symbol)
  */
 export type SymbolProps =
     ISVGProps<SVGSymbolElement>
