@@ -2,10 +2,15 @@ import type { TSpanProps } from "./TSpan.types"
 
 const processTSpanProps = (rawProps: TSpanProps): TSpanProps => {
     const {
+        value = undefined,
         coordinates = [],
         shift = [],
         ...props
     } = rawProps
+
+    if (typeof(value) === "string") {
+        props.children = <>{value}</>
+    }
 
     if (Array.isArray(coordinates) && coordinates.length > 0) {
         const [x, y = x] = coordinates

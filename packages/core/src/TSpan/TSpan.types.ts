@@ -5,6 +5,12 @@ import type { ISVGProps, CommonSVGPresentationAttributes, SVGTextAttributes } fr
  */
 export type TSpanAttributes = {
     /**
+     * Pass a string value instead of children.
+     *
+     * @shorthand children
+     */
+    value?: string
+    /**
      * Shorthand for the x and y coordinates of the starting point of the text baseline.
      *
      * If only one value is provided, it will be used for `x` and `y`.
