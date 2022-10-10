@@ -36,6 +36,7 @@ import {
     MonacoPage,
     PreserveAspectRatioPage,
     TestPage,
+    CircleMotionPage,
 } from "@app/features/test"
 
 export const Routes = (_props: unknown): JSX.Element => {
@@ -55,6 +56,7 @@ const routes = (): RouteObject[] => {
                 { path: "markdown", element: <MarkdownPage /> },
                 { path: "preserve-aspect-ratio", element: <PreserveAspectRatioPage /> },
                 { path: "gradient-text", element: <GradientTextPage /> },
+                { path: "circle-motion", element: <CircleMotionPage /> },
             ],
         })
     }

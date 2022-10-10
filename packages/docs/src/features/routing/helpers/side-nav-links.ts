@@ -62,6 +62,7 @@ export const SIDE_NAV_LINKS: (ILinkData | ILinksData)[] = [
                 { title: "Markdown", to: "/examples/markdown" },
                 { title: "Preserve Aspect Ratio", to: "/examples/preserve-aspect-ratio" },
                 { title: "Gradient Text", to: "/examples/gradient-text" },
+                { title: "Circle Motion", to: "/examples/circle-motion" },
             ],
         },
     ] : []),

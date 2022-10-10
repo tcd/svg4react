@@ -1,3 +1,4 @@
+export * from "./circle-motion"
 export * from "./gradient-text"
 export * from "./LogosPage"
 export * from "./MarkdownPage"
