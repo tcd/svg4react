@@ -36,6 +36,9 @@ export * from "./Marker"
 export { default as Mask } from "./Mask"
 export * from "./Mask"
 
+export { default as MPath } from "./MPath"
+export * from "./MPath"
+
 export { default as Path } from "./Path"
 export * from "./Path"
 
@@ -57,11 +60,17 @@ export * from "./Stop"
 export { default as Svg } from "./Svg"
 export * from "./Svg"
 
+export { default as Symbol } from "./Symbol"
+export * from "./Symbol"
+
 export { default as Text } from "./Text"
 export * from "./Text"
 
 export { default as TextPath } from "./TextPath"
 export * from "./TextPath"
+
+export { default as Title } from "./Title"
+export * from "./Title"
 
 export { default as TSpan } from "./TSpan"
 export * from "./TSpan"
