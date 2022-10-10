@@ -1,4 +1,5 @@
 // import CastleIcon from "@mui/icons-material/Castle"
+// import AnimationIcon from "@mui/icons-material/Animation"
 import CodeIcon from "@mui/icons-material/Code"
 import DataObjectIcon from "@mui/icons-material/DataObject"
 import DescriptionIcon from "@mui/icons-material/Description"
@@ -44,6 +45,15 @@ export const SIDE_NAV_LINKS: (ILinkData | ILinksData)[] = [
             // { title: "Use",              to: "/components/Use" },
         ],
     },
+    // {
+    //     title: "Animation",
+    //     Icon: AnimationIcon,
+    //     links: [
+    //         { title: "Animate",          to: "/components/Animate" },
+    //         { title: "AnimateMotion",    to: "/components/AnimateMotion" },
+    //         { title: "AnimateTransform", to: "/components/AnimateTransform" },
+    //     ],
+    // },
     {
         title: "Component API",
         Icon: DataObjectIcon,
