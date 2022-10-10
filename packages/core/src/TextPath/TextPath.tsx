@@ -1,5 +1,5 @@
 import type { TextPathProps } from "./TextPath.types"
-import processTextPathProps from "./process-text-path-props"
+import processProps from "./process-text-path-props"
 
 /**
  * A wrapper for the [`<textPath>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/textPath) element.
@@ -8,7 +8,7 @@ import processTextPathProps from "./process-text-path-props"
  */
 const TextPath = (props: TextPathProps) => {
 
-    const processedProps = processTextPathProps(props)
+    const processedProps = processProps(props)
 
     return (
         // @ts-ignore: next-line

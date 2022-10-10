@@ -1,6 +1,5 @@
 import type { TSpanProps } from "./TSpan.types"
-import processTSpanProps from "./process-tspan-props"
-import HiddenSpace from "./HiddenSpace"
+import processProps from "./process-tspan-props"
 
 /**
  * A wrapper for the [`<tspan>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/tspan) element.
@@ -15,13 +14,13 @@ const TSpan = (props: TSpanProps) => {
         children = undefined,
         addSpace = false,
         ...processedProps
-    } = processTSpanProps(props)
+    } = processProps(props)
 
     return (
         // @ts-ignore: next-line
         <tspan {...processedProps}>
             {children && children}
-            {addSpace && <HiddenSpace />}
+            {addSpace && <tspan fontSize="0">&nbsp;</tspan>}
         </tspan>
     )
 }

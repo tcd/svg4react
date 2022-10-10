@@ -1,5 +1,5 @@
 import type { PolygonProps } from "./Polygon.types"
-import processPolygonProps from "./process-polygon-props"
+import processProps from "./process-polygon-props"
 
 /**
  * A wrapper for the [`<polygon>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/polygon) element.
@@ -11,7 +11,7 @@ import processPolygonProps from "./process-polygon-props"
  */
 const Polygon = (props: PolygonProps): JSX.Element => {
 
-    const processedProps = processPolygonProps(props)
+    const processedProps = processProps(props)
 
     return (
         // @ts-ignore: next-line

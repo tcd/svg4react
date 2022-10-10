@@ -1,5 +1,5 @@
 import type { PolylineProps } from "./Polyline.types"
-import processPolylineProps from "./process-points"
+import processProps from "./process-points"
 
 /**
  * A wrapper for the [`<polyline>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/polyline) element.
@@ -12,7 +12,7 @@ import processPolylineProps from "./process-points"
  */
 const Polyline = (props: PolylineProps): JSX.Element => {
 
-    const processedProps = processPolylineProps(props)
+    const processedProps = processProps(props)
 
     return (
         // @ts-ignore: next-line

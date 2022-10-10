@@ -1,6 +1,6 @@
 import Stop from "../Stop"
 import type { LinearGradientProps } from "./LinearGradient.types"
-import processLinearGradientProps from "./process-linear-gradient-props"
+import processProps from "./process-linear-gradient-props"
 
 /**
  * A wrapper for the [`<linearGradient>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/linearGradient) element.
@@ -16,7 +16,7 @@ const LinearGradient = (props: LinearGradientProps): JSX.Element => {
         ...otherProps
     } = props
 
-    const processedProps = processLinearGradientProps(otherProps)
+    const processedProps = processProps(otherProps)
 
     const $stops = stops.map((stop, index) => <Stop key={index} {...stop} />)
 

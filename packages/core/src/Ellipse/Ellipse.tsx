@@ -1,5 +1,5 @@
 import type { EllipseProps } from "./Ellipse.types"
-import processEllipseProps from "./process-ellipse-props"
+import processProps from "./process-ellipse-props"
 
 /**
  * A wrapper for the [`<ellipse>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/ellipse) element.
@@ -10,7 +10,7 @@ import processEllipseProps from "./process-ellipse-props"
  */
 const Ellipse = (props: EllipseProps) => {
 
-    const processedProps = processEllipseProps(props)
+    const processedProps = processProps(props)
 
     return (
         // @ts-ignore: next-line

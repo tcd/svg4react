@@ -1,5 +1,5 @@
 import type { MPathProps } from "./MPath.types"
-import processMPathProps from "./process-props"
+import processProps from "./process-mpath-props"
 
 /**
  * A wrapper for the [`<mpath>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/mpath) element.
@@ -8,7 +8,7 @@ import processMPathProps from "./process-props"
  */
 const MPath = (props: MPathProps) => {
 
-    const processedProps = processMPathProps(props)
+    const processedProps = processProps(props)
 
     return (
         // @ts-ignore: next-line

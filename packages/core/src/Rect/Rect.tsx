@@ -1,5 +1,5 @@
 import type { RectProps } from "./Rect.types"
-import processRectProps from "./process-rect-props"
+import processProps from "./process-rect-props"
 
 /**
  * A wrapper for the [`<rect>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/rect) element.
@@ -9,7 +9,7 @@ import processRectProps from "./process-rect-props"
  */
 const Rect = (props: RectProps): JSX.Element => {
 
-    const processedProps = processRectProps(props)
+    const processedProps = processProps(props)
 
     // @ts-ignore: next-line
     return <rect {...processedProps} />

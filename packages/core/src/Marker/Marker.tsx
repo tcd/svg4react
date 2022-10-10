@@ -1,5 +1,5 @@
 import type { MarkerProps } from "./Marker.types"
-import processMarkerProps from "./process-marker-props"
+import processProps from "./process-marker-props"
 
 /**
  * A wrapper for the [`<marker>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/marker) element.
@@ -15,7 +15,7 @@ import processMarkerProps from "./process-marker-props"
  */
 const Marker = (props: MarkerProps) => {
 
-    const processedProps = processMarkerProps(props)
+    const processedProps = processProps(props)
 
     return (
         // @ts-ignore: next-line

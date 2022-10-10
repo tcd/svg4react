@@ -1,5 +1,5 @@
 import type { PathProps } from "./Path.types"
-import processPathProps from "./process-path-props"
+import processProps from "./process-path-props"
 
 /**
  * A wrapper for the [`<path>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/path) element.
@@ -10,7 +10,7 @@ import processPathProps from "./process-path-props"
  */
 const Path = (props: PathProps) => {
 
-    const processedProps = processPathProps(props)
+    const processedProps = processProps(props)
 
     return (
         // @ts-ignore: next-line

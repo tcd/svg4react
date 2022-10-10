@@ -1,6 +1,6 @@
 import { forwardRef } from "react"
 import type { SvgProps } from "./Svg.types"
-import processSvgProps from "./process-svg-props"
+import processProps from "./process-svg-props"
 
 /**
  * A wrapper for the [`<svg>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/svg) element.
@@ -9,19 +9,17 @@ import processSvgProps from "./process-svg-props"
  *
  * It is used as the outermost element of SVG documents, but it can also be used to embed an SVG fragment inside an SVG or HTML document.
  */
-const Svg = forwardRef<SVGSVGElement, SvgProps>(
-    function Svg(props, ref) {
+const Svg = forwardRef<SVGSVGElement, SvgProps>(function Svg(props, ref) {
 
-        const processedProps = processSvgProps(props)
+    const processedProps = processProps(props)
 
-        return (
-            // @ts-ignore: next-line
-            <svg
-                ref={ref}
-                {...processedProps}
-            />
-        )
-    },
-)
+    return (
+    // @ts-ignore: next-line
+        <svg
+            ref={ref}
+            {...processedProps}
+        />
+    )
+})
 
 export default Svg

@@ -1,5 +1,5 @@
 import type { TextProps } from "./Text.types"
-import processTextProps from "./process-text-props"
+import processProps from "./process-text-props"
 
 /**
  * A wrapper for the [`<text>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/text) element.
@@ -12,7 +12,7 @@ import processTextProps from "./process-text-props"
  */
 const Text = (props: TextProps) => {
 
-    const processedProps = processTextProps(props)
+    const processedProps = processProps(props)
 
     return (
         // @ts-ignore: next-line

@@ -1,5 +1,5 @@
 import type { LineProps } from "./Line.types"
-import processLineProps from "./process-line-props"
+import processProps from "./process-line-props"
 
 /**
  * A wrapper for the [`<line>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/line) element.
@@ -8,7 +8,7 @@ import processLineProps from "./process-line-props"
  */
 const Line = (props: LineProps): JSX.Element => {
 
-    const processedProps = processLineProps(props)
+    const processedProps = processProps(props)
 
     return (
         // @ts-ignore: next-line

@@ -1,5 +1,5 @@
 import type { CircleProps } from "./Circle.types"
-import processCircleProps from "./process-circle-props"
+import processProps from "./process-circle-props"
 
 /**
  * A wrapper for the [`<circle>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/circle) element.
@@ -9,7 +9,7 @@ import processCircleProps from "./process-circle-props"
  */
 const Circle = (props: CircleProps) => {
 
-    const processedProps = processCircleProps(props)
+    const processedProps = processProps(props)
 
     return (
         // @ts-ignore: next-line
