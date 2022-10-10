@@ -39,7 +39,9 @@ render(
     <Svg vb={[240,40]}>
         <style>{styles}</style>
         <Text coordinates={[10,30]}>
-            You are <TSpan value="not" /> a banana!
+            You are
+            <TSpan value="not" addSpace />
+            a banana!
         </Text>
     </Svg>
 )
