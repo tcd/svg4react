@@ -1,7 +1,8 @@
 import { Stack } from "@mui/material"
 
 import { Page, Card } from "@app/features/shared"
-import { CircleMotion } from "./CircleMotion"
+import { V1 } from "./V1"
+import { V2 } from "./V2"
 
 export const CircleMotionPage = (_props: unknown): JSX.Element => {
     return (
@@ -9,7 +10,8 @@ export const CircleMotionPage = (_props: unknown): JSX.Element => {
             <Card title="Circle Motion">
                 <Stack direction="column" spacing={5}>
                     <a href="https://stackoverflow.com/a/67364272/7687024">Source (JHeth on StackOverflow)</a>
-                    <CircleMotion />
+                    <V1 />
+                    <V2 />
                 </Stack>
             </Card>
         </Page>
