@@ -28,7 +28,7 @@ export const SIDE_NAV_LINKS: (ILinkData | ILinksData)[] = [
             { title: "AnimateMotion",    to: "/components/AnimateMotion" },
             { title: "AnimateTransform", to: "/components/AnimateTransform" },
             { title: "Circle",           to: "/components/Circle" },
-            // { title: "ClipPath",         to: "/components/ClipPath" },
+            { title: "ClipPath",         to: "/components/ClipPath" },
             { title: "Ellipse",          to: "/components/Ellipse" },
             { title: "ForeignObject",    to: "/components/ForeignObject" },
             { title: "Line",             to: "/components/Line" },
