@@ -1,4 +1,4 @@
-import { Defs, Svg, Text, TSpan, LinearGradient, StopProps, G } from "svg4react"
+import { Defs, Svg, Text, TSpan, LinearGradient, StopProps } from "svg4react"
 
 const stops: StopProps[] = [
     { stopColor: "#0082b4", offset: "0%" },
