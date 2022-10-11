@@ -1,4 +1,4 @@
-import { ISVGProps } from "../../utils"
+import { ISVGProps } from "../../../utils"
 
 export type FeDistantLightAttributes = {
     /**

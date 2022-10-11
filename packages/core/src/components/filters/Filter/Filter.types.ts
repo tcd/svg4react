@@ -1,4 +1,4 @@
-import type { ISVGProps, CommonSVGPresentationAttributes } from "../../utils"
+import type { ISVGProps, CommonSVGPresentationAttributes } from "../../../utils"
 
 export type FilterAttributes = {
     /**

@@ -1,4 +1,4 @@
-import type { ISVGProps, IRI } from "../utils"
+import type { ISVGProps, IRI } from "../../../../src copy/utils"
 
 /**
  * @see [MDN Web Docs - `<mpath>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/mpath)
