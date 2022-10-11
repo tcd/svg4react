@@ -1,0 +1,8 @@
+tsconfig.*.json
+tsconfig.json
+typedoc.json
+rollup.config.js
+
+node_modules
+src
+tmp

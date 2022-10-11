@@ -1,0 +1,25 @@
+{
+    "extends": "../../tsconfig.json",
+    "compilerOptions": {
+        "noEmitOnError": true,
+        "isolatedModules": false,
+        "outDir": "./dist",
+        "declaration": true,
+        "declarationMap": true,
+        "lib": [
+            "dom",
+            "dom.iterable",
+            "esnext",
+        ],
+        "types": [
+            "node",
+        ],
+        "typeRoots": [
+            "./node_modules/@types",
+        ],
+    },
+    "include": [
+        "./src/**/*.ts",
+        "./src/**/*.tsx",
+    ],
+}
