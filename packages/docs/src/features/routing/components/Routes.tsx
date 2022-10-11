@@ -28,6 +28,7 @@ import {
     TextPage,
     TextPathPage,
     TSpanPage,
+    UsePage,
 } from "@app/features/components"
 // import { PlaygroundPage } from "@app/features/playground"
 import { TypesPage } from "@app/features/types"
@@ -100,7 +101,7 @@ const routes = (): RouteObject[] => {
                         { path: "Text",             element: <TextPage />             },
                         { path: "TextPath",         element: <TextPathPage />         },
                         { path: "TSpan",            element: <TSpanPage />            },
-                        // { path: "Use",              element: <UsePage />              },
+                        { path: "Use",              element: <UsePage />              },
                     ],
                 },
                 ...devRoutes,
