@@ -11,4 +11,4 @@
  * - MDN Web Docs
  *     - [Content Type - `iri`](https://developer.mozilla.org/en-US/docs/Web/SVG/Content_type#iri)
  */
-export type IRI = `url(#${string})`
+export type IRI = `#${string}` | `url(#${string})`
