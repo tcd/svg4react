@@ -25,9 +25,9 @@
         // "rootDir": ".",
         "baseUrl": ".",
         "paths": {
-            "@sv4/core/*": ["./packages/core/src/*"],
-            "@sv4/dev/*":  ["./packages/dev/src/*"],
-            "@sv4/docs/*": ["./packages/docs/src/*"],
+            "@svg4react/core/*": ["./packages/core/src/*"],
+            "@svg4react/dev/*":  ["./packages/dev/src/*"],
+            "@svg4react/docs/*": ["./packages/docs/src/*"],
         },
     },
     "exclude": [

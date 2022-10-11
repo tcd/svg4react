@@ -4,7 +4,7 @@
         "composite": true,
         "noEmitOnError": true,
         "isolatedModules": false,
-        "outDir": "dist",
+        "outDir": "dist/",
         "declaration": true,
         "declarationMap": true,
         "lib": [

@@ -37,15 +37,24 @@ module.exports = {
     ],
     "overrides": [
         {
-            "files": ["./packages/dev/**"], // Or *.test.js
+            "files": ["./packages/dev/**"],
             "rules": {
                 "no-console": "off",
             },
         },
         {
-            "files": ["./packages/core/**"], // Or *.test.js
+            "files": ["./packages/core/**"],
             "rules": {
                 "@typescript-eslint/no-namespace": "off",
+            },
+        },
+        {
+            "files": [
+                "./scripts/**",
+                "**/*.js",
+            ],
+            "rules": {
+                "@typescript-eslint/no-var-requires": "off",
             },
         },
     ],
