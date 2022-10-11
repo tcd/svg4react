@@ -25,6 +25,9 @@ export * from "./Defs"
 export { default as Ellipse } from "./Ellipse"
 export * from "./Ellipse"
 
+export { default as ForeignObject } from "./ForeignObject"
+export * from "./ForeignObject"
+
 export { default as G } from "./G"
 export * from "./G"
 

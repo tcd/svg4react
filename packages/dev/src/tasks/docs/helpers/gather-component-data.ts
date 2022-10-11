@@ -6,6 +6,11 @@ export const gatherComponentData = (project: ProjectParser, component: string): 
     const componentData = project.functions.find((x) => x.name === component)
     // console.log(JSON.stringify(componentData, undefined, 4))
 
+    if (!componentData) {
+        console.error(`no data for component: '${component}'`)
+        return { component }
+    }
+
     const docComment = componentData.signatures[0].comment.description ?? ""
 
     const propParam = componentData.signatures[0].parameters.find(x => x.name === "props")

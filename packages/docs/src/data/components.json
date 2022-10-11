@@ -9,11 +9,15 @@
 	},
 	{
 		"component": "AnimateTransform",
-		"docComment": "A wrapper for the [`<animateTransform>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/animateTransform) element.\n\nThe `<animateTransform>` element animates a transformation attribute on its target element,\nthereby allowing animations to control translation, scaling, rotation, and/or skewing."
+		"docComment": "A wrapper for the [`<animateTransform>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/animateTransform) element.\n\nThe `<animateTransform>` element animates a transformation attribute on its target element, thereby allowing animations to control translation, scaling, rotation, and/or skewing."
 	},
 	{
 		"component": "Circle",
 		"docComment": "A wrapper for the [`<circle>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/circle) element.\n\nThe `<circle>` SVG element is an [SVG basic shape](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Basic_Shapes),\nused to draw circles based on a center point and a radius."
+	},
+	{
+		"component": "ClipPath",
+		"docComment": "A wrapper for the [`<clipPath>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/clipPath) element.\n\nThe `<clipPath>` SVG element defines a clipping path, to be used by the `clipPath` property.\n\nA clipping path restricts the region to which paint can be applied.\nConceptually, parts of the drawing that lie outside of the region bounded by the clipping path are not drawn."
 	},
 	{
 		"component": "Defs",
@@ -22,6 +26,10 @@
 	{
 		"component": "Ellipse",
 		"docComment": "A wrapper for the [`<ellipse>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/ellipse) element.\n\nThe `<ellipse>` element is an SVG basic shape, used to create ellipses based on a center coordinate, and both their x and y radius.\n\n**Note**: Ellipses are unable to specify the exact orientation of the ellipse (if, for example, you wanted to draw an ellipse tilted at a 45 degree angle), but they can be rotated by using the `transform` attribute."
+	},
+	{
+		"component": "ForeignObject",
+		"docComment": "A wrapper for the [`<foreignObject>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/foreignObject) element.\n\nThe `<foreignObject>` SVG element includes elements from a different XML namespace. In the context of a browser, it is most likely (X)HTML."
 	},
 	{
 		"component": "G",
@@ -38,6 +46,14 @@
 	{
 		"component": "Marker",
 		"docComment": "A wrapper for the [`<marker>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/marker) element.\n\nThe `<marker>` element defines the graphic that is to be used for drawing arrowheads or polymarkers on any of the following:\n\n- `<path>`\n- `<line>`\n- `<polyline>`\n- `<polygon>`\n\nMarkers are attached to shapes using the `markerStart`, `markerMid`, and `markerEnd` properties."
+	},
+	{
+		"component": "Mask",
+		"docComment": "A wrapper for the [`<mask>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/mask) element.\n\nThe `<mask>` element defines an alpha mask for compositing the current object into the background.\n\nA mask is used/referenced using the `mask` property."
+	},
+	{
+		"component": "MPath",
+		"docComment": "A wrapper for the [`<mpath>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/mpath) element.\n\nThe `<mpath>` sub-element for the <animateMotion> element provides the ability to reference an external `<path>` element as the definition of a motion path."
 	},
 	{
 		"component": "Path",
@@ -57,7 +73,7 @@
 	},
 	{
 		"component": "Rect",
-		"docComment": "A wrapper for the [`<rect>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/rect) element.\n\nThe `<rect>` element is a [basic SVG shape](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Basic_Shapes) that draws rectangles,\ndefined by their position, width, and height."
+		"docComment": "A wrapper for the [`<rect>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/rect) element.\n\nThe `<rect>` element is a [basic SVG shape](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Basic_Shapes) that draws rectangles, defined by their position, width, and height."
 	},
 	{
 		"component": "Stop",
@@ -66,6 +82,10 @@
 	{
 		"component": "Svg",
 		"docComment": "A wrapper for the [`<svg>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/svg) element.\n\nThe `<svg>` element is a container that defines a new coordinate system and [viewport](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/viewBox).\n\nIt is used as the outermost element of SVG documents, but it can also be used to embed an SVG fragment inside an SVG or HTML document."
+	},
+	{
+		"component": "Symbol",
+		"docComment": "A wrapper for the [`<symbol>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/symbol) element.\n\nThe `<symbol>` element is used to define graphical template objects which can be instantiated by a `<use>` element."
 	},
 	{
 		"component": "Text",
