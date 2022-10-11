@@ -1,5 +1,5 @@
 import type { PolylineProps } from "./Polyline.types"
-import processProps from "./process-points"
+import processProps from "./process-polyline-props"
 
 /**
  * A wrapper for the [`<polyline>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/polyline) element.
