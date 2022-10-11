@@ -1,20 +1,23 @@
-import { useState } from "react"
+// import { useState } from "react"
 import { Box } from "@mui/material"
 import { Path, Svg, G, Defs } from "svg4react"
 
 import { V4 as SX } from "./sx"
 import { paths } from "./paths"
 import { gooey } from "./gooey"
+import { BurgerProps } from "../shared/burger-props"
 
-export const V4 = (_props: unknown): JSX.Element => {
+export const V4 = (props: BurgerProps): JSX.Element => {
 
-    const [checked, setChecked] = useState(false)
-    const onClick = () => setChecked(!checked)
+    const { checked, onChange } = props
+
+    // const [checked, setChecked] = useState(false)
+    // const onChange = () => setChecked(!checked)
     const sx = checked ? SX.checked : SX.default
 
     return (
         <Box sx={{ width: "200px", height: "200px" }}>
-            <Box className="burger-wrapper" sx={sx} onClick={onClick}>
+            <Box className="burger-wrapper" sx={sx} onClick={onChange}>
                 <Svg id="icon" viewBox="0 16 32 32" size="100%">
                     <Defs>
                         <filter id="gooey">
