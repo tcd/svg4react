@@ -4,3 +4,4 @@
 x 2022-09-30 2022-09-30 Re-highlight raw output on update @docs
 2022-10-01 Fix DefsProps @core
 2022-10-09 fix shrinking logo in navbar when expanding sections @docs
+2022-10-11 Expand G functionality
