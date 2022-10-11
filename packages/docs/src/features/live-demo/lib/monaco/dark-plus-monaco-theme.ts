@@ -30,6 +30,10 @@ const buildMonacoTheme = (base: customMonaco.editor.BuiltinTheme, palette: ICode
             foreground: palette.number,
         },
         {
+            token: "number.float.ts",
+            foreground: palette.number,
+        },
+        {
             token: "identifier.ts",
             foreground: palette.variable,
         },

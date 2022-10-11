@@ -43,7 +43,7 @@ export const SIDE_NAV_LINKS: (ILinkData | ILinksData)[] = [
             { title: "Rect",             to: "/components/Rect" },
             { title: "Stop",             to: "/components/Stop" },
             { title: "Svg",              to: "/components/Svg" },
-            // { title: "Symbol",           to: "/components/Symbol" },
+            { title: "Symbol",           to: "/components/Symbol" },
             { title: "Text",             to: "/components/Text" },
             { title: "TextPath",         to: "/components/TextPath" },
             { title: "TSpan",            to: "/components/TSpan" },
