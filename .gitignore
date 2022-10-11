@@ -1,9 +1,9 @@
 tsdoc-metadata.json
 
-**/node_modules
-**/ignore/**
+**/ignore
+**/build
 **/dist
-# !docs/dist
-build
-tmp
+**/node_modules
+**/tmp
 etc/docs
+# !docs/dist

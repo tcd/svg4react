@@ -5,6 +5,7 @@
         "skipLibCheck": true,
         "target": "es5",
         "jsx": "react-jsx",
+        "module": "ESNext",
         "moduleResolution": "node",
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
@@ -15,23 +16,27 @@
         "downlevelIteration": true,
         "declaration": true,
         "declarationMap": true,
-        "module": "ESNext",
 
-//         "rootDir": ".",
-//         "baseUrl": ".",
-//
-//         "typeRoots": [
-//             "./node_modules/@types",
-//             "./src/@types"
-//         ],
-//         "paths": {
-//             "@app/*": ["*"],
-//         },
+        //
+        //         "typeRoots": [
+        //             "./node_modules/@types",
+        //             "./src/@types"
+        //         ],
+        // "rootDir": ".",
+        "baseUrl": ".",
+        "paths": {
+            "@sv4/core/*": ["./packages/core/src/*"],
+            "@sv4/dev/*":  ["./packages/dev/src/*"],
+            "@sv4/docs/*": ["./packages/docs/src/*"],
+        },
     },
     "exclude": [
-        "node_modules",
-        "tmp",
-        "**/ignore/*.ts",
-        "**/ignore/*.tsx",
+        "**/.*/",
+        "**/node_modules",
+        "**/tmp",
+        "**/ignore",
+        "**/ignore",
+        "**/build",
+        "**/dist",
     ],
 }
