@@ -1,0 +1,16 @@
+{
+    "$schema": "https://typedoc.org/schema.json",
+    "name": "@svg4react/core",
+    "out": "../../etc/docs/typedoc",
+    "readme": "../../README.md",
+    "entryPointStrategy": "expand",
+    "excludeExternals": true,
+    "plugin": [
+        "typedoc-plugin-missing-exports",
+    ],
+    "entryPoints": [
+        "./src/index.ts",
+    ],
+    "tsconfig": "./tsconfig.json",
+    "json": "./tmp/svg4react-core.d.json",
+}

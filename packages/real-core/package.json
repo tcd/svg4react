@@ -1,0 +1,60 @@
+{
+    "name": "@svg4react/core",
+    "description": "React components & TypeScript types for creating SVG elements.",
+    "version": "0.12.1",
+    "license": "MIT",
+    "author": "Clay Dunston <dunstontc@gmail.com>",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/tcd/svg4react.git",
+        "directory": "packages/core"
+    },
+    "homepage": "https://svg4react-vlxz.vercel.app",
+    "bugs": "https://github.com/tcd/svg4react/issues",
+    "files": [
+        "./dist"
+    ],
+    "main": "./dist",
+    "module": "./dist",
+    "types": "./dist/index.d.ts",
+    "keywords": [
+        "React",
+        "TypeScript",
+        "SVG"
+    ],
+    "scripts": {
+        "build": "npm run build:clean && npm run build:declarations && npm run build:esm && npm run build:types && npm run build:tidy && npm run typedoc",
+        "build:clean": "cross-env rimraf ./dist/**/*",
+        "build:declarations": "node ../dev/build/tasks/core/build-src-declarations.js",
+        "build:esm": "cross-env tsc",
+        "build:types": "cross-env rollup -c ./rollup.config.js",
+        "build:tidy": "node ../dev/build/tasks/core/consolidate-types.js",
+        "typedoc": "cross-env typedoc --options ./typedoc.json",
+        "tag": "node ../dev/build/tasks/core/tag/main.js",
+        "publish:next": "npm publish --tag next",
+        "publish:latest": "npm publish --tag latest"
+    },
+    "dependencies": {
+        "react-children-utilities": "^2.8.0"
+    },
+    "peerDependencies": {
+        "csstype": "^3.1.1",
+        "react": "^17.0.0 || ^18.0.0",
+        "react-dom": "^17.0.0 || ^18.0.0"
+    },
+    "devDependencies": {
+        "@types/node": "^18.7.18",
+        "@types/react": "^18.0.20",
+        "@types/react-dom": "^18.0.6",
+        "cross-env": "^7.0.3",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "rimraf": "^3.0.2",
+        "rollup": "^2.79.1",
+        "rollup-plugin-dts": "^4.2.2",
+        "type-fest": "^3.0.0",
+        "typedoc": "^0.23.15",
+        "typedoc-plugin-missing-exports": "^1.0.0",
+        "typescript": "^4.8.3"
+    }
+}
