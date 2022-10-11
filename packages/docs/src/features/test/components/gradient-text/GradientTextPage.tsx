@@ -7,6 +7,7 @@ export const GradientTextPage = (_props: unknown): JSX.Element => {
     return (
         <Page title="Gradient Text">
             <Stack direction="column" spacing={5}>
+                <examples.C />
                 <examples.A />
                 <examples.B />
             </Stack>

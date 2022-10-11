@@ -64,3 +64,7 @@
     - [MDN - Namespaces crash course](https://developer.mozilla.org/en-US/docs/Web/SVG/Namespaces_Crash_Course)
 - Other
     - [Web Platform Docs - SVG](https://webplatform.github.io/docs/svg/)
+
+### Material UI
+
+- [MUI - Custom Components](https://mui.com/system/getting-started/custom-components/)
