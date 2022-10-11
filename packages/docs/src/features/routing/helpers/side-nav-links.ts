@@ -31,6 +31,7 @@ export const SIDE_NAV_LINKS: (ILinkData | ILinksData)[] = [
             { title: "Ellipse",          to: "/components/Ellipse" },
             { title: "Line",             to: "/components/Line" },
             { title: "LinearGradient",   to: "/components/LinearGradient" },
+            { title: "Mask",             to: "/components/Mask" },
             { title: "Marker",           to: "/components/Marker" },
             { title: "Path",             to: "/components/Path" },
             { title: "Polygon",          to: "/components/Polygon" },
