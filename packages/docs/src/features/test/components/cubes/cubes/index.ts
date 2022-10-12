@@ -1,1 +1,2 @@
-export * from "./V1"
+export * from "./A"
+export * from "./B"

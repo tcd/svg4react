@@ -45,7 +45,7 @@ const sx: SxProps = {
     },
 }
 
-export const V1 = (_props: unknown): JSX.Element => {
+export const A = (_props: unknown): JSX.Element => {
     return (
         <Box sx={sx}>
             <a href="https://codepen.io/IorPerry/pen/memoZr?editors=1010">SVG Cube - Antonino Perricone (CodePen)</a>
