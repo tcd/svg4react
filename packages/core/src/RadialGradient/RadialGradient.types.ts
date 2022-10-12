@@ -46,9 +46,8 @@ export type RadialGradientAttributes = {
     /**
      * Defines the coordinate system for attributes `x1`, `x2`, `y1`, `y2`.
      *
-     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/gradientUnits)
-     *
      * @default "objectBoundingBox"
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/gradientUnits)
      */
     gradientUnits?: "userSpaceOnUse" | "objectBoundingBox"
     /**
@@ -60,9 +59,8 @@ export type RadialGradientAttributes = {
     /**
      * This attribute indicates how the gradient behaves if it starts or ends inside the bounds of the shape containing the gradient.
      *
-     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/spreadMethod)
-     *
      * @default "pad"
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/spreadMethod)
      */
     spreadMethod?: "pad" | "reflect" | "repeat"
     /**

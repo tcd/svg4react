@@ -23,7 +23,7 @@ export type StopAttributes = {
      * @default 1
      * @see [MDN Web Docs - `stop-opacity`](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stop-opacity)
      */
-    stopOpacity?: number
+    stopOpacity?: string | number
 }
 
 /**
