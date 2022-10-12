@@ -12,6 +12,8 @@ import { cleanMarkdownString } from "@app/util"
 
 export interface MarkdownDocProps {
     content: string
+    /** @default false */
+    noExternalLinks?: boolean
 }
 
 export const MarkdownDoc = (props: MarkdownDocProps): JSX.Element => {
@@ -20,6 +22,7 @@ export const MarkdownDoc = (props: MarkdownDocProps): JSX.Element => {
 
     const {
         content = "",
+        noExternalLinks = false,
     } = props
 
     if (content === null) {
@@ -28,6 +31,19 @@ export const MarkdownDoc = (props: MarkdownDocProps): JSX.Element => {
 
     const cleanContent = cleanMarkdownString(content)
 
+    const options: Omit<ReactMarkdownOptions, "children"> = {
+        skipHtml: false,
+        // linkTarget: "_blank",
+        remarkPlugins: [
+            remarkRemoveComments,
+            remarkGfm,
+            remarkBreaks,
+        ],
+        rehypePlugins: (noExternalLinks ? [] : [
+            [rehypeExternalLinks, { target: "_blank", rel: ["noopener noreferrer"] }],
+        ]),
+    }
+
     return (
         <ReactMarkdown
             children={cleanContent}
@@ -35,19 +51,4 @@ export const MarkdownDoc = (props: MarkdownDocProps): JSX.Element => {
             {...options}
         />
     )
-}
-
-// =============================================================================
-
-const options: Omit<ReactMarkdownOptions, "children"> = {
-    skipHtml: false,
-    // linkTarget: "_blank",
-    remarkPlugins: [
-        remarkRemoveComments,
-        remarkGfm,
-        remarkBreaks,
-    ],
-    rehypePlugins: [
-        [rehypeExternalLinks, { target: "_blank", rel: ["noopener noreferrer"] }],
-    ],
 }

@@ -32,6 +32,7 @@ export const PrismLanguageProps: Grammar = {
             type: /[a-zA-Z_]+/,
         },
     },
+    number: /\b(?:[0-9]+)\b/,
     boolean: /\b(?:false|true)\b/,
     keyword: /\$\{|\}/,
     string: /("[^"]+")|(`)/,
@@ -43,7 +44,7 @@ export const PrismLanguageProps: Grammar = {
     },
     type: {
         // pattern: /(\b(string|number)\b)|(\.[a-zA-Z_]+)|([a-zA-Z_]+\.)/,
-        pattern: /(\b(string|number|any)\b)|(\.[a-zA-Z_]+)|([a-zA-Z_]+(?=\.))/,
+        pattern: /(\b(string|number|any|null|undefined)\b)|(\.[a-zA-Z_]+)|([a-zA-Z_]+(?=\.))/,
         greedy: true,
         inside: {
             operator: /\./,

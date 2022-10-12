@@ -1,1 +1,1 @@
-export * from "./draw-command"
+export * from "./DrawCommand"
