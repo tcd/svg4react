@@ -1,6 +1,7 @@
 import type { ISVGProps, CommonSVGPresentationAttributes } from "../../utils"
 
 export type FilterAttributes = {
+    id: string
     /**
      * Defines the coordinate system for the attributes `x`, `y`, `width`, and `height`.
      *
