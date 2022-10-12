@@ -10,8 +10,9 @@ export const CubesPage = (_props: unknown): JSX.Element => {
                 <Stack direction="column" spacing={5}>
                     {/* <cubes.A />
                     <cubes.B />
-                    <cubes.C /> */}
-                    <cubes.D />
+                    <cubes.C />
+                    <cubes.D /> */}
+                    <cubes.E />
                 </Stack>
             </Card>
         </Page>
