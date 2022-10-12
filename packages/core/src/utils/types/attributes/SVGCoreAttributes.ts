@@ -1,6 +1,8 @@
 import type { Properties } from "csstype"
 import type { AriaRole } from "react"
 
+import type { SVGTransform } from "../values"
+
 /**
  * React's TypeScript definitions for SVG element props dump everything into one bit bucket.
  *
@@ -55,4 +57,17 @@ export interface SVGCoreAttributes {
      * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/tabindex)
      */
     tabIndex?: number
+    /**
+     * Defines a list of transform definitions that are applied to an element and the element's children.
+     *
+     * As of SVG2, transform is a presentation attribute, meaning it can be used as a CSS property.
+     * However, be aware that there are some differences in syntax between the CSS property and the attribute.
+     * See the documentation for the CSS property [transform](https://developer.mozilla.org/en-US/docs/Web/CSS/transform)
+     * for the specific syntax to use in that case.
+     *
+     * @animatable true
+     * @cssProperty TODO: kinda?
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform)
+     */
+    transform?: SVGTransform[]
 }

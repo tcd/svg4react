@@ -23,7 +23,6 @@ export type CommonSVGPresentationAttributes = Pick<SVGPresentationAttributes,
     | "strokeMiterlimit"
     | "strokeOpacity"
     | "strokeWidth"
-    | "transform"
     | "vectorEffect"
     | "visibility"
 >
@@ -223,17 +222,6 @@ export interface SVGPresentationAttributes {
      * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-width)
      */
     strokeWidth?: Property.StrokeWidth
-    /**
-     * Defines a list of transform definitions that are applied to an element and the element's children.
-     *
-     * As of SVG2, transform is a presentation attribute, meaning it can be used as a CSS property.
-     * However, be aware that there are some differences in syntax between the CSS property and the attribute.
-     * See the documentation for the CSS property [transform](https://developer.mozilla.org/en-US/docs/Web/CSS/transform)
-     * for the specific syntax to use in that case.
-     *
-     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform)
-     */
-    transform?: Property.Transform
     /**
      * Specifies the vector effect to use when drawing an object.
      * Vector effects are applied before any of the other compositing operations, i.e. filters, masks and clips.
