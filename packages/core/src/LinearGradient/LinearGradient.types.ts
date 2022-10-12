@@ -1,10 +1,11 @@
 import type { StopProps } from "../Stop"
 import type { ISVGProps, CommonSVGPresentationAttributes } from "../utils"
 
+// FIXME: x1, y1, x2, y2
 export type LinearGradientCoords = [
     x1: number | string,
-    x2: number | string,
     y1: number | string,
+    x2: number | string,
     y2: number | string,
 ]
 
@@ -18,17 +19,16 @@ export type _LinearGradientAttributes = {
     stops?: StopProps[]
     /**
      * @shorthand x1
-     * @shorthand x2
      * @shorthand y1
+     * @shorthand x2
      * @shorthand y2
      */
     coordinates?: LinearGradientCoords
     /**
-     * Defines the coordinate system for attributes `x1`, `x2`, `y1`, `y2`.
-     *
-     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/gradientUnits)
+     * Defines the coordinate system for attributes `x1`, `y1`, `x2`, `y2`.
      *
      * @default "objectBoundingBox"
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/gradientUnits)
      */
     gradientUnits?: "userSpaceOnUse" | "objectBoundingBox"
     /**
@@ -46,41 +46,36 @@ export type _LinearGradientAttributes = {
     /**
      * This attribute indicates how the gradient behaves if it starts or ends inside the bounds of the shape containing the gradient.
      *
-     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/spreadMethod)
-     *
      * @default "pad"
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/spreadMethod)
      */
     spreadMethod?: "pad" | "reflect" | "repeat"
     /**
      * This attribute defines the x coordinate of the starting point of the vector gradient along which the linear gradient is drawn.
      *
-     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/x1)
-     *
      * @default "0%"
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/x1)
      */
     x1?: string | number
     /**
      * This attribute defines the x coordinate of the ending point of the vector gradient along which the linear gradient is drawn.
      *
-     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/x2)
-     *
      * @default "100%"
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/x2)
      */
     x2?: string | number
     /**
      * This attribute defines the y coordinate of the starting point of the vector gradient along which the linear gradient is drawn.
      *
-     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/y1)
-     *
      * @default "0%"
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/y1)
      */
     y1?: string | number
     /**
      * This attribute defines the y coordinate of the ending point of the vector gradient along which the linear gradient is drawn.
      *
-     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/y2)
-     *
      * @default "0%"
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/y2)
      */
     y2?: string | number
 }
