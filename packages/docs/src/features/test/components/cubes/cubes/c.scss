@@ -1,0 +1,40 @@
+// body {
+//     overflow: hidden;
+//     height: 100vh;
+//     width: 100vw;
+// }
+
+#cube {
+    // display: block;
+    // margin: 50px auto;
+
+    path:not(.shadow) {
+        animation-name: float;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-timing-function: ease-in-out;
+    }
+
+    path.shadow {
+        transform-origin: bottom;
+        animation-name: shadow;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-timing-function: ease-in-out;
+    }
+}
+
+@keyframes float {
+    to {
+        transform: translateY(8px);
+    }
+}
+
+@keyframes shadow {
+    to {
+        transform: scale(0.8);
+        fill: rgba(0, 0, 0, 0.6);
+    }
+}

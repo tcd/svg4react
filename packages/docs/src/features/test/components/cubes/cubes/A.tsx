@@ -45,12 +45,12 @@ const sx: SxProps = {
     },
 }
 
+/**
+ * [SVG Cube - Antonino Perricone (CodePen)](https://codepen.io/IorPerry/pen/memoZr?editors=1010)
+ */
 export const A = (_props: unknown): JSX.Element => {
     return (
         <Box sx={sx}>
-            <a href="https://codepen.io/IorPerry/pen/memoZr?editors=1010">SVG Cube - Antonino Perricone (CodePen)</a>
-            <br />
-            <br />
             <Svg viewBox="-20 -20 40 40" size="200">
                 <G>
                     <line x1="-15" y1="15"  x2="-5"  y2="5" className="back" />
