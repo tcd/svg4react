@@ -1,4 +1,6 @@
 arcrole
+closepath
+curveto
 fecolormatrix
 fecomponenttransfer
 fecomposite
@@ -23,6 +25,8 @@ fetile
 feturbulence
 gradians
 hkern
+lineto
+moveto
 mpath
 polymarkers
 tspan
