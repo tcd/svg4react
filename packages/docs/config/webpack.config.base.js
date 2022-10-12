@@ -5,6 +5,7 @@ const webpack = require("webpack")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin")
 const MonacoWebpackPlugin = require("monaco-editor-webpack-plugin")
+const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin")
 
 const { PROJECT_ROOT } = require("./helpers")
 const OUT_DIR    = path.resolve(PROJECT_ROOT, "dist")
@@ -14,6 +15,8 @@ const MONACO_DIR = path.resolve(PROJECT_ROOT, "node_modules", "monaco-editor")
 // const linkedDir = path.resolve(__dirname, "../../src")
 // console.log(linkedDir)
 
+const refresh = false
+
 const babelConfig = {
     "presets": [
         "@babel/preset-env",
@@ -21,7 +24,8 @@ const babelConfig = {
         ["@babel/preset-react", { "runtime": "automatic" }],
     ],
     "plugins": [
-        "@babel/plugin-transform-runtime",
+        // "@babel/plugin-transform-runtime",
+        ...(refresh ? [require.resolve("react-refresh/babel")] : []),
     ],
 }
 
@@ -70,6 +74,7 @@ const webpackConfig = {
                 "xml",
             ],
         }),
+        ...(refresh ? [new ReactRefreshWebpackPlugin()] : []),
     ],
     resolve: {
         extensions: ["*", ".js", ".jsx", ".tsx", ".ts", ".scss"],
