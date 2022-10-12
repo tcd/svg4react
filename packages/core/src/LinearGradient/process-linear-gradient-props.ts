@@ -1,4 +1,5 @@
 import type { LinearGradientProps } from "./LinearGradient.types"
+import { processAllProps } from "../utils"
 
 const processLinearGradientProps = (rawProps: LinearGradientProps): LinearGradientProps => {
     const {
@@ -14,7 +15,7 @@ const processLinearGradientProps = (rawProps: LinearGradientProps): LinearGradie
         processedProps.y2 = y2
     }
 
-    return processedProps
+    return processAllProps(processedProps)
 }
 
 export default processLinearGradientProps

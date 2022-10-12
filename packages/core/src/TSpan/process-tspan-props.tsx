@@ -1,3 +1,4 @@
+import { processAllProps } from "../utils"
 import type { TSpanProps } from "./TSpan.types"
 
 const processTSpanProps = (rawProps: TSpanProps): TSpanProps => {
@@ -5,26 +6,26 @@ const processTSpanProps = (rawProps: TSpanProps): TSpanProps => {
         value = undefined,
         coordinates = [],
         shift = [],
-        ...props
+        ...processedProps
     } = rawProps
 
     if (typeof(value) === "string") {
-        props.children = <>{value}</>
+        processedProps.children = <>{value}</>
     }
 
     if (Array.isArray(coordinates) && coordinates.length > 0) {
         const [x, y = x] = coordinates
-        props.x = x
-        props.y = y
+        processedProps.x = x
+        processedProps.y = y
     }
 
     if (Array.isArray(shift) && shift.length > 0) {
         const [dx, dy = dx] = shift
-        props.dx = dx
-        props.dy = dy
+        processedProps.dx = dx
+        processedProps.dy = dy
     }
 
-    return props
+    return processAllProps(processedProps)
 }
 
 export default processTSpanProps

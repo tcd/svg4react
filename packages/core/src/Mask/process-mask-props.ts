@@ -1,4 +1,5 @@
 import type { MaskProps } from "./Mask.types"
+import { processAllProps } from "../utils"
 
 const processMaskProps = (rawProps: MaskProps): MaskProps => {
     const {
@@ -23,7 +24,7 @@ const processMaskProps = (rawProps: MaskProps): MaskProps => {
         processedProps.height = height
     }
 
-    return processedProps
+    return processAllProps(processedProps)
 }
 
 export default processMaskProps

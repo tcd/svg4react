@@ -1,3 +1,4 @@
+import { processAllProps } from "../utils"
 import { PolylineCoordinate, PolylineProps } from "./Polyline.types"
 
 const processPolylinePoints = (points: PolylineCoordinate[] = []): string => {
@@ -13,7 +14,7 @@ const processPolylineProps = (rawProps: PolylineProps): PolylineProps => {
     // @ts-ignore: next-line
     processedProps.points = processPolylinePoints(points)
 
-    return processedProps as PolylineProps
+    return processAllProps(processedProps as PolylineProps)
 }
 
 export default processPolylineProps

@@ -1,3 +1,4 @@
+import { processAllProps } from "../utils"
 import type { MPathProps } from "./MPath.types"
 
 const processMPathProps = (rawProps: MPathProps): MPathProps => {
@@ -5,7 +6,7 @@ const processMPathProps = (rawProps: MPathProps): MPathProps => {
         ...processedProps
     } = rawProps
 
-    return processedProps
+    return processAllProps(processedProps)
 }
 
 export default processMPathProps

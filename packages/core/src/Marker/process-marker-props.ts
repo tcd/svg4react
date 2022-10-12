@@ -1,4 +1,5 @@
 import type { MarkerProps } from "./Marker.types"
+import { processAllProps } from "../utils"
 
 const processMarkerProps = (rawProps: MarkerProps): MarkerProps => {
     const {
@@ -19,7 +20,7 @@ const processMarkerProps = (rawProps: MarkerProps): MarkerProps => {
         processedProps.markerHeight = height
     }
 
-    return processedProps
+    return processAllProps(processedProps)
 }
 
 export default processMarkerProps

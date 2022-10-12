@@ -1,4 +1,5 @@
 import type { CircleProps } from "./Circle.types"
+import { processAllProps } from "../utils"
 
 const processCircleProps = (rawProps: CircleProps): CircleProps => {
     const {
@@ -12,7 +13,7 @@ const processCircleProps = (rawProps: CircleProps): CircleProps => {
         processedProps.cy = cy
     }
 
-    return processedProps
+    return processAllProps(processedProps)
 }
 
 export default processCircleProps

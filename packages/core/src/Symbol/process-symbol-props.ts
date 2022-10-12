@@ -1,3 +1,4 @@
+import { processAllProps } from "../utils"
 import type { SymbolProps } from "./Symbol.types"
 
 const processSymbolProps = (rawProps: SymbolProps): SymbolProps => {
@@ -33,7 +34,7 @@ const processSymbolProps = (rawProps: SymbolProps): SymbolProps => {
         processedProps.height = height
     }
 
-    return processedProps
+    return processAllProps(processedProps)
 }
 
 export default processSymbolProps

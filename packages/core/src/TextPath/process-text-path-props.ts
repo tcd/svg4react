@@ -1,4 +1,4 @@
-import { buildDrawing } from "../utils"
+import { buildDrawing, processAllProps } from "../utils"
 import type { TextPathProps } from "./TextPath.types"
 
 const processTextPathProps = (rawProps: TextPathProps): TextPathProps => {
@@ -19,7 +19,7 @@ const processTextPathProps = (rawProps: TextPathProps): TextPathProps => {
         }
     }
 
-    return processedProps
+    return processAllProps(processedProps)
 }
 
 export default processTextPathProps

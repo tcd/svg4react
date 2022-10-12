@@ -1,4 +1,5 @@
 import type { ForeignObjectProps } from "./ForeignObject.types"
+import { processAllProps } from "../utils"
 
 const processForeignObjectProps = (rawProps: ForeignObjectProps): ForeignObjectProps => {
     const {
@@ -23,7 +24,7 @@ const processForeignObjectProps = (rawProps: ForeignObjectProps): ForeignObjectP
         processedProps.height = height
     }
 
-    return processedProps
+    return processAllProps(processedProps)
 }
 
 export default processForeignObjectProps

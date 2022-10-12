@@ -1,3 +1,4 @@
+import { processAllProps } from "../utils"
 import type { RectProps } from "./Rect.types"
 
 const processRectProps = (rawProps: RectProps): RectProps => {
@@ -26,7 +27,7 @@ const processRectProps = (rawProps: RectProps): RectProps => {
         processedProps.ry = ry
     }
 
-    return processedProps
+    return processAllProps(processedProps)
 }
 
 export default processRectProps

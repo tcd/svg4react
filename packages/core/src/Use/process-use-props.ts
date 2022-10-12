@@ -1,3 +1,4 @@
+import { processAllProps } from "../utils"
 import type { UseProps } from "./Use.types"
 
 const processUseProps = (rawProps: UseProps): UseProps => {
@@ -19,7 +20,7 @@ const processUseProps = (rawProps: UseProps): UseProps => {
         processedProps.height = height
     }
 
-    return processedProps
+    return processAllProps(processedProps)
 }
 
 export default processUseProps

@@ -1,4 +1,5 @@
 import type { LineProps } from "./Line.types"
+import { processAllProps } from "../utils"
 
 const processLineProps = (rawProps: LineProps): LineProps => {
 
@@ -21,7 +22,7 @@ const processLineProps = (rawProps: LineProps): LineProps => {
     // @ts-ignore: next-line
     processedProps.y2 = y2
 
-    return processedProps as LineProps
+    return processAllProps(processedProps as LineProps)
 }
 
 export default processLineProps

@@ -1,3 +1,4 @@
+import { processAllProps } from "../utils"
 import { PolygonProps, PolygonCoordinate } from "./Polygon.types"
 
 const processPolygonPoints = (points: PolygonCoordinate[] = []): string => {
@@ -13,7 +14,7 @@ const processPolygonProps = (rawProps: PolygonProps): PolygonProps => {
     // @ts-ignore: next-line
     processedProps.points = processPolygonPoints(points)
 
-    return processedProps as PolygonProps
+    return processAllProps(processedProps as PolygonProps)
 }
 
 export default processPolygonProps

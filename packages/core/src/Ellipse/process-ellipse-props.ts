@@ -1,4 +1,5 @@
 import type { EllipseProps } from "./Ellipse.types"
+import { processAllProps } from "../utils"
 
 const processEllipseProps = (rawProps: EllipseProps): EllipseProps => {
     const {
@@ -19,7 +20,7 @@ const processEllipseProps = (rawProps: EllipseProps): EllipseProps => {
         processedProps.ry = ry
     }
 
-    return processedProps
+    return processAllProps(processedProps)
 }
 
 export default processEllipseProps

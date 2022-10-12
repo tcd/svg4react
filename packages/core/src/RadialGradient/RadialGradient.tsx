@@ -1,5 +1,6 @@
 import Stop from "../Stop"
 import type { RadialGradientProps } from "./RadialGradient.types"
+import processRadialGradientProps from "./process-props"
 
 /**
  * A wrapper for the [`<radialGradient>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/radialGradient) element.
@@ -17,9 +18,12 @@ const RadialGradient = (props: RadialGradientProps): JSX.Element => {
 
     const $stops = stops.map((stop, index) => <Stop key={index} {...stop} />)
 
+    // @ts-ignore: next-line
+    const processedProps = processRadialGradientProps(...otherProps)
+
     return (
         // @ts-ignore: next-line
-        <radialGradient {...otherProps}>
+        <radialGradient {...processedProps}>
             <>{$stops}</>
             {children && children}
         </radialGradient>

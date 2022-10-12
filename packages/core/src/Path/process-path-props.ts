@@ -1,4 +1,4 @@
-import { buildDrawing } from "../utils"
+import { buildDrawing, processAllProps } from "../utils"
 import type { PathProps } from "./Path.types"
 
 const processPathProps = (rawProps: PathProps): PathProps => {
@@ -11,7 +11,7 @@ const processPathProps = (rawProps: PathProps): PathProps => {
         processedProps.d = buildDrawing(commands)
     }
 
-    return processedProps
+    return processAllProps(processedProps)
 }
 
 export default processPathProps
