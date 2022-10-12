@@ -34,6 +34,9 @@ import {
     UsePage,
 } from "@app/features/components"
 // import { PlaygroundPage } from "@app/features/playground"
+import {
+    DrawCommandPage,
+} from "@app/features/packages/core"
 import { TypesPage } from "@app/features/types"
 import {
     GradientTextPage,
@@ -106,6 +109,13 @@ const routes = (): RouteObject[] => {
                         { path: "TextPath",         element: <TextPathPage />         },
                         { path: "TSpan",            element: <TSpanPage />            },
                         { path: "Use",              element: <UsePage />              },
+                    ],
+                },
+                {
+                    path: "core",
+                    children: [
+                        { index: true,         element: <NotFoundPage /> },
+                        { path: "DrawCommand", element: <DrawCommandPage /> },
                     ],
                 },
                 ...devRoutes,

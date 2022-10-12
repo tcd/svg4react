@@ -63,7 +63,8 @@ export const SIDE_NAV_LINKS: (ILinkData | ILinksData)[] = [
         title: "Component API",
         Icon: DataObjectIcon,
         links: [
-            { title: "Playground", to: "/playground" },
+            // { title: "Playground",  to: "/playground" },
+            { title: "DrawCommand", to: "/core/DrawCommand" },
         ],
     },
     ...(CONFIG.env !== "production" ? [
