@@ -35,7 +35,7 @@ export const D = (_props: unknown): JSX.Element => {
                     <Use href="#cube-blueprint" />
                 </Svg>
 
-                <Svg>
+                <Svg className="hidden">
                     <Defs>
 
                         <Symbol id="cube-blueprint" size={[87,100]} vb={[87,100]}>
