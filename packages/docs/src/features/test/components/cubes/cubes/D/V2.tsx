@@ -17,24 +17,21 @@ import "./d.scss"
  */
 export const D = (_props: unknown): JSX.Element => {
     return (
-        <Box sx={{ height: "600px", display: "flex", flexFlow: "column wrap" }}>
+        <Box id="cubes-d-v2" sx={{ height: "600px", display: "flex", flexFlow: "column wrap" }}>
 
             <Box sx={{ height: "300px" }} />
 
             <Box sx={{ position: "relative" }}>
 
-                {/* Cube 1 */}
-                <Svg className="cube" vb={[87,100]} width="87" height="100">
+                <Svg id="cube-1" className="cube" vb={[87,100]} width="87" height="100">
                     <Use href="#cube-blueprint" />
                 </Svg>
 
-                {/* Cube 2 */}
-                <Svg className="cube" vb={[87,100]} width="87" height="100">
+                <Svg id="cube-2" className="cube" vb={[87,100]} width="87" height="100">
                     <Use href="#cube-blueprint" />
                 </Svg>
 
-                {/* Cube 3 */}
-                <Svg className="cube" vb={[87,100]} width="87" height="100">
+                <Svg id="cube-3" className="cube" vb={[87,100]} width="87" height="100">
                     <Use href="#cube-blueprint" />
                 </Svg>
 
@@ -56,7 +53,7 @@ export const D = (_props: unknown): JSX.Element => {
                             cy="0"
                             r="1"
                             gradientUnits="userSpaceOnUse"
-                            gradientTransform="translate(22 37.5) rotate(90) scale(48.5 43.417)"
+                            gradientTransform="translate(22 37.5), rotate(90), scale(48.5, 43.417)"
                             stops={[
                                 { offset: "0", stopColor: "white", stopOpacity: "1" },
                                 { offset: "1", stopColor: "white", stopOpacity: "0" },
