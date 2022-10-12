@@ -29,58 +29,13 @@ const _wrapperSx: SxProps = {
 }
 
 export const E = (_props: unknown): JSX.Element => {
-
     return (
         <Box id="cubes-e-v1" sx={rootSx}>
-            <Svg
-                id="cube-1"
-                height="100%"
-                // viewBox="-50 -50 100 100"
-                vb={[100,110]}
-            >
+            <Svg id="cube-1" vb={[100,110]} height="100%">
                 <G>
-                    {/* <Path className="cube-side-top"   commands={pathData[0]} /> */}
-                    {/* <Path className="cube-side-left"  commands={pathData[1]} /> */}
-                    {/* <Path className="cube-side-right" commands={pathData[3]} /> */}
-
-                    <Path
-                        // stroke="red"
-                        fill="indianred"
-                        commands={[
-                            ["M", [[ 50,  0]]],
-                            ["L", [[100, 25]]],
-                            ["L", [[ 50, 50]]],
-                            ["L", [[  0, 25]]],
-                            ["L", [[ 50,  0]]],
-                            ["Z", []],
-                        ]}
-                    />
-
-                    <Path
-                        // stroke="orange"
-                        fill="sandybrown"
-                        commands={[
-                            ["M", [[ 0,   25]]],
-                            ["L", [[ 0,   85]]],
-                            ["L", [[50,  110]]],
-                            ["L", [[50,   50]]],
-                            ["L", [[ 0,   25]]],
-                            ["Z", []],
-                        ]}
-                    />
-
-                    <Path
-                        // stroke="yellow"
-                        fill="lightgoldenrodyellow"
-                        commands={[
-                            ["M", [[100,  25]]],
-                            ["L", [[100,  85]]],
-                            ["L", [[ 50, 110]]],
-                            ["L", [[50,   50]]],
-                            ["L", [[100,  25]]],
-                            ["Z", []],
-                        ]}
-                    />
+                    <Path commands={pathData.top}   fill="indianred" />
+                    <Path commands={pathData.left}  fill="sandybrown" />
+                    <Path commands={pathData.right} fill="lightgoldenrodyellow" />
                 </G>
             </Svg>
         </Box>
@@ -89,40 +44,34 @@ export const E = (_props: unknown): JSX.Element => {
 
 // =============================================================================
 
-const pathData: DrawCommand[][] = [
-    [
-        ["M", [[0, 24.5878]]],
-        ["L", [[43.2009, 0]]],
-        ["L", [[86.4018, 24.8176]]],
-        ["L", [[43.2009, 49.6351]]],
-        ["L", [[0, 24.5878]]],
+type Side = "top" | "left" | "right"
+
+const pathData: Record<Side, DrawCommand[]> = {
+    top: [
+        ["M", [[ 50,  0]]],
+        ["L", [[100, 25]]],
+        ["L", [[ 50, 50]]],
+        ["L", [[  0, 25]]],
+        ["L", [[ 50,  0]]],
         ["Z", []],
     ],
-    [
-        ["M", [[0, 24.5878]]],
-        ["L", [[43.2009, 49.6351]]],
-        ["V", [99.5]],
-        ["L", [[0, 74.2229]]],
-        ["V", [24.5878]],
+    left: [
+        ["M", [[ 0,   25]]],
+        ["L", [[ 0,   85]]],
+        ["L", [[50,  110]]],
+        ["L", [[50,   50]]],
+        ["L", [[ 0,   25]]],
         ["Z", []],
     ],
-    [
-        ["M", [[ 0, 24.5]]],
-        ["L", [[43, 49.5]]],
-        ["V", [50]],
-        ["L", [[0, 25]]],
-        ["V", [24.5]],
+    right: [
+        ["M", [[100,  25]]],
+        ["L", [[100,  85]]],
+        ["L", [[ 50, 110]]],
+        ["L", [[50,   50]]],
+        ["L", [[100,  25]]],
         ["Z", []],
     ],
-    [
-        ["M", [[43.2009, 49.6351]]],
-        ["L", [[86.4019, 24.8176]]],
-        ["V", [74.4527]],
-        ["L", [[43.2009, 99.5]]],
-        ["V", [49.6351]],
-        ["Z", []],
-    ],
-]
+}
 
 // const _transformList = [
 //     ["rotate",    [-10, 50, 100]],
