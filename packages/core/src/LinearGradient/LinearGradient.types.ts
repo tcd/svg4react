@@ -1,7 +1,6 @@
 import type { StopProps } from "../Stop"
 import type { ISVGProps, CommonSVGPresentationAttributes } from "../utils"
 
-// FIXME: x1, y1, x2, y2
 export type LinearGradientCoords = [
     x1: number | string,
     y1: number | string,
