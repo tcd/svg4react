@@ -15,10 +15,6 @@ export const V2 = (_props: unknown): JSX.Element => {
             <Defs>
                 <LinearGradient
                     id="rainbow"
-                    // x1="0"
-                    // x2="0"
-                    // y1="0"
-                    // y2="100%"
                     coordinates={[0, 0, 0, "100%"]}
                     gradientUnits="userSpaceOnUse"
                     stops={stops}

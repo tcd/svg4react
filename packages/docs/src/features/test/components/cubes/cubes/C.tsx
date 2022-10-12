@@ -27,7 +27,7 @@ export const C = (_props: unknown): JSX.Element => {
                 </filter>
                 <LinearGradient
                     id="purpleGradient"
-                    coordinates={[0, "100%", 0, "100%"]}
+                    coordinates={[0, 0, "100%", "100%"]}
                     stops={gradientStops}
                 />
             </Defs>

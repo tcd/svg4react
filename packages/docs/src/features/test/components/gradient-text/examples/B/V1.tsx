@@ -13,7 +13,7 @@ export const V1 = (_props: unknown): JSX.Element => {
             <LinearGradient
                 id="gr-simple"
                 stops={stops}
-                coordinates={[0, "100%", 0, "100%"]}
+                coordinates={[0, 0, "100%", "100%"]}
             />
 
             {/* Text */}

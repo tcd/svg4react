@@ -23,7 +23,11 @@ export const D = (_props: unknown): JSX.Element => {
     return (
         <Box>
             <Defs>
-
+                <linearGradient id="paint1_linear" x1="0.5" y1="24.5" x2="43" y2="49.5" gradientUnits="userSpaceOnUse">
+                    <stop stopColor="white" stopOpacity="0"/>
+                    <stop offset="0.520833" stopColor="white"/>
+                    <stop offset="1" stopColor="white" stopOpacity="0"/>
+                </linearGradient>
             </Defs>
 
             {/* Cube 1  */}
