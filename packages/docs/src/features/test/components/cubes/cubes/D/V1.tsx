@@ -29,12 +29,6 @@ export const D = (_props: unknown): JSX.Element => {
                     <path d="M0 24.5L43 49.5V50L0 25V24.5Z" fill="url(#paint1_linear)" fillOpacity="0.3"/>
                     <path d="M43.2009 49.6351L86.4019 24.8176V74.4527L43.2009 99.5V49.6351Z" fill="#A69CE7"/>
                     <path d="M43.2009 49.6351L86.4019 24.8176V74.4527L43.2009 99.5V49.6351Z" fill="black" fillOpacity="0.2"/>
-                    <defs>
-                        <radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(22 37.5) rotate(90) scale(48.5 43.417)">
-                            <stop stopColor="white"/>
-                            <stop offset="1" stopColor="white" stopOpacity="0"/>
-                        </radialGradient>
-                    </defs>
                 </svg>
 
                 {/* Cube 2 */}
@@ -45,12 +39,6 @@ export const D = (_props: unknown): JSX.Element => {
                     <path d="M0 24.5L43 49.5V50L0 25V24.5Z" fill="url(#paint1_linear)" fillOpacity="0.3"/>
                     <path d="M43.2009 49.6351L86.4019 24.8176V74.4527L43.2009 99.5V49.6351Z" fill="#A69CE7"/>
                     <path d="M43.2009 49.6351L86.4019 24.8176V74.4527L43.2009 99.5V49.6351Z" fill="black" fillOpacity="0.2"/>
-                    <defs>
-                        <radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(22 37.5) rotate(90) scale(48.5 43.417)">
-                            <stop stopColor="white"/>
-                            <stop offset="1" stopColor="white" stopOpacity="0"/>
-                        </radialGradient>
-                    </defs>
                 </svg>
 
                 {/* Cube 3 */}
@@ -61,16 +49,21 @@ export const D = (_props: unknown): JSX.Element => {
                     <path d="M0 24.5L43 49.5V50L0 25V24.5Z" fill="url(#paint1_linear)" fillOpacity="0.3"/>
                     <path d="M43.2009 49.6351L86.4019 24.8176V74.4527L43.2009 99.5V49.6351Z" fill="#A69CE7"/>
                     <path d="M43.2009 49.6351L86.4019 24.8176V74.4527L43.2009 99.5V49.6351Z" fill="black" fillOpacity="0.2"/>
-                    <defs>
-                        <radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(22 37.5) rotate(90) scale(48.5 43.417)">
-                            <stop stopColor="white"/>
-                            <stop offset="1" stopColor="white" stopOpacity="0"/>
-                        </radialGradient>
-                    </defs>
                 </svg>
 
                 <Svg>
                     <Defs>
+                        <radialGradient
+                            id="paint0_radial"
+                            cx="0"
+                            cy="0"
+                            r="1"
+                            gradientUnits="userSpaceOnUse"
+                            gradientTransform="translate(22 37.5) rotate(90) scale(48.5 43.417)"
+                        >
+                            <stop stopColor="white"/>
+                            <stop offset="1" stopColor="white" stopOpacity="0"/>
+                        </radialGradient>
                         <LinearGradient
                             id="paint1_linear"
                             gradientUnits="userSpaceOnUse"
