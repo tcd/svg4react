@@ -1,4 +1,10 @@
-# DrawCommand
+## About
+
+The `DrawCommand` type(s) are an alternative, typechecked syntax for defining SVG [path_commands][path-data].
+
+## Related
+
+- DrawArgs
 
 | code |             name/description             |
 | ---- | ---------------------------------------- |
@@ -48,3 +54,5 @@
 | Quadratic Bézier Curve | `T` / `t` | smooth_quadratic_bezier_curveto |
 | Elliptical Arc Curve   | `A` / `a` | elliptical_arc                  |
 | ClosePath              | `Z` / `z` | closepath                       |
+
+[path-data]: https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d#path_commands

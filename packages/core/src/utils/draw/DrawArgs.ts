@@ -18,28 +18,28 @@ export type v = number
 export type C = [
     x1: number, y1: number,
     x2: number, y2: number,
-    x: number,  y: number,
+    x:  number, y:  number,
 ]
 /** curveto_relative */
 export type c = [
     dx1: number, dy1: number,
     dx2: number, dy2: number,
-    dx: number,  dy: number,
+    dx:  number, dy:  number,
 ]
 /** smooth_curveto_absolute */
 export type S = [
     x2: number, y2: number,
-    x: number,  y: number,
+    x:  number, y:  number,
 ]
 /** smooth_curveto_relative */
 export type s = [
     dx2: number, dy2: number,
-    dx: number,  dy: number,
+    dx:  number, dy:  number,
 ]
 /** quadratic_bezier_curveto_absolute */
 export type Q = [
     x1: number, y1: number,
-    x: number,  y: number,
+    x:  number, y:  number,
 ]
 /** quadratic_bezier_curveto_relative */
 export type q = [
@@ -47,7 +47,7 @@ export type q = [
     dx: number,  dy: number,
 ]
 /** smooth_quadratic_bezier_curveto_absolute */
-export type T = [ x: number,  y: number]
+export type T = [x: number,  y: number]
 /** smooth_quadratic_bezier_curveto_relative */
 export type t = [dx: number, dy: number]
 /** elliptical_arc_absolute */
