@@ -12,4 +12,4 @@ export type AngleUnit = typeof AngleUnits[AngleUnitName]
  * @see [MDN Web Docs - SVGAngle](https://developer.mozilla.org/en-US/docs/Web/API/SVGAngle)
  * @see [SVG2 - InterfaceSVGAngle](https://svgwg.org/svg2-draft/types.html#InterfaceSVGAngle)
  */
-export type SVGAngle = `${number}` | `${number}${AngleUnit}`
+export type SVGAngle = number | `${number}` | `${number}${AngleUnit}`

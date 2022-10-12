@@ -23,4 +23,4 @@ export type Unit =
  * @see [MDN Web Docs - `SVGAnimatedLength`](https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimatedLength)
  * @see [MDN Web Docs - `coordinate`](https://developer.mozilla.org/en-US/docs/Web/SVG/Content_type#coordinate)
  */
-export type Length = number | `${number}${Unit}`
+export type Length = number | `${number}` | `${number}${Unit}`

@@ -38,6 +38,7 @@
         "styleguidist",
         "svgwg",
         "tsdoc",
+        "TSVG",
         "webref"
     ],
 }
