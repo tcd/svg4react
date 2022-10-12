@@ -12,16 +12,16 @@ export const DebugPath = (props: DebugPathProps): JSX.Element => {
         ...otherProps
     } = props
 
-    const $points = commands.filter(x => ["M", "L", "V", "H"].includes(x[0])).map(([cmd, cmds], i) => {
+    const $points = commands.filter(x => ["M", "L", "V", "H"].includes(x[0])).map(([_, commands], i) => {
         return (
             <Circle
                 stroke="none"
                 fill={debugColor}
                 // @ts-ignore: next-line
-                coordinates={cmds[0]}
+                coordinates={commands[0]}
                 key={i}
                 r="1"
-                id={`${cmds[0]}`}
+                id={`${commands[0]}`}
             />
         )
     })
