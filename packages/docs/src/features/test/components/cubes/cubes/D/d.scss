@@ -11,25 +11,25 @@ $easing: cubic-bezier(0.165, 0.84, 0.44, 1);
     transform: translate(-50%, -50%);
 
     &:nth-child(1) {
-        animation: 5.0s cubic-bezier(0.165, 0.84, 0.44, 1) infinite forwards cube1;
+        animation: 5.0s #{$easing} infinite forwards cube1;
         .light {
             fill-opacity: 0;
-            animation: 5.0s cubic-bezier(0.165, 0.84, 0.44, 1) infinite forwards light;
+            animation: 5.0s #{$easing} infinite forwards light;
         }
     }
 
     &:nth-child(2) {
         margin-top: -106px;
-        /*animation: 1.4s cubic-bezier(0.165, 0.84, 0.44, 1)  1 forwards slidein;*/
+        /*animation: 1.4s $easing 1 forwards slidein;*/
         .light {
             fill-opacity: 0;
-            animation: 5.0s cubic-bezier(0.165, 0.84, 0.44, 1) infinite forwards light;
+            animation: 5.0s #{$easing} infinite forwards light;
         }
     }
 
     &:nth-child(3) {
         margin-top: -212px;
-        animation: 5.0s cubic-bezier(0.165, 0.84, 0.44, 1) infinite forwards cube3;
+        animation: 5.0s #{$easing} infinite forwards cube3;
     }
 }
 
