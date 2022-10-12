@@ -80,6 +80,7 @@ export const SIDE_NAV_LINKS: (ILinkData | ILinksData)[] = [
                 { title: "Gradient Text", to: "/examples/gradient-text" },
                 { title: "Circle Motion", to: "/examples/circle-motion" },
                 { title: "Burger", to: "/examples/burger" },
+                { title: "Cubes", to: "/examples/cubes" },
             ],
         },
     ] : []),

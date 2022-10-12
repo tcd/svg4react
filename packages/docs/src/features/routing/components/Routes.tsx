@@ -47,6 +47,7 @@ import {
     TestPage,
     CircleMotionPage,
     BurgerPage,
+    CubesPage,
 } from "@app/features/test"
 
 export const Routes = (_props: unknown): JSX.Element => {
@@ -68,6 +69,7 @@ const routes = (): RouteObject[] => {
                 { path: "gradient-text", element: <GradientTextPage /> },
                 { path: "circle-motion", element: <CircleMotionPage /> },
                 { path: "burger", element: <BurgerPage /> },
+                { path: "cubes", element: <CubesPage /> },
             ],
         })
     }

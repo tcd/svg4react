@@ -1,5 +1,6 @@
 export * from "./burger"
 export * from "./circle-motion"
+export * from "./cubes"
 export * from "./gradient-text"
 export * from "./LogosPage"
 export * from "./MarkdownPage"
