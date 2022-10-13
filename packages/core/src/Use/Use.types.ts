@@ -14,7 +14,7 @@ export type UseAttributes = {
      * @shorthand x
      * @shorthand y
      */
-    coords?: [x: number, y?: number]
+    coords?: [x: Length, y?: Length]
     /**
      * Shorthand for `width` and `height`.
      *
@@ -25,7 +25,7 @@ export type UseAttributes = {
      * @shorthand width
      * @shorthand height
      */
-    size?: [width: number, height?: number]
+    size?: [width: Length, height?: Length]
     // /**
     //  * `id` of the element to *use*. No preceding hash required.
     //  */

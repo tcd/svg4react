@@ -1,4 +1,9 @@
-import type { ISVGProps, CommonSVGPresentationAttributes, PreserveAspectRatio } from "../utils"
+import type {
+    ISVGProps,
+    CommonSVGPresentationAttributes,
+    PreserveAspectRatio,
+    SVGPresentationAttributes,
+} from "../utils"
 
 /**
  * @see [MDN - `<svg>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/svg)
@@ -43,9 +48,11 @@ export type SvgAttributes = {
 }
 
 /**
- * @see [MDN - `<svg>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/svg)
+ * @see [MDN Web Docs - `<svg>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/svg)
+ * @see [SVG2](https://svgwg.org/svg2-draft/struct.html#NewDocument)
  */
 export type SvgProps =
     ISVGProps<SVGSVGElement>
     & SvgAttributes
     & CommonSVGPresentationAttributes // TODO: confirm svg attributes
+    & Pick<SVGPresentationAttributes, "overflow">

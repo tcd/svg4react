@@ -29,6 +29,7 @@ export type MarkerAttributes = {
      * The orientation of the marker relative to the shape it is attached to.
      *
      * @default 0
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/orient)
      */
     orient?: "auto" | "auto-start-reverse" | SVGAngle
     /**

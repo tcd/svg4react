@@ -32,9 +32,21 @@ export namespace Deprecated {
          */
         attributeType: never
         /**
+         * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/clip
+         */
+        clip: never
+        /**
+         * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/color-profile
+         */
+        colorProfile: never
+        /**
          * @see https://docs.w3cub.com/svg/attribute/color-rendering
          */
         colorRendering: never
+        /**
+         * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/enable-background
+         */
+        enableBackground: never
         /**
          * used by:
          *
@@ -80,5 +92,9 @@ export namespace Deprecated {
          */
         xmlLang: never
         xmlSpace: never
+        /**
+         * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/zoomAndPan
+         */
+        zoomAndPan: never
     }
 }

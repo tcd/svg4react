@@ -29,6 +29,8 @@ export type CommonSVGPresentationAttributes = Pick<SVGPresentationAttributes,
 
 /**
  * TODO: may need to rename this. It's gotten broader than just presentation attributes.
+ *
+ * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/Presentation)
  */
 export interface SVGPresentationAttributes {
     /**
@@ -142,7 +144,13 @@ export interface SVGPresentationAttributes {
      */
     opacity?: Property.Opacity
     /**
+     * Sets what to do when an element's content is too big to fit in its block formatting context.
+     *
+     * @default "visible"
+     * @animatable true
+     * @cssProperty true
      * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/overflow)
+     * @note **This feature is not widely implemented yet.**
      */
     overflow?: Property.Overflow
     /**

@@ -15,4 +15,4 @@ export type AnimateTransformAttributes = {
 export type AnimateTransformProps =
     ISVGProps<SVGAnimateTransformElement>
     & AnimateTransformAttributes
-    & Omit<SVGAnimationAttributes, "attributeName">
+    & SVGAnimationAttributes
