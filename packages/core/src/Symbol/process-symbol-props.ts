@@ -4,8 +4,9 @@ import type { SymbolProps } from "./Symbol.types"
 const processSymbolProps = (rawProps: SymbolProps): SymbolProps => {
     const {
         vb = [],
-        refXY = [],
         size = [],
+        coords = [],
+        refXY = [],
         ...processedProps
     } = rawProps
 
@@ -18,20 +19,24 @@ const processSymbolProps = (rawProps: SymbolProps): SymbolProps => {
         }
     }
 
-    if (Array.isArray(refXY) && refXY.length > 0) {
-        const [x, y = x] = refXY
-        // @ts-ignore: next-line
+    if (Array.isArray(size) && size.length > 0) {
+        const [width, height = width] = size
+        processedProps.width  = width
+        processedProps.height = height
+    }
+
+    if (Array.isArray(coords) && coords.length > 0) {
+        const [x, y = x] = coords
         processedProps.x = x
-        // @ts-ignore: next-line
         processedProps.y = y
     }
 
-    if (Array.isArray(size) && size.length > 0) {
-        const [width, height = width] = size
+    if (Array.isArray(refXY) && refXY.length > 0) {
+        const [refX, refY = refX] = refXY
         // @ts-ignore: next-line
-        processedProps.width  = width
+        processedProps.refX = refX
         // @ts-ignore: next-line
-        processedProps.height = height
+        processedProps.refY = refY
     }
 
     return processAllProps(processedProps)
