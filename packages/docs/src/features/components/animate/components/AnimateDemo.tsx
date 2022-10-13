@@ -27,7 +27,7 @@ render(
         <Rect size={[10]} fill="${randomColor()}">
             <Animate
                 attributeName="rx"
-                values="0;5;0"
+                values={[0, 5, 0]}
                 dur="5s"
                 repeatCount="indefinite"
             />
