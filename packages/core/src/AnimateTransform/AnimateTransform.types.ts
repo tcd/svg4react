@@ -4,7 +4,7 @@ export type AnimateTransformAttributes = {
     /**
      * The type of transformation, whose values change over time.
      *
-     * @see [MDB Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/type#for_the_animatetransform_elements)
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/type#for_the_animatetransform_elements)
      */
     type?: "translate" | "scale" | "rotate" | "skewX" | "skewY"
 }
