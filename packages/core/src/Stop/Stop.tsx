@@ -9,6 +9,7 @@ import type { StopProps } from "./Stop.types"
  */
 const Stop = (props: StopProps): JSX.Element => {
     return (
+        // @ts-ignore: next-line
         <stop {...props} />
     )
 }
