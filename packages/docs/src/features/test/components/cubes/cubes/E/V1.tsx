@@ -1,14 +1,19 @@
 import { Box, SxProps } from "@mui/material"
 import {
-    Path,
-    Svg,
+    AnimateMotion,
+    AnimateTransform,
+    Defs,
     DrawCommand,
     G,
+    Path,
+    Svg,
+    Symbol,
+    Use,
 } from "svg4react"
 
 import "./e.scss"
 
-// import { DebugPath as Path } from "./DebugPath"
+// import { DebugPath } from "@app/features/shared"
 
 const rootSx: SxProps = {
     height: "400px",
@@ -31,12 +36,46 @@ const _wrapperSx: SxProps = {
 export const E = (_props: unknown): JSX.Element => {
     return (
         <Box id="cubes-e-v1" sx={rootSx}>
-            <Svg id="cube-1" vb={[100,110]} height="100%">
-                <G>
-                    <Path commands={pathData.top}   fill="indianred" />
-                    <Path commands={pathData.left}  fill="sandybrown" />
-                    <Path commands={pathData.right} fill="lightgoldenrodyellow" />
-                </G>
+            {/* @ts-ignore: next-line */}
+            <Svg id="cube-1" vb={[100,110]} height="100%" overflow="hidden">
+                <Defs>
+                    {/* @ts-ignore: next-line */}
+                    <Symbol id="cube-blueprint" vb={[100,110]} size={["100%"]}>
+                        <G>
+                            <Path commands={pathData.top}   fill="indianred" />
+                            <Path commands={pathData.left}  fill="sandybrown" />
+                            <Path commands={pathData.right} fill="lightgoldenrodyellow" />
+                        </G>
+                    </Symbol>
+                </Defs>
+
+                <Path
+                    id="cube-motion-path"
+                    // stroke="white"
+                    fill="transparent"
+                    commands={motionPath_v1}
+                />
+
+                <Use
+                    // @ts-ignore: next-line
+                    size={["50px"]}
+                    href="#cube-blueprint"
+                >
+                    {/* <AnimateTransform
+                        attributeName="transform"
+                        type="rotate"
+                        from="0 60 70"
+                        to="360 60 70"
+                        dur="5s"
+                        repeatCount="indefinite"
+                    /> */}
+                    <AnimateMotion
+                        dur="3s"
+                        repeatCount="indefinite"
+                    >
+                        <mpath href="#cube-motion-path" />
+                    </AnimateMotion>
+                </Use>
             </Svg>
         </Box>
     )
@@ -45,6 +84,21 @@ export const E = (_props: unknown): JSX.Element => {
 // =============================================================================
 
 type Side = "top" | "left" | "right"
+
+const motionPath_v1: DrawCommand[] = [
+    ["M", [[25, -60]]],
+    ["v", [180]],
+    // ["Z", []],
+]
+
+const motionPath_v2: DrawCommand[] = [
+    ["M", [[25,0]]],
+    ["v", [150]],
+    ["h", [150]],
+    ["v", [-200]],
+    ["h", [-200]],
+    ["Z", []],
+]
 
 const pathData: Record<Side, DrawCommand[]> = {
     top: [

@@ -5,6 +5,7 @@ const JSDOC_TAGS = [
     "animatable",
     "cssProperty",
     "see",
+    "note",
 ]
 
 /**

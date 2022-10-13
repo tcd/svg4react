@@ -22,6 +22,7 @@ export const DebugPath = (props: DebugPathProps): JSX.Element => {
                 key={i}
                 r="1"
                 id={`${commands[0]}`}
+                title={`${commands[0]}`}
             />
         )
     })
