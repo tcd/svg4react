@@ -1,4 +1,9 @@
-import type { ISVGProps, CommonSVGPresentationAttributes, PreserveAspectRatio } from "../utils"
+import type {
+    ISVGProps,
+    CommonSVGAttributes,
+    PreserveAspectRatio,
+    Length,
+} from "../utils"
 
 /**
  * @see [MDN Web Docs - `<symbol>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/symbol)
@@ -37,7 +42,7 @@ export type SymbolAttributes = {
      * @shorthand width
      * @shorthand height
      */
-    size?: [width: number, height?: number]
+    size?: [width: Length, height?: Length]
     /**
      * Defines how the svg fragment must be deformed if it is embedded in a container with a different aspect ratio.
      *
@@ -52,4 +57,4 @@ export type SymbolAttributes = {
 export type SymbolProps =
     ISVGProps<SVGSymbolElement>
     & SymbolAttributes
-    & CommonSVGPresentationAttributes
+    & CommonSVGAttributes

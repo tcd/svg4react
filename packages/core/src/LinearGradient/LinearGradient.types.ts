@@ -1,5 +1,5 @@
 import type { StopProps } from "../Stop"
-import type { ISVGProps, CommonSVGPresentationAttributes } from "../utils"
+import type { ISVGProps, CommonSVGAttributes } from "../utils"
 
 export type LinearGradientCoords = [
     x1: number | string,
@@ -79,7 +79,7 @@ export type _LinearGradientAttributes = {
     y2?: string | number
 }
 
-export type LinearGradientAttributes = _LinearGradientAttributes & CommonSVGPresentationAttributes
+export type LinearGradientAttributes = _LinearGradientAttributes & CommonSVGAttributes
 
 /**
  * @see [MDN Web Docs - `<linearGradient>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/linearGradient)
@@ -87,4 +87,4 @@ export type LinearGradientAttributes = _LinearGradientAttributes & CommonSVGPres
 export type LinearGradientProps =
     ISVGProps<SVGLinearGradientElement>
     & LinearGradientAttributes
-    & CommonSVGPresentationAttributes
+    & CommonSVGAttributes

@@ -1,4 +1,4 @@
-import { ISVGProps, SVGPresentationAttributes } from "../utils"
+import { ISVGProps, SVGAttributes } from "../utils"
 
 /**
  * @see [MDN Web Docs - `<stop>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/stop)
@@ -32,4 +32,4 @@ export type StopAttributes = {
 export type StopProps =
     ISVGProps<SVGStopElement>
     & StopAttributes
-    & Pick<SVGPresentationAttributes, "display" | "visibility">
+    & Pick<SVGAttributes, "display" | "visibility">

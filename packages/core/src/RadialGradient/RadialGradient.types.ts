@@ -1,5 +1,5 @@
 import type { StopProps } from "../Stop"
-import type { ISVGProps, CommonSVGPresentationAttributes } from "../utils"
+import type { ISVGProps, CommonSVGAttributes } from "../utils"
 
 /**
  * @see [MDN Web Docs - `<radialGradient>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/radialGradient)
@@ -77,4 +77,4 @@ export type RadialGradientAttributes = {
 export type RadialGradientProps =
     ISVGProps<SVGRadialGradientElement>
     & RadialGradientAttributes
-    & CommonSVGPresentationAttributes
+    & CommonSVGAttributes

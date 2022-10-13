@@ -1,4 +1,4 @@
-import type { ISVGProps, CommonSVGPresentationAttributes } from "../utils"
+import type { ISVGProps, CommonSVGAttributes } from "../utils"
 
 /**
  * @see [MDN Web Docs - `<foreignObject>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/foreignObject)
@@ -34,4 +34,4 @@ export type ForeignObjectAttributes = {
 export type ForeignObjectProps =
     ISVGProps<SVGSymbolElement>
     & ForeignObjectAttributes
-    & CommonSVGPresentationAttributes
+    & CommonSVGAttributes

@@ -1,4 +1,4 @@
-import type { ISVGProps, CommonSVGPresentationAttributes } from "../utils"
+import type { ISVGProps, CommonSVGAttributes } from "../utils"
 
 export type PolylineCoordinate = [
     x: number,
@@ -27,4 +27,4 @@ export type PolylineAttributes = {
 export type PolylineProps =
     ISVGProps<SVGPolylineElement>
     & PolylineAttributes
-    & CommonSVGPresentationAttributes
+    & CommonSVGAttributes

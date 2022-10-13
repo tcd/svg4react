@@ -1,4 +1,4 @@
-import type { ISVGProps, CommonSVGPresentationAttributes } from "../utils"
+import type { ISVGProps, CommonSVGAttributes } from "../utils"
 
 /**
  * @see [MDN Web Docs - `<circle>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/circle)
@@ -41,4 +41,4 @@ export type CircleAttributes = {
 export type CircleProps =
     ISVGProps<SVGCircleElement>
     & CircleAttributes
-    & CommonSVGPresentationAttributes
+    & CommonSVGAttributes

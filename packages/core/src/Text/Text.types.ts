@@ -1,5 +1,5 @@
 import type { Property } from "csstype"
-import type { ISVGProps, SVGTextAttributes, CommonSVGPresentationAttributes } from "../utils"
+import type { ISVGProps, SVGTextAttributes, CommonSVGAttributes } from "../utils"
 
 /**
  * @see [MDN Web Docs - `<text>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/text)
@@ -69,4 +69,4 @@ export type TextProps =
     ISVGProps<SVGTextElement>
     & TextAttributes
     & SVGTextAttributes
-    & CommonSVGPresentationAttributes
+    & CommonSVGAttributes

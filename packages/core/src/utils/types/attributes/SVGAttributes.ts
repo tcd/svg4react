@@ -1,7 +1,7 @@
 import type { Property } from "csstype"
 import type { IRI } from "../values"
 
-export type CommonSVGPresentationAttributes = Pick<SVGPresentationAttributes,
+export type CommonSVGAttributes = Pick<SVGAttributes,
     | "clipPath"
     | "clipRule"
     | "colorInterpolation"
@@ -28,11 +28,9 @@ export type CommonSVGPresentationAttributes = Pick<SVGPresentationAttributes,
 >
 
 /**
- * TODO: may need to rename this. It's gotten broader than just presentation attributes.
- *
  * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/Presentation)
  */
-export interface SVGPresentationAttributes {
+export interface SVGAttributes {
     /**
      * Defines or associates a clipping path with the element it is related to.
      *

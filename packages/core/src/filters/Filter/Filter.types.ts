@@ -1,4 +1,4 @@
-import type { ISVGProps, CommonSVGPresentationAttributes } from "../../utils"
+import type { ISVGProps, CommonSVGAttributes } from "../../utils"
 
 export type FilterAttributes = {
     id: string
@@ -22,4 +22,4 @@ export type FilterAttributes = {
 export type FilterProps =
     ISVGProps<SVGFilterElement>
     & FilterAttributes
-    & CommonSVGPresentationAttributes
+    & CommonSVGAttributes

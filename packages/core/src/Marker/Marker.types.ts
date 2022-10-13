@@ -1,4 +1,4 @@
-import type { ISVGProps, CommonSVGPresentationAttributes } from "../utils"
+import type { ISVGProps, CommonSVGAttributes } from "../utils"
 
 export type MarkerRef = "left" | "center" | "right" | number | string // | SVGLength
 
@@ -76,4 +76,4 @@ export type MarkerAttributes = {
 export type MarkerProps =
     ISVGProps<SVGMarkerElement>
     & MarkerAttributes
-    & CommonSVGPresentationAttributes
+    & CommonSVGAttributes

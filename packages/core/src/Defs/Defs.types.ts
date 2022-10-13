@@ -1,4 +1,4 @@
-import type { ISVGProps, CommonSVGPresentationAttributes } from "../utils"
+import type { ISVGProps, CommonSVGAttributes } from "../utils"
 
 /**
  * @see [MDN Web Docs - `<defs>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/defs)
@@ -13,4 +13,4 @@ export type DefsAttributes = {
 export type DefsProps =
     ISVGProps<SVGDefsElement>
     & DefsAttributes
-    & CommonSVGPresentationAttributes
+    & CommonSVGAttributes

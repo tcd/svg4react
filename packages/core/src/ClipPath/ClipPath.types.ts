@@ -1,4 +1,4 @@
-import type { ISVGProps, CommonSVGPresentationAttributes } from "../utils"
+import type { ISVGProps, CommonSVGAttributes } from "../utils"
 
 /**
  * @see [MDN Web Docs - `<clipPath>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/clipPath)
@@ -20,4 +20,4 @@ export type ClipPathAttributes = {
 export type ClipPathProps =
     ISVGProps<SVGClipPathElement>
     & ClipPathAttributes
-    & CommonSVGPresentationAttributes
+    & CommonSVGAttributes

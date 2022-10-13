@@ -2,7 +2,7 @@ import type {
     ISVGProps,
     DrawCommand,
     SVGTextAttributes,
-    CommonSVGPresentationAttributes,
+    CommonSVGAttributes,
 } from "../utils"
 
 export type TextPathAttributes = {
@@ -66,4 +66,4 @@ export type TextPathProps =
     ISVGProps<SVGTextPathElement>
     & TextPathAttributes
     & Omit<SVGTextAttributes, "textLength">
-    & CommonSVGPresentationAttributes
+    & CommonSVGAttributes

@@ -1,8 +1,8 @@
 import type {
     ISVGProps,
-    CommonSVGPresentationAttributes,
+    CommonSVGAttributes,
     PreserveAspectRatio,
-    SVGPresentationAttributes,
+    SVGAttributes,
 } from "../utils"
 
 /**
@@ -54,5 +54,5 @@ export type SvgAttributes = {
 export type SvgProps =
     ISVGProps<SVGSVGElement>
     & SvgAttributes
-    & CommonSVGPresentationAttributes // TODO: confirm svg attributes
-    & Pick<SVGPresentationAttributes, "overflow">
+    & CommonSVGAttributes // TODO: confirm svg attributes
+    & Pick<SVGAttributes, "overflow">

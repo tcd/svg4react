@@ -1,4 +1,4 @@
-import type { SVGCoreAttributes, SVGPresentationAttributes } from "../types"
+import type { SVGCoreAttributes, SVGAttributes } from "../types"
 import processTransformProps from "./process-transform-list"
 
 /**
@@ -9,7 +9,7 @@ const processAllProps = <T = any>(rawProps: T): T => {
         // @ts-ignore: next-line
         transform = [],
         ...processedProps
-    } = rawProps as SVGCoreAttributes & SVGPresentationAttributes
+    } = rawProps as SVGCoreAttributes & SVGAttributes
 
     // @ts-ignore: next-line
     processedProps.transform = processTransformProps(transform)

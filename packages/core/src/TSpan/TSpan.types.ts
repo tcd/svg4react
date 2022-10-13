@@ -1,4 +1,4 @@
-import type { ISVGProps, CommonSVGPresentationAttributes, SVGTextAttributes } from "../utils"
+import type { ISVGProps, CommonSVGAttributes, SVGTextAttributes } from "../utils"
 
 /**
  * @see [MDN Web Docs - `<tspan>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/tspan)
@@ -74,4 +74,4 @@ export type TSpanProps =
     ISVGProps<SVGTSpanElement>
     & TSpanAttributes
     & SVGTextAttributes
-    & CommonSVGPresentationAttributes
+    & CommonSVGAttributes

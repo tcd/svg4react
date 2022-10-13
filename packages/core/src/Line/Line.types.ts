@@ -1,4 +1,4 @@
-import type { ISVGProps, CommonSVGPresentationAttributes } from "../utils"
+import type { ISVGProps, CommonSVGAttributes } from "../utils"
 
 export type LineCoordinates = [
     /**
@@ -76,4 +76,4 @@ export type LineAttributes = {
 export type LineProps =
     ISVGProps<SVGLineElement>
     & LineAttributes
-    & CommonSVGPresentationAttributes
+    & CommonSVGAttributes

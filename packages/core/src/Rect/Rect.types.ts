@@ -1,4 +1,4 @@
-import type { ISVGProps, CommonSVGPresentationAttributes } from "../utils"
+import type { ISVGProps, CommonSVGAttributes } from "../utils"
 
 export type _RectAttributes = {
     /**
@@ -82,4 +82,4 @@ export type RectAttributes = _RectAttributes & {
 export type RectProps =
     ISVGProps<SVGRectElement>
     & RectAttributes
-    & CommonSVGPresentationAttributes
+    & CommonSVGAttributes

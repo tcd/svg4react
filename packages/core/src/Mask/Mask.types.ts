@@ -1,4 +1,4 @@
-import type { ISVGProps, CommonSVGPresentationAttributes } from "../utils"
+import type { ISVGProps, CommonSVGAttributes } from "../utils"
 
 /**
  * @see [MDN Web Docs - `<mask>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/mask)
@@ -46,4 +46,4 @@ export type MaskAttributes = {
 export type MaskProps =
     ISVGProps<SVGMaskElement>
     & MaskAttributes
-    & CommonSVGPresentationAttributes
+    & CommonSVGAttributes

@@ -1,4 +1,4 @@
-import type { CommonSVGPresentationAttributes, IRI, ISVGProps, Length } from "../utils"
+import type { CommonSVGAttributes, IRI, ISVGProps, Length } from "../utils"
 
 /**
  * @see [MDN Web Docs - `<use>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/use)
@@ -66,4 +66,4 @@ export type UseAttributes = {
 export type UseProps =
     ISVGProps<SVGUseElement>
     & UseAttributes
-    & CommonSVGPresentationAttributes
+    & CommonSVGAttributes
