@@ -1,7 +1,6 @@
 import { Box, SxProps } from "@mui/material"
 import {
     AnimateMotion,
-    AnimateTransform,
     Defs,
     DrawCommand,
     G,
@@ -36,10 +35,8 @@ const _wrapperSx: SxProps = {
 export const E = (_props: unknown): JSX.Element => {
     return (
         <Box id="cubes-e-v1" sx={rootSx}>
-            {/* @ts-ignore: next-line */}
             <Svg id="cube-1" vb={[100,110]} height="100%" overflow="hidden">
                 <Defs>
-                    {/* @ts-ignore: next-line */}
                     <Symbol id="cube-blueprint" vb={[100,110]} size={["100%"]}>
                         <G>
                             <Path commands={pathData.top}   fill="indianred" />
@@ -57,7 +54,6 @@ export const E = (_props: unknown): JSX.Element => {
                 />
 
                 <Use
-                    // @ts-ignore: next-line
                     size={["50px"]}
                     href="#cube-blueprint"
                 >
@@ -89,15 +85,6 @@ const motionPath_v1: DrawCommand[] = [
     ["M", [[25, -60]]],
     ["v", [180]],
     // ["Z", []],
-]
-
-const motionPath_v2: DrawCommand[] = [
-    ["M", [[25,0]]],
-    ["v", [150]],
-    ["h", [150]],
-    ["v", [-200]],
-    ["h", [-200]],
-    ["Z", []],
 ]
 
 const pathData: Record<Side, DrawCommand[]> = {

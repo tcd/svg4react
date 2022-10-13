@@ -56,7 +56,14 @@ export const V2 = (_props: unknown): JSX.Element => {
                     {/* Pixels under white are rendered */}
                     <Rect points={[0, 0]} size={[1015,855]} fill="white" />
                     {/* Pixels under black are hidden */}
-                    <Rect points={[315]} size={[150]} className="moveme" transform="rotate(45, 395, 395)">
+                    <Rect
+                        points={[315]}
+                        size={[150]}
+                        // transform="rotate(45, 395, 395)"
+                        transform={[
+                            ["rotate", [45, 395, 395]],
+                        ]}
+                    >
                         <AnimateTransform {...animateTransformProps} />
                     </Rect>
                 </Mask>
@@ -75,7 +82,7 @@ export const V2 = (_props: unknown): JSX.Element => {
                 </G>
 
                 {showMask && (
-                    <Rect points={[315,335]} size={[150]} fill="#f00" opacity="0.1" transform="rotate(45, 395, 395)">
+                    <Rect points={[315,335]} size={[150]} fill="#f00" opacity="0.1" transform={[["rotate", [45, 395, 395]]]}>
                         <AnimateTransform {...animateTransformProps} />
                     </Rect>
                 )}

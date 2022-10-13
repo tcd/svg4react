@@ -17,7 +17,7 @@ export const V1 = (_props: unknown): JSX.Element => {
                     {/* Pixels under white are rendered */}
                     <Rect points={[0, 0]} size={[1015,855]} fill="white" />
                     {/* Pixels under black are hidden */}
-                    <Rect points={[315]} size={[150]} className="moveme" transform="rotate(45, 395, 395)">
+                    <Rect points={[315]} size={[150]} className="moveme" transform={[["rotate", [45, 395, 395]]]}>
                         <animateTransform
                             attributeName="transform"
                             attributeType="XML"
@@ -65,7 +65,7 @@ export const V1 = (_props: unknown): JSX.Element => {
                 </G>
 
                 {/* uncomment the rect below to visualize the animation applied to the mask */}
-                <Rect points={[315,335]} size={[150]} fill="#f00" opacity="0.1" transform="rotate(45, 395, 395)">
+                <Rect points={[315,335]} size={[150]} fill="#f00" opacity="0.1" transform={[["rotate", [45, 395, 395]]]}>
                     <animateTransform attributeName="transform" attributeType="XML" type="scale" keyTimes="0; 0.25999; 0.26; 1" values="1; 1; 0; 0" dur="5s" additive="sum" repeatCount="indefinite"/>
                 </Rect>
 

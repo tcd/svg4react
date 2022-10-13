@@ -3,6 +3,9 @@
         "**/node_modules": true,
         // "**/tmp": true,
     },
+    "search.exclude": {
+        "**/dist": true
+    },
     "files.associations": {
         "*.json": "jsonc",
         "**/packages/docs/dist/*.js": "plaintext",
