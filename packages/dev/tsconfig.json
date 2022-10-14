@@ -16,10 +16,10 @@
         ],
     },
     // "rootDir": "./src",
-    "baseUrl": ".",
-    "paths": {
-        "~/*": ["./src/*"]
-    },
+    // "baseUrl": ".",
+    // "paths": {
+    //     "~/*": ["./src/*"]
+    // },
     // NEW: Options for file/directory watching
     "watchOptions": {
         // Use native file system events for files and directories

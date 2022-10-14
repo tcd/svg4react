@@ -9,6 +9,7 @@ export type ReflectionKind =
     | "intersection"
 
 export const parseReferenceType = (project: ProjectParser, reflection: any): any => {
+    debugger
     try {
         let result: any = {}
 

@@ -72,6 +72,8 @@ export const parseReflectionChild = (project: ProjectParser, reflection: any): P
         debugger
     }
 
+    // debugger
+
     switch (t) {
         case "intrinsic":
             result.type = reflection.type.name
@@ -174,12 +176,24 @@ const parseTuple = (prop: any): string => {
     const elements = prop.type.elements
 
     if (elements?.every(x => (x?.kind ?? x?.type) === "named-tuple-member")) {
-        const members = elements.map(x => [
-            x.name,
-            (x.isOptional ? "?: " : ": "),
-            x.element?.name ?? x.element?.value,
-        ].join("")).join(", ")
-        return `[${members}]`
+        const members = []
+
+        // FIXME: parse members
+        for (const element of elements) {
+            let elementType: string
+            if (element?.type === "union") {
+                elementType = parseUnion({ type: element })
+            } else {
+                elementType = element.element?.name ?? element.element?.value
+            }
+            members.push([
+                element.name,
+                (element.isOptional ? "?: " : ": "),
+                elementType,
+            ].join(""))
+        }
+
+        return `[${members.join(", ")}]`
     }
 
     return "[parseTuple] Unhandled"

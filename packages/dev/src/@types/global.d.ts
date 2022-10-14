@@ -8,8 +8,10 @@ export declare global {
     export interface PropData {
         name?: string
         type?: string
+        required?: boolean
         default?: string
         description?: string
+        shorthand?: string[]
     }
 
     export interface ComponentData {
