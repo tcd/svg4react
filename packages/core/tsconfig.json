@@ -13,10 +13,16 @@
         ],
         "types": [
             "node",
+            "jest",
         ],
         "typeRoots": [
             "./node_modules/@types",
         ],
+        "paths": {
+            "@svg4react/core/src/utils/test-utils": ["./packages/core/src/utils/test-utils.tsx"],
+            // "@svg4react/dev/*":  ["./packages/dev/src/*"],
+            // "@svg4react/docs/*": ["./packages/docs/src/*"],
+        },
     },
     "include": [
         "./src/**/*.ts",

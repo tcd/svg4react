@@ -1,17 +1,11 @@
 import { test, render, screen } from "../utils/test-utils"
 
-import RadialGradient from "./RadialGradient"
+import Svg from "./Svg"
 
-test("RadialGradient", () => {
-    render(
-        <RadialGradient
-            id="myGradient"
-            stops={[
-                { offset: "10%", stopColor: "red"  },
-                { offset: "95%", stopColor: "blue" },
-            ]}
-        />
-    )
+test("Svg", () => {
+    render(<Svg
+        id="myGradient"
+    />)
     screen.debug()
 
     // fireEvent.click(screen.getByText("Load Greeting"))
