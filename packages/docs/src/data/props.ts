@@ -99,8 +99,8 @@ export const PropData: Record<Svg4ReactComponent, PropData[]> = {
     Circle: [
         {
             name: "coordinates",
-            type: "[cx: number, cy: number]",
-            description: "The x and y axis coordinates of the center of the circle.\n\nWill override `cx` and `cy`.",
+            type: "[cx: number, cy?: number]",
+            description: "The x and y axis coordinates of the center of the circle.\n\nIf only one value is provided, it will be passed to both `cx` and `cy`.\n\nWill override `cx` and `cy`.",
         },
         {
             name: "cx",

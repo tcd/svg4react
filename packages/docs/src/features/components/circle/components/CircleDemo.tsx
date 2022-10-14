@@ -20,17 +20,15 @@ export const CircleDemo = (_props: unknown): JSX.Element => {
 // =============================================================================
 
 const code = `
-import { Svg, Circle, CircleProps } from "svg4react"
-
-const circleProps: CircleProps = {
-    coordinates: [50, 50],
-    r: 50,
-    fill: "${randomColor()}",
-}
+import { Svg, Circle } from "svg4react"
 
 render(
     <Svg size="75%" vb={[100]}>
-        <Circle {...circleProps} />
+        <Circle
+            coordinates={[50]}
+            r="50"
+            fill="${randomColor()}"
+        />
     </Svg>
 )
 `
