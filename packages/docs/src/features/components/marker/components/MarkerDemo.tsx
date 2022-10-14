@@ -1,15 +1,20 @@
+import { useSelector } from "react-redux"
 import { Svg, Defs, Marker, Path, Circle, Polyline } from "svg4react"
 
+import { Selectors } from "@app/state"
 import { LiveDemo } from "@app/features/live-demo"
 
 export const MarkerDemo = (_props: unknown): JSX.Element => {
+
+    const darkModeEnabled = useSelector(Selectors.Core.darkModeEnabled)
+
     const scope = { Svg, Defs, Marker, Path, Circle, Polyline }
 
     return (
         <LiveDemo
             id="marker-demo-1"
             title="Demo"
-            code={code}
+            code={code(darkModeEnabled)}
             scope={scope}
         />
     )
@@ -17,7 +22,11 @@ export const MarkerDemo = (_props: unknown): JSX.Element => {
 
 // =============================================================================
 
-const code = `
+const code = (darkMode: boolean) => {
+
+    const color = darkMode ? "white" : "black"
+
+    return `
 import { Svg, Defs, Marker, Path, Circle, Polyline } from "svg4react"
 
 render(
@@ -27,26 +36,21 @@ render(
             <Marker
                 id="arrow"
                 viewBox="0 0 10 10"
-                refXY={[5,5]}
-                markerSize={[6,6]}
+                refXY={[5]}
+                size={[6]}
                 orient="auto-start-reverse"
             >
-                <Path commands={[
-                    ["M", [[0,0]]],
-                    ["L", [[10,5]]],
-                    ["L", [[0,10]]],
-                    ["Z", []],
-                ]}/>
+                <Path d="M 0,0 L 10,5 0,10 Z" fill="${color}" />
             </Marker>
 
             {/* simple dot marker definition */}
             <Marker
                 id="dot"
                 viewBox="0 0 10 10"
-                refXY={[5,5]}
-                markerSize={[5,5]}
+                refXY={[5]}
+                markerSize={[5]}
             >
-                <Circle coordinates={[5,5]} r="5" fill="red" />
+                <Circle coordinates={[5]} r="5" fill="red" />
             </Marker>
         </Defs>
 
@@ -54,7 +58,7 @@ render(
         <Polyline
             points={[[10,10], [10,90], [90,90]]}
             fill="none"
-            stroke="black"
+            stroke="${color}"
             markerStart="url(#arrow)"
             markerEnd="url(#arrow)"
         />
@@ -71,3 +75,4 @@ render(
     </Svg>
 )
 `
+}
