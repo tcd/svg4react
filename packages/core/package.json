@@ -1,7 +1,7 @@
 {
     "name": "svg4react",
     "description": "React components & TypeScript types for creating SVG elements.",
-    "version": "0.14.0",
+    "version": "0.15.0",
     "license": "MIT",
     "author": "Clay Dunston <dunstontc@gmail.com>",
     "repository": "github:tcd/svg4react",
@@ -22,7 +22,7 @@
         "build": "npm run build:clean && npm run build:declarations && npm run build:esm && npm run build:types && npm run build:tidy && npm run typedoc",
         "build:clean": "cross-env rimraf ./dist/**/*",
         "build:declarations": "node ../dev/build/tasks/core/build-src-declarations.js",
-        "build:esm": "cross-env tsc",
+        "build:esm": "cross-env tsc -p ./tsconfig.build.json",
         "build:types": "cross-env rollup -c ./rollup.config.js",
         "build:tidy": "node ../dev/build/tasks/core/consolidate-types.js",
         "typedoc": "cross-env typedoc --options ./typedoc.json",
