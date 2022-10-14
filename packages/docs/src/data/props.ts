@@ -141,7 +141,7 @@ export const PropData: Record<Svg4ReactComponent, PropData[]> = {
         {
             "name": "coordinates",
             "description": "Shorthand for `cx` and `cy`.\n\nThe x and y axis coordinates of the center of the Ellipse.\n\n**Will** override `cx` and `cy`",
-            "type": "[cx: number, cy: number]",
+            "type": "[cx: number, cy?: number]",
         },
         {
             "name": "cx",
@@ -161,7 +161,7 @@ export const PropData: Record<Svg4ReactComponent, PropData[]> = {
         {
             "name": "radius",
             "description": "Shorthand for `rx` and `ry`.\n\nThe radius of the ellipse on the x and y axis.\n\n**Will** override `rx` and `ry`",
-            "type": "[cx: number, cy: number]",
+            "type": "[cx: number, cy?: number]",
         },
         {
             "name": "rx",
