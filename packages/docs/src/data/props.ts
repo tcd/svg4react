@@ -123,6 +123,20 @@ export const PropData: Record<Svg4ReactComponent, PropData[]> = {
             description: "The total length for the circle's circumference, in user units.",
         },
     ],
+    ClipPath: [
+        {
+            "name": "id",
+            "description": "required",
+            "type": "string",
+            "required": true,
+        },
+        {
+            "name": "clipPathUnits",
+            "description": "Defines the coordinate system for the contents of the `<ClipPath>` element.",
+            "type": '"userSpaceOnUse" | "objectBoundingBox"',
+            "default": '"userSpaceOnUse"',
+        },
+    ],
     Ellipse: [
         {
             "name": "coordinates",
@@ -367,7 +381,6 @@ export const PropData: Record<Svg4ReactComponent, PropData[]> = {
     ],
     AnimateMotion: [],
     AnimateTransform: [],
-    ClipPath: [],
     Defs: [],
     ForeignObject: [],
     G: [],
