@@ -6,7 +6,7 @@ test("Svg", () => {
     render(<Svg
         id="myGradient"
     />)
-    screen.debug()
+    // screen.debug()
 
     // fireEvent.click(screen.getByText("Load Greeting"))
 

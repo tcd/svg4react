@@ -19,7 +19,7 @@ const RadialGradient = (props: RadialGradientProps): JSX.Element => {
     const $stops = stops.map((stop, index) => <Stop key={index} {...stop} />)
 
     // @ts-ignore: next-line
-    const processedProps = processRadialGradientProps(...otherProps)
+    const processedProps = processRadialGradientProps(otherProps)
 
     return (
         // @ts-ignore: next-line
