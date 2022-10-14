@@ -1,6 +1,6 @@
 import type { SVGCoreAttributes } from "./attributes"
 import type {
-    AriaAttributes,
+    // AriaAttributes,
     DOMAttributes,
     ClassAttributes,
 } from "react"
@@ -13,6 +13,7 @@ import type {
 export interface ISVGProps<T extends SVGElement> extends
     SVGCoreAttributes,
     ClassAttributes<T>,
-    AriaAttributes,
+    // FIXME: uncomment before next stable release
+    // AriaAttributes,
     DOMAttributes<T>
 {}
