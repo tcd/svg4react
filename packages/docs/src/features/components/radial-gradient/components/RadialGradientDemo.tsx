@@ -1,11 +1,11 @@
-import { Svg, RadialGradient, Circle } from "svg4react"
+import { Svg, RadialGradient, Defs, Circle } from "svg4react"
 
 import { randomColor } from "@app/util"
 import { LiveDemo } from "@app/features/live-demo"
 
 export const RadialGradientDemo = (_props: unknown): JSX.Element => {
 
-    const scope = { Svg, RadialGradient, Circle }
+    const scope = { Svg, RadialGradient, Defs, Circle }
 
     return (
         <LiveDemo
@@ -20,18 +20,20 @@ export const RadialGradientDemo = (_props: unknown): JSX.Element => {
 // =============================================================================
 
 const code = `
-import { Svg, Circle, RadialGradient } from "svg4react"
+import { Svg, RadialGradient, Defs, Circle } from "svg4react"
 
 render(
     <Svg size="100%" vb={[10]}>
 
-        <RadialGradient
-            id="myGradient"
-            stops={[
-                { offset: "10%", stopColor: "${randomColor()}" },
-                { offset: "95%", stopColor: "${randomColor()}" },
-            ]}
-        />
+        <Defs>
+            <RadialGradient
+                id="myGradient"
+                stops={[
+                    { offset: "10%", stopColor: "${randomColor()}" },
+                    { offset: "95%", stopColor: "${randomColor()}" },
+                ]}
+            />
+        </Defs>
 
         <Circle
             fill="url(#myGradient)"
