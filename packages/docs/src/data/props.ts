@@ -1,5 +1,5 @@
 export const PropData: Record<Svg4ReactComponent, PropData[]> = {
-    Animate: [
+    "Animate": [
         {
             "name": "additive",
             "description": "Controls whether or not an animation is additive.",
@@ -96,34 +96,34 @@ export const PropData: Record<Svg4ReactComponent, PropData[]> = {
             "type": "any[]",
         },
     ],
-    Circle: [
+    "Circle": [
         {
-            name: "coordinates",
-            type: "[cx: number, cy?: number]",
-            description: "The x and y axis coordinates of the center of the circle.\n\nIf only one value is provided, it will be passed to both `cx` and `cy`.\n\nWill override `cx` and `cy`.",
+            "name": "coordinates",
+            "type": "[cx: number, cy?: number]",
+            "description": "The x and y axis coordinates of the center of the circle.\n\nIf only one value is provided, it will be passed to both `cx` and `cy`.\n\nWill override `cx` and `cy`.",
         },
         {
-            name: "cx",
-            type: "number | string",
-            description: "The x-axis coordinate of the center of the circle.",
+            "name": "cx",
+            "type": "number | string",
+            "description": "The x-axis coordinate of the center of the circle.",
         },
         {
-            name: "cy",
-            type: "number | string",
-            description: "The y-axis coordinate of the center of the circle.",
+            "name": "cy",
+            "type": "number | string",
+            "description": "The y-axis coordinate of the center of the circle.",
         },
         {
-            name: "r",
-            type: "number | string",
-            description: "The radius of the circle.\n\nA value lower or equal to zero disables rendering of the circle.",
+            "name": "r",
+            "type": "number | string",
+            "description": "The radius of the circle.\n\nA value lower or equal to zero disables rendering of the circle.",
         },
         {
-            name: "pathLength",
-            type: "number | string",
-            description: "The total length for the circle's circumference, in user units.",
+            "name": "pathLength",
+            "type": "number | string",
+            "description": "The total length for the circle's circumference, in user units.",
         },
     ],
-    ClipPath: [
+    "ClipPath": [
         {
             "name": "id",
             "description": "required",
@@ -137,48 +137,50 @@ export const PropData: Record<Svg4ReactComponent, PropData[]> = {
             "default": '"userSpaceOnUse"',
         },
     ],
-    Ellipse: [
+    "Ellipse": [
         {
             "name": "coordinates",
-            "description": "Shorthand for `cx` and `cy`.\n\nThe x and y axis coordinates of the center of the Ellipse.\n\n**Will** override `cx` and `cy`",
+            "description": "The x and y axis coordinates of the center of the Ellipse (`cx` and `cy`).\n\nIf only one value is provided, it will be passed to both `cx` and `cy`.\n\n**Will** override `cx` and `cy`.",
             "type": "[cx: number, cy?: number]",
+            "shorthand": ["cx", "cy"],
+        },
+        {
+            "name": "radius",
+            "description": "The radius of the ellipse on the x and y axis (`rx` and `ry).\n\nIf only one value is provided, it will be passed to both `rx` and `ry`.\n\n**Will** override `rx` and `ry`.",
+            "type": "[rx: number, ry?: number]",
+            "shorthand": ["rx", "ry"],
         },
         {
             "name": "cx",
             "description": "The x-axis coordinate of the center of the ellipse.",
-            type: "number | string",
+            "type": "number | string",
         },
         {
             "name": "cy",
             "description": "The y-axis coordinate of the center of the ellipse.",
-            type: "number | string",
-        },
-        {
-            "name": "pathLength",
-            "description": "This attribute lets specify the total length for the path, in user units.",
-            type: "number | string",
-        },
-        {
-            "name": "radius",
-            "description": "Shorthand for `rx` and `ry`.\n\nThe radius of the ellipse on the x and y axis.\n\n**Will** override `rx` and `ry`",
-            "type": "[cx: number, cy?: number]",
+            "type": "number | string",
         },
         {
             "name": "rx",
             "description": "The radius of the ellipse on the x axis.",
-            type: "number | string",
+            "type": "number | string",
         },
         {
             "name": "ry",
             "description": "The radius of the ellipse on the y axis.",
-            type: "number | string",
+            "type": "number | string",
+        },
+        {
+            "name": "pathLength",
+            "description": "This attribute lets specify the total length for the path, in user units.",
+            "type": "number | string",
         },
     ],
-    Line: [
+    "Line": [
         {
-            name: "coordinates",
-            type: `[\n    x1: number | string,\n    y1: number | string,\n    x2: number | string,\n    y2: number | string,\n]`,
-            description: "Values, in order, as a string or number, for:\n\n- `x1` - x-axis start\n\n- `y1` - y-axis start\n\n- `x2` - x-axis end\n\n- `y2` - y-axis end",
+            "name": "coordinates",
+            "type": `[\n    x1: number | string,\n    y1: number | string,\n    x2: number | string,\n    y2: number | string,\n]`,
+            "description": "Values, in order, as a string or number, for:\n\n- `x1` - x-axis start\n\n- `y1` - y-axis start\n\n- `x2` - x-axis end\n\n- `y2` - y-axis end",
         },
         {
             name: "pathLength",
@@ -187,7 +189,7 @@ export const PropData: Record<Svg4ReactComponent, PropData[]> = {
             default: "none",
         },
     ],
-    LinearGradient: [
+    "LinearGradient": [
         {
             "name": "gradientTransform",
             "description": "This attribute provides additional [transformation](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform) to the gradient coordinate system.\n\n[MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/gradientTransform)",
@@ -235,7 +237,7 @@ export const PropData: Record<Svg4ReactComponent, PropData[]> = {
             "type": "string | number",
         },
     ],
-    Polygon: [
+    "Polygon": [
         {
             "name": "points",
             "description": "The list of points (pairs of x,y absolute coordinates) required to draw the polygon.",
@@ -247,20 +249,20 @@ export const PropData: Record<Svg4ReactComponent, PropData[]> = {
             "type": "number",
         },
     ],
-    Polyline: [
+    "Polyline": [
         {
-            name: "points",
-            type: "[x: number, y: number][]",
-            description: "The list of points (pairs of x,y absolute coordinates) required to draw the polyline.",
-            default: "[]",
+            "name": "points",
+            "type": "[x: number, y: number][]",
+            "description": "The list of points (pairs of x,y absolute coordinates) required to draw the polyline.",
+            "default": "[]",
         },
         {
-            name: "pathLength",
-            type: "number",
-            description: "Defines the total path length in user units.",
+            "name": "pathLength",
+            "type": "number",
+            "description": "Defines the total path length in user units.",
         },
     ],
-    Rect: [
+    "Rect": [
         {
             "name": "points",
             "description": "Shorthand for the x and y axis coordinates of the center of the rect.",
@@ -277,7 +279,7 @@ export const PropData: Record<Svg4ReactComponent, PropData[]> = {
             "type": "[width: number, height?: number]",
         },
     ],
-    Stop: [
+    "Stop": [
         {
             "name": "color",
             "description": "Used to provide a potential indirect value (currentcolor) for\nthe `fill`, `stroke`, `stop-color`, `flood-color`, and `lighting-color` attributes.\n\nSee [MDN Web Docs - `color`](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/color)",
@@ -309,30 +311,30 @@ export const PropData: Record<Svg4ReactComponent, PropData[]> = {
             "type": "csstype.Property.Visibility",
         },
     ],
-    Svg: [
+    "Svg": [
         {
-            name: "size",
-            type: "string",
-            description: "Shorthand for setting both `width` and `height`.",
+            "name": "size",
+            "type": "string",
+            "description": "Shorthand for setting both `width` and `height`.",
         },
         {
-            name: "vb",
-            type: "[width: number, height?: number]",
-            description: `Shorthand for the setting the last two values of \`viewBox\`\n\nIf only one value is passed, it will be assigned to both \`width\` and \`height\`.\n\n\`minX\` and \`minY\` are set to 0, resulting in \`"0 0 width height"\`.\n\nWill **not** override \`viewBox\` if both are passed.`,
+            "name": "vb",
+            "type": "[width: number, height?: number]",
+            "description": `Shorthand for the setting the last two values of \`viewBox\`\n\nIf only one value is passed, it will be assigned to both \`width\` and \`height\`.\n\n\`minX\` and \`minY\` are set to 0, resulting in \`"0 0 width height"\`.\n\nWill **not** override \`viewBox\` if both are passed.`,
         },
         {
-            name: "viewBox",
-            type: "string",
-            description: "The SVG viewport coordinates for the current SVG fragment.\n\nSee [MDN Web Docs - viewBox](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/viewBox).",
+            "name": "viewBox",
+            "type": "string",
+            "description": "The SVG viewport coordinates for the current SVG fragment.\n\nSee [MDN Web Docs - viewBox](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/viewBox).",
         },
         {
-            name: "preserveAspectRatio",
-            type: '"none" | `x${"Min"|"Mid"|"Max"}Y${"Min"|"Mid"|"Max"} ${"meet"|"slice"}`',
-            description: "How the `svg` fragment must be deformed if it is displayed with a different aspect ratio.\n\nSee [MDN Web Docs - preserveAspectRatio](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/preserveAspectRatio).",
-            default: '"xMidYMid meet"',
+            "name": "preserveAspectRatio",
+            "type": '"none" | `x${"Min"|"Mid"|"Max"}Y${"Min"|"Mid"|"Max"} ${"meet"|"slice"}`',
+            "description": "How the `svg` fragment must be deformed if it is displayed with a different aspect ratio.\n\nSee [MDN Web Docs - preserveAspectRatio](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/preserveAspectRatio).",
+            "default": '"xMidYMid meet"',
         },
     ],
-    Text: [
+    "Text": [
         {
             "name": "coordinates",
             "description": "Shorthand for the x and y coordinates of the starting point of the text baseline.\n\nIf only one value is provided, it will be used for `x` and `y`.\n\n**Will** override `x` and `y`.",
@@ -379,18 +381,18 @@ export const PropData: Record<Svg4ReactComponent, PropData[]> = {
             "type": "number | string",
         },
     ],
-    AnimateMotion: [],
-    AnimateTransform: [],
-    Defs: [],
-    ForeignObject: [],
-    G: [],
-    Marker: [],
-    Mask: [],
-    MPath: [],
-    Path: [],
-    RadialGradient: [],
-    Symbol: [],
-    TextPath: [],
-    TSpan: [],
-    Use: [],
+    "AnimateMotion": [],
+    "AnimateTransform": [],
+    "Defs": [],
+    "ForeignObject": [],
+    "G": [],
+    "Marker": [],
+    "Mask": [],
+    "MPath": [],
+    "Path": [],
+    "RadialGradient": [],
+    "Symbol": [],
+    "TextPath": [],
+    "TSpan": [],
+    "Use": [],
 }

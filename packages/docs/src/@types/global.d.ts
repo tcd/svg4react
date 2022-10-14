@@ -37,6 +37,7 @@ export declare global {
         required?: boolean
         default?: string
         description?: string
+        shorthand?: string[]
     }
 
     // =========================================================================

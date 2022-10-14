@@ -20,19 +20,15 @@ export const EllipseDemo = (_props: unknown): JSX.Element => {
 // =============================================================================
 
 const code = `
-import { Svg, Ellipse, EllipseProps } from "svg4react"
-
-const props: EllipseProps = {
-    fill: "${randomColor()}",
-    coordinates: [100, 50],
-    // radius: [100, 50], // work in progress
-    rx: 100,
-    ry: 50,
-}
+import { Svg, Ellipse } from "svg4react"
 
 render(
     <Svg size="75%" vb={[200,100]}>
-        <Ellipse {...props} />
+        <Ellipse
+            fill="${randomColor()}"
+            coordinates={[100,50]}
+            radius={[100,50]}
+        />
     </Svg>
 )
 `
