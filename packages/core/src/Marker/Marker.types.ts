@@ -1,6 +1,6 @@
-import type { ISVGProps, CommonSVGAttributes } from "../utils"
+import type { ISVGProps, CommonSVGAttributes, Length } from "../utils"
 
-export type MarkerRef = "left" | "center" | "right" | number | string // | SVGLength
+export type MarkerRef = "left" | "center" | "right" | Length
 
 export type MarkerAttributes = {
     /**
