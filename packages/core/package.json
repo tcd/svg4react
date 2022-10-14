@@ -28,7 +28,11 @@
         "typedoc": "cross-env typedoc --options ./typedoc.json",
         "tag": "node ../dev/build/tasks/core/tag/main.js",
         "publish:next": "npm publish --tag next",
-        "publish:latest": "npm publish --tag latest"
+        "publish:latest": "npm publish --tag latest",
+        "test": "npm run test:mocha:2:working",
+        "test:mocha1": "cross-env TS_NODE_PROJECT='./tsconfig.test.json' NODE_ENV=test mocha -r ts-node/esm 'src/**/*.test.{js,ts,tsx}'",
+        "test:mocha2:working": "cross-env NODE_ENV=test ts-mocha -p ./tsconfig.test.json 'src/**/*.test.{js,ts,tsx}'",
+        "test:mocha3": "cross-env NODE_ENV=test ts-mocha -p ./tsconfig.test.json -r jsdom-global/register 'dist/**/*.test.{js,ts,tsx}'"
     },
     "dependencies": {
         "react-children-utilities": "^2.8.0"
@@ -39,18 +43,31 @@
         "react-dom": "^17.0.0 || ^18.0.0"
     },
     "devDependencies": {
+        "@testing-library/dom": "^8.19.0",
+        "@testing-library/react": "^13.4.0",
+        "@types/chai": "^4.3.3",
+        "@types/jest": "^29.1.2",
+        "@types/mocha": "^10.0.0",
         "@types/node": "^18.7.18",
         "@types/react": "^18.0.20",
         "@types/react-dom": "^18.0.6",
+        "chai": "^4.3.6",
         "cross-env": "^7.0.3",
+        "jest": "^29.2.0",
+        "jsdom": "^20.0.1",
+        "jsdom-global": "^3.0.2",
+        "mocha": "^10.0.0",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "rimraf": "^3.0.2",
         "rollup": "^2.79.1",
         "rollup-plugin-dts": "^4.2.2",
+        "ts-jest": "^29.0.3",
+        "ts-mocha": "^10.0.0",
+        "ts-node": "^10.9.1",
         "type-fest": "^3.0.0",
         "typedoc": "^0.23.15",
         "typedoc-plugin-missing-exports": "^1.0.0",
-        "typescript": "^4.8.3"
+        "typescript": "^4.8.4"
     }
 }

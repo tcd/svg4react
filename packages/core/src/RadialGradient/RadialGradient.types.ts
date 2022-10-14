@@ -55,7 +55,7 @@ export type RadialGradientAttributes = {
      *
      * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/gradientTransform)
      */
-    gradientTransform: string
+    gradientTransform?: string
     /**
      * This attribute indicates how the gradient behaves if it starts or ends inside the bounds of the shape containing the gradient.
      *
