@@ -1,4 +1,5 @@
 import type { GProps } from "./G.types"
+import processProps from "./process-g-props"
 
 /**
  * A wrapper for the [`<g>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/g) element.
@@ -9,10 +10,13 @@ import type { GProps } from "./G.types"
  * It can also group multiple elements to be referenced later with the [`<use>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/use) element.
  */
 const G = (props: GProps) => {
+
+    const processedProps = processProps(props)
+
     return (
         // @ts-ignore: next-line
         <g
-            {...props}
+            {...processedProps}
         />
     )
 }

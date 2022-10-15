@@ -13,6 +13,7 @@ const AnimateTransform = (props: AnimateTransformProps): JSX.Element => {
     return (
         // @ts-ignore: next-line
         <animateTransform
+            attributeName="transform"
             {...processedProps}
         />
     )

@@ -1,12 +1,14 @@
 import type { ISVGProps, SVGAnimationAttributes } from "../utils"
 
+export type AnimateTransformType = "translate" | "scale" | "rotate" | "skewX" | "skewY"
+
 export type AnimateTransformAttributes = {
     /**
      * The type of transformation, whose values change over time.
      *
      * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/type#for_the_animatetransform_elements)
      */
-    type?: "translate" | "scale" | "rotate" | "skewX" | "skewY"
+    type?: AnimateTransformType
 }
 
 /**
@@ -15,4 +17,4 @@ export type AnimateTransformAttributes = {
 export type AnimateTransformProps =
     ISVGProps<SVGAnimateTransformElement>
     & AnimateTransformAttributes
-    & SVGAnimationAttributes
+    & Omit<SVGAnimationAttributes, "attributeName"> // always set to "transform"
