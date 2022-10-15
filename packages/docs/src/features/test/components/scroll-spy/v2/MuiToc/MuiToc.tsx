@@ -21,9 +21,9 @@ function useThrottledOnScroll(callback: () => void, delay: number) {
             return undefined
         }
 
-        window.addEventListener("scroll", throttledCallback)
+        document.getElementById("root").addEventListener("scroll", throttledCallback)
         return () => {
-            window.removeEventListener("scroll", throttledCallback)
+            document.getElementById("root").removeEventListener("scroll", throttledCallback)
             // @ts-ignore: next-line
             throttledCallback?.cancel()
         }
@@ -58,12 +58,13 @@ export type MuiTocProps = {
 export const MuiToc = (props: MuiTocProps): JSX.Element => {
     const { toc } = props
 
-    // const items = useMemo(() => flatten(toc), [toc])
-    const items = toc
+    const items = useMemo(() => flatten(toc), [toc])
+    // const items = toc
     const [activeState, setActiveState] = useState(null)
     const clickedRef = useRef(false)
     const unsetClickedRef = useRef(null)
     const findActiveIndex = useCallback(() => {
+        const root = document.getElementById("root")
         // Don't set the active index based on scroll if a link was just clicked
         if (clickedRef.current) {
             return
@@ -72,7 +73,7 @@ export const MuiToc = (props: MuiTocProps): JSX.Element => {
         let active
         for (let i = items.length - 1; i >= 0; i -= 1) {
             // No hash if we're near the top of the page
-            if (document.documentElement.scrollTop < 200) {
+            if (root.scrollTop < 200) {
                 active = { hash: null }
                 break
             }
@@ -86,8 +87,7 @@ export const MuiToc = (props: MuiTocProps): JSX.Element => {
 
             if (
                 node &&
-                node.offsetTop <
-                document.documentElement.scrollTop + document.documentElement.clientHeight / 8
+                node.offsetTop < (root.scrollTop + root.clientHeight / 8)
             ) {
                 active = item
                 break
@@ -98,6 +98,10 @@ export const MuiToc = (props: MuiTocProps): JSX.Element => {
             setActiveState(active.hash)
         }
     }, [activeState, items])
+
+    useEffect(() => {
+        console.log({ activeState })
+    }, [activeState])
 
     // Corresponds to 10 frames at 60 Hz
     useThrottledOnScroll(items.length > 0 ? findActiveIndex : null, 166)
@@ -119,19 +123,16 @@ export const MuiToc = (props: MuiTocProps): JSX.Element => {
         }
     }
 
-    useEffect(
-        () => () => {
-            clearTimeout(unsetClickedRef.current)
-        },
-        [],
-    )
+    useEffect(() => () => {
+        clearTimeout(unsetClickedRef.current)
+    }, [])
 
     if (!(toc.length > 0)) {
         return null
     }
 
     return (
-        <Nav aria-label="pageTOC">
+        <Nav>
             <NavLabel gutterBottom>Table of Contents</NavLabel>
             <NavList>
                 {toc.map((item, i) => (

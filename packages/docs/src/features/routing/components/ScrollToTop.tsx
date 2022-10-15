@@ -24,7 +24,12 @@ export const ScrollToTop = (_props: unknown): JSX.Element => {
             // window.scrollTo(0, 0)
         } else {
             // eslint-disable-next-line no-console
-            console.log("FIXME: handle hashes")
+            const $target = document.getElementById(hash.slice(1))
+            if ($target) {
+                const targetY = $target.offsetTop - 93
+                document.getElementById("root").scrollTo(0, targetY)
+                // document.getElementById(hash.slice(1)).scrollIntoView()
+            }
         }
     }, [
         pathname,
