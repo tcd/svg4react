@@ -6,26 +6,23 @@ import ReactMarkdown from "react-markdown"
 import remarkRemoveComments from "remark-remove-comments"
 import remarkGfm from "remark-gfm"
 import remarkBreaks from "remark-breaks"
-import rehypeExternalLinks from "rehype-external-links"
 
 import { cleanMarkdownString } from "@app/util"
+import { markdownLink } from "./components"
 
-export interface MarkdownSnippetProps {
+export interface MarkdownDocProps {
     content: string
-    /** @default false */
-    noExternalLinks?: boolean
 }
 
 /**
- * Used to render markdown from a string.
+ * Used to render markdown from local files.
  */
-export const MarkdownSnippet = (props: MarkdownSnippetProps): JSX.Element => {
+export const MarkdownDoc = (props: MarkdownDocProps): JSX.Element => {
 
     const theme = useTheme()
 
     const {
         content = "",
-        noExternalLinks = false,
     } = props
 
     if (content === null) {
@@ -42,9 +39,9 @@ export const MarkdownSnippet = (props: MarkdownSnippetProps): JSX.Element => {
             remarkGfm,
             remarkBreaks,
         ],
-        rehypePlugins: (noExternalLinks ? [] : [
-            [rehypeExternalLinks, { target: "_blank", rel: ["noopener noreferrer"] }],
-        ]),
+        components: {
+            a: markdownLink,
+        },
     }
 
     return (
