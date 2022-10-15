@@ -1,6 +1,9 @@
 import type { ReactNode } from "react"
 import type { Element } from "hast"
-import { Link } from "react-router-dom"
+import { Link as RouterLink } from "react-router-dom"
+import { Link as MuiLink } from "@mui/material"
+
+import { ISxProps as SxProps } from "@app/theme"
 
 type MarkdownLinkProps = Omit<JSX.IntrinsicElements["a"], "ref"> &  {
     node: Element,
@@ -17,19 +20,29 @@ export const MarkdownLink = (props: MarkdownLinkProps): JSX.Element => {
 
     if (href.startsWith("/")) {
         return (
-            <Link
+            <MuiLink
+                component={RouterLink}
                 to={href}
+                sx={sx}
                 {...otherProps}
             />
         )
     }
 
     return (
-        <a
+        <MuiLink
             href={href}
             target="_blank"
             rel="noopener noreferrer"
+            // sx={sx}
             {...otherProps}
         />
     )
+}
+
+const sx: SxProps = {
+    "&:hover": {
+        color: (theme) => theme.palette.primary.main,
+        cursor: "pointer",
+    },
 }
