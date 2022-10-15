@@ -1,9 +1,7 @@
-// import { Box, Typography } from "@mui/material"
-
-import { Page, MarkdownDoc, Card, PropsTable } from "@app/features/shared"
-import markdown from "@app/data/markdown/DrawArgs.md"
-import { DRAW_ARGS_DATA } from "../DrawCommand/draw-args"
 import { Stack } from "@mui/material"
+import { Page, MarkdownDoc, Card, PropsTable } from "@app/features/shared"
+import { DRAW_ARGS_DATA } from "../DrawCommand/draw-args"
+import markdown from "@app/data/markdown/DrawArgs.md"
 
 export const DrawArgsPage = (_props: unknown): JSX.Element => {
     return (

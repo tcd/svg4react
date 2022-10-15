@@ -34,20 +34,9 @@ import {
     UsePage,
 } from "@app/features/components"
 // import { PlaygroundPage } from "@app/features/playground"
-import {
-    DrawCommandPage,
-} from "@app/features/packages/core"
-import { TypesPage } from "@app/features/types"
-import {
-    GradientTextPage,
-    LogosPage,
-    MonacoPage,
-    PreserveAspectRatioPage,
-    TestPage,
-    CircleMotionPage,
-    BurgerPage,
-    CubesPage,
-} from "@app/features/test"
+
+import { testRoutes } from "@app/features/test"
+import { corePackageRoutes } from "@app/features/packages/core"
 
 export const Routes = (_props: unknown): JSX.Element => {
     return useRoutes(routes())
@@ -57,19 +46,7 @@ const routes = (): RouteObject[] => {
 
     const devRoutes: RouteObject[] = []
     if (CONFIG.env !== "production") {
-        devRoutes.push({
-            path: "examples",
-            children: [
-                { index: true, element: <TestPage /> },
-                { path: "logos", element: <LogosPage /> },
-                { path: "monaco", element: <MonacoPage /> },
-                { path: "preserve-aspect-ratio", element: <PreserveAspectRatioPage /> },
-                { path: "gradient-text", element: <GradientTextPage /> },
-                { path: "circle-motion", element: <CircleMotionPage /> },
-                { path: "burger", element: <BurgerPage /> },
-                { path: "cubes", element: <CubesPage /> },
-            ],
-        })
+        devRoutes.push(testRoutes)
     }
 
     return [
@@ -80,7 +57,6 @@ const routes = (): RouteObject[] => {
                 { index: true,        element: <HomePage />       },
                 { path: "changelog",  element: <ChangelogPage />  },
                 // { path: "playground", element: <PlaygroundPage /> },
-                { path: "types",      element: <TypesPage />      },
                 {
                     path: "components",
                     children: [
@@ -111,13 +87,7 @@ const routes = (): RouteObject[] => {
                         { path: "Use",              element: <UsePage />              },
                     ],
                 },
-                {
-                    path: "core",
-                    children: [
-                        { index: true,         element: <NotFoundPage /> },
-                        { path: "DrawCommand", element: <DrawCommandPage /> },
-                    ],
-                },
+                ...[corePackageRoutes],
                 ...devRoutes,
                 { path: "*", element: <NotFoundPage /> },
             ],

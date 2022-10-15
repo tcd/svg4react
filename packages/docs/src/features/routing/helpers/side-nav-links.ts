@@ -7,6 +7,9 @@ import DescriptionIcon from "@mui/icons-material/Description"
 import ScienceIcon from "@mui/icons-material/Science"
 // import TerminalIcon from "@mui/icons-material/Terminal"
 
+import { testSideNavItems } from "@app/features/test"
+import { corePackageSideNavItems } from "@app/features/packages"
+
 import { CONFIG } from "@app/util"
 
 export const SIDE_NAV_LINKS: (ILinkData | ILinksData)[] = [
@@ -62,25 +65,13 @@ export const SIDE_NAV_LINKS: (ILinkData | ILinksData)[] = [
     {
         title: "Component API",
         Icon: DataObjectIcon,
-        links: [
-            // { title: "Playground",  to: "/playground" },
-            { title: "DrawCommand", to: "/core/DrawCommand" },
-        ],
+        links: corePackageSideNavItems,
     },
     ...(CONFIG.env !== "production" ? [
         {
             title: "Examples",
             Icon: ScienceIcon,
-            links: [
-                { title: "Test", to: "/examples/" },
-                { title: "Logos", to: "/examples/logos" },
-                { title: "Monaco", to: "/examples/monaco" },
-                { title: "Preserve Aspect Ratio", to: "/examples/preserve-aspect-ratio" },
-                { title: "Gradient Text", to: "/examples/gradient-text" },
-                { title: "Circle Motion", to: "/examples/circle-motion" },
-                { title: "Burger", to: "/examples/burger" },
-                { title: "Cubes", to: "/examples/cubes" },
-            ],
+            links: testSideNavItems,
         },
     ] : []),
 ]

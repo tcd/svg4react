@@ -382,7 +382,13 @@ export const PropData: Record<Svg4ReactComponent, PropData[]> = {
         },
     ],
     "AnimateMotion": [],
-    "AnimateTransform": [],
+    "AnimateTransform": [
+        {
+            name: "type",
+            type: '"translate" | "scale" | "rotate" | "skewX" | "skewY"',
+            description: "The type of transformation, whose values change over time.\n\n## See\n\n- [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/type#for_the_animatetransform_elements)",
+        },
+    ],
     "Defs": [],
     "ForeignObject": [],
     "G": [],
