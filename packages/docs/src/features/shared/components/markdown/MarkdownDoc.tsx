@@ -8,7 +8,10 @@ import remarkGfm from "remark-gfm"
 import remarkBreaks from "remark-breaks"
 
 import { cleanMarkdownString } from "@app/util"
-import { MarkdownLink } from "./components"
+import {
+    MarkdownLink,
+    MarkdownCodeBlock,
+} from "./components"
 
 export interface MarkdownDocProps {
     content: string
@@ -33,7 +36,6 @@ export const MarkdownDoc = (props: MarkdownDocProps): JSX.Element => {
 
     const options: Omit<ReactMarkdownOptions, "children"> = {
         skipHtml: false,
-        // linkTarget: "_blank",
         remarkPlugins: [
             remarkRemoveComments,
             remarkGfm,
@@ -41,6 +43,7 @@ export const MarkdownDoc = (props: MarkdownDocProps): JSX.Element => {
         ],
         components: {
             a: MarkdownLink,
+            code: MarkdownCodeBlock,
         },
     }
 
