@@ -9,6 +9,7 @@ import {
     CircleMotionPage,
     BurgerPage,
     CubesPage,
+    ScrollSpyPage,
 } from "@app/features/test"
 
 export const testRoutes: RouteObject = {
@@ -22,6 +23,7 @@ export const testRoutes: RouteObject = {
         { path: "circle-motion", element: <CircleMotionPage /> },
         { path: "burger", element: <BurgerPage /> },
         { path: "cubes", element: <CubesPage /> },
+        { path: "scroll-spy", element: <ScrollSpyPage /> },
     ],
 }
 
@@ -35,4 +37,5 @@ export const testSideNavItems: ILinkData[] = [
     { title: "Circle Motion", to: "/examples/circle-motion" },
     { title: "Burger", to: "/examples/burger" },
     { title: "Cubes", to: "/examples/cubes" },
+    { title: "ScrollSpy", to: "/examples/scroll-spy" },
 ]
