@@ -63,7 +63,8 @@ export const SIDE_NAV_LINKS: (ILinkData | ILinksData)[] = [
     //     ],
     // },
     {
-        title: "Component API",
+        // title: "Component API",
+        title: "Types",
         Icon: DataObjectIcon,
         links: corePackageSideNavItems,
     },

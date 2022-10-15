@@ -1,4 +1,4 @@
-import { Svg, AnimateMotion, Path, Circle, CmdProp } from "svg4react"
+import { Svg, AnimateMotion, Path, Circle, DrawCommand } from "svg4react"
 
 import { randomColor } from "@app/util"
 import { LiveDemo } from "@app/features/live-demo"
@@ -20,12 +20,14 @@ export const AnimateMotionDemo = (_props: unknown): JSX.Element => {
 // =============================================================================
 
 const code = `
-import { Svg, AnimateMotion, Path, Circle, CmdProp } from "svg4react"
+import { Svg, AnimateMotion, Path, Circle, DrawCommand } from "svg4react"
 
-const path: CmdProp[] = [
+const path: DrawCommand[] = [
     ["M", [[20,50]]],
-    ["C", [[ 20,-50,  180,150, 180,50]]],
-    ["C", [[180,-50,   20,150,  20,50 ]]],
+    ["C", [
+        [ 20,-50, 180,150, 180,50],
+        [180,-50,  20,150,  20,50],
+    ]],
     ["Z", []],
 ]
 
@@ -51,10 +53,12 @@ render(
 
 export const _AnimateMotionDemo = (_props: unknown): JSX.Element => {
 
-    const path: CmdProp[] = [
+    const path: DrawCommand[] = [
         ["M", [[20,50]]],
-        ["C", [[ 20,-50,  180,150, 180,50]]],
-        ["C", [[180,-50,   20,150,  20,50 ]]],
+        ["C", [
+            [ 20,-50, 180,150, 180,50],
+            [180,-50,  20,150,  20,50],
+        ]],
         ["Z", []],
     ]
 

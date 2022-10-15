@@ -13,7 +13,7 @@ export const DRAW_ARGS_DATA: PropData[] = [
     { name: "h", description: "horizontal_lineto_relative", type: `number` },
     { name: "V", description: "vertical_lineto_absolute", type: `number` },
     { name: "v", description: "vertical_lineto_relative", type: `number` },
-    { name: "C", description: "curveto_absolute", type: dedent`[\n\n    x1: number, y1: number,\n\n    x2: number, y2: number,\n\n    x:  number, y:  number,\n\n]` },
+    { name: "C", description: "curveto_absolute", type: dedent`[\n    x1: number, y1: number,\n    x2: number, y2: number,\n    x:  number, y:  number,\n]` },
     { name: "c", description: "curveto_relative", type: dedent`[
         dx1: number, dy1: number,
         dx2: number, dy2: number,
