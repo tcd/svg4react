@@ -8,7 +8,7 @@ import remarkGfm from "remark-gfm"
 import remarkBreaks from "remark-breaks"
 
 import { cleanMarkdownString } from "@app/util"
-import { markdownLink } from "./components"
+import { MarkdownLink } from "./components"
 
 export interface MarkdownDocProps {
     content: string
@@ -40,7 +40,7 @@ export const MarkdownDoc = (props: MarkdownDocProps): JSX.Element => {
             remarkBreaks,
         ],
         components: {
-            a: markdownLink,
+            a: MarkdownLink,
         },
     }
 

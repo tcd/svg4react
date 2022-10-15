@@ -1,11 +1,35 @@
-export type MarkdownComponentArgs = {
-    node: any,
-} & any[]
+import type { ReactNode } from "react"
+import type { Element } from "hast"
+import { Link } from "react-router-dom"
 
-export const markdownLink = ({ node, ...props }: { node: any }) => {
+type MarkdownLinkProps = Omit<JSX.IntrinsicElements["a"], "ref"> &  {
+    node: Element,
+    children?: ReactNode[]
+}
+
+export const MarkdownLink = (props: MarkdownLinkProps): JSX.Element => {
+
+    const {
+        node,
+        href = "",
+        ...otherProps
+    } = props
+
+    if (href.startsWith("/")) {
+        return (
+            <Link
+                to={href}
+                {...otherProps}
+            />
+        )
+    }
+
     return (
-        <>
-            <a {...props} />
-        </>
+        <a
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            {...otherProps}
+        />
     )
 }
