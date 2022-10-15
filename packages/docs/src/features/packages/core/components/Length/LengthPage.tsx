@@ -1,5 +1,5 @@
 import { Stack } from "@mui/material"
-import { Page, MarkdownDoc, Card } from "@app/features/shared"
+import { Page, MarkdownSnippet, Card } from "@app/features/shared"
 import markdown from "./length.md"
 
 export const LengthPage = (_props: unknown): JSX.Element => {
@@ -7,7 +7,7 @@ export const LengthPage = (_props: unknown): JSX.Element => {
         <Page title="Length">
             <Stack spacing={3}>
                 <Card title="Length">
-                    <MarkdownDoc content={markdown} noExternalLinks />
+                    <MarkdownSnippet content={markdown} noExternalLinks />
                 </Card>
             </Stack>
         </Page>

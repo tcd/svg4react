@@ -1,4 +1,4 @@
-import { Card, MarkdownDoc } from "@app/features/shared"
+import { Card, MarkdownSnippet } from "@app/features/shared"
 import componentDocs from "@data/components.json"
 
 export const PathOverview = (_props: unknown): JSX.Element => {
@@ -7,7 +7,7 @@ export const PathOverview = (_props: unknown): JSX.Element => {
 
     return (
         <Card title="<Path>" componentName="Path" suffix="">
-            <MarkdownDoc content={doc}/>
+            <MarkdownSnippet content={doc}/>
         </Card>
     )
 }

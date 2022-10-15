@@ -10,13 +10,13 @@ import rehypeExternalLinks from "rehype-external-links"
 
 import { cleanMarkdownString } from "@app/util"
 
-export interface MarkdownDocProps {
+export interface MarkdownSnippetProps {
     content: string
     /** @default false */
     noExternalLinks?: boolean
 }
 
-export const MarkdownDoc = (props: MarkdownDocProps): JSX.Element => {
+export const MarkdownSnippet = (props: MarkdownSnippetProps): JSX.Element => {
 
     const theme = useTheme()
 

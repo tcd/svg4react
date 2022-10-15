@@ -1,6 +1,6 @@
 import { TableCell, TableRow } from "@mui/material"
 
-import { MarkdownDoc } from "@app/features/shared/components/MarkdownDoc"
+import { MarkdownSnippet } from "@app/features/shared/components/markdown/MarkdownSnippet"
 import { PropTypeCell } from "./PropTypeCell"
 import { PropNameCell } from "./PropNameCell"
 
@@ -17,7 +17,7 @@ export const PropsTableRow = ({ prop }: { prop: PropData }): JSX.Element => {
                 {prop?.default}
             </TableCell> */}
             <TableCell>
-                <MarkdownDoc content={prop?.description} />
+                <MarkdownSnippet content={prop?.description} />
             </TableCell>
         </TableRow>
     )

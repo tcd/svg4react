@@ -4,7 +4,7 @@ import { LiveProvider, withLive } from "react-live"
 
 import { DocsSx } from "@app/theme"
 import { trimCode } from "@app/util"
-import { Card, MarkdownDoc } from "@app/features/shared"
+import { Card, MarkdownSnippet } from "@app/features/shared"
 import { cleanCode, WithLiveProps } from "@app/features/live-demo"
 import { LiveEditor } from "./LiveEditor"
 import { LiveDemoError } from "./LiveDemoError"
@@ -60,7 +60,7 @@ const _LiveDemo = (props: CustomLiveDemoProps): JSX.Element => {
 
             {description &&
                 <Box>
-                    <MarkdownDoc content={description}/>
+                    <MarkdownSnippet content={description}/>
                     <Divider sx={{ my: 2 }} />
                 </Box>
             }
