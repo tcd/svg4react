@@ -14,7 +14,7 @@ export const Layout = (_props: unknown): JSX.Element => {
 
             <AppDrawer />
 
-            <Box component="main" sx={DocsSx.Layout.Layout.main}>
+            <Box id="svg4react__main" component="main" sx={DocsSx.Layout.Layout.main}>
                 <Toolbar sx={DocsSx.Layout.Header.headerSpacer} />
                 <Outlet />
             </Box>

@@ -20,9 +20,11 @@ export const ScrollToTop = (_props: unknown): JSX.Element => {
         // }
 
         if (!hash) {
-            window.scrollTo(0, 0)
+            document.getElementById("root").scrollTo(0, 0)
+            // window.scrollTo(0, 0)
         } else {
-            // FIXME: handle hashes
+            // eslint-disable-next-line no-console
+            console.log("FIXME: handle hashes")
         }
     }, [
         pathname,
