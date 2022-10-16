@@ -8,7 +8,10 @@ import ScienceIcon from "@mui/icons-material/Science"
 // import TerminalIcon from "@mui/icons-material/Terminal"
 
 import { testSideNavItems } from "@app/features/test"
-import { corePackageSideNavItems } from "@app/features/packages"
+import {
+    basePackageSideNavItems,
+    corePackageSideNavItems,
+} from "@app/features/packages"
 
 import { CONFIG } from "@app/util"
 
@@ -23,36 +26,6 @@ export const SIDE_NAV_LINKS: (ILinkData | ILinksData)[] = [
             { title: "Changelog", to: "/changelog", Icon: DescriptionIcon },
         ],
     },
-    {
-        title: "Components",
-        Icon: CodeIcon,
-        links: [
-            { title: "Animate",          to: "/components/Animate" },
-            { title: "AnimateMotion",    to: "/components/AnimateMotion" },
-            { title: "AnimateTransform", to: "/components/AnimateTransform" },
-            { title: "Circle",           to: "/components/Circle" },
-            { title: "ClipPath",         to: "/components/ClipPath" },
-            { title: "Ellipse",          to: "/components/Ellipse" },
-            { title: "ForeignObject",    to: "/components/ForeignObject" },
-            { title: "Line",             to: "/components/Line" },
-            { title: "LinearGradient",   to: "/components/LinearGradient" },
-            { title: "Mask",             to: "/components/Mask" },
-            { title: "Marker",           to: "/components/Marker" },
-            { title: "MPath",            to: "/components/MPath" },
-            { title: "Path",             to: "/components/Path" },
-            { title: "Polygon",          to: "/components/Polygon" },
-            { title: "Polyline",         to: "/components/Polyline" },
-            { title: "RadialGradient",   to: "/components/RadialGradient" },
-            { title: "Rect",             to: "/components/Rect" },
-            { title: "Stop",             to: "/components/Stop" },
-            { title: "Svg",              to: "/components/Svg" },
-            { title: "Symbol",           to: "/components/Symbol" },
-            { title: "Text",             to: "/components/Text" },
-            { title: "TextPath",         to: "/components/TextPath" },
-            { title: "TSpan",            to: "/components/TSpan" },
-            { title: "Use",              to: "/components/Use" },
-        ],
-    },
     // {
     //     title: "Animation",
     //     Icon: AnimationIcon,
@@ -62,6 +35,11 @@ export const SIDE_NAV_LINKS: (ILinkData | ILinksData)[] = [
     //         { title: "AnimateTransform", to: "/components/AnimateTransform" },
     //     ],
     // },
+    {
+        title: "Components",
+        Icon: CodeIcon,
+        links: basePackageSideNavItems,
+    },
     {
         // title: "Component API",
         title: "Types",
