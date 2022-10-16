@@ -1,14 +1,15 @@
+import type { ReactNode } from "react"
 import { useEffect } from "react"
 import { useDispatch } from "react-redux"
 
 import { Actions } from "@app/state"
 
-export type PageProps = {
+export type PageV2Props = {
     title: string
-    children: React.ReactNode
+    children: ReactNode
 }
 
-export const Page = (props: PageProps): JSX.Element => {
+export const PageV2 = (props: PageV2Props): JSX.Element => {
 
     const dispatch = useDispatch()
 

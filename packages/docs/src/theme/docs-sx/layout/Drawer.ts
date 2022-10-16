@@ -3,8 +3,6 @@ import type { Theme } from "@mui/material"
 import { ThemeVars } from "@app/theme/variables"
 import type { ISxProps as SxProps } from "@app/theme/helpers"
 
-const { drawerWidth, headerHeight } = ThemeVars
-
 // =============================================================================
 // Shared
 // =============================================================================
@@ -28,14 +26,14 @@ const _navBg = (theme: Theme, opacity = 0.702) => {
 const mobileDrawer: SxProps = (theme: Theme) => ({
     ..._navBg(theme, 0.9),
     background: theme.palette.mode === "dark" ? "#121212" : undefined,
-    width: drawerWidth,
+    width: ThemeVars.drawerWidth,
 })
 
 const desktopDrawer: SxProps = (theme: Theme) => ({
-    width: drawerWidth,
+    width: ThemeVars.drawerWidth,
     flexShrink: 0,
     "& .MuiDrawer-paper": {
-        width: drawerWidth,
+        width: ThemeVars.drawerWidth,
         boxSizing: "border-box",
         // background: theme.palette.mode === "dark" ? "#121212" : undefined,
     },
@@ -46,7 +44,7 @@ const desktopDrawer: SxProps = (theme: Theme) => ({
 })
 
 const drawerHeader: SxProps = {
-    height: `${headerHeight}px`,
+    height: ThemeVars.headerHeight,
     pl: "11.6px",
     pr: "16px",
 
@@ -69,10 +67,10 @@ const navItemWithChildren: SxProps = {
     justifyContent: "center",
     // px: 2.5,
     "& > svg.docs-nav-chevron": {
-        color: theme => theme.palette.primary.main,
+        color: (theme) => theme.palette.primary.main,
     },
     "&:hover > svg.docs-nav-chevron": {
-        color: theme => theme.palette.mode == "dark" ? "white" : "#696969",
+        color: (theme) => theme.palette.mode == "dark" ? "white" : "#696969",
     },
 }
 

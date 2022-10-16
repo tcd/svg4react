@@ -20,6 +20,7 @@ export const Routes = (_props: unknown): JSX.Element => {
 const routes = (): RouteObject[] => {
 
     const devRoutes: RouteObject[] = []
+
     if (CONFIG.env !== "production") {
         devRoutes.push(testRoutes)
     }
@@ -29,8 +30,8 @@ const routes = (): RouteObject[] => {
             path: "/",
             element: <Layout />,
             children: [
-                { index: true,        element: <HomePage />       },
-                { path: "changelog",  element: <ChangelogPage />  },
+                { index: true,       element: <HomePage />      },
+                { path: "changelog", element: <ChangelogPage /> },
                 // { path: "playground", element: <PlaygroundPage /> },
                 ...[
                     basePackageRoutes,

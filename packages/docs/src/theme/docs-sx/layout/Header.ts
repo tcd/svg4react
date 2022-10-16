@@ -4,19 +4,17 @@ import { ThemeVars } from "@app/theme/variables"
 import type { ISxProps as SxProps } from "@app/theme/helpers"
 import { _navBg } from "./nav-bg"
 
-const { drawerWidth, headerHeight } = ThemeVars
-
 const headerSpacer: SxProps = (theme: Theme) => ({
 
-    width: `calc(100% - ${drawerWidth})`,
-    ml: drawerWidth,
+    width: `calc(100% - ${ThemeVars.drawerWidth})`,
+    ml: ThemeVars.drawerWidth,
 
     [theme.breakpoints.down("laptop")]: {
         width: "100%",
         ml: "0px",
     },
 
-    height: `${headerHeight}px`,
+    height: ThemeVars.headerHeight,
 })
 
 const headerRoot: SxProps = (theme: Theme) => ({
