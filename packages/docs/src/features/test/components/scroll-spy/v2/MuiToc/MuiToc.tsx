@@ -73,15 +73,16 @@ export const MuiToc = (props: MuiTocProps): JSX.Element => {
         let active
         for (let i = items.length - 1; i >= 0; i -= 1) {
             // No hash if we're near the top of the page
-            if (root.scrollTop < 200) {
-                active = { hash: null }
-                break
-            }
+            // if (root.scrollTop < 200) {
+            //     active = { hash: null }
+            //     break
+            // }
 
             const item = items[i]
             const node = document.getElementById(item.hash)
 
             if (!node) {
+                // eslint-disable-next-line no-console
                 console.error(`Missing node on the item ${JSON.stringify(item, null, 2)}`)
             }
 
@@ -99,12 +100,8 @@ export const MuiToc = (props: MuiTocProps): JSX.Element => {
         }
     }, [activeState, items])
 
-    useEffect(() => {
-        console.log({ activeState })
-    }, [activeState])
-
     // Corresponds to 10 frames at 60 Hz
-    useThrottledOnScroll(items.length > 0 ? findActiveIndex : null, 166)
+    useThrottledOnScroll((items.length > 0 ? findActiveIndex : null), 166)
 
     const handleClick = (hash: any) => (event: any) => {
         // Ignore click for new tab/new window behavior

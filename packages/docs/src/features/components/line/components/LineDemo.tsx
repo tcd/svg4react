@@ -22,19 +22,14 @@ export const LineDemo = (_props: unknown): JSX.Element => {
 const color = randomColor()
 
 const code = `
-import { Svg, Line, LineProps } from "svg4react"
-
-const lineProps: LineProps = {
-    stroke: "${color}",
-    coordinates: [
-        0,80,
-        100,20,
-    ],
-}
+import { Svg, Line } from "svg4react"
 
 render(
     <Svg size="90%" vb={[100]}>
-        <Line {...lineProps} />
+        <Line
+            stroke="${color}"
+            coordinates={[0,80, 100,20]}
+        />
     </Svg>
 )
 `
