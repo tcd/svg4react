@@ -11,16 +11,22 @@ import {
 } from "svg4react"
 
 let showPoints = false
-showPoints = true
+// showPoints = true
 
 const pathPoints: [number, number][] = [
-    // [10.95, 22.80],
-    [31.6611, 34.72713],
-    [32.4, 36],
-    [32.3837, 41.7698],
+    [31.6611, 34.72713], // exact
+    [32.3914, 35.99000],
+    [32.3751, 41.75980],
+    [31.6411, 42.18570],
+    [10.9487, 30.23860],
+    [10.2196, 28.96790],
+    [10.2359, 23.19810],
+    [10.9699, 22.78000],
+    [31.6611, 33.72713], // need to close it off farther northeast to prevent a gap
+    // [31.6611, 34.72713], // exact
 ]
 
-const pathData: DrawCommand[] = [
+const pathData_front: DrawCommand[] = [
     /** start at top right */
     ["M", [[31.6611, 34.72713]]],
     // right-inside
@@ -30,15 +36,32 @@ const pathData: DrawCommand[] = [
     // // right-bottom (left)
     ["c", [[-0.0014, 0.4664, -0.3284, 0.6602, -0.734, 0.4259]]],
     // // left-bottom (right)
-    // ["l", [[-20.6924, -11.9471]]],
+    ["l", [[-20.6924, -11.9471]]],
     // // left-bottom-curve (left)
-    // ["c", [[-0.4057, -0.2343, -0.7305, -0.8043, -0.7291, -1.2707]]],
+    ["c", [[-0.4057, -0.2343, -0.7305, -0.8043, -0.7291, -1.2707]]],
     // // left-top (left)
-    // ["l", [[0.0163, -5.7698]]],
+    ["l", [[0.0163, -5.7698]]],
     // // left-top (right)
-    // ["c", [[0.0013, -0.466, 0.3283, -0.6523, 0.734, -0.4181]]],
+    ["c", [[0.0013, -0.466, 0.3283, -0.6523, 0.734, -0.4181]]],
     // // close
+    ["L", [[31.6611, 33.72713]]],
     ["z", []],
+]
+
+const pathData_top: DrawCommand[] = [
+    ["m", [[33.8615, 35.13943], [-0.0209, 5.7709]]],
+    ["c", [[0, 0.2294, -0.0833, 0.3963, -0.2187, 0.469]]],
+    ["l", [[-1.4688, 0.854]]],
+    ["c", [[0.1354, -0.0728, 0.2188, -0.2396, 0.2188, -0.4685]]],
+    ["l", [[0.0209, -5.7709]]],
+    ["c", [[0, -0.469, -0.323, -1.0315, -0.7292, -1.2711]]],
+    ["l", [[-20.6928, -11.9446]]],
+    ["c", [[-0.2083, -0.1144, -0.3854, -0.1246, -0.5208, -0.0519]]],
+    ["l", [[1.4687, -0.854]]],
+    ["c", [[0.125, -0.0727, 0.3126, -0.0625, 0.5209, 0.0519]]],
+    ["l", [[20.6927, 11.9446]]],
+    ["c", [[0.4063, 0.2396, 0.7292, 0.8022, 0.7292, 1.2706]]],
+    ["z",[]],
 ]
 
 export const V1 = (_props: unknown): JSX.Element => {
@@ -49,12 +72,17 @@ export const V1 = (_props: unknown): JSX.Element => {
                 <Circle
                     key={i}
                     coordinates={[x, y]}
-                    r="0.4"
-                    fill="rebeccapurple"
+                    r="0.375"
+                    fill="red"
+                    fillOpacity={0.5}
                 />
-                <Text coordinates={
-                    [x + 0.075, y]
-                } fontSize="0.5px" fill="white" textAnchor="middle" dominantBaseline="central">
+                <Text
+                    coordinates={[x + 0.075, y]}
+                    fontSize="0.5px"
+                    fill="white"
+                    textAnchor="middle"
+                    dominantBaseline="central"
+                >
                     {i + 1}
                 </Text>
             </>
@@ -72,7 +100,7 @@ export const V1 = (_props: unknown): JSX.Element => {
                         refXY={[5]}
                         size={[5]}
                     >
-                        <Circle coordinates={[5]} r="0.75" fill="lime" />
+                        <Circle coordinates={[5]} r="0.75" fill="blue" />
                     </Marker>
                 </Defs>
                 <G>
@@ -100,16 +128,13 @@ export const V1 = (_props: unknown): JSX.Element => {
                         <G id="notification">
                             <Path
                                 fill="#cfd8dd"
-                                // @ts-ignore: next-line
-                                markerMid="url(#dot)"
-                                commands={pathData}
+                                commands={pathData_front}
                             />
-                            {/* <path
-                                id="top"
+                            <Path
                                 fill="#dde4e7"
-                                // fillOpacity={0.5}
-                                d="m33.8615 35.13943-.0209 5.7709c0 .2294-.0833.3963-.2187.469l-1.4688.854c.1354-.0728.2188-.2396.2188-.4685l.0209-5.7709c0-.469-.323-1.0315-.7292-1.2711l-20.6928-11.9446c-.2083-.1144-.3854-.1246-.5208-.0519l1.4687-.854c.125-.0727.3126-.0625.5209.0519l20.6927 11.9446c.4063.2396.7292.8022.7292 1.2706z"
-                            /> */}
+                                // @ts-ignore: next-line
+                                commands={pathData_top}
+                            />
                             {showPoints && $pathPoints}
                             <G id="lines" fill="#616ab1">
                                 <path d="m22.3594 34.79093-.0029 1.032-4.9814-2.8761.0029-1.032z" />
