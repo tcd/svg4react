@@ -1,4 +1,4 @@
-import type { ISVGProps, CommonSVGAttributes } from "../utils"
+import type { ISVGProps, CommonSVGAttributes, MarkerAttachAttributes } from "../utils"
 
 export type PolylineCoordinate = [
     x: number,
@@ -28,3 +28,4 @@ export type PolylineProps =
     ISVGProps<SVGPolylineElement>
     & PolylineAttributes
     & CommonSVGAttributes
+    & MarkerAttachAttributes

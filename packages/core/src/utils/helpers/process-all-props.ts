@@ -1,4 +1,5 @@
-import type { SVGCoreAttributes, SVGAttributes } from "../types"
+import type { SVGCoreAttributes, SVGAttributes, VB } from "../types"
+import buildViewBox from "./build-view-box"
 import processTransformProps from "./process-transform-list"
 
 /**
@@ -8,11 +9,14 @@ const processAllProps = <T = any>(rawProps: T): T => {
     const {
         // @ts-ignore: next-line
         transform = [],
+        vb = [],
         ...processedProps
-    } = rawProps as SVGCoreAttributes & SVGAttributes
+    } = rawProps as SVGCoreAttributes & SVGAttributes & { vb: VB }
 
     // @ts-ignore: next-line
     processedProps.transform = processTransformProps(transform)
+    // @ts-ignore: next-line
+    processedProps.viewBox = buildViewBox(vb)
 
     return processedProps as unknown as T
 }

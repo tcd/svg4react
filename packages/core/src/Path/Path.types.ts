@@ -1,4 +1,4 @@
-import type { ISVGProps, CommonSVGAttributes, DrawCommand } from "../utils"
+import type { ISVGProps, CommonSVGAttributes, DrawCommand, MarkerAttachAttributes } from "../utils"
 
 /**
  * @see [MDN Web Docs - `<path>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/path)
@@ -25,3 +25,4 @@ export type PathProps =
     ISVGProps<SVGPathElement>
     & PathAttributes
     & CommonSVGAttributes
+    & MarkerAttachAttributes

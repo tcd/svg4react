@@ -1,8 +1,14 @@
-import type { ISVGProps, CommonSVGAttributes, Length } from "../utils"
+import type { ISVGProps, CommonSVGAttributes, Length, VB } from "../utils"
 
 export type MarkerRef = "left" | "center" | "right" | Length
 
 export type MarkerAttributes = {
+    /**
+     * Shorthand for the values of `viewBox`.
+     *
+     * @shorthand viewBox
+     */
+    vb?: VB
     /**
      * Shorthand for `refX` and `refY`.
      *
@@ -68,11 +74,16 @@ export type MarkerAttributes = {
      * @default 0
      */
     refY?: "left" | "center" | "right" | number | string
+    /**
+     * @see [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/viewBox)
+     */
+    viewBox?: string
 }
 
 /**
  * @see [MDN Web Docs - `<marker>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/marker)
  */
+// FIXME: Add `vb` and process it
 export type MarkerProps =
     ISVGProps<SVGMarkerElement>
     & MarkerAttributes

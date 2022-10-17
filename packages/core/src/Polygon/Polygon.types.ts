@@ -1,4 +1,4 @@
-import type { ISVGProps, CommonSVGAttributes } from "../utils"
+import type { ISVGProps, CommonSVGAttributes, MarkerAttachAttributes } from "../utils"
 
 export type PolygonCoordinate = [
     x: number,
@@ -30,3 +30,4 @@ export type PolygonProps =
     ISVGProps<SVGPolygonElement>
     & PolygonAttributes
     & CommonSVGAttributes
+    & MarkerAttachAttributes

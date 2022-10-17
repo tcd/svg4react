@@ -1,4 +1,5 @@
 import type { SvgProps } from "./Svg.types"
+import { processAllProps } from "../utils"
 
 const defaultProps: Partial<SvgProps> = {
     // @ts-ignore: next-line
@@ -11,18 +12,10 @@ const processSvgProps = (rawProps: SvgProps): SvgProps => {
 
     const {
         size = null,
-        vb = [],
         ...processedProps
     } = {
         ...defaultProps,
         ...rawProps,
-    }
-
-    if (!processedProps.viewBox) {
-        if (Array.isArray(vb) && vb.length > 0) {
-            const [width, height = width] = vb
-            processedProps.viewBox = `0 0 ${width} ${height}`
-        }
     }
 
     if (size) {
@@ -32,7 +25,7 @@ const processSvgProps = (rawProps: SvgProps): SvgProps => {
         processedProps.height = processedProps.height ?? size
     }
 
-    return processedProps
+    return processAllProps(processedProps)
 }
 
 export default processSvgProps
