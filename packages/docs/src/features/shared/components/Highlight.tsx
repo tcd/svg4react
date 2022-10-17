@@ -14,7 +14,7 @@ import "prismjs/plugins/line-numbers/prism-line-numbers"
 import type { ISxProps as SxProps } from "@app/theme"
 import { trimCode } from "@app/util"
 
-export type HighlightLanguage = "tsx" | "html"
+export type HighlightLanguage = "tsx" | "html" | "typescript"
 
 export interface HighlightProps {
     content?: string
@@ -36,9 +36,10 @@ export const Highlight = (props: HighlightProps): JSX.Element => {
     let highlightLanguage
 
     switch (language) {
-        case "tsx":  highlightLanguage = "language-tsx";  break
-        case "html": highlightLanguage = "language-html"; break
-        default:     highlightLanguage = "language-tsx";  break
+        case "tsx":        highlightLanguage = "language-tsx";  break
+        case "html":       highlightLanguage = "language-html"; break
+        case "typescript": highlightLanguage = "language-typescript"; break
+        default:           highlightLanguage = "language-tsx";  break
     }
 
     useEffect(() => {
