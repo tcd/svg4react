@@ -10,6 +10,7 @@ import {
     BurgerPage,
     CubesPage,
     ScrollSpyPage,
+    MobilePhonePage,
 } from "@app/features/test"
 
 export const testRoutes: RouteObject = {
@@ -24,6 +25,7 @@ export const testRoutes: RouteObject = {
         { path: "burger", element: <BurgerPage /> },
         { path: "cubes", element: <CubesPage /> },
         { path: "scroll-spy", element: <ScrollSpyPage /> },
+        { path: "mobile-phone", element: <MobilePhonePage /> },
     ],
 }
 
@@ -38,4 +40,5 @@ export const testSideNavItems: ILinkData[] = [
     { title: "Burger", to: "/examples/burger" },
     { title: "Cubes", to: "/examples/cubes" },
     { title: "ScrollSpy", to: "/examples/scroll-spy" },
+    { title: "Mobile Phone", to: "/examples/mobile-phone" },
 ]

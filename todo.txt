@@ -7,3 +7,4 @@ x 2022-09-30 2022-09-30 Re-highlight raw output on update @docs
 2022-10-11 Expand G functionality @core
 2022-10-11 Forward style props from SVG @core
 x 2022-10-13 2022-10-13 AnimateTransform needs an `attributeName` prop @core
+2022-10-17 Marker needs a `viewBox/vb` prop @core
