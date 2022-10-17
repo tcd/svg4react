@@ -24,7 +24,8 @@ export const MarkdownCodeBlock = (props: MarkdownCodeBlockProps): JSX.Element =>
 
     return !inline && match ? (
         <Highlight
-            // language={match[1]}
+            // @ts-ignore: next-line
+            language={match[1]}
             content={String(children).replace(/\n$/, "")}
         />
     ) : (
