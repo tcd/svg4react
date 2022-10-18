@@ -1,8 +1,7 @@
 import { TableCell, TableRow } from "@mui/material"
 
 import { MarkdownSnippet } from "@app/features/shared/components/markdown/MarkdownSnippet"
-import { PropTypeCell } from "./PropTypeCell"
-import { PropNameCell } from "./PropNameCell"
+import { PropNameCell, PropTypeCell } from "../shared"
 
 export const PropsTableRow = ({ prop }: { prop: PropData }): JSX.Element => {
     return (
