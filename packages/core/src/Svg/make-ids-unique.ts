@@ -2,8 +2,6 @@ import { cloneElement } from "react"
 import { deepMap } from "react-children-utilities"
 
 /**
- * @private
- *
  * Probably not perfect, but it saves us a dependency.
  *
  * @see [StackOverflow - How do I create a GUID / UUID?](https://stackoverflow.com/a/2117523/7687024)

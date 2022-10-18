@@ -1,4 +1,5 @@
 const JSDOC_TAGS = [
+    "private",
     "shorthand",
     "default",
     "experimental",
