@@ -9,7 +9,7 @@ export const MobilePhonePage = (_props: unknown): JSX.Element => {
             <Card title="Mobile Phone">
                 <Stack direction="column" spacing={5}>
                     {/* <graphics.V0 /> */}
-                    <graphics.V1 />
+                    <graphics.V2 />
                 </Stack>
             </Card>
         </Page>

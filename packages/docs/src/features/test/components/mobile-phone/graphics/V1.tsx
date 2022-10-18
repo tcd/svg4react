@@ -10,96 +10,17 @@ import {
     DrawCommand,
 } from "svg4react"
 
-let showPoints = false
-// showPoints = true
-
-const pathPoints: [number, number][] = [
-    [31.6611, 34.72713], // exact
-    [32.3914, 35.99000],
-    [32.3751, 41.75980],
-    [31.6411, 42.18570],
-    [10.9487, 30.23860],
-    [10.2196, 28.96790],
-    [10.2359, 23.19810],
-    [10.9699, 22.78000],
-    [31.6611, 33.72713], // need to close it off farther northeast to prevent a gap
-    // [31.6611, 34.72713], // exact
-]
-
-const pathData_front: DrawCommand[] = [
-    /** start at top right */
-    ["M", [[31.6611, 34.72713]]],
-    // right-inside
-    ["c", [[0.4057, 0.2342, 0.7305, 0.7968, 0.7292, 1.2628]]],
-    // // right-bottom (right)
-    ["l", [[-0.0163, 5.7698]]],
-    // // right-bottom (left)
-    ["c", [[-0.0014, 0.4664, -0.3284, 0.6602, -0.734, 0.4259]]],
-    // // left-bottom (right)
-    ["l", [[-20.6924, -11.9471]]],
-    // // left-bottom-curve (left)
-    ["c", [[-0.4057, -0.2343, -0.7305, -0.8043, -0.7291, -1.2707]]],
-    // // left-top (left)
-    ["l", [[0.0163, -5.7698]]],
-    // // left-top (right)
-    ["c", [[0.0013, -0.466, 0.3283, -0.6523, 0.734, -0.4181]]],
-    // // close
-    ["L", [[31.6611, 33.72713]]],
-    ["z", []],
-]
-
-const pathData_top: DrawCommand[] = [
-    ["m", [[33.8615, 35.13943], [-0.0209, 5.7709]]],
-    ["c", [[0, 0.2294, -0.0833, 0.3963, -0.2187, 0.469]]],
-    ["l", [[-1.4688, 0.854]]],
-    ["c", [[0.1354, -0.0728, 0.2188, -0.2396, 0.2188, -0.4685]]],
-    ["l", [[0.0209, -5.7709]]],
-    ["c", [[0, -0.469, -0.323, -1.0315, -0.7292, -1.2711]]],
-    ["l", [[-20.6928, -11.9446]]],
-    ["c", [[-0.2083, -0.1144, -0.3854, -0.1246, -0.5208, -0.0519]]],
-    ["l", [[1.4687, -0.854]]],
-    ["c", [[0.125, -0.0727, 0.3126, -0.0625, 0.5209, 0.0519]]],
-    ["l", [[20.6927, 11.9446]]],
-    ["c", [[0.4063, 0.2396, 0.7292, 0.8022, 0.7292, 1.2706]]],
-    ["z",[]],
-]
-
 export const V1 = (_props: unknown): JSX.Element => {
-
-    const $pathPoints = pathPoints.map(([x, y], i) => {
-        return (
-            <>
-                <Circle
-                    key={i}
-                    coordinates={[x, y]}
-                    r="0.375"
-                    fill="red"
-                    fillOpacity={0.5}
-                />
-                <Text
-                    coordinates={[x + 0.075, y]}
-                    fontSize="0.5px"
-                    fill="white"
-                    textAnchor="middle"
-                    dominantBaseline="central"
-                >
-                    {i + 1}
-                </Text>
-            </>
-        )
-    })
-
     return (
-        <Box sx={{ backgroundColor: "red" }}>
+        <Box sx={{
+            backgroundColor: "red",
+            "& .debug-point": {
+                content: '"1"',
+            },
+        }}>
             <Svg size="512" vb={[50]}>
                 <Defs>
-                    <Marker
-                        id="dot"
-                        // @ts-ignore: next-line
-                        viewBox="0 0 10 10"
-                        refXY={[5]}
-                        size={[5]}
-                    >
+                    <Marker id="dot" vb={[10]} refXY={[5]} size={[5]}>
                         <Circle coordinates={[5]} r="0.75" fill="blue" />
                     </Marker>
                 </Defs>
@@ -126,16 +47,13 @@ export const V1 = (_props: unknown): JSX.Element => {
                     </G>
                     <G id="not-phone">
                         <G id="notification">
-                            <Path
-                                fill="#cfd8dd"
-                                commands={pathData_front}
-                            />
+                            <Path fill="#cfd8dd" commands={pathData_front} />
                             <Path
                                 fill="#dde4e7"
-                                // @ts-ignore: next-line
                                 commands={pathData_top}
+                                // markerMid="url(#dot)"
                             />
-                            {showPoints && $pathPoints}
+                            {showPoints && <PathPointsTop />}
                             <G id="lines" fill="#616ab1">
                                 <path d="m22.3594 34.79093-.0029 1.032-4.9814-2.8761.0029-1.032z" />
                                 <path d="m31.4192 37.80223-.0029 1.032-14.0349-8.1035.0029-1.032z" />
@@ -165,3 +83,127 @@ export const V1 = (_props: unknown): JSX.Element => {
         </Box>
     )
 }
+
+// =============================================================================
+
+const PathPointsFront = (): JSX.Element => {
+    const $pathPoints = pathPoints_front.map(([x, y], i) => {
+        return (
+            <>
+                <Circle
+                    key={i}
+                    coordinates={[x, y]}
+                    r="0.375"
+                    fill="red"
+                    fillOpacity={0.5}
+                />
+                <Text
+                    coordinates={[x + 0.075, y]}
+                    fontSize="0.5px"
+                    fill="white"
+                    textAnchor="middle"
+                    dominantBaseline="central"
+                >
+                    {i + 1}
+                </Text>
+            </>
+        )
+    })
+    return (
+        <>
+            {$pathPoints}
+        </>
+    )
+}
+
+const PathPointsTop = (): JSX.Element => {
+    const $pathPoints = pathPoints_top.map(([x, y], i) => {
+        const [pX, pY] = pathPoints_top[i-1] ?? [0, 0]
+        x = x + pX
+        y = y + pY
+        return (
+            <>
+                <Circle
+                    key={i}
+                    coordinates={[x, y]}
+                    r="0.375"
+                    fill="red"
+                    fillOpacity={0.5}
+                />
+                <Text
+                    coordinates={[x + 0.075, y]}
+                    fontSize="0.5px"
+                    fill="white"
+                    textAnchor="middle"
+                    dominantBaseline="central"
+                >
+                    {i + 1}
+                </Text>
+            </>
+        )
+    })
+    return (
+        <>
+            {$pathPoints}
+        </>
+    )
+}
+
+let showPoints = false
+// showPoints = true
+
+const pathPoints_front: [number, number][] = [
+    [31.6611, 34.72713], // exact
+    [32.3914, 35.99000],
+    [32.3751, 41.75980],
+    [31.6411, 42.18570],
+    [10.9487, 30.23860],
+    [10.2196, 28.96790],
+    [10.2359, 23.19810],
+    [10.9699, 22.78000],
+    [31.6611, 33.72713], // need to close it off farther northeast to prevent a gap
+    // [31.6611, 34.72713], // exact
+]
+
+const pathPoints_top: [number, number][] = [
+    [33.8615, 35.13943],
+    [33.8615-0.0209, 35.13943-5.7709],
+]
+
+const pathData_top: DrawCommand[] = [
+    ["m", [[33.8615, 35.13943], [-0.0209, 5.7709]]],
+    ["c", [[0, 0.2294, -0.0833, 0.3963, -0.2187, 0.469]]],
+    ["l", [[-1.4688, 0.854]]],
+    ["c", [[0.1354, -0.0728, 0.2188, -0.2396, 0.2188, -0.4685]]],
+    ["l", [[0.0209, -5.7709]]],
+    ["c", [[0, -0.469, -0.323, -1.0315, -0.7292, -1.2711]]],
+    ["l", [[-20.6928, -11.9446]]],
+    ["c", [[-0.2083, -0.1144, -0.3854, -0.1246, -0.5208, -0.0519]]],
+    ["l", [[1.4687, -0.854]]],
+    ["c", [[0.125, -0.0727, 0.3126, -0.0625, 0.5209, 0.0519]]],
+    ["l", [[20.6927, 11.9446]]],
+    ["c", [[0.4063, 0.2396, 0.7292, 0.8022, 0.7292, 1.2706]]],
+    ["z",[]],
+]
+
+const pathData_front: DrawCommand[] = [
+    /** start at top right */
+    ["M", [[31.6611, 34.72713]]],
+    // right-inside
+    ["c", [[0.4057, 0.2342, 0.7305, 0.7968, 0.7292, 1.2628]]],
+    // // right-bottom (right)
+    ["l", [[-0.0163, 5.7698]]],
+    // // right-bottom (left)
+    ["c", [[-0.0014, 0.4664, -0.3284, 0.6602, -0.734, 0.4259]]],
+    // // left-bottom (right)
+    ["l", [[-20.6924, -11.9471]]],
+    // // left-bottom-curve (left)
+    ["c", [[-0.4057, -0.2343, -0.7305, -0.8043, -0.7291, -1.2707]]],
+    // // left-top (left)
+    ["l", [[0.0163, -5.7698]]],
+    // // left-top (right)
+    ["c", [[0.0013, -0.466, 0.3283, -0.6523, 0.734, -0.4181]]],
+    // // close
+    ["L", [[31.6611, 33.72713]]],
+    ["z", []],
+]
