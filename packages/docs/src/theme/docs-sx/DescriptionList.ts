@@ -33,7 +33,7 @@ const dt: SxProps = {
 
 const dd: SxProps = {
     lineHeight,
-    fontSize: "1em",
+    // fontSize: "1em",
     display: "block",
     marginInlineStart: "10px",
 }

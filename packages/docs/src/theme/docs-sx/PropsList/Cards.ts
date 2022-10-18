@@ -1,5 +1,5 @@
-import type { StackProps } from "@mui/material"
 import type { ISxProps as SxProps } from "@app/theme"
+import { DarkPlusColors, LightPlusColors } from "@app/util"
 
 // =============================================================================
 // Cards
@@ -11,7 +11,7 @@ const cardsRoot: SxProps = {
 }
 
 const divider: SxProps = {
-    my: "30px",
+    my: "40px",
 }
 
 // =============================================================================
@@ -22,6 +22,15 @@ const root: SxProps = {
     // backgroundColor: "cyan",
     display: "flex",
     flexFlow: "column nowrap",
+    overflow: "scroll",
+    pr: 1,
+}
+
+const title: SxProps = {
+    display: "block",
+    fontSize: "20px",
+    // pb: "25px",
+    color: (theme) => theme.palette.mode === "dark" ? DarkPlusColors.variable : LightPlusColors.variable,
 }
 
 const header: SxProps = {
@@ -46,6 +55,7 @@ export const Cards = {
     divider,
     card: {
         root,
+        title,
         header,
         content,
     },

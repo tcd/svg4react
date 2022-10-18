@@ -5,15 +5,16 @@ import { MarkdownSnippet } from "@app/features/shared/components/markdown/Markdo
 import { DescriptionList, DescriptionListItem } from "@app/features/shared/components/DescriptionList"
 import { PropNameCell, PropTypeCell } from "../shared"
 
-const styles = DocsSx.PropsList.Cards.card
-
 export const PropCard = ({ prop }: { prop: PropData }): JSX.Element => {
 
     const dlItems: DescriptionListItem[] = [
         {
             term: "Name",
             details: (
-                <PropNameCell prop={prop} />
+                <PropNameCell
+                    prop={prop}
+                    sx={DocsSx.PropsList.Cards.card.title}
+                />
             ),
         },
         {
@@ -25,7 +26,7 @@ export const PropCard = ({ prop }: { prop: PropData }): JSX.Element => {
         {
             term: "Description",
             details: (
-                <Box sx={styles.content}>
+                <Box sx={DocsSx.PropsList.Cards.card.content}>
                     <MarkdownSnippet content={prop?.description} />
                 </Box>
             ),
@@ -33,16 +34,18 @@ export const PropCard = ({ prop }: { prop: PropData }): JSX.Element => {
     ]
 
     return (
-        <DescriptionList items={dlItems} />
+        <Box sx={DocsSx.PropsList.Cards.card.root}>
+            <DescriptionList items={dlItems} />
+        </Box>
     )
 
     return (
-        <Box sx={styles.root}>
-            <Box sx={styles.header}>
+        <Box sx={DocsSx.PropsList.Cards.card.root}>
+            <Box sx={DocsSx.PropsList.Cards.card.header}>
                 <PropNameCell prop={prop} />
                 <PropTypeCell content={prop.type} />
             </Box>
-            <Box sx={styles.content}>
+            <Box sx={DocsSx.PropsList.Cards.card.content}>
                 <MarkdownSnippet content={prop?.description} />
             </Box>
         </Box>

@@ -46,6 +46,14 @@ const _code: SxProps = {
     verticalAlign: "center",
 }
 
+const h4: SxProps = {
+    display: "unset",
+    marginBlockStart: "unset",
+    marginBlockEnd: "unset",
+    marginInlineStart: "unset",
+    marginInlineEnd: "unset",
+}
+
 // =============================================================================
 // Html / Body
 // =============================================================================
@@ -68,6 +76,7 @@ const body = (theme: Theme) => ({
     ...scrollbar(theme),
     "& ol, & ul, & li": lists,
     // "& code": code,
+    "& h4": h4,
 })
 
 // =============================================================================

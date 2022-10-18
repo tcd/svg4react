@@ -7,6 +7,7 @@ import { experimental_sx as sx } from "@mui/material/styles"
 import { ITheme } from "@app/theme/helpers/ITheme"
 import { baseStyleOverrides } from "./base-style-overrides"
 import { LinkBehavior } from "./LinkBehavior"
+import { ThemeVars } from "@app/theme/variables"
 
 export const componentOverrides: Components<ITheme> = {
     MuiCssBaseline: {
@@ -87,9 +88,19 @@ export const componentOverrides: Components<ITheme> = {
                 caption: "span",
                 overline: "span",
                 // custom
-                code: "pre",
+                code: "code",
             },
         },
+        variants: [
+            {
+                props: { variant: "code" },
+                style: {
+                    fontFamily: ThemeVars.fontFamily.monospace,
+                    display: "inline",
+                    whiteSpace: "pre",
+                },
+            },
+        ],
     },
     // -------------------------------------------------------------------------
     // Tabs

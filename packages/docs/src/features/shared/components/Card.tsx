@@ -48,7 +48,6 @@ export const Card = (props: CardProps): JSX.Element => {
             <Typography
                 gutterBottom
                 variant="h4"
-                component="div"
                 sx={DocsSx.Card.title}
             >
                 {title}
