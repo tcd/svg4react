@@ -1,2 +1,3 @@
 export * from "./Page"
-export * from "./Page.V2"
+// export { PageV2 } from "./Page.V2"
+export * from "./ComponentPage"

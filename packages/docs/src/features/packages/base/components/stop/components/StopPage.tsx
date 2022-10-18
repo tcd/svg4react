@@ -3,8 +3,14 @@ import { StopDemo } from "./StopDemo"
 
 export const StopPage = (_props: unknown): JSX.Element => {
     return (
-        <ComponentPage componentName="Stop">
-            <StopDemo />
-        </ComponentPage>
+        <ComponentPage
+            componentName="Stop"
+            demo={<StopDemo />}
+            toc={[
+                { text: "Overview", hash: "overview" },
+                { text: "Props",    hash: "props" },
+                { text: "Demo",     hash: "stop-demo-1" },
+            ]}
+        />
     )
 }

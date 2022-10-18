@@ -11,10 +11,11 @@ const root: PaperProps = {
     sx: {
         position: "relative",
         p: 3,
-        maxWidth: {
-            mobile: `calc(100vw - 24px - 24px)`, // 24px for padding
-            laptop: `calc(100vw - ${ThemeVars.drawerWidth} - 24px - 24px - 14px)`, // 24px for padding
-        },
+        maxWidth: "100%",
+        // maxWidth: {
+        //     mobile: `calc(100vw - 24px - 24px)`, // 24px for padding
+        //     laptop: `calc(100vw - ${ThemeVars.drawerWidth} - 24px - 24px - 14px)`, // 24px for padding
+        // },
     },
 }
 

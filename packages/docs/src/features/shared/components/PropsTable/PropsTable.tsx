@@ -22,7 +22,7 @@ export const PropsTable = (props: PropsTableProps): JSX.Element => {
 
     return (
         <TableContainer>
-            <Table sx={{ minWidth: 650 }}>
+            <Table>
                 <TableHead>
                     <TableRow>
                         <TableCell>Name</TableCell>

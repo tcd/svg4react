@@ -20,21 +20,20 @@ export const StopDemo = (_props: unknown): JSX.Element => {
 // =============================================================================
 
 const code = `
-import {
-    Svg,
-    Circle,
-    LinearGradient,
-    StopProps,
-} from "svg4react"
-
-const stopsProps: StopProps[] = [
-    { offset: "5%",  stopColor: "${randomColor()}" },
-    { offset: "95%", stopColor: "${randomColor()}" },
-]
+import { Svg, LinearGradient, Circle } from "svg4react"
 
 render(
     <Svg size="100%" vb={[10]}>
-        <LinearGradient id="myGradient" stops={stopsProps} />
+
+        {/* define the gradient */}
+        <LinearGradient
+            id="myGradient"
+            stops={[
+                { offset: "5%",  stopColor: "${randomColor()}" },
+                { offset: "95%", stopColor: "${randomColor()}" },
+            ]}
+        />
+
         {/* apply the gradient */}
         <Circle
             coordinates={[5,5]}

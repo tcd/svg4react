@@ -1,6 +1,5 @@
 export * from "./Card"
 export * from "./ComponentOverview"
-export * from "./ComponentPage"
 export * from "./CustomTypography"
 export * from "./DefaultErrorFallback"
 export * from "./DebugPath"

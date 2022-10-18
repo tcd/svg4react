@@ -1,14 +1,15 @@
+import type { ReactNode } from "react"
 import { Box, Divider, Paper, Typography } from "@mui/material"
 
 import type { ISxProps as SxProps } from "@app/theme"
 import { DocsSx } from "@app/theme"
 
-export interface CardProps {
+export type CardProps = JSX.IntrinsicElements["div"] & {
     id?: string
-    title: string | React.ReactNode
+    title: string | ReactNode
     componentName?: Svg4ReactComponent
     suffix?: string
-    children: React.ReactNode
+    children: ReactNode
     sx?: SxProps
 }
 
@@ -21,9 +22,11 @@ export const Card = (props: CardProps): JSX.Element => {
         suffix = "Demo",
         children = null,
         sx = {},
+        ...otherProps
     } = props
 
     if (componentName) {
+        // @ts-ignore: next-line
         title = <>
             <Box component="span" sx={DocsSx.Card.componentName}>&lt;{componentName}&gt;</Box>
             <Box component="span">&nbsp;</Box>
@@ -34,6 +37,7 @@ export const Card = (props: CardProps): JSX.Element => {
     return (
         <Paper
             id={id}
+            {...otherProps}
             {...DocsSx.Card.root}
             // @ts-ignore: next-line
             sx={{

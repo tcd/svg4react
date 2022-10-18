@@ -5,10 +5,10 @@ import type { ISxProps as SxProps } from "@app/theme/helpers"
 import { _navBg } from "./nav-bg"
 
 const root: SxProps = (theme: Theme) => ({
-    [theme.breakpoints.down("laptop")]: {
+    [theme.breakpoints.down("tablet")]: {
         width: "100%",
     },
-    [theme.breakpoints.up("laptop")]: {
+    [theme.breakpoints.up("tablet")]: {
         display: "flex",
         flexFlow: "row nowrap",
         width: `calc(100% - ${ThemeVars.tocWidth})`,

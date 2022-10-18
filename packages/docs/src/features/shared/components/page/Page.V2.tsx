@@ -33,7 +33,9 @@ export const PageV2 = (props: PageV2Props): JSX.Element => {
     return (
         <Box sx={DocsSx.Layout.Page.root}>
             <Box sx={{ flexGrow: 1 }}>
-                {children && children}
+                <>
+                    {children && children}
+                </>
             </Box>
             <MuiToc toc={toc}/>
         </Box>

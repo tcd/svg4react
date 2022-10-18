@@ -18,12 +18,14 @@ export const ComponentOverview = ({ componentName }: ComponentOverviewProps): JS
             <Card
                 title="Overview"
                 id="overview"
+                data-toc-item
             >
                 <MarkdownSnippet content={description} />
             </Card>
             <Card
                 title="Props"
                 id="props"
+                data-toc-item={true}
             >
                 <PropsTable propData={propData} />
             </Card>
