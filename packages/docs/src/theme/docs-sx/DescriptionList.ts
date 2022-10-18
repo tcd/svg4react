@@ -3,33 +3,36 @@ import type {
     // ITheme as Theme,
 } from "@app/theme"
 
-// const lineHeight = 1.3
+const lineHeight = 1.3
 
 const root: SxProps = {
     display: "flex",
     flexFlow: "column nowrap",
 
-    marginBlockStart: "unset",
-    marginBlockEnd: "unset",
+    marginBlockStart:  "unset",
+    marginBlockEnd:    "unset",
     marginInlineStart: "unset",
-    marginInlineEnd: "unset",
+    marginInlineEnd:   "unset",
 }
 
 const item: SxProps = {
     display: "flex",
     flexFlow: "column nowrap",
-    marginBottom: "1em",
+    "&:not(:last-child)": {
+        marginBottom: "1.5em",
+    },
 }
 
 const dt: SxProps = {
-    // lineHeight,
+    lineHeight,
     // color: "#6c757d",
     fontSize: "0.95em",
     marginBottom: "0.75em",
+    fontWeight: "bold",
 }
 
 const dd: SxProps = {
-    // lineHeight,
+    lineHeight,
     fontSize: "1em",
     display: "block",
     marginInlineStart: "10px",

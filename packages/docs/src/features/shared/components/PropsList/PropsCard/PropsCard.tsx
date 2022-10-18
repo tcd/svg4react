@@ -17,11 +17,10 @@ export const PropsCard = (props: PropsCardProps): JSX.Element => {
     } = props
 
     const $cards = propData.map((prop, i) => {
-        const notLast = i !== propData.length - 1
         return (
             <Fragment key={prop.name}>
                 <PropCard key={prop.name} prop={prop} />
-                {notLast && <Divider sx={DocsSx.PropsList.Cards.divider} />}
+                {(i !== propData.length - 1) && <Divider sx={DocsSx.PropsList.Cards.divider} />}
             </Fragment>
         )
     })
