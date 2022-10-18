@@ -1,4 +1,6 @@
 /* eslint-disable react/no-danger */
+import { DocsSx } from "@app/theme"
+import { Box } from "@mui/material"
 import noop from "lodash/noop"
 import throttle from "lodash/throttle"
 import { useEffect, useMemo, useCallback, useRef, useState } from "react"
@@ -11,7 +13,7 @@ import {
     NavItem,
 } from "./styled"
 
-function useThrottledOnScroll(callback: () => void, delay: number) {
+const useThrottledOnScroll = (callback: () => void, delay: number): void => {
     const throttledCallback = useMemo(() => (
         callback ? throttle(callback, delay) : noop
     ), [callback, delay])
@@ -30,8 +32,8 @@ function useThrottledOnScroll(callback: () => void, delay: number) {
     }, [throttledCallback])
 }
 
-function flatten(headings: TocItem[]) {
-    const itemsWithNode: any[] = []
+const flatten = (headings: TocItem[]): TocItem[] => {
+    const itemsWithNode: TocItem[] = []
 
     headings.forEach((item) => {
         itemsWithNode.push(item)
@@ -123,24 +125,27 @@ export const MuiToc = (props: MuiTocProps): JSX.Element => {
     }
 
     return (
-        <Nav>
-            <NavLabel gutterBottom>Table of Contents</NavLabel>
-            <NavList>
-                {toc.map((item, i) => (
-                    <NavItem
-                        key={i}
-                        display="block"
-                        href={`#${item.hash}`}
-                        underline="none"
-                        onClick={handleClick(item.hash)}
-                        // @ts-ignore: next-line
-                        active={activeState === item.hash}
+        <>
+            <Box id="mui-toc-spacer" sx={DocsSx.MuiToc.navSpacer} />
+            <Nav>
+                <NavLabel gutterBottom>Table of Contents</NavLabel>
+                <NavList>
+                    {toc.map((item, i) => (
+                        <NavItem
+                            key={i}
+                            display="block"
+                            href={`#${item.hash}`}
+                            underline="none"
+                            onClick={handleClick(item.hash)}
+                            // @ts-ignore: next-line
+                            active={activeState === item.hash}
                         // secondary={secondary}
-                    >
-                        {item.text}
-                    </NavItem>
-                ))}
-            </NavList>
-        </Nav>
+                        >
+                            {item.text}
+                        </NavItem>
+                    ))}
+                </NavList>
+            </Nav>
+        </>
     )
 }

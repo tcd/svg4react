@@ -36,9 +36,7 @@ export const ComponentPage = (props: ComponentPageProps): JSX.Element => {
     return (
         <Box sx={DocsSx.Layout.Page.root}>
             <Stack spacing={4}>
-                <Box>
-                    <ComponentOverview componentName={componentName} />
-                </Box>
+                <ComponentOverview componentName={componentName} />
                 {demo && demo}
             </Stack>
             <MuiToc toc={toc}/>

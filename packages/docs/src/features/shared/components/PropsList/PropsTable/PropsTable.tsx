@@ -1,4 +1,5 @@
 import {
+    Box,
     Table,
     TableBody,
     TableCell,
@@ -21,7 +22,7 @@ export const PropsTable = (props: PropsTableProps): JSX.Element => {
     const $rows = propData.map(prop => <PropsTableRow key={prop.name} prop={prop} />)
 
     return (
-        <TableContainer>
+        <Box>
             <Table>
                 <TableHead>
                     <TableRow>
@@ -35,6 +36,6 @@ export const PropsTable = (props: PropsTableProps): JSX.Element => {
                     {$rows}
                 </TableBody>
             </Table>
-        </TableContainer>
+        </Box>
     )
 }

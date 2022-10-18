@@ -8,6 +8,12 @@ export type MuiStyledProps = {
     theme: Theme
 }
 
+const navSpacer: SxProps = {
+    width: `calc(${ThemeVars.tocWidth} + 10px)`,
+    // backgroundColor: "cyan",
+    flexShrink: 0,
+}
+
 const nav = ({ theme }: MuiStyledProps): SxProps => ({
     [theme.breakpoints.down("tablet")]: {
         display: "none",
@@ -17,9 +23,9 @@ const nav = ({ theme }: MuiStyledProps): SxProps => ({
         right: 0,
         order: 1,
         width: ThemeVars.tocWidth,
-        flexShrink: 0,
+        // flexShrink: 0,
         position: "fixed",
-        height: "100vh",
+        // height: "100vh",
         overflowY: "auto",
         zIndex: 100_000,
         // background: "cyan",
@@ -39,7 +45,7 @@ const navLabel = ({ theme }: MuiStyledProps): SxProps => ({
     color: theme.palette.grey[600],
 })
 
-const navList = ({ theme }: MuiStyledProps): SxProps => ({
+const navList = ({ }: MuiStyledProps): SxProps => ({
     margin: 0,
     padding: 0,
     boxSizing: "border-box",
@@ -92,4 +98,5 @@ export const MuiToc = {
     navLabel,
     navList,
     navItem,
+    navSpacer,
 }
