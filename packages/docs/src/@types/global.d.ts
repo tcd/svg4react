@@ -44,6 +44,12 @@ export declare global {
     // Routing
     // =========================================================================
 
+    export type TocItem = {
+        text: string
+        hash: string
+        children?: any[]
+    }
+
     export type LocationChangePayload = {
         location: Location
         previousLocation?: Location

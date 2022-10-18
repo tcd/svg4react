@@ -8,17 +8,23 @@ export interface ComponentOverviewProps {
     componentName: Svg4ReactComponent
 }
 
-export const ComponentOverview = ({ componentName}: ComponentOverviewProps): JSX.Element => {
+export const ComponentOverview = ({ componentName }: ComponentOverviewProps): JSX.Element => {
 
     const propData = PropData[componentName]
     const description = componentDocs.find(x => x?.component == componentName).docComment
 
     return (
         <Stack spacing={4}>
-            <Card title="Overview">
+            <Card
+                title="Overview"
+                id="overview"
+            >
                 <MarkdownSnippet content={description} />
             </Card>
-            <Card title="Props">
+            <Card
+                title="Props"
+                id="props"
+            >
                 <PropsTable propData={propData} />
             </Card>
         </Stack>

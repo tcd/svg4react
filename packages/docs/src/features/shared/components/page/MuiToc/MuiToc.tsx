@@ -45,12 +45,6 @@ function flatten(headings: TocItem[]) {
     return itemsWithNode
 }
 
-export type TocItem = {
-    text: string
-    hash: string
-    children?: any[]
-}
-
 export type MuiTocProps = {
     toc: TocItem[]
 }
