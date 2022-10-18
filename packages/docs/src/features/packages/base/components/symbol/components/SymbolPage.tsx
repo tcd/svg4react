@@ -1,16 +1,17 @@
-import { Stack } from "@mui/material"
-
-import { ComponentOverview, Page } from "@app/features/shared"
+import { ComponentPage } from "@app/features/shared"
 import { SymbolDemo } from "./SymbolDemo"
 
 export const SymbolPage = (_props: unknown): JSX.Element => {
     return (
-        <Page title="<Symbol>">
-            <Stack spacing={4}>
-                <ComponentOverview componentName="Symbol" />
-                <SymbolDemo />
-            </Stack>
-        </Page>
+        <ComponentPage
+            componentName="Symbol"
+            demo={<SymbolDemo />}
+            toc={[
+                { text: "Overview", hash: "overview" },
+                { text: "Props",    hash: "props" },
+                { text: "Demo",     hash: "symbol-demo-1" },
+            ]}
+        />
     )
 }
 

@@ -1,16 +1,17 @@
-import { Stack } from "@mui/material"
-
-import { Page, ComponentOverview } from "@app/features/shared"
+import { ComponentPage } from "@app/features/shared"
 import { AnimateMotionDemo } from "./AnimateMotionDemo"
 
 export const AnimateMotionPage = (_props: unknown): JSX.Element => {
     return (
-        <Page title="<AnimateMotion>">
-            <Stack spacing={4}>
-                <ComponentOverview componentName="AnimateMotion" />
-                <AnimateMotionDemo />
-            </Stack>
-        </Page>
+        <ComponentPage
+            componentName="AnimateMotion"
+            demo={<AnimateMotionDemo />}
+            toc={[
+                { text: "Overview", hash: "overview" },
+                { text: "Props",    hash: "props" },
+                { text: "Demo",     hash: "animate-motion-demo-1" },
+            ]}
+        />
     )
 }
 
