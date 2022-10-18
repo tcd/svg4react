@@ -1,6 +1,6 @@
 import { Stack } from "@mui/material"
 
-import { Card, PropsTable, MarkdownSnippet } from "@app/features/shared"
+import { Card, PropsList, MarkdownSnippet } from "@app/features/shared"
 import { PropData } from "@data/props"
 import componentDocs from "@data/components.json"
 
@@ -27,7 +27,7 @@ export const ComponentOverview = ({ componentName }: ComponentOverviewProps): JS
                 id="props"
                 data-toc-item={true}
             >
-                <PropsTable propData={propData} />
+                <PropsList propData={propData} />
             </Card>
         </Stack>
     )
