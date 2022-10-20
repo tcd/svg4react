@@ -7,7 +7,7 @@ import type {
 import { ThemeVars } from "@app/theme/variables"
 
 const root: PaperProps = {
-    elevation: 2,
+    elevation: 3,
     sx: {
         position: "relative",
         p: 3,

@@ -40,15 +40,16 @@ export declare global {
         shorthand?: string[]
     }
 
-    // =========================================================================
-    // Routing
-    // =========================================================================
-
     export type TocItem = {
         text: string
         hash: string
-        children?: any[]
+        children?: TocItem[]
+        secondary?: boolean
     }
+
+    // =========================================================================
+    // Routing
+    // =========================================================================
 
     export type LocationChangePayload = {
         location: Location

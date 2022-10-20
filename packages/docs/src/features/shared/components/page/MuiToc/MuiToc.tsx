@@ -1,8 +1,5 @@
-/* eslint-disable react/no-danger */
 import { DocsSx } from "@app/theme"
 import { Box } from "@mui/material"
-import noop from "lodash/noop"
-import throttle from "lodash/throttle"
 import { useEffect, useMemo, useCallback, useRef, useState } from "react"
 
 import { openLinkInNewTab } from "./open-link-in-new-tab"
@@ -12,45 +9,15 @@ import {
     NavList,
     NavItem,
 } from "./styled"
-
-const useThrottledOnScroll = (callback: () => void, delay: number): void => {
-    const throttledCallback = useMemo(() => (
-        callback ? throttle(callback, delay) : noop
-    ), [callback, delay])
-
-    useEffect(() => {
-        if (throttledCallback === noop) {
-            return undefined
-        }
-
-        document.getElementById("root").addEventListener("scroll", throttledCallback)
-        return () => {
-            document.getElementById("root").removeEventListener("scroll", throttledCallback)
-            // @ts-ignore: next-line
-            throttledCallback?.cancel()
-        }
-    }, [throttledCallback])
-}
-
-const flatten = (headings: TocItem[]): TocItem[] => {
-    const itemsWithNode: TocItem[] = []
-
-    headings.forEach((item) => {
-        itemsWithNode.push(item)
-
-        if (Array.isArray(item?.children) && item.children.length > 0) {
-            item.children.forEach((subitem) => {
-                itemsWithNode.push(subitem)
-            })
-        }
-    })
-    return itemsWithNode
-}
+import { useThrottledOnScroll, flatten } from "./helpers"
 
 export type MuiTocProps = {
     toc: TocItem[]
 }
 
+/**
+ * @see https://github.com/mui/material-ui/blob/master/docs/src/modules/components/AppTableOfContents.js
+ */
 export const MuiToc = (props: MuiTocProps): JSX.Element => {
     const { toc } = props
 
@@ -131,18 +98,38 @@ export const MuiToc = (props: MuiTocProps): JSX.Element => {
                 <NavLabel gutterBottom>Table of Contents</NavLabel>
                 <NavList>
                     {toc.map((item, i) => (
-                        <NavItem
-                            key={i}
-                            display="block"
-                            href={`#${item.hash}`}
-                            underline="none"
-                            onClick={handleClick(item.hash)}
-                            // @ts-ignore: next-line
-                            active={activeState === item.hash}
-                        // secondary={secondary}
-                        >
-                            {item.text}
-                        </NavItem>
+                        <>
+                            <NavItem
+                                key={i}
+                                display="block"
+                                href={`#${item.hash}`}
+                                underline="none"
+                                onClick={handleClick(item.hash)}
+                                // @ts-ignore: next-line
+                                active={activeState === item.hash}
+                                // secondary={secondary}
+                            >
+                                {item.text}
+                            </NavItem>
+                            {item?.children?.length > 0 ? (
+                                <NavList as="ul">
+                                    {item.children.map((subItem, j) => (
+                                        <NavItem
+                                            key={`${i}-${j}`}
+                                            display="block"
+                                            href={`#${item.hash}`}
+                                            underline="none"
+                                            onClick={handleClick(item.hash)}
+                                            active={activeState === item.hash}
+                                            secondary={true}
+                                        >
+                                            {subItem.text}
+                                        </NavItem>
+                                    ))}
+                                </NavList>
+                            ) : null}
+                        </>
+
                     ))}
                 </NavList>
             </Nav>
