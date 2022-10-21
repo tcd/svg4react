@@ -395,7 +395,19 @@ export const PropData: Record<Svg4ReactComponent, PropData[]> = {
     "Marker": [],
     "Mask": [],
     "MPath": [],
-    "Path": [],
+    "Path": [
+        {
+            name: "commands",
+            shorthand: ["d"],
+            type: "DrawCommand[]",
+            description: "Alternative syntax for building the value of the `d` prop.\n**Will** overwrite `d` if both are passed.\n\n See [DrawCommand](/core/DrawCommand) and the examples below.",
+        },
+        {
+            name: "d",
+            type: "string",
+            description: "Defines the path to be drawn.",
+        },
+    ],
     "RadialGradient": [],
     "Symbol": [],
     "TextPath": [],
