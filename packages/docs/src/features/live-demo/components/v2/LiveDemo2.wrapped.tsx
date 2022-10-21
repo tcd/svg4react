@@ -1,8 +1,9 @@
 import { useState } from "react"
-import { Paper } from "@mui/material"
+import { Divider, Paper } from "@mui/material"
 
 import Grid from "@mui/material/Unstable_Grid2"
 
+import { CustomTypographyF } from "@app/features/shared"
 import { DocsSx } from "@app/theme"
 import { LiveEditor2 } from "./LiveEditor2"
 import { LiveDemo2Error } from "./LiveDemo2Error"
@@ -11,7 +12,7 @@ import type { LiveDemo2Props } from "./types"
 
 export const LiveDemo2Wrapped = (props: LiveDemo2Props): JSX.Element => {
 
-    const { id } = props
+    const { id, title } = props
 
     const [showRaw, setShowRaw] = useState(false)
 
@@ -21,6 +22,15 @@ export const LiveDemo2Wrapped = (props: LiveDemo2Props): JSX.Element => {
 
     return (
         <Paper id={id} {...DocsSx.LiveDemo2.root}>
+
+            <CustomTypographyF
+                text={title}
+                gutterBottom
+                variant="h4"
+                sx={DocsSx.Card.title}
+            />
+
+            <Divider sx={{ width: "100%", mb: 4 }} />
 
             <Grid {...DocsSx.LiveDemo2.grid}>
 

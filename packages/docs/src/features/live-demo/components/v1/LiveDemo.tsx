@@ -12,9 +12,9 @@ import { LiveDemoPreview } from "./LiveDemoPreview"
 
 import componentDocs from "@data/components.json"
 
-export type CustomLiveDemoProps = {
+export type CustomLiveDemoProps = WithLiveProps & {
     id: string
-    title: string | React.ReactNode
+    title: string
     componentName?: Svg4ReactComponent
     /** The code that should be rendered, apart from the user's edits */
     code: string
@@ -26,7 +26,7 @@ export type CustomLiveDemoProps = {
      * @default false
      */
     inline?: boolean
-} & WithLiveProps
+}
 
 const _LiveDemo = (props: CustomLiveDemoProps): JSX.Element => {
 

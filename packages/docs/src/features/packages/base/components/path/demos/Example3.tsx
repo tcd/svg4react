@@ -4,7 +4,7 @@ import { randomColor } from "@app/util"
 import { LiveDemo } from "@app/features/live-demo"
 
 /**
- * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d#using_d_as_a_css_property
+ * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d#moveto_path_commands
  */
 export const Example3 = (_props: unknown): JSX.Element => {
 
@@ -13,7 +13,7 @@ export const Example3 = (_props: unknown): JSX.Element => {
     return (
         <LiveDemo
             id="path-example-3"
-            title="MoveTo"
+            title="MoveTo path commands"
             code={code}
             scope={scope}
         />

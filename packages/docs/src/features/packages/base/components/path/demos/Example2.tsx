@@ -16,7 +16,7 @@ export const Example2 = (_props: unknown): JSX.Element => {
         <Box sx={sx}>
             <LiveDemo
                 id="path-example-2"
-                title="CSS"
+                title="Using `d` as a CSS property"
                 code={code}
                 scope={scope}
             />

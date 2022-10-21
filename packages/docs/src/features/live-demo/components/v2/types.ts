@@ -1,8 +1,8 @@
 import { WithLiveProps } from "@app/features/live-demo"
 
-export type LiveDemo2Props = {
+export type LiveDemo2Props = WithLiveProps & {
     id: string
-    title: string | React.ReactNode
+    title: string
     /** The code that should be rendered, apart from the user's edits */
     code: string
     /** Accepts custom globals that the `code` can use */
@@ -13,7 +13,7 @@ export type LiveDemo2Props = {
      * @default false
      */
     inline?: boolean
-} & WithLiveProps
+}
 
 export interface LiveDemo2State {
     showRaw: boolean
