@@ -19,6 +19,7 @@ export declare global {
         | "Mask"
         | "MPath"
         | "Path"
+        | "Pattern"
         | "Polygon"
         | "Polyline"
         | "RadialGradient"

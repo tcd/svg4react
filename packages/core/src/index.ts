@@ -45,6 +45,9 @@ export * from "./MPath"
 export { default as Path } from "./Path"
 export * from "./Path"
 
+export { default as Pattern } from "./Pattern"
+export * from "./Pattern"
+
 export { default as Polygon } from "./Polygon"
 export * from "./Polygon"
 
