@@ -1,6 +1,6 @@
 import { DocsSx } from "@app/theme"
 import { Box } from "@mui/material"
-import { useEffect, useMemo, useCallback, useRef, useState } from "react"
+import { useEffect, useMemo, useCallback, useRef, useState, Fragment } from "react"
 
 import { openLinkInNewTab } from "./open-link-in-new-tab"
 import {
@@ -96,10 +96,9 @@ export const MuiToc = (props: MuiTocProps): JSX.Element => {
             <Nav>
                 <NavLabel gutterBottom>Contents</NavLabel>
                 <NavList>
-                    {toc.map((item, i) => (
-                        <>
+                    {toc.map((item) => (
+                        <Fragment key={item.text}>
                             <NavItem
-                                key={i}
                                 display="block"
                                 href={`#${item.hash}`}
                                 underline="none"
@@ -111,9 +110,9 @@ export const MuiToc = (props: MuiTocProps): JSX.Element => {
                             </NavItem>
                             {item?.children?.length > 0 ? (
                                 <NavList>
-                                    {item.children.map((subItem, j) => (
+                                    {item.children.map((subItem) => (
                                         <NavItem
-                                            key={`${i}-${j}`}
+                                            key={subItem.text}
                                             display="block"
                                             href={`#${subItem.hash}`}
                                             underline="none"
@@ -126,7 +125,7 @@ export const MuiToc = (props: MuiTocProps): JSX.Element => {
                                     ))}
                                 </NavList>
                             ) : null}
-                        </>
+                        </Fragment>
 
                     ))}
                 </NavList>
