@@ -1,6 +1,18 @@
-import type { CommonSVGAttributes, ISVGProps, PreserveAspectRatio } from "../utils"
+import type {
+    CommonSVGAttributes,
+    ISVGProps,
+    PreserveAspectRatio,
+    Length,
+    VB,
+} from "../utils"
 
 export type PatternAttributes = {
+    /**
+     * Shorthand for the values of `viewBox`.
+     *
+     * @shorthand viewBox
+     */
+    vb?: VB
     /**
      * Shorthand for the width & height of the pattern tile.
      *
@@ -8,7 +20,7 @@ export type PatternAttributes = {
      * @shorthand height
      * @animatable false
      */
-    size?: [width: SVGLength, height?: SVGLength]
+    size?: [width: Length, height?: Length]
     /**
      * Shorthand for the x and t coordinate shift of the pattern tile.
      *
@@ -16,7 +28,7 @@ export type PatternAttributes = {
      * @shorthand y
      * @animatable false
      */
-    coords?: [x: SVGLength, y?: SVGLength]
+    coords?: [x: Length, y?: Length]
 
     /**
      * Defines the coordinate system for the contents of the pattern.
@@ -67,6 +79,12 @@ export type PatternAttributes = {
      * @animatable true
      */
     y?: any
+    /**
+     * Defines the bound of the SVG viewport for the pattern fragment.
+     *
+     * @animatable true
+     */
+    viewBox?: string
 }
 
 /**
