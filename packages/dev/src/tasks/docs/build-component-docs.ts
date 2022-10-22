@@ -21,6 +21,7 @@ const components: Svg4ReactComponent[] = [
     "Mask",
     "MPath",
     "Path",
+    "Pattern",
     "Polygon",
     "Polyline",
     "RadialGradient",
