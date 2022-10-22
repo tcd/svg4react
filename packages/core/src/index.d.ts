@@ -25,6 +25,12 @@ export * from "./Defs"
 export { default as Ellipse } from "./Ellipse"
 export * from "./Ellipse"
 
+export { default as Filter } from "./Filter"
+export * from "./Filter"
+
+export { default as FeDistantLight } from "./FeDistantLight"
+export * from "./FeDistantLight"
+
 export { default as ForeignObject } from "./ForeignObject"
 export * from "./ForeignObject"
 

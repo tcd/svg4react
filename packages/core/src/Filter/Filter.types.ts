@@ -1,4 +1,4 @@
-import type { ISVGProps, CommonSVGAttributes } from "../../utils"
+import type { ISVGProps, CommonSVGAttributes, Length } from "../utils"
 
 export type FilterAttributes = {
     id: string
@@ -14,6 +14,23 @@ export type FilterAttributes = {
      * @default "userSpaceOnUse"
      */
     primitiveUnits?: "userSpaceOnUse" | "objectBoundingBox"
+
+    /**
+     * @shorthand x
+     * @shorthand y
+     */
+    coords?: [x: Length, y?: Length]
+
+    /**
+     * @shorthand width
+     * @shorthand height
+     */
+    size?: [width: Length, height?: Length]
+
+    x?: Length
+    y?: Length
+    width?: Length
+    height?: Length
 }
 
 /**

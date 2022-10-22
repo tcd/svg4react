@@ -1,4 +1,4 @@
-import { ISVGProps } from "../../utils"
+import { ISVGProps } from "../utils"
 
 export type MatrixRow    = [number, number, number, number, number]
 export type MatrixValues = [MatrixRow, MatrixRow, MatrixRow, MatrixRow]

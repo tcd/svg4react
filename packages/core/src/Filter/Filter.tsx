@@ -1,4 +1,5 @@
 import type { FilterProps } from "./Filter.types"
+import processFilterProps from "./process-filter-props"
 
 /**
  * A wrapper for the [`<filter>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/filter) element.
@@ -9,14 +10,12 @@ import type { FilterProps } from "./Filter.types"
  */
 const Filter = (props: FilterProps) => {
 
-    const {
-        ...otherProps
-    } = props
+    const processedProps = processFilterProps(props)
 
     return (
         // @ts-ignore: next-line
         <filter
-            {...otherProps}
+            {...processedProps}
         />
     )
 }

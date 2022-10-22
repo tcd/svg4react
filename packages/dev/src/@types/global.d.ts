@@ -28,6 +28,8 @@ export declare global {
         | "ClipPath"
         | "Defs"
         | "Ellipse"
+        | "Filter"
+        | "FeDistantLight"
         | "ForeignObject"
         | "G"
         | "Line"
