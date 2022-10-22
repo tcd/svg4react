@@ -9,7 +9,10 @@ export type MuiStyledProps = {
 }
 
 const navSpacer: SxProps = {
-    width: `calc(${ThemeVars.tocWidth} + 10px)`,
+    width: {
+        xs: "24px",
+        tablet: `calc(${ThemeVars.tocWidth} + 10px)`,
+    },
     // backgroundColor: "cyan",
     flexShrink: 0,
 }

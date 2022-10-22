@@ -19,10 +19,15 @@ const root: SxProps = (theme: Theme) => ({
     // },
 })
 
+const content: SxProps = (theme: Theme) => ({
+    flexGrow: 1,
+})
+
 // =============================================================================
 // All Together
 // =============================================================================
 
 export const Page = {
     root,
+    content,
 }

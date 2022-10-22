@@ -35,7 +35,7 @@ export const ComponentPage = (props: ComponentPageProps): JSX.Element => {
 
     return (
         <Box sx={DocsSx.Layout.Page.root}>
-            <Stack spacing={4}>
+            <Stack spacing={4} sx={DocsSx.Layout.Page.content}>
                 <ComponentOverview componentName={componentName} />
                 {demo && demo}
             </Stack>
