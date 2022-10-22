@@ -3,21 +3,11 @@ import type { SymbolProps } from "./Symbol.types"
 
 const processSymbolProps = (rawProps: SymbolProps): SymbolProps => {
     const {
-        vb = [],
         size = [],
         coords = [],
         refXY = [],
         ...processedProps
     } = rawProps
-
-    // @ts-ignore: next-line
-    if (!processedProps.viewBox) {
-        if (Array.isArray(vb) && vb.length > 0) {
-            const [width, height = width] = vb
-            // @ts-ignore: next-line
-            processedProps.viewBox = `0 0 ${width} ${height}`
-        }
-    }
 
     if (Array.isArray(size) && size.length > 0) {
         const [width, height = width] = size
