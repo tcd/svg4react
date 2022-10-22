@@ -21,6 +21,9 @@ export const useThrottledOnScroll = (callback: () => void, delay: number): void 
     }, [throttledCallback])
 }
 
+/**
+ * @see https://github.com/mui/material-ui/blob/master/docs/src/modules/components/AppTableOfContents.js#L103
+ */
 export const flatten = (headings: TocItem[]): TocItem[] => {
     const itemsWithNode: TocItem[] = []
 

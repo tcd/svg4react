@@ -22,7 +22,6 @@ export const MuiToc = (props: MuiTocProps): JSX.Element => {
     const { toc } = props
 
     const items = useMemo(() => flatten(toc), [toc])
-    // const items = toc
     const [activeState, setActiveState] = useState(null)
     const clickedRef = useRef(false)
     const unsetClickedRef = useRef(null)
@@ -36,10 +35,10 @@ export const MuiToc = (props: MuiTocProps): JSX.Element => {
         let active
         for (let i = items.length - 1; i >= 0; i -= 1) {
             // No hash if we're near the top of the page
-            // if (root.scrollTop < 200) {
-            //     active = { hash: null }
-            //     break
-            // }
+            if (root.scrollTop < 200) {
+                active = { hash: null }
+                break
+            }
 
             const item = items[i]
             const node = document.getElementById(item.hash)
@@ -95,7 +94,7 @@ export const MuiToc = (props: MuiTocProps): JSX.Element => {
         <>
             <Box id="mui-toc-spacer" sx={DocsSx.MuiToc.navSpacer} />
             <Nav>
-                <NavLabel gutterBottom>Table of Contents</NavLabel>
+                <NavLabel gutterBottom>Contents</NavLabel>
                 <NavList>
                     {toc.map((item, i) => (
                         <>
@@ -105,22 +104,21 @@ export const MuiToc = (props: MuiTocProps): JSX.Element => {
                                 href={`#${item.hash}`}
                                 underline="none"
                                 onClick={handleClick(item.hash)}
-                                // @ts-ignore: next-line
                                 active={activeState === item.hash}
-                                // secondary={secondary}
+                                secondary={false}
                             >
                                 {item.text}
                             </NavItem>
                             {item?.children?.length > 0 ? (
-                                <NavList as="ul">
+                                <NavList>
                                     {item.children.map((subItem, j) => (
                                         <NavItem
                                             key={`${i}-${j}`}
                                             display="block"
-                                            href={`#${item.hash}`}
+                                            href={`#${subItem.hash}`}
                                             underline="none"
-                                            onClick={handleClick(item.hash)}
-                                            active={activeState === item.hash}
+                                            onClick={handleClick(subItem.hash)}
+                                            active={activeState === subItem.hash}
                                             secondary={true}
                                         >
                                             {subItem.text}
