@@ -11,7 +11,7 @@ import { rootReducer } from "../root-reducer"
 
 const persistConfig = getPersistConfig({
     rootReducer,
-    key: "mlxb",
+    key: "svg4react",
     storage: undefined,
 })
 
